@@ -45,11 +45,11 @@
     return out;
   }
   function validateEnvelope(value){
-    if(!value||typeof value!=="object"||Array.isArray(value))throw new Error("El archivo de Drive no contiene un objeto vÃ¡lido.");
-    if(value.schemaVersion!==1)throw new Error("La versiÃ³n del archivo de Drive no es compatible.");
-    if(typeof value.appVersion!=="string"||typeof value.contentVersion!=="string"||!Number.isFinite(Date.parse(value.generatedAt))||typeof value.sourceDeviceId!=="string"||!value.sourceDeviceId)throw new Error("El archivo de Drive estÃ¡ incompleto.");
-    if(!value.settings||typeof value.settings!=="object")throw new Error("El archivo de Drive no contiene configuraciones vÃ¡lidas.");
-    for(const key of ["subjects","events","highlights"]){if(!Array.isArray(value[key])||value[key].some(item=>!item||typeof item!=="object"||typeof item.id!=="string"||!item.id||!Number.isFinite(Date.parse(item.updatedAt||item.deletedAt||item.createdAt))))throw new Error(`El archivo de Drive no contiene ${key} vÃ¡lidos.`)}
+    if(!value||typeof value!=="object"||Array.isArray(value))throw new Error("El archivo de Drive no contiene un objeto válido.");
+    if(value.schemaVersion!==1)throw new Error("La versión del archivo de Drive no es compatible.");
+    if(typeof value.appVersion!=="string"||typeof value.contentVersion!=="string"||!Number.isFinite(Date.parse(value.generatedAt))||typeof value.sourceDeviceId!=="string"||!value.sourceDeviceId)throw new Error("El archivo de Drive está incompleto.");
+    if(!value.settings||typeof value.settings!=="object")throw new Error("El archivo de Drive no contiene configuraciones válidas.");
+    for(const key of ["subjects","events","highlights"]){if(!Array.isArray(value[key])||value[key].some(item=>!item||typeof item!=="object"||typeof item.id!=="string"||!item.id||!Number.isFinite(Date.parse(item.updatedAt||item.deletedAt||item.createdAt))))throw new Error(`El archivo de Drive no contiene ${key} válidos.`)}
     return value;
   }
   function mergeEnvelopes(local,...remotes){
@@ -64,8 +64,8 @@
   function authHeaders(token,json=false){return {Authorization:`Bearer ${token}`,...(json?{"Content-Type":"application/json"}:{})}}
   async function driveFetch(fetcher,token,url,options={}){
     const response=await fetcher(url,{...options,headers:{...(options.headers||{}),...authHeaders(token)}});
-    if(response.status===401){const error=new Error("La autorizaciÃ³n de Google Drive venciÃ³.");error.code=401;throw error}
-    if(!response.ok)throw new Error(`Google Drive respondiÃ³ con estado ${response.status}.`);
+    if(response.status===401){const error=new Error("La autorización de Google Drive venció.");error.code=401;throw error}
+    if(!response.ok)throw new Error(`Google Drive respondió con estado ${response.status}.`);
     return response;
   }
   function multipartRelated(envelope,metadata){
@@ -85,7 +85,7 @@
     isAuthoritativePending(){return this.blockedAfterReplace}
     async requestToken(){
       if(!window.google?.accounts?.oauth2)throw new Error("Google Identity Services no pudo cargarse.");
-      return new Promise((resolve,reject)=>{const client=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPE,callback:async response=>{if(response.error){reject(new Error("Google no autorizÃ³ la conexiÃ³n."));return}this.token=response.access_token;this.expiresAt=Date.now()+Number(response.expires_in||3600)*1000;this.needsReconnect=false;if(this.blockedAfterReplace){this.onState("pending-authoritative");resolve();return}try{await this.syncNow();resolve()}catch(error){reject(error)}}});client.requestAccessToken({prompt:"consent"})})
+      return new Promise((resolve,reject)=>{const client=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPE,callback:async response=>{if(response.error){reject(new Error("Google no autorizó la conexión."));return}this.token=response.access_token;this.expiresAt=Date.now()+Number(response.expires_in||3600)*1000;this.needsReconnect=false;if(this.blockedAfterReplace){this.onState("pending-authoritative");resolve();return}try{await this.syncNow();resolve()}catch(error){reject(error)}}});client.requestAccessToken({prompt:"consent"})})
     }
     disconnect(){const token=this.token;this.token=null;this.expiresAt=0;this.needsReconnect=false;clearTimeout(this.timer);this.onState("disconnected");try{if(token&&window.google?.accounts?.oauth2?.revoke)google.accounts.oauth2.revoke(token,()=>{})}catch(_){/* la copia local sigue disponible */}}
     localChanged(){if(this.blockedAfterReplace){this.onState("pending");return}if(this.hasToken()){this.onState("pending");clearTimeout(this.timer);this.timer=setTimeout(()=>this.syncNow().catch(()=>{}),3000)}else if(this.token||this.needsReconnect){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect")}else this.onState(navigator.onLine?"pending":"offline")}
@@ -98,12 +98,12 @@
     async syncNow(){
       if(!this.hasToken()){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect");return}if(this.blockedAfterReplace){this.onState("pending-authoritative");return}if(this.running){this.again=true;return}
       this.running=true;this.onState("syncing");
-      try{const local=validateEnvelope(await this.snapshot()),files=await this.listFiles();if(files.length>1)console.warn(`Biblioteca LBT encontrÃ³ ${files.length} copias de sincronizaciÃ³n; no se eliminaron.`);const remotes=[];for(const file of files)remotes.push(await this.download(file.id));const merged=mergeEnvelopes(local,...remotes);await this.apply(merged);const canonical=[...files].sort((a,b)=>time(b.modifiedTime)-time(a.modifiedTime)||String(a.id).localeCompare(String(b.id)))[0];await this.upload(merged,canonical?.id||null);this.onState("synced")}
+      try{const local=validateEnvelope(await this.snapshot()),files=await this.listFiles();if(files.length>1)console.warn(`Biblioteca LBT encontró ${files.length} copias de sincronización; no se eliminaron.`);const remotes=[];for(const file of files)remotes.push(await this.download(file.id));const merged=mergeEnvelopes(local,...remotes);await this.apply(merged);const canonical=[...files].sort((a,b)=>time(b.modifiedTime)-time(a.modifiedTime)||String(a.id).localeCompare(String(b.id)))[0];await this.upload(merged,canonical?.id||null);this.onState("synced")}
       catch(error){if(error.code===401){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect")}else{this.onState(navigator.onLine?"error":"offline")}throw error}
       finally{this.running=false;if(this.again){this.again=false;this.syncNow().catch(()=>{})}}
     }
     async replaceRemote(){
-      if(!this.hasToken()){this.onState("reconnect");throw new Error("ReconectÃ¡ Google Drive antes de reemplazar la copia remota.")}
+      if(!this.hasToken()){this.onState("reconnect");throw new Error("Reconectá Google Drive antes de reemplazar la copia remota.")}
       this.onState("syncing");
       try{
         const local=validateEnvelope(await this.snapshot()),files=await this.listFiles();
@@ -116,4 +116,3 @@
   }
   return {CLIENT_ID,SCOPE,FILE_NAME,AUTHORITATIVE_RESTORE_KEY,SETTINGS_FIELDS,stable,chooseRecord,mergeRecords,normalizeSettings,mergeSettings,validateEnvelope,mergeEnvelopes,multipartRelated,DriveSync};
 });
-

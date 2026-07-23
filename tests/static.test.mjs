@@ -1,5 +1,19 @@
 import assert from "node:assert/strict";
-import { readFile, access } from "node:fs/promises";
+import { readFile, access, readdir } from "node:fs/promises";
+
+const textExtensions=new Set([".js",".mjs",".cjs",".html",".css",".md",".json",".webmanifest"]);
+const ignoredDirectories=new Set([".git","node_modules","dist","test-results",".playwright-browsers"]);
+const mojibake=/\u00c3.|\u00c2.|\u00e2(?:\u20ac|\u2026|\u20ac\u0153|\u20ac\u009d|\u20ac\u2122)|\ufffd/;
+async function sourceFiles(directory="."){
+  const files=[];
+  for(const entry of await readdir(directory,{withFileTypes:true})){
+    if(entry.isDirectory()){if(!ignoredDirectories.has(entry.name))files.push(...await sourceFiles(`${directory}/${entry.name}`));continue}
+    const dot=entry.name.lastIndexOf("."),extension=dot>=0?entry.name.slice(dot):"";
+    if(textExtensions.has(extension))files.push(`${directory}/${entry.name}`);
+  }
+  return files;
+}
+for(const path of await sourceFiles())assert.doesNotMatch(await readFile(path,"utf8"),mojibake,`${path} contiene texto con codificación corrupta`);
 
 const required = [
   "index.html", "styles.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
