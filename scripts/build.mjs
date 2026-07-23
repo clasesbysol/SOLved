@@ -6,7 +6,7 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const entries = [
   "index.html", "styles.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
-  "js", "icons", "docs"
+  "js", "icons", "docs", "content"
 ];
 
 await rm(dist, { recursive: true, force: true });

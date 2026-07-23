@@ -1,4 +1,4 @@
-# Biblioteca LBT — versión 0.4.5
+# Biblioteca LBT — versión 0.5.0
 
 Aplicación local-first de estudio para la Licenciatura en Biotecnología.
 

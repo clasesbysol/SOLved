@@ -1,7 +1,7 @@
 (function(){
   const DB_NAME="biblioteca-lbt";
-  const DB_VERSION=4;
-  const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta"];
+  const DB_VERSION=5;
+  const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","notes"];
   let db=null, fallback=false;
   const FALLBACK_KEY="biblioteca-lbt-v04-fallback";
   let memoryFallback=Object.fromEntries(STORES.map(s=>[s,{}]));
@@ -30,6 +30,8 @@
         if(!d.objectStoreNames.contains("exerciseProgress"))d.createObjectStore("exerciseProgress",{keyPath:"id"});
         if(!d.objectStoreNames.contains("syncQueue"))d.createObjectStore("syncQueue",{keyPath:"id"});
         if(!d.objectStoreNames.contains("meta"))d.createObjectStore("meta",{keyPath:"key"});
+        if(!d.objectStoreNames.contains("contentPackages"))d.createObjectStore("contentPackages",{keyPath:"id"});
+        if(!d.objectStoreNames.contains("notes")){const s=d.createObjectStore("notes",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("unitId","unitId")}
       };
       req.onsuccess=()=>{db=req.result;db.onversionchange=()=>db.close();resolve({fallback:false});};
       req.onerror=()=>{fallback=true;resolve({fallback:true,error:req.error});};
@@ -55,21 +57,21 @@
       const currentSettings=data.kv?.settings;
       data.kv ||= {};
       data.kv.settings={key:"settings",value:mergeSettings(currentSettings?.value||{},envelope.settings),updatedAt:envelope.generatedAt};
-      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights]]){
+      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights],["notes",envelope.notes||[]]]){
         data[store] ||= {};
         for(const item of items)data[store][item.id]=chooseRecord(data[store][item.id],item);
       }
       saveFallback(data);return Promise.resolve();
     }
     return new Promise((resolve,reject)=>{
-      const transaction=db.transaction(["kv","subjects","events","highlights"],"readwrite");
+      const transaction=db.transaction(["kv","subjects","events","highlights","notes"],"readwrite");
       transaction.oncomplete=()=>resolve();transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||new Error("No se pudo combinar la sincronización."));
       const kv=transaction.objectStore("kv"),settingsRequest=kv.get("settings");
       settingsRequest.onsuccess=()=>{
         const settings=mergeSettings(settingsRequest.result?.value||{},envelope.settings);
         kv.put({key:"settings",value:settings,updatedAt:settings.updatedAt||envelope.generatedAt});
       };
-      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights]]){
+      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights],["notes",envelope.notes||[]]]){
         const objectStore=transaction.objectStore(store);
         for(const item of items){
           const request=objectStore.get(item.id);
@@ -77,6 +79,10 @@
         }
       }
     });
+  }
+  function installContentPackage(record){
+    if(fallback)return put("contentPackages",record);
+    return new Promise((resolve,reject)=>{const transaction=db.transaction("contentPackages","readwrite");transaction.objectStore("contentPackages").put(record);transaction.oncomplete=()=>resolve(record);transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error)});
   }
   function del(store,key){
     if(fallback){const data=fallbackData();if(data[store])delete data[store][key];saveFallback(data);return Promise.resolve()}
@@ -107,5 +113,5 @@
       }
     }
   }
-  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,exportAll,importAll,isFallback:()=>fallback,stores:STORES};
+  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,installContentPackage,exportAll,importAll,isFallback:()=>fallback,stores:STORES};
 })();

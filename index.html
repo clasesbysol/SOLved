@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.4.5 local-first</title>
+  <title>Biblioteca LBT — v0.5.0 local-first</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.4.5">
+  <link rel="stylesheet" href="styles.css?v=0.5.0">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute">
@@ -34,7 +34,7 @@
 <div class="app">
   <header class="brand">
     <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.4.5</small></div>
+    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.0</small></div>
   </header>
 
   <header class="topbar">
@@ -184,6 +184,8 @@
         </div>
         <div class="study-toolbar" id="studyToolbar">
           <button class="tool-btn" id="highlightBtn" title="Seleccioná texto y presioná Resaltar"><svg class="icon"><use href="#i-flask"/></svg><span id="highlightLabel">Resaltar</span></button>
+          <button class="tool-btn" id="newNoteBtn">Nueva nota</button>
+          <button class="tool-btn" id="contentUpdateBtn">Actualizar contenido</button>
           <span class="selection-help" id="selectionHelp">Seleccioná texto dentro del resumen.</span>
           <div class="toolbar-spacer"></div>
           <button class="tool-btn" id="indexBtn" title="Mostrar u ocultar índice">Índice</button>
@@ -243,9 +245,11 @@
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="js/data.js?v=0.4.5"></script>
-<script src="js/db.js?v=0.4.5"></script>
-<script src="js/sync.js?v=0.4.5"></script>
-<script src="js/app.js?v=0.4.5"></script>
+<script src="js/data.js?v=0.5.0"></script>
+<script src="js/db.js?v=0.5.0"></script>
+<script src="js/sync.js?v=0.5.0"></script>
+<script src="js/content.js?v=0.5.0"></script>
+<script src="js/notes.js?v=0.5.0"></script>
+<script src="js/app.js?v=0.5.0"></script>
 </body>
 </html>

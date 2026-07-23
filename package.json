@@ -1,11 +1,15 @@
 {
   "name": "biblioteca-lbt",
   "private": true,
-  "version": "0.4.5",
+  "version": "0.5.0",
   "description": "Biblioteca de estudio local-first para LBT",
   "scripts": {
     "start": "http-server . -p 4173 -c-1",
-    "test": "node tests/correlations.test.mjs && node tests/static.test.mjs && node tests/sync.test.cjs && playwright test",
+    "content:new": "node factory/validators/content-new.mjs",
+    "content:validate": "node factory/validators/content-validate.mjs",
+    "content:catalog": "node factory/validators/content-catalog.mjs",
+    "test:content": "node tests/content.test.mjs",
+    "test": "node tests/content.test.mjs && node tests/correlations.test.mjs && node tests/static.test.mjs && node tests/sync.test.cjs && playwright test",
     "build": "node scripts/build.mjs",
     "check": "npm test && npm run build"
   },

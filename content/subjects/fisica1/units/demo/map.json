@@ -1,0 +1,1 @@
+{"nodes":[{"id":"demo-subject","type":"subject","label":"Física I"},{"id":"demo-unit","type":"unit","label":"Vista integral"}],"edges":[{"from":"demo-unit","to":"demo-subject","type":"belongs-to"}]}

@@ -25,7 +25,13 @@ const env=(patch={})=>({schemaVersion:1,appVersion:"0.4.5",contentVersion:"demo-
   const m=mergeEnvelopes(local,remote);assert.equal(m.subjects[0].progress,10);assert.deepEqual(m.events.map(x=>x.id),["local","remote"]);
 }
 assert.throws(()=>validateEnvelope({}),/versión/,"rechaza JSON corrupto");
-assert.throws(()=>validateEnvelope(env({schemaVersion:2})),/compatible/,"rechaza esquema desconocido");
+assert.throws(()=>validateEnvelope(env({schemaVersion:3})),/compatible/,"rechaza esquema desconocido");
+assert.deepEqual(validateEnvelope(env()).notes,[],"migra schema 1 con notes vacío");
+{
+  const old=env({notes:undefined}),newer=env({schemaVersion:2,sourceDeviceId:"notes-device",notes:[{id:"note-1",text:"Nueva",updatedAt:"2026-07-23T20:00:00Z"}]});
+  const merged=mergeEnvelopes(old,newer);assert.equal(merged.schemaVersion,2);assert.equal(merged.notes[0].text,"Nueva","combina notas al migrar a schema 2");
+  const tomb={id:"note-1",deletedAt:"2026-07-23T21:00:00Z",updatedAt:"2026-07-23T21:00:00Z"};assert.equal(mergeEnvelopes(newer,env({schemaVersion:2,notes:[tomb]})).notes[0].deletedAt,tomb.deletedAt,"el tombstone de nota evita que reaparezca");
+}
 assert.doesNotThrow(()=>mergeEnvelopes(env(),env({sourceDeviceId:"b"}),env({sourceDeviceId:"c"})),"combina múltiples archivos");
 {
   global.crypto=require("node:crypto").webcrypto;
@@ -40,7 +46,7 @@ assert.doesNotThrow(()=>mergeEnvelopes(env(),env({sourceDeviceId:"b"}),env({sour
 (async()=>{
   const {DriveSync}=require("../js/sync.js");
   global.crypto=require("node:crypto").webcrypto;global.navigator={onLine:true};
-  const stores=Object.fromEntries(["kv","subjects","events","highlights","meta"].map(x=>[x,new Map()]));
+  const stores=Object.fromEntries(["kv","subjects","events","highlights","notes","meta"].map(x=>[x,new Map()]));
   const DB={get:(s,k)=>Promise.resolve(stores[s].get(k)||null),getAll:s=>Promise.resolve([...stores[s].values()]),put:(s,v)=>{stores[s].set(s==="kv"||s==="meta"?v.key:v.id,v);return Promise.resolve(v)}};
   stores.kv.set("settings",{key:"settings",value:{theme:"dark",updatedAt:"2026-01-01",fieldUpdatedAt:{theme:"2026-01-01"}},updatedAt:"2026-01-01"});
   let uploads=0,downloads=0,lastUpload=null;
@@ -62,7 +68,7 @@ assert.doesNotThrow(()=>mergeEnvelopes(env(),env({sourceDeviceId:"b"}),env({sour
   await reloaded.syncNow();assert.equal(await DB.get("subjects","fisica1"),null,"una sincronización posterior ignora réplicas anteriores al reemplazo autoritativo");
 
   const makeDB=(deviceId,seed={})=>{
-    const maps=Object.fromEntries(["kv","subjects","events","highlights","meta"].map(x=>[x,new Map()]));
+    const maps=Object.fromEntries(["kv","subjects","events","highlights","notes","meta"].map(x=>[x,new Map()]));
     maps.meta.set("drive-device-id",{key:"drive-device-id",value:deviceId});
     maps.kv.set("settings",{key:"settings",value:{},updatedAt:"2026-01-01T00:00:00Z"});
     for(const [store,items] of Object.entries(seed))for(const item of items)maps[store].set(item.id,item);

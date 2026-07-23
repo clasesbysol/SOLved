@@ -1,0 +1,1 @@
+import {unitDirs,validateUnit} from "./lib.mjs";let failed=false;for(const dir of unitDirs()){const errors=validateUnit(dir);if(errors.length){failed=true;console.error(dir);errors.forEach(e=>console.error(`  - ${e}`))}else console.log(`OK ${dir}`)}if(failed)process.exit(1);console.log("Todos los paquetes de contenido son válidos.");
