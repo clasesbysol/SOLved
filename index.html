@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.4.4 local-first</title>
+  <title>Biblioteca LBT — v0.4.5 local-first</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.4.4">
+  <link rel="stylesheet" href="styles.css?v=0.4.5">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute">
@@ -34,7 +34,7 @@
 <div class="app">
   <header class="brand">
     <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.4.4</small></div>
+    <div><strong>Biblioteca LBT</strong><small>local-first 0.4.5</small></div>
   </header>
 
   <header class="topbar">
@@ -48,6 +48,8 @@
       <input id="globalSearch" placeholder="Buscar materias del plan…">
     </label>
     <div class="sync-pill" id="syncPill" title="Los datos se guardan en IndexedDB"><span class="sync-dot"></span><span id="syncText">Guardado localmente</span></div>
+    <button class="soft-btn drive-btn" id="driveActionBtn">Conectar Google Drive</button>
+    <button class="soft-btn drive-btn" id="driveDisconnectBtn" hidden>Desconectar</button>
     <button class="soft-btn install-btn" id="installBtn" hidden><svg class="icon"><use href="#i-download"/></svg><span>Instalar</span></button>
     <button class="soft-btn update-btn" id="updateBtn" hidden><svg class="icon"><use href="#i-download"/></svg><span>Actualizar</span></button>
     <button class="soft-btn" id="backupBtn" title="Respaldo local"><svg class="icon"><use href="#i-download"/></svg><span>Respaldo</span></button>
@@ -234,13 +236,16 @@
       <button class="soft-btn" id="importMergeBtn"><div><strong>Importar y combinar</strong><span>Conserva lo actual y agrega los registros más recientes del archivo.</span></div></button>
       <button class="soft-btn" id="importReplaceBtn"><div><strong>Importar y reemplazar</strong><span>Borra los datos locales actuales y restaura exactamente el archivo.</span></div></button>
     </div>
+    <button class="primary-btn" id="replaceDriveBtn" hidden>Reemplazar copia de Drive con este respaldo</button>
     <div class="migration-note" id="migrationNote">La primera vez, la app busca automáticamente datos de la versión 0.3 y los migra sin borrar el respaldo anterior de localStorage.</div>
   </div>
 </div>
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
-<script src="js/data.js?v=0.4.4"></script>
-<script src="js/db.js?v=0.4.4"></script>
-<script src="js/app.js?v=0.4.4"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="js/data.js?v=0.4.5"></script>
+<script src="js/db.js?v=0.4.5"></script>
+<script src="js/sync.js?v=0.4.5"></script>
+<script src="js/app.js?v=0.4.5"></script>
 </body>
 </html>

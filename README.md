@@ -1,10 +1,14 @@
-# Biblioteca LBT — versión 0.4.4
+# Biblioteca LBT — versión 0.4.5
 
 Aplicación local-first de estudio para la Licenciatura en Biotecnología.
 
 ## Cambios de esta versión
 
-- El resaltador de la 0.4.1 se conserva sin cambios.
+- Sincronización opcional local-first mediante Google Drive `appDataFolder`.
+- IndexedDB sigue siendo la fuente inmediata y funciona sin conexión ni cuenta Google.
+- Combinación determinista de progreso, eventos, resaltados y preferencias por campo.
+- El resaltador persistente de la 0.4.4 se conserva, incluidas sus eliminaciones como tombstones.
+- Ver [uso y privacidad de la sincronización](docs/GOOGLE-DRIVE-SYNC.md).
 - Auditoría completa de las correlatividades contra las tres páginas del PDF provisto.
 - Corrección de la lógica de disponibilidad:
   - una materia con estado **Sin estado** ya no se considera automáticamente incumplida;
