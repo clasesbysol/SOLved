@@ -12,12 +12,13 @@
     eventSubject:$("eventSubject"),eventDate:$("eventDate"),eventTitle:$("eventTitle"),eventNote:$("eventNote"),coursesModal:$("coursesModal"),coursesForm:$("coursesForm"),courseChecks:$("courseChecks"),
     backupModal:$("backupModal"),manageCoursesPlan:$("manageCoursesPlan"),addEventTop:$("addEventTop"),addEventSide:$("addEventSide"),addEventCalendar:$("addEventCalendar"),
     prevMonth:$("prevMonth"),nextMonth:$("nextMonth"),todayMonth:$("todayMonth"),backStudy:$("backStudy"),exportBackupBtn:$("exportBackup"),importBackupBtn:$("importBackup"),
-    exportBackupModal:$("exportBackupModal"),importMergeBtn:$("importMergeBtn"),importReplaceBtn:$("importReplaceBtn"),syncPill:$("syncPill"),syncText:$("syncText"),installBtn:$("installBtn"),updateBtn:$("updateBtn"),
+    exportBackupModal:$("exportBackupModal"),importMergeBtn:$("importMergeBtn"),importReplaceBtn:$("importReplaceBtn"),replaceDriveBtn:$("replaceDriveBtn"),syncPill:$("syncPill"),syncText:$("syncText"),driveActionBtn:$("driveActionBtn"),driveDisconnectBtn:$("driveDisconnectBtn"),installBtn:$("installBtn"),updateBtn:$("updateBtn"),
     studyToolbar:$("studyToolbar"),highlightBtn:$("highlightBtn"),highlightLabel:$("highlightLabel"),selectionHelp:$("selectionHelp"),indexBtn:$("indexBtn"),zoomBtn:$("zoomBtn"),viewerBtn:$("viewerBtn"),
     fullscreenBtn:$("fullscreenBtn"),fullscreenExit:$("fullscreenExit"),previewWarning:$("previewWarning"),calendarLegend:$("calendarLegend"),correlationModal:$("correlationModal"),correlationTitle:$("correlationTitle"),correlationContent:$("correlationContent")
   };
   let settings={...DEFAULT_SETTINGS},subjectStates={},events=[],highlights=[];
-  let currentSubject=null,currentTab="summary",draggedId=null,activeHighlightId=null,pendingSelection=null,restoreMode="merge",deferredInstallPrompt=null,waitingWorker=null;
+  let currentSubject=null,currentTab="summary",draggedId=null,activeHighlightId=null,pendingSelection=null,restoreMode="merge",deferredInstallPrompt=null,waitingWorker=null,savedSettingsSnapshot={};
+  let driveSync=null;
   const ZOOMS=[.9,1,1.1,1.25,1.4];
 
   function subject(id){return SUBJECTS.find(s=>s.id===id)}
@@ -32,16 +33,16 @@
     els.syncPill.classList.toggle("saving",type==="saving");els.syncPill.classList.toggle("error",type==="error");els.syncText.textContent=text;
   }
   async function persist(store,value){
-    setSaveState("saving","Guardando…");try{await DB.put(store,value);setSaveState("saved",DB.isFallback()?"Guardado local alternativo":"Guardado localmente")}catch(e){console.error(e);setSaveState("error","Error al guardar");toast("No se pudo guardar el cambio")}
+    setSaveState("saving","Guardando…");try{await DB.put(store,value);setSaveState("saved",DB.isFallback()?"Guardado local alternativo":"Guardado localmente");driveSync?.localChanged()}catch(e){console.error(e);setSaveState("error","Error al guardar");toast("No se pudo guardar el cambio")}
   }
   function getSubjectState(id){return subjectStates[id]||{id,status:subject(id)?.defaultStatus||"sin_estado",progress:0,updatedAt:nowISO()}}
-  async function saveSettings(){settings.updatedAt=nowISO();await persist("kv",{key:"settings",value:settings,updatedAt:settings.updatedAt})}
+  async function saveSettings(){const stamp=nowISO();settings.fieldUpdatedAt={...(settings.fieldUpdatedAt||{})};for(const field of window.LBT_SYNC.SETTINGS_FIELDS)if(JSON.stringify(settings[field])!==JSON.stringify(savedSettingsSnapshot[field]))settings.fieldUpdatedAt[field]=stamp;settings.updatedAt=stamp;savedSettingsSnapshot=structuredClone(settings);await persist("kv",{key:"settings",value:settings,updatedAt:settings.updatedAt})}
   async function saveSubjectState(id,patch){const next={...getSubjectState(id),...patch,id,updatedAt:nowISO()};subjectStates[id]=next;await persist("subjects",next);return next}
 
   async function initialize(){
     const versionLabel=document.getElementById("versionLabel");if(versionLabel)versionLabel.textContent=`publicación ${APP_VERSION}`;
     const result=await DB.open();if(result.fallback)toast("IndexedDB no está disponible: se usa un guardado local alternativo");
-    await migrateV03();await loadData();bindEvents();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();
+    await migrateV03();await loadData();driveSync=new window.LBT_SYNC.DriveSync({DB,appVersion:APP_VERSION,contentVersion:CONTENT_VERSION,onState:updateDriveState,onApplied:async()=>{await loadData();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();if(settings.lastPage==="study"&&currentSubject)renderStudy()}});await driveSync.init();bindEvents();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();
     if(location.protocol==="file:")els.previewWarning.style.display="block";
     setPage(settings.lastPage==="study"?"dashboard":settings.lastPage||"dashboard");
     registerPWA();auditButtons();
@@ -64,9 +65,9 @@
     if(migrated)setTimeout(()=>toast("Progreso de la versión 0.3 migrado a IndexedDB"),500);
   }
   async function loadData(){
-    const saved=await DB.get("kv","settings");settings={...DEFAULT_SETTINGS,...(saved?.value||{})};
+    const saved=await DB.get("kv","settings");settings=window.LBT_SYNC.normalizeSettings({...DEFAULT_SETTINGS,...(saved?.value||{})},saved?.updatedAt||"2026-07-23T00:00:00.000Z");savedSettingsSnapshot=structuredClone(settings);if(!saved?.value?.fieldUpdatedAt)await DB.put("kv",{key:"settings",value:settings,updatedAt:settings.updatedAt});
     const storedSubjects=await DB.getAll("subjects");subjectStates=Object.fromEntries(storedSubjects.map(x=>[x.id,x]));
-    for(const s of SUBJECTS)if(!subjectStates[s.id]){subjectStates[s.id]={id:s.id,status:s.defaultStatus,progress:0,updatedAt:nowISO()};await DB.put("subjects",subjectStates[s.id])}
+    for(const s of SUBJECTS)if(!subjectStates[s.id]){subjectStates[s.id]={id:s.id,status:s.defaultStatus,progress:0,updatedAt:"1970-01-01T00:00:00.000Z"};await DB.put("subjects",subjectStates[s.id])}
     events=await DB.getAll("events");highlights=await DB.getAll("highlights");
     currentSubject=subject(settings.lastSubject)||subject("fisica1");currentTab=settings.lastTab||"summary";
   }
@@ -215,7 +216,7 @@
     els.selectionHelp.textContent=removing?"Presioná para eliminar este resaltado.":total?`Selección lista: “${preview.slice(0,38)}${preview.length>38?"…":""}”`:"Seleccioná texto dentro del resumen.";
   }
   async function highlightAction(){
-    if(activeHighlightId){await DB.del("highlights",activeHighlightId);highlights=highlights.filter(h=>h.id!==activeHighlightId);activeHighlightId=null;updateHighlightButton();applyAllHighlights();toast("Resaltado eliminado");return}
+    if(activeHighlightId){const item=highlights.find(h=>h.id===activeHighlightId);if(item){item.deletedAt=nowISO();item.updatedAt=item.deletedAt;await persist("highlights",item)}activeHighlightId=null;updateHighlightButton();applyAllHighlights();toast("Resaltado eliminado");return}
     if(!Array.isArray(pendingSelection)||!pendingSelection.length){toast("Primero seleccioná una frase del resumen");return}
     const overlap=pendingSelection.some(piece=>highlights.some(h=>!h.deletedAt&&h.subjectId===currentSubject.id&&h.blockId===piece.blockId&&Math.max(h.start,piece.start)<Math.min(h.end,piece.end)));
     if(overlap){toast("La selección toca un resaltado existente. Quitalo antes de volver a marcar esa parte.");return}
@@ -269,12 +270,18 @@
 
   function openEventModal(date=""){els.eventSubject.innerHTML=SUBJECTS.map(s=>`<option value="${s.id}" ${currentSubject?.id===s.id?"selected":""}>${safe(s.name)}</option>`).join("");els.eventDate.value=date||new Date().toISOString().slice(0,10);els.eventTitle.value="";els.eventNote.value="";els.eventModal.hidden=false}
   function openCoursesModal(){els.courseChecks.innerHTML=SUBJECTS.map(s=>`<label class="course-check" style="--hue:${s.hue}"><input type="checkbox" value="${s.id}" ${settings.currentIds.includes(s.id)?"checked":""}><span class="dot"></span><span><strong style="display:block;font-size:11px">${safe(s.name)}</strong><small style="color:var(--muted);font-size:9px">${s.term}.º cuatrimestre</small></span></label>`).join("");els.coursesModal.hidden=false}
-  async function exportBackup(){const payload=await DB.exportAll(),blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`biblioteca-lbt-respaldo-v044-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast("Respaldo completo exportado")}
+  async function exportBackup(){const payload=await DB.exportAll(),blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`biblioteca-lbt-respaldo-v045-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast("Respaldo completo exportado")}
   function chooseImport(mode){restoreMode=mode;els.restoreInput.click()}
-  async function importBackupFile(file){try{const text=await file.text(),payload=JSON.parse(text);await DB.importAll(payload,restoreMode);await loadData();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();closeModals();toast(restoreMode==="replace"?"Respaldo restaurado":"Respaldo combinado")}catch(e){console.error(e);toast("El archivo no es un respaldo válido")}}
+  async function importBackupFile(file){try{const text=await file.text(),payload=JSON.parse(text);await DB.importAll(payload,restoreMode);await loadData();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();if(restoreMode==="replace"){driveSync?.markLocalReplace();els.replaceDriveBtn.hidden=false}else driveSync?.localChanged();closeModals();toast(restoreMode==="replace"?"Respaldo restaurado localmente":"Respaldo combinado")}catch(e){console.error(e);toast("El archivo no es un respaldo válido")}}
   function closeModals(){document.querySelectorAll(".modal-backdrop").forEach(m=>m.hidden=true)}
   function toast(msg){document.querySelector(".toast")?.remove();const el=document.createElement("div");el.className="toast";el.textContent=msg;document.body.appendChild(el);setTimeout(()=>el.remove(),2800)}
   function applyTheme(){document.documentElement.dataset.theme=settings.theme}
+  function updateDriveState(state){
+    const labels={disconnected:"Conectar Google Drive",syncing:"Sincronizando…",synced:"Sincronizado con Drive",pending:"Cambios pendientes",offline:"Sin conexión",reconnect:"Reconectar Drive",error:"Error de sincronización","pending-authoritative":"Cambios pendientes"};
+    els.syncText.textContent=labels[state]||"Guardado localmente";els.syncPill.classList.toggle("saving",state==="syncing");els.syncPill.classList.toggle("error",state==="error"||state==="reconnect");
+    const connected=!!driveSync?.hasToken();els.driveActionBtn.hidden=state==="syncing";els.driveActionBtn.textContent=state==="reconnect"?"Reconectar Drive":connected?"Sincronizar ahora":"Conectar Google Drive";els.driveDisconnectBtn.hidden=!connected;
+  }
+  async function driveAction(){try{if(driveSync.hasToken())await driveSync.syncNow();else await driveSync.requestToken()}catch(error){toast(error.message||"No se pudo sincronizar con Google Drive")}}
   function filterPlan(query){const q=query.trim().toLowerCase();setPage("subjects");document.querySelectorAll(".plan-course").forEach(row=>row.hidden=q&&!row.textContent.toLowerCase().includes(q))}
   function auditButtons(){document.querySelectorAll("button").forEach(btn=>{if(btn.hidden)return;if(!btn.onclick&&!btn.hasAttribute("data-page")&&!btn.hasAttribute("data-close")&&!btn.hasAttribute("data-page-link")&&!btn.closest("form")&&!btn.id)console.warn("Botón sin enlace explícito",btn)})}
 
@@ -287,7 +294,8 @@
     els.prevMonth.onclick=async()=>{settings.calendar.month--;if(settings.calendar.month<0){settings.calendar.month=11;settings.calendar.year--}await saveSettings();renderCalendar()};els.nextMonth.onclick=async()=>{settings.calendar.month++;if(settings.calendar.month>11){settings.calendar.month=0;settings.calendar.year++}await saveSettings();renderCalendar()};els.todayMonth.onclick=async()=>{const d=new Date();settings.calendar={year:d.getFullYear(),month:d.getMonth()};await saveSettings();renderCalendar()};
     els.backStudy.onclick=()=>setPage("dashboard");els.studyStatus.onchange=async()=>{await saveSubjectState(currentSubject.id,{status:els.studyStatus.value});renderDashboard()};els.studyTabs.querySelectorAll(".tab").forEach(t=>t.onclick=async()=>{currentTab=t.dataset.tab;settings.lastTab=currentTab;await saveSettings();els.studyTabs.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===t));renderStudy()});els.studyBlock.onchange=async()=>{settings.lastBlock=els.studyBlock.value;await saveSettings();renderStudy()};
     els.themeBtn.onclick=async()=>{settings.theme=settings.theme==="light"?"dark":"light";applyTheme();await saveSettings()};els.globalSearch.oninput=e=>{if(e.target.value.trim())filterPlan(e.target.value);else if(settings.lastPage==="subjects")renderPlan()};
-    els.backupBtn.onclick=()=>els.backupModal.hidden=false;els.exportBackupBtn.onclick=els.exportBackupModal.onclick=exportBackup;els.importBackupBtn.onclick=()=>chooseImport("merge");els.importMergeBtn.onclick=()=>chooseImport("merge");els.importReplaceBtn.onclick=()=>chooseImport("replace");els.restoreInput.onchange=()=>{const f=els.restoreInput.files[0];if(f)importBackupFile(f);els.restoreInput.value=""};
+    els.backupBtn.onclick=()=>els.backupModal.hidden=false;els.exportBackupBtn.onclick=els.exportBackupModal.onclick=exportBackup;els.importBackupBtn.onclick=()=>chooseImport("merge");els.importMergeBtn.onclick=()=>chooseImport("merge");els.importReplaceBtn.onclick=()=>chooseImport("replace");els.replaceDriveBtn.onclick=async()=>{if(!confirm("¿Reemplazar la copia de Drive con este respaldo local?"))return;try{await driveSync.replaceRemote();els.replaceDriveBtn.hidden=true;toast("Copia de Drive reemplazada")}catch(error){toast(error.message)}};els.restoreInput.onchange=()=>{const f=els.restoreInput.files[0];if(f)importBackupFile(f);els.restoreInput.value=""};
+    els.driveActionBtn.onclick=driveAction;els.driveDisconnectBtn.onclick=()=>{driveSync.disconnect();toast("Google Drive desconectado; los datos locales se conservaron")};window.addEventListener("online",()=>{if(driveSync.hasToken())driveSync.syncNow().catch(()=>{});else driveSync.localChanged()});window.addEventListener("offline",()=>updateDriveState("offline"));
     ["pointerdown","mousedown","touchstart"].forEach(type=>els.studyToolbar.addEventListener(type,preserveSelection,{passive:false}));
     els.studyToolbar.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")captureSelection()});
     els.highlightBtn.onclick=highlightAction;els.zoomBtn.onclick=cycleZoom;els.viewerBtn.onclick=toggleViewer;els.indexBtn.onclick=toggleIndex;els.fullscreenBtn.onclick=enterFullscreen;els.fullscreenExit.onclick=()=>document.exitFullscreen();

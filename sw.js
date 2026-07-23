@@ -1,12 +1,13 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v044-1";
+const CACHE_VERSION = "biblioteca-lbt-v045-1";
 const CORE = [
   "./",
   "./index.html",
-  "./styles.css?v=0.4.4",
-  "./js/data.js?v=0.4.4",
-  "./js/db.js?v=0.4.4",
-  "./js/app.js?v=0.4.4",
+  "./styles.css?v=0.4.5",
+  "./js/data.js?v=0.4.5",
+  "./js/db.js?v=0.4.5",
+  "./js/sync.js?v=0.4.5",
+  "./js/app.js?v=0.4.5",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./privacy.html",
