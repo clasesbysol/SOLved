@@ -203,6 +203,11 @@
     document.querySelectorAll(".highlightable").forEach(b=>b.classList.toggle("selection-ready",pieces.some(p=>p.blockId===b.dataset.blockId)));
     updateHighlightButton();
   }
+  function preserveSelection(event){
+    captureSelection();
+    if(event?.type==="mousedown"||(event?.type==="pointerdown"&&event.pointerType!=="touch"))event.preventDefault();
+  }
+  function captureSelectionSoon(){setTimeout(captureSelection,0)}
   function updateHighlightButton(){
     const removing=!!activeHighlightId;els.highlightLabel.textContent=removing?"Quitar resaltado":"Resaltar";els.highlightBtn.classList.toggle("active",removing);
     const total=Array.isArray(pendingSelection)?pendingSelection.reduce((n,p)=>n+p.exact.length,0):0;
@@ -218,7 +223,20 @@
     for(const piece of pendingSelection){const h={id:uuid(),subjectId:currentSubject.id,studyBlock:els.studyBlock.value,tab:"summary",...piece,color:"yellow",contentVersion:CONTENT_VERSION,createdAt:stamp,updatedAt:stamp};highlights.push(h);await persist("highlights",h)}
     pendingSelection=null;window.getSelection()?.removeAllRanges();document.querySelectorAll(".selection-ready").forEach(b=>b.classList.remove("selection-ready"));updateHighlightButton();applyAllHighlights();toast("Resaltado guardado");
   }
-  function resolveRange(h,text){if(text.slice(h.start,h.end)===h.exact)return {start:h.start,end:h.end};const first=text.indexOf(h.exact);if(first>=0&&text.indexOf(h.exact,first+1)<0)return {start:first,end:first+h.exact.length};return null}
+  function resolveRange(h,text){
+    if(text.slice(h.start,h.end)===h.exact)return {start:h.start,end:h.end};
+    const matches=[];let start=text.indexOf(h.exact);
+    while(start>=0){
+      const end=start+h.exact.length;
+      const prefix=h.prefix&&text.slice(Math.max(0,start-h.prefix.length),start)===h.prefix;
+      const suffix=h.suffix&&text.slice(end,end+h.suffix.length)===h.suffix;
+      matches.push({start,end,anchors:Number(prefix)+Number(suffix),distance:Math.abs(start-Number(h.start||0))});
+      start=text.indexOf(h.exact,start+1);
+    }
+    if(!matches.length)return null;
+    matches.sort((a,b)=>b.anchors-a.anchors||a.distance-b.distance);
+    return {start:matches[0].start,end:matches[0].end};
+  }
   function applyAllHighlights(){
     document.querySelectorAll(".highlightable").forEach(block=>{
       const base=block.__baseText||block.textContent;block.__baseText=base;
@@ -251,7 +269,7 @@
 
   function openEventModal(date=""){els.eventSubject.innerHTML=SUBJECTS.map(s=>`<option value="${s.id}" ${currentSubject?.id===s.id?"selected":""}>${safe(s.name)}</option>`).join("");els.eventDate.value=date||new Date().toISOString().slice(0,10);els.eventTitle.value="";els.eventNote.value="";els.eventModal.hidden=false}
   function openCoursesModal(){els.courseChecks.innerHTML=SUBJECTS.map(s=>`<label class="course-check" style="--hue:${s.hue}"><input type="checkbox" value="${s.id}" ${settings.currentIds.includes(s.id)?"checked":""}><span class="dot"></span><span><strong style="display:block;font-size:11px">${safe(s.name)}</strong><small style="color:var(--muted);font-size:9px">${s.term}.º cuatrimestre</small></span></label>`).join("");els.coursesModal.hidden=false}
-  async function exportBackup(){const payload=await DB.exportAll(),blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`biblioteca-lbt-respaldo-v043-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast("Respaldo completo exportado")}
+  async function exportBackup(){const payload=await DB.exportAll(),blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`biblioteca-lbt-respaldo-v044-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast("Respaldo completo exportado")}
   function chooseImport(mode){restoreMode=mode;els.restoreInput.click()}
   async function importBackupFile(file){try{const text=await file.text(),payload=JSON.parse(text);await DB.importAll(payload,restoreMode);await loadData();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();closeModals();toast(restoreMode==="replace"?"Respaldo restaurado":"Respaldo combinado")}catch(e){console.error(e);toast("El archivo no es un respaldo válido")}}
   function closeModals(){document.querySelectorAll(".modal-backdrop").forEach(m=>m.hidden=true)}
@@ -270,8 +288,10 @@
     els.backStudy.onclick=()=>setPage("dashboard");els.studyStatus.onchange=async()=>{await saveSubjectState(currentSubject.id,{status:els.studyStatus.value});renderDashboard()};els.studyTabs.querySelectorAll(".tab").forEach(t=>t.onclick=async()=>{currentTab=t.dataset.tab;settings.lastTab=currentTab;await saveSettings();els.studyTabs.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===t));renderStudy()});els.studyBlock.onchange=async()=>{settings.lastBlock=els.studyBlock.value;await saveSettings();renderStudy()};
     els.themeBtn.onclick=async()=>{settings.theme=settings.theme==="light"?"dark":"light";applyTheme();await saveSettings()};els.globalSearch.oninput=e=>{if(e.target.value.trim())filterPlan(e.target.value);else if(settings.lastPage==="subjects")renderPlan()};
     els.backupBtn.onclick=()=>els.backupModal.hidden=false;els.exportBackupBtn.onclick=els.exportBackupModal.onclick=exportBackup;els.importBackupBtn.onclick=()=>chooseImport("merge");els.importMergeBtn.onclick=()=>chooseImport("merge");els.importReplaceBtn.onclick=()=>chooseImport("replace");els.restoreInput.onchange=()=>{const f=els.restoreInput.files[0];if(f)importBackupFile(f);els.restoreInput.value=""};
-    els.highlightBtn.onmousedown=e=>e.preventDefault();els.highlightBtn.onclick=highlightAction;els.zoomBtn.onclick=cycleZoom;els.viewerBtn.onclick=toggleViewer;els.indexBtn.onclick=toggleIndex;els.fullscreenBtn.onclick=enterFullscreen;els.fullscreenExit.onclick=()=>document.exitFullscreen();
-    document.addEventListener("selectionchange",captureSelection);els.studyBody.addEventListener("pointerup",()=>setTimeout(captureSelection,0));els.studyBody.addEventListener("keyup",e=>{if(e.shiftKey)setTimeout(captureSelection,0)});els.studyBody.onclick=e=>{if(currentTab==="summary"&&!e.target.closest("mark.study-highlight")&&!window.getSelection()?.toString()){activeHighlightId=null;updateHighlightButton();document.querySelectorAll("mark.study-highlight").forEach(m=>m.classList.remove("active"));document.querySelectorAll(".selection-ready").forEach(b=>b.classList.remove("selection-ready"))}};
+    ["pointerdown","mousedown","touchstart"].forEach(type=>els.studyToolbar.addEventListener(type,preserveSelection,{passive:false}));
+    els.studyToolbar.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")captureSelection()});
+    els.highlightBtn.onclick=highlightAction;els.zoomBtn.onclick=cycleZoom;els.viewerBtn.onclick=toggleViewer;els.indexBtn.onclick=toggleIndex;els.fullscreenBtn.onclick=enterFullscreen;els.fullscreenExit.onclick=()=>document.exitFullscreen();
+    document.addEventListener("selectionchange",captureSelection);els.studyBody.addEventListener("pointerup",captureSelectionSoon);els.studyBody.addEventListener("touchend",captureSelectionSoon);els.studyBody.addEventListener("mouseup",captureSelectionSoon);els.studyBody.addEventListener("keyup",captureSelectionSoon);els.studyBody.onclick=e=>{if(currentTab==="summary"&&!e.target.closest("mark.study-highlight")&&!window.getSelection()?.toString()){activeHighlightId=null;updateHighlightButton();document.querySelectorAll("mark.study-highlight").forEach(m=>m.classList.remove("active"))}};
     if(!document.documentElement.requestFullscreen)els.fullscreenBtn.hidden=true;
   }
   function registerPWA(){

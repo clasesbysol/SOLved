@@ -1,11 +1,12 @@
-const CACHE_VERSION = "biblioteca-lbt-v043-1";
+const CACHE_PREFIX = "biblioteca-lbt-";
+const CACHE_VERSION = "biblioteca-lbt-v044-1";
 const CORE = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./js/data.js",
-  "./js/db.js",
-  "./js/app.js",
+  "./styles.css?v=0.4.4",
+  "./js/data.js?v=0.4.4",
+  "./js/db.js?v=0.4.4",
+  "./js/app.js?v=0.4.4",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./privacy.html",
@@ -13,13 +14,13 @@ const CORE = [
 ];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(CORE)));
+  event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE_VERSION).map(key => caches.delete(key))))
+      .then(keys => Promise.all(keys.filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_VERSION).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
