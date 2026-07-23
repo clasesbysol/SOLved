@@ -1,6 +1,8 @@
 # Sincronización opcional con Google Drive
 
-Biblioteca LBT guarda siempre primero en IndexedDB. Google Drive es una copia opcional para combinar progreso entre navegadores mediante un único archivo privado de la aplicación, `biblioteca-lbt-sync-v1.json`, dentro de `appDataFolder`.
+Biblioteca LBT guarda siempre primero en IndexedDB. Google Drive es una copia opcional para combinar progreso entre navegadores. Cada instalación mantiene su propia réplica privada dentro de `appDataFolder`; todas conservan el nombre lógico `biblioteca-lbt-sync-v1.json` y se distinguen mediante `appProperties` con el `deviceId` local.
+
+Al sincronizar, la aplicación lee y combina todas las réplicas válidas, pero actualiza únicamente la réplica de su instalación. Así, dos dispositivos que parten del mismo estado pueden subir simultáneamente sin reemplazar el archivo completo del otro. Las pestañas de una misma instalación coordinan sus rondas con Web Locks y comparten una sola réplica.
 
 ## Qué guarda
 
@@ -25,3 +27,5 @@ Biblioteca LBT guarda siempre primero en IndexedDB. Google Drive es una copia op
 6. **Importar y reemplazar** cambia solo la copia local. Para reemplazar Drive hace falta una segunda confirmación explícita.
 
 Los conflictos se resuelven por `updatedAt`; las configuraciones se combinan por campo. Las eliminaciones de eventos y resaltados viajan como tombstones para que no reaparezcan desde otro dispositivo.
+
+Las réplicas antiguas sin `appProperties` se siguen leyendo para migrar datos, pero no se sobrescriben ni se eliminan automáticamente.

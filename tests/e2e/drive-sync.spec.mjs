@@ -57,7 +57,7 @@ test("@desktop descarga y combina progreso, calendario, resaltados y múltiples 
   await mockGoogle(page,files);await page.goto("/");await page.locator("#driveActionBtn").click();await expect(page.locator("#syncText")).toHaveText("Sincronizado con Drive");
   const stored=await page.evaluate(async()=>({subject:await LBT_DB.get("subjects","fisica1"),event:await LBT_DB.get("events","event-a"),highlight:await LBT_DB.get("highlights","remote-h")}));
   expect(stored.subject.progress).toBe(73);expect(stored.event.title).toBe("Parcial");expect(stored.highlight.exact).toBe("Texto");
-  const uploads=await page.evaluate(()=>window.__driveMock.uploads);expect(uploads[0].url).toContain("/files/newer");expect(uploads[0].method).toBe("PATCH");
+  const uploads=await page.evaluate(()=>window.__driveMock.uploads);expect(uploads[0].url).not.toContain("/files/newer");expect(uploads[0].method).toBe("POST");
 });
 
 test("@desktop conserva cambios ante 401 y reconecta solo mediante botón", async ({page}) => {
@@ -91,7 +91,7 @@ test("@desktop conserva la restauración autoritativa hasta una subida real", as
   await page.locator("#replaceDriveBtn").click();await expect(page.locator("#replaceDriveBtn")).toBeHidden();await expect(page.locator(".toast")).toHaveText("Copia de Drive reemplazada");
   const result=await page.evaluate(async()=>({uploads:__driveMock.uploads,downloads:__driveMock.downloads,progress:(await LBT_DB.get("subjects","fisica1")).progress}));expect(result.downloads).toEqual([]);expect(result.progress).toBe(88);
   const upload=result.uploads.at(-1),type=upload.headers["content-type"],boundary=type.split("boundary=")[1];expect(type).toMatch(/^multipart\/related; boundary=/);
-  const parts=upload.body.split(`--${boundary}`).filter(part=>part.includes("application/json"));expect(parts).toHaveLength(2);expect(JSON.parse(parts[0].split("\r\n\r\n")[1].trim())).toEqual({name:"biblioteca-lbt-sync-v1.json"});const content=JSON.parse(parts[1].split("\r\n\r\n")[1].trim());expect(content.subjects.find(x=>x.id==="fisica1").progress).toBe(88);expect(content.subjects.some(x=>x.progress===3)).toBe(false);
+  const parts=upload.body.split(`--${boundary}`).filter(part=>part.includes("application/json"));expect(parts).toHaveLength(2);const metadata=JSON.parse(parts[0].split("\r\n\r\n")[1].trim());expect(metadata.name).toBe("biblioteca-lbt-sync-v1.json");expect(metadata.appProperties).toMatchObject({protocol:"device-replica-v1"});expect(metadata.appProperties.deviceId).toBeTruthy();const content=JSON.parse(parts[1].split("\r\n\r\n")[1].trim());expect(content.subjects.find(x=>x.id==="fisica1").progress).toBe(88);expect(content.subjects.some(x=>x.progress===3)).toBe(false);
   await page.reload();await page.locator("#backupBtn").click();await expect(page.locator("#replaceDriveBtn")).toBeHidden();
 });
 

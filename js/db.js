@@ -49,6 +49,35 @@
     if(fallback){const data=fallbackData();data[store] ||= {};data[store][keyFor(store,value)]=value;saveFallback(data);return Promise.resolve(value)}
     return new Promise((res,rej)=>{const r=tx(store,"readwrite").put(value);r.onsuccess=()=>res(value);r.onerror=()=>rej(r.error)});
   }
+  function mergeSyncEnvelope(envelope,{chooseRecord,mergeSettings}){
+    if(fallback){
+      const data=fallbackData();
+      const currentSettings=data.kv?.settings;
+      data.kv ||= {};
+      data.kv.settings={key:"settings",value:mergeSettings(currentSettings?.value||{},envelope.settings),updatedAt:envelope.generatedAt};
+      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights]]){
+        data[store] ||= {};
+        for(const item of items)data[store][item.id]=chooseRecord(data[store][item.id],item);
+      }
+      saveFallback(data);return Promise.resolve();
+    }
+    return new Promise((resolve,reject)=>{
+      const transaction=db.transaction(["kv","subjects","events","highlights"],"readwrite");
+      transaction.oncomplete=()=>resolve();transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||new Error("No se pudo combinar la sincronización."));
+      const kv=transaction.objectStore("kv"),settingsRequest=kv.get("settings");
+      settingsRequest.onsuccess=()=>{
+        const settings=mergeSettings(settingsRequest.result?.value||{},envelope.settings);
+        kv.put({key:"settings",value:settings,updatedAt:settings.updatedAt||envelope.generatedAt});
+      };
+      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights]]){
+        const objectStore=transaction.objectStore(store);
+        for(const item of items){
+          const request=objectStore.get(item.id);
+          request.onsuccess=()=>objectStore.put(chooseRecord(request.result,item));
+        }
+      }
+    });
+  }
   function del(store,key){
     if(fallback){const data=fallbackData();if(data[store])delete data[store][key];saveFallback(data);return Promise.resolve()}
     return new Promise((res,rej)=>{const r=tx(store,"readwrite").delete(key);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)});
@@ -78,5 +107,5 @@
       }
     }
   }
-  window.LBT_DB={open,get,getAll,put,del,clear,exportAll,importAll,isFallback:()=>fallback,stores:STORES};
+  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,exportAll,importAll,isFallback:()=>fallback,stores:STORES};
 })();
