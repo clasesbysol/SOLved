@@ -1,0 +1,286 @@
+(function(){
+  "use strict";
+  const {SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION,CONTENT_VERSION}=window.LBT_DATA;
+  const DB=window.LBT_DB;
+  const $=id=>document.getElementById(id);
+  const els={
+    pageTitle:$("pageTitle"),crumb:$("crumb"),globalSearch:$("globalSearch"),backupBtn:$("backupBtn"),themeBtn:$("themeBtn"),restoreInput:$("restoreInput"),
+    handList:$("handList"),manageCourses:$("manageCourses"),dashboardPage:$("dashboardPage"),subjectsPage:$("subjectsPage"),calendarPage:$("calendarPage"),studyPage:$("studyPage"),
+    currentCount:$("currentCount"),currentGrid:$("currentGrid"),termSummary:$("termSummary"),miniMonthTitle:$("miniMonthTitle"),miniCalendar:$("miniCalendar"),planGrid:$("planGrid"),
+    termFilter:$("termFilter"),calendarTitle:$("calendarTitle"),calendarGrid:$("calendarGrid"),eventCountLabel:$("eventCountLabel"),studyTitle:$("studyTitle"),studyMeta:$("studyMeta"),
+    subjectMark:$("subjectMark"),studyStatus:$("studyStatus"),studyBlock:$("studyBlock"),studyTabs:$("studyTabs"),studyBody:$("studyBody"),eventModal:$("eventModal"),eventForm:$("eventForm"),
+    eventSubject:$("eventSubject"),eventDate:$("eventDate"),eventTitle:$("eventTitle"),eventNote:$("eventNote"),coursesModal:$("coursesModal"),coursesForm:$("coursesForm"),courseChecks:$("courseChecks"),
+    backupModal:$("backupModal"),manageCoursesPlan:$("manageCoursesPlan"),addEventTop:$("addEventTop"),addEventSide:$("addEventSide"),addEventCalendar:$("addEventCalendar"),
+    prevMonth:$("prevMonth"),nextMonth:$("nextMonth"),todayMonth:$("todayMonth"),backStudy:$("backStudy"),exportBackupBtn:$("exportBackup"),importBackupBtn:$("importBackup"),
+    exportBackupModal:$("exportBackupModal"),importMergeBtn:$("importMergeBtn"),importReplaceBtn:$("importReplaceBtn"),syncPill:$("syncPill"),syncText:$("syncText"),installBtn:$("installBtn"),updateBtn:$("updateBtn"),
+    studyToolbar:$("studyToolbar"),highlightBtn:$("highlightBtn"),highlightLabel:$("highlightLabel"),selectionHelp:$("selectionHelp"),indexBtn:$("indexBtn"),zoomBtn:$("zoomBtn"),viewerBtn:$("viewerBtn"),
+    fullscreenBtn:$("fullscreenBtn"),fullscreenExit:$("fullscreenExit"),previewWarning:$("previewWarning"),calendarLegend:$("calendarLegend"),correlationModal:$("correlationModal"),correlationTitle:$("correlationTitle"),correlationContent:$("correlationContent")
+  };
+  let settings={...DEFAULT_SETTINGS},subjectStates={},events=[],highlights=[];
+  let currentSubject=null,currentTab="summary",draggedId=null,activeHighlightId=null,pendingSelection=null,restoreMode="merge",deferredInstallPrompt=null,waitingWorker=null;
+  const ZOOMS=[.9,1,1.1,1.25,1.4];
+
+  function subject(id){return SUBJECTS.find(s=>s.id===id)}
+  function icon(id){return `<svg class="icon"><use href="#${id}"/></svg>`}
+  function safe(t){return String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]))}
+  function uuid(){return crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(16).slice(2)}`}
+  function nowISO(){return new Date().toISOString()}
+  function monthName(m){return new Intl.DateTimeFormat("es-AR",{month:"long"}).format(new Date(2026,m,1))}
+  function dateParts(dateStr){const d=new Date(dateStr+"T12:00:00");return {day:d.getDate(),month:new Intl.DateTimeFormat("es-AR",{month:"short"}).format(d).replace(".",""),full:new Intl.DateTimeFormat("es-AR",{day:"numeric",month:"long",year:"numeric"}).format(d)}}
+  function statusOptions(current){return Object.entries(STATUS).map(([v,l])=>`<option value="${v}" ${v===current?"selected":""}>${l}</option>`).join("")}
+  function setSaveState(type="saved",text="Guardado localmente"){
+    els.syncPill.classList.toggle("saving",type==="saving");els.syncPill.classList.toggle("error",type==="error");els.syncText.textContent=text;
+  }
+  async function persist(store,value){
+    setSaveState("saving","Guardando…");try{await DB.put(store,value);setSaveState("saved",DB.isFallback()?"Guardado local alternativo":"Guardado localmente")}catch(e){console.error(e);setSaveState("error","Error al guardar");toast("No se pudo guardar el cambio")}
+  }
+  function getSubjectState(id){return subjectStates[id]||{id,status:subject(id)?.defaultStatus||"sin_estado",progress:0,updatedAt:nowISO()}}
+  async function saveSettings(){settings.updatedAt=nowISO();await persist("kv",{key:"settings",value:settings,updatedAt:settings.updatedAt})}
+  async function saveSubjectState(id,patch){const next={...getSubjectState(id),...patch,id,updatedAt:nowISO()};subjectStates[id]=next;await persist("subjects",next);return next}
+
+  async function initialize(){
+    const versionLabel=document.getElementById("versionLabel");if(versionLabel)versionLabel.textContent=`publicación ${APP_VERSION}`;
+    const result=await DB.open();if(result.fallback)toast("IndexedDB no está disponible: se usa un guardado local alternativo");
+    await migrateV03();await loadData();bindEvents();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();
+    if(location.protocol==="file:")els.previewWarning.style.display="block";
+    setPage(settings.lastPage==="study"?"dashboard":settings.lastPage||"dashboard");
+    registerPWA();auditButtons();
+  }
+  async function migrateV03(){
+    const done=await DB.get("meta","migration-v03");if(done)return;
+    let migrated=false;
+    try{
+      const raw=localStorage.getItem("biblioteca-lbt-v03");
+      if(raw){
+        const old=JSON.parse(raw);
+        const merged={...DEFAULT_SETTINGS,theme:old.theme||"light",currentIds:Array.isArray(old.currentIds)?old.currentIds:DEFAULT_SETTINGS.currentIds,order:Array.isArray(old.order)?old.order:DEFAULT_SETTINGS.order,calendar:old.calendar||DEFAULT_SETTINGS.calendar,lastPage:old.lastPage||"dashboard"};
+        await DB.put("kv",{key:"settings",value:merged,updatedAt:nowISO()});
+        for(const s of SUBJECTS)await DB.put("subjects",{id:s.id,status:old.statuses?.[s.id]||s.defaultStatus,progress:Number(old.progress?.[s.id]||0),updatedAt:nowISO()});
+        for(const e of Array.isArray(old.events)?old.events:[])await DB.put("events",{...e,id:e.id||uuid(),updatedAt:e.updatedAt||nowISO()});
+        migrated=true;
+      }
+    }catch(e){console.warn("No se pudo migrar v0.3",e)}
+    await DB.put("meta",{key:"migration-v03",done:true,migrated,updatedAt:nowISO()});
+    if(migrated)setTimeout(()=>toast("Progreso de la versión 0.3 migrado a IndexedDB"),500);
+  }
+  async function loadData(){
+    const saved=await DB.get("kv","settings");settings={...DEFAULT_SETTINGS,...(saved?.value||{})};
+    const storedSubjects=await DB.getAll("subjects");subjectStates=Object.fromEntries(storedSubjects.map(x=>[x.id,x]));
+    for(const s of SUBJECTS)if(!subjectStates[s.id]){subjectStates[s.id]={id:s.id,status:s.defaultStatus,progress:0,updatedAt:nowISO()};await DB.put("subjects",subjectStates[s.id])}
+    events=await DB.getAll("events");highlights=await DB.getAll("highlights");
+    currentSubject=subject(settings.lastSubject)||subject("fisica1");currentTab=settings.lastTab||"summary";
+  }
+  function orderedCurrent(){const ids=[...settings.order.filter(id=>settings.currentIds.includes(id)),...settings.currentIds.filter(id=>!settings.order.includes(id))];settings.order=ids;return ids.map(subject).filter(Boolean)}
+  function setPage(page){
+    ["dashboard","subjects","calendar","study"].forEach(p=>{const el=$(p+"Page");if(el)el.hidden=p!==page});
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+    const titles={dashboard:["Vista general","Licenciatura en Biotecnología · plan completo"],subjects:["Plan y materias","Plan completo y correlatividades"],calendar:["Calendario","Fechas importantes por materia"],study:[currentSubject?.name||"Materia","Biblioteca de estudio"]};
+    els.pageTitle.textContent=titles[page][0];els.crumb.textContent=titles[page][1];settings.lastPage=page;saveSettings();
+    if(page==="dashboard")renderDashboard();if(page==="subjects")renderPlan();if(page==="calendar")renderCalendar();
+  }
+  function renderHandList(){els.handList.innerHTML=orderedCurrent().map(s=>`<button class="course-link" data-open="${s.id}" style="--hue:${s.hue}"><span class="dot"></span><span class="label"><strong>${safe(s.name)}</strong><small>${safe(STATUS[getSubjectState(s.id).status])}</small></span></button>`).join("");els.handList.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>openSubject(b.dataset.open))}
+  function eventsFor(id){return events.filter(e=>e.subjectId===id&&!e.deletedAt).sort((a,b)=>a.date.localeCompare(b.date))}
+  function renderCurrent(){
+    const list=orderedCurrent();els.currentCount.textContent=list.length;
+    if(!list.length){els.currentGrid.innerHTML=`<div class="empty-box" style="grid-column:1/-1">No hay materias a mano. Usá “Materias a mano” para elegirlas.</div>`;return}
+    els.currentGrid.innerHTML=list.map(s=>{const ev=eventsFor(s.id).filter(e=>e.date>=new Date().toISOString().slice(0,10)).slice(0,2),st=getSubjectState(s.id),p=Number(st.progress||0);return `<article class="current-card" draggable="true" data-id="${s.id}" style="--hue:${s.hue};--progress:${p}%"><div class="drag-row"><span class="drag-handle">${icon("i-grip")}</span><span>Mover</span><span class="term-tag">${s.term}.º cuatrimestre</span></div><h3>${safe(s.name)}</h3><div class="course-code">${s.code} · ${s.hours} h totales</div><div class="status-line"><span class="status-badge">${safe(STATUS[st.status])}</span></div><div class="course-date-badges">${ev.length?ev.map(e=>{const d=dateParts(e.date);return `<span class="date-badge"><strong>${d.day} ${d.month}</strong> ${safe(e.title)}</span>`}).join(""):`<span class="empty-date">Sin fechas próximas cargadas</span>`}</div><div class="progress-label"><span>Progreso personal</span><strong>${p}%</strong></div><div class="progress-track"><div class="progress-bar"></div></div><div class="range-row"><input type="range" min="0" max="100" value="${p}" data-progress="${s.id}" aria-label="Progreso de ${safe(s.name)}"></div><div class="card-actions"><button class="course-open" data-open="${s.id}">Abrir materia</button><button class="move-btn" data-move="${s.id}" data-dir="-1" title="Mover a la izquierda">${icon("i-chevron-left")}</button><button class="move-btn" data-move="${s.id}" data-dir="1" title="Mover a la derecha">${icon("i-chevron-right")}</button></div></article>`}).join("");
+    els.currentGrid.querySelectorAll("[data-progress]").forEach(r=>r.oninput=async()=>{const value=Number(r.value),card=r.closest(".current-card");card.style.setProperty("--progress",value+"%");card.querySelector(".progress-label strong").textContent=value+"%";await saveSubjectState(r.dataset.progress,{progress:value});renderTermSummary()});
+    els.currentGrid.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>openSubject(b.dataset.open));els.currentGrid.querySelectorAll("[data-move]").forEach(b=>b.onclick=()=>moveCourse(b.dataset.move,Number(b.dataset.dir)));
+    els.currentGrid.querySelectorAll(".current-card").forEach(card=>{card.ondragstart=()=>{draggedId=card.dataset.id;card.classList.add("dragging")};card.ondragend=()=>{draggedId=null;card.classList.remove("dragging");document.querySelectorAll(".drag-over").forEach(x=>x.classList.remove("drag-over"))};card.ondragover=e=>{e.preventDefault();if(draggedId!==card.dataset.id)card.classList.add("drag-over")};card.ondragleave=()=>card.classList.remove("drag-over");card.ondrop=e=>{e.preventDefault();card.classList.remove("drag-over");reorderCourse(draggedId,card.dataset.id)}})
+  }
+  async function moveCourse(id,dir){const arr=[...settings.order],i=arr.indexOf(id),j=i+dir;if(i<0||j<0||j>=arr.length)return;[arr[i],arr[j]]=[arr[j],arr[i]];settings.order=arr;await saveSettings();renderDashboard()}
+  async function reorderCourse(from,to){if(!from||from===to)return;const arr=[...settings.order],a=arr.indexOf(from),b=arr.indexOf(to);if(a<0||b<0)return;arr.splice(a,1);arr.splice(b,0,from);settings.order=arr;await saveSettings();renderDashboard()}
+  function renderEvents(targetId,limit=8){
+    const el=$(targetId),list=events.filter(e=>!e.deletedAt).sort((a,b)=>a.date.localeCompare(b.date)).filter(e=>e.date>=new Date().toISOString().slice(0,10)).slice(0,limit);
+    el.innerHTML=list.length?list.map(e=>{const s=subject(e.subjectId),d=dateParts(e.date);return `<div class="event-row" style="--hue:${s?.hue||28}"><div class="event-date"><strong>${d.day}</strong><small>${d.month}</small></div><div class="event-body"><strong>${safe(e.title)}</strong><small><span class="event-subject-chip" style="--hue:${s?.hue||28}">${safe(s?.name||"Materia")}</span> · ${d.full}</small></div><button class="event-delete" data-delete-event="${e.id}" title="Eliminar">${icon("i-trash")}</button></div>`}).join(""):`<div class="empty-box">Todavía no cargaste fechas importantes.</div>`;
+    el.querySelectorAll("[data-delete-event]").forEach(b=>b.onclick=()=>deleteEvent(b.dataset.deleteEvent));
+  }
+  async function deleteEvent(id){const e=events.find(x=>x.id===id);if(!e)return;e.deletedAt=nowISO();e.updatedAt=e.deletedAt;await persist("events",e);renderDashboard();renderCalendar()}
+  function termStats(term){const items=SUBJECTS.filter(s=>s.term===term),done=items.filter(s=>["aprobada","cursada","final_pendiente"].includes(getSubjectState(s.id).status)).length,avg=Math.round(items.reduce((a,s)=>a+Number(getSubjectState(s.id).progress||0),0)/items.length);return {items,done,avg}}
+  function renderTermSummary(){els.termSummary.innerHTML=[1,2,3,4,5,6,7,8,9,10].map(t=>{const x=termStats(t);return `<article class="term-mini"><strong>${t}.º cuatrimestre</strong><p>${x.done} de ${x.items.length} con cursada registrada · avance personal ${x.avg}%</p><div class="small-progress"><i style="--w:${x.avg}%"></i></div></article>`}).join("")}
+  function renderMiniCalendar(){const now=new Date(),year=now.getFullYear(),month=now.getMonth();els.miniMonthTitle.textContent=`${monthName(month)} ${year}`;const first=new Date(year,month,1),start=(first.getDay()+6)%7,days=new Date(year,month+1,0).getDate();let cells=["L","M","X","J","V","S","D"].map(x=>`<div class="mini-day" style="font-weight:850">${x}</div>`);for(let i=0;i<start;i++)cells.push(`<div class="mini-day"></div>`);for(let d=1;d<=days;d++){const ds=`${year}-${String(month+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`,has=events.some(e=>!e.deletedAt&&e.date===ds),today=d===now.getDate();cells.push(`<div class="mini-day ${has?"has-event":""} ${today?"today":""}">${d}</div>`)}els.miniCalendar.innerHTML=cells.join("")}
+  function renderDashboard(){renderHandList();renderCurrent();renderEvents("upcomingEvents",5);renderMiniCalendar();renderTermSummary()}
+  function coursePassed(id){return ["cursada","final_pendiente","aprobada"].includes(getSubjectState(id).status)}
+  function finalPassed(id){return getSubjectState(id).status==="aprobada"}
+  function requirementResult(id,kind){
+    const status=getSubjectState(id).status;
+    if(status==="sin_estado")return "unknown";
+    const ok=kind==="cursada"?coursePassed(id):finalPassed(id);
+    return ok?"ok":"missing";
+  }
+  function courseEligibility(s){
+    if(s.kind==="requirement")return {type:"requirement",label:"Requisito",missing:[],unknown:[]};
+    if(s.allCursadasRequired){
+      const requirements=SUBJECTS.filter(x=>x.kind!=="requirement"&&x.id!==s.id).map(x=>({id:x.id,kind:"cursada",result:requirementResult(x.id,"cursada")}));
+      const missing=requirements.filter(x=>x.result==="missing"),unknown=requirements.filter(x=>x.result==="unknown");
+      const type=missing.length?"blocked":unknown.length?"unknown":"ready";
+      const label=missing.length?`${missing.length} faltante${missing.length===1?"":"s"}${unknown.length?` · ${unknown.length} sin estado`:""}`:unknown.length?`${unknown.length} sin estado`:"Disponible";
+      return {type,label,missing,unknown};
+    }
+    const requirements=[
+      ...(s.courseReqCursadas||[]).map(id=>({id,kind:"cursada",result:requirementResult(id,"cursada")})),
+      ...(s.courseReqFinals||[]).map(id=>({id,kind:"final",result:requirementResult(id,"final")}))
+    ];
+    const missing=requirements.filter(x=>x.result==="missing"),unknown=requirements.filter(x=>x.result==="unknown");
+    const noReq=requirements.length===0;
+    const type=noReq?"free":missing.length?"blocked":unknown.length?"unknown":"ready";
+    const label=noReq?"Sin correlativas":missing.length?`${missing.length} faltante${missing.length===1?"":"s"}${unknown.length?` · ${unknown.length} sin estado`:""}`:unknown.length?`${unknown.length} sin estado`:"Podés cursar";
+    return {type,label,missing,unknown};
+  }
+  function subjectMeta(s){const pieces=[];if(s.code)pieces.push(s.code);if(s.hours)pieces.push(`${s.hours} h`);if(s.offering)pieces.push(s.offering);return pieces.join(" · ")}
+  function renderPlan(term="all"){
+    const terms=term==="all"?[1,2,3,4,5,6,7,8,9,10]:[Number(term)];
+    els.planGrid.innerHTML=terms.map(t=>{const items=SUBJECTS.filter(s=>s.term===t);return `<section class="term-panel"><div class="term-panel-head"><h2>${t}.º cuatrimestre</h2><span>${items.length} elemento${items.length===1?"":"s"}</span></div>${items.map(s=>{const e=courseEligibility(s);return `<div class="plan-course" data-correlation="${s.id}" style="--hue:${s.hue}"><span class="plan-color"></span><button class="plan-course-main" data-open="${s.id}"><strong>${safe(s.name)}</strong><small>${safe(subjectMeta(s)||"Contenido pendiente")}</small></button><span class="eligibility-pill ${e.type}">${safe(e.label)}</span><select class="status-select" data-status="${s.id}">${statusOptions(getSubjectState(s.id).status)}</select></div>`}).join("")}</section>`}).join("");
+    els.planGrid.querySelectorAll("[data-open]").forEach(b=>b.onclick=e=>{e.stopPropagation();openSubject(b.dataset.open)});
+    els.planGrid.querySelectorAll("[data-status]").forEach(sel=>sel.onchange=async e=>{e.stopPropagation();await saveSubjectState(sel.dataset.status,{status:sel.value});renderPlan(term);renderDashboard()});
+    els.planGrid.querySelectorAll("[data-correlation]").forEach(row=>row.onclick=e=>{if(e.target.closest("select")||e.target.closest("button"))return;openCorrelation(row.dataset.correlation)});
+  }
+  function renderCalendar(){
+    const {year,month}=settings.calendar;els.calendarTitle.textContent=`${monthName(month)} ${year}`;
+    const first=new Date(year,month,1),start=(first.getDay()+6)%7,days=new Date(year,month+1,0).getDate(),prevDays=new Date(year,month,0).getDate(),now=new Date();let html="";
+    for(let i=0;i<42;i++){
+      let d,cm=month,cy=year,muted=false;if(i<start){d=prevDays-start+i+1;cm=month-1;muted=true}else if(i>=start+days){d=i-start-days+1;cm=month+1;muted=true}else d=i-start+1;if(cm<0){cm=11;cy--}if(cm>11){cm=0;cy++}
+      const ds=`${cy}-${String(cm+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`,ev=events.filter(e=>!e.deletedAt&&e.date===ds),isToday=cy===now.getFullYear()&&cm===now.getMonth()&&d===now.getDate();
+      html+=`<div class="cal-cell ${muted?"muted":""} ${isToday?"today":""}"><span class="day-num">${d}</span><button class="cal-add" data-add-date="${ds}" title="Agregar fecha">${icon("i-plus")}</button><div class="cal-events">${ev.map(e=>{const s=subject(e.subjectId);return `<div class="cal-event" style="--hue:${s?.hue||28}" title="${safe(s?.name||"")}: ${safe(e.title)}">${safe(e.title)}</div>`}).join("")}</div></div>`;
+    }
+    els.calendarGrid.innerHTML=html;els.calendarGrid.querySelectorAll("[data-add-date]").forEach(b=>b.onclick=()=>openEventModal(b.dataset.addDate));renderEvents("calendarEventList",50);
+    const active=events.filter(e=>!e.deletedAt&&e.date.startsWith(`${year}-${String(month+1).padStart(2,"0")}`));
+    const ids=[...new Set(active.map(e=>e.subjectId))];
+    els.calendarLegend.innerHTML=ids.length?ids.map(id=>{const s=subject(id),count=active.filter(e=>e.subjectId===id).length;return `<div class="calendar-legend-item" style="--hue:${s?.hue||28}"><i></i><span>${safe(s?.name||"Materia")}</span><strong>${count}</strong></div>`}).join(""):`<div class="empty-box">No hay fechas en este mes.</div>`;
+    els.eventCountLabel.textContent=`${events.filter(e=>!e.deletedAt).length} cargada${events.filter(e=>!e.deletedAt).length===1?"":"s"}`;
+  }
+  async function openSubject(id){currentSubject=subject(id);if(!currentSubject)return;settings.lastSubject=id;settings.lastTab=currentTab="summary";settings.lastBlock=els.studyBlock.value="Vista integral";await saveSettings();els.studyTitle.textContent=currentSubject.name;els.studyMeta.textContent=subjectMeta(currentSubject)||`${currentSubject.term}.º cuatrimestre`;els.subjectMark.style.setProperty("--hue",currentSubject.hue);els.studyPage.style.setProperty("--hue",currentSubject.hue);els.studyStatus.innerHTML=statusOptions(getSubjectState(id).status);els.studyTabs.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.tab==="summary"));renderStudy();setPage("study")}
+  function renderStudy(){
+    const s=currentSubject,block=els.studyBlock.value;activeHighlightId=null;pendingSelection=null;updateHighlightButton();
+    const shellIds=new Set(["analisis1","biologia1","biologia2","quimica_inorganica","quimica_organica","analisis2","fisica1","biologia3","estadistica","quimica_biologica1"]);
+    const hasShell=shellIds.has(s.id);
+    const empty=`<div class="content-card zoom-target empty-study"><div class="eyebrow">${safe(block)}</div><h2>${safe(s.name)}</h2><div class="viewer-empty">${icon("i-file")}<div><strong>Materia creada, todavía vacía</strong><br><span>Acá se cargarán el resumen, glosario, tarjetas, ejercicios y mapa mental cuando empieces esta materia.</span></div></div></div>`;
+    const summarySections=hasShell?SUMMARY_BLOCKS.map(b=>`<section class="summary-section" id="section-${b.id}"><h3>${safe(b.title)}</h3><p class="highlightable" data-block-id="${s.id}:${block}:${b.id}">${safe(b.text)}</p></section>`).join(""):"";
+    const tabContent=hasShell?{
+      summary:`<div class="summary-index" id="summaryIndex" ${settings.indexVisible?"":"hidden"}><strong>Índice del resumen</strong><nav>${SUMMARY_BLOCKS.map(b=>`<a href="#section-${b.id}">${safe(b.title)}</a>`).join("")}</nav></div><div class="content-card zoom-target" id="summaryContent"><div class="eyebrow">${safe(block)}</div><h2>${safe(s.name)}</h2><p class="highlightable" data-block-id="${s.id}:${block}:intro">Texto de prueba de la herramienta de estudio. Seleccioná cualquier fragmento de este párrafo o de los apartados siguientes y tocá Resaltar.</p>${summarySections}</div>`,
+      glossary:`<div class="content-card zoom-target"><h2>Glosario</h2><p>Se generará desde el material real de la materia.</p><table class="glossary"><thead><tr><th>Término</th><th>Definición</th></tr></thead><tbody><tr><td>Contenido pendiente</td><td>No se agregan definiciones sin documentos fuente.</td></tr></tbody></table></div>`,
+      cards:`<div class="content-card zoom-target"><h2>Tarjetas</h2><p>Ejemplo funcional de la vista. Las preguntas reales se generarán a partir del resumen.</p><div class="flash" id="flash"><div class="flash-inner"><div class="flash-face"><strong>¿Dónde se guarda el progreso en la versión 0.4?</strong></div><div class="flash-face flash-back"><strong>Primero en IndexedDB y, además, puede exportarse como respaldo JSON.</strong></div></div></div></div>`,
+      exercises:`<div class="content-card zoom-target"><h2>Ejercicios</h2><p>Esta sección conservará el formato de consigna, desglose, teoría necesaria, pistas y resolución.</p><details class="exercise"><summary>Ejercicio de estructura</summary><div>La versión 0.4 prepara el apartado, pero no agrega una consigna académica inventada.</div></details></div>`,
+      map:`<div class="content-card zoom-target"><h2>Mapa mental</h2><p>Se expandirá cuando se incorporen unidades y subtemas reales.</p><div class="map"><svg class="line-svg"><path d="M155 158 C205 158,215 88,270 88 M155 158 C210 158,220 158,270 158 M155 158 C205 158,215 228,270 228" stroke="hsl(${s.hue} 45% 60%)" stroke-width="3" fill="none"/></svg><div class="node root">${safe(s.name)}</div><div class="node a">Unidad 1</div><div class="node b">Unidad 2</div><div class="node c">Integración</div></div></div>`
+    }:{summary:empty,glossary:empty,cards:empty,exercises:empty,map:empty};
+    els.studyBody.classList.toggle("no-viewer",!settings.viewerVisible);
+    els.studyBody.innerHTML=`<section class="content-pane">${tabContent[currentTab]}</section><aside class="viewer"><div class="viewer-toolbar"><strong>Material original</strong><span>visor preparado</span></div><div class="viewer-sheet zoom-target"><h3>Documentos de ${safe(s.name)}</h3><p>Los PDF, diapositivas, guías y parciales aparecerán acá, vinculados con el resumen.</p><div class="viewer-empty">${icon("i-file")}<div><strong>Sin documentos vinculados</strong><br><span>Esta zona queda lista para la carga real.</span></div></div></div></aside>`;
+    const flash=$("flash");if(flash)flash.onclick=()=>flash.classList.toggle("flipped");
+    if(currentTab==="summary")document.querySelectorAll(".highlightable").forEach(block=>block.__baseText=block.textContent);
+    applyZoom();if(currentTab==="summary"){applyAllHighlights();bindSummaryIndex()}
+    updateToolbarVisibility();
+  }
+  function bindSummaryIndex(){document.querySelectorAll(".summary-index a").forEach(a=>a.onclick=e=>{e.preventDefault();const el=document.querySelector(a.getAttribute("href"));el?.scrollIntoView({behavior:"smooth",block:"start"})})}
+  function updateToolbarVisibility(){const summary=currentTab==="summary",hasText=!!document.querySelector(".highlightable");els.highlightBtn.hidden=!summary||!hasText;els.indexBtn.hidden=!summary||!hasText;els.selectionHelp.hidden=!summary||!hasText;els.viewerBtn.classList.toggle("active",settings.viewerVisible);els.indexBtn.classList.toggle("active",settings.indexVisible)}
+  function applyStudyPreferences(){document.documentElement.style.setProperty("--study-zoom",ZOOMS[settings.zoomIndex]||1);els.zoomBtn.textContent=`Zoom ${Math.round((ZOOMS[settings.zoomIndex]||1)*100)}%`;els.viewerBtn?.classList.toggle("active",settings.viewerVisible)}
+  function applyZoom(){document.querySelectorAll(".zoom-target").forEach(el=>{el.style.zoom=ZOOMS[settings.zoomIndex]||1})}
+  async function cycleZoom(){settings.zoomIndex=(Number(settings.zoomIndex||0)+1)%ZOOMS.length;applyStudyPreferences();applyZoom();await saveSettings()}
+  async function toggleViewer(){settings.viewerVisible=!settings.viewerVisible;await saveSettings();renderStudy()}
+  async function toggleIndex(){settings.indexVisible=!settings.indexVisible;await saveSettings();const idx=$("summaryIndex");if(idx)idx.hidden=!settings.indexVisible;els.indexBtn.classList.toggle("active",settings.indexVisible)}
+
+  function textOffset(block,node,offset){
+    let total=0;const walker=document.createTreeWalker(block,NodeFilter.SHOW_TEXT);
+    while(walker.nextNode()){const n=walker.currentNode;if(n===node)return total+offset;total+=n.nodeValue.length}
+    return total;
+  }
+  function selectionPieces(range){
+    const blocks=[...document.querySelectorAll(".highlightable")].filter(block=>{try{return range.intersectsNode(block)}catch(e){return false}});
+    return blocks.map(block=>{
+      const base=block.__baseText||block.textContent;let start=0,end=base.length;
+      if(block.contains(range.startContainer))start=textOffset(block,range.startContainer,range.startOffset);
+      if(block.contains(range.endContainer))end=textOffset(block,range.endContainer,range.endOffset);
+      start=Math.max(0,Math.min(start,base.length));end=Math.max(start,Math.min(end,base.length));
+      const exact=base.slice(start,end);if(!exact.trim())return null;
+      return {blockId:block.dataset.blockId,start,end,exact,prefix:base.slice(Math.max(0,start-24),start),suffix:base.slice(end,end+24)};
+    }).filter(Boolean);
+  }
+  function captureSelection(){
+    if(currentTab!=="summary")return;
+    const sel=window.getSelection();if(!sel||sel.rangeCount===0||sel.isCollapsed)return;
+    const range=sel.getRangeAt(0);if(!els.studyBody.contains(range.commonAncestorContainer))return;
+    const pieces=selectionPieces(range);if(!pieces.length)return;
+    pendingSelection=pieces;activeHighlightId=null;
+    document.querySelectorAll(".highlightable").forEach(b=>b.classList.toggle("selection-ready",pieces.some(p=>p.blockId===b.dataset.blockId)));
+    updateHighlightButton();
+  }
+  function updateHighlightButton(){
+    const removing=!!activeHighlightId;els.highlightLabel.textContent=removing?"Quitar resaltado":"Resaltar";els.highlightBtn.classList.toggle("active",removing);
+    const total=Array.isArray(pendingSelection)?pendingSelection.reduce((n,p)=>n+p.exact.length,0):0;
+    const preview=Array.isArray(pendingSelection)?pendingSelection.map(p=>p.exact.trim()).join(" "):"";
+    els.selectionHelp.textContent=removing?"Presioná para eliminar este resaltado.":total?`Selección lista: “${preview.slice(0,38)}${preview.length>38?"…":""}”`:"Seleccioná texto dentro del resumen.";
+  }
+  async function highlightAction(){
+    if(activeHighlightId){await DB.del("highlights",activeHighlightId);highlights=highlights.filter(h=>h.id!==activeHighlightId);activeHighlightId=null;updateHighlightButton();applyAllHighlights();toast("Resaltado eliminado");return}
+    if(!Array.isArray(pendingSelection)||!pendingSelection.length){toast("Primero seleccioná una frase del resumen");return}
+    const overlap=pendingSelection.some(piece=>highlights.some(h=>!h.deletedAt&&h.subjectId===currentSubject.id&&h.blockId===piece.blockId&&Math.max(h.start,piece.start)<Math.min(h.end,piece.end)));
+    if(overlap){toast("La selección toca un resaltado existente. Quitalo antes de volver a marcar esa parte.");return}
+    const stamp=nowISO();
+    for(const piece of pendingSelection){const h={id:uuid(),subjectId:currentSubject.id,studyBlock:els.studyBlock.value,tab:"summary",...piece,color:"yellow",contentVersion:CONTENT_VERSION,createdAt:stamp,updatedAt:stamp};highlights.push(h);await persist("highlights",h)}
+    pendingSelection=null;window.getSelection()?.removeAllRanges();document.querySelectorAll(".selection-ready").forEach(b=>b.classList.remove("selection-ready"));updateHighlightButton();applyAllHighlights();toast("Resaltado guardado");
+  }
+  function resolveRange(h,text){if(text.slice(h.start,h.end)===h.exact)return {start:h.start,end:h.end};const first=text.indexOf(h.exact);if(first>=0&&text.indexOf(h.exact,first+1)<0)return {start:first,end:first+h.exact.length};return null}
+  function applyAllHighlights(){
+    document.querySelectorAll(".highlightable").forEach(block=>{
+      const base=block.__baseText||block.textContent;block.__baseText=base;
+      const records=highlights.filter(h=>!h.deletedAt&&h.subjectId===currentSubject.id&&h.blockId===block.dataset.blockId).map(h=>({h,r:resolveRange(h,base)})).filter(x=>x.r).sort((a,b)=>a.r.start-b.r.start);
+      block.textContent="";let pos=0;
+      for(const {h,r} of records){if(r.start<pos)continue;block.append(document.createTextNode(base.slice(pos,r.start)));const mark=document.createElement("mark");mark.className="study-highlight";mark.dataset.highlightId=h.id;mark.textContent=base.slice(r.start,r.end);if(h.id===activeHighlightId)mark.classList.add("active");mark.onclick=e=>{e.stopPropagation();activeHighlightId=h.id;pendingSelection=null;window.getSelection()?.removeAllRanges();document.querySelectorAll(".selection-ready").forEach(b=>b.classList.remove("selection-ready"));document.querySelectorAll("mark.study-highlight").forEach(m=>m.classList.toggle("active",m.dataset.highlightId===h.id));updateHighlightButton()};block.append(mark);pos=r.end}
+      block.append(document.createTextNode(base.slice(pos)));
+    });
+  }
+  function corrList(ids,requirement){
+    if(!ids?.length)return `<div class="corr-empty">No exige materias en esta categoría.</div>`;
+    return `<div class="corr-list">${ids.map(id=>{const s=subject(id);if(!s)return "";const result=requirementResult(id,requirement);const label=result==="ok"?"Cumplida":result==="unknown"?"Sin estado":"Falta";return `<div class="corr-item" style="--hue:${s.hue}"><i class="corr-dot"></i><div><strong>${safe(s.name)}</strong><small>${safe(STATUS[getSubjectState(id).status])}</small></div><span class="corr-check ${result}">${label}</span></div>`}).join("")}</div>`;
+  }
+  function unlockReason(target,id){
+    const reasons=[];
+    if((target.courseReqCursadas||[]).includes(id))reasons.push("su cursada aprobada habilita cursar");
+    if((target.courseReqFinals||[]).includes(id))reasons.push("su final aprobado habilita cursar");
+    if((target.finalReqFinals||[]).includes(id))reasons.push("su final aprobado habilita rendir");
+    return reasons.join(" · ");
+  }
+  function openCorrelation(id){
+    const s=subject(id);if(!s)return;const e=courseEligibility(s);
+    els.correlationTitle.textContent=s.name;
+    const allText=s.allCursadasRequired?"Para cursar exige tener aprobadas las cursadas de todas las materias del plan.":null;
+    const unlocks=SUBJECTS.filter(x=>(x.courseReqCursadas||[]).includes(id)||(x.courseReqFinals||[]).includes(id)||(x.finalReqFinals||[]).includes(id));
+    els.correlationContent.innerHTML=`<div class="correlation-source-note"><strong>Verificado con el plan de correlatividades · página ${s.sourcePage}</strong><span>“Sin estado” significa que todavía no cargaste ese dato: no se cuenta automáticamente como correlativa incumplida.</span></div><div class="correlation-summary"><div class="correlation-stat"><strong>${safe(e.label)}</strong><span>Situación calculada con los estados que cargaste.</span></div><div class="correlation-stat"><strong>${s.term}.º cuatrimestre</strong><span>${safe(s.offering||"Oferta no indicada")}</span></div><div class="correlation-stat"><strong>${safe(STATUS[getSubjectState(id).status])}</strong><span>Estado académico actual.</span></div></div>${allText?`<div class="corr-section"><h3>Para cursar</h3><div class="corr-empty">${safe(allText)}</div></div>`:`<div class="corr-section"><h3>Para cursar: cursadas aprobadas</h3>${corrList(s.courseReqCursadas,"cursada")}</div><div class="corr-section"><h3>Para cursar: finales aprobados</h3>${corrList(s.courseReqFinals,"final")}</div>`}<div class="corr-section"><h3>Para rendir el final: finales aprobados</h3>${corrList(s.finalReqFinals,"final")}</div><div class="corr-section"><h3>Esta materia interviene como correlativa en</h3>${unlocks.length?`<div class="corr-list">${unlocks.map(x=>`<div class="corr-item" style="--hue:${x.hue}"><i class="corr-dot"></i><div><strong>${safe(x.name)}</strong><small>${safe(unlockReason(x,id))}</small></div></div>`).join("")}</div>`:`<div class="corr-empty">No figura como correlativa directa de otra materia en el documento.</div>`}</div>`;
+    els.correlationModal.hidden=false;
+  }
+  async function enterFullscreen(){const shell=document.querySelector(".study-shell");if(!document.fullscreenElement){await shell.requestFullscreen()}else await document.exitFullscreen()}
+
+  function openEventModal(date=""){els.eventSubject.innerHTML=SUBJECTS.map(s=>`<option value="${s.id}" ${currentSubject?.id===s.id?"selected":""}>${safe(s.name)}</option>`).join("");els.eventDate.value=date||new Date().toISOString().slice(0,10);els.eventTitle.value="";els.eventNote.value="";els.eventModal.hidden=false}
+  function openCoursesModal(){els.courseChecks.innerHTML=SUBJECTS.map(s=>`<label class="course-check" style="--hue:${s.hue}"><input type="checkbox" value="${s.id}" ${settings.currentIds.includes(s.id)?"checked":""}><span class="dot"></span><span><strong style="display:block;font-size:11px">${safe(s.name)}</strong><small style="color:var(--muted);font-size:9px">${s.term}.º cuatrimestre</small></span></label>`).join("");els.coursesModal.hidden=false}
+  async function exportBackup(){const payload=await DB.exportAll(),blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`biblioteca-lbt-respaldo-v043-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast("Respaldo completo exportado")}
+  function chooseImport(mode){restoreMode=mode;els.restoreInput.click()}
+  async function importBackupFile(file){try{const text=await file.text(),payload=JSON.parse(text);await DB.importAll(payload,restoreMode);await loadData();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();closeModals();toast(restoreMode==="replace"?"Respaldo restaurado":"Respaldo combinado")}catch(e){console.error(e);toast("El archivo no es un respaldo válido")}}
+  function closeModals(){document.querySelectorAll(".modal-backdrop").forEach(m=>m.hidden=true)}
+  function toast(msg){document.querySelector(".toast")?.remove();const el=document.createElement("div");el.className="toast";el.textContent=msg;document.body.appendChild(el);setTimeout(()=>el.remove(),2800)}
+  function applyTheme(){document.documentElement.dataset.theme=settings.theme}
+  function filterPlan(query){const q=query.trim().toLowerCase();setPage("subjects");document.querySelectorAll(".plan-course").forEach(row=>row.hidden=q&&!row.textContent.toLowerCase().includes(q))}
+  function auditButtons(){document.querySelectorAll("button").forEach(btn=>{if(btn.hidden)return;if(!btn.onclick&&!btn.hasAttribute("data-page")&&!btn.hasAttribute("data-close")&&!btn.hasAttribute("data-page-link")&&!btn.closest("form")&&!btn.id)console.warn("Botón sin enlace explícito",btn)})}
+
+  function bindEvents(){
+    document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=()=>setPage(b.dataset.page));document.querySelectorAll("[data-page-link]").forEach(b=>b.onclick=()=>setPage(b.dataset.pageLink));document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>$(b.dataset.close).hidden=true);
+    [els.eventModal,els.coursesModal,els.backupModal,els.correlationModal].forEach(m=>m.onclick=e=>{if(e.target===m)m.hidden=true});els.manageCourses.onclick=els.manageCoursesPlan.onclick=openCoursesModal;els.addEventTop.onclick=els.addEventSide.onclick=els.addEventCalendar.onclick=()=>openEventModal();
+    els.eventForm.onsubmit=async e=>{e.preventDefault();const item={id:uuid(),subjectId:els.eventSubject.value,date:els.eventDate.value,title:els.eventTitle.value.trim(),note:els.eventNote.value.trim(),createdAt:nowISO(),updatedAt:nowISO()};events.push(item);await persist("events",item);els.eventModal.hidden=true;renderDashboard();renderCalendar();toast("Fecha guardada")};
+    els.coursesForm.onsubmit=async e=>{e.preventDefault();const ids=[...els.courseChecks.querySelectorAll("input:checked")].map(x=>x.value);settings.currentIds=ids;settings.order=[...settings.order.filter(id=>ids.includes(id)),...ids.filter(id=>!settings.order.includes(id))];await saveSettings();els.coursesModal.hidden=true;renderDashboard();toast("Materias a mano actualizadas")};
+    els.termFilter.querySelectorAll("button").forEach(b=>b.onclick=()=>{els.termFilter.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderPlan(b.dataset.term)});
+    els.prevMonth.onclick=async()=>{settings.calendar.month--;if(settings.calendar.month<0){settings.calendar.month=11;settings.calendar.year--}await saveSettings();renderCalendar()};els.nextMonth.onclick=async()=>{settings.calendar.month++;if(settings.calendar.month>11){settings.calendar.month=0;settings.calendar.year++}await saveSettings();renderCalendar()};els.todayMonth.onclick=async()=>{const d=new Date();settings.calendar={year:d.getFullYear(),month:d.getMonth()};await saveSettings();renderCalendar()};
+    els.backStudy.onclick=()=>setPage("dashboard");els.studyStatus.onchange=async()=>{await saveSubjectState(currentSubject.id,{status:els.studyStatus.value});renderDashboard()};els.studyTabs.querySelectorAll(".tab").forEach(t=>t.onclick=async()=>{currentTab=t.dataset.tab;settings.lastTab=currentTab;await saveSettings();els.studyTabs.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===t));renderStudy()});els.studyBlock.onchange=async()=>{settings.lastBlock=els.studyBlock.value;await saveSettings();renderStudy()};
+    els.themeBtn.onclick=async()=>{settings.theme=settings.theme==="light"?"dark":"light";applyTheme();await saveSettings()};els.globalSearch.oninput=e=>{if(e.target.value.trim())filterPlan(e.target.value);else if(settings.lastPage==="subjects")renderPlan()};
+    els.backupBtn.onclick=()=>els.backupModal.hidden=false;els.exportBackupBtn.onclick=els.exportBackupModal.onclick=exportBackup;els.importBackupBtn.onclick=()=>chooseImport("merge");els.importMergeBtn.onclick=()=>chooseImport("merge");els.importReplaceBtn.onclick=()=>chooseImport("replace");els.restoreInput.onchange=()=>{const f=els.restoreInput.files[0];if(f)importBackupFile(f);els.restoreInput.value=""};
+    els.highlightBtn.onmousedown=e=>e.preventDefault();els.highlightBtn.onclick=highlightAction;els.zoomBtn.onclick=cycleZoom;els.viewerBtn.onclick=toggleViewer;els.indexBtn.onclick=toggleIndex;els.fullscreenBtn.onclick=enterFullscreen;els.fullscreenExit.onclick=()=>document.exitFullscreen();
+    document.addEventListener("selectionchange",captureSelection);els.studyBody.addEventListener("pointerup",()=>setTimeout(captureSelection,0));els.studyBody.addEventListener("keyup",e=>{if(e.shiftKey)setTimeout(captureSelection,0)});els.studyBody.onclick=e=>{if(currentTab==="summary"&&!e.target.closest("mark.study-highlight")&&!window.getSelection()?.toString()){activeHighlightId=null;updateHighlightButton();document.querySelectorAll("mark.study-highlight").forEach(m=>m.classList.remove("active"));document.querySelectorAll(".selection-ready").forEach(b=>b.classList.remove("selection-ready"))}};
+    if(!document.documentElement.requestFullscreen)els.fullscreenBtn.hidden=true;
+  }
+  function registerPWA(){
+    window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstallPrompt=e;els.installBtn.hidden=false});els.installBtn.onclick=async()=>{if(!deferredInstallPrompt)return;deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;els.installBtn.hidden=true};
+    window.addEventListener("appinstalled",()=>{els.installBtn.hidden=true;toast("Aplicación instalada")});
+    if("serviceWorker" in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js",{scope:"./"}).then(reg=>{if(reg.waiting)showUpdate(reg.waiting);reg.addEventListener("updatefound",()=>{const worker=reg.installing;worker?.addEventListener("statechange",()=>{if(worker.state==="installed"&&navigator.serviceWorker.controller)showUpdate(worker)})})}).catch(e=>console.warn("Service worker",e));
+    navigator.serviceWorker?.addEventListener("controllerchange",()=>location.reload());els.updateBtn.onclick=()=>{waitingWorker?.postMessage({type:"SKIP_WAITING"})};
+  }
+  function showUpdate(worker){waitingWorker=worker;els.updateBtn.hidden=false}
+
+  initialize().catch(e=>{console.error(e);setSaveState("error","Error de inicio");toast("La aplicación no pudo iniciarse correctamente")});
+})();

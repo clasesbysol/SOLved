@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "Biblioteca LBT",
+  "short_name": "LBT",
+  "description": "Biblioteca de estudio local-first para la Licenciatura en Biotecnología.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#f59a23",
+  "lang": "es-AR",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
