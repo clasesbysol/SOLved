@@ -346,5 +346,5 @@ html[data-theme="dark"] .event-subject-chip{color:hsl(var(--hue) 75% 70%)}
 
 .correlation-source-note{display:grid;gap:4px;border:1px solid #ead99c;background:#fffaf0;border-radius:10px;padding:10px 12px;margin-bottom:12px}.correlation-source-note strong{font-size:10px;color:#76590f}.correlation-source-note span{font-size:9px;color:var(--muted);line-height:1.45}html[data-theme="dark"] .correlation-source-note{background:#2b281c;border-color:#5f5429}html[data-theme="dark"] .correlation-source-note strong{color:#e8d475}html[data-theme="dark"] .corr-check.unknown{background:#352f1c;color:#ead783}
 
-/* Publicación 0.4.3 */
+/* Publicación 0.4.4 */
 .legal-links{display:flex;gap:10px;padding:4px 8px 8px;font-size:9px}.legal-links a{color:var(--muted);text-decoration:none}.legal-links a:hover{color:var(--orange-strong);text-decoration:underline}
