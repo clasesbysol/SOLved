@@ -3,14 +3,14 @@
   const DB_VERSION=5;
   const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","notes"];
   let db=null, fallback=false;
-  const FALLBACK_KEY="biblioteca-lbt-v04-fallback";
+  const FALLBACK_KEY="biblioteca-lbt-v050-fallback",LEGACY_FALLBACK_KEY="biblioteca-lbt-v04-fallback",TRANSIENT_META=new Set(["drive-device-id","drive-authoritative-restore","drive-authoritative-cutoff","drive-preference","drive-auth-preference","drive-auth-state","locks"]);
   let memoryFallback=Object.fromEntries(STORES.map(s=>[s,{}]));
 
   function fallbackData(){
-    try{return JSON.parse(localStorage.getItem(FALLBACK_KEY))||memoryFallback;}
+    try{const current=localStorage.getItem(FALLBACK_KEY),legacy=localStorage.getItem(LEGACY_FALLBACK_KEY);if(!current&&legacy)localStorage.setItem(FALLBACK_KEY,legacy);return JSON.parse(current||legacy)||memoryFallback;}
     catch(e){return memoryFallback;}
   }
-  function saveFallback(data){memoryFallback=data;try{localStorage.setItem(FALLBACK_KEY,JSON.stringify(data));}catch(e){/* memoria de sesión */}}
+  function saveFallback(data){memoryFallback=data;try{localStorage.setItem(FALLBACK_KEY,JSON.stringify(data));}catch(e){window.dispatchEvent(new CustomEvent("lbt-fallback-error",{detail:"El almacenamiento local está lleno. Los cambios quedan sólo en memoria y pueden perderse al cerrar."}));throw new Error("No se pudo persistir el almacenamiento alternativo")}}
   function keyFor(store,value){return store==="kv"||store==="meta"?value.key:value.id;}
   function open(){
     return new Promise(resolve=>{
@@ -92,26 +92,15 @@
     if(fallback){const data=fallbackData();data[store]={};saveFallback(data);return Promise.resolve()}
     return new Promise((res,rej)=>{const r=tx(store,"readwrite").clear();r.onsuccess=()=>res();r.onerror=()=>rej(r.error)});
   }
+  const portable=(store,item)=>store!=="meta"||!TRANSIENT_META.has(item.key)&&!String(item.key||"").includes("token")&&!String(item.key||"").includes("lock");
   async function exportAll(){
-    const stores={};for(const s of STORES)stores[s]=await getAll(s);
+    const stores={};for(const s of STORES)stores[s]=(await getAll(s)).filter(item=>portable(s,item));stores.syncQueue=[];
     return {format:"biblioteca-lbt-backup",schemaVersion:DB_VERSION,appVersion:window.LBT_DATA.APP_VERSION,exportedAt:new Date().toISOString(),stores};
   }
+  function normalizeImport(payload){if(!payload||payload.format!=="biblioteca-lbt-backup"||!payload.stores||typeof payload.stores!=="object")throw new Error("Formato de respaldo inválido");const normalized={};for(const store of STORES){const input=payload.stores[store]??[];if(!Array.isArray(input))throw new Error(`Store ${store} inválida`);normalized[store]=input.filter(item=>portable(store,item)).map(item=>{if(!item||typeof item!=="object"||typeof keyFor(store,item)!=="string"||!keyFor(store,item))throw new Error(`Registro inválido en ${store}`);if(store==="contentPackages"){if(!item.data||!window.LBT_CONTENT?.validate)throw new Error("Paquete de contenido sin validador");window.LBT_CONTENT.validate(item.data)}return structuredClone(item)})}normalized.syncQueue=[];return normalized}
   async function importAll(payload,mode="merge"){
-    if(!payload||payload.format!=="biblioteca-lbt-backup"||!payload.stores)throw new Error("Formato de respaldo inválido");
-    if(mode==="replace")for(const s of STORES)await clear(s);
-    for(const s of STORES){
-      const items=Array.isArray(payload.stores[s])?payload.stores[s]:[];
-      for(const item of items){
-        if(mode==="merge"){
-          const key=keyFor(s,item),existing=await get(s,key);
-          if(existing){
-            const a=existing.updatedAt||existing.createdAt||"",b=item.updatedAt||item.createdAt||"";
-            if(a>b)continue;
-          }
-        }
-        await put(s,item);
-      }
-    }
+    const normalized=normalizeImport(payload),device=await get("meta","drive-device-id");if(fallback){const before=structuredClone(fallbackData()),next=mode==="replace"?Object.fromEntries(STORES.map(store=>[store,{}])):structuredClone(before);try{for(const store of STORES)for(const item of normalized[store]){const key=keyFor(store,item),existing=next[store]?.[key];if(mode==="merge"&&existing&&(existing.updatedAt||existing.createdAt||"")>(item.updatedAt||item.createdAt||""))continue;(next[store]||={})[key]=item}if(device)(next.meta||={})["drive-device-id"]=device;saveFallback(next);return}catch(error){memoryFallback=before;throw error}}
+    return new Promise((resolve,reject)=>{const transaction=db.transaction(STORES,"readwrite");transaction.oncomplete=()=>resolve();transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||new Error("Importación abortada"));try{if(mode==="replace")for(const store of STORES)transaction.objectStore(store).clear();for(const store of STORES)for(const item of normalized[store]){const objectStore=transaction.objectStore(store),key=keyFor(store,item);if(mode!=="merge"){objectStore.put(item);continue}const request=objectStore.get(key);request.onsuccess=()=>{const existing=request.result;if(!existing||(existing.updatedAt||existing.createdAt||"")<=(item.updatedAt||item.createdAt||""))objectStore.put(item)}}if(device)transaction.objectStore("meta").put(device)}catch(error){transaction.abort();reject(error)}})
   }
   window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,installContentPackage,exportAll,importAll,isFallback:()=>fallback,stores:STORES};
 })();

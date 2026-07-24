@@ -48,6 +48,11 @@ assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe
 assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.5.0");
 assert.ok(index.includes("v0.5.0"), "La versión visible debe ser 0.5.0");
 const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=5'));assert.ok(db.includes('"contentPackages"'));assert.ok(db.includes('"notes"'));
+assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
+assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");
+assert.ok(app.includes("flushPendingSaves"),"la actualización PWA debe vaciar notas pendientes");
+const config=await readFile("playwright.config.mjs","utf8");assert.ok(config.includes("pnpm exec http-server")&&!/\.CMD\b/i.test(config),"Playwright debe iniciar igual en Windows y Linux");
+const workflow=await readFile(".github/workflows/ci.yml","utf8");assert.ok(workflow.includes("ubuntu-latest")&&workflow.includes("playwright test --reporter=list"),"CI debe ejecutar Playwright en Linux sin retries");
 assert.ok(app.includes('"pointerdown","mousedown","touchstart"'), "Falta proteger la selección en pointer/mouse/touch");
 assert.ok(app.includes('addEventListener("touchend"'), "Falta capturar la selección al finalizar touch");
 const sync = await readFile("js/sync.js", "utf8");
