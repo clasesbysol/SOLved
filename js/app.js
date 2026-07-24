@@ -40,11 +40,15 @@
   async function saveSubjectState(id,patch){const next={...getSubjectState(id),...patch,id,updatedAt:nowISO()};subjectStates[id]=next;await persist("subjects",next);return next}
 
   async function initialize(){
+    delete document.documentElement.dataset.appReady;
     const versionLabel=document.getElementById("versionLabel");if(versionLabel)versionLabel.textContent=`publicación ${APP_VERSION}`;
     const result=await DB.open();if(result.fallback)toast("IndexedDB no está disponible: se usa un guardado local alternativo");
     await migrateV03();await loadData();driveSync=new window.LBT_SYNC.DriveSync({DB,appVersion:APP_VERSION,contentVersion:CONTENT_VERSION,onState:updateDriveState,onApplied:async()=>{await loadData();await window.LBT_NOTES?.reload();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();if(settings.lastPage==="study"&&currentSubject)renderStudy()}});await driveSync.init();await window.LBT_CONTENT.init(DB,()=>{if(currentSubject){refreshUnitSelector(currentSubject.id);renderStudy()}toast("Contenido actualizado")});const studyContext=()=>{const unit=window.LBT_CONTENT.getUnit(currentSubject?.id,els.studyUnit?.value);return {subjectId:currentSubject?.id,unitId:unit?.unitId||"legacy",tab:currentTab,contentVersion:unit?.contentVersion||"legacy"}};await window.LBT_NOTES.init(DB,driveSync,studyContext);await window.LBT_UTILS.init(DB,driveSync,studyContext,()=>SUBJECTS);els.replaceDriveBtn.hidden=!driveSync.isAuthoritativePending();bindEvents();applyTheme();applyStudyPreferences();renderDashboard();renderPlan();renderCalendar();
     if(location.protocol==="file:")els.previewWarning.style.display="block";
     setPage(settings.lastPage==="study"?"dashboard":settings.lastPage||"dashboard");
+    await new Promise(resolve=>requestAnimationFrame(resolve));
+    document.documentElement.dataset.appReady="true";
+    window.dispatchEvent(new CustomEvent("lbt-app-ready"));
     registerPWA();auditButtons();
   }
   async function migrateV03(){
