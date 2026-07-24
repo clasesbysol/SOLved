@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.5.2 local-first</title>
+  <title>Biblioteca LBT — v0.5.3 local-first</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.5.2">
+  <link rel="stylesheet" href="styles.css?v=0.5.3">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute">
@@ -34,7 +34,7 @@
 <div class="app">
   <header class="brand">
     <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.2</small></div>
+    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.3</small></div>
   </header>
 
   <header class="topbar">
@@ -66,6 +66,7 @@
       <button class="nav-btn" data-page="calendar"><svg class="icon"><use href="#i-calendar"/></svg><span>Calendario</span></button>
       <button class="nav-btn" data-page="favorites"><svg class="icon"><use href="#i-books"/></svg><span>Favoritos</span></button>
       <button class="nav-btn" data-page="review"><svg class="icon"><use href="#i-flask"/></svg><span>Repaso aleatorio</span></button>
+      <button class="nav-btn" data-page="factory" aria-label="Abrir fábrica de estudio"><svg class="icon"><use href="#i-file"/></svg><span>Fabricar resumen</span></button>
     </nav>
     <div class="side-divider"></div>
     <div class="side-head"><span>Materias a mano</span><button class="tiny-btn" id="manageCourses" title="Elegir materias"><svg class="icon" style="width:15px"><use href="#i-settings"/></svg></button></div>
@@ -104,6 +105,7 @@
 
         <aside class="dashboard-side">
           <article class="right-card weekly-panel" id="weeklyPanel"><h3>Esta semana</h3><p>Sin datos registrados</p></article>
+          <article class="right-card factory-entry"><div class="right-title"><h3>Fabricar resumen</h3><span>guía</span></div><p>Prepará una instrucción completa para transformar tus documentos con la IA que elijas.</p><button class="soft-btn" data-open-factory>Preparar solicitud</button></article>
           <article class="right-card">
             <div class="right-title"><h3>Fechas importantes</h3><button class="tiny-btn" id="addEventSide"><svg class="icon" style="width:15px"><use href="#i-plus"/></svg></button></div>
             <div class="event-list" id="upcomingEvents"></div>
@@ -172,6 +174,7 @@
 
     <section class="page utility-page" id="favoritesPage" hidden><div class="utility-content"></div></section>
     <section class="page utility-page" id="reviewPage" hidden><div class="utility-content"><div class="section-head"><div><h2>Repaso aleatorio</h2><p>Elegí el alcance y revelá cada respuesta a tu ritmo.</p></div></div><div id="reviewControls" class="review-builder"><fieldset><legend>¿Qué querés repasar?</legend><div class="review-scopes"><button type="button" data-review-scope="subject">Esta materia</button><button type="button" data-review-scope="unit">Unidad actual</button><button type="button" data-review-scope="favorites">Favoritos</button><button type="button" data-review-scope="global" class="active">Repaso global</button></div></fieldset><button type="button" id="reviewAdvancedToggle" aria-expanded="false">Opciones avanzadas</button><div id="reviewAdvanced" hidden><label>Cantidad <input id="reviewCount" type="number" min="1" max="50" value="10"></label><label>Semilla <input id="reviewSeed" type="number" value="1"></label><label>Tipos <select id="reviewType"><option value="">Todos</option><option value="card">Tarjetas</option><option value="glossary">Glosario</option><option value="formula">Fórmulas</option><option value="summary">Resumen</option><option value="exercise">Ejercicios</option></select></label><label><input id="reviewPrioritizeFavorites" type="checkbox"> Priorizar favoritos</label><label><input id="reviewPrioritizeDifficult" type="checkbox"> Priorizar difíciles</label></div><p id="reviewScopeSummary">Contenido publicado de todas las materias.</p><button class="primary-btn" id="startReview">Crear repaso</button></div><div id="reviewDeck"></div></div></section>
+    <section class="page utility-page" id="factoryPage" hidden><div class="utility-content factory-page" id="summaryFactory"></div></section>
 
     <section class="study-page" id="studyPage" hidden>
       <div class="study-shell">
@@ -196,6 +199,7 @@
           <button class="tool-btn" id="contentUpdateBtn">Actualizar contenido</button>
           <button class="tool-btn" id="timerBtn">Temporizador</button>
           <button class="tool-btn" id="readingBtn">Modo lectura</button>
+          <button class="tool-btn" id="factoryFromStudy" aria-label="Abrir fábrica de estudio">Fabricar resumen</button>
           <span class="selection-help" id="selectionHelp">Seleccioná texto dentro del resumen.</span>
           <div class="toolbar-spacer"></div>
           <button class="tool-btn" id="indexBtn" title="Mostrar u ocultar índice">Índice</button>
@@ -259,12 +263,13 @@
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="js/data.js?v=0.5.2"></script>
-<script src="js/db.js?v=0.5.2"></script>
-<script src="js/sync.js?v=0.5.2"></script>
-<script src="js/content.js?v=0.5.2"></script>
-<script src="js/notes.js?v=0.5.2"></script>
-  <script src="js/utilities.js?v=0.5.2"></script>
-  <script src="js/app.js?v=0.5.2"></script>
+<script src="js/data.js?v=0.5.3"></script>
+<script src="js/db.js?v=0.5.3"></script>
+<script src="js/sync.js?v=0.5.3"></script>
+<script src="js/content.js?v=0.5.3"></script>
+<script src="js/notes.js?v=0.5.3"></script>
+<script src="js/utilities.js?v=0.5.3"></script>
+<script src="js/summary-factory.js?v=0.5.3"></script>
+<script src="js/app.js?v=0.5.3"></script>
 </body>
 </html>

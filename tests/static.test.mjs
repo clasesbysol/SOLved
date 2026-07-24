@@ -19,12 +19,12 @@ for(const path of allTextFiles.filter(path=>/\.(?:js|mjs|cjs)$/.test(path))){con
 
 const required = [
   "index.html", "styles.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
-  "js/data.js", "js/db.js", "js/sync.js", "js/content.js", "js/notes.js", "js/utilities.js", "js/app.js", "content/catalog.json", "icons/icon.svg"
+  "js/data.js", "js/db.js", "js/sync.js", "js/content.js", "js/notes.js", "js/utilities.js", "js/summary-factory.js", "js/app.js", "content/catalog.json", "icons/icon.svg"
 ];
 for (const path of required) await access(path);
 
 const index = await readFile("index.html", "utf8");
-for (const ref of ["styles.css?v=0.5.2", "manifest.webmanifest", "js/data.js?v=0.5.2", "js/db.js?v=0.5.2", "js/sync.js?v=0.5.2", "js/content.js?v=0.5.2", "js/notes.js?v=0.5.2", "js/utilities.js?v=0.5.2", "js/app.js?v=0.5.2"]) {
+for (const ref of ["styles.css?v=0.5.3", "manifest.webmanifest", "js/data.js?v=0.5.3", "js/db.js?v=0.5.3", "js/sync.js?v=0.5.3", "js/content.js?v=0.5.3", "js/notes.js?v=0.5.3", "js/utilities.js?v=0.5.3", "js/summary-factory.js?v=0.5.3", "js/app.js?v=0.5.3"]) {
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
@@ -41,12 +41,12 @@ assert.equal(manifest.start_url, "./");
 assert.equal(manifest.scope, "./");
 assert.equal(manifest.display, "standalone");
 const sw = await readFile("sw.js", "utf8");
-for (const ref of ["./index.html", "./styles.css?v=0.5.2", "./js/sync.js?v=0.5.2", "./js/content.js?v=0.5.2", "./js/notes.js?v=0.5.2", "./js/utilities.js?v=0.5.2", "./js/app.js?v=0.5.2", "./privacy.html", "./terms.html"]) {
+for (const ref of ["./index.html", "./styles.css?v=0.5.3", "./js/sync.js?v=0.5.3", "./js/content.js?v=0.5.3", "./js/notes.js?v=0.5.3", "./js/utilities.js?v=0.5.3", "./js/summary-factory.js?v=0.5.3", "./js/app.js?v=0.5.3", "./privacy.html", "./terms.html"]) {
   assert.ok(sw.includes(ref), `El service worker no precachea ${ref}`);
 }
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
-assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.5.2");
-assert.ok(index.includes("v0.5.2"), "La versión visible debe ser 0.5.2");
+assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.5.3");
+assert.ok(index.includes("v0.5.3"), "La versión visible debe ser 0.5.3");
 const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=6'));for(const store of ["contentPackages","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
 assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
 assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");
@@ -69,4 +69,5 @@ assert.ok(sync.includes('schemaVersion:3')&&sync.includes('"readingGlobal","read
 const styles=await readFile("styles.css","utf8");for(const theme of ["chalkboard","sand","soft-night","technical-blue"])assert.ok(styles.includes(`data-visual-theme="${theme}"`),`falta el tema ${theme}`);
 for(const field of ["visualTheme","subjectHueOverrides","studyIdleSeconds"])assert.ok(sync.includes(`"${field}"`),`Drive debe sincronizar ${field}`);
 assert.ok(styles.includes("--subject-hue")&&styles.includes("mark.study-highlight"),"el resaltado debe usar el matiz de la materia");
+const factory=await readFile("js/summary-factory.js","utf8");assert.ok(sync.includes('"summaryFactoryDraft"'),"Drive debe sincronizar el borrador del generador");assert.ok(factory.includes("SUMMARY_FACTORY_GUIDE")&&factory.includes("navigator.clipboard")&&factory.includes("document.execCommand"),"la guía debe ser estructurada y copiar con fallback");assert.ok(!/fetch\(|XMLHttpRequest|input[^\n]+type=["']file/i.test(factory),"Fabricar resumen no debe llamar APIs ni cargar archivos");
 console.log("Pruebas estáticas y PWA: OK");
