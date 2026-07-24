@@ -169,6 +169,7 @@
     const dynamic=currentTab==="formulas"?null:window.LBT_CONTENT.render(s.id,unitId,currentTab);if(dynamic)tabContent[currentTab]=dynamic;
     els.studyBody.classList.toggle("no-viewer",!settings.viewerVisible);
     els.studyBody.innerHTML=`<section class="content-pane">${tabContent[currentTab]}</section><aside class="viewer"><div class="viewer-toolbar"><strong>Material original</strong><span>visor preparado</span></div><div class="viewer-sheet zoom-target"><h3>Documentos de ${safe(s.name)}</h3><p>Los PDF, diapositivas, guías y parciales aparecerán acá, vinculados con el resumen.</p><div class="viewer-empty">${icon("i-file")}<div><strong>Sin documentos vinculados</strong><br><span>Esta zona queda lista para la carga real.</span></div></div></div></aside>`;
+    const pane=els.studyBody.querySelector(".content-pane");if(pane&&!pane.querySelector(".notes-layer")){const layer=document.createElement("div");layer.className="notes-layer";layer.setAttribute("aria-label","Notas de estudio");pane.append(layer)}
     const flash=$("flash");if(flash)flash.onclick=()=>flash.classList.toggle("flipped");
     window.LBT_CONTENT.bind(els.studyBody);window.LBT_NOTES.render();window.LBT_UTILS?.applyReading(currentSubject?.id);
     document.querySelectorAll("[data-formula-favorite]").forEach(button=>button.onclick=()=>window.LBT_UTILS.addBookmark({subjectId:s.id,unitId,contentType:"formula",targetId:button.dataset.formulaFavorite,title:button.closest("article").querySelector("h3").textContent},"default-1"));

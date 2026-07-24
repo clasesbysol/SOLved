@@ -61,4 +61,9 @@ assert.ok(sync.includes("google.accounts.oauth2.initTokenClient"), "Falta initTo
 assert.ok(sync.includes("https://www.googleapis.com/auth/drive.appdata"), "El scope debe ser drive.appdata");
 assert.ok(!/client[_ -]?secret/i.test(sync), "No debe existir Client Secret");
 assert.ok(!/localStorage|sessionStorage/.test(sync), "El token no debe persistirse en almacenamiento web");
+const notes=await readFile("js/notes.js","utf8");
+for(const event of ["pointerdown","pointermove","pointerup","pointercancel","lostpointercapture"])assert.ok(notes.includes(`"${event}"`),`notas debe manejar ${event}`);
+assert.ok(app.includes('className="notes-layer"'),"la vista de estudio debe crear una capa exclusiva de notas");
+assert.ok(notes.includes("xRatio")&&notes.includes("documentY")&&notes.includes("offsetX")&&notes.includes("offsetY"),"falta el modelo documental de posición");
+assert.ok(sync.includes('schemaVersion:3')&&sync.includes('"readingGlobal","readingBySubject"'),"el schema Drive debe permanecer en 3 y sincronizar lectura mediante settings");
 console.log("Pruebas estáticas y PWA: OK");
