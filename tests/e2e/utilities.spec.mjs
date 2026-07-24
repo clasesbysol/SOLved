@@ -1,5 +1,5 @@
 import {test,expect} from "@playwright/test";
-const openPhysics=async page=>{await page.goto("/");await page.locator('[data-open="fisica1"]').first().click();await page.locator("#studyUnit").selectOption("demo")};
+const openPhysics=async page=>{await page.goto("/");await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");await page.locator('[data-open="fisica1"]').first().click();await page.locator("#studyUnit").selectOption("demo")};
 
 test("@desktop nota compacta, búsqueda, temporizador, lectura y fórmulas persisten",async({page})=>{
   await openPhysics(page);
@@ -12,7 +12,10 @@ test("@desktop nota compacta, búsqueda, temporizador, lectura y fórmulas persi
 });
 
 test("@mobile repaso reproducible y colecciones quedan en IndexedDB",async({page})=>{
+  await page.addInitScript(()=>{window.__appReadyEvents=0;window.addEventListener("lbt-app-ready",()=>window.__appReadyEvents++);document.addEventListener("DOMContentLoaded",()=>{window.__prematureReview=LBT_UTILS.reviewPool({count:4})},{once:true})});
   await page.goto("/");
-  const result=await page.evaluate(async()=>{const a=LBT_UTILS.reviewPool({count:4,seed:73}).map(item=>item.targetId),b=LBT_UTILS.reviewPool({count:4,seed:73}).map(item=>item.targetId);await LBT_UTILS.addBookmark(LBT_UTILS.contentItems("fisica1")[0]);return {a,b,bookmarks:await LBT_DB.getAll("bookmarks"),collections:await LBT_DB.getAll("collections")}});
+  await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");
+  const result=await page.evaluate(async()=>{const a=LBT_UTILS.reviewPool({count:4,seed:73}).map(item=>item.targetId),b=LBT_UTILS.reviewPool({count:4,seed:73}).map(item=>item.targetId);await LBT_UTILS.addBookmark(LBT_UTILS.contentItems("fisica1")[0]);return {a,b,premature:window.__prematureReview,readyEvents:window.__appReadyEvents,bookmarks:await LBT_DB.getAll("bookmarks"),collections:await LBT_DB.getAll("collections")}});
+  expect(result.premature).toEqual([]);expect(result.readyEvents).toBe(1);
   expect(result.a).toEqual(result.b);expect(new Set(result.a).size).toBe(result.a.length);expect(result.bookmarks).toHaveLength(1);expect(result.collections.length).toBeGreaterThanOrEqual(5);
 });

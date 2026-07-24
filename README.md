@@ -34,6 +34,9 @@ La matriz de materias estaba transcripta según el PDF, pero la versión 0.4.1 t
 ## Herramientas del resumen
 
 - Resaltar selección y quitar resaltado.
+- Crear notas desde el botón flotante, moverlas sobre el documento y minimizarlas como libros del color de la materia.
+- Las posiciones usan proporción horizontal y coordenada vertical de documento; se conservan al desplazar, cambiar zoom, visor o tamaño.
+- Modo lectura con preferencias globales o por materia, regla móvil y foco navegable por párrafos.
 - Zoom único.
 - Mostrar u ocultar documento original.
 - Pantalla completa.
