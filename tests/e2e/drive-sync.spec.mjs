@@ -34,7 +34,8 @@ async function openApp(page){await page.goto("/");await page.waitForFunction(()=
 
 test("@desktop funciona localmente sin Google y conserva cambios offline", async ({page,context}) => {
   await mockGoogle(page);await openApp(page);
-  await expect(page.locator("#driveActionBtn")).toHaveText("Conectar Google Drive");await expect(page.locator("#syncText")).toHaveText("Guardado localmente");expect(await page.evaluate(()=>__driveMock.tokensIssued)).toBe(0);
+  await page.evaluate(()=>LBT_DB.del("meta","drive-preference"));await page.reload();await page.waitForFunction(()=>typeof document.querySelector("#driveActionBtn")?.onclick==="function");
+  await expect(page.locator("#driveActionBtn")).toHaveText("Conectar Google Drive");await expect(page.locator("#syncText")).toHaveText("Conectar Google Drive");expect(await page.evaluate(()=>__driveMock.tokensIssued)).toBe(0);
   await context.setOffline(true);
   await page.locator('[data-progress="fisica1"]').fill("41");
   await expect(page.locator("#syncText")).toHaveText("Sin conexión");
