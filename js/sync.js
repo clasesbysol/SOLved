@@ -10,7 +10,7 @@
   const AUTHORITATIVE_RESTORE_KEY="drive-authoritative-restore";
   const AUTHORITATIVE_CUTOFF_KEY="drive-authoritative-cutoff";
   const REPLICA_PROTOCOL="device-replica-v1";
-  const SETTINGS_FIELDS=["theme","currentIds","order","calendar","lastPage","lastSubject","lastTab","lastBlock","lastUnitBySubject","zoomIndex","viewerVisible","indexVisible","readingGlobal","readingBySubject"];
+  const SETTINGS_FIELDS=["theme","visualTheme","subjectHueOverrides","studyIdleSeconds","currentIds","order","calendar","lastPage","lastSubject","lastTab","lastBlock","lastUnitBySubject","zoomIndex","viewerVisible","indexVisible","readingGlobal","readingBySubject"];
   const EPOCH="1970-01-01T00:00:00.000Z";
 
   function stable(value){

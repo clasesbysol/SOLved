@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.5.1 local-first</title>
+  <title>Biblioteca LBT — v0.5.2 local-first</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.5.1">
+  <link rel="stylesheet" href="styles.css?v=0.5.2">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute">
@@ -34,7 +34,7 @@
 <div class="app">
   <header class="brand">
     <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.1</small></div>
+    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.2</small></div>
   </header>
 
   <header class="topbar">
@@ -54,7 +54,8 @@
     <button class="soft-btn install-btn" id="installBtn" hidden><svg class="icon"><use href="#i-download"/></svg><span>Instalar</span></button>
     <button class="soft-btn update-btn" id="updateBtn" hidden><svg class="icon"><use href="#i-download"/></svg><span>Actualizar</span></button>
     <button class="soft-btn" id="backupBtn" title="Respaldo local"><svg class="icon"><use href="#i-download"/></svg><span>Respaldo</span></button>
-    <button class="icon-btn" id="themeBtn" title="Cambiar tema"><svg class="icon"><use href="#i-moon"/></svg></button>
+    <button class="icon-btn" id="themeBtn" title="Apariencia" aria-expanded="false"><svg class="icon"><use href="#i-moon"/></svg></button>
+    <aside class="utility-popover appearance-panel" id="appearancePanel" hidden><div class="panel-heading"><div><h3>Apariencia</h3><p>Elegí una atmósfera; las materias conservan su color.</p></div><button type="button" id="appearanceClose" aria-label="Cerrar">×</button></div><fieldset><legend>Modo</legend><div class="choice-row"><button type="button" data-color-mode="light">Claro</button><button type="button" data-color-mode="dark">Oscuro</button></div></fieldset><label>Tema global<select id="visualTheme"><option value="classic">Clásico</option><option value="chalkboard">Pizarra</option><option value="sand">Arena</option><option value="soft-night">Noche suave</option><option value="technical-blue">Azul técnico</option></select></label><div class="theme-preview" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" id="resetAppearance">Restaurar apariencia por defecto</button></aside>
     <input class="backup-input" type="file" id="restoreInput" accept=".json,application/json">
   </header>
 
@@ -170,7 +171,7 @@
     </section>
 
     <section class="page utility-page" id="favoritesPage" hidden><div class="utility-content"></div></section>
-    <section class="page utility-page" id="reviewPage" hidden><div class="utility-content"><div class="section-head"><div><h2>Repaso aleatorio</h2><p>Usa únicamente contenido publicado.</p></div></div><div id="reviewControls"><label>Cantidad <input id="reviewCount" type="number" min="1" max="50" value="10"></label><label>Semilla <input id="reviewSeed" type="number" value="1"></label><button id="startReview">Crear repaso</button></div><div id="reviewDeck"></div></div></section>
+    <section class="page utility-page" id="reviewPage" hidden><div class="utility-content"><div class="section-head"><div><h2>Repaso aleatorio</h2><p>Elegí el alcance y revelá cada respuesta a tu ritmo.</p></div></div><div id="reviewControls" class="review-builder"><fieldset><legend>¿Qué querés repasar?</legend><div class="review-scopes"><button type="button" data-review-scope="subject">Esta materia</button><button type="button" data-review-scope="unit">Unidad actual</button><button type="button" data-review-scope="favorites">Favoritos</button><button type="button" data-review-scope="global" class="active">Repaso global</button></div></fieldset><button type="button" id="reviewAdvancedToggle" aria-expanded="false">Opciones avanzadas</button><div id="reviewAdvanced" hidden><label>Cantidad <input id="reviewCount" type="number" min="1" max="50" value="10"></label><label>Semilla <input id="reviewSeed" type="number" value="1"></label><label>Tipos <select id="reviewType"><option value="">Todos</option><option value="card">Tarjetas</option><option value="glossary">Glosario</option><option value="formula">Fórmulas</option><option value="summary">Resumen</option><option value="exercise">Ejercicios</option></select></label><label><input id="reviewPrioritizeFavorites" type="checkbox"> Priorizar favoritos</label><label><input id="reviewPrioritizeDifficult" type="checkbox"> Priorizar difíciles</label></div><p id="reviewScopeSummary">Contenido publicado de todas las materias.</p><button class="primary-btn" id="startReview">Crear repaso</button></div><div id="reviewDeck"></div></div></section>
 
     <section class="study-page" id="studyPage" hidden>
       <div class="study-shell">
@@ -258,12 +259,12 @@
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="js/data.js?v=0.5.1"></script>
-<script src="js/db.js?v=0.5.1"></script>
-<script src="js/sync.js?v=0.5.1"></script>
-<script src="js/content.js?v=0.5.1"></script>
-<script src="js/notes.js?v=0.5.1"></script>
-  <script src="js/utilities.js?v=0.5.1"></script>
-  <script src="js/app.js?v=0.5.1"></script>
+<script src="js/data.js?v=0.5.2"></script>
+<script src="js/db.js?v=0.5.2"></script>
+<script src="js/sync.js?v=0.5.2"></script>
+<script src="js/content.js?v=0.5.2"></script>
+<script src="js/notes.js?v=0.5.2"></script>
+  <script src="js/utilities.js?v=0.5.2"></script>
+  <script src="js/app.js?v=0.5.2"></script>
 </body>
 </html>
