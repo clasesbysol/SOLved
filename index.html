@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.5.3 local-first</title>
+  <title>SOLved — Tu espacio de estudio</title>
+  <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.5.3">
+  <link rel="stylesheet" href="styles.css?v=0.6.0">
+  <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
 </head>
 <body>
+<section class="solved-reception" id="solvedReception" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h1>SOLved</h1><h2>Tu espacio de estudio</h2><div id="googleSignIn"></div><button type="button" class="soft-btn" data-continue-guest>Continuar como invitado</button><p>Como invitado podés consultar todos los contenidos publicados.<br>Tus notas y avances quedan solamente en este dispositivo.</p></div></section>
+<section class="solved-reception" id="unauthorizedAccount" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h2>Esta cuenta todavía no está habilitada.</h2><p data-unauthorized-email></p><p>Podés continuar como invitado y utilizar los contenidos públicos de SOLved.</p><button type="button" class="primary-btn" data-continue-guest>Continuar como invitado</button></div></section>
 <svg width="0" height="0" style="position:absolute">
   <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></symbol>
   <symbol id="i-books" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v18H6.5A2.5 2.5 0 0 1 4 17.5v-13A2.5 2.5 0 0 1 6.5 2Z"/></symbol>
@@ -33,14 +37,14 @@
 
 <div class="app">
   <header class="brand">
-    <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.3</small></div>
+    <img class="brand-logo" src="assets/brand/solved-icon-192.png" alt="Logo de SOLved">
+    <div><strong>SOLved</strong><small>Tu espacio de estudio</small></div>
   </header>
 
   <header class="topbar">
     <div>
       <div class="page-title" id="pageTitle">Vista general</div>
-      <div class="crumb" id="crumb">Licenciatura en Biotecnología · UNSAM</div>
+      <div class="crumb" id="crumb"></div>
     </div>
     <div class="top-spacer"></div>
     <label class="searchbox">
@@ -67,27 +71,19 @@
       <button class="nav-btn" data-page="favorites"><svg class="icon"><use href="#i-books"/></svg><span>Favoritos</span></button>
       <button class="nav-btn" data-page="review"><svg class="icon"><use href="#i-flask"/></svg><span>Repaso aleatorio</span></button>
       <button class="nav-btn" data-page="factory" aria-label="Abrir fábrica de estudio"><svg class="icon"><use href="#i-file"/></svg><span>Fabricar resumen</span></button>
+      <button class="nav-btn" data-page="career" data-owner-only hidden><svg class="icon"><use href="#i-plus"/></svg><span>Crear mi carrera</span></button>
     </nav>
     <div class="side-divider"></div>
     <div class="side-head"><span>Materias a mano</span><button class="tiny-btn" id="manageCourses" title="Elegir materias"><svg class="icon" style="width:15px"><use href="#i-settings"/></svg></button></div>
     <div class="hand-list" id="handList"></div>
-    <div class="side-bottom">
-      <div class="profile"><div class="avatar">S</div><div><strong>Sol</strong><small>Lic. en Biotecnología</small></div></div>
-    </div>
+    <div class="side-bottom"><article class="account-card" id="accountCard"><button type="button" id="accountMenuToggle" aria-label="Abrir menú de cuenta"><img alt="Logo de SOLved"><span><strong data-account-name></strong><small data-account-status></small><small data-account-email hidden></small></span></button><div class="account-menu" id="accountMenu" hidden><button type="button" id="accountSync" data-owner-only>Sincronizar</button><button type="button" id="accountBackup">Respaldo</button><button type="button" id="accountDisconnect" data-owner-only>Desconectar Drive</button><button type="button" id="accountLogout">Cerrar sesión</button><button type="button" id="accountGuest" data-owner-only>Cambiar a invitado</button></div></article></div>
   </aside>
 
   <main class="workspace">
     <section class="page" id="dashboardPage">
       <div class="dashboard-layout">
         <div>
-          <article class="hero">
-            <div>
-              <div class="eyebrow">Segundo cuatrimestre 2026</div>
-              <h1>Tu mesa de estudio</h1>
-              <p>Dejá a mano solamente las materias que estás cursando. Podés moverlas, cargar progreso y asociar fechas importantes; todo queda guardado en este navegador.</p>
-            </div>
-            <div class="hero-stat"><strong id="currentCount">3</strong><span>materias a mano</span></div>
-          </article>
+          <article class="hero"><div><h1>Mesa de estudio</h1></div><span id="currentCount" hidden>0</span></article>
 
           <section class="section">
             <div class="section-head">
@@ -97,10 +93,7 @@
             <div class="current-grid" id="currentGrid"></div>
           </section>
 
-          <section class="section">
-            <div class="section-head"><div><h2>Recorrido completo del plan</h2><p>Los diez cuatrimestres y los requisitos de suficiencia.</p></div></div>
-            <div class="term-summary" id="termSummary"></div>
-          </section>
+          <section class="section"><article class="career-progress-card" id="careerProgress"><h2>Avance de la carrera</h2><strong>Calculando…</strong></article></section>
         </div>
 
         <aside class="dashboard-side">
@@ -175,6 +168,7 @@
     <section class="page utility-page" id="favoritesPage" hidden><div class="utility-content"></div></section>
     <section class="page utility-page" id="reviewPage" hidden><div class="utility-content"><div class="section-head"><div><h2>Repaso aleatorio</h2><p>Elegí el alcance y revelá cada respuesta a tu ritmo.</p></div></div><div id="reviewControls" class="review-builder"><fieldset><legend>¿Qué querés repasar?</legend><div class="review-scopes"><button type="button" data-review-scope="subject">Esta materia</button><button type="button" data-review-scope="unit">Unidad actual</button><button type="button" data-review-scope="favorites">Favoritos</button><button type="button" data-review-scope="global" class="active">Repaso global</button></div></fieldset><button type="button" id="reviewAdvancedToggle" aria-expanded="false">Opciones avanzadas</button><div id="reviewAdvanced" hidden><label>Cantidad <input id="reviewCount" type="number" min="1" max="50" value="10"></label><label>Semilla <input id="reviewSeed" type="number" value="1"></label><label>Tipos <select id="reviewType"><option value="">Todos</option><option value="card">Tarjetas</option><option value="glossary">Glosario</option><option value="formula">Fórmulas</option><option value="summary">Resumen</option><option value="exercise">Ejercicios</option></select></label><label><input id="reviewPrioritizeFavorites" type="checkbox"> Priorizar favoritos</label><label><input id="reviewPrioritizeDifficult" type="checkbox"> Priorizar difíciles</label></div><p id="reviewScopeSummary">Contenido publicado de todas las materias.</p><button class="primary-btn" id="startReview">Crear repaso</button></div><div id="reviewDeck"></div></div></section>
     <section class="page utility-page" id="factoryPage" hidden><div class="utility-content factory-page" id="summaryFactory"></div></section>
+    <section class="page utility-page" id="careerPage" hidden><div class="utility-content career-create"><h1>Crear mi carrera</h1><p>SOLved te entrega las instrucciones necesarias. Copialas y seguí tu camino en ChatGPT.</p><ol><li>Copiar las instrucciones.</li><li>Abrir ChatGPT.</li><li>Pegar el texto.</li><li>Adjuntar el plan oficial.</li><li>Continuar el proyecto desde esa conversación.</li></ol><pre id="careerPrompt"></pre><div class="factory-actions"><button type="button" id="copyCareerPrompt">Copiar instrucciones completas</button><button type="button" class="primary-btn" id="openCareerChatGPT">Seguir mi camino en ChatGPT</button></div><p id="careerCopyStatus" role="status" aria-live="polite"></p></div></section>
 
     <section class="study-page" id="studyPage" hidden>
       <div class="study-shell">
@@ -262,14 +256,18 @@
 </div>
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
+<span class="app-version" aria-label="Versión de SOLved">v0.6.0</span>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="js/data.js?v=0.5.3"></script>
-<script src="js/db.js?v=0.5.3"></script>
-<script src="js/sync.js?v=0.5.3"></script>
-<script src="js/content.js?v=0.5.3"></script>
-<script src="js/notes.js?v=0.5.3"></script>
-<script src="js/utilities.js?v=0.5.3"></script>
-<script src="js/summary-factory.js?v=0.5.3"></script>
-<script src="js/app.js?v=0.5.3"></script>
+<script src="js/authorized-users.js?v=0.6.0"></script>
+<script src="js/auth.js?v=0.6.0"></script>
+<script src="js/data.js?v=0.6.0"></script>
+<script src="js/db.js?v=0.6.0"></script>
+<script src="js/sync.js?v=0.6.0"></script>
+<script src="js/content.js?v=0.6.0"></script>
+<script src="js/notes.js?v=0.6.0"></script>
+<script src="js/utilities.js?v=0.6.0"></script>
+<script src="js/summary-factory.js?v=0.6.0"></script>
+<script src="js/career-factory.js?v=0.6.0"></script>
+<script src="js/app.js?v=0.6.0"></script>
 </body>
 </html>

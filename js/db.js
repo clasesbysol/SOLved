@@ -1,5 +1,5 @@
 (function(){
-  const DB_NAME="biblioteca-lbt";
+  const DB_NAME=window.SOLVED_PROFILE_DB_NAME||"biblioteca-lbt";
   const DB_VERSION=6;
   const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","notes","studySessions","collections","bookmarks","activityLog"];
   let db=null, fallback=false;
@@ -106,5 +106,5 @@
     const normalized=normalizeImport(payload),device=await get("meta","drive-device-id");if(fallback){const before=structuredClone(fallbackData()),next=mode==="replace"?Object.fromEntries(STORES.map(store=>[store,{}])):structuredClone(before);try{for(const store of STORES)for(const item of normalized[store]){const key=keyFor(store,item),existing=next[store]?.[key];if(mode==="merge"&&existing&&(existing.updatedAt||existing.createdAt||"")>(item.updatedAt||item.createdAt||""))continue;(next[store]||={})[key]=item}if(device)(next.meta||={})["drive-device-id"]=device;saveFallback(next);return}catch(error){memoryFallback=before;throw error}}
     return new Promise((resolve,reject)=>{const transaction=db.transaction(STORES,"readwrite");transaction.oncomplete=()=>resolve();transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||new Error("Importación abortada"));try{if(mode==="replace")for(const store of STORES)transaction.objectStore(store).clear();for(const store of STORES)for(const item of normalized[store]){const objectStore=transaction.objectStore(store),key=keyFor(store,item);if(mode!=="merge"){objectStore.put(item);continue}const request=objectStore.get(key);request.onsuccess=()=>{const existing=request.result;if(!existing||(existing.updatedAt||existing.createdAt||"")<=(item.updatedAt||item.createdAt||""))objectStore.put(item)}}if(device)transaction.objectStore("meta").put(device)}catch(error){transaction.abort();reject(error)}})
   }
-  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,installContentPackage,exportAll,importAll,isFallback:()=>fallback,stores:STORES};
+  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,installContentPackage,exportAll,importAll,isFallback:()=>fallback,stores:STORES,dbName:DB_NAME};
 })();

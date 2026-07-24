@@ -17,6 +17,14 @@
       "contentVersion": "1.0.0",
       "status": "published",
       "path": "content/subjects/fisica1/units/demo/"
+    },
+    {
+      "subjectId": "quimica_organica",
+      "unitId": "resumen-integral",
+      "title": "Resumen integral de Química Orgánica",
+      "contentVersion": "0.6.0",
+      "status": "published",
+      "path": "content/subjects/quimica_organica/units/resumen-integral/"
     }
   ]
 }

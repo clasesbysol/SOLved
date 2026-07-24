@@ -1,0 +1,20 @@
+{
+  "packageSchemaVersion": 1,
+  "factoryVersion": "0.6.0",
+  "contentStandard": "LBT-V1",
+  "subjectId": "quimica_organica",
+  "unitId": "resumen-integral",
+  "title": "Resumen integral de Química Orgánica",
+  "contentVersion": "0.6.0",
+  "status": "published",
+  "generatedAt": "2026-07-24T00:00:00.000Z",
+  "reviewedAt": "2026-07-24T00:00:00.000Z",
+  "files": {
+    "summary": "summary.json",
+    "glossary": "glossary.json",
+    "cards": "cards.json",
+    "exercises": "exercises.json",
+    "map": "map.json",
+    "sources": "sources.json"
+  }
+}

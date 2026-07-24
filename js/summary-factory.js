@@ -54,7 +54,7 @@
 
   function render(){
     host.innerHTML=`
-      <header class="factory-hero"><div><span class="eyebrow">Guía interactiva</span><h1>Fabricar resumen</h1><p>Prepará una solicitud completa para la IA que elijas. Biblioteca LBT no envía ni procesa documentos.</p></div><div class="privacy-note"><strong>Privacidad</strong><span>El formulario sólo guarda preferencias. Adjuntá los archivos en el chat elegido; esta función no los carga ni los almacena en el repositorio.</span></div></header>
+      <header class="factory-hero"><div><span class="eyebrow">Guía interactiva</span><h1>Fabricar resumen</h1><p>Prepará una solicitud completa para la IA que elijas. SOLved no envía ni procesa documentos.</p></div><div class="privacy-note"><strong>Privacidad</strong><span>El formulario sólo guarda preferencias. Adjuntá los archivos en el chat elegido; esta función no los carga ni los almacena en el repositorio.</span></div></header>
       <div class="factory-layout"><div class="factory-builder">
         <section class="factory-card" data-section="material"><h2>1. Preparar material</h2><p>No todo es obligatorio. La IA debe inventariar lo recibido y detectar faltantes.</p><div class="factory-check-grid">${MATERIALS.map(item=>`<label><input type="checkbox" name="materials" value="${safe(item)}"> ${safe(item)}</label>`).join("")}</div></section>
         <section class="factory-card" data-section="configure"><h2>2. Configurar resumen</h2><div class="factory-form">
