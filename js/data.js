@@ -67,7 +67,8 @@
     indexVisible:false,
     lastSubject:"fisica1",
     lastTab:"summary",
-    lastBlock:"Vista integral"
+    lastBlock:"Vista integral",
+    lastUnitBySubject:{fisica1:"demo"}
   };
 
   const SUMMARY_BLOCKS = [

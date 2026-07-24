@@ -4,6 +4,14 @@
   "packages": [
     {
       "subjectId": "fisica1",
+      "unitId": "formula-map",
+      "title": "Fórmulas y mapa de prueba",
+      "contentVersion": "1.0.0",
+      "status": "published",
+      "path": "content/subjects/fisica1/units/formula-map/"
+    },
+    {
+      "subjectId": "fisica1",
       "unitId": "demo",
       "title": "Vista integral",
       "contentVersion": "1.0.0",

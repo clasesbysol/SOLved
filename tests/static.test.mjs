@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { readFile, access, readdir } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
 
-const textExtensions=new Set([".js",".mjs",".cjs",".html",".css",".md",".json",".webmanifest"]);
+const textExtensions=new Set([".js",".mjs",".cjs",".html",".css",".md",".json",".webmanifest",".yaml",".yml"]);
 const ignoredDirectories=new Set([".git","node_modules","dist","test-results",".playwright-browsers"]);
 const mojibake=/\u00c3.|\u00c2.|\u00e2(?:\u20ac|\u2026|\u20ac\u0153|\u20ac\u009d|\u20ac\u2122)|\ufffd/;
 async function sourceFiles(directory="."){
@@ -13,7 +14,8 @@ async function sourceFiles(directory="."){
   }
   return files;
 }
-for(const path of await sourceFiles())assert.doesNotMatch(await readFile(path,"utf8"),mojibake,`${path} contiene texto con codificación corrupta`);
+const allTextFiles=await sourceFiles(),decoder=new TextDecoder("utf-8",{fatal:true});for(const path of allTextFiles){const bytes=await readFile(path);let decoded;assert.doesNotThrow(()=>{decoded=decoder.decode(bytes)},`${path} no puede decodificarse como UTF-8 estricto`);assert.doesNotMatch(decoded,mojibake,`${path} contiene texto con codificación corrupta`)}
+for(const path of allTextFiles.filter(path=>/\.(?:js|mjs|cjs)$/.test(path))){const result=spawnSync(process.execPath,["--check",path],{encoding:"utf8"});assert.equal(result.status,0,`${path} no pasa node --check\n${result.stderr}`)}
 
 const required = [
   "index.html", "styles.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
