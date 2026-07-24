@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.5.3 local-first</title>
+  <title>SOLved — Tu espacio de estudio</title>
+  <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css?v=0.5.3">
 </head>
@@ -33,14 +34,14 @@
 
 <div class="app">
   <header class="brand">
-    <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.3</small></div>
+    <img class="brand-logo" src="assets/brand/solved-icon-192.png" alt="Logo de SOLved">
+    <div><strong>SOLved</strong><small>Tu espacio de estudio</small></div>
   </header>
 
   <header class="topbar">
     <div>
       <div class="page-title" id="pageTitle">Vista general</div>
-      <div class="crumb" id="crumb">Licenciatura en Biotecnología · UNSAM</div>
+      <div class="crumb" id="crumb"></div>
     </div>
     <div class="top-spacer"></div>
     <label class="searchbox">
@@ -80,14 +81,7 @@
     <section class="page" id="dashboardPage">
       <div class="dashboard-layout">
         <div>
-          <article class="hero">
-            <div>
-              <div class="eyebrow">Segundo cuatrimestre 2026</div>
-              <h1>Tu mesa de estudio</h1>
-              <p>Dejá a mano solamente las materias que estás cursando. Podés moverlas, cargar progreso y asociar fechas importantes; todo queda guardado en este navegador.</p>
-            </div>
-            <div class="hero-stat"><strong id="currentCount">3</strong><span>materias a mano</span></div>
-          </article>
+          <article class="hero"><div><h1>Mesa de estudio</h1></div><span id="currentCount" hidden>0</span></article>
 
           <section class="section">
             <div class="section-head">
@@ -97,10 +91,7 @@
             <div class="current-grid" id="currentGrid"></div>
           </section>
 
-          <section class="section">
-            <div class="section-head"><div><h2>Recorrido completo del plan</h2><p>Los diez cuatrimestres y los requisitos de suficiencia.</p></div></div>
-            <div class="term-summary" id="termSummary"></div>
-          </section>
+          <section class="section"><article class="career-progress-card" id="careerProgress"><h2>Avance de la carrera</h2><strong>Calculando…</strong></article></section>
         </div>
 
         <aside class="dashboard-side">

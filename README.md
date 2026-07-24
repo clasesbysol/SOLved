@@ -1,6 +1,6 @@
-# Biblioteca LBT — versión 0.5.3
+# SOLved — versión 0.6.0
 
-La versión 0.5.3 incorpora **Fabricar resumen**, una guía interactiva que conserva la configuración en settings y genera un prompt completo para usar con la IA elegida. La aplicación no envía archivos, no procesa documentos y no integra una API de IA.
+SOLved es tu espacio de estudio local-first. La versión 0.6.0 incorpora acceso invitado o Google autorizado, un dashboard simplificado y el resumen enriquecido importado de Química Orgánica. **Fabricar resumen** continúa generando prompts sin enviar ni procesar documentos.
 
 El panel semanal distingue el tiempo de temporizadores terminados del estudio detectado mediante interacción reciente dentro de una materia. La detección se detiene al ocultar la pestaña o superar el umbral de inactividad y usa Web Locks para que dos pestañas de la misma instalación no contabilicen simultáneamente. Los tramos terminados se guardan como actividad sincronizable, sin ampliar el esquema de IndexedDB ni el schema 3 de Drive.
 
