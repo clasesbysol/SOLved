@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Biblioteca LBT — v0.5.0 local-first</title>
+  <title>Biblioteca LBT — v0.5.1 local-first</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.5.0">
+  <link rel="stylesheet" href="styles.css?v=0.5.1">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute">
@@ -34,7 +34,7 @@
 <div class="app">
   <header class="brand">
     <div class="brand-mark">L</div>
-    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.0</small></div>
+    <div><strong>Biblioteca LBT</strong><small>local-first 0.5.1</small></div>
   </header>
 
   <header class="topbar">
@@ -47,6 +47,7 @@
       <svg class="icon"><use href="#i-search"/></svg>
       <input id="globalSearch" placeholder="Buscar materias del plan…">
     </label>
+    <div class="search-results" id="searchResults" hidden></div>
     <div class="sync-pill" id="syncPill" title="Los datos se guardan en IndexedDB"><span class="sync-dot"></span><span id="syncText">Guardado localmente</span></div>
     <button class="soft-btn drive-btn" id="driveActionBtn">Conectar Google Drive</button>
     <button class="soft-btn drive-btn" id="driveDisconnectBtn" hidden>Desconectar</button>
@@ -62,6 +63,8 @@
       <button class="nav-btn active" data-page="dashboard"><svg class="icon"><use href="#i-home"/></svg><span>Vista general</span></button>
       <button class="nav-btn" data-page="subjects"><svg class="icon"><use href="#i-books"/></svg><span>Plan y materias</span></button>
       <button class="nav-btn" data-page="calendar"><svg class="icon"><use href="#i-calendar"/></svg><span>Calendario</span></button>
+      <button class="nav-btn" data-page="favorites"><svg class="icon"><use href="#i-books"/></svg><span>Favoritos</span></button>
+      <button class="nav-btn" data-page="review"><svg class="icon"><use href="#i-flask"/></svg><span>Repaso aleatorio</span></button>
     </nav>
     <div class="side-divider"></div>
     <div class="side-head"><span>Materias a mano</span><button class="tiny-btn" id="manageCourses" title="Elegir materias"><svg class="icon" style="width:15px"><use href="#i-settings"/></svg></button></div>
@@ -99,6 +102,7 @@
         </div>
 
         <aside class="dashboard-side">
+          <article class="right-card weekly-panel" id="weeklyPanel"><h3>Esta semana</h3><p>Sin datos registrados</p></article>
           <article class="right-card">
             <div class="right-title"><h3>Fechas importantes</h3><button class="tiny-btn" id="addEventSide"><svg class="icon" style="width:15px"><use href="#i-plus"/></svg></button></div>
             <div class="event-list" id="upcomingEvents"></div>
@@ -165,6 +169,9 @@
       </div>
     </section>
 
+    <section class="page utility-page" id="favoritesPage" hidden><div class="utility-content"></div></section>
+    <section class="page utility-page" id="reviewPage" hidden><div class="utility-content"><div class="section-head"><div><h2>Repaso aleatorio</h2><p>Usa únicamente contenido publicado.</p></div></div><div id="reviewControls"><label>Cantidad <input id="reviewCount" type="number" min="1" max="50" value="10"></label><label>Semilla <input id="reviewSeed" type="number" value="1"></label><button id="startReview">Crear repaso</button></div><div id="reviewDeck"></div></div></section>
+
     <section class="study-page" id="studyPage" hidden>
       <div class="study-shell">
         <div class="study-head">
@@ -181,11 +188,13 @@
           <button class="tab" data-tab="cards">Tarjetas</button>
           <button class="tab" data-tab="exercises">Ejercicios</button>
           <button class="tab" data-tab="map">Mapa mental</button>
+          <button class="tab" data-tab="formulas">Fórmulas</button>
         </div>
         <div class="study-toolbar" id="studyToolbar">
           <button class="tool-btn" id="highlightBtn" title="Seleccioná texto y presioná Resaltar"><svg class="icon"><use href="#i-flask"/></svg><span id="highlightLabel">Resaltar</span></button>
-          <button class="tool-btn" id="newNoteBtn">Nueva nota</button>
           <button class="tool-btn" id="contentUpdateBtn">Actualizar contenido</button>
+          <button class="tool-btn" id="timerBtn">Temporizador</button>
+          <button class="tool-btn" id="readingBtn">Modo lectura</button>
           <span class="selection-help" id="selectionHelp">Seleccioná texto dentro del resumen.</span>
           <div class="toolbar-spacer"></div>
           <button class="tool-btn" id="indexBtn" title="Mostrar u ocultar índice">Índice</button>
@@ -195,10 +204,14 @@
         </div>
         <div class="preview-warning" id="previewWarning">La vista directa permite probar las funciones locales. Para instalarla y usarla offline, abrí el proyecto desde un servidor local o GitHub Pages.</div>
         <div class="study-body" id="studyBody"></div>
+        <aside class="utility-popover timer-panel" id="timerPanel" hidden></aside>
+        <aside class="utility-popover reading-panel" id="readingPanel" hidden><h3>Modo lectura</h3><label><input type="checkbox" name="narrow"> Ancho reducido</label><label><input type="checkbox" name="wideLine"> Interlineado amplio</label><label><input type="checkbox" name="large"> Fuente grande</label><label><input type="checkbox" name="hideViewer"> Ocultar visor</label><label><input type="checkbox" name="hideSecondary"> Ocultar barras secundarias</label><label><input type="checkbox" name="contrast"> Alto contraste</label><label><input type="checkbox" name="ruler"> Regla de lectura</label><label><input type="checkbox" name="focus"> Foco por párrafo</label><button onclick="this.parentElement.hidden=true">Cerrar</button></aside>
       </div>
     </section>
   </main>
 </div>
+
+<button class="floating-note-btn" id="newNoteBtn" style="position:fixed;z-index:2147483647;pointer-events:auto"><svg class="icon"><use href="#i-plus"/></svg>Nueva nota</button>
 
 <div class="modal-backdrop" id="eventModal" hidden>
   <form class="modal" id="eventForm">
@@ -245,11 +258,12 @@
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="js/data.js?v=0.5.0"></script>
-<script src="js/db.js?v=0.5.0"></script>
-<script src="js/sync.js?v=0.5.0"></script>
-<script src="js/content.js?v=0.5.0"></script>
-<script src="js/notes.js?v=0.5.0"></script>
-<script src="js/app.js?v=0.5.0"></script>
+<script src="js/data.js?v=0.5.1"></script>
+<script src="js/db.js?v=0.5.1"></script>
+<script src="js/sync.js?v=0.5.1"></script>
+<script src="js/content.js?v=0.5.1"></script>
+<script src="js/notes.js?v=0.5.1"></script>
+  <script src="js/utilities.js?v=0.5.1"></script>
+  <script src="js/app.js?v=0.5.1"></script>
 </body>
 </html>
