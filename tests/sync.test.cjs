@@ -25,11 +25,17 @@ const env=(patch={})=>({schemaVersion:1,appVersion:"0.4.5",contentVersion:"demo-
   const m=mergeEnvelopes(local,remote);assert.equal(m.subjects[0].progress,10);assert.deepEqual(m.events.map(x=>x.id),["local","remote"]);
 }
 assert.throws(()=>validateEnvelope({}),/versión/,"rechaza JSON corrupto");
-assert.throws(()=>validateEnvelope(env({schemaVersion:3})),/compatible/,"rechaza esquema desconocido");
+assert.throws(()=>validateEnvelope(env({schemaVersion:4})),/compatible/,"rechaza esquema desconocido");
 assert.deepEqual(validateEnvelope(env()).notes,[],"migra schema 1 con notes vacío");
 {
+  const stamp="2026-07-23T22:00:00Z",migrated=validateEnvelope(env({schemaVersion:2,notes:[]}));
+  for(const key of ["studySessions","collections","bookmarks","activityLog"])assert.deepEqual(migrated[key],[],`schema 2 migra ${key} como array vacío`);
+  const current=validateEnvelope(env({schemaVersion:3,studySessions:[{id:"session",status:"finished",updatedAt:stamp}],collections:[{id:"collection",updatedAt:stamp}],bookmarks:[{id:"bookmark",updatedAt:stamp}],activityLog:[{id:"activity",occurredAt:stamp,updatedAt:stamp}]}));
+  assert.equal(current.studySessions[0].id,"session");assert.equal(current.activityLog[0].id,"activity");
+}
+{
   const old=env({notes:undefined}),newer=env({schemaVersion:2,sourceDeviceId:"notes-device",notes:[{id:"note-1",text:"Nueva",updatedAt:"2026-07-23T20:00:00Z"}]});
-  const merged=mergeEnvelopes(old,newer);assert.equal(merged.schemaVersion,2);assert.equal(merged.notes[0].text,"Nueva","combina notas al migrar a schema 2");
+  const merged=mergeEnvelopes(old,newer);assert.equal(merged.schemaVersion,3);assert.equal(merged.notes[0].text,"Nueva","combina notas al migrar a schema 2");
   const tomb={id:"note-1",deletedAt:"2026-07-23T21:00:00Z",updatedAt:"2026-07-23T21:00:00Z"};assert.equal(mergeEnvelopes(newer,env({schemaVersion:2,notes:[tomb]})).notes[0].deletedAt,tomb.deletedAt,"el tombstone de nota evita que reaparezca");
 }
 assert.doesNotThrow(()=>mergeEnvelopes(env(),env({sourceDeviceId:"b"}),env({sourceDeviceId:"c"})),"combina múltiples archivos");
@@ -46,7 +52,7 @@ assert.doesNotThrow(()=>mergeEnvelopes(env(),env({sourceDeviceId:"b"}),env({sour
 (async()=>{
   const {DriveSync}=require("../js/sync.js");
   global.crypto=require("node:crypto").webcrypto;global.navigator={onLine:true};
-  const stores=Object.fromEntries(["kv","subjects","events","highlights","notes","meta"].map(x=>[x,new Map()]));
+  const stores=Object.fromEntries(["kv","subjects","events","highlights","notes","studySessions","collections","bookmarks","activityLog","meta"].map(x=>[x,new Map()]));
   const DB={get:(s,k)=>Promise.resolve(stores[s].get(k)||null),getAll:s=>Promise.resolve([...stores[s].values()]),put:(s,v)=>{stores[s].set(s==="kv"||s==="meta"?v.key:v.id,v);return Promise.resolve(v)}};
   stores.kv.set("settings",{key:"settings",value:{theme:"dark",updatedAt:"2026-01-01",fieldUpdatedAt:{theme:"2026-01-01"}},updatedAt:"2026-01-01"});
   let uploads=0,downloads=0,lastUpload=null;
@@ -68,12 +74,12 @@ assert.doesNotThrow(()=>mergeEnvelopes(env(),env({sourceDeviceId:"b"}),env({sour
   await reloaded.syncNow();assert.equal(await DB.get("subjects","fisica1"),null,"una sincronización posterior ignora réplicas anteriores al reemplazo autoritativo");
 
   const makeDB=(deviceId,seed={})=>{
-    const maps=Object.fromEntries(["kv","subjects","events","highlights","notes","meta"].map(x=>[x,new Map()]));
+    const maps=Object.fromEntries(["kv","subjects","events","highlights","notes","studySessions","collections","bookmarks","activityLog","meta"].map(x=>[x,new Map()]));
     maps.meta.set("drive-device-id",{key:"drive-device-id",value:deviceId});
     maps.kv.set("settings",{key:"settings",value:{},updatedAt:"2026-01-01T00:00:00Z"});
     for(const [store,items] of Object.entries(seed))for(const item of items)maps[store].set(item.id,item);
     const api={get:(s,k)=>Promise.resolve(maps[s].get(k)||null),getAll:s=>Promise.resolve([...maps[s].values()]),put:(s,v)=>{maps[s].set(s==="kv"||s==="meta"?v.key:v.id,v);return Promise.resolve(v)}};
-    api.mergeSyncEnvelope=async (envelope,{chooseRecord,mergeSettings})=>{const current=maps.kv.get("settings");maps.kv.set("settings",{key:"settings",value:mergeSettings(current?.value||{},envelope.settings),updatedAt:envelope.generatedAt});for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights]])for(const item of items)maps[store].set(item.id,chooseRecord(maps[store].get(item.id),item))};
+    api.mergeSyncEnvelope=async (envelope,{chooseRecord,mergeSettings})=>{const current=maps.kv.get("settings");maps.kv.set("settings",{key:"settings",value:mergeSettings(current?.value||{},envelope.settings),updatedAt:envelope.generatedAt});for(const store of ["subjects","events","highlights","notes","studySessions","collections","bookmarks","activityLog"])for(const item of envelope[store]||[])maps[store].set(item.id,chooseRecord(maps[store].get(item.id),item))};
     return {api,maps};
   };
   const grant=syncInstance=>{syncInstance.token="test-token";syncInstance.expiresAt=Date.now()+3600000};

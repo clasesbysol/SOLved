@@ -21,5 +21,6 @@ jobs:
       - run: node tests/correlations.test.mjs
       - run: node tests/static.test.mjs
       - run: node tests/sync.test.cjs
+      - run: node tests/utilities.test.cjs
       - run: pnpm exec playwright test --reporter=list
       - run: node scripts/build.mjs

@@ -1,8 +1,13 @@
-# Biblioteca LBT — versión 0.5.0
+# Biblioteca LBT — versión 0.5.1
 
 Aplicación local-first de estudio para la Licenciatura en Biotecnología.
 
 ## Cambios de esta versión
+
+- Nueva nota flotante con guardado automático y marcadores compactos por materia, unidad y pestaña.
+- Temporizador local, repaso aleatorio reproducible, favoritos y colecciones sincronizables.
+- Búsqueda global tolerante, hoja de fórmulas, modo lectura y resumen semanal local-first.
+- Las sesiones activas permanecen solo en el dispositivo; las finalizadas, colecciones, marcadores y actividad se incluyen en respaldo y Drive schema 3.
 
 - Sincronización opcional local-first mediante Google Drive `appDataFolder`.
 - IndexedDB sigue siendo la fuente inmediata y funciona sin conexión ni cuenta Google.

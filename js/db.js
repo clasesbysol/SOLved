@@ -1,7 +1,7 @@
 (function(){
   const DB_NAME="biblioteca-lbt";
-  const DB_VERSION=5;
-  const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","notes"];
+  const DB_VERSION=6;
+  const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","notes","studySessions","collections","bookmarks","activityLog"];
   let db=null, fallback=false;
   const FALLBACK_KEY="biblioteca-lbt-v050-fallback",LEGACY_FALLBACK_KEY="biblioteca-lbt-v04-fallback",TRANSIENT_META=new Set(["drive-device-id","drive-authoritative-restore","drive-authoritative-cutoff","drive-preference","drive-auth-preference","drive-auth-state","locks"]);
   let memoryFallback=Object.fromEntries(STORES.map(s=>[s,{}]));
@@ -32,6 +32,10 @@
         if(!d.objectStoreNames.contains("meta"))d.createObjectStore("meta",{keyPath:"key"});
         if(!d.objectStoreNames.contains("contentPackages"))d.createObjectStore("contentPackages",{keyPath:"id"});
         if(!d.objectStoreNames.contains("notes")){const s=d.createObjectStore("notes",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("unitId","unitId")}
+        if(!d.objectStoreNames.contains("studySessions")){const s=d.createObjectStore("studySessions",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("status","status")}
+        if(!d.objectStoreNames.contains("collections"))d.createObjectStore("collections",{keyPath:"id"});
+        if(!d.objectStoreNames.contains("bookmarks")){const s=d.createObjectStore("bookmarks",{keyPath:"id"});s.createIndex("collectionId","collectionId");s.createIndex("targetId","targetId")}
+        if(!d.objectStoreNames.contains("activityLog")){const s=d.createObjectStore("activityLog",{keyPath:"id"});s.createIndex("occurredAt","occurredAt");s.createIndex("type","type")}
       };
       req.onsuccess=()=>{db=req.result;db.onversionchange=()=>db.close();resolve({fallback:false});};
       req.onerror=()=>{fallback=true;resolve({fallback:true,error:req.error});};
@@ -57,21 +61,21 @@
       const currentSettings=data.kv?.settings;
       data.kv ||= {};
       data.kv.settings={key:"settings",value:mergeSettings(currentSettings?.value||{},envelope.settings),updatedAt:envelope.generatedAt};
-      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights],["notes",envelope.notes||[]]]){
+      for(const store of ["subjects","events","highlights","notes","studySessions","collections","bookmarks","activityLog"]){const items=envelope[store]||[];
         data[store] ||= {};
         for(const item of items)data[store][item.id]=chooseRecord(data[store][item.id],item);
       }
       saveFallback(data);return Promise.resolve();
     }
     return new Promise((resolve,reject)=>{
-      const transaction=db.transaction(["kv","subjects","events","highlights","notes"],"readwrite");
+      const syncStores=["subjects","events","highlights","notes","studySessions","collections","bookmarks","activityLog"],transaction=db.transaction(["kv",...syncStores],"readwrite");
       transaction.oncomplete=()=>resolve();transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||new Error("No se pudo combinar la sincronización."));
       const kv=transaction.objectStore("kv"),settingsRequest=kv.get("settings");
       settingsRequest.onsuccess=()=>{
         const settings=mergeSettings(settingsRequest.result?.value||{},envelope.settings);
         kv.put({key:"settings",value:settings,updatedAt:settings.updatedAt||envelope.generatedAt});
       };
-      for(const [store,items] of [["subjects",envelope.subjects],["events",envelope.events],["highlights",envelope.highlights],["notes",envelope.notes||[]]]){
+      for(const store of syncStores){const items=envelope[store]||[];
         const objectStore=transaction.objectStore(store);
         for(const item of items){
           const request=objectStore.get(item.id);
@@ -92,7 +96,7 @@
     if(fallback){const data=fallbackData();data[store]={};saveFallback(data);return Promise.resolve()}
     return new Promise((res,rej)=>{const r=tx(store,"readwrite").clear();r.onsuccess=()=>res();r.onerror=()=>rej(r.error)});
   }
-  const portable=(store,item)=>store!=="meta"||!TRANSIENT_META.has(item.key)&&!String(item.key||"").includes("token")&&!String(item.key||"").includes("lock");
+  const portable=(store,item)=>(store!=="meta"||!TRANSIENT_META.has(item.key)&&!String(item.key||"").includes("token")&&!String(item.key||"").includes("lock"))&&(store!=="studySessions"||["finished","cancelled"].includes(item.status));
   async function exportAll(){
     const stores={};for(const s of STORES)stores[s]=(await getAll(s)).filter(item=>portable(s,item));stores.syncQueue=[];
     return {format:"biblioteca-lbt-backup",schemaVersion:DB_VERSION,appVersion:window.LBT_DATA.APP_VERSION,exportedAt:new Date().toISOString(),stores};
