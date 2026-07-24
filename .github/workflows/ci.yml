@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: node factory/validators/content-validate.mjs
+      - run: node factory/validators/content-catalog.mjs
+      - run: node tests/content.test.mjs
+      - run: node tests/correlations.test.mjs
+      - run: node tests/static.test.mjs
+      - run: node tests/sync.test.cjs
+      - run: pnpm exec playwright test --reporter=list
+      - run: node scripts/build.mjs

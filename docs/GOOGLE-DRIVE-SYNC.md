@@ -10,6 +10,7 @@ Al sincronizar, la aplicación lee y combina todas las réplicas válidas, pero 
 - estado y progreso personal de materias;
 - eventos del calendario;
 - resaltados y sus eliminaciones.
+- notas y sus eliminaciones.
 
 ## Qué nunca guarda
 
@@ -29,3 +30,5 @@ Al sincronizar, la aplicación lee y combina todas las réplicas válidas, pero 
 Los conflictos se resuelven por `updatedAt`; las configuraciones se combinan por campo. Las eliminaciones de eventos y resaltados viajan como tombstones para que no reaparezcan desde otro dispositivo.
 
 Las réplicas antiguas sin `appProperties` se siguen leyendo para migrar datos, pero no se sobrescriben ni se eliminan automáticamente.
+
+La preferencia local distingue una instalación que nunca conectó Drive, una conectada que necesita reconectar y una desconectada explícitamente. No contiene credenciales: los tokens siguen viviendo solamente en memoria. Cerrar el popup o un error de Google deja la sincronización en un estado recuperable y nunca abre otra ventana automáticamente.

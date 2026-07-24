@@ -11,9 +11,9 @@ export default defineConfig({
     trace: "retain-on-failure"
   },
   webServer: {
-    command: "node_modules\\.bin\\http-server.CMD . -p 4173 -c-1",
+    command: "pnpm exec http-server . -p 4173 -c-1",
     url: "http://127.0.0.1:4173",
-    reuseExistingServer: true
+    reuseExistingServer: !process.env.CI
   },
   projects: [
     { name: "chromium", grep: /@desktop/, use: { ...devices["Desktop Chrome"] } },

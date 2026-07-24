@@ -1,0 +1,1 @@
+{"nodes":[{"id":"node-a","type":"concept","label":"Nodo A"},{"id":"node-b","type":"application","label":"Nodo B"}],"edges":[{"from":"node-a","to":"node-b","type":"applied-in"}]}

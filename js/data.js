@@ -67,7 +67,8 @@
     indexVisible:false,
     lastSubject:"fisica1",
     lastTab:"summary",
-    lastBlock:"Vista integral"
+    lastBlock:"Vista integral",
+    lastUnitBySubject:{fisica1:"demo"}
   };
 
   const SUMMARY_BLOCKS = [
@@ -81,5 +82,5 @@
     item.sourceVerified=true;
   }
 
-  window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.4.5",CONTENT_VERSION:"demo-2"};
+  window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.5.0",CONTENT_VERSION:"catalog-v1"};
 })();

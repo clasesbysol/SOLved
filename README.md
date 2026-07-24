@@ -1,4 +1,4 @@
-# Biblioteca LBT — versión 0.4.5
+# Biblioteca LBT — versión 0.5.0
 
 Aplicación local-first de estudio para la Licenciatura en Biotecnología.
 
@@ -35,15 +35,13 @@ La matriz de materias estaba transcripta según el PDF, pero la versión 0.4.1 t
 - Índice y navegación.
 - Guardado automático en IndexedDB.
 
-## Probar rápido
-
-Abrí el archivo autocontenido `biblioteca-lbt-v042-preview.html` incluido junto al ZIP.
-
 ## Probar la PWA completa
 
 1. Abrí una terminal dentro de la carpeta.
-2. Ejecutá `py -m http.server 8000`.
-3. Abrí `http://localhost:8000`.
+2. Ejecutá `pnpm install` y luego `pnpm start`.
+3. Abrí `http://localhost:4173`.
+
+La suite completa se ejecuta con `pnpm test` y el build con `pnpm build`. Playwright usa el mismo comando y puerto en Windows, Linux y CI.
 
 ## Fuente
 

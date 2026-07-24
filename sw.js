@@ -1,13 +1,16 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v045-1";
+const CACHE_VERSION = "biblioteca-lbt-v050-1";
 const CORE = [
   "./",
   "./index.html",
-  "./styles.css?v=0.4.5",
-  "./js/data.js?v=0.4.5",
-  "./js/db.js?v=0.4.5",
-  "./js/sync.js?v=0.4.5",
-  "./js/app.js?v=0.4.5",
+  "./styles.css?v=0.5.0",
+  "./js/data.js?v=0.5.0",
+  "./js/db.js?v=0.5.0",
+  "./js/sync.js?v=0.5.0",
+  "./js/content.js?v=0.5.0",
+  "./js/notes.js?v=0.5.0",
+  "./js/app.js?v=0.5.0",
+  "./content/catalog.json",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./privacy.html",
@@ -15,7 +18,7 @@ const CORE = [
 ];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(CORE)));
 });
 
 self.addEventListener("activate", event => {
@@ -57,6 +60,7 @@ self.addEventListener("fetch", event => {
     event.respondWith(networkFirst(request, "./index.html"));
     return;
   }
+  if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
 
   if (["script", "style", "worker"].includes(request.destination)) {
     event.respondWith(networkFirst(request));
