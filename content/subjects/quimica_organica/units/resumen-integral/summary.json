@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-import",
+      "title": "Resumen integral",
+      "text": "Resumen integral de Química Orgánica",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

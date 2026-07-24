@@ -1,8 +1,8 @@
 {
   "name": "biblioteca-lbt",
   "private": true,
-  "version": "0.5.3",
-  "description": "Biblioteca de estudio local-first para LBT",
+  "version": "0.6.0",
+  "description": "SOLved: biblioteca de estudio local-first",
   "scripts": {
     "start": "http-server . -p 4173 -c-1",
     "content:new": "node factory/validators/content-new.mjs",
@@ -17,6 +17,7 @@
     "@playwright/test": "^1.61.1",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
+    "cheerio": "1.1.2",
     "http-server": "^14.1.1"
   },
   "engines": {

@@ -24,7 +24,8 @@ const required = [
 for (const path of required) await access(path);
 
 const index = await readFile("index.html", "utf8");
-for (const ref of ["styles.css?v=0.5.3", "manifest.webmanifest", "js/data.js?v=0.5.3", "js/db.js?v=0.5.3", "js/sync.js?v=0.5.3", "js/content.js?v=0.5.3", "js/notes.js?v=0.5.3", "js/utilities.js?v=0.5.3", "js/summary-factory.js?v=0.5.3", "js/app.js?v=0.5.3"]) {
+const auth=await readFile("js/auth.js","utf8"),authorized=await readFile("js/authorized-users.js","utf8");assert.ok(authorized.includes('clasesbysol@gmail.com'));assert.ok(auth.includes("authorized-google")&&auth.includes("guest"));assert.ok(index.includes("Crear mi carrera")&&index.includes("Continuar como invitado"));
+for (const ref of ["styles.css?v=0.6.0", "manifest.webmanifest", "js/data.js?v=0.6.0", "js/db.js?v=0.6.0", "js/sync.js?v=0.6.0", "js/content.js?v=0.6.0", "js/notes.js?v=0.6.0", "js/utilities.js?v=0.6.0", "js/summary-factory.js?v=0.6.0", "js/app.js?v=0.6.0"]) {
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
@@ -41,12 +42,12 @@ assert.equal(manifest.start_url, "./");
 assert.equal(manifest.scope, "./");
 assert.equal(manifest.display, "standalone");
 const sw = await readFile("sw.js", "utf8");
-for (const ref of ["./index.html", "./styles.css?v=0.5.3", "./js/sync.js?v=0.5.3", "./js/content.js?v=0.5.3", "./js/notes.js?v=0.5.3", "./js/utilities.js?v=0.5.3", "./js/summary-factory.js?v=0.5.3", "./js/app.js?v=0.5.3", "./privacy.html", "./terms.html"]) {
+for (const ref of ["./index.html", "./styles.css?v=0.6.0", "./js/sync.js?v=0.6.0", "./js/content.js?v=0.6.0", "./js/notes.js?v=0.6.0", "./js/utilities.js?v=0.6.0", "./js/summary-factory.js?v=0.6.0", "./js/app.js?v=0.6.0", "./privacy.html", "./terms.html"]) {
   assert.ok(sw.includes(ref), `El service worker no precachea ${ref}`);
 }
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
-assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.5.3");
-assert.ok(index.includes("v0.5.3"), "La versión visible debe ser 0.5.3");
+assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.6.0");
+assert.ok(index.includes("v0.6.0"), "La versión visible debe ser 0.6.0");
 const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=6'));for(const store of ["contentPackages","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
 assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
 assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");

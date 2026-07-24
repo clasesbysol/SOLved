@@ -7,13 +7,14 @@ export default defineConfig({
   reporter: "line",
   use: {
     baseURL: "http://127.0.0.1:4173",
+    storageState: "tests/guest-storage-state.json",
     serviceWorkers: "block",
     trace: "retain-on-failure"
   },
   webServer: {
     command: "pnpm exec http-server . -p 4173 -c-1",
     url: "http://127.0.0.1:4173",
-    reuseExistingServer: !process.env.CI
+    reuseExistingServer: false
   },
   projects: [
     { name: "chromium", grep: /@desktop/, use: { ...devices["Desktop Chrome"] } },
