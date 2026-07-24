@@ -85,16 +85,22 @@
   }
 
   class DriveSync{
-    constructor({DB,appVersion,contentVersion,fetcher=fetch,onState=()=>{},onApplied=()=>{},withSyncLock=null}){this.DB=DB;this.appVersion=appVersion;this.contentVersion=contentVersion;this.fetcher=fetcher;this.onState=onState;this.onApplied=onApplied;this.withSyncLock=withSyncLock;this.token=null;this.expiresAt=0;this.needsReconnect=false;this.timer=null;this.running=false;this.again=false;this.blockedAfterReplace=false;this.authoritativeAt=null;this.deviceId=null}
+    constructor({DB,appVersion,contentVersion,fetcher=fetch,onState=()=>{},onApplied=()=>{},withSyncLock=null}){this.DB=DB;this.appVersion=appVersion;this.contentVersion=contentVersion;this.fetcher=fetcher;this.onState=onState;this.onApplied=onApplied;this.withSyncLock=withSyncLock;this.token=null;this.expiresAt=0;this.needsReconnect=false;this.timer=null;this.running=false;this.again=false;this.blockedAfterReplace=false;this.authoritativeAt=null;this.deviceId=null;this.tokenClient=null;this.authInFlight=null;this.authResolve=null;this.authReject=null}
     hasToken(){return !!this.token&&Date.now()<this.expiresAt-30000}
     async init(){let item=await this.DB.get("meta","drive-device-id");if(!item){item={key:"drive-device-id",value:crypto.randomUUID(),updatedAt:new Date().toISOString()};await this.DB.put("meta",item)}this.deviceId=item.value;const restore=await this.DB.get("meta",AUTHORITATIVE_RESTORE_KEY),cutoff=await this.DB.get("meta",AUTHORITATIVE_CUTOFF_KEY);this.blockedAfterReplace=restore?.pending===true;this.authoritativeAt=(this.blockedAfterReplace?restore?.updatedAt:null)||cutoff?.value||null;this.onState(this.blockedAfterReplace?"pending-authoritative":"disconnected")}
     isAuthoritativePending(){return this.blockedAfterReplace}
-    async requestToken(){
+    ensureTokenClient(){
+      if(this.tokenClient)return this.tokenClient;
       if(!window.google?.accounts?.oauth2)throw new Error("Google Identity Services no pudo cargarse.");
-      return new Promise((resolve,reject)=>{const client=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPE,callback:async response=>{if(response.error){reject(new Error("Google no autorizó la conexión."));return}this.token=response.access_token;this.expiresAt=Date.now()+Number(response.expires_in||3600)*1000;this.needsReconnect=false;if(this.blockedAfterReplace){this.onState("pending-authoritative");resolve();return}try{await this.syncNow();resolve()}catch(error){reject(error)}}});client.requestAccessToken({prompt:"consent"})})
+      this.tokenClient=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPE,callback:async response=>{const resolve=this.authResolve,reject=this.authReject;try{if(response.error)throw new Error("Google no autorizó la conexión.");this.token=response.access_token;this.expiresAt=Date.now()+Number(response.expires_in||3600)*1000;this.needsReconnect=false;if(this.blockedAfterReplace){this.onState("pending-authoritative");resolve?.();return}await this.syncNow();resolve?.()}catch(error){reject?.(error)}}});return this.tokenClient
     }
+    requestToken(){
+      if(this.authInFlight)return this.authInFlight;
+      try{const client=this.ensureTokenClient();this.authInFlight=new Promise((resolve,reject)=>{this.authResolve=resolve;this.authReject=reject;client.requestAccessToken({prompt:""})}).finally(()=>{this.authInFlight=null;this.authResolve=null;this.authReject=null});return this.authInFlight}catch(error){return Promise.reject(error)}
+    }
+    pauseForReconnect(){this.token=null;this.expiresAt=0;if(!this.needsReconnect){this.needsReconnect=true;this.onState("reconnect")}}
     disconnect(){const token=this.token;this.token=null;this.expiresAt=0;this.needsReconnect=false;clearTimeout(this.timer);this.onState("disconnected");try{if(token&&window.google?.accounts?.oauth2?.revoke)google.accounts.oauth2.revoke(token,()=>{})}catch(_){/* la copia local sigue disponible */}}
-    localChanged(){if(this.blockedAfterReplace){this.onState("pending");return}if(this.hasToken()){this.onState("pending");if(this.running){this.again=true;return}clearTimeout(this.timer);this.timer=setTimeout(()=>this.syncNow().catch(()=>{}),3000)}else if(this.token||this.needsReconnect){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect")}else this.onState(navigator.onLine?"pending":"offline")}
+    localChanged(){if(this.blockedAfterReplace){this.onState("pending");return}if(this.hasToken()){this.onState("pending");if(this.running){this.again=true;return}clearTimeout(this.timer);this.timer=setTimeout(()=>this.syncNow().catch(()=>{}),3000)}else if(navigator.onLine)this.pauseForReconnect();else this.onState("offline")}
     async markLocalReplace(){this.blockedAfterReplace=true;this.authoritativeAt=new Date().toISOString();await this.DB.put("meta",{key:AUTHORITATIVE_RESTORE_KEY,pending:true,updatedAt:this.authoritativeAt});this.onState("pending-authoritative")}
     async snapshot(){const item=await this.DB.get("kv","settings");return {schemaVersion:2,appVersion:this.appVersion,contentVersion:this.contentVersion,generatedAt:new Date().toISOString(),sourceDeviceId:this.deviceId,...(this.authoritativeAt?{authoritativeAt:this.authoritativeAt}:{}),settings:normalizeSettings(item?.value||{},item?.updatedAt),subjects:await this.DB.getAll("subjects"),events:await this.DB.getAll("events"),highlights:await this.DB.getAll("highlights"),notes:await this.DB.getAll("notes")}}
     async listFiles(){const q=`name = '${FILE_NAME}' and trashed = false`;const url=`https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=${encodeURIComponent(q)}&fields=${encodeURIComponent("files(id,name,modifiedTime,createdTime,appProperties)")}`;return (await (await driveFetch(this.fetcher,this.token,url)).json()).files||[]}
@@ -105,10 +111,10 @@
     async lockRound(action){if(this.withSyncLock)return this.withSyncLock(action);const locks=typeof navigator!=="undefined"&&navigator.locks;if(locks?.request)return locks.request(`biblioteca-lbt-drive-${this.deviceId}`,action);return action()}
     async syncRound(){const initial=validateEnvelope(await this.snapshot()),files=await this.listFiles(),remotes=[];for(const file of files)remotes.push(await this.download(file.id));const latest=validateEnvelope(await this.snapshot()),merged=mergeEnvelopes(initial,...remotes,latest);if(merged.authoritativeAt&&merged.authoritativeAt!==this.authoritativeAt){this.authoritativeAt=merged.authoritativeAt;await this.DB.put("meta",{key:AUTHORITATIVE_CUTOFF_KEY,value:this.authoritativeAt,updatedAt:new Date().toISOString()})}await this.apply(merged);const uploadSnapshot=mergeEnvelopes(merged,validateEnvelope(await this.snapshot()));await this.upload(uploadSnapshot,this.ownReplica(files)?.id||null)}
     async syncNow(){
-      if(!this.hasToken()){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect");return}if(this.blockedAfterReplace){this.onState("pending-authoritative");return}if(this.running){this.again=true;return}
+      if(!this.hasToken()){this.pauseForReconnect();return}if(this.blockedAfterReplace){this.onState("pending-authoritative");return}if(this.running){this.again=true;return}
       this.running=true;this.onState("syncing");
       try{await this.lockRound(()=>this.syncRound());this.onState("synced")}
-      catch(error){if(error.code===401){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect")}else{this.onState(navigator.onLine?"error":"offline")}throw error}
+      catch(error){if(error.code===401)this.pauseForReconnect();else{this.onState(navigator.onLine?"error":"offline")}throw error}
       finally{this.running=false;if(this.again){this.again=false;this.syncNow().catch(()=>{})}}
     }
     async replaceRemote(){
@@ -120,7 +126,7 @@
         await this.DB.put("meta",{key:AUTHORITATIVE_CUTOFF_KEY,value:this.authoritativeAt,updatedAt:new Date().toISOString()});
         await this.DB.put("meta",{key:AUTHORITATIVE_RESTORE_KEY,pending:false,updatedAt:new Date().toISOString()});
         this.blockedAfterReplace=false;this.onState("synced");return true;
-      }catch(error){if(error.code===401){this.token=null;this.expiresAt=0;this.needsReconnect=true;this.onState("reconnect")}else this.onState(navigator.onLine?"error":"offline");throw error}
+      }catch(error){if(error.code===401)this.pauseForReconnect();else this.onState(navigator.onLine?"error":"offline");throw error}
     }
   }
   return {CLIENT_ID,SCOPE,FILE_NAME,AUTHORITATIVE_RESTORE_KEY,AUTHORITATIVE_CUTOFF_KEY,REPLICA_PROTOCOL,SETTINGS_FIELDS,stable,chooseRecord,mergeRecords,normalizeSettings,mergeSettings,validateEnvelope,mergeEnvelopes,multipartRelated,DriveSync};

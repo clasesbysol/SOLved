@@ -282,7 +282,7 @@
   function toast(msg){document.querySelector(".toast")?.remove();const el=document.createElement("div");el.className="toast";el.textContent=msg;document.body.appendChild(el);setTimeout(()=>el.remove(),2800)}
   function applyTheme(){document.documentElement.dataset.theme=settings.theme}
   function updateDriveState(state){
-    const labels={disconnected:"Conectar Google Drive",syncing:"Sincronizando…",synced:"Sincronizado con Drive",pending:"Cambios pendientes",offline:"Sin conexión",reconnect:"Reconectar Drive",error:"Error de sincronización","pending-authoritative":"Cambios pendientes"};
+    const labels={disconnected:"Conectar Google Drive",syncing:"Sincronizando…",synced:"Sincronizado con Drive",pending:"Cambios pendientes",offline:"Sin conexión",reconnect:"Drive pausado · tocar para reconectar",error:"Error de sincronización","pending-authoritative":"Cambios pendientes"};
     els.syncText.textContent=labels[state]||"Guardado localmente";els.syncPill.classList.toggle("saving",state==="syncing");els.syncPill.classList.toggle("error",state==="error"||state==="reconnect");
     const connected=!!driveSync?.hasToken();els.driveActionBtn.hidden=state==="syncing";els.driveActionBtn.textContent=state==="reconnect"?"Reconectar Drive":connected?"Sincronizar ahora":"Conectar Google Drive";els.driveDisconnectBtn.hidden=!connected;
   }

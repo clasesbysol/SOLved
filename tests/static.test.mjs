@@ -28,6 +28,10 @@ for (const ref of ["styles.css?v=0.5.0", "manifest.webmanifest", "js/data.js?v=0
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
+const syncSource = await readFile("js/sync.js", "utf8");
+assert.ok(syncSource.includes('requestAccessToken({prompt:""})'),"Drive debe reutilizar el consentimiento con prompt vacío");
+assert.ok(!syncSource.includes('prompt:"consent"')&&!syncSource.includes("prompt: \"consent\""),"Drive no debe forzar consentimiento");
+assert.ok(syncSource.includes("authInFlight")&&syncSource.includes("tokenClient"),"Drive debe compartir cliente y solicitud de autorización");
 for (const id of ["highlightBtn", "newNoteBtn", "contentUpdateBtn", "zoomBtn", "viewerBtn", "indexBtn", "fullscreenBtn", "backupBtn", "installBtn", "updateBtn"]) {
   assert.ok(index.includes(`id="${id}"`), `Falta el botón ${id}`);
   assert.ok(app.includes(`els.${id}`), `El botón ${id} no está vinculado en app.js`);
