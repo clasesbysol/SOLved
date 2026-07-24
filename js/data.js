@@ -58,6 +58,9 @@
 
   const DEFAULT_SETTINGS = {
     theme:"light",
+    visualTheme:"classic",
+    subjectHueOverrides:{},
+    studyIdleSeconds:75,
     currentIds:["fisica1","estadistica","quimica_biologica1"],
     order:["fisica1","estadistica","quimica_biologica1"],
     calendar:{year:2026,month:6},
@@ -84,5 +87,5 @@
     item.sourceVerified=true;
   }
 
-  window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.5.1",CONTENT_VERSION:"catalog-v1"};
+  window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.5.2",CONTENT_VERSION:"catalog-v1"};
 })();

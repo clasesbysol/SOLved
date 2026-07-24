@@ -1,4 +1,8 @@
-# Biblioteca LBT — versión 0.5.1
+# Biblioteca LBT — versión 0.5.2
+
+La versión 0.5.2 incorpora cinco paletas globales combinables con modo claro u oscuro, mantiene el matiz propio de cada materia y aplica ese color a resaltados y estados activos. Favoritos ahora ofrece filtros explícitos por materia, colección y tipo; Repaso separa los alcances rápidos de las opciones avanzadas.
+
+El panel semanal distingue el tiempo de temporizadores terminados del estudio detectado mediante interacción reciente dentro de una materia. La detección se detiene al ocultar la pestaña o superar el umbral de inactividad y usa Web Locks para que dos pestañas de la misma instalación no contabilicen simultáneamente. Los tramos terminados se guardan como actividad sincronizable, sin ampliar el esquema de IndexedDB ni el schema 3 de Drive.
 
 Aplicación local-first de estudio para la Licenciatura en Biotecnología.
 
