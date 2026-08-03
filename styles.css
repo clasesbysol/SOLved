@@ -405,12 +405,14 @@ html[data-access-mode="no-profile"] .app,html[data-access-mode="unauthorized-goo
   .topbar .searchbox{flex:1 1 auto;width:auto;min-width:0;height:40px}
   .topbar .icon-btn,.topbar .soft-btn{flex:0 0 40px;width:40px;height:40px;padding:0}
   .search-results{position:fixed!important;left:8px!important;right:8px!important;top:52px!important;width:auto!important;max-height:55vh;overflow:auto}
-  .sidebar{grid-column:1;grid-row:3;z-index:80;display:block;width:100%;min-height:0;padding:5px max(5px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left));border-top:1px solid var(--line);border-right:0;overflow:hidden}
-  .sidebar .nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;height:100%}
+  .sidebar{grid-column:1;grid-row:3;z-index:80;display:flex;align-items:center;width:100%;min-height:0;padding:5px max(5px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left));border-top:1px solid var(--line);border-right:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.sidebar::-webkit-scrollbar{display:none}
+  .sidebar .nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));flex:0 0 100%;gap:1px;height:100%}
   .sidebar .nav-btn{display:grid;place-items:center;align-content:center;gap:2px;min-width:0;min-height:48px;padding:3px 1px;border-radius:9px}
   .sidebar .nav-btn .icon{width:20px;height:20px}
   .sidebar .nav-btn span{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:8px;line-height:1.05;white-space:nowrap}
-  .sidebar .side-divider,.sidebar .side-head,.sidebar .hand-list,.sidebar .recent-subjects,.sidebar .side-bottom{display:none!important}
+  .sidebar .side-divider,.sidebar .side-head,.sidebar .recent-subjects{display:none!important}
+  .sidebar>.hand-list{display:flex!important;flex:0 0 auto;gap:2px;overflow:visible}.sidebar>.hand-list .course-link{display:grid;width:48px;height:48px;padding:4px;place-items:center}.sidebar>.hand-list .course-link .label{display:none}
+  .sidebar .side-bottom{display:block!important;flex:0 0 auto;margin:0;padding:0;border:0}.sidebar .account-card>button{width:48px;height:48px;padding:6px}.sidebar .account-card>button span{display:none}.sidebar .account-menu{position:fixed;left:8px;right:8px;bottom:68px}
   .workspace{grid-column:1;grid-row:2;width:100%;min-width:0;min-height:0;overflow:auto}
   .page{width:100%;min-width:0;padding:10px}
   .section-head{align-items:flex-start;gap:8px}.section-head .soft-btn{flex:0 0 auto}
