@@ -1,0 +1,1228 @@
+{
+  "cards": [
+    {
+      "id": "1-cinematica-mru-1",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre mru en 1 Cinemática?",
+      "answer": "\\[ x = x_0 + v\\,t \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "1-cinematica-mruv-2",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre mruv en 1 Cinemática?",
+      "answer": "\\[ v = v_0 + a\\,t \\] \\[ x = x_0 + v_0 t + \\tfrac{1}{2}a t^2 \\] \\[ v^2 = v_0^2 + 2a\\,\\Delta x \\] \\[ \\bar{v} = \\dfrac{v_0+v}{2} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "1-cinematica-caida-libre-tiro-vertical-3",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre caída libre / tiro vertical en 1 Cinemática?",
+      "answer": "\\[ y = y_0 + v_0t - \\tfrac{1}{2}g t^2 \\] \\[ v = v_0 - g\\,t \\] En caída libre \\(v_0=0\\). Tomar eje positivo hacia arriba salvo que el problema indique lo contrario.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "1-cinematica-tiro-oblicuo-4",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre tiro oblicuo en 1 Cinemática?",
+      "answer": "\\[ x = v_0\\cos\\theta\\cdot t \\] \\[ y = v_0\\sin\\theta\\cdot t - \\tfrac{1}{2}g t^2 \\] \\[ t_{\\text{sub}} = \\dfrac{v_0\\sin\\theta}{g} \\] \\[ R = \\dfrac{v_0^2\\sin 2\\theta}{g} \\] \\[ H = \\dfrac{v_0^2\\sin^2\\!\\theta}{2g} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "1-cinematica-linealizacion-util-5",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre linealización útil en 1 Cinemática?",
+      "answer": "Para graficar \\(v\\) vs \\(t\\): pendiente \\(=a\\), ordenada \\(=v_0\\). Para graficar \\(v^2\\) vs \\(\\Delta x\\): pendiente \\(=2a\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "2-vectores-y-componentes-componentes-6",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre componentes en 2 Vectores y componentes?",
+      "answer": "\\[ A_x = A\\cos\\theta \\] \\[ A_y = A\\sin\\theta \\] \\[ |\\vec{A}| = \\sqrt{A_x^2+A_y^2} \\] \\[ \\theta = \\arctan\\!\\left(\\dfrac{A_y}{A_x}\\right) \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "2-vectores-y-componentes-suma-de-vectores-7",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre suma de vectores en 2 Vectores y componentes?",
+      "answer": "\\[ \\vec{R} = \\vec{A}+\\vec{B} \\;\\Rightarrow\\; R_x=A_x+B_x,\\quad R_y=A_y+B_y \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "2-vectores-y-componentes-producto-escalar-y-vectorial-8",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre producto escalar y vectorial en 2 Vectores y componentes?",
+      "answer": "\\[ \\vec{A}\\cdot\\vec{B} = AB\\cos\\alpha \\] \\[ |\\vec{A}\\times\\vec{B}| = AB\\sin\\alpha \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "3-movimiento-relativo-composicion-de-velocidades-9",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre composición de velocidades en 3 Movimiento relativo?",
+      "answer": "\\[ \\vec{v}_{A/C} = \\vec{v}_{A/B} + \\vec{v}_{B/C} \\] La velocidad de A respecto de C es la velocidad de A respecto de B más la de B respecto de C. Aplicar por componentes.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "3-movimiento-relativo-posicion-relativa-10",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre posición relativa en 3 Movimiento relativo?",
+      "answer": "\\[ \\vec{r}_{A/B} = \\vec{r}_A - \\vec{r}_B \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "4-movimiento-circular-relaciones-cinematicas-11",
+      "type": "formula",
+      "question": "¿Qué hay que recordar sobre relaciones cinemáticas en 4 Movimiento circular?",
+      "answer": "\\[ v = \\omega\\,r \\] \\[ \\omega = \\dfrac{2\\pi}{T} = 2\\pi f \\] \\[ a_c = \\dfrac{v^2}{r} = \\omega^2 r \\] \\[ a_t = \\alpha\\,r \\] \\(a_c\\) apunta hacia el centro. \\(a_t\\) es tangencial (si el movimiento no es uniforme).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "4-movimiento-circular-aceleracion-total-12",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre aceleración total en 4 Movimiento circular?",
+      "answer": "\\[ a = \\sqrt{a_c^2 + a_t^2} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "5-leyes-de-newton-y-dcl-segunda-ley-13",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre segunda ley en 5 Leyes de Newton y DCL?",
+      "answer": "\\[ \\sum \\vec{F} = m\\,\\vec{a} \\] Por componentes: \\(\\sum F_x = ma_x\\) y \\(\\sum F_y = ma_y\\). En el DCL dibujar cada fuerza que actúa sobre el cuerpo.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "5-leyes-de-newton-y-dcl-fuerza-normal-y-peso-14",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre fuerza normal y peso en 5 Leyes de Newton y DCL?",
+      "answer": "\\[ P = mg \\] \\[ N = mg\\cos\\theta \\text{ (plano inclinado)} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "5-leyes-de-newton-y-dcl-fuerzas-en-plano-inclinado-15",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre fuerzas en plano inclinado en 5 Leyes de Newton y DCL?",
+      "answer": "\\[ P_{\\parallel} = mg\\sin\\theta \\] \\[ P_{\\perp} = mg\\cos\\theta \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "5-leyes-de-newton-y-dcl-tercera-ley-16",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre tercera ley en 5 Leyes de Newton y DCL?",
+      "answer": "Si A ejerce fuerza sobre B, B ejerce sobre A una fuerza igual en módulo y dirección, opuesta en sentido. No actúan sobre el mismo cuerpo.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "6-rozamiento-estatico-y-cinetico-17",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre estático y cinético en 6 Rozamiento?",
+      "answer": "\\[ f_e \\leq \\mu_e\\,N \\] \\[ f_c = \\mu_c\\,N \\] Siempre \\(\\mu_e \\geq \\mu_c\\). La fricción estática se opone al movimiento inminente; la cinética, al movimiento real.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "6-rozamiento-coeficiente-en-plano-inclinado-limite-18",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre coeficiente en plano inclinado (límite) en 6 Rozamiento?",
+      "answer": "\\[ \\mu_e = \\tan\\theta_{\\text{crítico}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "7-resortes-ley-de-hooke-19",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre ley de hooke en 7 Resortes?",
+      "answer": "\\[ F = k\\,x \\] \\(k\\) = constante del resorte [N/m]. \\(x\\) = deformación desde posición natural.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "7-resortes-energia-potencial-elastica-20",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre energía potencial elástica en 7 Resortes?",
+      "answer": "\\[ U_e = \\tfrac{1}{2}\\,k\\,x^2 \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "7-resortes-resortes-en-serie-y-paralelo-21",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre resortes en serie y paralelo en 7 Resortes?",
+      "answer": "\\[ \\frac{1}{k_s} = \\frac{1}{k_1}+\\frac{1}{k_2} \\] \\[ k_p = k_1+k_2 \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "8-gravitacion-ley-de-gravitacion-universal-22",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre ley de gravitación universal en 8 Gravitación?",
+      "answer": "\\[ F = G\\,\\dfrac{m_1 m_2}{r^2} \\qquad G = 6{,}674\\times10^{-11}\\,\\text{N·m}^2/\\text{kg}^2 \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "8-gravitacion-campo-gravitatorio-23",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre campo gravitatorio en 8 Gravitación?",
+      "answer": "\\[ g = \\dfrac{GM}{r^2} \\] \\[ g_{\\text{sup}} = \\dfrac{GM}{R^2} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "8-gravitacion-satelites-orbita-circular-24",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre satélites — órbita circular en 8 Gravitación?",
+      "answer": "\\[ v = \\sqrt{\\dfrac{GM}{r}} \\] \\[ T = 2\\pi\\sqrt{\\dfrac{r^3}{GM}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "8-gravitacion-tercera-ley-de-kepler-25",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre tercera ley de kepler en 8 Gravitación?",
+      "answer": "\\[ \\frac{T^2}{r^3} = \\frac{4\\pi^2}{GM} = \\text{cte} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "9-trabajo-y-energia-trabajo-26",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre trabajo en 9 Trabajo y energía?",
+      "answer": "\\[ W = F\\,d\\,\\cos\\alpha \\] \\[ W = \\vec{F}\\cdot\\vec{d} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "9-trabajo-y-energia-energias-27",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre energías en 9 Trabajo y energía?",
+      "answer": "\\[ E_k = \\tfrac{1}{2}mv^2 \\] \\[ U_g = mgh \\] \\[ U_e = \\tfrac{1}{2}kx^2 \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "9-trabajo-y-energia-teorema-trabajo-energia-28",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre teorema trabajo-energía en 9 Trabajo y energía?",
+      "answer": "\\[ W_{\\text{neto}} = \\Delta E_k = E_{k,f}-E_{k,i} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "9-trabajo-y-energia-conservacion-de-energia-mecanica-29",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre conservación de energía mecánica en 9 Trabajo y energía?",
+      "answer": "\\[ E_{k,i}+U_i = E_{k,f}+U_f \\quad\\text{(sin fuerzas no conservativas)} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "9-trabajo-y-energia-con-rozamiento-30",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre con rozamiento en 9 Trabajo y energía?",
+      "answer": "\\[ E_{k,i}+U_i = E_{k,f}+U_f + W_{\\text{roz}} \\] \\(W_{\\text{roz}} = f_c\\cdot d > 0\\) es la energía disipada (siempre positiva; restada del sistema).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "9-trabajo-y-energia-potencia-31",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre potencia en 9 Trabajo y energía?",
+      "answer": "\\[ P = \\dfrac{W}{\\Delta t} \\] \\[ P = \\vec{F}\\cdot\\vec{v} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "10-cantidad-de-movimiento-centro-de-masa-y-choques-impulso-y-c-32",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre impulso y cantidad de movimiento en 10 Cantidad de movimiento, centro de masa y choques?",
+      "answer": "\\[ \\vec{p} = m\\vec{v} \\] \\[ \\vec{J} = \\vec{F}\\,\\Delta t = \\Delta\\vec{p} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "10-cantidad-de-movimiento-centro-de-masa-y-choques-conservacio-33",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre conservación del momento en 10 Cantidad de movimiento, centro de masa y choques?",
+      "answer": "\\[ \\vec{p}_{\\text{total,i}} = \\vec{p}_{\\text{total,f}} \\quad\\text{(si }\\sum F_{\\text{ext}}=0\\text{)} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "10-cantidad-de-movimiento-centro-de-masa-y-choques-choque-perf-34",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre choque perfectamente inelástico en 10 Cantidad de movimiento, centro de masa y choques?",
+      "answer": "\\[ m_1v_1 + m_2v_2 = (m_1+m_2)\\,v' \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "10-cantidad-de-movimiento-centro-de-masa-y-choques-choque-elas-35",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre choque elástico (1d) en 10 Cantidad de movimiento, centro de masa y choques?",
+      "answer": "\\[ v_1' = \\dfrac{m_1-m_2}{m_1+m_2}v_1 + \\dfrac{2m_2}{m_1+m_2}v_2 \\] \\[ v_2' = \\dfrac{2m_1}{m_1+m_2}v_1 + \\dfrac{m_2-m_1}{m_1+m_2}v_2 \\] Elástico: se conservan \\(\\vec{p}\\) y \\(E_k\\). Inelástico: solo \\(\\vec{p}\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "10-cantidad-de-movimiento-centro-de-masa-y-choques-centro-de-m-36",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre centro de masa en 10 Cantidad de movimiento, centro de masa y choques?",
+      "answer": "\\[ x_{\\text{cm}} = \\dfrac{\\sum m_i x_i}{\\sum m_i} \\qquad \\vec{v}_{\\text{cm}} = \\dfrac{\\sum m_i \\vec{v}_i}{\\sum m_i} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "11-trucos-rapidos-primer-parcial-37",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de 11 Trucos rápidos — Primer parcial?",
+      "answer": "Siempre definir el eje positivo antes de escribir ecuaciones. En plano inclinado, conviene rotar ejes: \\(x\\) paralelo al plano, \\(y\\) perpendicular. Si el sistema no acelera: \\(\\sum F = 0\\) en cada eje. Choque elástico: verificar que \\(E_k\\) se conserva al final. Para tiro oblicuo, en el punto más alto \\(v_y=0\\), solo queda \\(v_x = v_0\\cos\\theta\\). El rozamiento cinético \\(f_c = \\mu_c N\\) siempre se opone al movimiento real. Potencia puede pedirse como \\(P = Fv\\cos\\alpha\\): útil cuando no se conoce el tiempo. Tercera ley: las fuerzas del par acción-reacción nunca actúan sobre el mismo cuerpo.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b1-medicion-magnitud-e-incertidumbre-resultado-de-medicion-38",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre resultado de medición en B1 Medición, magnitud e incertidumbre?",
+      "answer": "\\[ x = (\\bar{x} \\pm \\Delta x)\\;\\text{unidad} \\] \\(\\bar{x}\\) = valor central · \\(\\Delta x\\) = error absoluto (incertidumbre absoluta).",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b1-medicion-magnitud-e-incertidumbre-intervalo-39",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre intervalo en B1 Medición, magnitud e incertidumbre?",
+      "answer": "\\[ \\bar{x} - \\Delta x \\;\\leq\\; x \\;\\leq\\; \\bar{x} + \\Delta x \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b2-tipos-de-error-error-absoluto-40",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre error absoluto en B2 Tipos de error?",
+      "answer": "\\[ \\Delta x \\] Tiene las mismas unidades que la magnitud medida.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b2-tipos-de-error-error-relativo-y-porcentual-41",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre error relativo y porcentual en B2 Tipos de error?",
+      "answer": "\\[ \\varepsilon = \\dfrac{\\Delta x}{\\bar{x}} \\] \\[ \\varepsilon_{\\%} = \\dfrac{\\Delta x}{\\bar{x}}\\cdot100\\% \\] El error relativo no tiene unidades. El porcentual expresa la misma información en %.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b3-clasificacion-de-errores-error-total-combinacion-cuadratica-42",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre error total (combinación cuadrática) en B3 Clasificación de errores?",
+      "answer": "\\[ E_{\\text{total}} = \\sqrt{E_{\\text{ins}}^2 + E_{\\text{est}}^2} \\] La suma en cuadratura se usa porque las contribuciones son independientes entre sí.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b4-error-de-apreciacion-o-instrumental-43",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de B4 Error de apreciación o instrumental?",
+      "answer": "Es la mínima variación que puede detectar el instrumento. Si el enunciado lo da, se usa directamente como \\(\\sigma_{\\text{ap}}\\) o \\(E_{\\text{ins}}\\). OJO Sumar siempre en cuadratura con el error estadístico, nunca directamente.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b5-estadistica-de-mediciones-repetidas-para-n-mediciones-x-1-x-44",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre para n mediciones \\(x_1, x_2, \\ldots, x_n\\) en B5 Estadística de mediciones repetidas?",
+      "answer": "\\[ \\bar{x} = \\dfrac{\\sum x_i}{N} \\] \\[ \\sigma = \\sqrt{\\dfrac{\\sum(x_i-\\bar{x})^2}{N-1}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b5-estadistica-de-mediciones-repetidas-error-estadistico-del-p-45",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre error estadístico del promedio en B5 Estadística de mediciones repetidas?",
+      "answer": "\\[ \\sigma_{\\text{est}} = \\dfrac{\\sigma}{\\sqrt{N}} \\]",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b5-estadistica-de-mediciones-repetidas-error-absoluto-final-co-46",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre error absoluto final (combinado) en B5 Estadística de mediciones repetidas?",
+      "answer": "\\[ \\Delta x = \\sqrt{\\sigma_{\\text{est}}^2 + \\sigma_{\\text{ap}}^2} = \\sqrt{\\!\\left(\\frac{\\sigma}{\\sqrt{N}}\\right)^{\\!2} + \\sigma_{\\text{ap}}^2} \\] \\(\\sigma\\): dispersión de los datos individuales. \\(\\sigma_{\\text{est}}\\): error estadístico del promedio (baja con \\(\\sqrt{N}\\), no con \\(N\\)). \\(\\Delta x\\): combina error estadístico e instrumental. OJO No usar \\(\\sigma\\) directamente como error del promedio. Siempre dividir por \\(\\sqrt{N}\\).",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b6-mediciones-directas-e-indirectas-directa-47",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre directa en B6 Mediciones directas e indirectas?",
+      "answer": "Valor leído directamente del instrumento. Forma: \\(x = (\\bar{x} \\pm \\Delta x)\\;\\text{unidad}\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b6-mediciones-directas-e-indirectas-indirecta-48",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre indirecta en B6 Mediciones directas e indirectas?",
+      "answer": "Magnitud calculada con una fórmula \\(f = f(x,y,z,\\ldots)\\) a partir de otras medidas. Si \\(x,y,z\\) tienen error, \\(f\\) también tendrá error → se necesita propagación.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b7-propagacion-de-errores-formula-general-49",
+      "type": "formula",
+      "question": "¿Qué hay que recordar sobre fórmula general en B7 Propagación de errores?",
+      "answer": "\\[ \\Delta f = \\sqrt{\\left(\\frac{\\partial f}{\\partial x_1}\\Delta x_1\\right)^{\\!2}+\\left(\\frac{\\partial f}{\\partial x_2}\\Delta x_2\\right)^{\\!2}+\\cdots} \\] Cada derivada parcial mide cuánto cambia \\(f\\) ante un cambio en esa variable. La fórmula surge de la expansión de Taylor de primer orden alrededor del valor medio.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b7-propagacion-de-errores-una-sola-variable-50",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre una sola variable en B7 Propagación de errores?",
+      "answer": "\\[ \\Delta f = \\left|\\frac{df}{dx}\\right|\\Delta x \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b8-reglas-rapidas-de-propagacion-suma-resta-errores-absolutos-51",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre suma / resta → errores absolutos en B8 Reglas rápidas de propagación?",
+      "answer": "\\[ f = x \\pm y \\;\\Rightarrow\\; \\Delta f = \\sqrt{(\\Delta x)^2+(\\Delta y)^2} \\]",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b8-reglas-rapidas-de-propagacion-producto-cociente-errores-rel-52",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre producto / cociente → errores relativos en B8 Reglas rápidas de propagación?",
+      "answer": "\\[ \\frac{\\Delta f}{f} = \\sqrt{\\!\\left(\\frac{\\Delta x}{x}\\right)^{\\!2}+\\left(\\frac{\\Delta y}{y}\\right)^{\\!2}} \\] \\[ \\Delta f = f\\sqrt{\\!\\left(\\frac{\\Delta x}{x}\\right)^{\\!2}+\\left(\\frac{\\Delta y}{y}\\right)^{\\!2}} \\]",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b8-reglas-rapidas-de-propagacion-potencia-53",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre potencia en B8 Reglas rápidas de propagación?",
+      "answer": "\\[ f = x^n \\;\\Rightarrow\\; \\frac{\\Delta f}{f} = |n|\\,\\frac{\\Delta x}{x} \\] Las constantes exactas (\\(\\pi, 2, \\tfrac{1}{2}, \\ldots\\)) no aportan error. Nunca olvidar multiplicar el error relativo por \\(|n|\\).",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b9-como-informar-correctamente-un-resultado-54",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de B9 Cómo informar correctamente un resultado?",
+      "answer": "\\[ x = (\\bar{x} \\pm \\Delta x)\\;\\text{unidad} \\] Calcular con todos los decimales disponibles. Redondear el error absoluto a 1 cifra significativa. Redondear el valor central al mismo orden decimal que el error. Incluir siempre la unidad. EJ. \\(2{,}143\\pm0{,}037 \\;\\to\\; (2{,}14\\pm0{,}04)\\;\\text{s}\\) EJ. \\(1543\\pm14 \\;\\to\\; (1540\\pm10)\\)",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b10-precision-exactitud-y-compatibilidad-precision-55",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre precisión en B10 Precisión, exactitud y compatibilidad?",
+      "answer": "Mide cuán pequeño es el error relativo \\(\\varepsilon = \\Delta x/\\bar{x}\\). Una medición es más precisa si tiene menor \\(\\varepsilon\\), independientemente de si está cerca del valor real.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b10-precision-exactitud-y-compatibilidad-exactitud-56",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre exactitud en B10 Precisión, exactitud y compatibilidad?",
+      "answer": "Mide la cercanía al valor verdadero o aceptado \\(|\\bar{x}-x_{\\text{verdadero}}|\\). No depende del error de la medición. OJO Precisión ≠ exactitud. Una medición puede ser precisa (poco error) y poco exacta (lejos del valor real), o viceversa.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b10-precision-exactitud-y-compatibilidad-compatibilidad-entre--57",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre compatibilidad entre dos mediciones en B10 Precisión, exactitud y compatibilidad?",
+      "answer": "\\[ |\\bar{x}_1 - \\bar{x}_2| \\;\\leq\\; \\Delta x_1 + \\Delta x_2 \\] Si se cumple → compatibles (los intervalos se superponen). Compatible no significa iguales ni tampoco misma precisión.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b10-precision-exactitud-y-compatibilidad-compatibilidad-con-va-58",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre compatibilidad con valor esperado en B10 Precisión, exactitud y compatibilidad?",
+      "answer": "\\[ |\\bar{x} - x_{\\text{esp}}| \\;\\leq\\; \\Delta x \\] Si \\(x_{\\text{esp}}\\) cae dentro del intervalo \\([\\bar{x}-\\Delta x;\\;\\bar{x}+\\Delta x]\\), son compatibles.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b11-formulas-de-magnitudes-tipicas-del-parcial-volumen-de-esfe-59",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre volumen de esfera (diámetro \\(d\\)) en B11 Fórmulas de magnitudes típicas del parcial?",
+      "answer": "\\[ V = \\dfrac{\\pi}{6}\\,d^3 \\] \\[ \\dfrac{\\Delta V}{V} = 3\\dfrac{\\Delta d}{d} \\] \\[ \\Delta V = \\left|\\dfrac{\\pi}{2}d^2\\right|\\Delta d \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b11-formulas-de-magnitudes-tipicas-del-parcial-area-de-circulo-60",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre área de círculo (diámetro \\(d\\)) en B11 Fórmulas de magnitudes típicas del parcial?",
+      "answer": "\\[ A = \\dfrac{\\pi d^2}{4} \\] \\[ \\dfrac{\\Delta A}{A} = 2\\dfrac{\\Delta d}{d} \\] \\[ \\Delta A = \\left|\\dfrac{\\pi}{2}d\\right|\\Delta d \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b11-formulas-de-magnitudes-tipicas-del-parcial-velocidad-media-61",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre velocidad media en B11 Fórmulas de magnitudes típicas del parcial?",
+      "answer": "\\[ v = \\dfrac{d}{t} \\] \\[ \\dfrac{\\Delta v}{v} = \\sqrt{\\!\\left(\\dfrac{\\Delta d}{d}\\right)^{\\!2}+\\left(\\dfrac{\\Delta t}{t}\\right)^{\\!2}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b12-pendulo-simple-periodo-62",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre período en B12 Péndulo simple?",
+      "answer": "\\[ T = 2\\pi\\sqrt{\\dfrac{L}{g}} \\] \\[ T^2 = \\dfrac{4\\pi^2}{g}\\,L \\] Válido para ángulos pequeños (\\(\\sin\\theta\\approx\\theta\\)).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b12-pendulo-simple-linealizacion-t-2-vs-l-63",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre linealización: \\(t^2\\) vs \\(l\\) en B12 Péndulo simple?",
+      "answer": "\\[ y = T^2,\\quad x = L,\\quad m = \\frac{4\\pi^2}{g},\\quad b=0 \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b12-pendulo-simple-gravedad-desde-pendiente-m-64",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre gravedad desde pendiente \\(m\\) en B12 Péndulo simple?",
+      "answer": "\\[ g = \\dfrac{4\\pi^2}{m} \\] \\[ \\dfrac{\\Delta g}{g} = \\dfrac{\\Delta m}{m} \\] \\[ \\Delta g = \\dfrac{4\\pi^2}{m^2}\\,\\Delta m \\] Unidad de la pendiente: \\([m] = \\text{s}^2/\\text{m}\\) si \\(y=T^2\\) y \\(x=L\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b13-error-del-periodo-del-pendulo-caso-general-65",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre caso general en B13 Error del período del péndulo?",
+      "answer": "\\[ \\dfrac{\\Delta T}{T} = \\sqrt{\\left(\\dfrac{1}{2}\\dfrac{\\Delta L}{L}\\right)^{\\!2}+\\left(\\dfrac{1}{2}\\dfrac{\\Delta g}{g}\\right)^{\\!2}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b13-error-del-periodo-del-pendulo-si-g-se-toma-sin-error-66",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre si \\(g\\) se toma sin error en B13 Error del período del péndulo?",
+      "answer": "\\[ \\dfrac{\\Delta T}{T} = \\dfrac{1}{2}\\dfrac{\\Delta L}{L} \\]",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b14-gravedad-a-partir-de-l-y-t-si-te-dan-x-t-2-l-67",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre si te dan \\(x = t^2/l\\) en B14 Gravedad a partir de L y T?",
+      "answer": "\\[ g = \\dfrac{4\\pi^2}{x} \\] \\[ \\dfrac{\\Delta g}{g} = \\dfrac{\\Delta x}{x} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b15-linealizaciones-del-pendulo-linealizacion-1-t-2-vs-l-68",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre linealización 1 — \\(t^2\\) vs \\(l\\) en B15 Linealizaciones del péndulo?",
+      "answer": "\\[ y=T^2,\\quad x=L,\\quad m=\\dfrac{4\\pi^2}{g},\\quad g=\\dfrac{4\\pi^2}{m} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b15-linealizaciones-del-pendulo-linealizacion-2-l-vs-t-2-69",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre linealización 2 — \\(l\\) vs \\(t^2\\) en B15 Linealizaciones del péndulo?",
+      "answer": "\\[ y=L,\\quad x=T^2,\\quad m=\\dfrac{g}{4\\pi^2},\\quad g=4\\pi^2 m \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b15-linealizaciones-del-pendulo-linealizacion-3-t-vs-sqrt-l-70",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre linealización 3 — \\(t\\) vs \\(\\sqrt{l}\\) en B15 Linealizaciones del péndulo?",
+      "answer": "\\[ y=T,\\quad x=\\sqrt{L},\\quad m=\\dfrac{2\\pi}{\\sqrt{g}},\\quad g=\\left(\\dfrac{2\\pi}{m}\\right)^{\\!2} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b15-linealizaciones-del-pendulo-linealizacion-4-log-log-71",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre linealización 4 — log-log en B15 Linealizaciones del péndulo?",
+      "answer": "\\[ y=\\ln T,\\quad x=\\ln L,\\quad m=\\tfrac{1}{2} \\] OJO En \\(T^2\\) vs \\(L\\), la pendiente es \\(4\\pi^2/g\\), no \\(g\\). En \\(L\\) vs \\(T^2\\), la pendiente es \\(g/4\\pi^2\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b15-linealizaciones-del-pendulo-ajuste-por-cuadrados-minimos-72",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre ajuste por cuadrados mínimos en B15 Linealizaciones del péndulo?",
+      "answer": "Minimiza \\(S = \\sum[T_i - f(L_i)]^2\\). Tres métodos: calcular \\(g_i\\) para cada par y promediar · ajuste no lineal · linealizar y hacer ajuste lineal.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b16-rozamiento-en-plano-inclinado-coeficiente-estatico-en-el-l-73",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre coeficiente estático (en el límite) en B16 Rozamiento en plano inclinado?",
+      "answer": "\\[ \\mu_e = \\tan\\theta \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b16-rozamiento-en-plano-inclinado-componentes-de-peso-74",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre componentes de peso en B16 Rozamiento en plano inclinado?",
+      "answer": "\\[ P_{\\parallel} = mg\\sin\\theta \\] \\[ P_{\\perp} = mg\\cos\\theta = N \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b16-rozamiento-en-plano-inclinado-error-del-coeficiente-75",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre error del coeficiente en B16 Rozamiento en plano inclinado?",
+      "answer": "\\[ \\Delta\\mu = \\dfrac{1}{\\cos^2\\!\\theta}\\,\\Delta\\theta \\] \\[ \\Delta\\theta_{\\text{rad}} = \\Delta\\theta_{\\circ}\\cdot\\dfrac{\\pi}{180} \\] OJO \\(\\Delta\\theta\\) debe estar en radianes para derivar.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b16-rozamiento-en-plano-inclinado-fuerza-de-rozamiento-estatic-76",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre fuerza de rozamiento estático máxima en B16 Rozamiento en plano inclinado?",
+      "answer": "\\[ F_{r,e}^{\\text{máx}} = \\mu_e\\,m\\,g \\] \\[ \\dfrac{\\Delta F}{F} = \\sqrt{\\!\\left(\\dfrac{\\Delta\\mu}{\\mu}\\right)^{\\!2}+\\left(\\dfrac{\\Delta m}{m}\\right)^{\\!2}+\\left(\\dfrac{\\Delta g}{g}\\right)^{\\!2}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b17-cinematica-con-error-profundidad-de-pozo-caida-77",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre profundidad de pozo (caída) en B17 Cinemática con error?",
+      "answer": "\\[ h = v_0\\,t_f + \\tfrac{1}{2}\\,g\\,t_f^2 \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b17-cinematica-con-error-derivadas-parciales-78",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre derivadas parciales en B17 Cinemática con error?",
+      "answer": "\\[ \\dfrac{\\partial h}{\\partial v_0} = t_f \\] \\[ \\dfrac{\\partial h}{\\partial g} = \\tfrac{1}{2}t_f^2 \\] \\[ \\dfrac{\\partial h}{\\partial t_f} = v_0+g\\,t_f \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b17-cinematica-con-error-propagacion-79",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre propagación en B17 Cinemática con error?",
+      "answer": "\\[ \\Delta h = \\sqrt{(t_f\\Delta v_0)^2 + \\!\\left(\\tfrac{1}{2}t_f^2\\Delta g\\right)^{\\!2} + \\!\\left((v_0+gt_f)\\Delta t_f\\right)^{\\!2}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b18-como-reconocer-que-hacer-dan-dos-mediciones-con-error-80",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre dan dos mediciones con error en B18 Cómo reconocer qué hacer?",
+      "answer": "→ Verificar compatibilidad \\(|\\bar{x}_1-\\bar{x}_2|\\leq\\Delta x_1+\\Delta x_2\\) y comparar precisión \\(\\varepsilon=\\Delta x/\\bar{x}\\).",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b18-como-reconocer-que-hacer-dan-bar-x-sigma-n-sigma-text-ap-81",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre dan \\(\\bar{x},\\,\\sigma,\\,n,\\,\\sigma_{\\text{ap}}\\) en B18 Cómo reconocer qué hacer?",
+      "answer": "→ Calcular \\(\\sigma_{\\text{est}}=\\sigma/\\sqrt{N}\\), luego \\(\\Delta x=\\sqrt{\\sigma_{\\text{est}}^2+\\sigma_{\\text{ap}}^2}\\), finalmente informar.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b18-como-reconocer-que-hacer-dan-formula-variable-con-error-82",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre dan fórmula + variable con error en B18 Cómo reconocer qué hacer?",
+      "answer": "→ Si es potencia: \\(\\Delta f/f=|n|\\,\\Delta x/x\\). Si no: \\(\\Delta f=|df/dx|\\,\\Delta x\\).",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b18-como-reconocer-que-hacer-dan-varias-variables-con-error-83",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre dan varias variables con error en B18 Cómo reconocer qué hacer?",
+      "answer": "→ Propagar con la fórmula general de derivadas parciales.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b18-como-reconocer-que-hacer-dan-una-pendiente-de-grafico-84",
+      "type": "common-error",
+      "question": "¿Qué hay que recordar sobre dan una pendiente de gráfico en B18 Cómo reconocer qué hacer?",
+      "answer": "→ Identificar \\(y\\), \\(x\\), qué representa la pendiente y sus unidades. Despejar la magnitud buscada. Propagar el error de la pendiente.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b18-como-reconocer-que-hacer-piden-compatibilidad-con-valor-es-85",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre piden compatibilidad con valor esperado en B18 Cómo reconocer qué hacer?",
+      "answer": "→ Verificar \\(|\\bar{x}-x_{\\text{esp}}|\\leq\\Delta x\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b19-errores-tipicos-a-evitar-86",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de B19 Errores típicos a evitar?",
+      "answer": "Usar \\(\\sigma\\) como error del promedio en lugar de \\(\\sigma/\\sqrt{N}\\). Olvidar sumar cuadráticamente el error de apreciación instrumental. Informar más decimales de los que justifica el error. Redondear antes de terminar todos los cálculos. Comparar compatibilidad mirando solo los valores centrales. Confundir precisión con exactitud. Decir que un valor es más preciso porque está más cerca del esperado. Usar grados en derivadas trigonométricas (siempre radianes). Olvidar multiplicar el error relativo por \\(|n|\\) en potencias. Olvidar que la pendiente tiene unidades de \\([y]/[x]\\). Confundir \\(m\\) (pendiente) con \\(m\\) (masa) en el péndulo. En \\(T^2\\) vs \\(L\\): la pendiente es \\(4\\pi^2/g\\), no \\(g\\) directamente. Olvidar las unidades al informar.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "b20-formulas-clave-para-memorizar-87",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de B20 Fórmulas clave para memorizar?",
+      "answer": "\\[ x=(\\bar{x}\\pm\\Delta x)\\,\\text{u.} \\] \\[ \\varepsilon=\\dfrac{\\Delta x}{\\bar{x}} \\] \\[ \\varepsilon_\\%=\\dfrac{\\Delta x}{\\bar{x}}\\cdot100\\% \\] \\[ \\sigma_{\\text{est}}=\\dfrac{\\sigma}{\\sqrt{N}} \\] \\[ \\Delta x=\\sqrt{\\sigma_{\\text{est}}^2+\\sigma_{\\text{ap}}^2} \\] \\[ |\\bar{x}_1-\\bar{x}_2|\\leq\\Delta x_1+\\Delta x_2 \\] \\[ |\\bar{x}-x_{\\text{esp}}|\\leq\\Delta x \\] \\[ \\Delta f=\\sqrt{\\!\\left(\\dfrac{\\partial f}{\\partial x_1}\\Delta x_1\\right)^{\\!2}+\\left(\\dfrac{\\partial f}{\\partial x_2}\\Delta x_2\\right)^{\\!2}+\\cdots} \\] \\[ \\Delta f=\\left|\\dfrac{df}{dx}\\right|\\Delta x \\] \\[ \\dfrac{\\Delta f}{f}=|n|\\dfrac{\\Delta x}{x} \\] \\[ V=\\dfrac{\\pi}{6}d^3 \\] \\[ A=\\dfrac{\\pi d^2}{4} \\] \\[ T=2\\pi\\sqrt{\\dfrac{L}{g}} \\] \\[ g=\\dfrac{4\\pi^2}{m} \\] \\[ \\Delta g=\\dfrac{4\\pi^2}{m^2}\\Delta m \\] \\[ \\mu_e=\\tan\\theta \\] \\[ F_{r,e}^{\\text{máx}}=\\mu_e mg \\] \\[ \\Delta h=\\sqrt{(t\\Delta v_0)^2+\\!\\left(\\tfrac{1}{2}t^2\\Delta g\\right)^{\\!2}+\\!\\left((v_0+gt)\\Delta t\\right)^{\\!2}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c1-momento-angular-y-choques-88",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C1 Momento angular y choques?",
+      "answer": "\\[ \\vec L=\\vec r\\times\\vec p \\] \\[ \\vec p=m\\vec v \\] \\[ |\\vec L|=r\\,p\\,\\sin\\theta \\] \\[ |\\vec L|=d\\,p=d\\,m\\,v \\] \\[ L_x=y p_z-z p_y \\] \\[ L_y=z p_x-x p_z \\] \\[ L_z=x p_y-y p_x \\] \\[ \\vec\\tau=\\vec r\\times\\vec F \\] \\[ |\\vec\\tau|=rF\\sin\\varphi=dF \\] \\[ \\dfrac{d\\vec L}{dt}=\\vec\\tau_{ext} \\] \\[ \\vec\\tau_{ext}=0\\Rightarrow \\vec L=\\text{cte.} \\] \\[ \\vec J=\\int \\vec\\tau\\,dt \\] \\[ \\vec L_f-\\vec L_i=\\vec J=\\vec\\tau_m\\Delta t \\] \\[ L_i=L_f \\] \\[ I_{total}=I_{cuerpo}+m d^2 \\] \\[ \\vec L=\\sum_i \\vec r_i\\times\\vec p_i \\qquad ; \\qquad \\vec L=\\vec L\\,'+\\vec r_{CM}\\times\\vec P \\] explicación \\(\\vec L\\): momento angular respecto del punto/eje elegido. \\(\\vec r\\): vector posición desde el punto elegido hasta la partícula o punto de aplicación. \\(\\vec p\\): cantidad de movimiento; \\(\\vec p=m\\vec v\\). \\(m\\): masa; \\(\\vec v\\): velocidad; \\(d\\): brazo perpendicular hasta la recta de movimiento o de acción de la fuerza. \\(\\theta\\): ángulo entre \\(\\vec r\\) y \\(\\vec p\\); \\(\\varphi\\): ángulo entre \\(\\vec r\\) y \\(\\vec F\\). \\(\\vec\\tau\\): torque; \\(\\vec F\\): fuerza aplicada; \\(\\vec J\\): impulso angular. \\(L_i,L_f\\)",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c2-cuerpo-rigido-y-rotacion-89",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C2 Cuerpo rígido y rotación?",
+      "answer": "\\[ \\omega=\\dfrac{d\\theta}{dt} \\] \\[ \\alpha=\\dfrac{d\\omega}{dt} \\] \\[ v=r\\omega \\] \\[ a_t=r\\alpha \\] \\[ a_c=\\dfrac{v^2}{r}=r\\omega^2 \\] \\[ I=\\sum_i m_i r_i^2 \\] \\[ I=\\int r^2\\,dm \\] \\[ dm=\\rho\\,dV \\] \\[ dm=\\sigma\\,dA \\] \\[ dm=\\lambda\\,dx \\] \\[ L=I\\omega \\] \\[ E_{c,rot}=\\tfrac12 I\\omega^2 \\] \\[ \\sum\\tau=I\\alpha \\] \\[ dW=\\tau\\,d\\theta \\] \\[ W=\\int_{\\theta_i}^{\\theta_f}\\tau\\,d\\theta \\] \\[ P=\\tau\\omega \\] \\[ W_{total}=\\tfrac12 I\\omega_f^2-\\tfrac12 I\\omega_i^2 \\] explicación \\(\\theta\\): posición angular; \\(\\omega\\): velocidad angular; \\(\\alpha\\): aceleración angular. \\(r\\): distancia al eje de rotación; \\(v\\): velocidad lineal del punto; \\(a_t\\): aceleración tangencial; \\(a_c\\): aceleración centrípeta. \\(I\\): momento de inercia respecto del eje elegido; \\(m_i\\): masa de la partícula i; \\(r_i\\): distancia de esa partícula al eje. \\(dm\\): diferencial de masa; \\(\\rho\\): densidad volumétrica; \\(\\sigma\\): densidad superficial; \\(\\lambda\\): densidad lineal. \\(\\tau\\): torque neto respecto del eje; \\(W\\): trabajo; \\(P\\): potencia. Un cuerpo rígido mantiene fijas las distancias entre sus puntos. Si",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c3-momentos-de-inercia-y-steiner-90",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C3 Momentos de inercia y Steiner?",
+      "answer": "\\[ \\text{Partícula:}\\quad I=mr^2 \\] \\[ \\text{Aro/cil. hueco delgado:}\\quad I=MR^2 \\] \\[ \\text{Disco/cil. macizo:}\\quad I=\\tfrac12MR^2 \\] \\[ \\text{Varilla por centro:}\\quad I_{CM}=\\tfrac1{12}ML^2 \\] \\[ \\text{Varilla por extremo:}\\quad I=\\tfrac13ML^2 \\] \\[ \\text{Esfera maciza:}\\quad I=\\tfrac25MR^2 \\] \\[ \\text{Esfera hueca:}\\quad I=\\tfrac23MR^2 \\] \\[ I_P=I_{CM}+Md^2 \\] detalle \\(I\\): momento de inercia respecto del eje indicado. \\(M\\): masa total; \\(m\\): masa puntual; \\(R\\): radio; \\(L\\): longitud de la varilla. \\(I_{CM}\\): momento de inercia respecto de un eje que pasa por el centro de masa. \\(I_P\\): momento de inercia respecto de un eje paralelo que pasa por el punto \\(P\\). \\(d\\): distancia entre el eje por el centro de masa y el eje nuevo. cómo elegir Primero mirá el eje de giro. Si el eje coincide con el de la tabla, usás la fórmula directa. Si el eje es paralelo pero está desplazado del centro de masa, usás Steiner. Ejemplo de varilla por extremo: \\(I=\\tfrac1{12}ML^2+M(L/2)^2=\\tfrac13ML^2\\). uso en parciales Varilla con bala o bloque pegado: usar \\(I\\) de la varilla respecto del pi",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c4-rodadura-poleas-y-carretes-91",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C4 Rodadura, poleas y carretes?",
+      "answer": "\\[ v_{CM}=R\\omega \\] \\[ a_{CM}=R\\alpha \\] \\[ E_c=\\tfrac12Mv_{CM}^2+\\tfrac12I_{CM}\\omega^2 \\] \\[ E_c=\\tfrac12(I_{CM}+MR^2)\\omega^2 \\] \\[ I_A=I_{CM}+MR^2 \\] \\[ \\sum F_{ext}=Ma_{CM} \\] \\[ \\sum \\tau_{CM}=I_{CM}\\alpha \\] \\[ a_{cuerda}=R\\alpha \\] \\[ a_{bloque}=2R\\alpha \\] \\[ a_{cuerda}=\\alpha(R\\pm r) \\] \\[ \\text{Polea con inercia:}\\quad (T_2-T_1)R=I\\alpha \\] explicación \\(CM\\): centro de masa. \\(v_{CM}\\) y \\(a_{CM}\\): velocidad y aceleración del centro de masa. \\(R\\): radio exterior que rueda o radio de la polea; \\(r\\): radio menor del carrete. \\(I_{CM}\\): momento de inercia respecto del centro de masa; \\(I_A\\): respecto del punto instantáneo de contacto. \\(T_1,T_2\\): tensiones en distintos tramos de cuerda. Rodar sin deslizar significa que el punto de contacto con el piso está instantáneamente quieto respecto del piso. Por eso aparece \\(v_{CM}=R\\omega\\). En rodadura pura, el rozamiento es estático. Puede generar torque, pero no necesariamente disipa energía. relaciones especiales Polea fija o tambor fijo sin deslizamiento: \\(a=R\\alpha\\). Cilindro que rueda y el hilo sale por arriba: el pu",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c5-equilibrio-estatico-92",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C5 Equilibrio estático?",
+      "answer": "\\[ \\sum F_x=0 \\] \\[ \\sum F_y=0 \\] \\[ \\sum\\tau=0 \\] \\[ \\tau=dF \\] \\[ \\tau=rF\\sin\\theta \\] \\[ f_e\\le \\mu_e N \\] \\[ f_e=\\mu_eN\\quad\\text{en límite} \\] \\[ f_d=\\mu_dN \\] explicación \\(F_x,F_y\\): componentes de fuerzas. \\(\\tau\\): torque. \\(d\\): brazo perpendicular de la fuerza. \\(r\\): distancia al punto de giro. \\(\\theta\\): ángulo entre \\(\\vec r\\) y \\(\\vec F\\). \\(f_e\\): rozamiento estático; \\(f_d\\): rozamiento dinámico; \\(\\mu_e,\\mu_d\\): coeficientes de rozamiento; \\(N\\): normal. Un cuerpo en equilibrio no traslada ni rota. Por eso no alcanza con \\(\\sum F=0\\): también debe cumplirse \\(\\sum\\tau=0\\). uso en ejercicios Barras, vigas, escaleras, semáforos, cajas o barras arrastradas con velocidad constante. Elegí momentos en el punto donde pasen más incógnitas, por ejemplo el pivote. Así esas fuerzas no generan torque. Si está “a punto de deslizar”, usar \\(f_e=\\mu_eN\\). Si no está al límite, solo \\(f_e\\le\\mu_eN\\).",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c6-oscilaciones-y-resortes-93",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C6 Oscilaciones y resortes?",
+      "answer": "\\[ x''+\\Omega^2x=0 \\] \\[ x(t)=A\\cos(\\Omega t+\\varphi) \\] \\[ v(t)=-\\Omega A\\sin(\\Omega t+\\varphi) \\] \\[ a(t)=-\\Omega^2x(t) \\] \\[ \\Omega=\\dfrac{2\\pi}{T}=2\\pi f \\] \\[ T=\\dfrac{2\\pi}{\\Omega} \\] \\[ f=\\dfrac1T \\] \\[ \\Omega=\\sqrt{\\dfrac{k}{m}} \\] \\[ T=2\\pi\\sqrt{\\dfrac{m}{k}} \\] \\[ k_{eq}=k_1+k_2 \\] \\[ A=\\sqrt{x_0^2+\\left(\\dfrac{v_0}{\\Omega}\\right)^2} \\] \\[ x_0=A\\cos\\varphi \\] \\[ v_0=-\\Omega A\\sin\\varphi \\] \\[ v_{max}=\\Omega A \\] \\[ a_{max}=\\Omega^2A \\] \\[ y_e=l_0+\\dfrac{mg}{k} \\] \\[ \\delta y=y-y_e \\quad ; \\quad F_y=-k\\delta y \\] explicación \\(x\\) o \\(\\delta y\\): apartamiento respecto de la posición de equilibrio. \\(A\\): amplitud; \\(\\Omega\\): frecuencia angular del MAS; \\(\\varphi\\): fase inicial. \\(T\\): período; \\(f\\): frecuencia; \\(k\\): constante del resorte; \\(m\\): masa. \\(x_0,v_0\\): posición y velocidad iniciales. \\(y_e\\): posición de equilibrio. \\(l_0\\): longitud natural. Hay MAS cuando la fuerza neta es restitutiva y proporcional al apartamiento. La aceleración siempre apunta hacia el equilibrio: \\(a=-\\Omega^2x\\).En un resorte vertical, si medís desde el equilibrio, la gravedad ya quedó",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c7-energia-en-mas-94",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C7 Energía en MAS?",
+      "answer": "\\[ U=\\tfrac12kx^2 \\] \\[ E_c=\\tfrac12mv^2 \\] \\[ E_m=\\tfrac12kA^2 \\] \\[ E_c(x)=\\tfrac12k(A^2-x^2) \\] \\[ U(t)=\\tfrac12kA^2\\cos^2(\\Omega t+\\varphi) \\] \\[ E_c(t)=\\tfrac12kA^2\\sin^2(\\Omega t+\\varphi) \\] explicación\\(U\\): energía potencial elástica medida desde el equilibrio.\\(E_c\\): energía cinética; \\(E_m\\): energía mecánica total.\\(x\\): apartamiento; \\(A\\): amplitud; \\(k\\): constante del resorte; \\(m\\): masa.En los extremos \\(x=\\pm A\\): \\(v=0\\) y la energía está como potencial. En el equilibrio \\(x=0\\): la velocidad es máxima y la energía está como cinética. uso en ejerciciosPara hallar velocidad en una posición: usar \\(E_c(x)=\\tfrac12k(A^2-x^2)\\).Para hallar amplitud desde energía: usar \\(E_m=\\tfrac12kA^2\\).Para gráficos: \\(U\\) y \\(E_c\\) son periódicas y se intercambian; la suma queda constante.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c8-pendulos-pendulo-simple-95",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre péndulo simple en C8 Péndulos?",
+      "answer": "\\[ \\theta''+\\dfrac{g}{L}\\theta=0 \\] \\[ \\Omega=\\sqrt{\\dfrac{g}{L}} \\] \\[ T=2\\pi\\sqrt{\\dfrac{L}{g}} \\]",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c8-pendulos-pendulo-fisico-96",
+      "type": "application",
+      "question": "¿Qué hay que recordar sobre péndulo físico en C8 Péndulos?",
+      "answer": "\\[ \\tau=-Mgd\\sin\\theta \\] \\[ \\sin\\theta\\approx\\theta \\] \\[ I_P\\theta''=-Mgd\\theta \\] \\[ \\Omega=\\sqrt{\\dfrac{Mgd}{I_P}} \\] \\[ T=2\\pi\\sqrt{\\dfrac{I_P}{Mgd}} \\] \\[ I_P=I_{CM}+Md^2 \\] \\[ d_{min}=\\sqrt{\\dfrac{I_{CM}}{M}} \\] \\[ \\Delta U=Mgd(1-\\cos\\theta) \\] \\[ E_{c,rot}=\\tfrac12I_P\\omega_{ang}^2 \\] explicación \\(\\theta\\): ángulo respecto del equilibrio, en radianes. \\(L\\): longitud del hilo en péndulo simple. \\(M\\): masa total del cuerpo rígido; \\(g\\): gravedad; \\(d\\): distancia desde pivote al centro de masa. \\(I_P\\): momento de inercia respecto del pivote; \\(I_{CM}\\): respecto del centro de masa. \\(\\Omega\\): frecuencia angular de oscilación; \\(T\\): período; \\(\\omega_{ang}\\): velocidad angular del cuerpo. El péndulo simple es masa puntual + hilo. El péndulo físico es un cuerpo rígido con tamaño y momento de inercia. En el físico, el peso genera torque restitutivo respecto del pivote.Para pequeñas oscilaciones se usa \\(\\sin\\theta\\approx\\theta\\), con \\(\\theta\\) en radianes. uso en ejercicios Disco colgado de un agujero: calcular \\(I_P\\) con Steiner. Varilla con pivote desplazado: encontrar ",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c9-fluidos-estatica-97",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C9 Fluidos estática?",
+      "answer": "\\[ p=\\dfrac{F_n}{A} \\] \\[ F=pA \\] \\[ 1\\,Pa=1\\,N/m^2 \\] \\[ 1\\,atm=1{,}013\\times10^5\\,Pa \\] \\[ \\dfrac{dp}{dy}=-\\rho g \\] \\[ p=p_0+\\rho gh \\] \\[ p_{abs}=p_{atm}+p_{man} \\] \\[ p_{man}=p_{abs}-p_{atm} \\] \\[ p_{man}=\\rho gh \\] explicación \\(p\\): presión; \\(F_n\\): fuerza normal a la superficie; \\(A\\): área. \\(p_0\\): presión en la superficie; \\(p_{atm}\\): presión atmosférica. \\(p_{abs}\\): presión absoluta; \\(p_{man}\\): presión manométrica. \\(\\rho\\): densidad del fluido; \\(g\\): gravedad; \\(h\\): profundidad medida hacia abajo. \\(y\\): altura medida hacia arriba en \\(dp/dy=-\\rho g\\). La presión es fuerza normal por área. En un fluido quieto aumenta con la profundidad porque hay más columna de fluido encima.Si el recipiente está abierto, la presión absoluta es \\(p_{atm}+\\rho gh\\). Si te piden manométrica, es solo la diferencia respecto de la atmósfera: \\(\\rho gh\\). varios fluidosSe suma por capas: \\(p=p_0+\\rho_1gh_1+\\rho_2gh_2+...\\). Al bajar sumás \\(\\rho gh\\); al subir restás \\(\\rho gh\\). errores típicosConfundir presión absoluta y manométrica.Usar densidad del objeto en lugar de densidad del fl",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c10-pascal-manometros-y-barometro-98",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C10 Pascal, manómetros y barómetro?",
+      "answer": "\\[ \\dfrac{F_1}{A_1}=\\dfrac{F_2}{A_2} \\] \\[ F_2=\\dfrac{A_2}{A_1}F_1 \\] \\[ p-p_{atm}=\\rho gh \\] \\[ p=p_{atm}\\pm\\rho gh \\] \\[ \\Delta p=(\\rho_m-\\rho_f)gh \\] \\[ p_{atm}=\\rho_{Hg}gh \\] \\[ 760\\,mmHg=1\\,atm \\] \\[ 1\\,mmHg\\approx133\\,Pa \\] detalle \\(F_1,F_2\\): fuerzas sobre pistones; \\(A_1,A_2\\): áreas de pistones. \\(\\Delta p\\): diferencia de presión. \\(\\rho_m\\): densidad del líquido manométrico. \\(\\rho_f\\): densidad del fluido de la tubería. \\(\\rho_{Hg}\\): densidad del mercurio; \\(h\\): diferencia de altura de columnas. cómo recorrer manómetrosEn el mismo fluido y a la misma altura: misma presión.Si bajás una altura \\(h\\), sumás \\(\\rho gh\\).Si subís una altura \\(h\\), restás \\(\\rho gh\\).Con mercurio midiendo agua en tubería suele aparecer \\((\\rho_{Hg}-\\rho_{agua})gh\\). uso en ejerciciosPistones hidráulicos, tubos en U, diferencias de presión en Venturi, presión de gas, barómetro y columnas de agua/mercurio.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c11-empuje-y-flotacion-99",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C11 Empuje y flotación?",
+      "answer": "\\[ E=\\rho_{fluido}gV_{sumergido} \\] \\[ E_{total}=\\rho_1gV_1+\\rho_2gV_2+... \\] \\[ E=P\\quad\\text{si flota} \\] \\[ \\rho_{fluido}V_{sum}=\\rho_{cuerpo}V_{total} \\] \\[ \\dfrac{V_{sum}}{V_{total}}=\\dfrac{\\rho_{cuerpo}}{\\rho_{fluido}} \\] \\[ \\rho_{cuerpo}V_{total}=\\rho_1V_1+\\rho_2V_2 \\] \\[ T=P-E \\] \\[ P_{ap}=P-E \\] \\[ \\text{Balanza resorte: }L=P_{bloque}-E \\] \\[ \\text{Balanza recipiente: }L=P_{rec}+P_{liq}+E \\] explicación \\(E\\): empuje; \\(P\\): peso real del cuerpo; \\(P_{ap}\\): peso aparente. \\(\\rho_{fluido}\\): densidad del fluido; \\(\\rho_{cuerpo}\\): densidad del cuerpo. \\(V_{sumergido}\\) o \\(V_{sum}\\): volumen sumergido; \\(V_{total}\\): volumen total del cuerpo. \\(T\\): tensión de cuerda; \\(L\\): lectura de balanza. El empuje es igual al peso del fluido desplazado. Depende de la densidad del fluido y del volumen sumergido, no de la densidad del objeto.Si el cuerpo está entre dos fluidos, el empuje se calcula por partes. uso en ejercicios Bloque flotando entre aceite y agua: usar \\(E_1+E_2=P\\). Cubo mitad en agua y mitad en mercurio: \\(E=\\rho_{agua}gV/2+\\rho_{Hg}gV/2\\). Cuerpo colgado y sumergido:",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c12-fluidos-dinamica-100",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C12 Fluidos dinámica?",
+      "answer": "\\[ Q=Av \\] \\[ A_1v_1=A_2v_2 \\] \\[ Q_1=Q_2 \\] \\[ A=\\dfrac{\\pi D^2}{4} \\] \\[ v=\\dfrac{Q}{A} \\] \\[ 1\\,L=10^{-3}m^3 \\] \\[ p+\\rho gy+\\tfrac12\\rho v^2=\\text{cte.} \\] \\[ p_1+\\rho gy_1+\\tfrac12\\rho v_1^2=p_2+\\rho gy_2+\\tfrac12\\rho v_2^2 \\] \\[ p_1+\\tfrac12\\rho v_1^2=p_2+\\tfrac12\\rho v_2^2 \\] \\[ p_1-p_2=\\tfrac12\\rho(v_2^2-v_1^2) \\] detalle \\(Q\\): caudal volumétrico; \\(A\\): área de sección; \\(D\\): diámetro; \\(v\\): velocidad del fluido. \\(p\\): presión; \\(\\rho\\): densidad del fluido; \\(g\\): gravedad; \\(y\\): altura. Subíndices 1 y 2: dos puntos o secciones de la tubería. continuidadExpresa conservación de masa para fluido incompresible. Si el área disminuye, la velocidad aumenta. Ojo: el área circular depende de \\(D^2\\), no de \\(D\\). BernoulliRelaciona presión, altura y velocidad. Se usa con flujo estacionario, fluido incompresible, no viscoso, sin pérdidas ni bombas, y sobre una misma línea de corriente.En tubería horizontal se cancela \\(\\rho gy\\). Entonces donde la velocidad sube, la presión baja. errores típicosUsar Bernoulli sin continuidad.Olvidar el término de altura si la tubería no es hori",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c13-venturi-pitot-y-torricelli-101",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C13 Venturi, Pitot y Torricelli?",
+      "answer": "\\[ \\Delta p=\\rho gh \\] \\[ \\Delta p=(\\rho_m-\\rho_f)gh \\] \\[ \\tfrac12\\rho_f(v_2^2-v_1^2)=\\Delta p \\] \\[ p_{est}-p=\\tfrac12\\rho v^2 \\] \\[ v_{Pitot}=\\sqrt{2gh} \\] \\[ v_{Pitot}=\\sqrt{\\dfrac{2(\\rho_m-\\rho_f)gh}{\\rho_f}} \\] \\[ v=\\sqrt{2gh} \\] \\[ v=\\sqrt{\\dfrac{2\\Delta p}{\\rho}+2gh} \\] \\[ Q=Av \\] \\[ h_{chorro}=\\dfrac{v^2}{2g} \\] detalle \\(\\Delta p\\): diferencia de presión; \\(\\rho_m\\): densidad del fluido manométrico; \\(\\rho_f\\): densidad del fluido que circula. \\(p_{est}\\): presión de estancamiento del Pitot; \\(p\\): presión estática. \\(h\\): altura de columna o desnivel; \\(v\\): velocidad de salida o del flujo; \\(Q\\): caudal. VenturiUsar continuidad: \\(A_1v_1=A_2v_2\\).Convertir altura manométrica en \\(\\Delta p\\).Usar Bernoulli horizontal: \\(p_1-p_2=\\tfrac12\\rho_f(v_2^2-v_1^2)\\).Despejar velocidad, caudal, diámetro o altura. PitotEl Pitot compara presión estática con presión de estancamiento. En el punto de estancamiento la velocidad es cero, por eso la diferencia de presión vale \\(\\tfrac12\\rho v^2\\). tanques y chorrosSi el tanque es grande, \\(v_{superficie}\\approx0\\). Si está abierto y la sali",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "c14-guia-rapida-para-elegir-formula-102",
+      "type": "relation",
+      "question": "¿Cuáles son las ideas clave de C14 Guía rápida para elegir fórmula?",
+      "answer": "Choque con pivote: usar \\(L_i=L_f\\). No conservar energía si es inelástico. Cuerpo con eje fijo: usar \\(\\sum\\tau=I\\alpha\\) y \\(E_c=\\tfrac12I\\omega^2\\). Rodadura: usar \\(v_{CM}=R\\omega\\), \\(a_{CM}=R\\alpha\\) y energía traslacional + rotacional. Polea con masa: usar \\(\\sum\\tau=I\\alpha\\). No asumir \\(T_1=T_2\\). Equilibrio: usar \\(\\sum F_x=0\\), \\(\\sum F_y=0\\), \\(\\sum\\tau=0\\). Resorte: usar \\(x''+\\Omega^2x=0\\), \\(\\Omega=\\sqrt{k/m}\\). Péndulo físico: usar \\(I_P\\theta''=-Mgd\\theta\\). Fluido quieto: usar \\(p=p_0+\\rho gh\\) y \\(E=\\rho gV_{sumergido}\\). Fluido en movimiento: usar \\(Q=Av\\) y Bernoulli. regla mentalPrimero identificá qué te piden: choque, rotación, equilibrio, oscilación, fluido quieto o fluido en movimiento. Después recién elegí fórmula. La mayoría de errores salen de usar una fórmula correcta en el tipo de ejercicio equivocado.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    }
+  ]
+}

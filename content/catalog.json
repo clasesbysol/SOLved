@@ -12,6 +12,14 @@
     },
     {
       "subjectId": "fisica1",
+      "unitId": "resumen-integral",
+      "title": "Resumen integral de Física I",
+      "contentVersion": "1.0.0",
+      "status": "published",
+      "path": "content/subjects/fisica1/units/resumen-integral/"
+    },
+    {
+      "subjectId": "fisica1",
       "unitId": "demo",
       "title": "Vista integral",
       "contentVersion": "1.0.0",
@@ -22,7 +30,7 @@
       "subjectId": "quimica_organica",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Química Orgánica",
-      "contentVersion": "0.6.1",
+      "contentVersion": "0.6.2",
       "status": "published",
       "path": "content/subjects/quimica_organica/units/resumen-integral/"
     }
