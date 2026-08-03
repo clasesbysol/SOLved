@@ -2,6 +2,7 @@
   "use strict";
 
   const MATERIALS=["Programa","Apuntes","Diapositivas","Bibliografía","Guías","Trabajos prácticos","Parciales","Finales","Resoluciones","Gráficos","Imágenes","Indicaciones del profesor"];
+  const BASE_INSTRUCTION="Creá un resumen de estudio claro, completo y fiel a los materiales adjuntos. Si falta información, indicá el faltante y no inventes contenido. Adaptá la estructura a la materia y al tipo de material; todos los datos de configuración son opcionales.";
   const QUALITY=["Todos los archivos revisados","Índice comparado con las fuentes","Temas completos","Tablas e imágenes incluidas","Fórmulas verificadas","Variables y unidades definidas","Errores frecuentes","Preguntas de examen","Referencias","Glosario","Tarjetas","Ejercicios","Mapa mental","Informe de cobertura"];
   const DEFAULT_DRAFT={subjectId:"",unit:"",objective:"Preparar un resumen completo para estudiar",examDate:"",availableTime:"",initialLevel:"desde cero",prioritySource:"programa y material del profesor",externalInfo:"separada",evaluationType:"escrito",depth:"completa",notes:"",profile:"general",materials:[]};
 
@@ -58,8 +59,8 @@
       <div class="factory-layout"><div class="factory-builder">
         <section class="factory-card" data-section="material"><h2>1. Preparar material</h2><p>No todo es obligatorio. La IA debe inventariar lo recibido y detectar faltantes.</p><div class="factory-check-grid">${MATERIALS.map(item=>`<label><input type="checkbox" name="materials" value="${safe(item)}"> ${safe(item)}</label>`).join("")}</div></section>
         <section class="factory-card" data-section="configure"><h2>2. Configurar resumen</h2><div class="factory-form">
-          ${field("Materia","subjectId",`<select name="{name}">${subjectOptions()}</select>`)}
-          ${field("Unidad o tema","unit",'<input name="{name}" placeholder="Ej.: Unidad 2 — Cinemática">')}
+          ${field("Materia (opcional)","subjectId",`<select name="{name}">${subjectOptions()}</select>`)}
+          ${field("Unidad o tema (opcional)","unit",'<input name="{name}" placeholder="Ej.: Unidad 2 — Cinemática">')}
           ${field("Objetivo","objective",'<input name="{name}">')}
           ${field("Fecha de evaluación","examDate",'<input name="{name}" type="date">')}
           ${field("Tiempo disponible","availableTime",'<input name="{name}" placeholder="Ej.: 3 semanas, 2 h por día">')}
@@ -99,7 +100,7 @@
   function initialMessage(){return `Voy a adjuntar material de ${subjectName()}${draft.unit?`, sobre ${draft.unit}`:""}. Antes de redactar, revisá todos los archivos, inventarialos, detectá faltantes y hacé en un único primer mensaje todas las preguntas imprescindibles con opciones y una recomendación por pregunta. Proponé también un índice y esperá mi configuración. No empieces el resumen todavía.`}
   function configuration(){return ["FICHA DE CONFIGURACIÓN",`Materia: ${subjectName()}`,`Unidad o tema: ${draft.unit||"a definir"}`,`Objetivo: ${draft.objective||"a definir"}`,`Fecha de evaluación: ${draft.examDate||"no indicada"}`,`Tiempo disponible: ${draft.availableTime||"no indicado"}`,`Nivel inicial: ${draft.initialLevel}`,`Fuente prioritaria: ${draft.prioritySource}`,`Información externa: ${draft.externalInfo}`,`Tipo de evaluación: ${draft.evaluationType}`,`Profundidad: ${draft.depth}`,`Perfil: ${(SUMMARY_FACTORY_GUIDE.profiles[draft.profile]||SUMMARY_FACTORY_GUIDE.profiles.general).label}`,`Observaciones: ${draft.notes||"ninguna"}`,`Material que planeo adjuntar: ${draft.materials.length?draft.materials.join(", "):"todavía no marcado; detectá faltantes"}`].join("\n")}
   function finalChecklist(){return `CHECKLIST FINAL (informar el estado real, sin afirmar verificaciones no realizadas)\n- ${QUALITY.join("\n- ")}`}
-  function promptParts(){return{initial:initialMessage(),instruction:instruction(),all:[initialMessage(),instruction(),configuration(),finalChecklist()].join("\n\n---\n\n")}}
+  function promptParts(){return{initial:initialMessage(),instruction:`${BASE_INSTRUCTION}\n\n${instruction()}`,all:[initialMessage(),BASE_INSTRUCTION,instruction(),configuration(),finalChecklist()].join("\n\n---\n\n")}}
   function updatePrompt(){const output=host.querySelector("#factoryPrompt");if(output)output.textContent=promptParts().all}
   function fill(){for(const [key,value] of Object.entries(draft)){if(key==="materials")continue;const control=host.querySelector(`[name="${key}"]`);if(control)control.value=value??""}host.querySelectorAll('[name="materials"]').forEach(input=>input.checked=draft.materials.includes(input.value))}
   function read(){for(const key of Object.keys(DEFAULT_DRAFT)){if(key==="materials")continue;const control=host.querySelector(`[name="${key}"]`);draft[key]=String(control?.value||"")}draft.materials=[...host.querySelectorAll('[name="materials"]:checked')].map(input=>input.value)}
