@@ -1,15 +1,15 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v073-2";
+const CACHE_VERSION = "biblioteca-lbt-v074-1";
 const CORE = [
   "./",
   "./index.html",
-  "./styles.css?v=0.7.3",
+  "./styles.css?v=0.7.4",
   "./styles-enhancements.css?v=0.7.3",
   "./organic-cards.css?v=0.7.3",
   "./organic-mind-map.css?v=0.7.3",
   "./js/authorized-users.js?v=0.7.3",
-  "./js/auth.js?v=0.7.3",
-  "./js/data.js?v=0.7.3",
+  "./js/auth.js?v=0.7.4",
+  "./js/data.js?v=0.7.4",
   "./js/db.js?v=0.7.3",
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
@@ -19,7 +19,7 @@ const CORE = [
   "./js/utilities.js?v=0.7.3",
   "./js/summary-factory.js?v=0.7.3",
   "./js/career-factory.js?v=0.7.3",
-  "./js/app.js?v=0.7.3",
+  "./js/app.js?v=0.7.4",
   "./content/catalog.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json",
