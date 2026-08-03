@@ -8,6 +8,7 @@ async function openPhysics(page) {
 async function openPhysicsFromDashboard(page) {
   await page.getByRole("button", { name: "Abrir materia" }).first().click();
   await expect(page.locator("#studyTitle")).toHaveText("Física I");
+  await page.locator("#studyUnit").selectOption("demo");
   await expect(page.locator("#studyBody .highlightable").first()).toBeVisible();
 }
 
