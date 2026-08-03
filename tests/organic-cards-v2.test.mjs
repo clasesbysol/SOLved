@@ -1,0 +1,12 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import {load} from "cheerio";
+const bank=JSON.parse(fs.readFileSync("content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json","utf8"));
+const html=fs.readFileSync("content/subjects/quimica_organica/units/resumen-integral/original.html","utf8"),$=load(html),anchors=new Set($("[id]").map((_,node)=>$(node).attr("id")).get());
+const requiredUnits=["alcanos","haluros-de-alquilo","alquenos","alquinos","alcoholes","eteres","epoxidos","aldehidos-y-cetonas","acidos-carboxilicos-y-derivados","aromaticos","compuestos-nitrogenados","aminoacidos-y-proteinas","hidratos-de-carbono","espectroscopia"];
+assert.equal(bank.schemaVersion,2);assert.equal(new Set(bank.cards.map(card=>card.id)).size,bank.cards.length,"No puede haber IDs duplicados");assert.ok(bank.cards.length>=390,"El banco consolidado quedó incompleto");assert.ok(bank.cards.filter(card=>card.mode==="memory").length>=330,"Faltan tarjetas de memoria");assert.ok(bank.cards.filter(card=>card.mode==="synthesis").length>=60,"Faltan tarjetas de síntesis");
+for(const card of bank.cards){assert.ok(card.unit&&card.topic&&card.subtopic&&card.front&&card.back,`Tarjeta incompleta: ${card.id}`);assert.ok(["memory","synthesis"].includes(card.mode),`Modo inválido: ${card.id}`);assert.ok(!Object.hasOwn(card,"difficulty"),`No debe existir difficulty: ${card.id}`);assert.ok(anchors.has(card.summaryTarget),`Enlace inexistente: ${card.id} -> ${card.summaryTarget}`)}
+for(const unit of requiredUnits){const cards=bank.cards.filter(card=>card.unit===unit);assert.ok(cards.length,`Unidad sin tarjetas: ${unit}`);assert.ok(new Set(cards.map(card=>card.topic)).size,`Unidad sin temas: ${unit}`)}
+for(const phrase of ["Conformaciones y análisis conformacional","Comparación SN1, SN2, E1 y E2","Ácidos, bases y estabilidad","Estereoquímica de las adiciones","Reordenamientos","Estrategias de síntesis aromática","Sales de diazonio","Enolatos y condensaciones","Problemas integradores"])assert.ok(bank.cards.some(card=>card.topic===phrase),`Falta cobertura: ${phrase}`);
+assert.ok(bank.cards.filter(card=>card.topic==="Estrategias de síntesis aromática").length>=10);assert.ok(bank.cards.filter(card=>card.topic==="Sales de diazonio").length>=8);assert.ok(bank.cards.filter(card=>card.topic==="Problemas integradores").length>=20);
+console.log(`Banco Orgánica v2: OK · ${bank.cards.length} tarjetas · ${bank.topics.length} temas`);
