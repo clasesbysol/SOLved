@@ -13,12 +13,11 @@ test("@desktop ofrece acceso invitado y aísla el perfil autorizado",async({page
 test("@desktop renderiza el resumen orgánico seguro y carga imágenes bajo demanda",async({page})=>{
  await page.goto("/");await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]').click();
  await expect(page.locator("#studyUnit")).toHaveValue("resumen-integral");await expect(page.locator(".rich-content")).toBeVisible();
- await expect(page.locator(".rich-details")).toHaveCount(419);const detail=page.locator(".rich-details").filter({has:page.locator("img")}).first();await detail.locator("summary").click();
- const image=detail.locator("img").first();await expect(image).toHaveAttribute("loading","lazy");await image.click();await expect(page.locator(".rich-lightbox")).toBeVisible();await page.getByRole("button",{name:"Cerrar"}).click();
+ const document=page.locator(".rich-document");await expect(document).toBeVisible();const frame=page.frameLocator(".rich-document");await expect(frame.locator("#intro")).toBeVisible();await expect(frame.locator("img").first()).toHaveAttribute("loading","lazy");
  await page.getByRole("button",{name:"Glosario"}).click();await expect(page.getByText("Esta sección se generará después de revisar el resumen importado.")).toBeVisible();
 });
 
 test("@mobile mantiene utilizable el resumen enriquecido",async({page})=>{
  await page.goto("/");await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]').click();
- await expect(page.locator(".rich-content")).toBeVisible();await page.locator(".rich-details summary").first().click();await expect(page.locator(".rich-details").first()).toHaveAttribute("open","");
+ await expect(page.locator(".rich-content")).toBeVisible();await expect(page.locator(".rich-document")).toBeVisible();await expect(page.frameLocator(".rich-document").locator("#intro")).toBeVisible();
 });
