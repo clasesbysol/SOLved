@@ -1,7 +1,7 @@
 {
   "name": "biblioteca-lbt",
   "private": true,
-  "version": "0.6.4",
+  "version": "0.7.0",
   "description": "SOLved: biblioteca de estudio local-first",
   "scripts": {
     "start": "http-server . -p 4173 -c-1",
@@ -9,7 +9,7 @@
     "content:validate": "node factory/validators/content-validate.mjs",
     "content:catalog": "node factory/validators/content-catalog.mjs",
     "test:content": "node tests/content.test.mjs",
-    "test": "node tests/content.test.mjs && node tests/correlations.test.mjs && node tests/static.test.mjs && node tests/sync.test.cjs && node tests/utilities.test.cjs && playwright test --reporter=list",
+    "test": "node tests/content.test.mjs && node tests/organic-cards-v2.test.mjs && node tests/correlations.test.mjs && node tests/static.test.mjs && node tests/sync.test.cjs && node tests/utilities.test.cjs && playwright test --reporter=list",
     "build": "node scripts/build.mjs",
     "check": "npm test && npm run build"
   },

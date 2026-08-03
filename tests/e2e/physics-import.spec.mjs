@@ -7,7 +7,7 @@ test("@desktop Física I abre el HTML integral y ofrece tarjetas",async({page})=
 });
 
 test("@desktop Orgánica publica tarjetas basadas en el resumen",async({page})=>{
- await openSubject(page,"quimica_organica");await page.getByRole("button",{name:"Tarjetas"}).click();await expect(page.locator(".content-item")).toHaveCount(100);await expect(page.locator(".content-item").first()).not.toBeEmpty();
+ await openSubject(page,"quimica_organica");await page.getByRole("button",{name:"Tarjetas"}).click();await expect(page.getByRole("heading",{name:"Tarjetas de estudio"})).toBeVisible();await expect(page.getByRole("button",{name:/Memorizar reacciones y teoría/})).toBeVisible();
 });
 
 test("@mobile Física I conserva el resumen utilizable",async({page})=>{
