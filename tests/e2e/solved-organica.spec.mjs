@@ -1,4 +1,5 @@
 import {test,expect} from "@playwright/test";
+const waitForApp=page=>expect.poll(()=>page.evaluate(()=>typeof document.querySelector('[data-page="subjects"]')?.onclick==="function")).toBe(true);
 
 test("@desktop ofrece acceso invitado y aísla el perfil autorizado",async({page})=>{
  await page.goto("/");await page.evaluate(()=>localStorage.removeItem("solved-access-profile-v1"));await page.reload();
@@ -11,13 +12,13 @@ test("@desktop ofrece acceso invitado y aísla el perfil autorizado",async({page
 });
 
 test("@desktop renderiza el resumen orgánico seguro y carga imágenes bajo demanda",async({page})=>{
- await page.goto("/");await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]').click();
+ await page.goto("/");await waitForApp(page);await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]:visible').click();
  await expect(page.locator("#studyUnit")).toHaveValue("resumen-integral");await expect(page.locator(".rich-content")).toBeVisible();
  const document=page.locator(".rich-document");await expect(document).toBeVisible();const frame=page.frameLocator(".rich-document");await expect(frame.locator("#intro")).toBeVisible();await expect(frame.locator("img").first()).toHaveAttribute("loading","lazy");
  await page.getByRole("button",{name:"Glosario"}).click();await expect(page.getByText("Esta sección se generará después de revisar el resumen importado.")).toBeVisible();
 });
 
 test("@mobile mantiene utilizable el resumen enriquecido",async({page})=>{
- await page.goto("/");await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]').click();
+ await page.goto("/");await waitForApp(page);await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]:visible').click();
  await expect(page.locator(".rich-content")).toBeVisible();await expect(page.locator(".rich-document")).toBeVisible();await expect(page.frameLocator(".rich-document").locator("#intro")).toBeVisible();
 });
