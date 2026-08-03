@@ -1,0 +1,36 @@
+import fs from "node:fs";
+import path from "node:path";
+import {load} from "cheerio";
+
+const root=path.resolve(import.meta.dirname,"../..");
+const input=process.argv[2];
+if(!input)throw Error("Uso: node import-fisica-and-cards.mjs <index.html>");
+const clean=value=>String(value||"").replace(/\s+/g," ").trim();
+const slug=value=>clean(value).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,62)||"tarjeta";
+const uniqueCards=cards=>{const seen=new Set();return cards.filter(card=>{const key=card.question.toLowerCase();if(seen.has(key)||!card.answer)return false;seen.add(key);return true}).map((card,index)=>({...card,id:`${card.id}-${index+1}`}))};
+const writeJson=(file,value)=>fs.writeFileSync(file,`${JSON.stringify(value,null,2)}\n`);
+
+function physics(){
+ const html=fs.readFileSync(input,"utf8"),$=load(html,{decodeEntities:true}),styles=$("style").map((_,node)=>$(node).html()||"").get();
+ $("script,noscript,iframe,object,embed,form").remove();
+ $("*").each((_,node)=>{for(const name of Object.keys(node.attribs||{}))if(/^on/i.test(name)||name==="srcdoc")$(node).removeAttr(name)});
+ $("a").each((_,node)=>{const href=$(node).attr("href")||"";if(!href.startsWith("#"))$(node).removeAttr("href");$(node).removeAttr("target").removeAttr("download")});
+ const main=$(".main-content").first().length?$(".main-content").first().toString():$("body").html()||"";
+ const math=`<script>window.MathJax={tex:{inlineMath:[["\\\\(","\\\\)"]],displayMath:[["\\\\[","\\\\]"]]},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}};<\/script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"><\/script>`;
+ const document=`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resumen integral de Física I</title>${math}${styles.map(css=>`<style>${css.replace(/<\/style/gi,"<\\/style")}</style>`).join("")}<style>html{scroll-behavior:smooth}body{overflow-wrap:anywhere}.main-content{width:100%!important;max-width:980px!important}.fml{font-family:Georgia,"Times New Roman",serif}.fml,.topic-body,details{min-width:0}table{display:block;max-width:100%;overflow:auto}@media(max-width:640px){body{padding:7px!important}.page-header{padding:13px!important}.part-header{align-items:flex-start!important}.frow{display:block!important}.topic-body{padding:9px!important}}</style></head><body>${main}</body></html>`;
+ const out=path.join(root,"content/subjects/fisica1/units/resumen-integral"),sourceId="fisica-html";fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,"original.html"),document);
+ const cards=[];$(".topic-card").each((_,node)=>{const topic=$(node),title=clean(topic.find(".topic-head").first().text());topic.find(".lbl").each((__,labelNode)=>{const label=clean($(labelNode).text()),parts=[];let cursor=$(labelNode).next();while(cursor.length&&!cursor.hasClass("lbl")){parts.push(clean(cursor.text()));cursor=cursor.next()}const answer=clean(parts.join(" ")).slice(0,1100);if(answer)cards.push({id:slug(`${title}-${label}`),type:/error|ojo|cuidado/i.test(label+answer)?"common-error":/fórmula|ecuaci|relaci/i.test(label+answer)?"formula":"application",question:`¿Qué hay que recordar sobre ${label.toLowerCase()} en ${title}?`,answer,difficulty:/error|demostr|tensor|angular/i.test(label+answer)?"hard":"medium",references:[{sourceId}]})});if(!topic.find(".lbl").length){const answer=clean(topic.find(".topic-body").text()).slice(0,1100);if(title&&answer)cards.push({id:slug(title),type:"relation",question:`¿Cuáles son las ideas clave de ${title}?`,answer,difficulty:"medium",references:[{sourceId}]})}});
+ const ref=[{sourceId}],now="2026-08-03T00:00:00.000Z";
+ writeJson(path.join(out,"package.json"),{packageSchemaVersion:1,factoryVersion:"0.6.3",contentStandard:"LBT-V1",subjectId:"fisica1",unitId:"resumen-integral",title:"Resumen integral de Física I",contentVersion:"1.0.0",status:"published",generatedAt:now,reviewedAt:now,files:{summary:"summary.json",glossary:"glossary.json",cards:"cards.json",exercises:"exercises.json",map:"map.json",sources:"sources.json"}});
+ writeJson(path.join(out,"summary.json"),{blocks:[{id:"fisica-import",title:"Formulario integral de Física I",text:"Formulario completo organizado en primer parcial, laboratorio y segundo parcial, con fórmulas, explicaciones y tipos de ejercicios.",kind:"theory",references:ref}]});writeJson(path.join(out,"glossary.json"),{entries:[]});writeJson(path.join(out,"cards.json"),{cards:uniqueCards(cards)});writeJson(path.join(out,"exercises.json"),{exercises:[]});writeJson(path.join(out,"map.json"),{nodes:[],edges:[]});writeJson(path.join(out,"sources.json"),{sources:[{id:sourceId,title:"Formulario de Física I — HTML original"}]});writeJson(path.join(out,"rich.json"),{schemaVersion:1,document:"original.html",blocks:[]});writeJson(path.join(out,"assets.json"),{schemaVersion:1,assets:[]});
+ return cards.length;
+}
+
+function organicCards(){
+ const unit=path.join(root,"content/subjects/quimica_organica/units/resumen-integral"),file=path.join(unit,"original.html"),$=load(fs.readFileSync(file,"utf8"),{decodeEntities:true}),sourceId="organica-html",cards=[];
+ $("#indice-maestro-reacciones .atlas-card").each((_,node)=>{const topic=$(node),family=clean(topic.find("h2").first().text()).replace(/cap\.\s*\d+/i,"");topic.children("details").each((__,detailNode)=>{const detail=$(detailNode),group=clean(detail.children("summary").first().text()),items=detail.find("li").map((___,li)=>clean($(li).text())).get().filter(Boolean);if(family&&group&&items.length)cards.push({id:slug(`${family}-${group}`),type:/síntesis|sintesis/i.test(group)?"sequence":"mechanism",question:`¿Cuáles son las principales ${group.toLowerCase()} de ${family}?`,answer:items.join("; "),difficulty:"hard",references:[{sourceId}]})})});
+ $(".chapter details,.section details").each((_,node)=>{const detail=$(node),title=clean(detail.children("summary").first().text()),context=clean(detail.prevAll("h2,h3,h4").first().text()||detail.closest(".chapter,.section").find("h2,h3").first().text()),body=clean(detail.children().not("summary").text()).slice(0,850);if(!title||body.length<45||/ayuda rápida|índice maestro/i.test(title))return;const generic=/^(síntesis|reacciones|explicación|detalle|uso en ejercicios|errores típicos)$/i.test(title),label=generic&&context?`${title} — ${context}`:title;cards.push({id:slug(label),type:/mecanismo|reacci|síntesis|sintesis/i.test(label+body)?"mechanism":/error|cuidado|ojo/i.test(label+body)?"common-error":"relation",question:`¿Qué tenés que saber sobre ${label}?`,answer:body,difficulty:/mecanismo|síntesis|sintesis/i.test(label+body)?"hard":"medium",references:[{sourceId}]})});
+ const finalCards=uniqueCards(cards).slice(0,100);writeJson(path.join(unit,"cards.json"),{cards:finalCards});const manifest=JSON.parse(fs.readFileSync(path.join(unit,"package.json"),"utf8"));manifest.factoryVersion="0.6.3";manifest.contentVersion="0.6.2";manifest.generatedAt="2026-08-03T00:00:00.000Z";manifest.reviewedAt=manifest.generatedAt;writeJson(path.join(unit,"package.json"),manifest);return finalCards.length;
+}
+
+console.log(JSON.stringify({physicsCards:physics(),organicCards:organicCards()}));

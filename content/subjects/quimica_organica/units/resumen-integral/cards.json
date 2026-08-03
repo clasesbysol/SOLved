@@ -1,3 +1,1204 @@
 {
-  "cards": []
+  "cards": [
+    {
+      "id": "alcanos-sintesis-1",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Alcanos?",
+      "answer": "Hidrogenación de alquenos/alquinos a alcanos; Reducción de halogenuros de alquilo a alcanos; Acoplamientos organometálicos hacia cadenas carbonadas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alcanos-reacciones-2",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Alcanos?",
+      "answer": "Combustión de alcanos; Halogenación radicalaria de alcanos; Cloración / bromación radicalaria: selectividad y estabilidad radicalaria",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "haluros-de-alquilo-sintesis-3",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Haluros de alquilo?",
+      "answer": "Desde alcanos: halogenación radicalaria; Desde alcanos: bromación alílica; Desde alquenos: adición de HX, Markovnikov; Desde alquenos: HBr con peróxidos, anti-Markovnikov; Desde alquenos: adición de X₂ vía ion halonio; Desde alquinos: adición de 2 HX; Desde alquinos: adición de 2 X₂; Desde alcoholes: ROH + HX; Desde alcoholes: ROH + PBr₃; Desde alcoholes: ROH + SOCl₂; Intercambio de haluros / Finkelstein",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "haluros-de-alquilo-reacciones-4",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Haluros de alquilo?",
+      "answer": "Formación de alcoholes por SN1/SN2; Intercambio de haluros por SN2; Síntesis de éteres de Williamson; Síntesis de aminas desde halogenuros; Síntesis de nitrilos por SN2; Síntesis de alquinos con acetiluros; Deshidrohalogenación E2/E1; Deshalogenación de dihaluros; Formación de reactivos de Grignard; Formación de organolitios; Formación de Gilman / organocupratos; Reducción de halogenuros a alcanos",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alquenos-8-sintesis-5",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Alquenos–8?",
+      "answer": "Deshidrogenación de alcanos; Deshalogenación de dibromuros vecinales; Deshidratación de alcoholes; Deshidrohalogenación de halogenuros de alquilo; Eliminación de Hofmann; Eliminación de Cope; Reducción de alquinos a alquenos cis / Lindlar; Reducción de alquinos a alquenos trans / Na-NH₃",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alquenos-8-reacciones-6",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Alquenos–8?",
+      "answer": "Adición iónica de HX a alquenos; Adición radicalaria de HBr con peróxidos; Adición de halógenos X₂ vía ion halonio; Formación de halohidrinas; Hidratación ácido-catalizada; Oximercuración-desmercuración; Alcoximercuración-desmercuración; Hidroboración-oxidación; Hidrogenación catalítica; Ciclopropanación / adición de carbenos; Epoxidación de alquenos; Apertura de epóxidos catalizada por ácido; Hidroxilación syn / dihidroxilación con OsO₄; Ruptura oxidativa / ozonólisis de alquenos",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alquinos-sintesis-7",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Alquinos?",
+      "answer": "Formación de acetiluros por desprotonación; Alquilación de acetiluros por SN2; Dihaluros vicinales + 2 base fuerte → alquino; Dihaluros geminales + 2 base fuerte → alquino; Condiciones de doble eliminación con base fuerte / NH₂⁻",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alquinos-reacciones-8",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Alquinos?",
+      "answer": "Adición de HX a alquinos; Adición de 2 HX → dihaluro geminal; Adición de X₂ a alquinos; Adición de 2 X₂ → tetrahaluro; Hidratación HgSO₄ / H₂SO₄: enol → cetona; Hidroboración-oxidación: enol → aldehído/cetona; Reducción a alqueno cis con Lindlar; Reducción a alqueno trans con Na/NH₃; Hidrogenación completa a alcano; Oxidación con KMnO₄; Ozonólisis de alquinos",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alcoholesunidad-8-sintesis-9",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Alcoholesunidad 8?",
+      "answer": "Desde halogenuros: sustitución nucleofílica SN2; Desde halogenuros: sustitución con agua por SN1; Desde alquenos: hidratación ácido-catalizada; Desde alquenos: oximercuración-desmercuración; Desde alquenos: hidroboración-oxidación; Desde alquenos: dihidroxilación; Desde organometálicos: Grignard + carbonilo; Por reducción de aldehídos/cetonas/carboxílicos derivados",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "alcoholesunidad-8-reacciones-10",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Alcoholesunidad 8?",
+      "answer": "ROH + HBr / HCl → halogenuros de alquilo; Reactivo de Lucas: diagnóstico SN1/SN2; ROH + PX₃ → halogenuros por SN2; ROH + SOCl₂ → cloruros de alquilo; Deshidratación ácido-catalizada E1/E2; Oxidación de alcoholes; Formación de tosilatos; Alcohol como nucleófilo y electrófilo",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "eteresunidad-8-sintesis-11",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Éteresunidad 8?",
+      "answer": "Síntesis de Williamson; Williamson con fenoles; Alcoximercuración-desmercuración de alquenos; Deshidratación bimolecular de alcoholes",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "eteresunidad-8-reacciones-12",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Éteresunidad 8?",
+      "answer": "Clivaje ácido de éteres con HX; Ruptura con HBr / HI; SN1 vs SN2 en ruptura de éteres",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "epoxidosunidad-8-sintesis-13",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Epóxidosunidad 8?",
+      "answer": "Epoxidación de alquenos; Ciclación de halohidrinas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "epoxidosunidad-8-reacciones-14",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Epóxidosunidad 8?",
+      "answer": "Apertura en medio básico: ataque al carbono menos sustituido; Apertura en medio ácido: ataque al carbono más sustituido; Regla general de regioselectividad en apertura",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "aldehidos-y-cetonasunidad-9-sintesis-15",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Aldehídos y cetonasunidad 9?",
+      "answer": "Oxidación de alcoholes; Ozonólisis reductiva de alquenos; Acilación de Friedel-Crafts hacia arilcetonas; Reducción de cloruros de ácido a aldehídos; Síntesis de benzaldehído; Cetonas desde cloruros de ácido",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "aldehidos-y-cetonasunidad-9-reacciones-16",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Aldehídos y cetonasunidad 9?",
+      "answer": "Adición nucleofílica al carbonilo; Hidratación → hidratos / dioles geminales; Adición de HCN → cianhidrinas; Formación de iminas y derivados; Formación de enaminas; Formación de hemiacetales; Formación de acetales y grupos protectores; Adición de acetiluros; Reducción con NaBH₄ / LiAlH₄; Adición de reactivos de Grignard; Reducción total: Clemmensen / Wolff-Kishner; Tautomería ceto-enólica y enolatos; Adición / condensación aldólica; Aldólica mixta e intramolecular; Deshidratación de aldoles; Cannizzaro; Oxidación de aldehídos / Tollens; Reducción de aldehídos y cetonas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "acidos-carboxilicos-y-derivadosunidad-10-sintesis-17",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Ácidos carboxílicos y derivadosunidad 10?",
+      "answer": "Oxidación de alcoholes primarios a ácidos; Ruptura oxidativa de alquenos; Oxidación fuerte de alquilbencenos; Grignard + CO₂ → ácido carboxílico; Ácido carboxílico + SOCl₂ → cloruro de ácido; Cloruro de ácido → anhídrido; Cloruro de ácido → éster; Cloruro de ácido → amida; Anhídrido → éster; Éster → amida",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "acidos-carboxilicos-y-derivadosunidad-10-reacciones-18",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Ácidos carboxílicos y derivadosunidad 10?",
+      "answer": "Sustitución nucleofílica acílica; Interconversión de derivados; Hidrólisis ácida de derivados; Hidrólisis básica de derivados; Hidrólisis ácida de ésteres; Hidrólisis básica de ésteres; Saponificación; Hidrólisis ácida de proteínas / amidas; Reactividad de α-H y enolatos; Tautomería ceto-enol; Condensación de Claisen; Condensación intramolecular de Dieckmann; Condensaciones mixtas; Descarboxilación; Síntesis malónica; Síntesis acetoacética",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "aromaticosvol-2-orientacion-y-preparacion-conceptual-19",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales orientación y preparación conceptual de Aromáticosvol. 2?",
+      "answer": "Sustituyentes activadores orto/para; Sustituyentes desactivadores meta; Halógenos: desactivadores pero orto/para; Efectos de múltiples sustituyentes",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "aromaticosvol-2-reacciones-20",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Aromáticosvol. 2?",
+      "answer": "Sustitución electrofílica aromática general; Halogenación aromática; Nitración aromática; Sulfonación y desulfonación; Nitración del tolueno; Alquilación de Friedel-Crafts; Acilación de Friedel-Crafts; Comparación alquilación vs acilación; Sustitución nucleofílica aromática SNAr",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "compuestos-nitrogenadosunidad-11-sintesis-21",
+      "type": "sequence",
+      "question": "¿Cuáles son las principales síntesis de Compuestos nitrogenadosunidad 11?",
+      "answer": "Alquilación directa por SN2; Síntesis de Gabriel; Reducción de nitrilos; Reducción de amidas; Aminación reductiva; Nitración de benceno + reducción a arilaminas; Degradación de Hofmann de amidas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "compuestos-nitrogenadosunidad-11-reacciones-22",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Compuestos nitrogenadosunidad 11?",
+      "answer": "Formación de iminas; Formación de enaminas; Acilación para formar amidas; Metilación exhaustiva; Eliminación de Hofmann; Nitrosación de aminas; Reacciones de sales de diazonio; Copulación azoica; Aminoácidos y proteínas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "hidratos-de-carbonounidad-12-conceptos-clave-23",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales conceptos clave de Hidratos de carbonounidad 12?",
+      "answer": "Mapa de nombres de carbohidratos; Clasificación: mono, di y polisacáridos; Sistema D/L y proyecciones de Fischer; Estereoisómeros, epímeros y familias de aldosas; Ciclación: hemiacetales, carbono anomérico, furanosas/piranosas y Haworth; Disacáridos y polisacáridos",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "hidratos-de-carbonounidad-12-reacciones-24",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales reacciones de Hidratos de carbonounidad 12?",
+      "answer": "Formación de glicósidos; Azúcares reductores, Tollens, Fehling y Benedict; Oxidación a ácidos aldónicos y aldáricos; Reducción a alditoles; Kiliani-Fischer, Ruff, Wohl y osazonas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "espectroscopiaunidad-13-tecnicas-25",
+      "type": "mechanism",
+      "question": "¿Cuáles son las principales técnicas de Espectroscopíaunidad 13?",
+      "answer": "Radiación electromagnética, fotones y niveles de energía; UV-Visible: cromóforos, conjugación y Lambert-Beer; IR: vibraciones y grupos funcionales; RMN: desplazamiento químico, integral y regla N+1; Espectrometría de masas: ion molecular, pico base y fragmentación; Mapa final de técnicas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-alcanoscap-3-26",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Alcanoscap. 3?",
+      "answer": "Hidrogenación de alquenos/alquinos a alcanos Reducción de halogenuros de alquilo a alcanos Acoplamientos organometálicos hacia cadenas carbonadas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-alcanoscap-3-27",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Alcanoscap. 3?",
+      "answer": "Combustión de alcanos Halogenación radicalaria de alcanos Cloración / bromación radicalaria: selectividad y estabilidad radicalaria",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-haluros-de-alquilocap-6-28",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Haluros de alquilocap. 6?",
+      "answer": "Desde alcanos: halogenación radicalaria Desde alcanos: bromación alílica Desde alquenos: adición de HX, Markovnikov Desde alquenos: HBr con peróxidos, anti-Markovnikov Desde alquenos: adición de X₂ vía ion halonio Desde alquinos: adición de 2 HX Desde alquinos: adición de 2 X₂ Desde alcoholes: ROH + HX Desde alcoholes: ROH + PBr₃ Desde alcoholes: ROH + SOCl₂ Intercambio de haluros / Finkelstein",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-haluros-de-alquilocap-6-29",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Haluros de alquilocap. 6?",
+      "answer": "Formación de alcoholes por SN1/SN2 Intercambio de haluros por SN2 Síntesis de éteres de Williamson Síntesis de aminas desde halogenuros Síntesis de nitrilos por SN2 Síntesis de alquinos con acetiluros Deshidrohalogenación E2/E1 Deshalogenación de dihaluros Formación de reactivos de Grignard Formación de organolitios Formación de Gilman / organocupratos Reducción de halogenuros a alcanos",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-alquenoscap-7-8-30",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Alquenoscap. 7–8?",
+      "answer": "Deshidrogenación de alcanos Deshalogenación de dibromuros vecinales Deshidratación de alcoholes Deshidrohalogenación de halogenuros de alquilo Eliminación de Hofmann Eliminación de Cope Reducción de alquinos a alquenos cis / Lindlar Reducción de alquinos a alquenos trans / Na-NH₃",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-alquenoscap-7-8-31",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Alquenoscap. 7–8?",
+      "answer": "Adición iónica de HX a alquenos Adición radicalaria de HBr con peróxidos Adición de halógenos X₂ vía ion halonio Formación de halohidrinas Hidratación ácido-catalizada Oximercuración-desmercuración Alcoximercuración-desmercuración Hidroboración-oxidación Hidrogenación catalítica Ciclopropanación / adición de carbenos Epoxidación de alquenos Apertura de epóxidos catalizada por ácido Hidroxilación syn / dihidroxilación con OsO₄ Ruptura oxidativa / ozonólisis de alquenos",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-alquinoscap-9-32",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Alquinoscap. 9?",
+      "answer": "Formación de acetiluros por desprotonación Alquilación de acetiluros por SN2 Dihaluros vicinales + 2 base fuerte → alquino Dihaluros geminales + 2 base fuerte → alquino Condiciones de doble eliminación con base fuerte / NH₂⁻",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-alquinoscap-9-33",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Alquinoscap. 9?",
+      "answer": "Adición de HX a alquinos Adición de 2 HX → dihaluro geminal Adición de X₂ a alquinos Adición de 2 X₂ → tetrahaluro Hidratación HgSO₄ / H₂SO₄: enol → cetona Hidroboración-oxidación: enol → aldehído/cetona Reducción a alqueno cis con Lindlar Reducción a alqueno trans con Na/NH₃ Hidrogenación completa a alcano Oxidación con KMnO₄ Ozonólisis de alquinos",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-alcoholesunidad-8-34",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Alcoholesunidad 8?",
+      "answer": "Desde halogenuros: sustitución nucleofílica SN2 Desde halogenuros: sustitución con agua por SN1 Desde alquenos: hidratación ácido-catalizada Desde alquenos: oximercuración-desmercuración Desde alquenos: hidroboración-oxidación Desde alquenos: dihidroxilación Desde organometálicos: Grignard + carbonilo Por reducción de aldehídos/cetonas/carboxílicos derivados",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-alcoholesunidad-8-35",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Alcoholesunidad 8?",
+      "answer": "ROH + HBr / HCl → halogenuros de alquilo Reactivo de Lucas: diagnóstico SN1/SN2 ROH + PX₃ → halogenuros por SN2 ROH + SOCl₂ → cloruros de alquilo Deshidratación ácido-catalizada E1/E2 Oxidación de alcoholes Formación de tosilatos Alcohol como nucleófilo y electrófilo",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-eteresunidad-8-36",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Éteresunidad 8?",
+      "answer": "Síntesis de Williamson Williamson con fenoles Alcoximercuración-desmercuración de alquenos Deshidratación bimolecular de alcoholes",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-eteresunidad-8-37",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Éteresunidad 8?",
+      "answer": "Clivaje ácido de éteres con HX Ruptura con HBr / HI SN1 vs SN2 en ruptura de éteres",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-epoxidosunidad-8-38",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Epóxidosunidad 8?",
+      "answer": "Epoxidación de alquenos Ciclación de halohidrinas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-epoxidosunidad-8-39",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Epóxidosunidad 8?",
+      "answer": "Apertura en medio básico: ataque al carbono menos sustituido Apertura en medio ácido: ataque al carbono más sustituido Regla general de regioselectividad en apertura",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-aldehidos-y-cetonasunidad-9-40",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Aldehídos y cetonasunidad 9?",
+      "answer": "Oxidación de alcoholes Ozonólisis reductiva de alquenos Acilación de Friedel-Crafts hacia arilcetonas Reducción de cloruros de ácido a aldehídos Síntesis de benzaldehído Cetonas desde cloruros de ácido",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-aldehidos-y-cetonasunidad-9-41",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Aldehídos y cetonasunidad 9?",
+      "answer": "Adición nucleofílica al carbonilo Hidratación → hidratos / dioles geminales Adición de HCN → cianhidrinas Formación de iminas y derivados Formación de enaminas Formación de hemiacetales Formación de acetales y grupos protectores Adición de acetiluros Reducción con NaBH₄ / LiAlH₄ Adición de reactivos de Grignard Reducción total: Clemmensen / Wolff-Kishner Tautomería ceto-enólica y enolatos Adición / condensación aldólica Aldólica mixta e intramolecular Deshidratación de aldoles Cannizzaro Oxidación de aldehídos / Tollens Reducción de aldehídos y cetonas",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-acidos-carboxilicos-y-derivadosunidad-10-42",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Ácidos carboxílicos y derivadosunidad 10?",
+      "answer": "Oxidación de alcoholes primarios a ácidos Ruptura oxidativa de alquenos Oxidación fuerte de alquilbencenos Grignard + CO₂ → ácido carboxílico Ácido carboxílico + SOCl₂ → cloruro de ácido Cloruro de ácido → anhídrido Cloruro de ácido → éster Cloruro de ácido → amida Anhídrido → éster Éster → amida",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-acidos-carboxilicos-y-derivadosunidad-10-43",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Ácidos carboxílicos y derivadosunidad 10?",
+      "answer": "Sustitución nucleofílica acílica Interconversión de derivados Hidrólisis ácida de derivados Hidrólisis básica de derivados Hidrólisis ácida de ésteres Hidrólisis básica de ésteres Saponificación Hidrólisis ácida de proteínas / amidas Reactividad de α-H y enolatos Tautomería ceto-enol Condensación de Claisen Condensación intramolecular de Dieckmann Condensaciones mixtas Descarboxilación Síntesis malónica Síntesis acetoacética",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "orientacion-y-preparacion-conceptual-44",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Orientación y preparación conceptual?",
+      "answer": "Sustituyentes activadores orto/para Sustituyentes desactivadores meta Halógenos: desactivadores pero orto/para Efectos de múltiples sustituyentes",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-aromaticosvol-2-45",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Aromáticosvol. 2?",
+      "answer": "Sustitución electrofílica aromática general Halogenación aromática Nitración aromática Sulfonación y desulfonación Nitración del tolueno Alquilación de Friedel-Crafts Acilación de Friedel-Crafts Comparación alquilación vs acilación Sustitución nucleofílica aromática SNAr",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-compuestos-nitrogenadosunidad-11-46",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis — Compuestos nitrogenadosunidad 11?",
+      "answer": "Alquilación directa por SN2Síntesis de GabrielReducción de nitrilosReducción de amidasAminación reductivaNitración de benceno + reducción a arilaminasDegradación de Hofmann de amidas",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-compuestos-nitrogenadosunidad-11-47",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Compuestos nitrogenadosunidad 11?",
+      "answer": "Formación de iminasFormación de enaminasAcilación para formar amidasMetilación exhaustivaEliminación de HofmannNitrosación de aminasReacciones de sales de diazonioCopulación azoicaAminoácidos y proteínas",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "conceptos-clave-48",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Conceptos clave?",
+      "answer": "Mapa de nombres de carbohidratos Clasificación: mono, di y polisacáridos Sistema D/L y proyecciones de Fischer Estereoisómeros, epímeros y familias de aldosas Ciclación: hemiacetales, carbono anomérico, furanosas/piranosas y Haworth Disacáridos y polisacáridos",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-hidratos-de-carbonounidad-12-49",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones — Hidratos de carbonounidad 12?",
+      "answer": "Formación de glicósidos Azúcares reductores, Tollens, Fehling y Benedict Oxidación a ácidos aldónicos y aldáricos Reducción a alditoles Kiliani-Fischer, Ruff, Wohl y osazonas",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "tecnicas-50",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Técnicas?",
+      "answer": "Radiación electromagnética, fotones y niveles de energía UV-Visible: cromóforos, conjugación y Lambert-Beer IR: vibraciones y grupos funcionales RMN: desplazamiento químico, integral y regla N+1 Espectrometría de masas: ion molecular, pico base y fragmentación Mapa final de técnicas",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "introduccion-y-repaso-a-la-quimica-organica-wade-vol-1-cap-1-51",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre INTRODUCCIÓN Y REPASO A LA QUÍMICA ORGÁNICA WADE VOL. 1 · CAP. 1?",
+      "answer": "Estructuras de Lewis Wade p. 7 Las estructuras de Lewis representan la distribución de los electrones de valencia en una molécula o ion. Permiten visualizar enlaces, pares libres, cargas formales y posibles estructuras resonantes. Pasos para construir una estructura de Lewis: Contar los electrones de valencia totales. Elegir el átomo central; generalmente el menos electronegativo. El hidrógeno nunca va al centro. Unir los átomos con enlaces simples. Completar primero el dueto del hidrógeno y luego el octeto de los átomos periféricos. Colocar los electrones sobrantes sobre el átomo central. Si el átomo central no completa octeto, formar enlaces dobles o triples moviendo pares libres desde átomos vecinos. Verificar cargas formales. Carga formal: Carga formal = e⁻ de valencia − e⁻ no enlazantes − ½ e⁻ enlazantes Criterios de estabilidad: La ",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "estructuras-de-lewis-wade-p-7-52",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Estructuras de Lewis Wade p. 7?",
+      "answer": "Las estructuras de Lewis representan la distribución de los electrones de valencia en una molécula o ion. Permiten visualizar enlaces, pares libres, cargas formales y posibles estructuras resonantes. Pasos para construir una estructura de Lewis: Contar los electrones de valencia totales. Elegir el átomo central; generalmente el menos electronegativo. El hidrógeno nunca va al centro. Unir los átomos con enlaces simples. Completar primero el dueto del hidrógeno y luego el octeto de los átomos periféricos. Colocar los electrones sobrantes sobre el átomo central. Si el átomo central no completa octeto, formar enlaces dobles o triples moviendo pares libres desde átomos vecinos. Verificar cargas formales. Carga formal: Carga formal = e⁻ de valencia − e⁻ no enlazantes − ½ e⁻ enlazantes Criterios de estabilidad: La mejor estructura suele tener la",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "electronegatividad-y-polaridad-de-enlace-wade-p-9-53",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Electronegatividad y polaridad de enlace Wade p. 9?",
+      "answer": "La electronegatividad es la capacidad de un átomo para atraer hacia sí los electrones compartidos en un enlace. Cuando dos átomos tienen diferente electronegatividad, el enlace se polariza. El átomo más electronegativo queda con carga parcial negativa, δ⁻. El átomo menos electronegativo queda con carga parcial positiva, δ⁺. Tipos de enlace: Si la diferencia de electronegatividad es muy baja → enlace covalente no polar. Si la diferencia es intermedia → enlace covalente polar. Si la diferencia es muy alta → el enlace tiene mucho carácter iónico. La polaridad de un enlace no siempre implica que toda la molécula sea polar. Para decidir si una molécula es polar hay que considerar la polaridad de cada enlace, la geometría molecular y la suma vectorial de los dipolos. Ejemplo El CO₂ tiene enlaces C=O polares, pero como la molécula es lineal, los",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "acidos-y-bases-de-arrhenius-wade-p-21-54",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Ácidos y bases de Arrhenius Wade p. 21?",
+      "answer": "Según Arrhenius, un ácido es una sustancia que en agua aumenta la concentración de H⁺. Una base es una sustancia que en agua aumenta la concentración de OH⁻. HCl → H⁺ + Cl⁻ NaOH → Na⁺ + OH⁻ Esta teoría sirve principalmente para soluciones acuosas y no explica todas las reacciones ácido-base de la química orgánica.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "acidos-y-bases-de-br-nsted-lowry-wade-p-22-55",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Ácidos y bases de Brønsted-Lowry Wade p. 22?",
+      "answer": "Según Brønsted-Lowry: Ácido: dona un protón H⁺. Base: acepta un protón H⁺. HCl + H₂O → H₃O⁺ + Cl⁻ El HCl dona un protón → actúa como ácido. El agua acepta ese protón → actúa como base. Un ácido al perder H⁺ forma su base conjugada. Una base al ganar H⁺ forma su ácido conjugado. Cuanto más estable sea la base conjugada, más fuerte será el ácido original.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "acidos-y-bases-de-lewis-wade-p-29-56",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Ácidos y bases de Lewis Wade p. 29?",
+      "answer": "Según Lewis: Ácido de Lewis: acepta un par de electrones. Base de Lewis: dona un par de electrones. Esta definición es clave en química orgánica porque muchos mecanismos se explican como movimiento de pares electrónicos. Relación Los nucleófilos suelen comportarse como bases de Lewis (donan electrones). Los electrófilos suelen comportarse como ácidos de Lewis (aceptan electrones).",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "estructura-y-propiedades-de-las-moleculas-organicas-wade-vol-1-57",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre ESTRUCTURA Y PROPIEDADES DE LAS MOLÉCULAS ORGÁNICAS WADE VOL. 1 · CAP. 2?",
+      "answer": "Hibridaciones y formas moleculares Wade p. 46 La hibridación explica cómo se combinan orbitales atómicos para formar orbitales híbridos que determinan la geometría de los enlaces. Carbono sp³ 4 regiones electrónicas · 4 enlaces sigma · Geometría tetraédrica · Ángulo ≈ 109,5° · Ej: CH₄, alcanos. Carbono sp² 3 regiones electrónicas · 3 enlaces sigma + 1 enlace pi · Geometría trigonal plana · Ángulo ≈ 120° · Ej: alquenos, carbonilos. Carbono sp 2 regiones electrónicas · 2 enlaces sigma + 2 enlaces pi · Geometría lineal · Ángulo 180° · Ej: alquinos. Regla rápida Enlace simple → carbono generalmente sp³. Doble enlace → carbono generalmente sp². Triple enlace → carbono sp. Imagen — hibridaciones sp³, sp² y sp Hibridación del carbono: orbitales sp³, sp² y sp, geometrías y ejemplos de enlace. Cómo dibujar moléculas tridimensionales Wade p. 50 Las",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "hibridaciones-y-formas-moleculares-wade-p-46-58",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Hibridaciones y formas moleculares Wade p. 46?",
+      "answer": "La hibridación explica cómo se combinan orbitales atómicos para formar orbitales híbridos que determinan la geometría de los enlaces. Carbono sp³ 4 regiones electrónicas · 4 enlaces sigma · Geometría tetraédrica · Ángulo ≈ 109,5° · Ej: CH₄, alcanos. Carbono sp² 3 regiones electrónicas · 3 enlaces sigma + 1 enlace pi · Geometría trigonal plana · Ángulo ≈ 120° · Ej: alquenos, carbonilos. Carbono sp 2 regiones electrónicas · 2 enlaces sigma + 2 enlaces pi · Geometría lineal · Ángulo 180° · Ej: alquinos. Regla rápida Enlace simple → carbono generalmente sp³. Doble enlace → carbono generalmente sp². Triple enlace → carbono sp. Imagen — hibridaciones sp³, sp² y sp Hibridación del carbono: orbitales sp³, sp² y sp, geometrías y ejemplos de enlace.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-hibridaciones-sp-sp-y-sp-59",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Imagen — hibridaciones sp³, sp² y sp?",
+      "answer": "Hibridación del carbono: orbitales sp³, sp² y sp, geometrías y ejemplos de enlace.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "como-dibujar-moleculas-tridimensionales-wade-p-50-60",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Cómo dibujar moléculas tridimensionales Wade p. 50?",
+      "answer": "Las moléculas orgánicas no siempre son planas. Para representar la geometría tridimensional se usan líneas, cuñas y trazos. Línea común: enlace ubicado en el plano de la hoja. Cuña llena (▲): enlace que sale hacia adelante, hacia el observador. Cuña punteada (▲ punteada): enlace que va hacia atrás, alejándose del observador. Esto es especialmente importante en carbonos sp³ (geometría tetraédrica) y es fundamental para analizar quiralidad, enantiómeros, diastereómeros, configuraciones R/S y proyecciones de Fischer.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "efecto-de-la-polaridad-sobre-la-solubilidad-wade-p-66-61",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Efecto de la polaridad sobre la solubilidad Wade p. 66?",
+      "answer": "La solubilidad depende de la afinidad entre el soluto y el solvente. La regla general es: Lo semejante disuelve a lo semejante. Sustancias polares suelen disolverse mejor en solventes polares. Sustancias apolares suelen disolverse mejor en solventes apolares. Las moléculas capaces de formar puentes de hidrógeno suelen tener mayor solubilidad en agua. A mayor cadena hidrocarbonada, menor solubilidad en agua. A mayor cantidad de grupos polares, mayor solubilidad en agua. Los alcoholes pequeños son solubles en agua, pero al aumentar la cadena carbonada disminuye la solubilidad. Los hidrocarburos son prácticamente insolubles en agua porque son apolares. Imágenes — fuerzas intermoleculares y solubilidad Interacciones no covalentes, puentes de hidrógeno y relación entre polaridad y solubilidad.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagenes-fuerzas-intermoleculares-y-solubilidad-62",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Imágenes — fuerzas intermoleculares y solubilidad?",
+      "answer": "Interacciones no covalentes, puentes de hidrógeno y relación entre polaridad y solubilidad.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "estudio-de-las-reacciones-quimicas-wade-vol-1-cap-4-63",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre ESTUDIO DE LAS REACCIONES QUÍMICAS WADE VOL. 1 · CAP. 4?",
+      "answer": "Energía de activación y rapidez de reacción Wade p. 141 La energía de activación es la energía mínima que deben tener las moléculas para que una reacción ocurra. Aunque una reacción sea termodinámicamente favorable, no ocurre si las moléculas no superan esa barrera energética. Cuanto menor es la energía de activación, más rápida suele ser la reacción. La temperatura aumenta la rapidez de reacción porque aumenta la energía cinética promedio de las moléculas: al subir la temperatura, más moléculas tienen energía suficiente para superar la barrera de activación. Imágenes — energía de activación y temperatura Diagramas de energía, energía de activación y efecto de la temperatura sobre la fracción de moléculas reactivas. Estados de transición Wade p. 142 El estado de transición es una estructura de máxima energía durante una etapa de reacción.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "energia-de-activacion-y-rapidez-de-reaccion-wade-p-141-64",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Energía de activación y rapidez de reacción Wade p. 141?",
+      "answer": "La energía de activación es la energía mínima que deben tener las moléculas para que una reacción ocurra. Aunque una reacción sea termodinámicamente favorable, no ocurre si las moléculas no superan esa barrera energética. Cuanto menor es la energía de activación, más rápida suele ser la reacción. La temperatura aumenta la rapidez de reacción porque aumenta la energía cinética promedio de las moléculas: al subir la temperatura, más moléculas tienen energía suficiente para superar la barrera de activación. Imágenes — energía de activación y temperatura Diagramas de energía, energía de activación y efecto de la temperatura sobre la fracción de moléculas reactivas.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagenes-energia-de-activacion-y-temperatura-65",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Imágenes — energía de activación y temperatura?",
+      "answer": "Diagramas de energía, energía de activación y efecto de la temperatura sobre la fracción de moléculas reactivas.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "estados-de-transicion-wade-p-142-66",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Estados de transición Wade p. 142?",
+      "answer": "El estado de transición es una estructura de máxima energía durante una etapa de reacción. No es un compuesto aislable, sino una situación momentánea donde algunos enlaces se están rompiendo y otros se están formando. Estado de transición Máximo de energía. No se aísla. Aparece en la cima de una barrera en el diagrama de energía. Intermediario Mínimo relativo de energía. Puede tener cierta existencia temporal. Aparece en un valle entre dos barreras. Imagen — reacción exotérmica vs endotérmica Comparación de perfiles de energía para reacciones exotérmicas y endotérmicas.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-reaccion-exotermica-vs-endotermica-67",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen — reacción exotérmica vs endotérmica?",
+      "answer": "Comparación de perfiles de energía para reacciones exotérmicas y endotérmicas.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "halogenacion-y-dependencia-de-la-temperatura-wade-p-145-radica-68",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Halogenación y dependencia de la temperatura Wade p. 145 Radicales libres?",
+      "answer": "La halogenación radicalaria de alcanos ocurre mediante radicales libres y generalmente requiere luz o calor para iniciar la reacción. La cloración suele ser más rápida pero menos selectiva. La bromación suele ser más lenta pero más selectiva. La orientación de la reacción depende de la estabilidad del radical que se forma: radical terciario> radical secundario> radical primario> radical metilo A mayor temperatura, la selectividad suele disminuir porque la diferencia de estabilidad entre posibles radicales pesa menos en el resultado final.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "postulado-de-hammond-wade-p-151-69",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Postulado de Hammond Wade p. 151?",
+      "answer": "El postulado de Hammond dice que un estado de transición se parece más a la especie estable más cercana en energía. En una etapa endotérmica, el estado de transición se parece más a los productos. En una etapa exotérmica, el estado de transición se parece más a los reactivos. Esto permite explicar la selectividad de algunas reacciones. En la bromación radicalaria, el estado de transición se parece bastante al radical que se está formando; por eso se favorece la formación del radical más estable.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "inhibidores-de-radicales-wade-p-155-70",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Inhibidores de radicales Wade p. 155?",
+      "answer": "Los inhibidores de radicales son sustancias que frenan o detienen reacciones radicalarias. Actúan atrapando radicales libres y cortando la cadena de propagación. En una reacción radicalaria hay tres etapas generales: Iniciación: generación de radicales a partir de una fuente de energía (luz o calor). Propagación: los radicales reaccionan y generan nuevos radicales. Terminación: dos radicales se combinan y dejan de generarse nuevos radicales. Un inhibidor interrumpe la propagación porque reacciona con radicales y evita que sigan generando nuevos radicales.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "intermediarios-reactivos-wade-p-156-71",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Intermediarios reactivos Wade p. 156?",
+      "answer": "Los intermediarios reactivos son especies de alta energía que aparecen durante una reacción. Muchas veces determinan la velocidad, la orientación y el producto principal. Carbocationes Carga positiva. Pobres en electrones. 3°> 2°> 1°> CH₃⁺ Radicales libres Un electrón desapareado. Neutros. 3°> 2°> 1°> CH₃· Carbaniones Carga negativa. Ricos en electrones. CH₃⁻> 1°> 2°> 3° Carbenos Especies neutras con carbono divalente y muy reactivo.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "mecanismos-clave-resumen-transversal-72",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre MECANISMOS CLAVE RESUMEN TRANSVERSAL?",
+      "answer": "Esta sección centraliza los mecanismos principales a los que hacen referencia los badges de las reacciones. Aquí se desarrollan o amplían a medida que se completa el material. SN1 — Sustitución nucleofílica unimolecular Velocidad: depende solo de la concentración del sustrato. Mecanismo en dos etapas: primero se forma el carbocatión (etapa lenta, determinante), luego el nucleófilo ataca el carbocatión (etapa rápida). Favorecida por: sustratos con carbocationes estables (terciarios > secundarios), solventes polares próticos, nucleófilos débiles. Estereoquímica: racemización (mezcla de productos). El carbocatión es plano → ataque por ambas caras. Imagen — mecanismo SN1 Mecanismo SN1: formación del carbocatión, ataque nucleofílico y factores que favorecen la reacción. Imágenes — reordenamientos en SN1 Reordenamientos por desplazamiento de hi",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sn1-sustitucion-nucleofilica-unimolecular-73",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre SN1 — Sustitución nucleofílica unimolecular?",
+      "answer": "Velocidad: depende solo de la concentración del sustrato. Mecanismo en dos etapas: primero se forma el carbocatión (etapa lenta, determinante), luego el nucleófilo ataca el carbocatión (etapa rápida). Favorecida por: sustratos con carbocationes estables (terciarios > secundarios), solventes polares próticos, nucleófilos débiles. Estereoquímica: racemización (mezcla de productos). El carbocatión es plano → ataque por ambas caras. Imagen — mecanismo SN1 Mecanismo SN1: formación del carbocatión, ataque nucleofílico y factores que favorecen la reacción. Imágenes — reordenamientos en SN1 Reordenamientos por desplazamiento de hidruro y de metilo en carbocationes durante reacciones SN1.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-mecanismo-sn1-74",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen — mecanismo SN1?",
+      "answer": "Mecanismo SN1: formación del carbocatión, ataque nucleofílico y factores que favorecen la reacción.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagenes-reordenamientos-en-sn1-75",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imágenes — reordenamientos en SN1?",
+      "answer": "Reordenamientos por desplazamiento de hidruro y de metilo en carbocationes durante reacciones SN1.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sn2-sustitucion-nucleofilica-bimolecular-76",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre SN2 — Sustitución nucleofílica bimolecular?",
+      "answer": "Velocidad: depende de la concentración del sustrato y del nucleófilo. Mecanismo en una etapa: el nucleófilo ataca por la cara opuesta al grupo saliente (ataque de inversión). Hay un estado de transición único. Favorecida por: sustratos primarios (menor impedimento estérico), nucleófilos fuertes, solventes polares apróticos (DMF, DMSO, acetona). Estereoquímica: inversión de Walden. El producto tiene configuración opuesta al reactivo. Imagen — mecanismo SN2 Mecanismo SN2 concertado, estado de transición e inversión de configuración.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-mecanismo-sn2-77",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen — mecanismo SN2?",
+      "answer": "Mecanismo SN2 concertado, estado de transición e inversión de configuración.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "e1-eliminacion-unimolecular-78",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre E1 — Eliminación unimolecular?",
+      "answer": "Velocidad: depende solo del sustrato. Mecanismo en dos etapas: primero se forma el carbocatión, luego una base elimina un protón β para dar el alqueno. Favorecida por: sustratos terciarios, temperatura elevada, bases débiles, solventes polares próticos. Regla: suele seguir la regla de Zaitsev (alqueno más sustituido = más estable). Imágenes — mecanismo E1 y reordenamiento Mecanismo E1, competencia con SN1, reordenamiento de carbocationes y orientación de Zaitsev.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagenes-mecanismo-e1-y-reordenamiento-79",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imágenes — mecanismo E1 y reordenamiento?",
+      "answer": "Mecanismo E1, competencia con SN1, reordenamiento de carbocationes y orientación de Zaitsev.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "e2-eliminacion-bimolecular-80",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre E2 — Eliminación bimolecular?",
+      "answer": "Velocidad: depende del sustrato y de la base. Mecanismo en una etapa: la base extrae el protón β al mismo tiempo que el grupo saliente parte. Requiere geometría anti-periplanar (diedro ≈ 180°). Favorecida por: sustratos secundarios y terciarios, bases fuertes y voluminosas, temperatura elevada. Regla de Zaitsev: con bases pequeñas → alqueno más sustituido. Regla de Hofmann: con bases voluminosas → alqueno menos sustituido. Imágenes — mecanismo E2 Mecanismo E2 concertado, geometría anti-periplanar y requisito trans-diaxial en ciclohexanos. Imágenes — Zaitsev, Hofmann y bases voluminosas Selección de productos E2: base pequeña favorece Zaitsev; base voluminosa favorece Hofmann; conformación axial necesaria en ciclohexanos.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagenes-mecanismo-e2-81",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imágenes — mecanismo E2?",
+      "answer": "Mecanismo E2 concertado, geometría anti-periplanar y requisito trans-diaxial en ciclohexanos.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagenes-zaitsev-hofmann-y-bases-voluminosas-82",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Imágenes — Zaitsev, Hofmann y bases voluminosas?",
+      "answer": "Selección de productos E2: base pequeña favorece Zaitsev; base voluminosa favorece Hofmann; conformación axial necesaria en ciclohexanos.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "adicion-electrofilica-a-alquenos-y-alquinos-83",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Adición electrofílica a alquenos y alquinos?",
+      "answer": "El enlace π actúa como nucleófilo y ataca al electrófilo. Se forma un carbocatión (o intermediario ciclopropánico / bromonium) que luego recibe al nucleófilo. Regla de Markovnikov: el electrófilo (H⁺) se agrega al carbono con más H; el nucleófilo va al carbono más sustituido (se forma el carbocatión más estable). anti-Markovnikov (hidroboración-oxidación): el boro actúa como electrófilo pero sin pasar por carbocatión → adición syn → OH al carbono menos sustituido. Imagen — mecanismo general de adición electrofílica Adición electrofílica a alquenos: ataque del enlace pi, formación de carbocatión y ataque nucleofílico.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-mecanismo-general-de-adicion-electrofilica-84",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen — mecanismo general de adición electrofílica?",
+      "answer": "Adición electrofílica a alquenos: ataque del enlace pi, formación de carbocatión y ataque nucleofílico.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sea-sustitucion-electrofilica-aromatica-85",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre SEA — Sustitución electrofílica aromática?",
+      "answer": "El anillo aromático actúa como nucleófilo. El electrófilo se une y forma un intermediario arenio (carbocatión no aromático). Una base extrae un protón y restaura la aromaticidad. Clave: se conserva la aromaticidad al final. Por eso el producto es de sustitución, no de adición. Imagen — mecanismo general SEAMecanismo general de sustitución electrofílica aromática: formación del complejo sigma/intermediario arenio y recuperación de aromaticidad.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-mecanismo-general-sea-86",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen — mecanismo general SEA?",
+      "answer": "Mecanismo general de sustitución electrofílica aromática: formación del complejo sigma/intermediario arenio y recuperación de aromaticidad.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-adicional-apunte-sea-snar-87",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen adicional — apunte SEA / SNAr?",
+      "answer": "Apunte visual: esquema general de SEA y SNAr. Agregado también en SNAr para comparar ambos mecanismos aromáticos.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "snar-sustitucion-nucleofilica-aromatica-88",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre SNAr — Sustitución nucleofílica aromática?",
+      "answer": "El nucleófilo ataca el anillo aromático, formando un intermediario de Meisenheimer (anión). Luego el grupo saliente parte. Requiere grupos retiradores de electrones en posiciones orto/para para estabilizar el intermediario. Imagen — SNAr por adición-eliminaciónSNAr por adición-eliminación: ataque nucleofílico, intermediario de Meisenheimer y salida del grupo saliente.Imagen — mecanismo por bencinoSNAr por mecanismo de bencino: eliminación-adición bajo condiciones fuertes.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-snar-por-adicion-eliminacion-89",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Imagen — SNAr por adición-eliminación?",
+      "answer": "SNAr por adición-eliminación: ataque nucleofílico, intermediario de Meisenheimer y salida del grupo saliente.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-mecanismo-por-bencino-90",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Imagen — mecanismo por bencino?",
+      "answer": "SNAr por mecanismo de bencino: eliminación-adición bajo condiciones fuertes.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-radicalarias-91",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones radicalarias?",
+      "answer": "Iniciación: generación de radicales libres con luz (hν) o calor (Δ). Propagación: el radical reacciona con una molécula, generando un nuevo radical que sigue la cadena. Terminación: dos radicales se combinan y se pierde la especie activa. La selectividad depende de la estabilidad del radical: 3° > 2° > 1°. Imagen — adición radicalaria de HBr Adición anti-Markovnikov de HBr a alquenos en presencia de peróxidos mediante radicales libres.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "imagen-adicion-radicalaria-de-hbr-92",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Imagen — adición radicalaria de HBr?",
+      "answer": "Adición anti-Markovnikov de HBr a alquenos en presencia de peróxidos mediante radicales libres.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "formacion-y-reaccion-de-organometalicos-93",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Formación y reacción de organometálicos?",
+      "answer": "Los organometálicos se preparan a partir de haluros orgánicos y luego se usan como nucleófilos fuertes para formar enlaces C–C. No se desarrolla un mecanismo largo; lo importante es reconocer la secuencia: formar el reactivo → hacerlo reaccionar → hidrólisis/trabajo ácido. Grignard \\[ R{-}X + Mg \\xrightarrow[\\text{éter seco}]{} R{-}MgX \\] \\[ R{-}MgX + C{=}O \\rightarrow \\text{alcóxido} \\xrightarrow{H_3O^+} \\text{alcohol} \\] Con formaldehído da alcohol 1°; con aldehídos, alcoholes 2°; con cetonas, alcoholes 3°; con ésteres, alcoholes 3° por doble adición; con CO₂, ácidos carboxílicos tras hidrólisis ácida. Gilman / organocupratos \\[ R{-}X + 2Li \\rightarrow R{-}Li + LiX \\] \\[ 2R{-}Li + CuI \\rightarrow R_2CuLi + LiI \\] El reactivo de Gilman \\(R_2CuLi\\) es menos reactivo que Grignard/organolitio y sirve para acoplamientos C–C más selectivos. C",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "oxidaciones-y-reducciones-organicas-94",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Oxidaciones y reducciones orgánicas?",
+      "answer": "Oxidación: pérdida de hidrógeno o ganancia de oxígeno. Aumento del número de oxidación del carbono. Reducción: ganancia de hidrógeno o pérdida de oxígeno. Disminución del número de oxidación del carbono. Ejemplos de reactivos oxidantes: KMnO₄, OsO₄, mCPBA, O₃, H₂O₂. Ejemplos de reactivos reductores: H₂/cat, LiAlH₄, NaBH₄, Na/NH₃(l). Reducción de aldehídos y cetonas a alcanos Reducción fuerte Útil después de acilación Friedel-Crafts R-C(=O)-R' → R-CH₂-R' R-CHO → R-CH₃ Clemmensen: Zn(Hg), HCl concentrado, calor. Medio ácido. Conviene cuando la molécula tolera ácido fuerte. Wolff-Kishner: NH₂NH₂, KOH, calor, solvente de alto punto de ebullición. Medio básico. Conviene cuando la molécula no tolera condiciones ácidas. Ambas reducciones reemplazan el oxígeno del carbonilo por hidrógenos: convierten aldehídos y cetonas en alcanos.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "estructura-y-estereoquimica-de-los-alcanos-wade-vol-1-cap-3-95",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre ESTRUCTURA Y ESTEREOQUÍMICA DE LOS ALCANOS WADE VOL. 1 · CAP. 3?",
+      "answer": "Estructura y estereoquímica de los alcanos Wade p. 83 Los alcanos son hidrocarburos saturados, formados solo por carbono e hidrógeno, con enlaces simples C-C y C-H. CnH2n+2 (alcanos acíclicos) Los carbonos de los alcanos tienen hibridación sp³ y geometría tetraédrica, con ángulos cercanos a 109,5°. Esto significa que los alcanos no deben pensarse como moléculas planas. Los alcanos pueden presentar: isomería constitucional (cambia la conectividad), conformaciones (por rotación alrededor de enlaces simples) e isomería cis/trans en cicloalcanos sustituidos. Nomenclatura de los alcanos Wade p. 85 Elegir la cadena carbonada más larga. Si hay varias cadenas de igual longitud, elegir la que tenga más sustituyentes. Numerar desde el extremo más cercano al primer sustituyente. Si hay empate, elegir la numeración que dé el conjunto de localizadores",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "estructura-y-estereoquimica-de-los-alcanos-wade-p-83-96",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Estructura y estereoquímica de los alcanos Wade p. 83?",
+      "answer": "Los alcanos son hidrocarburos saturados, formados solo por carbono e hidrógeno, con enlaces simples C-C y C-H. CnH2n+2 (alcanos acíclicos) Los carbonos de los alcanos tienen hibridación sp³ y geometría tetraédrica, con ángulos cercanos a 109,5°. Esto significa que los alcanos no deben pensarse como moléculas planas. Los alcanos pueden presentar: isomería constitucional (cambia la conectividad), conformaciones (por rotación alrededor de enlaces simples) e isomería cis/trans en cicloalcanos sustituidos.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "nomenclatura-de-los-alcanos-wade-p-85-97",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Nomenclatura de los alcanos Wade p. 85?",
+      "answer": "Elegir la cadena carbonada más larga. Si hay varias cadenas de igual longitud, elegir la que tenga más sustituyentes. Numerar desde el extremo más cercano al primer sustituyente. Si hay empate, elegir la numeración que dé el conjunto de localizadores más bajo. Nombrar los sustituyentes alquilo. Ordenar sustituyentes alfabéticamente. Usar di-, tri-, tetra- cuando haya sustituyentes repetidos. Los prefijos di-, tri-, tetra- no se consideran para ordenar alfabéticamente. Sustituyentes comunes: n-propil: grupo propil lineal, unido por el carbono terminal. isopropil: grupo propil ramificado unido por el carbono central. \"Iso\" indica ramificación en el extremo del grupo. n-butil: grupo butil lineal unido por un carbono terminal. sec-butil: \"sec\" = secundario; el grupo se une a la cadena principal a través de un carbono secundario. isobutil: tie",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "propiedades-fisicas-de-los-alcanos-wade-p-91-98",
+      "type": "relation",
+      "question": "¿Qué tenés que saber sobre Propiedades físicas de los alcanos Wade p. 91?",
+      "answer": "Los alcanos son moléculas apolares. Sus fuerzas intermoleculares principales son fuerzas de London o dispersión. A mayor masa molecular, mayor punto de ebullición. A mayor superficie de contacto, mayor punto de ebullición. A mayor ramificación, menor punto de ebullición (la ramificación reduce la superficie de contacto y debilita las fuerzas de dispersión). Son insolubles en agua. Son solubles en solventes orgánicos apolares. Su densidad suele ser menor que la del agua.",
+      "difficulty": "medium",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "sintesis-de-alcanos-wade-p-95-99",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Síntesis de alcanos Wade p. 95?",
+      "answer": "Los alcanos pueden obtenerse por reducción de otros grupos funcionales o por acoplamiento de fragmentos carbonados. Reducción de haluros de alquilo \\[ R{-}X \\xrightarrow{LiAlH_4} R{-}H \\] Reemplaza el halógeno por hidrógeno. Hidrogenación de alquenos/alquinos \\[ C{=}C \\xrightarrow{H_2/Pd,Pt,Ni} C{-}C \\] \\[ C{\\equiv}C \\xrightarrow[\\text{exceso}]{H_2/Pd,Pt,Ni} C{-}C \\] Ruta reductora hacia alcanos. En alquenos y alquinos, el hidrógeno se adiciona sobre catalizador metálico. Wurtz \\[ 2R{-}X + 2Na \\rightarrow R{-}R + 2NaX \\] Forma enlaces C–C por acoplamiento de haluros. Mejor para productos simétricos. Corey-House / Gilman \\[ R{-}X + 2Li \\rightarrow R{-}Li + LiX \\] \\[ 2R{-}Li + CuI \\rightarrow R_2CuLi + LiI \\] \\[ R_2CuLi + R'{-}X \\rightarrow R{-}R' + RCu + LiX \\] Permite formar alcanos no simétricos con mejor control que Wurtz. Clemmensen \\[",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    },
+    {
+      "id": "reacciones-de-alcanos-wade-p-95-100",
+      "type": "mechanism",
+      "question": "¿Qué tenés que saber sobre Reacciones de alcanos Wade p. 95?",
+      "answer": "Combustión Wade p. 95 Oxidación Alcano + O₂ → CO₂ + H₂O + energía La combustión es la oxidación completa de un alcano con oxígeno para dar dióxido de carbono, agua y energía. Halogenación por radicales libres Wade p. 95 Radicales libres R-H + X₂ → R-X + HX (hν o Δ) Los alcanos reaccionan con halógenos mediante mecanismo radicalario. La bromación es más selectiva que la cloración. La orientación depende de la estabilidad del radical. Pirólisis Wade p. 95 Ruptura térmica alcano → Δ alta → mezcla de alcanos menores + alquenos + radicales La pirólisis es la ruptura de alcanos por altas temperaturas.",
+      "difficulty": "hard",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "fisica-import",
+      "title": "Formulario integral de Física I",
+      "text": "Formulario completo organizado en primer parcial, laboratorio y segundo parcial, con fórmulas, explicaciones y tipos de ejercicios.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export default defineConfig({
   webServer: {
     command: "pnpm exec http-server . -p 4173 -c-1",
     url: "http://127.0.0.1:4173",
-    reuseExistingServer: false
+    reuseExistingServer: !process.env.CI
   },
   projects: [
     { name: "chromium", grep: /@desktop/, use: { ...devices["Desktop Chrome"] } },
