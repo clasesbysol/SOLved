@@ -25,11 +25,11 @@ for (const path of required) await access(path);
 
 const index = await readFile("index.html", "utf8");
 const auth=await readFile("js/auth.js","utf8"),authorized=await readFile("js/authorized-users.js","utf8");assert.ok(authorized.includes('clasesbysol@gmail.com'));assert.ok(auth.includes("authorized-google")&&auth.includes("guest"));assert.ok(index.includes("Crear mi carrera")&&index.includes("Continuar como invitado"));
-for (const ref of ["styles.css?v=0.7.0", "manifest.webmanifest", "js/data.js?v=0.7.0", "js/db.js?v=0.7.0", "js/sync.js?v=0.7.0", "js/content.js?v=0.7.0", "js/notes.js?v=0.7.0", "js/utilities.js?v=0.7.0", "js/summary-factory.js?v=0.7.0", "js/app.js?v=0.7.0"]) {
+for (const ref of ["styles.css?v=0.7.2", "manifest.webmanifest", "js/data.js?v=0.7.2", "js/db.js?v=0.7.2", "js/sync.js?v=0.7.2", "js/content.js?v=0.7.2", "js/notes.js?v=0.7.2", "js/utilities.js?v=0.7.2", "js/summary-factory.js?v=0.7.2", "js/app.js?v=0.7.2"]) {
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
-for(const ref of ["organic-mind-map.css?v=0.7.1","js/organic-mind-map.js?v=0.7.1"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
+for(const ref of ["organic-mind-map.css?v=0.7.2","js/organic-mind-map.js?v=0.7.2"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
 const syncSource = await readFile("js/sync.js", "utf8");
 assert.ok(syncSource.includes('requestAccessToken({prompt:""})'),"Drive debe reutilizar el consentimiento con prompt vacío");
 assert.ok(!syncSource.includes('prompt:"consent"')&&!syncSource.includes("prompt: \"consent\""),"Drive no debe forzar consentimiento");
@@ -43,17 +43,19 @@ assert.equal(manifest.start_url, "./");
 assert.equal(manifest.scope, "./");
 assert.equal(manifest.display, "standalone");
 const sw = await readFile("sw.js", "utf8");
-for(const ref of ["./organic-mind-map.css?v=0.7.1","./js/organic-mind-map.js?v=0.7.1","./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json"])assert.ok(sw.includes(ref),`El service worker no precachea ${ref}`);
-for (const ref of ["./index.html", "./styles.css?v=0.7.0", "./js/sync.js?v=0.7.0", "./js/content.js?v=0.7.0", "./js/notes.js?v=0.7.0", "./js/utilities.js?v=0.7.0", "./js/summary-factory.js?v=0.7.0", "./js/app.js?v=0.7.0", "./privacy.html", "./terms.html"]) {
+for(const ref of ["./organic-mind-map.css?v=0.7.2","./js/organic-mind-map.js?v=0.7.2","./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json"])assert.ok(sw.includes(ref),`El service worker no precachea ${ref}`);
+for (const ref of ["./index.html", "./styles.css?v=0.7.2", "./js/sync.js?v=0.7.2", "./js/content.js?v=0.7.2", "./js/notes.js?v=0.7.2", "./js/utilities.js?v=0.7.2", "./js/summary-factory.js?v=0.7.2", "./js/app.js?v=0.7.2", "./privacy.html", "./terms.html"]) {
   assert.ok(sw.includes(ref), `El service worker no precachea ${ref}`);
 }
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
-assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.7.1");
-assert.ok(index.includes("v0.7.1"), "La versión visible debe ser 0.7.1");
+assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.7.2");
+assert.ok(index.includes("v0.7.2"), "La versión visible debe ser 0.7.2");
 const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=6'));for(const store of ["contentPackages","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
 assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
 assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");
 assert.ok(app.includes("flushPendingSaves"),"la actualización PWA debe vaciar notas pendientes");
+assert.ok(app.includes('register(`./sw.js?v=${APP_VERSION}`')&&app.includes('worker?.postMessage({type:"SKIP_WAITING"})'),"la PWA debe detectar y activar automáticamente una versión nueva");
+assert.ok(app.includes("solved-fisica-integral-v3")&&app.includes('fisica1:"resumen-integral"'),"Física debe migrar una vez al resumen integral y persistir la elección");
 const config=await readFile("playwright.config.mjs","utf8");assert.ok(config.includes("pnpm exec http-server")&&!/\.CMD\b/i.test(config),"Playwright debe iniciar igual en Windows y Linux");
 const workflow=await readFile(".github/workflows/ci.yml","utf8");assert.ok(workflow.includes("ubuntu-latest")&&workflow.includes("playwright test --reporter=list"),"CI debe ejecutar Playwright en Linux sin retries");
 assert.ok(app.includes('"pointerdown","mousedown","touchstart"'), "Falta proteger la selección en pointer/mouse/touch");
