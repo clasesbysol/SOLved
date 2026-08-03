@@ -415,6 +415,8 @@ html[data-access-mode="no-profile"] .app,html[data-access-mode="unauthorized-goo
   .sidebar .side-bottom{display:block!important;flex:0 0 auto;margin:0;padding:0;border:0}.sidebar .account-card>button{width:48px;height:48px;padding:6px}.sidebar .account-card>button span{display:none}.sidebar .account-menu{position:fixed;left:8px;right:8px;bottom:68px}
   .workspace{grid-column:1;grid-row:2;width:100%;min-width:0;min-height:0;overflow:auto}
   .page{width:100%;min-width:0;padding:10px}
+  .dashboard-layout,.dashboard-layout>*,.dashboard-layout>div,.section,.current-grid{min-width:0;max-width:100%}
+  .schedule-scroll{width:100%;max-width:100%;overflow-x:auto}
   .section-head{align-items:flex-start;gap:8px}.section-head .soft-btn{flex:0 0 auto}
   .study-page{width:100%;min-width:0}
   .study-shell{grid-template-rows:auto 45px 44px minmax(0,1fr)}
