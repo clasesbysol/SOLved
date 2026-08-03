@@ -1,0 +1,3022 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "generatedAt": "2026-08-03T00:00:00.000Z",
+  "counts": {
+    "groups": 5,
+    "chapters": 20,
+    "topics": 165,
+    "subtopics": 152,
+    "concepts": 169
+  },
+  "groups": [
+    {
+      "id": "atlas",
+      "label": "Atlas de síntesis y reacciones",
+      "description": "Entrada rápida por familia funcional.",
+      "chapters": [
+        {
+          "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1",
+          "label": "Síntesis y reacciones por familia funcional",
+          "target": "indice-maestro-reacciones",
+          "topics": [
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-alcanos-0",
+              "label": "Alcanos",
+              "target": "atlas-alcanos",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-haluros-de-alquilo-1",
+              "label": "Haluros de alquilo",
+              "target": "atlas-haluros-de-alquilo",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-alquenos-2",
+              "label": "Alquenos",
+              "target": "atlas-alquenos",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-alquinos-3",
+              "label": "Alquinos",
+              "target": "atlas-alquinos",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-alcoholes-4",
+              "label": "Alcoholes",
+              "target": "atlas-alcoholes",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-eteres-5",
+              "label": "Éteres",
+              "target": "atlas-eteres",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-epoxidos-6",
+              "label": "Epóxidos",
+              "target": "atlas-epoxidos",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-aldehidos-y-cetonas-7",
+              "label": "Aldehídos y cetonas",
+              "target": "atlas-aldehidos-y-cetonas",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-acidos-carboxilicos-y-derivados-8",
+              "label": "Ácidos carboxílicos y derivados",
+              "target": "atlas-acidos-carboxilicos-y-derivados",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-aromaticos-9",
+              "label": "Aromáticos",
+              "target": "atlas-aromaticos",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-compuestos-nitrogenados-10",
+              "label": "Compuestos nitrogenados",
+              "target": "atlas-nitrogenados",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-hidratos-de-carbono-11",
+              "label": "Hidratos de carbono",
+              "target": "atlas-hidratos-de-carbono",
+              "children": []
+            },
+            {
+              "id": "chapter-sintesis-y-reacciones-por-familia-funcional-1-topic-espectroscopia-12",
+              "label": "Espectroscopía",
+              "target": "atlas-espectroscopia",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fundamentos",
+      "label": "Fundamentos y estructura",
+      "description": "Lenguaje, propiedades, energía y estereoquímica.",
+      "chapters": [
+        {
+          "id": "chapter-introduccion-y-repaso-a-la-quimica-organica-2",
+          "label": "INTRODUCCIÓN Y REPASO A LA QUÍMICA ORGÁNICA",
+          "target": "intro",
+          "topics": [
+            {
+              "id": "chapter-introduccion-y-repaso-a-la-quimica-organica-2-topic-estructuras-de-lewis-0",
+              "label": "Estructuras de Lewis",
+              "target": "lewis",
+              "children": []
+            },
+            {
+              "id": "chapter-introduccion-y-repaso-a-la-quimica-organica-2-topic-electronegatividad-y-polaridad-de-enlace-1",
+              "label": "Electronegatividad y polaridad de enlace",
+              "target": "electronegatividad",
+              "children": []
+            },
+            {
+              "id": "chapter-introduccion-y-repaso-a-la-quimica-organica-2-topic-acidos-y-bases-de-arrhenius-2",
+              "label": "Ácidos y bases de Arrhenius",
+              "target": "acids-arrhenius",
+              "children": []
+            },
+            {
+              "id": "chapter-introduccion-y-repaso-a-la-quimica-organica-2-topic-acidos-y-bases-de-br-nsted-lowry-3",
+              "label": "Ácidos y bases de Brønsted-Lowry",
+              "target": "acids-bronsted",
+              "children": []
+            },
+            {
+              "id": "chapter-introduccion-y-repaso-a-la-quimica-organica-2-topic-acidos-y-bases-de-lewis-4",
+              "label": "Ácidos y bases de Lewis",
+              "target": "acids-lewis",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-estructura-y-propiedades-de-las-moleculas-organicas-3",
+          "label": "ESTRUCTURA Y PROPIEDADES DE LAS MOLÉCULAS ORGÁNICAS",
+          "target": "estructura-molecular",
+          "topics": [
+            {
+              "id": "chapter-estructura-y-propiedades-de-las-moleculas-organicas-3-topic-hibridaciones-y-formas-moleculares-0",
+              "label": "Hibridaciones y formas moleculares",
+              "target": "hibridacion",
+              "children": [
+                {
+                  "id": "concept-carbono-sp-0",
+                  "label": "Carbono sp³",
+                  "target": "estructura-molecular"
+                },
+                {
+                  "id": "concept-carbono-sp-1",
+                  "label": "Carbono sp²",
+                  "target": "estructura-molecular"
+                },
+                {
+                  "id": "concept-carbono-sp-2",
+                  "label": "Carbono sp",
+                  "target": "estructura-molecular"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estructura-y-propiedades-de-las-moleculas-organicas-3-topic-como-dibujar-moleculas-tridimensionales-1",
+              "label": "Cómo dibujar moléculas tridimensionales",
+              "target": "3d-moleculas",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-propiedades-de-las-moleculas-organicas-3-topic-efecto-de-la-polaridad-sobre-la-solubilidad-2",
+              "label": "Efecto de la polaridad sobre la solubilidad",
+              "target": "polaridad-solubilidad",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-estudio-de-las-reacciones-quimicas-4",
+          "label": "ESTUDIO DE LAS REACCIONES QUÍMICAS",
+          "target": "reacciones-quimicas",
+          "topics": [
+            {
+              "id": "chapter-estudio-de-las-reacciones-quimicas-4-topic-energia-de-activacion-y-rapidez-de-reaccion-0",
+              "label": "Energía de activación y rapidez de reacción",
+              "target": "energia-activacion",
+              "children": []
+            },
+            {
+              "id": "chapter-estudio-de-las-reacciones-quimicas-4-topic-estados-de-transicion-1",
+              "label": "Estados de transición",
+              "target": "estados-transicion",
+              "children": [
+                {
+                  "id": "concept-estado-de-transicion-0",
+                  "label": "Estado de transición",
+                  "target": "reacciones-quimicas"
+                },
+                {
+                  "id": "concept-intermediario-1",
+                  "label": "Intermediario",
+                  "target": "reacciones-quimicas"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estudio-de-las-reacciones-quimicas-4-topic-halogenacion-y-dependencia-de-la-temperatura-2",
+              "label": "Halogenación y dependencia de la temperatura",
+              "target": "halogenacion-temp",
+              "children": []
+            },
+            {
+              "id": "chapter-estudio-de-las-reacciones-quimicas-4-topic-postulado-de-hammond-3",
+              "label": "Postulado de Hammond",
+              "target": "hammond",
+              "children": []
+            },
+            {
+              "id": "chapter-estudio-de-las-reacciones-quimicas-4-topic-inhibidores-de-radicales-4",
+              "label": "Inhibidores de radicales",
+              "target": "inhibidores",
+              "children": []
+            },
+            {
+              "id": "chapter-estudio-de-las-reacciones-quimicas-4-topic-intermediarios-reactivos-5",
+              "label": "Intermediarios reactivos",
+              "target": "intermediarios",
+              "children": [
+                {
+                  "id": "concept-carbocationes-0",
+                  "label": "Carbocationes",
+                  "target": "reacciones-quimicas"
+                },
+                {
+                  "id": "concept-radicales-libres-1",
+                  "label": "Radicales libres",
+                  "target": "reacciones-quimicas"
+                },
+                {
+                  "id": "concept-carbaniones-2",
+                  "label": "Carbaniones",
+                  "target": "reacciones-quimicas"
+                },
+                {
+                  "id": "concept-carbenos-3",
+                  "label": "Carbenos",
+                  "target": "reacciones-quimicas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-estereoquimica-7",
+          "label": "ESTEREOQUÍMICA",
+          "target": "cap-estereoquimica",
+          "topics": [
+            {
+              "id": "chapter-estereoquimica-7-topic-quiralidad-0",
+              "label": "Quiralidad",
+              "target": "quiralidad",
+              "children": []
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-nomenclatura-r-s-de-atomos-de-carbono-asimetricos-1",
+              "label": "Nomenclatura R/S de átomos de carbono asimétricos",
+              "target": "rs",
+              "children": [
+                {
+                  "id": "concept-horario-r-0",
+                  "label": "Horario → R",
+                  "target": "cap-estereoquimica"
+                },
+                {
+                  "id": "concept-antihorario-s-1",
+                  "label": "Antihorario → S",
+                  "target": "cap-estereoquimica"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-actividad-optica-2",
+              "label": "Actividad óptica",
+              "target": "actividad-optica",
+              "children": [
+                {
+                  "id": "concept-dextrogira-0",
+                  "label": "Dextrógira (+)",
+                  "target": "cap-estereoquimica"
+                },
+                {
+                  "id": "concept-levogira-1",
+                  "label": "Levógira (−)",
+                  "target": "cap-estereoquimica"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-mezclas-racemicas-3",
+              "label": "Mezclas racémicas",
+              "target": "mezclas-racemicas",
+              "children": []
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-proyecciones-de-fischer-4",
+              "label": "Proyecciones de Fischer",
+              "target": "fischer",
+              "children": [
+                {
+                  "id": "concept-lineas-verticales-0",
+                  "label": "Líneas verticales",
+                  "target": "cap-estereoquimica"
+                },
+                {
+                  "id": "concept-lineas-horizontales-1",
+                  "label": "Líneas horizontales",
+                  "target": "cap-estereoquimica"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-diastereomeros-5",
+              "label": "Diastereómeros",
+              "target": "diastereomeros",
+              "children": []
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-compuestos-meso-6",
+              "label": "Compuestos meso",
+              "target": "meso",
+              "children": []
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-configuraciones-absolutas-y-relativas-7",
+              "label": "Configuraciones absolutas y relativas",
+              "target": "config-abs-rel",
+              "children": []
+            },
+            {
+              "id": "chapter-estereoquimica-7-topic-propiedades-fisicas-de-los-diastereomeros-8",
+              "label": "Propiedades físicas de los diastereómeros",
+              "target": "propiedades-diast",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mecanismos",
+      "label": "Mecanismos transversales",
+      "description": "Patrones que explican sustitución, eliminación, adición y oxidación.",
+      "chapters": [
+        {
+          "id": "chapter-mecanismos-clave-5",
+          "label": "MECANISMOS CLAVE",
+          "target": "mecanismos-clave",
+          "topics": [
+            {
+              "id": "chapter-mecanismos-clave-5-topic-mecanismos-clave-overview",
+              "label": "Panorama del capítulo",
+              "target": "mecanismos-clave",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "familias",
+      "label": "Familias funcionales",
+      "description": "Preparación, propiedades y transformaciones por grupo funcional.",
+      "chapters": [
+        {
+          "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6",
+          "label": "ESTRUCTURA Y ESTEREOQUÍMICA DE LOS ALCANOS",
+          "target": "cap-alcanos",
+          "topics": [
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-estructura-y-estereoquimica-de-los-alcanos-0",
+              "label": "Estructura y estereoquímica de los alcanos",
+              "target": "alcanos",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-nomenclatura-de-los-alcanos-1",
+              "label": "Nomenclatura de los alcanos",
+              "target": "nomenclatura-alcanos",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-propiedades-fisicas-de-los-alcanos-2",
+              "label": "Propiedades físicas de los alcanos",
+              "target": "propiedades-alcanos",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-sintesis-de-alcanos-3",
+              "label": "Síntesis de alcanos",
+              "target": "sintesis-alcanos",
+              "children": [
+                {
+                  "id": "concept-reduccion-de-haluros-de-alquilo-0",
+                  "label": "Reducción de haluros de alquilo",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-hidrogenacion-de-alquenos-alquinos-1",
+                  "label": "Hidrogenación de alquenos/alquinos",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-wurtz-2",
+                  "label": "Wurtz",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-corey-house-gilman-3",
+                  "label": "Corey-House / Gilman",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-clemmensen-4",
+                  "label": "Clemmensen",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-wolff-kishner-5",
+                  "label": "Wolff-Kishner",
+                  "target": "cap-alcanos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-reacciones-de-alcanos-4",
+              "label": "Reacciones de alcanos",
+              "target": "reacciones-alcanos",
+              "children": [
+                {
+                  "id": "concept-combustion-0",
+                  "label": "Combustión",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-halogenacion-por-radicales-libres-1",
+                  "label": "Halogenación por radicales libres",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-pirolisis-2",
+                  "label": "Pirólisis",
+                  "target": "cap-alcanos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-estructura-y-conformaciones-de-los-alcanos-5",
+              "label": "Estructura y conformaciones de los alcanos",
+              "target": "conformaciones-alcanos",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-isomeria-cis-trans-en-cicloalcanos-6",
+              "label": "Isomería cis-trans en cicloalcanos",
+              "target": "cis-trans-ciclos",
+              "children": [
+                {
+                  "id": "concept-cis-0",
+                  "label": "Cis",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-trans-1",
+                  "label": "Trans",
+                  "target": "cap-alcanos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-estabilidad-de-cicloalcanos-tension-de-anillos-7",
+              "label": "Estabilidad de cicloalcanos: tensión de anillos",
+              "target": "tension-anillos",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-conformaciones-del-ciclohexano-8",
+              "label": "Conformaciones del ciclohexano",
+              "target": "ciclohexano",
+              "children": [
+                {
+                  "id": "concept-posiciones-axiales-0",
+                  "label": "Posiciones axiales",
+                  "target": "cap-alcanos"
+                },
+                {
+                  "id": "concept-posiciones-ecuatoriales-1",
+                  "label": "Posiciones ecuatoriales",
+                  "target": "cap-alcanos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-conformaciones-de-ciclohexanos-monosustituidos-9",
+              "label": "Conformaciones de ciclohexanos monosustituidos",
+              "target": "mono-ciclo",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-estereoquimica-de-los-alcanos-6-topic-conformaciones-de-ciclohexanos-disustituidos-10",
+              "label": "Conformaciones de ciclohexanos disustituidos",
+              "target": "di-ciclo",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-haluros-de-alquilo-8",
+          "label": "HALUROS DE ALQUILO",
+          "target": "cap-haluros",
+          "topics": [
+            {
+              "id": "chapter-haluros-de-alquilo-8-topic-nomenclatura-de-los-haluros-de-alquilo-0",
+              "label": "Nomenclatura de los haluros de alquilo",
+              "target": "haluros-nomenclatura",
+              "children": []
+            },
+            {
+              "id": "chapter-haluros-de-alquilo-8-topic-propiedades-fisicas-de-los-haluros-de-alquilo-1",
+              "label": "Propiedades físicas de los haluros de alquilo",
+              "target": "haluros-propiedades",
+              "children": []
+            },
+            {
+              "id": "chapter-haluros-de-alquilo-8-topic-preparacion-sintesis-de-haluros-de-alquilo-2",
+              "label": "Preparación / síntesis de haluros de alquilo",
+              "target": "haluros-sintesis",
+              "children": [
+                {
+                  "id": "concept-halogenacion-por-radicales-libres-0",
+                  "label": "Halogenación por radicales libres",
+                  "target": "cap-haluros"
+                },
+                {
+                  "id": "concept-bromacion-alilica-1",
+                  "label": "Bromación alílica",
+                  "target": "cap-haluros"
+                },
+                {
+                  "id": "concept-a-partir-de-alquenos-adicion-de-hx-2",
+                  "label": "A partir de alquenos: adición de HX",
+                  "target": "cap-haluros"
+                },
+                {
+                  "id": "concept-a-partir-de-alquenos-adicion-de-x-3",
+                  "label": "A partir de alquenos: adición de X₂",
+                  "target": "cap-haluros"
+                },
+                {
+                  "id": "concept-a-partir-de-alquinos-adicion-de-2-hx-o-2-x-4",
+                  "label": "A partir de alquinos: adición de 2 HX o 2 X₂",
+                  "target": "cap-haluros"
+                },
+                {
+                  "id": "concept-a-partir-de-alcoholes-5",
+                  "label": "A partir de alcoholes",
+                  "target": "cap-haluros"
+                },
+                {
+                  "id": "concept-a-partir-de-otros-haluros-de-alquilo-6",
+                  "label": "A partir de otros haluros de alquilo",
+                  "target": "cap-haluros"
+                }
+              ]
+            },
+            {
+              "id": "chapter-haluros-de-alquilo-8-topic-reacciones-de-haluros-de-alquilo-3",
+              "label": "Reacciones de haluros de alquilo",
+              "target": "haluros-reacciones",
+              "children": [
+                {
+                  "id": "subtopic-sustituciones-nucleofilicas-0",
+                  "label": "Sustituciones nucleofílicas",
+                  "target": "cap-haluros",
+                  "children": [
+                    {
+                      "id": "concept-formacion-de-alcoholes-0",
+                      "label": "Formación de alcoholes",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-intercambio-de-haluros-1",
+                      "label": "Intercambio de haluros",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-sintesis-de-eteres-de-williamson-2",
+                      "label": "Síntesis de éteres de Williamson",
+                      "target": "halogenuros-williamson"
+                    },
+                    {
+                      "id": "concept-sintesis-de-aminas-3",
+                      "label": "Síntesis de aminas",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-sintesis-de-nitrilos-4",
+                      "label": "Síntesis de nitrilos",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-sintesis-de-alquinos-5",
+                      "label": "Síntesis de alquinos",
+                      "target": "cap-haluros"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-eliminaciones-1",
+                  "label": "Eliminaciones",
+                  "target": "cap-haluros",
+                  "children": [
+                    {
+                      "id": "concept-deshidrohalogenacion-0",
+                      "label": "Deshidrohalogenación",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-deshalogenacion-1",
+                      "label": "Deshalogenación",
+                      "target": "cap-haluros"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-formacion-de-reactivos-organometalicos-2",
+                  "label": "Formación de reactivos organometálicos",
+                  "target": "cap-haluros",
+                  "children": [
+                    {
+                      "id": "concept-reactivos-de-grignard-0",
+                      "label": "Reactivos de Grignard",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-reactivos-organolitiados-1",
+                      "label": "Reactivos organolitiados",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-reactivos-de-gilman-organocupratos-2",
+                      "label": "Reactivos de Gilman / organocupratos",
+                      "target": "cap-haluros"
+                    },
+                    {
+                      "id": "concept-acoplamiento-de-organocupratos-corey-house-3",
+                      "label": "Acoplamiento de organocupratos (Corey-House)",
+                      "target": "cap-haluros"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-reducciones-3",
+                  "label": "Reducciones",
+                  "target": "cap-haluros",
+                  "children": [
+                    {
+                      "id": "concept-reduccion-de-haluros-de-alquilo-a-alcanos-0",
+                      "label": "Reducción de haluros de alquilo a alcanos",
+                      "target": "cap-haluros"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-estructura-y-sintesis-de-los-alquenos-9",
+          "label": "ESTRUCTURA Y SÍNTESIS DE LOS ALQUENOS",
+          "target": "cap-alquenos",
+          "topics": [
+            {
+              "id": "chapter-estructura-y-sintesis-de-los-alquenos-9-topic-nomenclatura-de-los-alquenos-0",
+              "label": "Nomenclatura de los alquenos",
+              "target": "alquenos-nomenclatura",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-sintesis-de-los-alquenos-9-topic-nomenclatura-cis-trans-y-e-z-de-alquenos-1",
+              "label": "Nomenclatura cis-trans y E/Z de alquenos",
+              "target": "alquenos-ez",
+              "children": [
+                {
+                  "id": "concept-cis-0",
+                  "label": "Cis",
+                  "target": "cap-alquenos"
+                },
+                {
+                  "id": "concept-trans-1",
+                  "label": "Trans",
+                  "target": "cap-alquenos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-estructura-y-sintesis-de-los-alquenos-9-topic-estabilidad-de-los-alquenos-2",
+              "label": "Estabilidad de los alquenos",
+              "target": "alquenos-estabilidad",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-sintesis-de-los-alquenos-9-topic-propiedades-fisicas-de-los-alquenos-3",
+              "label": "Propiedades físicas de los alquenos",
+              "target": "alquenos-propiedades",
+              "children": []
+            },
+            {
+              "id": "chapter-estructura-y-sintesis-de-los-alquenos-9-topic-sintesis-de-alquenos-4",
+              "label": "Síntesis de alquenos",
+              "target": "alquenos-sintesis",
+              "children": [
+                {
+                  "id": "concept-deshidrogenacion-de-alcanos-0",
+                  "label": "Deshidrogenación de alcanos",
+                  "target": "cap-alquenos"
+                },
+                {
+                  "id": "concept-deshalogenacion-de-dibromuros-vecinales-1",
+                  "label": "Deshalogenación de dibromuros vecinales",
+                  "target": "alquenos-sintesis-deshalogenacion-dibromuros"
+                },
+                {
+                  "id": "concept-deshidratacion-de-alcoholes-2",
+                  "label": "Deshidratación de alcoholes",
+                  "target": "alquenos-sintesis-deshidratacion-alcoholes"
+                },
+                {
+                  "id": "concept-deshidrohalogenacion-de-haluros-de-alquilo-3",
+                  "label": "Deshidrohalogenación de haluros de alquilo",
+                  "target": "alquenos-sintesis-deshidrohalogenacion"
+                },
+                {
+                  "id": "concept-eliminacion-de-hofmann-4",
+                  "label": "Eliminación de Hofmann",
+                  "target": "cap-alquenos"
+                },
+                {
+                  "id": "concept-eliminacion-de-cope-5",
+                  "label": "Eliminación de Cope",
+                  "target": "cap-alquenos"
+                },
+                {
+                  "id": "concept-reduccion-de-alquinos-a-alquenos-cis-6",
+                  "label": "Reducción de alquinos a alquenos cis",
+                  "target": "alquinos-reduccion-cis"
+                },
+                {
+                  "id": "concept-reduccion-de-alquinos-a-alquenos-trans-7",
+                  "label": "Reducción de alquinos a alquenos trans",
+                  "target": "alquinos-reduccion-trans"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-reacciones-de-alquenos-10",
+          "label": "REACCIONES DE ALQUENOS",
+          "target": "cap-reacciones-alquenos",
+          "topics": [
+            {
+              "id": "chapter-reacciones-de-alquenos-10-topic-reactividad-del-enlace-doble-carbono-carbono-0",
+              "label": "Reactividad del enlace doble carbono-carbono",
+              "target": "alquenos-reactividad",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-alquenos-10-topic-adicion-electrofilica-a-alquenos-1",
+              "label": "Adición electrofílica a alquenos",
+              "target": "alquenos-adicion",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-alquenos-10-topic-reacciones-especificas-de-alquenos-2",
+              "label": "Reacciones específicas de alquenos",
+              "target": "alquenos-reacciones-esp",
+              "children": [
+                {
+                  "id": "concept-adicion-de-haluros-de-hidrogeno-0",
+                  "label": "Adición de haluros de hidrógeno",
+                  "target": "alquenos-adicion-hx"
+                },
+                {
+                  "id": "concept-adicion-radicalaria-de-hbr-con-peroxidos-1",
+                  "label": "Adición radicalaria de HBr con peróxidos",
+                  "target": "alquenos-hbr-peroxidos"
+                },
+                {
+                  "id": "concept-hidratacion-de-alquenos-2",
+                  "label": "Hidratación de alquenos",
+                  "target": "alquenos-hidratacion-acido"
+                },
+                {
+                  "id": "concept-oximercuracion-desmercuracion-3",
+                  "label": "Oximercuración-desmercuración",
+                  "target": "alquenos-oximercuracion"
+                },
+                {
+                  "id": "concept-alcoximercuracion-desmercuracion-4",
+                  "label": "Alcoximercuración-desmercuración",
+                  "target": "alquenos-alcoximercuracion"
+                },
+                {
+                  "id": "concept-hidroboracion-oxidacion-5",
+                  "label": "Hidroboración-oxidación",
+                  "target": "alquenos-hidroboracion-oxidacion"
+                },
+                {
+                  "id": "concept-adicion-de-halogenos-6",
+                  "label": "Adición de halógenos",
+                  "target": "alquenos-adicion-halogenos"
+                },
+                {
+                  "id": "concept-formacion-de-halohidrinas-7",
+                  "label": "Formación de halohidrinas",
+                  "target": "alquenos-halohidrinas"
+                },
+                {
+                  "id": "concept-hidrogenacion-catalitica-8",
+                  "label": "Hidrogenación catalítica",
+                  "target": "alquenos-hidrogenacion"
+                },
+                {
+                  "id": "concept-ciclopropanacion-adicion-de-carbenos-9",
+                  "label": "Ciclopropanación / adición de carbenos",
+                  "target": "alquenos-carbenos"
+                },
+                {
+                  "id": "concept-epoxidacion-10",
+                  "label": "Epoxidación",
+                  "target": "alquenos-epoxidacion"
+                },
+                {
+                  "id": "concept-apertura-de-epoxidos-catalizada-por-acido-11",
+                  "label": "Apertura de epóxidos catalizada por ácido",
+                  "target": "alquenos-apertura-epoxidos-acido"
+                },
+                {
+                  "id": "concept-hidroxilacion-syn-12",
+                  "label": "Hidroxilación syn",
+                  "target": "alquenos-dihidroxilacion"
+                },
+                {
+                  "id": "concept-ruptura-oxidativa-de-alquenos-13",
+                  "label": "Ruptura oxidativa de alquenos",
+                  "target": "alquenos-ruptura-oxidativa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-alquinos-11",
+          "label": "ALQUINOS",
+          "target": "cap-alquinos",
+          "topics": [
+            {
+              "id": "chapter-alquinos-11-topic-nomenclatura-y-propiedades-fisicas-de-los-alquinos-0",
+              "label": "Nomenclatura y propiedades físicas de los alquinos",
+              "target": "alquinos",
+              "children": []
+            },
+            {
+              "id": "chapter-alquinos-11-topic-estructura-electronica-de-los-alquinos-1",
+              "label": "Estructura electrónica de los alquinos",
+              "target": "alquinos-estructura",
+              "children": []
+            },
+            {
+              "id": "chapter-alquinos-11-topic-acidez-de-los-alquinos-y-formacion-de-iones-acetiluro-2",
+              "label": "Acidez de los alquinos y formación de iones acetiluro",
+              "target": "alquinos-acidez",
+              "children": []
+            },
+            {
+              "id": "chapter-alquinos-11-topic-sintesis-y-reacciones-de-alquinos-3",
+              "label": "Síntesis y reacciones de alquinos",
+              "target": "alquinos-reacciones",
+              "children": [
+                {
+                  "id": "concept-sintesis-de-alquinos-a-partir-de-acetiluros-0",
+                  "label": "Síntesis de alquinos a partir de acetiluros",
+                  "target": "alquinos-sintesis-acetiluros"
+                },
+                {
+                  "id": "concept-sintesis-de-alquinos-por-reacciones-de-eliminacion-1",
+                  "label": "Síntesis de alquinos por reacciones de eliminación",
+                  "target": "alquinos-sintesis-eliminacion"
+                },
+                {
+                  "id": "concept-resumen-de-sintesis-de-alquinos-2",
+                  "label": "Resumen de síntesis de alquinos",
+                  "target": "cap-alquinos"
+                },
+                {
+                  "id": "concept-reacciones-de-adicion-de-alquinos-3",
+                  "label": "Reacciones de adición de alquinos",
+                  "target": "alquinos-adiciones"
+                },
+                {
+                  "id": "concept-reduccion-de-alquinos-a-alqueno-trans-4",
+                  "label": "Reducción de alquinos a alqueno trans",
+                  "target": "alquinos-reduccion-trans-detalle"
+                },
+                {
+                  "id": "concept-hidratacion-de-alquinos-con-hgso-h-so-5",
+                  "label": "Hidratación de alquinos con HgSO₄ / H₂SO₄",
+                  "target": "alquinos-hidratacion-hg"
+                },
+                {
+                  "id": "concept-oxidacion-de-alquinos-6",
+                  "label": "Oxidación de alquinos",
+                  "target": "alquinos-oxidacion"
+                },
+                {
+                  "id": "concept-resumen-de-reacciones-de-alquinos-7",
+                  "label": "Resumen de reacciones de alquinos",
+                  "target": "alquinos-resumen-reacciones"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-compuestos-aromaticos-12",
+          "label": "COMPUESTOS AROMÁTICOS",
+          "target": "cap-aromaticos",
+          "topics": [
+            {
+              "id": "chapter-compuestos-aromaticos-12-topic-estructura-y-propiedades-del-benceno-0",
+              "label": "Estructura y propiedades del benceno",
+              "target": "benceno",
+              "children": []
+            },
+            {
+              "id": "chapter-compuestos-aromaticos-12-topic-orbitales-moleculares-del-benceno-1",
+              "label": "Orbitales moleculares del benceno",
+              "target": "benceno-om",
+              "children": []
+            },
+            {
+              "id": "chapter-compuestos-aromaticos-12-topic-compuestos-aromaticos-antiaromaticos-y-no-aromaticos-2",
+              "label": "Compuestos aromáticos, antiaromáticos y no aromáticos",
+              "target": "aromaticidad",
+              "children": [
+                {
+                  "id": "concept-aromatico-0",
+                  "label": "Aromático",
+                  "target": "cap-aromaticos"
+                },
+                {
+                  "id": "concept-antiaromatico-1",
+                  "label": "Antiaromático",
+                  "target": "cap-aromaticos"
+                },
+                {
+                  "id": "concept-no-aromatico-2",
+                  "label": "No aromático",
+                  "target": "cap-aromaticos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-aromaticos-12-topic-regla-de-huckel-3",
+              "label": "Regla de Hückel",
+              "target": "huckel",
+              "children": []
+            },
+            {
+              "id": "chapter-compuestos-aromaticos-12-topic-sustituyentes-activadores-desactivadores-y-halogenos-4",
+              "label": "Sustituyentes activadores, desactivadores y halógenos",
+              "target": "orientadores-aromaticos",
+              "children": [
+                {
+                  "id": "concept-activadores-orto-para-0",
+                  "label": "Activadores orto/para",
+                  "target": "cap-aromaticos"
+                },
+                {
+                  "id": "concept-desactivadores-meta-1",
+                  "label": "Desactivadores meta",
+                  "target": "cap-aromaticos"
+                },
+                {
+                  "id": "concept-halogenos-2",
+                  "label": "Halógenos",
+                  "target": "cap-aromaticos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-aromaticos-12-topic-propiedades-fisicas-del-benceno-y-sus-derivados-5",
+              "label": "Propiedades físicas del benceno y sus derivados",
+              "target": "benceno-propiedades",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-reacciones-de-compuestos-aromaticos-13",
+          "label": "REACCIONES DE COMPUESTOS AROMÁTICOS",
+          "target": "cap-reacciones-aromaticas",
+          "topics": [
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-sustitucion-electrofilica-aromatica-sea-0",
+              "label": "Sustitución electrofílica aromática (SEA)",
+              "target": "sea-general",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-halogenacion-del-benceno-1",
+              "label": "Halogenación del benceno",
+              "target": "halogenacion-benceno",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-nitracion-del-benceno-2",
+              "label": "Nitración del benceno",
+              "target": "nitracion",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-sulfonacion-del-benceno-3",
+              "label": "Sulfonación del benceno",
+              "target": "sulfonacion",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-nitracion-del-tolueno-efecto-del-grupo-alquilo-4",
+              "label": "Nitración del tolueno: efecto del grupo alquilo",
+              "target": "cap-reacciones-aromaticas",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-sustituyentes-activadores-y-orientadores-orto-para-5",
+              "label": "Sustituyentes activadores y orientadores orto-para",
+              "target": "sustituyentes-sea",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-sustituyentes-desactivadores-y-orientadores-meta-6",
+              "label": "Sustituyentes desactivadores y orientadores meta",
+              "target": "cap-reacciones-aromaticas",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-halogenos-desactivadores-pero-orientadores-orto-para-7",
+              "label": "Halógenos: desactivadores pero orientadores orto-para",
+              "target": "cap-reacciones-aromaticas",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-efectos-de-multiples-sustituyentes-8",
+              "label": "Efectos de múltiples sustituyentes",
+              "target": "cap-reacciones-aromaticas",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-alquilacion-de-friedel-crafts-9",
+              "label": "Alquilación de Friedel-Crafts",
+              "target": "friedel-crafts",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-acilacion-de-friedel-crafts-10",
+              "label": "Acilación de Friedel-Crafts",
+              "target": "cap-reacciones-aromaticas",
+              "children": [
+                {
+                  "id": "concept-acilacion-de-friedel-crafts-seguida-de-reduccion-0",
+                  "label": "Acilación de Friedel-Crafts seguida de reducción",
+                  "target": "friedel-crafts-acilacion-reduccion"
+                }
+              ]
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-comparacion-entre-alquilacion-y-acilacion-de-friedel-crafts-11",
+              "label": "Comparación entre alquilación y acilación de Friedel-Crafts",
+              "target": "cap-reacciones-aromaticas",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-sustitucion-nucleofilica-aromatica-snar-12",
+              "label": "Sustitución nucleofílica aromática (SNAr)",
+              "target": "snar",
+              "children": []
+            },
+            {
+              "id": "chapter-reacciones-de-compuestos-aromaticos-13-topic-resumen-de-reacciones-aromaticas-13",
+              "label": "Resumen de reacciones aromáticas",
+              "target": "cap-reacciones-aromaticas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-alcoholes-eteres-y-epoxidos-14",
+          "label": "ALCOHOLES, ÉTERES Y EPÓXIDOS",
+          "target": "unidad-8-alcoholes-eteres-epoxidos",
+          "topics": [
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-1-alcoholes-estructura-propiedades-y-clasificacion-0",
+              "label": "1. ALCOHOLES: ESTRUCTURA, PROPIEDADES Y CLASIFICACIÓN",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-1-1-introduccion-0",
+                  "label": "1.1 Introducción",
+                  "target": "u8-alcoholes-intro",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-1-2-propiedades-fisicas-1",
+                  "label": "1.2 Propiedades físicas",
+                  "target": "u8-propiedades",
+                  "children": [
+                    {
+                      "id": "concept-comparacion-con-agua-0",
+                      "label": "Comparación con agua",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-enlace-c-o-1",
+                      "label": "Enlace C–O",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-polaridad-y-momento-dipolar-2",
+                      "label": "Polaridad y momento dipolar",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-puentes-de-hidrogeno-3",
+                      "label": "Puentes de hidrógeno",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-1-3-solubilidad-2",
+                  "label": "1.3 Solubilidad",
+                  "target": "u8-solubilidad",
+                  "children": [
+                    {
+                      "id": "concept-region-hidrofilica-0",
+                      "label": "Región hidrofílica",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-region-hidrofobica-1",
+                      "label": "Región hidrofóbica",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-1-4-clasificacion-3",
+                  "label": "1.4 Clasificación",
+                  "target": "u8-clasificacion",
+                  "children": [
+                    {
+                      "id": "concept-segun-el-carbono-que-porta-el-oh-0",
+                      "label": "Según el carbono que porta el –OH",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-alcohol-primario-1",
+                      "label": "Alcohol primario",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-alcohol-secundario-2",
+                      "label": "Alcohol secundario",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-alcohol-terciario-3",
+                      "label": "Alcohol terciario",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-fenoles-y-alcoholes-aromaticos-4",
+                      "label": "Fenoles y alcoholes aromáticos",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-2-nomenclatura-de-alcoholes-1",
+              "label": "2. NOMENCLATURA DE ALCOHOLES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-2-1-nomenclatura-iupac-0",
+                  "label": "2.1 Nomenclatura IUPAC",
+                  "target": "u8-nomenclatura-iupac",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-2-2-alcoholes-insaturados-1",
+                  "label": "2.2 Alcoholes insaturados",
+                  "target": "u8-alcoholes-insaturados",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-2-3-mas-de-un-grupo-funcional-2",
+                  "label": "2.3 Más de un grupo funcional",
+                  "target": "u8-mas-funciones",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-2-4-nombres-comunes-3",
+                  "label": "2.4 Nombres comunes",
+                  "target": "u8-nombres-comunes",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-2-5-dioles-y-glicoles-4",
+                  "label": "2.5 Dioles y glicoles",
+                  "target": "u8-dioles",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-3-acidez-alcoxidos-y-fenoles-2",
+              "label": "3. ACIDEZ, ALCÓXIDOS Y FENOLES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-3-1-acidez-del-grupo-oh-0",
+                  "label": "3.1 Acidez del grupo –OH",
+                  "target": "u8-acidez-oh",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-3-2-comparacion-con-el-agua-1",
+                  "label": "3.2 Comparación con el agua",
+                  "target": "u8-comparacion-agua",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-3-3-halogenos-y-acidez-2",
+                  "label": "3.3 Halógenos y acidez",
+                  "target": "u8-halogenos-acidez",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-3-4-formacion-de-alcoxidos-3",
+                  "label": "3.4 Formación de alcóxidos",
+                  "target": "u8-alcoxidos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-3-5-fenoles-4",
+                  "label": "3.5 Fenoles",
+                  "target": "u8-fenoles",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-4-sintesis-de-alcoholes-3",
+              "label": "4. SÍNTESIS DE ALCOHOLES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-4-1-panorama-rutas-previas-0",
+                  "label": "4.1 Panorama: rutas previas",
+                  "target": "u8-sintesis-previas",
+                  "children": [
+                    {
+                      "id": "concept-desde-halogenuros-de-alquilo-0",
+                      "label": "Desde halogenuros de alquilo",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-desde-alquenos-1",
+                      "label": "Desde alquenos",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-4-2-nuevas-rutas-organometalicos-1",
+                  "label": "4.2 Nuevas rutas: organometálicos",
+                  "target": "u8-organometalicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-4-3-reactivos-de-grignard-2",
+                  "label": "4.3 Reactivos de Grignard",
+                  "target": "u8-grignard",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-4-4-reactivos-organolitio-3",
+                  "label": "4.4 Reactivos organolitio",
+                  "target": "u8-organolitio",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-4-5-adicion-de-organometalicos-a-carbonilos-4",
+                  "label": "4.5 Adición de organometálicos a carbonilos",
+                  "target": "u8-carbonilos",
+                  "children": [
+                    {
+                      "id": "concept-grignard-formaldehido-alcohol-primario-0",
+                      "label": "Grignard + formaldehído → alcohol primario",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-grignard-aldehido-alcohol-secundario-1",
+                      "label": "Grignard + aldehído → alcohol secundario",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-grignard-cetona-alcohol-terciario-2",
+                      "label": "Grignard + cetona → alcohol terciario",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-4-6-reduccion-de-grupos-carbonilo-5",
+                  "label": "4.6 Reducción de grupos carbonilo",
+                  "target": "u8-reduccion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-4-7-nabh4-vs-lialh4-6",
+                  "label": "4.7 NaBH4 vs LiAlH4",
+                  "target": "u8-reductores",
+                  "children": [
+                    {
+                      "id": "concept-reduccion-de-aldehidos-y-cetonas-0",
+                      "label": "Reducción de aldehídos y cetonas",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-reduccion-de-acidos-carboxilicos-1",
+                      "label": "Reducción de ácidos carboxílicos",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-5-reacciones-de-alcoholes-4",
+              "label": "5. REACCIONES DE ALCOHOLES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-5-1-panorama-general-0",
+                  "label": "5.1 Panorama general",
+                  "target": "u8-panorama-alcoholes",
+                  "children": [
+                    {
+                      "id": "concept-eliminacion-0",
+                      "label": "Eliminación",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-oxidacion-1",
+                      "label": "Oxidación",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-sustitucion-2",
+                      "label": "Sustitución",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-otras-3",
+                      "label": "Otras",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-5-2-oxidacion-de-alcoholes-1",
+                  "label": "5.2 Oxidación de alcoholes",
+                  "target": "u8-oxidacion",
+                  "children": [
+                    {
+                      "id": "concept-alcoholes-primarios-0",
+                      "label": "Alcoholes primarios",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-alcoholes-secundarios-1",
+                      "label": "Alcoholes secundarios",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-alcoholes-terciarios-2",
+                      "label": "Alcoholes terciarios",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-5-3-test-del-dicromato-2",
+                  "label": "5.3 Test del dicromato",
+                  "target": "u8-dicromato",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-5-4-alcohol-como-nucleofilo-y-electrofilo-3",
+                  "label": "5.4 Alcohol como nucleófilo y electrófilo",
+                  "target": "u8-nuc-elec",
+                  "children": [
+                    {
+                      "id": "concept-alcohol-como-nucleofilo-0",
+                      "label": "Alcohol como nucleófilo",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-alcohol-como-electrofilo-1",
+                      "label": "Alcohol como electrófilo",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-5-5-tosilatos-4",
+                  "label": "5.5 Tosilatos",
+                  "target": "u8-tosilatos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-5-6-formacion-de-haluros-de-alquilo-desde-alcoholes-5",
+                  "label": "5.6 Formación de haluros de alquilo desde alcoholes",
+                  "target": "u8-haluros",
+                  "children": [
+                    {
+                      "id": "concept-reaccion-con-hbr-0",
+                      "label": "Reacción con HBr",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-reaccion-con-hcl-1",
+                      "label": "Reacción con HCl",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-5-7-reactivo-de-lucas-6",
+                  "label": "5.7 Reactivo de Lucas",
+                  "target": "u8-lucas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-5-8-reaccion-con-px3-7",
+                  "label": "5.8 Reacción con PX3",
+                  "target": "u8-px3",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-5-9-deshidratacion-de-alcoholes-catalizada-por-acido-8",
+                  "label": "5.9 Deshidratación de alcoholes catalizada por ácido",
+                  "target": "u8-deshidratacion",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-6-eteres-estructura-nomenclatura-y-propiedades-5",
+              "label": "6. ÉTERES: ESTRUCTURA, NOMENCLATURA Y PROPIEDADES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-6-1-introduccion-0",
+                  "label": "6.1 Introducción",
+                  "target": "u8-eteres-intro",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-6-2-clasificacion-1",
+                  "label": "6.2 Clasificación",
+                  "target": "u8-eteres-clasificacion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-6-3-nomenclatura-2",
+                  "label": "6.3 Nomenclatura",
+                  "target": "u8-eteres-nomenclatura",
+                  "children": [
+                    {
+                      "id": "concept-iupac-0",
+                      "label": "IUPAC",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-nombres-comunes-1",
+                      "label": "Nombres comunes",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-6-4-eteres-ciclicos-3",
+                  "label": "6.4 Éteres cíclicos",
+                  "target": "u8-eteres-ciclicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-6-5-eteres-como-disolventes-4",
+                  "label": "6.5 Éteres como disolventes",
+                  "target": "u8-eteres-disolventes",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-7-sintesis-de-eteres-6",
+              "label": "7. SÍNTESIS DE ÉTERES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-7-1-panorama-0",
+                  "label": "7.1 Panorama",
+                  "target": "u8-sintesis-eteres",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-7-2-sintesis-de-williamson-1",
+                  "label": "7.2 Síntesis de Williamson",
+                  "target": "u8-williamson",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-7-3-williamson-con-fenoles-2",
+                  "label": "7.3 Williamson con fenoles",
+                  "target": "u8-williamson-fenoles",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-7-4-alcoximercuracion-desmercuracion-3",
+                  "label": "7.4 Alcoximercuración-desmercuración",
+                  "target": "u8-alcoximercuracion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-7-5-deshidratacion-bimolecular-de-alcoholes-4",
+                  "label": "7.5 Deshidratación bimolecular de alcoholes",
+                  "target": "u8-deshidratacion-eteres",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-7-6-sintesis-de-eteres-resumen-5",
+                  "label": "7.6 Síntesis de éteres: resumen",
+                  "target": "u8-resumen-eteres",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-8-reacciones-de-eteres-7",
+              "label": "8. REACCIONES DE ÉTERES",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-8-1-panorama-0",
+                  "label": "8.1 Panorama",
+                  "target": "u8-reacciones-eteres",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-8-2-clivaje-por-acidos-halogenhidricos-1",
+                  "label": "8.2 Clivaje por ácidos halogenhídricos",
+                  "target": "u8-clivaje",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-8-3-sn1-vs-sn2-en-ruptura-de-eteres-2",
+                  "label": "8.3 SN1 vs SN2 en ruptura de éteres",
+                  "target": "u8-sn1-sn2-eteres",
+                  "children": [
+                    {
+                      "id": "concept-si-forma-carbocation-estable-sn1-0",
+                      "label": "Si forma carbocatión estable: SN1",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    },
+                    {
+                      "id": "concept-si-no-forma-carbocation-estable-sn2-1",
+                      "label": "Si no forma carbocatión estable: SN2",
+                      "target": "unidad-8-alcoholes-eteres-epoxidos"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-8-4-mecanismo-con-hbr-3",
+                  "label": "8.4 Mecanismo con HBr",
+                  "target": "u8-hbr-eteres",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-9-epoxidos-estructura-nomenclatura-y-sintesis-8",
+              "label": "9. EPÓXIDOS: ESTRUCTURA, NOMENCLATURA Y SÍNTESIS",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-9-1-introduccion-0",
+                  "label": "9.1 Introducción",
+                  "target": "u8-epoxidos-intro",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-9-2-nomenclatura-1",
+                  "label": "9.2 Nomenclatura",
+                  "target": "u8-epoxidos-nomenclatura",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-9-3-panorama-de-sintesis-2",
+                  "label": "9.3 Panorama de síntesis",
+                  "target": "u8-sintesis-epoxidos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-9-4-epoxidacion-de-alquenos-3",
+                  "label": "9.4 Epoxidación de alquenos",
+                  "target": "u8-epoxidacion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-9-5-ciclacion-de-halohidrinas-4",
+                  "label": "9.5 Ciclación de halohidrinas",
+                  "target": "u8-halohidrinas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-alcoholes-eteres-y-epoxidos-14-topic-10-reacciones-de-epoxidos-apertura-de-anillo-9",
+              "label": "10. REACCIONES DE EPÓXIDOS: APERTURA DE ANILLO",
+              "target": "unidad-8-alcoholes-eteres-epoxidos",
+              "children": [
+                {
+                  "id": "subtopic-10-1-idea-general-0",
+                  "label": "10.1 Idea general",
+                  "target": "u8-reacciones-epoxidos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-10-2-apertura-en-medio-acido-1",
+                  "label": "10.2 Apertura en medio ácido",
+                  "target": "u8-apertura-acida",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-10-3-apertura-en-medio-basico-2",
+                  "label": "10.3 Apertura en medio básico",
+                  "target": "u8-apertura-basica",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-10-4-comparacion-global-3",
+                  "label": "10.4 Comparación global",
+                  "target": "u8-comparacion-epoxidos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-10-5-reglas-generales-4",
+                  "label": "10.5 Reglas generales",
+                  "target": "u8-reglas-epoxidos",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-aldehidos-y-cetonas-15",
+          "label": "ALDEHÍDOS Y CETONAS",
+          "target": "unidad-9-aldehidos-cetonas",
+          "topics": [
+            {
+              "id": "chapter-aldehidos-y-cetonas-15-topic-aldehidos-y-cetonas-overview",
+              "label": "Panorama del capítulo",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-unidad-9-compuestos-carbonilicos-16",
+          "label": "Unidad 9 — Compuestos carbonílicos",
+          "target": "unidad-9-aldehidos-cetonas",
+          "topics": [
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-1-grupo-carbonilo-0",
+              "label": "1. GRUPO CARBONILO",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-estructura-y-polaridad-0",
+                  "label": "Estructura y polaridad",
+                  "target": "u9-carbonilo",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-familias-carbonilicas-1",
+                  "label": "Familias carbonílicas",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-2-nomenclatura-1",
+              "label": "2. NOMENCLATURA",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-aldehidos-0",
+                  "label": "Aldehídos",
+                  "target": "u9-nomenclatura",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cetonas-1",
+                  "label": "Cetonas",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-3-propiedades-fisicas-2",
+              "label": "3. PROPIEDADES FÍSICAS",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-polaridad-ebullicion-y-solubilidad-0",
+                  "label": "Polaridad, ebullición y solubilidad",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-4-sintesis-de-aldehidos-y-cetonas-3",
+              "label": "4. SÍNTESIS DE ALDEHÍDOS Y CETONAS",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-oxidacion-de-alcoholes-0",
+                  "label": "Oxidación de alcoholes",
+                  "target": "u9-sintesis",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-ozonolisis-reductiva-de-alquenos-1",
+                  "label": "Ozonólisis reductiva de alquenos",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acilacion-de-friedel-crafts-2",
+                  "label": "Acilación de Friedel-Crafts",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cloruros-de-acido-y-benzaldehido-3",
+                  "label": "Cloruros de ácido y benzaldehído",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cetonas-desde-cloruros-de-acido-4",
+                  "label": "Cetonas desde cloruros de ácido",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-5-adicion-nucleofilica-al-carbonilo-4",
+              "label": "5. ADICIÓN NUCLEOFÍLICA AL CARBONILO",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-idea-general-0",
+                  "label": "Idea general",
+                  "target": "u9-adicion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-hidratacion-1",
+                  "label": "Hidratación",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cianhidrinas-2",
+                  "label": "Cianhidrinas",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-iminas-y-derivados-3",
+                  "label": "Iminas y derivados",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-enaminas-4",
+                  "label": "Enaminas",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-6-hemiacetales-y-acetales-5",
+              "label": "6. HEMIACETALES Y ACETALES",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-hemiacetales-0",
+                  "label": "Hemiacetales",
+                  "target": "u9-hemiacetales",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acetales-1",
+                  "label": "Acetales",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acetales-ciclicos-y-proteccion-2",
+                  "label": "Acetales cíclicos y protección",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-7-acetiluros-hidruros-y-grignard-6",
+              "label": "7. ACETILUROS, HIDRUROS Y GRIGNARD",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-acetiluros-0",
+                  "label": "Acetiluros",
+                  "target": "u9-grignard",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reduccion-con-hidruros-1",
+                  "label": "Reducción con hidruros",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reactivos-de-grignard-2",
+                  "label": "Reactivos de Grignard",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reduccion-total-3",
+                  "label": "Reducción total",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-8-carbono-alfa-enolatos-y-tautomeria-7",
+              "label": "8. CARBONO ALFA, ENOLATOS Y TAUTOMERÍA",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-carbono-alfa-e-hidrogenos-alfa-0",
+                  "label": "Carbono alfa e hidrógenos alfa",
+                  "target": "u9-enolatos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-tautomeria-ceto-enolica-1",
+                  "label": "Tautomería ceto-enólica",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-9-aldolica-y-cannizzaro-8",
+              "label": "9. ALDÓLICA Y CANNIZZARO",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-adicion-aldolica-0",
+                  "label": "Adición aldólica",
+                  "target": "u9-aldolica",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-aldolica-mixta-e-intramolecular-1",
+                  "label": "Aldólica mixta e intramolecular",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-deshidratacion-de-aldoles-2",
+                  "label": "Deshidratación de aldoles",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cannizzaro-3",
+                  "label": "Cannizzaro",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-unidad-9-compuestos-carbonilicos-16-topic-10-oxidacion-y-reduccion-9",
+              "label": "10. OXIDACIÓN Y REDUCCIÓN",
+              "target": "unidad-9-aldehidos-cetonas",
+              "children": [
+                {
+                  "id": "subtopic-oxidacion-0",
+                  "label": "Oxidación",
+                  "target": "u9-redox",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reduccion-1",
+                  "label": "Reducción",
+                  "target": "unidad-9-aldehidos-cetonas",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-acidos-carboxilicos-y-derivados-17",
+          "label": "ÁCIDOS CARBOXÍLICOS Y DERIVADOS",
+          "target": "cap-acidos-carboxilicos",
+          "topics": [
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-eje-general-de-la-0",
+              "label": "Eje general de la",
+              "target": "u10-eje-general",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-acidos-carboxilicos-grupo-funcional-tipos-y-propiedades-fisicas-1",
+              "label": "Ácidos carboxílicos: grupo funcional, tipos y propiedades físicas",
+              "target": "u10-acidos-carboxilicos",
+              "children": [
+                {
+                  "id": "subtopic-tipos-segun-r-0",
+                  "label": "Tipos según R",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-propiedades-fisicas-1",
+                  "label": "Propiedades físicas",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-estructura-del-grupo-carboxilo-2",
+              "label": "Estructura del grupo carboxilo",
+              "target": "u10-estructura-carboxilo",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-nomenclatura-de-acidos-carboxilicos-3",
+              "label": "Nomenclatura de ácidos carboxílicos",
+              "target": "u10-nomenclatura-acidos",
+              "children": [
+                {
+                  "id": "subtopic-nomenclatura-iupac-0",
+                  "label": "Nomenclatura IUPAC",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-nombres-comunes-1",
+                  "label": "Nombres comunes",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-letras-griegas-2",
+                  "label": "Letras griegas",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-nomenclatura-de-acidos-ciclicos-aromaticos-y-dicarboxilicos-4",
+              "label": "Nomenclatura de ácidos cíclicos, aromáticos y dicarboxílicos",
+              "target": "u10-nomenclatura-ciclicos",
+              "children": [
+                {
+                  "id": "subtopic-acidos-cicloalcanocarboxilicos-0",
+                  "label": "Ácidos cicloalcanocarboxílicos",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acidos-aromaticos-1",
+                  "label": "Ácidos aromáticos",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acidos-dicarboxilicos-2",
+                  "label": "Ácidos dicarboxílicos",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acidos-bencenicos-dicarboxilicos-3",
+                  "label": "Ácidos bencénicos dicarboxílicos",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-acidez-de-los-acidos-carboxilicos-5",
+              "label": "Acidez de los ácidos carboxílicos",
+              "target": "u10-acidez",
+              "children": [
+                {
+                  "id": "subtopic-motivo-de-la-acidez-0",
+                  "label": "Motivo de la acidez",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-efecto-de-sustituyentes-en-la-acidez-6",
+              "label": "Efecto de sustituyentes en la acidez",
+              "target": "u10-sustituyentes-acidez",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sales-de-acidos-carboxilicos-7",
+              "label": "Sales de ácidos carboxílicos",
+              "target": "u10-sales",
+              "children": [
+                {
+                  "id": "subtopic-nomenclatura-0",
+                  "label": "Nomenclatura",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-propiedades-e-identificacion-1",
+                  "label": "Propiedades e identificación",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-de-acidos-carboxilicos-mapa-general-8",
+              "label": "Síntesis de ácidos carboxílicos: mapa general",
+              "target": "u10-sintesis-acidos",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-oxidacion-de-alcoholes-primarios-9",
+              "label": "Síntesis: oxidación de alcoholes primarios",
+              "target": "u10-oxidacion-alcoholes",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-ruptura-oxidativa-de-alquenos-10",
+              "label": "Síntesis: ruptura oxidativa de alquenos",
+              "target": "u10-ruptura-alquenos",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-oxidacion-fuerte-de-alquilbencenos-11",
+              "label": "Síntesis: oxidación fuerte de alquilbencenos",
+              "target": "u10-oxidacion-alquilbencenos",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-reactivos-de-grignard-co-12",
+              "label": "Síntesis: reactivos de Grignard + CO₂",
+              "target": "u10-grignard-co2",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-derivados-de-acidos-carboxilicos-estructura-y-cuadro-general-13",
+              "label": "Derivados de ácidos carboxílicos: estructura y cuadro general",
+              "target": "u10-derivados",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-nomenclatura-de-derivados-14",
+              "label": "Nomenclatura de derivados",
+              "target": "u10-nomenclatura-derivados",
+              "children": [
+                {
+                  "id": "subtopic-halogenuros-de-acido-0",
+                  "label": "Halogenuros de ácido",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-anhidridos-1",
+                  "label": "Anhídridos",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-esteres-2",
+                  "label": "Ésteres",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-amidas-3",
+                  "label": "Amidas",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-amidas-n-sustituidas-4",
+                  "label": "Amidas N-sustituidas",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-y-reacciones-de-derivados-sustitucion-nucleofilica-acilica-15",
+              "label": "Síntesis y reacciones de derivados: sustitución nucleofílica acílica",
+              "target": "u10-sustitucion-acilica",
+              "children": [
+                {
+                  "id": "subtopic-comparacion-con-aldehidos-y-cetonas-0",
+                  "label": "Comparación con aldehídos y cetonas",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-mecanismo-en-medio-basico-16",
+              "label": "Mecanismo en medio básico",
+              "target": "u10-mecanismo-basico",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-mecanismo-en-medio-acido-17",
+              "label": "Mecanismo en medio ácido",
+              "target": "u10-mecanismo-acido",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-reactividad-de-derivados-de-acido-18",
+              "label": "Reactividad de derivados de ácido",
+              "target": "u10-reactividad-derivados",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-interconversion-entre-derivados-19",
+              "label": "Interconversión entre derivados",
+              "target": "u10-interconversion",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-transformaciones-destacadas-entre-derivados-20",
+              "label": "Transformaciones destacadas entre derivados",
+              "target": "u10-transformaciones-derivados",
+              "children": [
+                {
+                  "id": "subtopic-cloruro-de-acido-anhidrido-0",
+                  "label": "Cloruro de ácido → anhídrido",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cloruro-de-acido-ester-1",
+                  "label": "Cloruro de ácido → éster",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-cloruro-de-acido-amida-2",
+                  "label": "Cloruro de ácido → amida",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-anhidrido-ester-3",
+                  "label": "Anhídrido → éster",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-ester-amida-4",
+                  "label": "Éster → amida",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-hidrolisis-de-derivados-de-acido-21",
+              "label": "Hidrólisis de derivados de ácido",
+              "target": "u10-hidrolisis",
+              "children": [
+                {
+                  "id": "subtopic-hidrolisis-general-0",
+                  "label": "Hidrólisis general",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-hidrolisis-acida-1",
+                  "label": "Hidrólisis ácida",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-hidrolisis-basica-2",
+                  "label": "Hidrólisis básica",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-hidrolisis-de-esteres-22",
+              "label": "Hidrólisis de ésteres",
+              "target": "u10-hidrolisis-esteres",
+              "children": [
+                {
+                  "id": "subtopic-hidrolisis-acida-0",
+                  "label": "Hidrólisis ácida",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-hidrolisis-basica-1",
+                  "label": "Hidrólisis básica",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-saponificacion-23",
+              "label": "Saponificación",
+              "target": "u10-saponificacion",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-hidrolisis-acida-de-proteinas-24",
+              "label": "Hidrólisis ácida de proteínas",
+              "target": "u10-proteinas",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-de-cloruro-de-acido-con-socl-25",
+              "label": "Síntesis de cloruro de ácido con SOCl₂",
+              "target": "u10-socl2",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-derivados-de-cloruros-de-acido-26",
+              "label": "Derivados de cloruros de ácido",
+              "target": "u10-derivados-cloruro",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-resumen-de-derivados-r-cooh-27",
+              "label": "Resumen de derivados R–COOH",
+              "target": "u10-resumen-derivados",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-reacciones-en-carbono-alfa-carbaniones-y-h-28",
+              "label": "Reacciones en carbono alfa: carbaniones y α-H",
+              "target": "u10-carbono-alfa",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-tautomeria-ceto-enol-29",
+              "label": "Tautomería ceto-enol",
+              "target": "u10-tautomeria",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-condensaciones-repaso-de-aldolicas-30",
+              "label": "Condensaciones: repaso de aldólicas",
+              "target": "u10-aldolicas-repaso",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-condensacion-de-claisen-31",
+              "label": "Condensación de Claisen",
+              "target": "u10-claisen",
+              "children": [
+                {
+                  "id": "subtopic-mecanismo-conceptual-0",
+                  "label": "Mecanismo conceptual",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-condensacion-intramolecular-de-dieckmann-32",
+              "label": "Condensación intramolecular de Dieckmann",
+              "target": "u10-dieckmann",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-condensaciones-mixtas-33",
+              "label": "Condensaciones mixtas",
+              "target": "u10-condensaciones-mixtas",
+              "children": [
+                {
+                  "id": "subtopic-entre-dos-esteres-0",
+                  "label": "Entre dos ésteres",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-entre-esteres-y-aldehidos-cetonas-1",
+                  "label": "Entre ésteres y aldehídos/cetonas",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-descarboxilacion-34",
+              "label": "Descarboxilación",
+              "target": "u10-descarboxilacion",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-malonica-35",
+              "label": "Síntesis malónica",
+              "target": "u10-sintesis-malonica",
+              "children": [
+                {
+                  "id": "subtopic-alquilacion-0",
+                  "label": "Alquilación",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-segunda-alquilacion-1",
+                  "label": "Segunda alquilación",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-sintesis-acetoacetica-36",
+              "label": "Síntesis acetoacética",
+              "target": "u10-sintesis-acetoacetica",
+              "children": [
+                {
+                  "id": "subtopic-relacion-con-sintesis-malonica-0",
+                  "label": "Relación con síntesis malónica",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-hidrogenos-acidos-y-base-1",
+                  "label": "Hidrógenos ácidos y base",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-alquilacion-2",
+                  "label": "Alquilación",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-hidrolisis-y-descarboxilacion-3",
+                  "label": "Hidrólisis y descarboxilación",
+                  "target": "cap-acidos-carboxilicos",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-conexiones-importantes-entre-temas-37",
+              "label": "Conexiones importantes entre temas",
+              "target": "u10-conexiones",
+              "children": []
+            },
+            {
+              "id": "chapter-acidos-carboxilicos-y-derivados-17-topic-lo-mas-importante-para-parcial-38",
+              "label": "Lo más importante para parcial",
+              "target": "u10-parcial",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "biomoleculas",
+      "label": "Biomoléculas y análisis",
+      "description": "Aminas, biomoléculas y determinación estructural.",
+      "chapters": [
+        {
+          "id": "chapter-compuestos-nitrogenados-18",
+          "label": "COMPUESTOS NITROGENADOS",
+          "target": "unidad-11-aminas",
+          "topics": [
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-panorama-general-0",
+              "label": "PANORAMA GENERAL",
+              "target": "u11-panorama",
+              "children": []
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-estructura-basicidad-y-puentes-de-hidrogeno-1",
+              "label": "ESTRUCTURA, BASICIDAD Y PUENTES DE HIDRÓGENO",
+              "target": "u11-estructura",
+              "children": [
+                {
+                  "id": "subtopic-aminas-alifaticas-vs-aromaticas-0",
+                  "label": "Aminas alifáticas vs aromáticas",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-puentes-de-hidrogeno-1",
+                  "label": "Puentes de hidrógeno",
+                  "target": "unidad-11-aminas",
+                  "children": [
+                    {
+                      "id": "concept-amina-1-o-2-0",
+                      "label": "Amina 1° o 2°",
+                      "target": "unidad-11-aminas"
+                    },
+                    {
+                      "id": "concept-amina-3-1",
+                      "label": "Amina 3°",
+                      "target": "unidad-11-aminas"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-clasificacion-de-aminas-y-sales-de-amonio-2",
+              "label": "CLASIFICACIÓN DE AMINAS Y SALES DE AMONIO",
+              "target": "u11-clasificacion",
+              "children": [
+                {
+                  "id": "concept-primaria-0",
+                  "label": "Primaria",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-secundaria-1",
+                  "label": "Secundaria",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-terciaria-2",
+                  "label": "Terciaria",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-amonio-cuaternario-3",
+                  "label": "Amonio cuaternario",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "subtopic-amina-libre-vs-sal-de-amonio-4",
+                  "label": "Amina libre vs sal de amonio",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-nomenclatura-de-aminas-3",
+              "label": "NOMENCLATURA DE AMINAS",
+              "target": "u11-nomenclatura",
+              "children": [
+                {
+                  "id": "subtopic-aminas-primarias-0",
+                  "label": "Aminas primarias",
+                  "target": "unidad-11-aminas",
+                  "children": [
+                    {
+                      "id": "concept-alquilamina-0",
+                      "label": "Alquilamina",
+                      "target": "unidad-11-aminas"
+                    },
+                    {
+                      "id": "concept-alcanamina-1",
+                      "label": "Alcanamina",
+                      "target": "unidad-11-aminas"
+                    }
+                  ]
+                },
+                {
+                  "id": "subtopic-aminas-n-sustituidas-1",
+                  "label": "Aminas N-sustituidas",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-nombres-comunes-2",
+                  "label": "Nombres comunes",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-amina-como-sustituyente-3",
+                  "label": "Amina como sustituyente",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-aminas-aromaticas-y-heterociclicas-4",
+                  "label": "Aminas aromáticas y heterocíclicas",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-nitrilos-acidez-de-hidrogenos-alfa-4",
+              "label": "NITRILOS: ACIDEZ DE HIDRÓGENOS ALFA",
+              "target": "u11-nitrilos-alfa",
+              "children": []
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-reacciones-de-sintesis-5",
+              "label": "REACCIONES DE SÍNTESIS",
+              "target": "u11-reacciones-sintesis",
+              "children": [
+                {
+                  "id": "concept-ruta-mas-directa-0",
+                  "label": "Ruta más directa",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-ruta-selectiva-1",
+                  "label": "Ruta selectiva",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-ruta-que-alarga-cadena-2",
+                  "label": "Ruta que alarga cadena",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-ruta-aromatica-3",
+                  "label": "Ruta aromática",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "subtopic-alquilacion-directa-por-sn2-4",
+                  "label": "ALQUILACIÓN DIRECTA POR SN2",
+                  "target": "u11-alquilacion-sn2",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-sintesis-de-gabriel-5",
+                  "label": "SÍNTESIS DE GABRIEL",
+                  "target": "u11-gabriel",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reduccion-de-nitrilos-6",
+                  "label": "REDUCCIÓN DE NITRILOS",
+                  "target": "u11-reduccion-nitrilos",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reduccion-de-amidas-7",
+                  "label": "REDUCCIÓN DE AMIDAS",
+                  "target": "u11-reduccion-amidas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-aminacion-reductiva-8",
+                  "label": "AMINACIÓN REDUCTIVA",
+                  "target": "u11-aminacion-reductiva",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-nitracion-de-benceno-y-reduccion-a-arilaminas-9",
+                  "label": "NITRACIÓN DE BENCENO Y REDUCCIÓN A ARILAMINAS",
+                  "target": "u11-nitracion-reduccion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-degradacion-de-hofmann-de-amidas-10",
+                  "label": "DEGRADACIÓN DE HOFMANN DE AMIDAS",
+                  "target": "u11-hofmann-amidas",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-reacciones-6",
+              "label": "REACCIONES",
+              "target": "u11-reacciones",
+              "children": [
+                {
+                  "id": "concept-par-libre-del-n-0",
+                  "label": "Par libre del N",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-carbonilos-1",
+                  "label": "Carbonilos",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-diazonio-2",
+                  "label": "Diazonio",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "concept-colorantes-azoicos-3",
+                  "label": "Colorantes azoicos",
+                  "target": "unidad-11-aminas"
+                },
+                {
+                  "id": "subtopic-reacciones-como-base-formacion-de-sales-de-amonio-4",
+                  "label": "REACCIONES COMO BASE: FORMACIÓN DE SALES DE AMONIO",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-formacion-de-iminas-5",
+                  "label": "FORMACIÓN DE IMINAS",
+                  "target": "u11-formacion-iminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-formacion-de-enaminas-6",
+                  "label": "FORMACIÓN DE ENAMINAS",
+                  "target": "u11-enaminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-acilacion-de-aminas-para-formar-amidas-7",
+                  "label": "ACILACIÓN DE AMINAS PARA FORMAR AMIDAS",
+                  "target": "u11-acilacion-amidas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-metilacion-exhaustiva-8",
+                  "label": "METILACIÓN EXHAUSTIVA",
+                  "target": "u11-metilacion-exhaustiva",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-eliminacion-de-hofmann-9",
+                  "label": "ELIMINACIÓN DE HOFMANN",
+                  "target": "u11-hofmann-eliminacion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-nitrosacion-de-aminas-primarias-10",
+                  "label": "NITROSACIÓN DE AMINAS PRIMARIAS",
+                  "target": "u11-nitrosacion",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-reacciones-de-sales-de-diazonio-sustituciones-11",
+                  "label": "REACCIONES DE SALES DE DIAZONIO: SUSTITUCIONES",
+                  "target": "u11-diazonio-sustituciones",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-copulacion-azoica-acoplamiento-de-sales-de-diazonio-12",
+                  "label": "COPULACIÓN AZOICA / ACOPLAMIENTO DE SALES DE DIAZONIO",
+                  "target": "u11-copulacion",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "chapter-compuestos-nitrogenados-18-topic-aminoacidos-y-proteinas-7",
+              "label": "AMINOÁCIDOS Y PROTEÍNAS",
+              "target": "u11-aminoacidos",
+              "children": [
+                {
+                  "id": "subtopic-aminoacidos-0",
+                  "label": "Aminoácidos",
+                  "target": "unidad-11-aminas",
+                  "children": []
+                },
+                {
+                  "id": "subtopic-proteinas-1",
+                  "label": "Proteínas",
+                  "target": "unidad-11-aminas",
+                  "children": [
+                    {
+                      "id": "concept-primaria-0",
+                      "label": "Primaria",
+                      "target": "unidad-11-aminas"
+                    },
+                    {
+                      "id": "concept-secundaria-1",
+                      "label": "Secundaria",
+                      "target": "unidad-11-aminas"
+                    },
+                    {
+                      "id": "concept-terciaria-2",
+                      "label": "Terciaria",
+                      "target": "unidad-11-aminas"
+                    },
+                    {
+                      "id": "concept-cuaternaria-3",
+                      "label": "Cuaternaria",
+                      "target": "unidad-11-aminas"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-hidratos-de-carbono-19",
+          "label": "HIDRATOS DE CARBONO",
+          "target": "unidad-12-hidratos",
+          "topics": [
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-mapa-de-nombres-de-carbohidratos-0",
+              "label": "MAPA DE NOMBRES DE CARBOHIDRATOS",
+              "target": "u12-mapa-nombres-carbohidratos",
+              "children": [
+                {
+                  "id": "concept-3-carbonos-0",
+                  "label": "3 carbonos",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-4-carbonos-1",
+                  "label": "4 carbonos",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-5-carbonos-aldopentosas-2",
+                  "label": "5 carbonos: aldopentosas",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-5-carbonos-cetopentosas-3",
+                  "label": "5 carbonos: cetopentosas",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-6-carbonos-aldohexosas-4",
+                  "label": "6 carbonos: aldohexosas",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-6-carbonos-cetohexosas-5",
+                  "label": "6 carbonos: cetohexosas",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-7-carbonos-heptosas-utiles-6",
+                  "label": "7 carbonos: heptosas útiles",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-d-y-l-7",
+                  "label": "D y L",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-furanosa-y-piranosa-8",
+                  "label": "Furanosa y piranosa",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-y-9",
+                  "label": "α y β",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-ejemplo-completo-10",
+                  "label": "Ejemplo completo",
+                  "target": "unidad-12-hidratos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-panorama-general-y-clasificacion-1",
+              "label": "PANORAMA GENERAL Y CLASIFICACIÓN",
+              "target": "u12-panorama",
+              "children": [
+                {
+                  "id": "concept-monosacaridos-0",
+                  "label": "Monosacáridos",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-disacaridos-1",
+                  "label": "Disacáridos",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-polisacaridos-2",
+                  "label": "Polisacáridos",
+                  "target": "unidad-12-hidratos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-nomenclatura-azucares-d-l-y-proyecciones-de-fischer-2",
+              "label": "NOMENCLATURA, AZÚCARES D/L Y PROYECCIONES DE FISCHER",
+              "target": "u12-nomenclatura",
+              "children": [
+                {
+                  "id": "concept-regla-d-l-0",
+                  "label": "Regla D/L",
+                  "target": "unidad-12-hidratos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-estereoisomeria-epimeros-y-familias-de-aldosas-3",
+              "label": "ESTEREOISOMERÍA, EPÍMEROS Y FAMILIAS DE ALDOSAS",
+              "target": "u12-estereo",
+              "children": []
+            },
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-ciclacion-de-monosacaridos-hemiacetales-anomeros-y-haworth-4",
+              "label": "CICLACIÓN DE MONOSACÁRIDOS: HEMIACETALES, ANÓMEROS Y HAWORTH",
+              "target": "u12-ciclacion",
+              "children": []
+            },
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-reacciones-de-hidratos-de-carbono-5",
+              "label": "REACCIONES DE HIDRATOS DE CARBONO",
+              "target": "u12-reacciones",
+              "children": [
+                {
+                  "id": "concept-acido-aldonico-0",
+                  "label": "Ácido aldónico",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-acido-aldarico-1",
+                  "label": "Ácido aldárico",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-kiliani-fischer-2",
+                  "label": "Kiliani-Fischer",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-ruff-3",
+                  "label": "Ruff",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-wohl-4",
+                  "label": "Wohl",
+                  "target": "unidad-12-hidratos"
+                },
+                {
+                  "id": "concept-osazonas-5",
+                  "label": "Osazonas",
+                  "target": "unidad-12-hidratos"
+                }
+              ]
+            },
+            {
+              "id": "chapter-hidratos-de-carbono-19-topic-disacaridos-y-polisacaridos-6",
+              "label": "DISACÁRIDOS Y POLISACÁRIDOS",
+              "target": "u12-disacaridos-polisacaridos",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "chapter-espectroscopia-y-estructura-20",
+          "label": "ESPECTROSCOPÍA Y ESTRUCTURA",
+          "target": "unidad-13-espectroscopia",
+          "topics": [
+            {
+              "id": "chapter-espectroscopia-y-estructura-20-topic-panorama-general-0",
+              "label": "PANORAMA GENERAL",
+              "target": "u13-general",
+              "children": []
+            },
+            {
+              "id": "chapter-espectroscopia-y-estructura-20-topic-espectroscopia-uv-visible-1",
+              "label": "ESPECTROSCOPÍA UV-VISIBLE",
+              "target": "u13-uv",
+              "children": [
+                {
+                  "id": "concept--0",
+                  "label": "π → π*",
+                  "target": "unidad-13-espectroscopia"
+                },
+                {
+                  "id": "concept-n-1",
+                  "label": "n → π*",
+                  "target": "unidad-13-espectroscopia"
+                }
+              ]
+            },
+            {
+              "id": "chapter-espectroscopia-y-estructura-20-topic-espectroscopia-infrarroja-ir-2",
+              "label": "ESPECTROSCOPÍA INFRARROJA IR",
+              "target": "u13-ir",
+              "children": [
+                {
+                  "id": "concept-region-de-grupos-funcionales-0",
+                  "label": "Región de grupos funcionales",
+                  "target": "unidad-13-espectroscopia"
+                },
+                {
+                  "id": "concept-huella-dactilar-1",
+                  "label": "Huella dactilar",
+                  "target": "unidad-13-espectroscopia"
+                }
+              ]
+            },
+            {
+              "id": "chapter-espectroscopia-y-estructura-20-topic-resonancia-magnetica-nuclear-rmn-3",
+              "label": "RESONANCIA MAGNÉTICA NUCLEAR — RMN",
+              "target": "u13-rmn",
+              "children": [
+                {
+                  "id": "concept-protegido-0",
+                  "label": "Protegido",
+                  "target": "unidad-13-espectroscopia"
+                },
+                {
+                  "id": "concept-desprotegido-1",
+                  "label": "Desprotegido",
+                  "target": "unidad-13-espectroscopia"
+                }
+              ]
+            },
+            {
+              "id": "chapter-espectroscopia-y-estructura-20-topic-espectrometria-de-masas-4",
+              "label": "ESPECTROMETRÍA DE MASAS",
+              "target": "u13-masas",
+              "children": [
+                {
+                  "id": "concept-fuentes-duras-0",
+                  "label": "Fuentes duras",
+                  "target": "unidad-13-espectroscopia"
+                },
+                {
+                  "id": "concept-fuentes-blandas-1",
+                  "label": "Fuentes blandas",
+                  "target": "unidad-13-espectroscopia"
+                }
+              ]
+            },
+            {
+              "id": "chapter-espectroscopia-y-estructura-20-topic-mapa-final-de-tecnicas-5",
+              "label": "MAPA FINAL DE TÉCNICAS",
+              "target": "u13-mapa",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
