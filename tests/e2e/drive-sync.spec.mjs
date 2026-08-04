@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 const envelope = patch => ({schemaVersion:1,appVersion:"0.4.5",contentVersion:"demo-2",generatedAt:"2026-07-23T12:00:00.000Z",sourceDeviceId:"remote-device",settings:{theme:"light",fieldUpdatedAt:{theme:"2026-07-23T12:00:00.000Z"}},subjects:[],events:[],highlights:[],...patch});
 
 async function mockGoogle(page, remoteFiles=[]) {
+  await page.route("**/js/supabase-config.js*", route => route.fulfill({status:200,contentType:"application/javascript",body:'window.SOLVED_SUPABASE_CONFIG={url:"",publishableKey:""}'}));
   await page.route("https://accounts.google.com/gsi/client", route => route.fulfill({status:200,contentType:"application/javascript",body:""}));
   await page.addInitScript(files => {
     localStorage.setItem("solved-access-profile-v1",JSON.stringify({mode:"authorized-google",sub:"drive-test",email:"clasesbysol@gmail.com",name:"SOLved tester",role:"owner"}));

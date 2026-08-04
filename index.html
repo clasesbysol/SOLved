@@ -14,7 +14,7 @@
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
 </head>
 <body>
-<section class="solved-reception" id="solvedReception" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h1>SOLved</h1><h2>Tu espacio de estudio</h2><div id="googleSignIn"></div><button type="button" class="soft-btn" data-continue-guest>Continuar como invitado</button><p>Como invitado podés consultar todos los contenidos publicados.<br>Tus notas y avances quedan solamente en este dispositivo.</p></div></section>
+<section class="solved-reception" id="solvedReception" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h1>SOLved</h1><h2>Tu espacio de estudio</h2><button type="button" class="primary-btn" data-open-auth>Registrarme o iniciar sesión</button><button type="button" class="soft-btn" data-continue-guest>Continuar como invitado</button><p>La biblioteca oficial es pública. Con una cuenta, tu contenido y progreso se sincronizan de forma privada.</p></div></section>
 <section class="solved-reception" id="unauthorizedAccount" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h2>Esta cuenta todavía no está habilitada.</h2><p data-unauthorized-email></p><p>Podés continuar como invitado y utilizar los contenidos públicos de SOLved.</p><button type="button" class="primary-btn" data-continue-guest>Continuar como invitado</button></div></section>
 <svg width="0" height="0" style="position:absolute">
   <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></symbol>
@@ -201,6 +201,8 @@
         <div class="study-toolbar" id="studyToolbar">
           <button class="tool-btn" id="highlightBtn" title="Seleccioná texto y presioná Resaltar"><svg class="icon"><use href="#i-flask"/></svg><span id="highlightLabel">Resaltar</span></button>
           <button class="tool-btn" id="contentUpdateBtn">Actualizar contenido</button>
+          <button class="tool-btn" id="duplicateOfficialBtn" data-authenticated-only hidden>Duplicar para mí</button>
+          <button class="tool-btn" id="hideOfficialBtn" data-authenticated-only hidden>Ocultar oficial</button>
           <button class="tool-btn" id="timerBtn">Temporizador</button>
           <button class="tool-btn" id="readingBtn">Modo lectura</button>
           <button class="tool-btn" id="readingSettingsBtn" title="Configurar preferencias de lectura">Ajustes de lectura</button>
@@ -279,12 +281,25 @@
 </div>
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
+<div class="modal-backdrop" id="supabaseAuthModal" hidden>
+  <form class="modal auth-modal" id="supabaseAuthForm">
+    <div class="modal-head"><h2>Tu cuenta SOLved</h2><button type="button" class="icon-btn" id="authModalClose" aria-label="Cerrar">×</button></div>
+    <p>Tu progreso y contenido personal quedan separados de los de cualquier otra cuenta.</p>
+    <div class="auth-mode"><label><input type="radio" name="authMode" value="login" checked> Iniciar sesión</label><label><input type="radio" name="authMode" value="register"> Crear cuenta</label></div>
+    <label>Email <input name="email" type="email" autocomplete="email" required></label>
+    <label>Contraseña <input name="password" type="password" autocomplete="current-password" minlength="6" required></label>
+    <p class="form-error" data-auth-message role="status"></p>
+    <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn">Continuar</button></div>
+  </form>
+</div>
 <span class="app-version" aria-label="Versión de SOLved">v0.7.4</span>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="js/authorized-users.js?v=0.7.3"></script>
+<script src="js/supabase-config.js?v=0.8.0"></script>
 <script src="js/auth.js?v=0.7.4"></script>
 <script src="js/data.js?v=0.7.4"></script>
 <script src="js/db.js?v=0.7.3"></script>
+<script src="js/supabase-sync.js?v=0.8.0"></script>
 <script src="js/organic-cards.js?v=0.7.3"></script>
 <script src="js/organic-mind-map.js?v=0.7.3"></script>
 <script src="js/sync.js?v=0.7.3"></script>

@@ -1,12 +1,12 @@
 import {test,expect} from "@playwright/test";
 const waitForApp=page=>expect.poll(()=>page.evaluate(()=>typeof document.querySelector('[data-page="subjects"]')?.onclick==="function")).toBe(true);
+const disableSupabase=page=>page.route("**/js/supabase-config.js*",route=>route.fulfill({status:200,contentType:"application/javascript",body:'window.SOLVED_SUPABASE_CONFIG={url:"",publishableKey:""}'}));
 
 test("@desktop ofrece acceso invitado y aísla el perfil autorizado",async({page})=>{
- await page.goto("/");await page.evaluate(()=>localStorage.removeItem("solved-access-profile-v1"));await page.reload();
- await expect(page.getByRole("heading",{name:"Tu espacio de estudio"})).toBeVisible();
- await page.getByRole("button",{name:"Continuar como invitado"}).click();await expect(page.locator("html")).toHaveAttribute("data-access-mode","guest");
+ await disableSupabase(page);await page.goto("/");await page.evaluate(()=>localStorage.removeItem("solved-access-profile-v1"));await page.reload();
+ await expect(page.getByRole("heading",{name:"Mesa de estudio"})).toBeVisible();await expect(page.locator("[data-account-name]")).toHaveText("Modo invitado");await expect(page.locator("html")).toHaveAttribute("data-access-mode","guest");
  await page.evaluate(()=>localStorage.setItem("solved-access-profile-v1",JSON.stringify({mode:"authorized-google",sub:"tester-sol",email:"clasesbysol@gmail.com",name:"Sol",role:"owner"})));await page.reload();
- await expect(page.locator("html")).toHaveAttribute("data-access-mode","authorized-google");await expect(page.locator("[data-account-name]")).toHaveText("clasesbysol@gmail.com");
+ await expect(page.locator("html")).toHaveAttribute("data-access-mode","authorized-google");await expect(page.locator("[data-account-name]")).toHaveText("Sol");await expect(page.locator("[data-account-email]")).toHaveText("clasesbysol@gmail.com");
  await page.getByRole("button",{name:"Abrir menú de cuenta"}).click();await expect(page.getByRole("button",{name:"Crear mi carrera"})).toBeVisible();
  expect(await page.evaluate(()=>LBT_DB.dbName)).toBe("solved-profile-tester-sol");
 });

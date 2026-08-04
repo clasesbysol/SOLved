@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v074-1";
+const CACHE_VERSION = "biblioteca-lbt-v080-1";
 const CORE = [
   "./",
   "./index.html",
@@ -7,10 +7,11 @@ const CORE = [
   "./styles-enhancements.css?v=0.7.3",
   "./organic-cards.css?v=0.7.3",
   "./organic-mind-map.css?v=0.7.3",
-  "./js/authorized-users.js?v=0.7.3",
+  "./js/supabase-config.js?v=0.8.0",
   "./js/auth.js?v=0.7.4",
   "./js/data.js?v=0.7.4",
   "./js/db.js?v=0.7.3",
+  "./js/supabase-sync.js?v=0.8.0",
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
   "./js/sync.js?v=0.7.3",

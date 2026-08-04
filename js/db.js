@@ -1,5 +1,5 @@
 (function(){
-  const DB_NAME=window.SOLVED_PROFILE_DB_NAME||"biblioteca-lbt";
+  let DB_NAME=window.SOLVED_PROFILE_DB_NAME||"solved-profile-guest";
   const DB_VERSION=6;
   const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","notes","studySessions","collections","bookmarks","activityLog"];
   let db=null, fallback=false;
@@ -52,8 +52,8 @@
     return new Promise((res,rej)=>{const r=tx(store).getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>rej(r.error)});
   }
   function put(store,value){
-    if(fallback){const data=fallbackData();data[store] ||= {};data[store][keyFor(store,value)]=value;saveFallback(data);return Promise.resolve(value)}
-    return new Promise((res,rej)=>{const r=tx(store,"readwrite").put(value);r.onsuccess=()=>res(value);r.onerror=()=>rej(r.error)});
+    if(fallback){const data=fallbackData();data[store] ||= {};data[store][keyFor(store,value)]=value;saveFallback(data);window.SOLVED_CLOUD?.queueChange(store,value);return Promise.resolve(value)}
+    return new Promise((res,rej)=>{const r=tx(store,"readwrite").put(value);r.onsuccess=()=>{window.SOLVED_CLOUD?.queueChange(store,value);res(value)};r.onerror=()=>rej(r.error)});
   }
   function mergeSyncEnvelope(envelope,{chooseRecord,mergeSettings}){
     if(fallback){
@@ -89,8 +89,8 @@
     return new Promise((resolve,reject)=>{const transaction=db.transaction("contentPackages","readwrite");transaction.objectStore("contentPackages").put(record);transaction.oncomplete=()=>resolve(record);transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error)});
   }
   function del(store,key){
-    if(fallback){const data=fallbackData();if(data[store])delete data[store][key];saveFallback(data);return Promise.resolve()}
-    return new Promise((res,rej)=>{const r=tx(store,"readwrite").delete(key);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)});
+    if(fallback){const data=fallbackData();if(data[store])delete data[store][key];saveFallback(data);window.SOLVED_CLOUD?.remove(store,key);return Promise.resolve()}
+    return new Promise((res,rej)=>{const r=tx(store,"readwrite").delete(key);r.onsuccess=()=>{window.SOLVED_CLOUD?.remove(store,key);res()};r.onerror=()=>rej(r.error)});
   }
   function clear(store){
     if(fallback){const data=fallbackData();data[store]={};saveFallback(data);return Promise.resolve()}
@@ -106,5 +106,6 @@
     const normalized=normalizeImport(payload),device=await get("meta","drive-device-id");if(fallback){const before=structuredClone(fallbackData()),next=mode==="replace"?Object.fromEntries(STORES.map(store=>[store,{}])):structuredClone(before);try{for(const store of STORES)for(const item of normalized[store]){const key=keyFor(store,item),existing=next[store]?.[key];if(mode==="merge"&&existing&&(existing.updatedAt||existing.createdAt||"")>(item.updatedAt||item.createdAt||""))continue;(next[store]||={})[key]=item}if(device)(next.meta||={})["drive-device-id"]=device;saveFallback(next);return}catch(error){memoryFallback=before;throw error}}
     return new Promise((resolve,reject)=>{const transaction=db.transaction(STORES,"readwrite");transaction.oncomplete=()=>resolve();transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||new Error("Importación abortada"));try{if(mode==="replace")for(const store of STORES)transaction.objectStore(store).clear();for(const store of STORES)for(const item of normalized[store]){const objectStore=transaction.objectStore(store),key=keyFor(store,item);if(mode!=="merge"){objectStore.put(item);continue}const request=objectStore.get(key);request.onsuccess=()=>{const existing=request.result;if(!existing||(existing.updatedAt||existing.createdAt||"")<=(item.updatedAt||item.createdAt||""))objectStore.put(item)}}if(device)transaction.objectStore("meta").put(device)}catch(error){transaction.abort();reject(error)}})
   }
-  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,installContentPackage,exportAll,importAll,isFallback:()=>fallback,stores:STORES,dbName:DB_NAME};
+  function setProfile(profile){if(db)throw new Error("El perfil debe elegirse antes de abrir IndexedDB");DB_NAME=profile?.mode==="authorized-google"&&profile.sub?`solved-profile-${profile.sub}`:"solved-profile-guest"}
+  window.LBT_DB={open,get,getAll,put,del,clear,mergeSyncEnvelope,installContentPackage,exportAll,importAll,setProfile,isFallback:()=>fallback,stores:STORES,get dbName(){return DB_NAME}};
 })();
