@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    {
+      "id": "qbi-proteinas-i-import",
+      "title": "Proteínas I · resumen acumulativo",
+      "text": "Resumen HTML acumulativo de Proteínas I, con organización del primer parcial, teoría desarrollada, imágenes fuente plegables y notas contextualizadas.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "qbi-teorico-proteinas-i"
+        },
+        {
+          "sourceId": "qbi-resumen-parcial-1"
+        }
+      ]
+    }
+  ]
+}
