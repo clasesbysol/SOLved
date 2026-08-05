@@ -1,0 +1,10 @@
+{
+  "nodes": [
+    {
+      "id": "qbi-proteinas-root",
+      "type": "unit",
+      "label": "Proteínas I"
+    }
+  ],
+  "edges": []
+}
