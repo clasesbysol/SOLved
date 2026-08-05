@@ -69,6 +69,7 @@ button,input{font:inherit}button{cursor:pointer}.app-shell{max-width:1260px;marg
 .theory-module-heading{margin:34px 0 4px;text-align:center;display:flex;align-items:center;justify-content:center;gap:10px;scroll-margin-top:96px}
 .theory-module-heading h2{margin:0;color:var(--plum);font-size:clamp(1.45rem,3vw,2.15rem)}
 .theory-module-number{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:var(--rose-100);color:var(--rose-700);font-weight:900;font-size:.84rem}
+.workspace-target{outline:4px solid #e95591;outline-offset:6px;border-radius:12px;animation:workspaceTarget 3.2s ease both}@keyframes workspaceTarget{0%,100%{background:transparent}15%,75%{background:#fff0f6}}
 .lesson-block{scroll-margin-top:96px}
 .lesson-block>summary{justify-content:center;text-align:center;position:relative;min-height:64px;padding-left:68px;padding-right:68px}
 .lesson-block>summary>span:first-child{font-size:clamp(1rem,2vw,1.18rem)}
@@ -458,9 +459,15 @@ button,input{font:inherit}button{cursor:pointer}.app-shell{max-width:1260px;marg
     setTimeout(() => target?.scrollIntoView({behavior:'smooth',block:'start'}), 30);
   }));
   window.addEventListener('message', event => {
-    if (event.data?.type !== 'lbt-qbi-section' || !['program', 'theory'].includes(event.data.section)) return;
-    activate(event.data.section);
-    document.getElementById(event.data.section)?.scrollIntoView({block:'start'});
+    const data=event.data||{};
+    if (data.type === 'lbt-qbi-section' && ['program', 'theory'].includes(data.section)) {
+      activate(data.section);document.getElementById(data.section)?.scrollIntoView({block:'start'});return;
+    }
+    if (data.type !== 'lbt-qbi-navigate') return;
+    const section=['program','theory'].includes(data.section)?data.section:(data.anchor?'theory':'program');activate(section);
+    const target=data.anchor?document.getElementById(data.anchor):document.getElementById(section),found=!!target;
+    if(target){target.scrollIntoView({behavior:'smooth',block:'center'});target.classList.add('workspace-target');setTimeout(()=>target.classList.remove('workspace-target'),3200)}
+    event.source?.postMessage({type:'lbt-qbi-navigate-result',token:data.token,found},'*');
   });
   if (location.hash) {
     const target = document.getElementById(location.hash.slice(1));

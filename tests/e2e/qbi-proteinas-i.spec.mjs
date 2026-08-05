@@ -88,3 +88,7 @@ test("@desktop la integración QBI no altera tarjetas ni mapa de Orgánica",asyn
   await page.getByRole("button",{name:"Mapa mental"}).click();
   await expect(page.locator("[data-organic-map]")).toBeVisible();
 });
+
+test("@desktop QBI abre la teoría relacionada en el panel de origen",async({page})=>{
+  await openSubject(page);await page.locator("#splitViewBtn").click();const right=page.locator('.workspace-panel[data-side="right"]');await right.locator("select").selectOption("tab:exercises");await right.getByRole("button",{name:/Seleccionar toda la gu/}).click();await right.getByRole("button",{name:/Comenzar/}).click();await right.getByRole("button",{name:"Ver respuesta"}).click();await right.getByRole("button",{name:"Ver teoría relacionada"}).click();await expect(right.locator("select")).toHaveValue("tab:summary");const frame=right.frameLocator("iframe");await expect(frame.locator("#theory")).toHaveClass(/active/);await expect(frame.locator(".workspace-target")).toHaveCount(1);
+});
