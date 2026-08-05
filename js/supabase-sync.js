@@ -1,6 +1,6 @@
 (function(){
   "use strict";
-  const SYNC_STORES=new Set(["kv","subjects","events","highlights","cardProgress","exerciseProgress","notes","studySessions","collections","bookmarks","activityLog"]);
+  const SYNC_STORES=new Set(["kv","subjects","events","highlights","cardProgress","exerciseProgress","importedHtml","notes","studySessions","collections","bookmarks","activityLog"]);
   let client=null,user=null,DB=null,channel=null,applying=false,onApplied=()=>{};
   const keyFor=(store,value)=>store==="kv"?value.key:value.id;
   const clock=value=>Date.parse(value?.updatedAt||value?.deletedAt||value?.createdAt||0)||0;

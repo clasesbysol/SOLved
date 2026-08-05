@@ -74,7 +74,7 @@
     lastTab:"summary",
     lastBlock:"Vista integral",
     lastUnitBySubject:{fisica1:"demo"},
-    readingGlobal:{narrow:false,wideLine:false,large:false,hideViewer:false,hideSecondary:false,contrast:false,ruler:false,focus:false},
+    readingGlobal:{narrow:false,wideLine:false,large:false,hideSecondary:false,contrast:false,ruler:false,focus:false},
     readingBySubject:{}
   };
 
@@ -89,5 +89,5 @@
     item.sourceVerified=true;
   }
 
-window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.8.1",CONTENT_VERSION:"catalog-v1"};
+window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.9.0",CONTENT_VERSION:"catalog-v1"};
 })();

@@ -19,13 +19,13 @@ for(const path of allTextFiles.filter(path=>/\.(?:js|mjs|cjs)$/.test(path))){con
 
 const required = [
   "index.html", "styles.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
-  "js/data.js", "js/db.js", "js/sync.js", "js/supabase-config.js", "js/supabase-sync.js", "js/content.js", "js/notes.js", "js/utilities.js", "js/summary-factory.js", "js/organic-mind-map.js", "organic-mind-map.css", "js/app.js", "content/catalog.json", "content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json", "icons/icon.svg", "supabase/migrations/202608030001_solved.sql"
+  "js/data.js", "js/db.js", "js/sync.js", "js/supabase-config.js", "js/supabase-sync.js", "js/content.js", "js/study-workspace.js", "js/notes.js", "js/utilities.js", "js/summary-factory.js", "js/organic-mind-map.js", "organic-mind-map.css", "js/app.js", "content/catalog.json", "content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json", "icons/icon.svg", "supabase/migrations/202608030001_solved.sql", "supabase/migrations/202608050001_imported_html.sql"
 ];
 for (const path of required) await access(path);
 
 const index = await readFile("index.html", "utf8");
 const auth=await readFile("js/auth.js","utf8"),cloud=await readFile("js/supabase-sync.js","utf8"),migration=await readFile("supabase/migrations/202608030001_solved.sql","utf8");assert.ok(auth.includes("signUp")&&auth.includes("signInWithPassword")&&auth.includes("resetPasswordForEmail")&&auth.includes("updateUser")&&auth.includes("guest"));assert.ok(cloud.includes("postgres_changes")&&cloud.includes("user_records"));assert.ok(migration.includes("enable row level security")&&migration.includes("is_solved_admin")&&migration.includes("auth.uid()"));assert.ok(!/service_role|secretKey/.test(auth+cloud));assert.ok(index.includes("Crear mi carrera")&&index.includes("Continuar como invitado"));
-for (const ref of ["styles.css?v=0.7.4", "styles-enhancements.css?v=0.8.1", "manifest.webmanifest", "js/data.js?v=0.8.0", "js/db.js?v=0.8.0", "js/sync.js?v=0.7.3", "js/content.js?v=0.8.1", "js/notes.js?v=0.7.3", "js/utilities.js?v=0.7.3", "js/summary-factory.js?v=0.7.3", "js/app.js?v=0.8.0"]) {
+for (const ref of ["styles.css?v=0.9.0", "styles-enhancements.css?v=0.9.0", "manifest.webmanifest", "js/data.js?v=0.9.0", "js/db.js?v=0.9.0", "js/sync.js?v=0.7.3", "js/content.js?v=0.8.1", "js/notes.js?v=0.7.3", "js/utilities.js?v=0.9.0", "js/summary-factory.js?v=0.7.3", "js/app.js?v=0.9.0"]) {
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
@@ -34,7 +34,7 @@ const syncSource = await readFile("js/sync.js", "utf8");
 assert.ok(syncSource.includes('requestAccessToken({prompt:""})'),"Drive debe reutilizar el consentimiento con prompt vacío");
 assert.ok(!syncSource.includes('prompt:"consent"')&&!syncSource.includes("prompt: \"consent\""),"Drive no debe forzar consentimiento");
 assert.ok(syncSource.includes("authInFlight")&&syncSource.includes("tokenClient"),"Drive debe compartir cliente y solicitud de autorización");
-for (const id of ["highlightBtn", "newNoteBtn", "contentUpdateBtn", "zoomBtn", "viewerBtn", "indexBtn", "fullscreenBtn", "backupBtn", "installBtn", "updateBtn"]) {
+for (const id of ["highlightBtn", "newNoteBtn", "contentUpdateBtn", "zoomBtn", "indexBtn", "fullscreenBtn", "backupBtn", "installBtn", "updateBtn"]) {
   assert.ok(index.includes(`id="${id}"`), `Falta el botón ${id}`);
   assert.ok(app.includes(`els.${id}`), `El botón ${id} no está vinculado en app.js`);
 }
@@ -44,14 +44,16 @@ assert.equal(manifest.scope, "./");
 assert.equal(manifest.display, "standalone");
 const sw = await readFile("sw.js", "utf8");
 for(const ref of ["./organic-mind-map.css?v=0.7.3","./js/organic-mind-map.js?v=0.7.3","./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json"])assert.ok(sw.includes(ref),`El service worker no precachea ${ref}`);
-for (const ref of ["./index.html", "./styles.css?v=0.7.4", "./styles-enhancements.css?v=0.8.1", "./js/sync.js?v=0.7.3", "./js/content.js?v=0.8.1", "./js/notes.js?v=0.7.3", "./js/utilities.js?v=0.7.3", "./js/summary-factory.js?v=0.7.3", "./js/app.js?v=0.8.0", "./privacy.html", "./terms.html"]) {
+for (const ref of ["./index.html", "./styles.css?v=0.9.0", "./styles-enhancements.css?v=0.9.0", "./js/sync.js?v=0.7.3", "./js/content.js?v=0.8.1", "./js/notes.js?v=0.7.3", "./js/utilities.js?v=0.9.0", "./js/summary-factory.js?v=0.7.3", "./js/app.js?v=0.9.0", "./privacy.html", "./terms.html"]) {
   assert.ok(sw.includes(ref), `El service worker no precachea ${ref}`);
 }
-for(const ref of ["js/supabase-config.js?v=0.8.0","js/supabase-sync.js?v=0.8.0","@supabase/supabase-js"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
+assert.ok(index.includes("js/study-workspace.js?v=0.9.0")&&sw.includes("./js/study-workspace.js?v=0.9.0"),"el workspace debe estar disponible offline");
+for(const ref of ["js/supabase-config.js?v=0.8.0","js/supabase-sync.js?v=0.9.0","@supabase/supabase-js"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
-assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.8.1");
-assert.ok(index.includes("v0.8.1"), "La versión visible debe ser 0.8.1");
-const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=6'));for(const store of ["contentPackages","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
+assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.9.0");
+assert.ok(index.includes("v0.9.0"), "La versión visible debe ser 0.9.0");
+const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=7'));for(const store of ["contentPackages","importedHtml","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
+const workspace=await readFile("js/study-workspace.js","utf8");for(const id of ["uploadHtmlBtn","splitViewBtn"])assert.ok(index.includes(`id="${id}"`)&&workspace.includes(`$("${id}")`),`${id} debe estar vinculado`);assert.ok(workspace.includes('sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"')&&workspace.includes("connect-src 'none'")&&!workspace.includes("allow-same-origin"),"el HTML debe permanecer aislado");assert.doesNotMatch(app,/Documentos de la materia|Documentos de \$\{/i,"la sección antigua no debe renderizarse");
 assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
 assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");
 assert.ok(app.includes("flushPendingSaves"),"la actualización PWA debe vaciar notas pendientes");
