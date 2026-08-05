@@ -1,0 +1,312 @@
+{
+  "exercises": [
+    {
+      "id": "exercise-g1-01",
+      "origin": "source",
+      "prompt": "Describa la estructura básica de un aminoácido. ¿En qué se diferencian? ¿En qué forma estereoisomérica se encuentran en las proteínas? ¿Presentan actividad óptica? Nomenclatura de la cadena carbonada.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-02a",
+      "origin": "source",
+      "prompt": "La citrulina tiene la estructura que se muestra en la guía. ¿Es un aminoácido D o L? Explique por qué.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-02b",
+      "origin": "source",
+      "prompt": "¿Cómo se clasifican los aminoácidos según su grupo R?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-03",
+      "origin": "source",
+      "prompt": "Características de los aminoácidos no polares alifáticos. ¿Qué aminoácidos forman parte de este grupo?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-04",
+      "origin": "source",
+      "prompt": "Características de los aminoácidos no polares aromáticos. ¿Qué aminoácidos forman parte de este grupo?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-05",
+      "origin": "source",
+      "prompt": "Características de los aminoácidos polares no cargados. ¿Qué aminoácidos forman parte de este grupo? Capacidad de la cisteína de formar puentes disulfuro.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-06",
+      "origin": "source",
+      "prompt": "Características de los aminoácidos polares básicos. ¿Qué aminoácidos forman parte de este grupo?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-07",
+      "origin": "source",
+      "prompt": "Características de los aminoácidos polares ácidos. ¿Qué aminoácidos forman parte de este grupo?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-08",
+      "origin": "source",
+      "prompt": "Escriba abreviadamente el nombre de cada aminoácido usando la nomenclatura de 3 letras.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-09",
+      "origin": "source",
+      "prompt": "¿Qué propiedades físicas sugieren que un aminoácido con grupo R no ionizable en solución neutra se encuentra predominantemente como ion híbrido o zwitterión?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-10",
+      "origin": "source",
+      "prompt": "Escriba la ecuación de Henderson-Hasselbalch que relaciona el pH con la proporción de una forma ácida a básica.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-11",
+      "origin": "source",
+      "prompt": "Una solución con 1 mol de glicina a pH 1,72 se tituló con NaOH. La curva marca los puntos I a V. Para las afirmaciones (a) a (o), identifique el punto correspondiente y justifique.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-12",
+      "origin": "source",
+      "prompt": "La histidina tiene tres grupos ionizables. Escriba los equilibrios, asigne los pKₐ, indique cargas y prediga la especie y migración a pH 1, 4, 8 y 12.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-13",
+      "origin": "source",
+      "prompt": "¿Cómo se establece una unión peptídica? ¿Cuáles son las líneas de corte que definen oligopéptido, polipéptido y proteína?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-14",
+      "origin": "source",
+      "prompt": "¿Cuál es la masa molecular aproximada de una proteína de 682 residuos de aminoácidos en una única cadena?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-15",
+      "origin": "source",
+      "prompt": "Para Glu–His–Trp–Ser–Gly–Leu–Arg–Pro–Gly: a) calcule la carga neta a pH 0, 8 y 11; b) estime el pI.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-16",
+      "origin": "source",
+      "prompt": "¿Cuáles son los niveles estructurales de las proteínas? ¿Qué características poseen?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-17",
+      "origin": "source",
+      "prompt": "¿Qué átomos adoptan una disposición coplanar? ¿Por qué? ¿Qué enlaces pueden rotar y por qué no puede adoptarse cualquier ángulo de torsión?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-18",
+      "origin": "source",
+      "prompt": "Describa la α-hélice: incremento por residuo, grados, residuos por vuelta, paso, estabilización y aminoácidos poco frecuentes.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-19",
+      "origin": "source",
+      "prompt": "¿Cómo se disponen los aminoácidos y los grupos R en las hebras β? ¿Cuál es el incremento por residuo? Compare hojas paralelas y antiparalelas y explique su estabilización.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-20",
+      "origin": "source",
+      "prompt": "¿Qué características presentan los giros β y qué segmentos conectan?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-21",
+      "origin": "source",
+      "prompt": "Descripción de la estructura terciaria. Fuerzas que la estabilizan. ¿Qué son las proteínas nativas?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-22",
+      "origin": "source",
+      "prompt": "Estructura cuaternaria. Fuerzas que la estabilizan.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-23",
+      "origin": "source",
+      "prompt": "Clasificación de las proteínas. ¿Qué son las proteínas fibrosas y globulares?",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-24",
+      "origin": "source",
+      "prompt": "Para la secuencia Ile–Ala–His–Thr–Tyr–Gly–Pro–Phe–Glu–Ala–Ala–Met–Cys–Lys–Trp–Glu–Ala–Gln–Pro–Asp–Gly–Met–Glu–Cys–Ala–Phe–His–Arg: a) posibles giros β; b) puente disulfuro; c) localización de Asp, Ile, Thr, Ala, Gln y Lys.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-25",
+      "origin": "source",
+      "prompt": "Características estructurales de la α-queratina.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-26",
+      "origin": "source",
+      "prompt": "Características estructurales del colágeno.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    },
+    {
+      "id": "exercise-g1-27",
+      "origin": "source",
+      "prompt": "Características estructurales de la fibroína de la seda.",
+      "basedOn": [],
+      "references": [
+        {
+          "sourceId": "qbi-guide-proteinas-i"
+        }
+      ]
+    }
+  ]
+}

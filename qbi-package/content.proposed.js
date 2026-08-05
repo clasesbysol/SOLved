@@ -1,0 +1,153 @@
+(function(){
+"use strict";
+let DB,packages=new Map(),lastCheck=0,checkInFlight=null,onUpdated=()=>{},qbiExercisesPromise=null;
+const files=["package.json","summary.json","glossary.json","cards.json","exercises.json","map.json","sources.json"];
+const kinds=new Set(["concepts","theory","formula","process","mechanism","relations"]);
+const cardTypes=new Set(["definition","relation","comparison","sequence","mechanism","formula","variables","application","common-error","visual-interpretation"]);
+const difficulties=new Set(["easy","medium","hard"]);
+const nodeTypes=new Set(["subject","unit","concept","definition","variable","formula","application","process","error","exception"]);
+const edgeTypes=new Set(["cause","consequence","belongs-to","calculated-with","differs-from","requires","produces","related-to","applied-in"]);
+const safe=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
+const object=value=>value&&typeof value==="object"&&!Array.isArray(value);
+const strings=value=>Array.isArray(value)&&value.every(item=>typeof item==="string");
+const refs=value=>Array.isArray(value)&&value.every(ref=>object(ref)&&typeof ref.sourceId==="string");
+function validate(data){
+ const manifest=data["package.json"];
+ if(!object(manifest)||manifest.packageSchemaVersion!==1||manifest.status!=="published")throw Error("Paquete de contenido no publicado o inválido");
+ if(!Number.isFinite(Date.parse(manifest.reviewedAt||"")))throw Error("Paquete publicado sin reviewedAt válido");
+ for(const file of files)if(!object(data[file]))throw Error(`Falta ${file}`);
+ const summary=data["summary.json"].blocks,glossary=data["glossary.json"].entries,cards=data["cards.json"].cards,exercises=data["exercises.json"].exercises,map=data["map.json"],sources=data["sources.json"].sources;
+ if(![summary,glossary,cards,exercises,map.nodes,map.edges,sources].every(Array.isArray))throw Error("Estructura de paquete inválida");
+ const sourceIds=new Set(sources.map(item=>item.id)),exerciseById=new Map(exercises.map(item=>[item.id,item])),allIds=new Set();
+ for(const group of [summary,glossary,cards,exercises,map.nodes,sources])for(const item of group){if(!object(item)||typeof item.id!=="string"||!item.id||allIds.has(item.id))throw Error("ID ausente o duplicado");allIds.add(item.id)}
+ for(const block of summary){if(typeof block.title!=="string"||typeof block.text!=="string"||!kinds.has(block.kind)||!refs(block.references))throw Error("Bloque de resumen inválido");if(block.kind==="formula"&&(!block.visual||!block.linear||!Array.isArray(block.variables)||!block.variables.length||block.variables.some(variable=>!variable.symbol||!variable.definition)))throw Error("Fórmula sin representación o variables")}
+ for(const entry of glossary)if(typeof entry.term!=="string"||typeof entry.definition!=="string"||!refs(entry.references))throw Error("Término inválido");
+ for(const card of cards)if(!cardTypes.has(card.type)||!difficulties.has(card.difficulty)||typeof card.question!=="string"||typeof card.answer!=="string"||!refs(card.references))throw Error("Tarjeta inválida");
+ for(const exercise of exercises){if(!["source","generated"].includes(exercise.origin)||typeof exercise.prompt!=="string"||!strings(exercise.basedOn)||!refs(exercise.references))throw Error("Ejercicio inválido");if(exercise.origin==="generated"&&(!exercise.basedOn.length||exercise.basedOn.some(id=>id===exercise.id||exerciseById.get(id)?.origin!=="source")))throw Error("Ejercicio generado sin base source válida")}
+ const nodeIds=new Set(map.nodes.map(node=>node.id));
+ for(const node of map.nodes)if(!nodeTypes.has(node.type)||typeof node.label!=="string")throw Error("Nodo inválido");
+ for(const edge of map.edges)if(!nodeIds.has(edge.from)||!nodeIds.has(edge.to)||!edgeTypes.has(edge.type))throw Error("Conexión inválida");
+ const visit=value=>{if(Array.isArray(value))value.forEach(visit);else if(object(value)){if(value.sourceId&&!sourceIds.has(value.sourceId))throw Error("Referencia inexistente");Object.values(value).forEach(visit)}};
+ visit(data);
+ if(data["rich.json"]){
+   const allowed=new Set(["heading","paragraph","list","figure","details","table","formula","callout","reaction"]);
+   const walk=blocks=>(blocks||[]).forEach(block=>{if(!object(block)||!allowed.has(block.type)||Object.keys(block).some(key=>/^on/i.test(key)||key==="html"||key==="script"))throw Error("Contenido enriquecido inseguro o inválido");if(block.children)walk(block.children)});
+   walk(data["rich.json"].blocks);
+   if(!Array.isArray(data["assets.json"]?.assets)||data["assets.json"].assets.some(asset=>!/^assets\/[a-f0-9-]+\.(png|jpg|webp|gif)$/.test(asset.path)))throw Error("Recursos enriquecidos inválidos")
+ }
+ return data;
+}
+function validateCatalog(catalog){
+ if(!object(catalog)||catalog.catalogSchemaVersion!==1||!Array.isArray(catalog.packages))throw Error("Catálogo inválido");
+ const ids=new Set();
+ for(const item of catalog.packages){if(!object(item)||typeof item.subjectId!=="string"||typeof item.unitId!=="string"||typeof item.title!=="string"||typeof item.contentVersion!=="string"||item.status!=="published"||typeof item.path!=="string"||!item.path.endsWith("/")||ids.has(`${item.subjectId}/${item.unitId}`))throw Error("Entrada de catálogo inválida");ids.add(`${item.subjectId}/${item.unitId}`)}
+ return catalog;
+}
+async function loadLocal(){packages=new Map();for(const record of await DB.getAll("contentPackages"))packages.set(record.id,record)}
+function units(subjectId){return [...packages.values()].filter(record=>record.subjectId===subjectId).sort((a,b)=>a.title.localeCompare(b.title,"es")||a.unitId.localeCompare(b.unitId))}
+function getUnit(subjectId,unitId){return units(subjectId).find(record=>record.unitId===unitId)||null}
+async function runCheck(force){
+ if(!navigator.onLine)return false;
+ if(!force&&Date.now()-lastCheck<15*60*1000)return false;
+ const response=await fetch(`content/catalog.json?t=${Date.now()}`,{cache:"no-store"});
+ if(!response.ok)throw Error("No se pudo consultar el catálogo");
+ const catalog=validateCatalog(await response.json());lastCheck=Date.now();let changed=false;const errors=[];
+ for(const item of catalog.packages){
+   const id=`${item.subjectId}/${item.unitId}`,old=packages.get(id);if(old?.contentVersion===item.contentVersion)continue;
+   try{
+     const entries=await Promise.all(files.map(async file=>{const result=await fetch(`${item.path}${file}?v=${encodeURIComponent(item.contentVersion)}`,{cache:"no-store"});if(!result.ok)throw Error(`no se pudo descargar ${file}`);return [file,await result.json()]}));
+     for(const file of ["rich.json","assets.json"]){const result=await fetch(`${item.path}${file}?v=${encodeURIComponent(item.contentVersion)}`,{cache:"no-store"});if(result.ok)entries.push([file,await result.json()])}
+     const data=validate(Object.fromEntries(entries)),record={id,subjectId:item.subjectId,unitId:item.unitId,title:item.title,contentVersion:item.contentVersion,path:item.path,data,origin:"official-static",updatedAt:new Date().toISOString()};
+     await DB.installContentPackage(record);packages.set(id,record);changed=true;
+   }catch(error){errors.push(`${item.title}: ${error.message}`)}
+ }
+ const published=new Set(catalog.packages.map(item=>`${item.subjectId}/${item.unitId}`));
+ for(const [id,record] of [...packages])if(!published.has(id)&&(!record.origin||record.origin==="official-static")){await DB.del("contentPackages",id);packages.delete(id);changed=true}
+ if(changed)setTimeout(onUpdated,0);
+ if(errors.length)showError(new Error(`Algunas unidades no se actualizaron: ${errors.join("; ")}`));
+ return changed;
+}
+function check(force=false){if(checkInFlight)return checkInFlight;checkInFlight=runCheck(force).finally(()=>{checkInFlight=null});return checkInFlight}
+function copyButton(label,text,className=""){return `<button class="copy-action ${className}" data-copy="${safe(text)}">${label}</button>`}
+function formula(block){if(block.kind!=="formula")return "";const variables=block.variables.map(variable=>`<li><strong>${safe(variable.symbol)}</strong>: ${safe(variable.definition)}</li>`).join("");return `<div class="formula-box"><div class="formula-visual" aria-label="Representación visual">${safe(block.visual)}</div><code class="formula-linear">${safe(block.linear)}</code>${copyButton("Copiar texto lineal",block.linear,"copy-linear")}${block.latex?`<code class="formula-latex">${safe(block.latex)}</code>${copyButton("Copiar LaTeX",block.latex,"copy-latex")}`:""}<ul class="formula-variables">${variables}</ul></div>`}
+function richBlock(block,prefix,assets,base){
+ const anchor=safe(prefix+(block.id||"rich"));
+ if(block.type==="heading"){const level=Math.min(6,Math.max(2,block.level||2));return `<h${level} data-anchor-id="${anchor}">${safe(block.text)}</h${level}>`}
+ if(["paragraph","reaction","callout"].includes(block.type))return `<p class="highlightable rich-${safe(block.type)}" data-block-id="${anchor}">${safe(block.text)}</p>`;
+ if(block.type==="list")return `<${block.ordered?"ol":"ul"}>${(block.items||[]).map(item=>`<li>${safe(item)}</li>`).join("")}</${block.ordered?"ol":"ul"}>`;
+ if(block.type==="table")return `<div class="rich-table-wrap"><table>${(block.rows||[]).map(row=>`<tr>${row.map(cell=>`<td>${safe(cell)}</td>`).join("")}</tr>`).join("")}</table></div>`;
+ if(block.type==="formula")return `<div class="formula-box"><div>${safe(block.visual)}</div><code>${safe(block.linear)}</code>${copyButton("Copiar fórmula",block.linear)}</div>`;
+ if(block.type==="figure"){const asset=assets.get(block.assetId);return asset?`<figure><button class="rich-image-open" type="button" data-image="${safe(base+asset.path)}"><img loading="lazy" src="${safe(base+asset.path)}" alt="${safe(block.alt||asset.alt)}"></button>${block.caption?`<figcaption>${safe(block.caption)}</figcaption>`:""}</figure>`:""}
+ if(block.type==="details")return `<details class="rich-details"><summary>${safe(block.summary)}</summary>${(block.children||[]).map(child=>richBlock(child,prefix,assets,base)).join("")}</details>`;
+ return "";
+}
+function render(subjectId,unitId,tab){
+ const record=getUnit(subjectId,unitId);if(!record)return null;const data=record.data,prefix=`${subjectId}:${unitId}:`;
+ if(data["rich.json"]){
+   if(tab!=="summary")return `<div class="content-card"><h2>${safe({glossary:"Glosario",cards:"Tarjetas",exercises:"Ejercicios",map:"Mapa mental"}[tab]||"Contenido")}</h2><p>Esta sección se generará después de revisar el resumen importado.</p></div>`;
+   const assets=new Map((data["assets.json"]?.assets||[]).map(asset=>[asset.id,asset])),base=record.path||`content/subjects/${subjectId}/units/${unitId}/`;
+   return `<div class="content-card rich-content zoom-target"><h2>${safe(record.title)}</h2>${data["rich.json"].blocks.map(block=>richBlock(block,prefix,assets,base)).join("")}</div>`;
+ }
+ if(tab==="summary")return `<div class="content-card zoom-target"><h2>${safe(record.title)}</h2>${data["summary.json"].blocks.map(block=>`<section class="summary-section" data-anchor-id="${safe(prefix+block.id)}"><h3>${safe(block.title)}</h3><p class="highlightable" data-local-block-id="${safe(block.id)}" data-block-id="${safe(prefix+block.id)}">${safe(block.text)}</p>${formula(block)}${copyButton("Copiar párrafo",block.text)}</section>`).join("")}</div>`;
+ if(tab==="glossary")return `<div class="content-card zoom-target"><h2>Glosario</h2>${data["glossary.json"].entries.map(entry=>`<article class="content-item"><h3>${safe(entry.term)}</h3><p>${safe(entry.definition)}</p></article>`).join("")}</div>`;
+ if(tab==="cards")return `<div class="content-card zoom-target"><h2>Tarjetas</h2>${data["cards.json"].cards.map(card=>`<article class="content-item"><strong>${safe(card.question)}</strong><p>${safe(card.answer)}</p></article>`).join("")}</div>`;
+ if(tab==="exercises")return `<div class="content-card zoom-target"><h2>Ejercicios</h2>${data["exercises.json"].exercises.map(exercise=>`<article class="content-item"><p>${safe(exercise.prompt)}</p></article>`).join("")}</div>`;
+ const nodes=new Map(data["map.json"].nodes.map(node=>[node.id,node]));
+ return `<div class="content-card zoom-target"><h2>Mapa mental</h2><div class="content-map">${[...nodes.values()].map(node=>`<span class="map-node" data-anchor-id="${safe(prefix+node.id)}">${safe(node.label)}${copyButton("Copiar nodo",node.label)}</span>`).join("")}</div><div class="map-edges">${data["map.json"].edges.map(edge=>`<p class="map-edge"><span>${safe(nodes.get(edge.from).label)}</span><strong>${safe(edge.type)}</strong><span>${safe(nodes.get(edge.to).label)}</span></p>`).join("")}</div></div>`;
+}
+function bind(container){
+ container.querySelectorAll("[data-copy]").forEach(button=>button.onclick=()=>copyText(button.dataset.copy));
+ container.querySelectorAll(".rich-image-open").forEach(button=>button.onclick=()=>{const dialog=document.createElement("dialog");dialog.className="rich-lightbox";dialog.innerHTML=`<button type="button" aria-label="Cerrar">×</button><img src="${safe(button.dataset.image)}" alt="">`;document.body.append(dialog);dialog.querySelector("button").onclick=()=>dialog.close();dialog.addEventListener("close",()=>dialog.remove());dialog.showModal()})
+}
+async function copyText(text){try{await navigator.clipboard.writeText(text)}catch(_){const area=document.createElement("textarea");area.value=text;document.body.append(area);area.select();document.execCommand("copy");area.remove()}}
+async function syncSupabase(){
+ const client=window.SOLVED_AUTH?.client;if(!client)return false;
+ const [{data:official,error:officialError},{data:personal,error:personalError},{data:preferences,error:preferencesError}]=await Promise.all([
+   client.from("official_content").select("id,subject_id,unit_id,title,content_version,package,updated_at"),
+   window.SOLVED_AUTH.profile().mode==="authorized-google"?client.from("user_content").select("id,source_official_id,subject_id,unit_id,title,package,updated_at"):Promise.resolve({data:[]}),
+   window.SOLVED_AUTH.profile().mode==="authorized-google"?client.from("content_preferences").select("official_content_id,hidden"):Promise.resolve({data:[]})
+ ]);
+ if(officialError)throw officialError;if(personalError)throw personalError;if(preferencesError)throw preferencesError;
+ const hidden=new Set((preferences||[]).filter(item=>item.hidden).map(item=>item.official_content_id));
+ for(const item of official||[]){
+   for(const [key,record] of packages)if(record.subjectId===item.subject_id&&record.unitId===item.unit_id&&record.origin!=="personal")packages.delete(key);
+   const id=`official:${item.id}`;if(hidden.has(item.id))continue;
+   const record={id,cloudId:item.id,subjectId:item.subject_id,unitId:item.unit_id,title:item.title,contentVersion:item.content_version,path:"",data:validate(item.package),origin:"official-supabase",updatedAt:item.updated_at};
+   await DB.installContentPackage(record);packages.set(id,record);
+ }
+ for(const item of personal||[]){
+   const record={id:`personal:${item.id}`,cloudId:item.id,sourceOfficialId:item.source_official_id,subjectId:item.subject_id,unitId:item.unit_id,title:item.title,contentVersion:`personal-${item.updated_at}`,path:"",data:validate(item.package),origin:"personal",updatedAt:item.updated_at};
+   await DB.installContentPackage(record);packages.set(record.id,record);
+ }
+ return true;
+}
+async function setOfficialHidden(cloudId,hidden=true){const client=window.SOLVED_AUTH?.client,user=window.SOLVED_AUTH?.profile();if(!client||user.mode!=="authorized-google")throw Error("Iniciá sesión para personalizar la biblioteca");const {error}=await client.from("content_preferences").upsert({user_id:user.sub,official_content_id:cloudId,hidden},{onConflict:"user_id,official_content_id"});if(error)throw error;await syncSupabase();onUpdated()}
+async function duplicateOfficial(cloudId){const client=window.SOLVED_AUTH?.client,user=window.SOLVED_AUTH?.profile();if(!client||user.mode!=="authorized-google")throw Error("Iniciá sesión para duplicar contenido");const {data:source,error:readError}=await client.from("official_content").select("id,subject_id,unit_id,title,package").eq("id",cloudId).single();if(readError)throw readError;const suffix=crypto.randomUUID().slice(0,8),{data,error}=await client.from("user_content").insert({user_id:user.sub,source_official_id:source.id,subject_id:source.subject_id,unit_id:`${source.unit_id}-copia-${suffix}`,title:`${source.title} (copia)`,package:source.package}).select().single();if(error)throw error;await syncSupabase();onUpdated();return data}
+async function savePersonal({id,subjectId,unitId,title,data}){const client=window.SOLVED_AUTH?.client,user=window.SOLVED_AUTH?.profile();if(!client||user.mode!=="authorized-google")throw Error("Iniciá sesión para guardar contenido personal");validate(data);const row={user_id:user.sub,subject_id:subjectId,unit_id:unitId,title,package:data},query=id?client.from("user_content").update(row).eq("id",id):client.from("user_content").insert(row),{data:saved,error}=await query.select().single();if(error)throw error;await syncSupabase();onUpdated();return saved}
+async function saveOfficial({id,subjectId,unitId,title,contentVersion,data,status="published"}){const client=window.SOLVED_AUTH?.client,user=window.SOLVED_AUTH?.profile();if(!client||user.role!=="owner")throw Error("Sólo la cuenta administradora puede editar la biblioteca oficial");validate(data);const row={subject_id:subjectId,unit_id:unitId,title,content_version:contentVersion,package:data,status},query=id?client.from("official_content").update(row).eq("id",id):client.from("official_content").insert(row),{data:saved,error}=await query.select().single();if(error)throw error;await syncSupabase();onUpdated();return saved}
+async function init(db,callback){DB=db;onUpdated=callback||onUpdated;await loadLocal();window.addEventListener("online",()=>{check(true).then(syncSupabase).catch(showError)});document.addEventListener("visibilitychange",()=>{if(!document.hidden)check(false).then(syncSupabase).catch(showError)});await check(true).catch(showError);await syncSupabase().catch(showError)}
+function showError(error){console.error(error);window.dispatchEvent(new CustomEvent("lbt-content-error",{detail:error.message}))}
+function renderPreferred(subjectId,unitId,tab){
+ const record=getUnit(subjectId,unitId),rich=record?.data?.["rich.json"],documentName=rich?.document;
+ if(tab==="summary"&&documentName&&/^[a-z0-9-]+\.html$/.test(documentName)){
+   const base=record.path||`content/subjects/${subjectId}/units/${unitId}/`,reactionButton=subjectId==="quimica_organica"?'<button type="button" class="reaction-menu-btn" data-reaction-menu><span aria-hidden="true">⌬</span> Menú de reacciones</button>':"";
+   const allowScripts=subjectId==="fisica1"||subjectId==="quimica_biologica1",sandbox=allowScripts?' sandbox="allow-scripts"':' sandbox';
+   return `<div class="content-card rich-content rich-document-card"><div class="rich-document-head"><h2>${safe(record.title)}</h2>${reactionButton}</div><iframe class="rich-document" title="${safe(record.title)}" src="${safe(base+documentName)}"${sandbox}></iframe></div>`;
+ }
+ if(tab==="exercises"&&subjectId==="quimica_biologica1")return '<div class="qbi-exercises-host" data-qbi-exercises><div class="empty-state">Cargando Guía 1 de Proteínas I…</div></div>';
+ if(tab==="cards"&&subjectId==="quimica_organica")return '<div class="organic-cards-host" data-organic-cards><div class="empty-state">Cargando banco de Química Orgánica…</div></div>';
+ if(tab==="map"&&subjectId==="quimica_organica")return '<div class="organic-map-host" data-organic-map><div class="empty-state">Construyendo mapa mental de Química Orgánica…</div></div>';
+ if(tab==="cards"&&record?.data?.["cards.json"])return `<div class="content-card zoom-target"><h2>Tarjetas</h2>${record.data["cards.json"].cards.map(card=>`<article class="content-item study-card"><strong>${safe(card.question)}</strong><p>${safe(card.answer)}</p><small>${safe(card.difficulty)}</small></article>`).join("")}</div>`;
+ return render(subjectId,unitId,tab);
+}
+function bindQbiExercises(container){
+ const target=container.querySelector("[data-qbi-exercises]");if(!target)return;
+ qbiExercisesPromise??=import(new URL("content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js?v=1.0.0",document.baseURI).href);
+ qbiExercisesPromise.then(module=>module.bind(target)).catch(error=>{target.innerHTML=`<div class="empty-state"><strong>No se pudieron cargar los ejercicios</strong><p>${safe(error.message)}</p></div>`});
+}
+function bindPreferred(container){
+ bind(container);window.LBT_ORGANIC_CARDS?.bind(container);window.LBT_ORGANIC_MAP?.bind(container);bindQbiExercises(container);
+ container.querySelectorAll("[data-reaction-menu]").forEach(button=>button.onclick=()=>{const frame=container.querySelector(".rich-document");if(!frame)return;frame.src=`${frame.src.split("#")[0]}#indice-maestro-reacciones`;frame.focus()});
+}
+window.LBT_CONTENT={init,check,syncSupabase,setOfficialHidden,duplicateOfficial,savePersonal,saveOfficial,render:renderPreferred,bind:bindPreferred,copyText,getUnit,units,validate,reload:loadLocal};
+})();
