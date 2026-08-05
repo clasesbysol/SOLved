@@ -15,7 +15,7 @@ test("@desktop renderiza el resumen orgánico seguro y carga imágenes bajo dema
  await page.goto("/");await waitForApp(page);await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]:visible').click();
  await expect(page.locator("#studyUnit")).toHaveValue("resumen-integral");await expect(page.locator(".rich-content")).toBeVisible();
  const document=page.locator(".rich-document");await expect(document).toBeVisible();const frame=page.frameLocator(".rich-document");await expect(frame.locator("#intro")).toBeVisible();await expect(frame.locator("img").first()).toHaveAttribute("loading","lazy");
- await page.getByRole("button",{name:"Glosario"}).click();await expect(page.getByText("Esta sección se generará después de revisar el resumen importado.")).toBeVisible();
+ await page.getByRole("button",{name:"Glosario"}).click();await expect(page.getByText("Todavía no hay contenido publicado para esta sección.")).toBeVisible();
 });
 
 test("@mobile mantiene utilizable el resumen enriquecido",async({page})=>{
