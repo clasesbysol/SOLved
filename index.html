@@ -7,8 +7,8 @@
   <title>SOLved — Tu espacio de estudio</title>
   <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.7.4">
-  <link rel="stylesheet" href="styles-enhancements.css?v=0.8.1">
+  <link rel="stylesheet" href="styles.css?v=0.9.0">
+  <link rel="stylesheet" href="styles-enhancements.css?v=0.9.0">
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.3">
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
@@ -207,17 +207,18 @@
           <button class="tool-btn" id="readingBtn">Modo lectura</button>
           <button class="tool-btn" id="readingSettingsBtn" title="Configurar preferencias de lectura">Ajustes de lectura</button>
           <button class="tool-btn" id="factoryFromStudy" aria-label="Abrir fábrica de estudio">Fabricar resumen</button>
+          <button class="tool-btn" id="uploadHtmlBtn">Subir HTML</button>
+          <button class="tool-btn" id="splitViewBtn" aria-pressed="false">Vista dividida</button>
           <span class="selection-help" id="selectionHelp">Seleccioná texto dentro del resumen.</span>
           <div class="toolbar-spacer"></div>
           <button class="tool-btn" id="indexBtn" title="Mostrar u ocultar índice">Índice</button>
           <button class="tool-btn" id="zoomBtn" title="Cambiar zoom">Zoom 100%</button>
-          <button class="tool-btn" id="viewerBtn" title="Mostrar u ocultar material original">Documento</button>
           <button class="tool-btn icon-only" id="fullscreenBtn" title="Pantalla completa"><svg class="icon"><use href="#i-settings"/></svg></button>
         </div>
         <div class="preview-warning" id="previewWarning">La vista directa permite probar las funciones locales. Para instalarla y usarla offline, abrí el proyecto desde un servidor local o GitHub Pages.</div>
         <div class="study-body" id="studyBody"></div>
         <aside class="utility-popover timer-panel" id="timerPanel" hidden></aside>
-        <aside class="utility-popover reading-panel" id="readingPanel" hidden><h3>Modo lectura</h3><label>Guardar para <select id="readingScope"><option value="subject">Esta materia</option><option value="global">Todas las materias</option></select></label><label><input type="checkbox" name="narrow"> Ancho reducido</label><label><input type="checkbox" name="wideLine"> Interlineado amplio</label><label><input type="checkbox" name="large"> Fuente grande</label><label><input type="checkbox" name="hideViewer"> Ocultar visor</label><label><input type="checkbox" name="hideSecondary"> Ocultar barras secundarias</label><label><input type="checkbox" name="contrast"> Alto contraste</label><label><input type="checkbox" name="ruler"> Regla de lectura</label><label><input type="checkbox" name="focus"> Foco por párrafo</label><div class="reading-focus-controls"><button type="button" id="readingPrevious">Párrafo anterior</button><button type="button" id="readingNext">Párrafo siguiente</button></div><button type="button" id="readingClose">Cerrar</button></aside>
+        <aside class="utility-popover reading-panel" id="readingPanel" hidden><h3>Modo lectura</h3><label>Guardar para <select id="readingScope"><option value="subject">Esta materia</option><option value="global">Todas las materias</option></select></label><label><input type="checkbox" name="narrow"> Ancho reducido</label><label><input type="checkbox" name="wideLine"> Interlineado amplio</label><label><input type="checkbox" name="large"> Fuente grande</label><label><input type="checkbox" name="hideSecondary"> Ocultar barras secundarias</label><label><input type="checkbox" name="contrast"> Alto contraste</label><label><input type="checkbox" name="ruler"> Regla de lectura</label><label><input type="checkbox" name="focus"> Foco por párrafo</label><div class="reading-focus-controls"><button type="button" id="readingPrevious">Párrafo anterior</button><button type="button" id="readingNext">Párrafo siguiente</button></div><button type="button" id="readingClose">Cerrar</button></aside>
       </div>
     </section>
   </main>
@@ -280,6 +281,17 @@
   </div>
 </div>
 
+<div class="modal-backdrop" id="htmlImportModal" hidden>
+  <form class="modal html-import-modal" id="htmlImportForm">
+    <div class="modal-head"><h2 id="htmlImportTitle">Subir HTML</h2><button type="button" class="icon-btn" id="htmlImportClose" aria-label="Cerrar">×</button></div>
+    <label>Archivo HTML <input id="htmlFileInput" type="file" accept=".html,.htm,text/html" required></label>
+    <label>Título <input id="htmlTitleInput" maxlength="160" required></label>
+    <div class="html-import-preview"><iframe id="htmlPreviewFrame" title="Vista previa segura" sandbox="allow-scripts"></iframe></div>
+    <p id="htmlImportMessage" role="status" aria-live="polite">Elegí un archivo .html o .htm para ver la vista previa.</p>
+    <div class="modal-actions"><button type="button" class="soft-btn" id="htmlImportCancel">Cancelar</button><button class="primary-btn" id="htmlImportSave" disabled>Guardar</button></div>
+  </form>
+</div>
+
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <div class="modal-backdrop" id="supabaseAuthModal" hidden>
   <form class="modal auth-modal" id="supabaseAuthForm">
@@ -294,22 +306,23 @@
     <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn" data-auth-submit>Continuar</button></div>
   </form>
 </div>
-<span class="app-version" aria-label="Versión de SOLved">v0.8.1</span>
+<span class="app-version" aria-label="Versión de SOLved">v0.9.0</span>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="js/supabase-config.js?v=0.8.0"></script>
 <script src="js/auth.js?v=0.8.1"></script>
-<script src="js/data.js?v=0.8.0"></script>
-<script src="js/db.js?v=0.8.0"></script>
-<script src="js/supabase-sync.js?v=0.8.0"></script>
+<script src="js/data.js?v=0.9.0"></script>
+<script src="js/db.js?v=0.9.0"></script>
+<script src="js/supabase-sync.js?v=0.9.0"></script>
 <script src="js/organic-cards.js?v=0.7.3"></script>
 <script src="js/organic-mind-map.js?v=0.7.3"></script>
 <script src="js/sync.js?v=0.7.3"></script>
 <script src="js/content.js?v=0.8.1"></script>
+<script src="js/study-workspace.js?v=0.9.0"></script>
 <script src="js/notes.js?v=0.7.3"></script>
-<script src="js/utilities.js?v=0.7.3"></script>
+<script src="js/utilities.js?v=0.9.0"></script>
 <script src="js/summary-factory.js?v=0.7.3"></script>
 <script src="js/career-factory.js?v=0.7.3"></script>
-<script src="js/app.js?v=0.8.0"></script>
+<script src="js/app.js?v=0.9.0"></script>
 </body>
 </html>

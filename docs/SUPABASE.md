@@ -2,7 +2,7 @@
 
 ## Configuración
 
-1. En Supabase, ejecutá `supabase/migrations/202608030001_solved.sql` desde SQL Editor (o aplicalo con Supabase CLI).
+1. En Supabase, aplicá en orden `supabase/migrations/202608030001_solved.sql` y `supabase/migrations/202608050001_imported_html.sql` desde SQL Editor (o con Supabase CLI).
 2. Registrá `clasesbysol@gmail.com` desde SOLved y confirmá el email. La migración le asigna automáticamente el rol propietario usando la identidad verificada de Supabase Auth.
 3. La Project URL y la **Publishable Key** ya están configuradas en `js/supabase-config.js`.
 4. En Authentication > URL Configuration agregá:
@@ -17,6 +17,7 @@ No se utiliza ni debe agregarse una `secret`, `anon service key` privilegiada o 
 - `user_content`: copias y contenido privado, aislado por `auth.uid()`.
 - `content_preferences`: ocultamiento de contenido oficial por usuario.
 - `user_records`: progreso, notas, agenda, estados, favoritos y actividad privados.
+- Los HTML importados se guardan en el store `importedHtml` de IndexedDB y en `user_records` para cuentas autenticadas. Cada registro conserva propietario, materia, título, nombre original, HTML, fechas y orden; RLS impide leer o modificar registros de otra cuenta.
 - IndexedDB sigue siendo la escritura inmediata y el modo sin conexión. El primer acceso autenticado conserva la migración histórica y luego combina datos locales/remotos por `updatedAt`.
 - Los cambios remotos llegan por Supabase Realtime. Una falla de red no borra ni bloquea los datos locales.
 

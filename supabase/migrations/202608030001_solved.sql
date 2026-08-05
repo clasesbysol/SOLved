@@ -47,7 +47,7 @@ create table if not exists public.content_preferences (
 
 create table if not exists public.user_records (
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
-  store text not null check (store in ('kv','subjects','events','highlights','cardProgress','exerciseProgress','notes','studySessions','collections','bookmarks','activityLog')),
+  store text not null check (store in ('kv','subjects','events','highlights','cardProgress','exerciseProgress','importedHtml','notes','studySessions','collections','bookmarks','activityLog')),
   record_key text not null,
   payload jsonb not null,
   updated_at timestamptz not null default now(),
