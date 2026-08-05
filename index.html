@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css?v=0.7.4">
-  <link rel="stylesheet" href="styles-enhancements.css?v=0.8.0">
+  <link rel="stylesheet" href="styles-enhancements.css?v=0.8.1">
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.3">
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
@@ -283,27 +283,29 @@
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <div class="modal-backdrop" id="supabaseAuthModal" hidden>
   <form class="modal auth-modal" id="supabaseAuthForm">
-    <div class="modal-head"><h2>Tu cuenta SOLved</h2><button type="button" class="icon-btn" id="authModalClose" aria-label="Cerrar">×</button></div>
-    <p>Tu progreso y contenido personal quedan separados de los de cualquier otra cuenta.</p>
+    <div class="modal-head"><h2 id="authModalTitle">Tu cuenta SOLved</h2><button type="button" class="icon-btn" id="authModalClose" aria-label="Cerrar">×</button></div>
+    <p id="authModalDescription">Tu progreso y contenido personal quedan separados de los de cualquier otra cuenta.</p>
     <div class="auth-mode"><label><input type="radio" name="authMode" value="login" checked> Iniciar sesión</label><label><input type="radio" name="authMode" value="register"> Crear cuenta</label></div>
-    <label>Email <input name="email" type="email" autocomplete="email" required></label>
-    <label>Contraseña <input name="password" type="password" autocomplete="current-password" minlength="6" required></label>
+    <label data-auth-email>Email <input name="email" type="email" autocomplete="email" required></label>
+    <label><span data-auth-password-label>Contraseña</span> <input name="password" type="password" autocomplete="current-password" minlength="6" required></label>
+    <label data-auth-confirm hidden>Repetir contraseña <input name="passwordConfirm" type="password" autocomplete="new-password" minlength="6"></label>
+    <button type="button" class="auth-forgot" id="authForgot">No tengo contraseña / Olvidé mi contraseña</button>
     <p class="form-error" data-auth-message role="status"></p>
-    <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn">Continuar</button></div>
+    <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn" data-auth-submit>Continuar</button></div>
   </form>
 </div>
-<span class="app-version" aria-label="Versión de SOLved">v0.8.0</span>
+<span class="app-version" aria-label="Versión de SOLved">v0.8.1</span>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="js/supabase-config.js?v=0.8.0"></script>
-<script src="js/auth.js?v=0.8.0"></script>
+<script src="js/auth.js?v=0.8.1"></script>
 <script src="js/data.js?v=0.8.0"></script>
 <script src="js/db.js?v=0.8.0"></script>
 <script src="js/supabase-sync.js?v=0.8.0"></script>
 <script src="js/organic-cards.js?v=0.7.3"></script>
 <script src="js/organic-mind-map.js?v=0.7.3"></script>
 <script src="js/sync.js?v=0.7.3"></script>
-<script src="js/content.js?v=0.8.0"></script>
+<script src="js/content.js?v=0.8.1"></script>
 <script src="js/notes.js?v=0.7.3"></script>
 <script src="js/utilities.js?v=0.7.3"></script>
 <script src="js/summary-factory.js?v=0.7.3"></script>

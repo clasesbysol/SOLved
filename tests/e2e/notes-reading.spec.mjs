@@ -28,6 +28,16 @@ test("@desktop modo lectura independiente, persistente y compatible con resaltad
   await page.reload();await page.locator('[data-open="fisica1"]').first().click();await expect(page.locator("html")).toHaveClass(/reading-large/);expect(await page.evaluate(()=>LBT_DB.get("kv","settings").then(item=>!!item.value.readingBySubject.fisica1))).toBeTruthy();
 });
 
+test("@desktop @mobile modo lectura ocupa el viewport disponible",async({page})=>{
+  await openPhysics(page);await page.locator("#readingBtn").click();
+  await expect(page.locator("html")).toHaveClass(/immersive-reading/);
+  const sizes=await page.evaluate(()=>{const viewport={width:innerWidth,height:innerHeight},study=document.querySelector("#studyPage").getBoundingClientRect(),pane=document.querySelector(".content-pane").getBoundingClientRect();return{viewport,study:{width:study.width,height:study.height,top:study.top,left:study.left},pane:{width:pane.width,height:pane.height,top:pane.top,left:pane.left},tabs:getComputedStyle(document.querySelector("#studyTabs")).display}});
+  expect(sizes.study).toEqual({width:sizes.viewport.width,height:sizes.viewport.height,top:0,left:0});
+  expect(sizes.pane).toEqual({width:sizes.viewport.width,height:sizes.viewport.height,top:0,left:0});
+  expect(sizes.tabs).toBe("none");
+  await page.locator("#readingModeExit").click();await expect(page.locator("html")).not.toHaveClass(/immersive-reading/);
+});
+
 test("@mobile touch, viewport, scroll normal y safe area",async({page})=>{
   await openPhysics(page);const button=page.locator("#newNoteBtn");expect(await button.evaluate(element=>getComputedStyle(element).bottom)).not.toBe("auto");await button.click();const grip=page.locator(".note-grip");expect(await grip.evaluate(element=>getComputedStyle(element).touchAction)).toBe("none");await drag(page,grip,-80,110);await page.setViewportSize({width:740,height:430});await page.evaluate(()=>LBT_NOTES.reflow());const box=await page.locator(".note-window").boundingBox();expect(box.x).toBeGreaterThanOrEqual(0);expect(box.y).toBeGreaterThanOrEqual(0);const pane=page.locator(".content-pane"),start=await pane.evaluate(element=>element.scrollTop);await pane.evaluate(element=>element.scrollTop+=120);expect(await pane.evaluate(element=>element.scrollTop)).toBeGreaterThanOrEqual(start);
 });

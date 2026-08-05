@@ -457,6 +457,11 @@ button,input{font:inherit}button{cursor:pointer}.app-shell{max-width:1260px;marg
     const target = document.getElementById(link.dataset.target);
     setTimeout(() => target?.scrollIntoView({behavior:'smooth',block:'start'}), 30);
   }));
+  window.addEventListener('message', event => {
+    if (event.data?.type !== 'lbt-qbi-section' || !['program', 'theory'].includes(event.data.section)) return;
+    activate(event.data.section);
+    document.getElementById(event.data.section)?.scrollIntoView({block:'start'});
+  });
   if (location.hash) {
     const target = document.getElementById(location.hash.slice(1));
     if (target) { activate('theory'); setTimeout(() => target.scrollIntoView({block:'start'}), 80); }
