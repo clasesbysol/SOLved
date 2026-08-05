@@ -24,8 +24,8 @@ const required = [
 for (const path of required) await access(path);
 
 const index = await readFile("index.html", "utf8");
-const auth=await readFile("js/auth.js","utf8"),cloud=await readFile("js/supabase-sync.js","utf8"),migration=await readFile("supabase/migrations/202608030001_solved.sql","utf8");assert.ok(auth.includes("signUp")&&auth.includes("signInWithPassword")&&auth.includes("guest"));assert.ok(cloud.includes("postgres_changes")&&cloud.includes("user_records"));assert.ok(migration.includes("enable row level security")&&migration.includes("is_solved_admin")&&migration.includes("auth.uid()"));assert.ok(!/service_role|secretKey/.test(auth+cloud));assert.ok(index.includes("Crear mi carrera")&&index.includes("Continuar como invitado"));
-for (const ref of ["styles.css?v=0.7.4", "styles-enhancements.css?v=0.8.0", "manifest.webmanifest", "js/data.js?v=0.8.0", "js/db.js?v=0.8.0", "js/sync.js?v=0.7.3", "js/content.js?v=0.8.0", "js/notes.js?v=0.7.3", "js/utilities.js?v=0.7.3", "js/summary-factory.js?v=0.7.3", "js/app.js?v=0.8.0"]) {
+const auth=await readFile("js/auth.js","utf8"),cloud=await readFile("js/supabase-sync.js","utf8"),migration=await readFile("supabase/migrations/202608030001_solved.sql","utf8");assert.ok(auth.includes("signUp")&&auth.includes("signInWithPassword")&&auth.includes("resetPasswordForEmail")&&auth.includes("updateUser")&&auth.includes("guest"));assert.ok(cloud.includes("postgres_changes")&&cloud.includes("user_records"));assert.ok(migration.includes("enable row level security")&&migration.includes("is_solved_admin")&&migration.includes("auth.uid()"));assert.ok(!/service_role|secretKey/.test(auth+cloud));assert.ok(index.includes("Crear mi carrera")&&index.includes("Continuar como invitado"));
+for (const ref of ["styles.css?v=0.7.4", "styles-enhancements.css?v=0.8.1", "manifest.webmanifest", "js/data.js?v=0.8.0", "js/db.js?v=0.8.0", "js/sync.js?v=0.7.3", "js/content.js?v=0.8.1", "js/notes.js?v=0.7.3", "js/utilities.js?v=0.7.3", "js/summary-factory.js?v=0.7.3", "js/app.js?v=0.8.0"]) {
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
@@ -44,13 +44,13 @@ assert.equal(manifest.scope, "./");
 assert.equal(manifest.display, "standalone");
 const sw = await readFile("sw.js", "utf8");
 for(const ref of ["./organic-mind-map.css?v=0.7.3","./js/organic-mind-map.js?v=0.7.3","./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json"])assert.ok(sw.includes(ref),`El service worker no precachea ${ref}`);
-for (const ref of ["./index.html", "./styles.css?v=0.7.4", "./styles-enhancements.css?v=0.8.0", "./js/sync.js?v=0.7.3", "./js/content.js?v=0.8.0", "./js/notes.js?v=0.7.3", "./js/utilities.js?v=0.7.3", "./js/summary-factory.js?v=0.7.3", "./js/app.js?v=0.8.0", "./privacy.html", "./terms.html"]) {
+for (const ref of ["./index.html", "./styles.css?v=0.7.4", "./styles-enhancements.css?v=0.8.1", "./js/sync.js?v=0.7.3", "./js/content.js?v=0.8.1", "./js/notes.js?v=0.7.3", "./js/utilities.js?v=0.7.3", "./js/summary-factory.js?v=0.7.3", "./js/app.js?v=0.8.0", "./privacy.html", "./terms.html"]) {
   assert.ok(sw.includes(ref), `El service worker no precachea ${ref}`);
 }
 for(const ref of ["js/supabase-config.js?v=0.8.0","js/supabase-sync.js?v=0.8.0","@supabase/supabase-js"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
-assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.8.0");
-assert.ok(index.includes("v0.8.0"), "La versión visible debe ser 0.8.0");
+assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.8.1");
+assert.ok(index.includes("v0.8.1"), "La versión visible debe ser 0.8.1");
 const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=6'));for(const store of ["contentPackages","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
 assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
 assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");
