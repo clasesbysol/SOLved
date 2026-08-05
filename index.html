@@ -7,8 +7,8 @@
   <title>SOLved — Tu espacio de estudio</title>
   <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.9.0">
-  <link rel="stylesheet" href="styles-enhancements.css?v=0.9.0">
+  <link rel="stylesheet" href="styles.css?v=0.9.1">
+  <link rel="stylesheet" href="styles-enhancements.css?v=0.9.1">
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.3">
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
@@ -81,7 +81,7 @@
     <div class="side-head"><span>Materias a mano</span><button class="tiny-btn" id="manageCourses" title="Elegir materias"><svg class="icon" style="width:15px"><use href="#i-settings"/></svg></button></div>
     <div class="hand-list" id="handList"></div>
     <section class="recent-subjects" id="recentSubjectsSection" hidden><div class="side-head"><span>Abiertas recientemente</span></div><div class="hand-list" id="recentSubjectsList"></div></section>
-    <div class="side-bottom"><article class="account-card" id="accountCard"><button type="button" id="accountMenuToggle" aria-label="Abrir menú de cuenta"><img alt="Logo de SOLved"><span><strong data-account-name></strong><small data-account-status></small><small data-account-email hidden></small></span></button><div class="account-menu" id="accountMenu" hidden><div class="account-menu-heading"><strong id="accountPanelName">Cuenta</strong><small id="accountPanelEmail"></small><span><i></i><b id="mobileSyncState">Guardado localmente</b></span></div><button type="button" id="accountSync" data-owner-only>Sincronizar ahora</button><button type="button" id="accountBackup">Crear o restaurar respaldo</button><button type="button" id="accountDisconnect" data-owner-only>Desconectar Drive</button><button type="button" id="accountLogout">Iniciar sesión o cambiar cuenta</button><button type="button" id="accountGuest" data-owner-only>Cambiar a invitado</button></div></article></div>
+    <div class="side-bottom"><article class="account-card" id="accountCard"><button type="button" id="accountMenuToggle" aria-label="Abrir menú de cuenta"><img alt="Logo de SOLved"><span><strong data-account-name></strong><small data-account-status></small><small data-account-email hidden></small></span></button><div class="account-menu" id="accountMenu" hidden><div class="account-menu-heading"><strong id="accountPanelName">Cuenta</strong><small id="accountPanelEmail"></small><span><i></i><b id="mobileSyncState">Guardado localmente</b></span></div><button type="button" id="accountInstall">Instalar SOLved en esta PC</button><button type="button" id="accountSync" data-owner-only>Sincronizar ahora</button><button type="button" id="accountBackup">Crear o restaurar respaldo</button><button type="button" id="accountDisconnect" data-owner-only>Desconectar Drive</button><button type="button" id="accountLogout">Iniciar sesión o cambiar cuenta</button><button type="button" id="accountGuest" data-owner-only>Cambiar a invitado</button></div></article></div>
   </aside>
 
   <main class="workspace">
@@ -291,6 +291,9 @@
     <div class="modal-actions"><button type="button" class="soft-btn" id="htmlImportCancel">Cancelar</button><button class="primary-btn" id="htmlImportSave" disabled>Guardar</button></div>
   </form>
 </div>
+<div class="modal-backdrop" id="installHelpModal" hidden>
+  <div class="modal install-help-modal"><div class="modal-head"><h2>Instalar SOLved</h2><button type="button" class="icon-btn" data-close="installHelpModal" aria-label="Cerrar">×</button></div><p>En Chrome, Edge u Opera, buscá el icono de instalación en la barra de direcciones o elegí <strong>Instalar aplicación</strong> desde el menú del navegador.</p><div class="modal-actions"><button type="button" class="primary-btn" data-close="installHelpModal">Entendido</button></div></div>
+</div>
 
 <button class="tool-btn fullscreen-exit" id="fullscreenExit">Salir de pantalla completa</button>
 <div class="modal-backdrop" id="supabaseAuthModal" hidden>
@@ -306,23 +309,23 @@
     <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn" data-auth-submit>Continuar</button></div>
   </form>
 </div>
-<span class="app-version" aria-label="Versión de SOLved">v0.9.0</span>
+<span class="app-version" aria-label="Versión de SOLved">v0.9.1</span>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="js/supabase-config.js?v=0.8.0"></script>
 <script src="js/auth.js?v=0.8.1"></script>
-<script src="js/data.js?v=0.9.0"></script>
-<script src="js/db.js?v=0.9.0"></script>
-<script src="js/supabase-sync.js?v=0.9.0"></script>
+<script src="js/data.js?v=0.9.1"></script>
+<script src="js/db.js?v=0.9.1"></script>
+<script src="js/supabase-sync.js?v=0.9.1"></script>
 <script src="js/organic-cards.js?v=0.7.3"></script>
 <script src="js/organic-mind-map.js?v=0.7.3"></script>
 <script src="js/sync.js?v=0.7.3"></script>
 <script src="js/content.js?v=0.8.1"></script>
-<script src="js/study-workspace.js?v=0.9.0"></script>
+<script src="js/study-workspace.js?v=0.9.1"></script>
 <script src="js/notes.js?v=0.7.3"></script>
-<script src="js/utilities.js?v=0.9.0"></script>
+<script src="js/utilities.js?v=0.9.1"></script>
 <script src="js/summary-factory.js?v=0.7.3"></script>
 <script src="js/career-factory.js?v=0.7.3"></script>
-<script src="js/app.js?v=0.9.0"></script>
+<script src="js/app.js?v=0.9.1"></script>
 </body>
 </html>
