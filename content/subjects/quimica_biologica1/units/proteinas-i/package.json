@@ -1,0 +1,20 @@
+{
+  "packageSchemaVersion": 1,
+  "factoryVersion": "0.8.0",
+  "contentStandard": "LBT-V1",
+  "subjectId": "quimica_biologica1",
+  "unitId": "proteinas-i",
+  "title": "Proteínas I · Parcial 1",
+  "contentVersion": "1.0.0",
+  "status": "published",
+  "generatedAt": "2026-08-04T22:50:00.000Z",
+  "reviewedAt": "2026-08-04T22:50:00.000Z",
+  "files": {
+    "summary": "summary.json",
+    "glossary": "glossary.json",
+    "cards": "cards.json",
+    "exercises": "exercises.json",
+    "map": "map.json",
+    "sources": "sources.json"
+  }
+}

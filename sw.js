@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v080-1";
+const CACHE_VERSION = "biblioteca-lbt-v080-qbi-1";
 const CORE = [
   "./",
   "./index.html",
@@ -24,6 +24,9 @@ const CORE = [
   "./content/catalog.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-v1.json",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./privacy.html",
