@@ -3,6 +3,14 @@
   "generatedFrom": "package manifests; do not edit manually",
   "packages": [
     {
+      "subjectId": "estadistica",
+      "unitId": "probabilidad-practica-1",
+      "title": "Probabilidad · teoría, glosario y Práctica 1",
+      "contentVersion": "1.0.0",
+      "status": "published",
+      "path": "content/subjects/estadistica/units/probabilidad-practica-1/"
+    },
+    {
       "subjectId": "fisica1",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Física I",
