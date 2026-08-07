@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v091-3";
+const CACHE_VERSION = "biblioteca-lbt-v091-4";
 const CORE = [
   "./",
   "./index.html",
@@ -49,7 +49,7 @@ self.addEventListener("activate", event => {
 async function networkFirst(request, fallbackUrl) {
   const cache = await caches.open(CACHE_VERSION);
   try {
-    const response = await fetch(request);
+    const response = await fetch(request,{cache:"no-store"});
     if (response && response.ok) cache.put(request, response.clone());
     return response;
   } catch (error) {
