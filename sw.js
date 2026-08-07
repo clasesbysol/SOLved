@@ -1,8 +1,9 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v091-5";
+const CACHE_VERSION = "biblioteca-lbt-v091-6";
 const CORE = [
   "./",
   "./index.html",
+  "./bienvenida.html",
   "./styles.css?v=0.9.1",
   "./styles-enhancements.css?v=0.9.1",
   "./organic-cards.css?v=0.7.3",
