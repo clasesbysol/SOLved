@@ -4,7 +4,7 @@
   if(root)root.LBT_SYNC=api;
 })(typeof window!=="undefined"?window:null,function(){
   "use strict";
-  const CLIENT_ID="8486003337-vs1e1iitdsbirh62e6trrmujfuc1suom.apps.googleusercontent.com";
+  const CLIENT_ID="832913804678-2k7r1vb63jnhnq5a33dabmaspnmbpbp9.apps.googleusercontent.com";
   const SCOPE="https://www.googleapis.com/auth/drive.appdata";
   const FILE_NAME="biblioteca-lbt-sync-v1.json";
   const AUTHORITATIVE_RESTORE_KEY="drive-authoritative-restore";
