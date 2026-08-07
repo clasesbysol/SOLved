@@ -1,0 +1,20 @@
+{
+  "packageSchemaVersion": 1,
+  "factoryVersion": "0.9.1",
+  "contentStandard": "LBT-V1",
+  "subjectId": "estadistica",
+  "unitId": "probabilidad-practica-1",
+  "title": "Probabilidad · teoría, glosario y Práctica 1",
+  "contentVersion": "1.0.0",
+  "status": "published",
+  "generatedAt": "2026-08-07T16:35:00.000Z",
+  "reviewedAt": "2026-08-07T16:35:00.000Z",
+  "files": {
+    "summary": "summary.json",
+    "glossary": "glossary.json",
+    "cards": "cards.json",
+    "exercises": "exercises.json",
+    "map": "map.json",
+    "sources": "sources.json"
+  }
+}
