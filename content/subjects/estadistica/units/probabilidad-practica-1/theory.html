@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estadística Aplicada · Probabilidad</title>
+<style>
+:root{--bg:#101113;--paper:#17191d;--paper2:#1e2025;--ink:#f4f1e8;--muted:#b7b2a5;--line:#34363b;--accent:#f4c542;--accent2:#ffe07a;--soft:#292616;--good:#d7efc8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.72 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:980px;margin:auto;padding:28px 26px 70px}header{border:1px solid var(--line);border-top:5px solid var(--accent);background:var(--paper);border-radius:14px;padding:26px;margin-bottom:22px}h1{font-size:2.15rem;line-height:1.15;margin:0 0 8px}h2{font-size:1.42rem;margin:0}h3{font-size:1.13rem;margin:28px 0 8px;color:var(--accent2)}p{margin:10px 0}.muted{color:var(--muted)}nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}nav a{color:var(--ink);text-decoration:none;background:var(--soft);border:1px solid #5c531f;border-radius:999px;padding:6px 11px;font-size:.9rem}details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:15px 0;overflow:hidden}summary{cursor:pointer;font-weight:800;font-size:1.18rem;padding:17px 19px;background:var(--paper2);border-left:5px solid var(--accent)}.inside{padding:8px 21px 24px}.note{border-left:4px solid var(--accent);background:var(--soft);padding:10px 13px;border-radius:6px;margin:14px 0}.example{border:1px solid var(--line);background:#141619;border-radius:10px;padding:12px 15px;margin:16px 0}.example strong{color:var(--accent2)}ul{padding-left:24px}.eq{display:flex;justify-content:center;align-items:center;gap:.45em;flex-wrap:wrap;overflow-x:auto;text-align:center;margin:13px auto;padding:10px 12px;min-height:48px;background:#0e0f11;border:1px solid #303238;border-radius:9px;font-family:"Times New Roman",serif;font-size:1.22rem;letter-spacing:.01em}.eq.sm{font-size:1.07rem}.frac{display:inline-grid;grid-template-rows:auto auto;vertical-align:middle;text-align:center;line-height:1.18}.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 .28em .12em}.frac>span:last-child{padding:.12em .28em 0}.sub{font-size:.72em;vertical-align:sub}.sup{font-size:.72em;vertical-align:super}.set{font-family:"Times New Roman",serif}.answer{font-weight:800;color:var(--good)}table{width:100%;border-collapse:collapse;margin:15px 0}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}th{background:var(--soft);color:var(--accent2)}@media(max-width:600px){body{font-size:16px}main{padding:14px 12px 50px}header{padding:19px}h1{font-size:1.7rem}.inside{padding:6px 15px 20px}.eq{font-size:1.08rem}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>Probabilidad</h1>
+<p class="muted">Estadística Aplicada · teoría desarrollada del Capítulo 1</p>
+<p>Esta sección explica los conceptos del material sin reducirlos a una lista de fórmulas. Entre paréntesis se agregan aclaraciones sencillas cuando ayudan a interpretar una idea.</p>
+<nav><a href="#conteo">Conteo</a><a href="#conjuntos">Conjuntos</a><a href="#basicos">Conceptos básicos</a><a href="#frecuencia">Frecuencia y axiomas</a><a href="#equiprobable">Equiprobabilidad</a><a href="#ejemplos1">Ejemplos I</a><a href="#ejemplos2">Ejemplos II</a><a href="#practica">Puente con la práctica</a></nav>
+</header>
+
+<details id="conteo" open><summary>1. Técnicas de conteo</summary><div class="inside">
+<h3>Principio de multiplicación</h3>
+<p>Se usa cuando una tarea completa se realiza en etapas sucesivas. Si la primera etapa puede hacerse de <em>m</em> maneras y, después de cada una de ellas, la segunda puede hacerse de <em>n</em> maneras, la cantidad de formas de realizar todo el proceso es el producto.</p>
+<div class="eq"><i>N</i> = <i>m</i> · <i>n</i></div>
+<p>(La idea simple es: cada opción de la primera etapa se puede combinar con todas las opciones de la segunda.)</p>
+<div class="example"><strong>Ejemplo: CABA → Chascomús → Mar del Plata.</strong><p>Hay 3 caminos para el primer tramo y 4 para el segundo.</p><div class="eq">3 · 4 = 12</div><p class="answer">Hay 12 recorridos posibles.</p></div>
+<div class="example"><strong>Ejemplo del menú.</strong><p>Se elige una entrada entre 4, una comida caliente entre 3 y un postre entre 5.</p><div class="eq">4 · 3 · 5 = 60</div><p>Si salpicón de ave y suprema de pollo no pueden aparecer juntos, se quitan los 5 menús que contienen esa pareja (uno por cada postre).</p><div class="eq">60 − 5 = 55</div><p class="answer">Quedan 55 menús permitidos.</p></div>
+<h3>Número factorial y permutaciones</h3>
+<p>Cuando se quieren ordenar <em>n</em> objetos distintos, para la primera posición hay <em>n</em> opciones, para la segunda quedan <em>n−1</em>, luego <em>n−2</em>, y así sucesivamente.</p>
+<div class="eq"><i>n</i>! = <i>n</i> · (<i>n</i>−1) · (<i>n</i>−2) · … · 2 · 1</div>
+<p>A cada ordenamiento de los <em>n</em> objetos se lo llama <strong>permutación</strong>. Por convenio, 0! = 1.</p>
+<div class="example"><strong>Ejemplo: cinco libros.</strong><div class="eq">5! = 5 · 4 · 3 · 2 · 1 = 120</div><p class="answer">Los cinco libros pueden ordenarse de 120 maneras.</p></div>
+<h3>Permutaciones con repetición</h3>
+<p>Si algunos elementos son iguales, intercambiarlos entre sí no produce un ordenamiento nuevo. Por eso se divide por el factorial de cada cantidad repetida.</p>
+<div class="eq"><i>N</i> = <span class="frac"><span><i>n</i>!</span><span><i>n</i><span class="sub">1</span>! · <i>n</i><span class="sub">2</span>! · … · <i>n</i><span class="sub">k</span>!</span></span></div>
+<div class="example"><strong>CASA.</strong><p>Hay 4 letras y la A aparece dos veces.</p><div class="eq"><i>N</i> = <span class="frac"><span>4!</span><span>2!</span></span> = 12</div></div>
+<div class="example"><strong>Tres doses, dos cincos y un uno.</strong><div class="eq"><i>N</i> = <span class="frac"><span>6!</span><span>3! · 2! · 1!</span></span> = 60</div></div>
+<h3>Número combinatorio</h3>
+<p>Se usa para elegir un subconjunto cuando <strong>el orden no importa</strong>. Elegir A, B y C es el mismo grupo que elegir C, A y B.</p>
+<div class="eq"><span style="font-size:1.55em">(</span><span class="frac"><span><i>n</i></span><span><i>m</i></span></span><span style="font-size:1.55em">)</span> = <span class="frac"><span><i>n</i>!</span><span>(<i>n</i>−<i>m</i>)! · <i>m</i>!</span></span></div>
+<div class="example"><strong>Elegir 3 personas entre 6.</strong><div class="eq"><span style="font-size:1.55em">(</span><span class="frac"><span>6</span><span>3</span></span><span style="font-size:1.55em">)</span> = <span class="frac"><span>6!</span><span>3! · 3!</span></span> = 20</div></div>
+</div></details>
+
+<details id="conjuntos" open><summary>2. Teoría de conjuntos</summary><div class="inside">
+<p>En probabilidad usamos conjuntos para describir los resultados posibles y los sucesos que nos interesan. El conjunto que contiene todos los resultados posibles se representa con Ω.</p>
+<h3>Unión</h3><p>Contiene lo que está en A, en B o en ambos.</p><div class="eq set">A ∪ B = {ω ∈ Ω : ω ∈ A o ω ∈ B}</div>
+<h3>Intersección</h3><p>Contiene sólo los resultados que pertenecen simultáneamente a A y a B.</p><div class="eq set">A ∩ B = {ω ∈ Ω : ω ∈ A y ω ∈ B}</div>
+<h3>Complemento</h3><p>Contiene lo que pertenece al espacio muestral pero no pertenece a A.</p><div class="eq set">A<span class="sup">c</span> = {ω ∈ Ω : ω ∉ A}</div>
+<h3>Eventos disjuntos</h3><p>Son eventos que no tienen resultados en común (no pueden ocurrir simultáneamente en una misma realización del experimento).</p><div class="eq">A ∩ B = ∅</div>
+<div class="example"><strong>Ejemplo del apunte.</strong><p>Ω = {1,2,3,4,5,6,7,8,9,10}, A = {3,4,5,7,8}, B = {2,3,5,8,9,10}.</p><div class="eq sm">A ∪ B = {2,3,4,5,7,8,9,10}</div><div class="eq sm">A ∩ B = {3,5,8}</div><div class="eq sm">A<span class="sup">c</span> = {1,2,6,9,10}</div><div class="eq sm">B<span class="sup">c</span> = {1,4,6,7}</div></div>
+<h3>Leyes de De Morgan</h3>
+<div class="eq">(A ∪ B)<span class="sup">c</span> = A<span class="sup">c</span> ∩ B<span class="sup">c</span></div>
+<div class="eq">(A ∩ B)<span class="sup">c</span> = A<span class="sup">c</span> ∪ B<span class="sup">c</span></div>
+<p>La primera dice: “no ocurre A ni B” equivale a “no ocurre A y tampoco ocurre B”. La segunda dice: “no ocurren A y B simultáneamente” equivale a que al menos uno de los dos no ocurra.</p>
+</div></details>
+
+<details id="basicos" open><summary>3. Experimento aleatorio, espacio muestral y eventos</summary><div class="inside">
+<h3>Experimento aleatorio</h3><p>Es una acción cuyo resultado exacto no puede saberse antes de realizarla. Sí podemos conocer qué resultados son posibles. Ejemplos del material: tirar uno o dos dados, tirar una moneda, elegir una persona al azar o medir su altura.</p>
+<h3>Espacio muestral</h3><p>Es el conjunto formado por <strong>todos</strong> los resultados posibles del experimento.</p>
+<div class="example"><strong>Un dado.</strong><div class="eq">Ω = {1,2,3,4,5,6}</div></div>
+<div class="example"><strong>Dos dados.</strong><p>Cada resultado es un par ordenado. El primer componente corresponde al primer dado y el segundo al segundo dado.</p><div class="eq">Ω = {(1,1),(1,2), … ,(6,6)}</div><div class="eq">#Ω = 6 · 6 = 36</div><p>(2,5) y (5,2) son resultados diferentes porque cambió qué dado produjo cada valor.</p></div>
+<div class="example"><strong>Medir una persona.</strong><p>El apunte modela los valores posibles como reales no negativos.</p><div class="eq">Ω = ℝ<span class="sub">≥0</span></div></div>
+<h3>Evento</h3><p>Un evento es un subconjunto del espacio muestral: una condición que puede cumplirse o no.</p>
+<div class="example"><strong>Dado: sale par.</strong><div class="eq">A = {2,4,6}</div></div>
+<div class="example"><strong>Dos dados: la suma vale 7.</strong><div class="eq sm">A = {(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}</div></div>
+<h3>Evento simple</h3><p>Es un evento que contiene un único resultado. En un dado, {1}, {2}, …, {6} son los seis eventos simples.</p>
+<div class="note">Hay tantos eventos simples como elementos tiene Ω. El símbolo #A representa la cantidad de elementos del conjunto A.</div>
+</div></details>
+
+<details id="frecuencia" open><summary>4. Frecuencia relativa, axiomas y propiedades</summary><div class="inside">
+<h3>Frecuencia relativa</h3><p>Si repetimos un experimento <em>n</em> veces, la frecuencia relativa de A compara cuántas veces ocurrió A con el total de repeticiones.</p>
+<div class="eq"><i>f</i><span class="sub">A</span> = <span class="frac"><span>cantidad de veces que ocurre A</span><span><i>n</i></span></span></div>
+<p>Cumple que la frecuencia del espacio muestral es 1, nunca es negativa y, para eventos disjuntos, las frecuencias se suman.</p>
+<div class="eq"><i>f</i><span class="sub">Ω</span> = 1</div><div class="eq"><i>f</i><span class="sub">A</span> ≥ 0</div><div class="eq"><i>f</i><span class="sub">A∪B</span> = <i>f</i><span class="sub">A</span> + <i>f</i><span class="sub">B</span></div>
+<p>El apunte señala que, con muchas repeticiones, la frecuencia relativa se aproxima a la probabilidad.</p><div class="eq"><i>f</i><span class="sub">A</span> ≈ P(A)</div>
+<p>Se menciona n &gt; 30 como referencia práctica de “n grande”. No significa que a partir de 31 repeticiones la frecuencia sea exactamente la probabilidad.</p>
+<h3>Axiomas de probabilidad</h3>
+<p><strong>Axioma 1.</strong> La probabilidad nunca es negativa.</p><div class="eq">P(A) ≥ 0</div>
+<p><strong>Axioma 2.</strong> La probabilidad de todo el espacio muestral es uno.</p><div class="eq">P(Ω) = 1</div>
+<p><strong>Axioma 3.</strong> Para eventos disjuntos dos a dos, la probabilidad de la unión es la suma de las probabilidades.</p><div class="eq sm">P(A<span class="sub">1</span> ∪ A<span class="sub">2</span> ∪ …) = P(A<span class="sub">1</span>) + P(A<span class="sub">2</span>) + …</div>
+<h3>Propiedades que se deducen</h3>
+<div class="eq">P(∅) = 0</div><div class="eq">0 ≤ P(A) ≤ 1</div>
+<p>Si A y B son disjuntos:</p><div class="eq">P(A ∪ B) = P(A) + P(B)</div>
+<p>Si no son necesariamente disjuntos, hay que restar la parte contada dos veces:</p><div class="eq">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</div>
+<p>Para el complemento:</p><div class="eq">P(A<span class="sup">c</span>) = 1 − P(A)</div>
+<p>Esta última propiedad es muy útil en consignas del tipo “al menos uno”: muchas veces es más sencillo calcular “ninguno” y restarlo de 1.</p>
+</div></details>
+
+<details id="equiprobable" open><summary>5. Asignación de probabilidades y espacios equiprobables</summary><div class="inside">
+<p>Los axiomas indican qué debe cumplir una probabilidad, pero no asignan automáticamente cuánto vale cada resultado. Esa asignación depende del experimento.</p>
+<div class="example"><strong>Dado no equilibrado del ejemplo 8.</strong><p>Las caras impares tienen una probabilidad común <em>x</em> y cada cara par tiene el doble.</p><div class="eq">x + 2x + x + 2x + x + 2x = 1</div><div class="eq">9x = 1 &nbsp; ⇒ &nbsp; x = <span class="frac"><span>1</span><span>9</span></span></div><p>Entonces cada impar vale 1/9 y cada par vale 2/9.</p><div class="eq">P(par) = <span class="frac"><span>6</span><span>9</span></span> = <span class="frac"><span>2</span><span>3</span></span></div><div class="eq">P(X&gt;3) = <span class="frac"><span>5</span><span>9</span></span></div></div>
+<h3>Dado equilibrado</h3><p>Si las seis caras tienen la misma probabilidad <em>p</em>, la suma de los seis eventos simples debe ser uno.</p><div class="eq">6p = 1 &nbsp; ⇒ &nbsp; p = <span class="frac"><span>1</span><span>6</span></span></div>
+<p>Un espacio es <strong>equiprobable</strong> cuando todos sus eventos simples tienen la misma probabilidad.</p><div class="eq">P({ω}) = <span class="frac"><span>1</span><span>#Ω</span></span></div>
+<p>Para cualquier evento A en un espacio finito equiprobable:</p><div class="eq">P(A) = <span class="frac"><span>#A</span><span>#Ω</span></span> = <span class="frac"><span>casos favorables</span><span>casos posibles</span></span></div>
+<div class="note">Esta fórmula de “favorables sobre posibles” no debe usarse automáticamente: requiere que los resultados elementales considerados sean igualmente probables.</div>
+</div></details>
+
+<details id="ejemplos1" open><summary>6. Ejemplos desarrollados: dos dados, números y urnas</summary><div class="inside">
+<h3>Dos dados equilibrados</h3><p>El espacio muestral tiene 36 pares ordenados equiprobables.</p><div class="eq">#Ω = 6 · 6 = 36</div>
+<p><strong>Primer número múltiplo de 2.</strong> El primer dado tiene 3 opciones pares y el segundo puede ser cualquiera.</p><div class="eq">P = <span class="frac"><span>3 · 6</span><span>36</span></span> = <span class="frac"><span>1</span><span>2</span></span></div>
+<p><strong>Al menos un número par.</strong> El complemento es que ambos sean impares: 3 opciones impares por dado.</p><div class="eq">P(al menos un par) = 1 − <span class="frac"><span>3 · 3</span><span>36</span></span> = <span class="frac"><span>3</span><span>4</span></span></div>
+<p><strong>Segundo dado estrictamente mayor que el primero.</strong></p><div class="eq">#A = 5 + 4 + 3 + 2 + 1 = 15</div><div class="eq">P(A) = <span class="frac"><span>15</span><span>36</span></span> = <span class="frac"><span>5</span><span>12</span></span></div>
+<h3>Número de seis cifras formado sólo por 2 y 4</h3><p>Hay 900000 números de seis cifras. Para cada una de las seis posiciones favorables hay dos opciones: 2 o 4.</p><div class="eq">#A = 2<span class="sup">6</span> = 64</div><div class="eq">P(A) = <span class="frac"><span>64</span><span>900000</span></span></div>
+<h3>Urna con reposición</h3><p>Hay 2 bolillas blancas y 3 rojas. Con reposición, después de la primera extracción la urna vuelve a quedar igual.</p><div class="eq">P(R)=<span class="frac"><span>3</span><span>5</span></span> &nbsp;&nbsp; P(B)=<span class="frac"><span>2</span><span>5</span></span></div>
+<p>Al menos una roja se calcula por complemento de “dos blancas”.</p><div class="eq">P(al menos una R)=1−<span class="frac"><span>2</span><span>5</span></span>·<span class="frac"><span>2</span><span>5</span></span>=<span class="frac"><span>21</span><span>25</span></span></div>
+<p>Primero roja y luego blanca:</p><div class="eq">P(RB)=<span class="frac"><span>3</span><span>5</span></span>·<span class="frac"><span>2</span><span>5</span></span>=<span class="frac"><span>6</span><span>25</span></span></div>
+<h3>Urna sin reposición</h3><p>Si primero sale una blanca, quedan 4 bolillas y sólo 1 es blanca.</p><div class="eq">P(BB)=<span class="frac"><span>2</span><span>5</span></span>·<span class="frac"><span>1</span><span>4</span></span>=<span class="frac"><span>1</span><span>10</span></span></div><div class="eq">P(al menos una R)=1−<span class="frac"><span>1</span><span>10</span></span>=<span class="frac"><span>9</span><span>10</span></span></div>
+</div></details>
+
+<details id="ejemplos2" open><summary>7. Ejemplos desarrollados: porcentajes, tarjetas y teatro</summary><div class="inside">
+<h3>Personal de una universidad</h3><p>El 65 % son mujeres; el 20 % tiene menos de 24 años; el 12 % son mujeres menores de 24.</p><div class="eq">P(24 o más)=1−0,20=0,80</div><div class="eq">P(hombre)=1−0,65=0,35</div><p>Los hombres menores de 24 son la parte de menores que no corresponde a mujeres.</p><div class="eq">P(H ∩ J)=0,20−0,12=0,08</div><div class="eq">P(H ∩ J<span class="sup">c</span>)=0,35−0,08=0,27</div>
+<h3>Visa y MasterCard</h3><p>Datos: P(A)=0,5, P(B)=0,4 y P(A∩B)=0,25.</p><div class="eq">P(A∪B)=0,5+0,4−0,25=0,65</div><div class="eq">P(ninguna)=1−0,65=0,35</div><p>Visa pero no MasterCard:</p><div class="eq">P(A∩B<span class="sup">c</span>)=P(A)−P(A∩B)=0,25</div>
+<h3>Seis amigos y ocho obras</h3><p>Cada amigo elige una de 8 obras. Un resultado completo es una sextupla de elecciones.</p><div class="eq">#Ω = 8<span class="sup">6</span> = 262144</div>
+<p><strong>Todos ven obras distintas.</strong></p><div class="eq">#A = 8 · 7 · 6 · 5 · 4 · 3 = 20160</div><div class="eq">P(A)=<span class="frac"><span>20160</span><span>262144</span></span>=<span class="frac"><span>315</span><span>4096</span></span>≈0,0769</div>
+<p><strong>Todos eligen musical o suspenso.</strong> Hay 4 musicales + 2 de suspenso = 6 opciones favorables para cada amigo.</p><div class="eq">P = (<span class="frac"><span>6</span><span>8</span></span>)<span class="sup">6</span> = (<span class="frac"><span>3</span><span>4</span></span>)<span class="sup">6</span> = <span class="frac"><span>729</span><span>4096</span></span></div>
+<p>“Ninguno ve comedia” da exactamente el mismo evento, porque las seis obras que no son comedias son precisamente las musicales y las de suspenso.</p>
+</div></details>
+
+<details id="practica" open><summary>8. Puente con la Práctica 1: condicional, probabilidad total, Bayes e independencia</summary><div class="inside">
+<p>Los ejercicios incorporados a la práctica avanzan desde la probabilidad básica hacia herramientas que aparecen en el esqueleto general del primer parcial.</p>
+<h3>Probabilidad condicional</h3><p>Al saber que ocurrió B, el universo relevante se restringe a B. La probabilidad de A dentro de ese nuevo universo es:</p><div class="eq">P(A | B) = <span class="frac"><span>P(A ∩ B)</span><span>P(B)</span></span></div>
+<h3>Teorema de multiplicación</h3><div class="eq">P(A ∩ B) = P(A | B) · P(B)</div>
+<h3>Probabilidad total</h3><p>Si A<span class="sub">1</span>, A<span class="sub">2</span>, … forman una partición del espacio muestral, se suman los caminos que pueden producir B.</p><div class="eq sm">P(B) = P(B|A<span class="sub">1</span>)P(A<span class="sub">1</span>) + P(B|A<span class="sub">2</span>)P(A<span class="sub">2</span>) + …</div>
+<h3>Teorema de Bayes</h3><p>Permite invertir el condicionamiento: a partir de la probabilidad de observar una evidencia bajo una causa, calcular la probabilidad de la causa cuando ya observamos la evidencia.</p><div class="eq">P(A | B) = <span class="frac"><span>P(B | A) · P(A)</span><span>P(B)</span></span></div>
+<h3>Independencia</h3><p>Dos eventos son independientes si conocer uno no modifica la probabilidad del otro. Una forma equivalente de comprobarlo es:</p><div class="eq">P(A ∩ B) = P(A) · P(B)</div>
+<div class="note"><strong>Importante:</strong> “independientes” no significa “disjuntos”. Si dos eventos con probabilidad positiva son disjuntos, saber que ocurrió uno impide al otro y por lo tanto no son independientes.</div>
+<h3>Cómo elegir una herramienta</h3>
+<table><thead><tr><th>La consigna dice…</th><th>Idea útil</th></tr></thead><tbody><tr><td>“y”, “ambos”, “simultáneamente”</td><td>Intersección</td></tr><tr><td>“o”, “al menos uno”</td><td>Unión; muchas veces complemento</td></tr><tr><td>“dado que”, “sabiendo que”</td><td>Probabilidad condicional</td></tr><tr><td>Varios grupos/orígenes pueden producir el resultado</td><td>Probabilidad total</td></tr><tr><td>Se conoce el resultado y se pregunta por el origen</td><td>Bayes</td></tr><tr><td>Etapas independientes</td><td>Multiplicar probabilidades</td></tr></tbody></table>
+</div></details>
+</main>
+</body>
+</html>
