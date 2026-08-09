@@ -301,6 +301,7 @@
   function auditButtons(){document.querySelectorAll("button").forEach(btn=>{if(btn.hidden)return;if(!btn.onclick&&!btn.hasAttribute("data-page")&&!btn.hasAttribute("data-close")&&!btn.hasAttribute("data-page-link")&&!btn.closest("form")&&!btn.id)console.warn("Botón sin enlace explícito",btn)})}
 
   function bindEvents(){
+    window.addEventListener("solved-user-material-changed",()=>driveSync?.localChanged());
     document.querySelectorAll("[data-open-factory]").forEach(button=>button.onclick=()=>openFactory());
     document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=async()=>{if(!els.studyPage.hidden&&b.dataset.page!=="study")await window.LBT_UTILS?.transitionStudyContext();setPage(b.dataset.page)});document.querySelectorAll("[data-page-link]").forEach(b=>b.onclick=async()=>{if(!els.studyPage.hidden&&b.dataset.pageLink!=="study")await window.LBT_UTILS?.transitionStudyContext();setPage(b.dataset.pageLink)});document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>$(b.dataset.close).hidden=true);
     [els.eventModal,els.scheduleModal,els.coursesModal,els.backupModal,els.correlationModal].forEach(m=>m.onclick=e=>{if(e.target===m)m.hidden=true});els.manageCourses.onclick=els.manageCoursesPlan.onclick=openCoursesModal;els.addEventTop.onclick=els.addEventSide.onclick=els.addEventCalendar.onclick=()=>openEventModal();els.addScheduleBlock.onclick=()=>openScheduleModal();
