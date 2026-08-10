@@ -5,10 +5,10 @@
   "subjectId": "estadistica",
   "unitId": "probabilidad-practica-1",
   "title": "Probabilidad · teoría, glosario y Práctica 1",
-  "contentVersion": "1.0.1",
+  "contentVersion": "1.0.2",
   "status": "published",
-  "generatedAt": "2026-08-07T18:20:00.000Z",
-  "reviewedAt": "2026-08-07T18:20:00.000Z",
+  "generatedAt": "2026-08-10T20:22:00.000Z",
+  "reviewedAt": "2026-08-10T20:22:00.000Z",
   "files": {
     "summary": "summary.json",
     "glossary": "glossary.json",
