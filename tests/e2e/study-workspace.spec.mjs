@@ -37,3 +37,20 @@ test("@desktop usa contenido real y conserva la división en lectura inmersiva",
 test("@mobile acepta TXT y permite arrastrar la división vertical",async({page})=>{
   await ready(page);await page.locator("#uploadHtmlBtn").click();await page.locator("#htmlFileInput").setInputFiles({name:"notas.txt",mimeType:"text/plain",buffer:Buffer.from("hola")});await expect(page.locator("#materialTextInput")).toHaveValue("hola");await page.locator("#htmlImportCancel").click();await page.locator("#splitViewBtn").click();const divider=page.locator(".workspace-divider");await expect(divider).toHaveAttribute("aria-orientation","horizontal");const before=Number(await divider.getAttribute("aria-valuenow")),box=await divider.boundingBox();await divider.dispatchEvent("pointerdown",{pointerId:7,pointerType:"touch",clientX:box.x+box.width/2,clientY:box.y+box.height/2});await divider.dispatchEvent("pointermove",{pointerId:7,pointerType:"touch",clientX:box.x+box.width/2,clientY:box.y+100});await divider.dispatchEvent("pointerup",{pointerId:7,pointerType:"touch"});expect(Number(await divider.getAttribute("aria-valuenow"))).not.toBe(before);expect(await page.locator("#studyBody").evaluate(node=>getComputedStyle(node).gridTemplateColumns)).toBe("412px");
 });
+
+
+test("@desktop modo lectura llena el visor oficial en Química Biológica y Estadística",async({page})=>{
+  await page.goto("/");
+  await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");
+  for(const subjectId of ["quimica_biologica1","estadistica"]){
+    await page.locator(`[data-open="${subjectId}"]`).first().click();
+    const frame=page.locator(".workspace-panel-scroll.is-rich-document-view .rich-document");
+    await expect(frame).toBeVisible();
+    await page.locator("#readingBtn").click();
+    await expect(page.locator("html")).toHaveClass(/immersive-reading/);
+    const sizes=await page.evaluate(()=>{const host=document.querySelector(".workspace-panel-scroll.is-rich-document-view").getBoundingClientRect(),frame=document.querySelector(".workspace-panel-scroll.is-rich-document-view .rich-document").getBoundingClientRect();return{host:{width:host.width,height:host.height,top:host.top,left:host.left},frame:{width:frame.width,height:frame.height,top:frame.top,left:frame.left}}});
+    expect(sizes.frame).toEqual(sizes.host);
+    await page.locator("#readingModeExit").click();
+    await page.locator("#backStudy").click();
+  }
+});
