@@ -17,8 +17,8 @@ const openQbiExercises=async page=>{
 const startFullGuide=async page=>{
   await openQbiExercises(page);
   await page.getByRole("button",{name:"Seleccionar toda la guía"}).click();
-  await page.getByRole("button",{name:/Comenzar · 28 ejercicios/}).click();
-  await expect(page.getByText("Ejercicio 1 de 28",{exact:true})).toBeVisible();
+  await page.getByRole("button",{name:/Comenzar · 35 ejercicios/}).click();
+  await expect(page.getByText("Ejercicio 1 de 35",{exact:true})).toBeVisible();
 };
 
 test("@desktop QBI publica Proteínas I y abre el resumen interactivo",async({page})=>{
@@ -61,24 +61,24 @@ test("@desktop QBI clasifica derecha, izquierda y abajo después de girar",async
   await startFullGuide(page);
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Correcta",exact:true}).click();
-  await expect(page.getByText("1 de 28 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("1 de 35 clasificados",{exact:true})).toBeVisible();
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Incorrecta",exact:true}).click();
-  await expect(page.getByText("2 de 28 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("2 de 35 clasificados",{exact:true})).toBeVisible();
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Revisar",exact:true}).click();
-  await expect(page.getByText("3 de 28 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("3 de 35 clasificados",{exact:true})).toBeVisible();
 });
 
 test("@desktop QBI conserva el progreso después de recargar",async({page})=>{
   await startFullGuide(page);
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Correcta",exact:true}).click();
-  await expect(page.getByText("1 de 28 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("1 de 35 clasificados",{exact:true})).toBeVisible();
   await page.reload();
   await page.locator('[data-open="quimica_biologica1"]').first().click();
   await page.getByRole("button",{name:"Ejercicios"}).click();
-  await expect(page.getByText("1 de 28 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("1 de 35 clasificados",{exact:true})).toBeVisible();
 });
 
 test("@desktop la integración QBI no altera tarjetas ni mapa de Orgánica",async({page})=>{
@@ -91,4 +91,16 @@ test("@desktop la integración QBI no altera tarjetas ni mapa de Orgánica",asyn
 
 test("@desktop QBI abre la teoría relacionada en el panel de origen",async({page})=>{
   await openSubject(page);await page.locator("#splitViewBtn").click();const right=page.locator('.workspace-panel[data-side="right"]');await right.locator("select").selectOption("tab:exercises");await right.getByRole("button",{name:/Seleccionar toda la gu/}).click();await right.getByRole("button",{name:/Comenzar/}).click();await right.getByRole("button",{name:"Ver respuesta"}).click();await right.getByRole("button",{name:"Ver teoría relacionada"}).click();await expect(right.locator("select")).toHaveValue("tab:summary");const frame=right.frameLocator("iframe");await expect(frame.locator("#theory")).toHaveClass(/active/);await expect(frame.locator(".workspace-target")).toHaveCount(1);
+});
+
+
+test("@desktop QBI integra la guía de Electroforesis con respuestas desplegables",async({page})=>{
+  await openQbiExercises(page);
+  const guide=page.getByText(/Guía de Problemas · Electroforesis · 7 ejercicios/);
+  await expect(guide).toBeVisible();
+  await guide.click();
+  const exercise=page.getByText(/Ejercicio 1 · Discuta las siguientes afirmaciones/);
+  await exercise.click();
+  await page.getByText("Ver respuesta explicada").first().click();
+  await expect(page.getByText(/movilidad electroforética puede pensarse/)).toBeVisible();
 });
