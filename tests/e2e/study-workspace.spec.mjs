@@ -2,12 +2,28 @@ import {test,expect} from "@playwright/test";
 
 const ready=async page=>{await page.goto("/");await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");await page.locator('[data-open="fisica1"]').first().click();await expect(page.locator("#studyPage")).toBeVisible()};
 
-test("@desktop importa HTML real, recarga y lo abre aislado",async({page})=>{
-  await ready(page);await page.locator("#uploadHtmlBtn").click();
+async function uploadHtml(page,title="Mi tabla"){
+  await page.locator("#uploadHtmlBtn").click();
   await page.locator("#htmlFileInput").setInputFiles({name:"tabla.html",mimeType:"text/html",buffer:Buffer.from('<!doctype html><style>h1{color:rgb(255,0,0)}</style><h1 id="inicio">Resumen propio</h1><table><tr><td>Dato</td></tr></table><script>document.body.dataset.ready="yes"</script>')});
-  await expect(page.locator("#htmlImportMessage")).toContainText("Vista previa");await page.locator("#htmlTitleInput").fill("Mi tabla");await page.locator("#htmlImportSave").click();await expect(page.locator("#htmlImportModal")).toBeHidden();
-  const stored=await page.evaluate(()=>LBT_DB.getAll("userMaterials"));expect(stored).toHaveLength(1);expect(stored[0]).toMatchObject({type:"html",section:"summary",title:"Mi tabla",originalFilename:"tabla.html",subjectId:"fisica1"});
-  await page.reload();await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");await page.locator('[data-open="fisica1"]').first().click();await page.locator("#splitViewBtn").click();const right=page.locator('.workspace-panel[data-side="right"]');await right.locator("select").selectOption(`material:${stored[0].id}`);const frame=right.locator("iframe");await expect(frame).toBeVisible();expect(await frame.getAttribute("sandbox")).toBe("allow-scripts allow-popups allow-popups-to-escape-sandbox");await expect(frame.contentFrame().locator("h1")).toHaveText("Resumen propio");
+  await expect(page.locator("#htmlImportMessage")).toContainText("Vista previa");
+  await page.locator("#htmlTitleInput").fill(title);
+  await page.locator("#htmlImportSave").click();
+  await expect(page.locator("#htmlImportModal")).toBeHidden();
+  return (await page.evaluate(()=>LBT_DB.getAll("userMaterials"))).find(item=>item.type==="html"&&!item.deletedAt);
+}
+
+test("@desktop importa HTML real, recarga y lo abre aislado",async({page})=>{
+  await ready(page);const stored=await uploadHtml(page);
+  expect(stored).toMatchObject({type:"html",section:"summary",title:"Mi tabla",originalFilename:"tabla.html",subjectId:"fisica1"});
+  await page.reload();await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");await page.locator('[data-open="fisica1"]').first().click();await page.locator("#splitViewBtn").click();const right=page.locator('.workspace-panel[data-side="right"]');await right.locator("select").selectOption(`material:${stored.id}`);const frame=right.locator("iframe");await expect(frame).toBeVisible();expect(await frame.getAttribute("sandbox")).toBe("allow-scripts allow-popups allow-popups-to-escape-sandbox");await expect(frame.contentFrame().locator("h1")).toHaveText("Resumen propio");
+});
+
+test("@desktop puede guardar cambios de un HTML sin volver a elegir archivo y eliminarlo",async({page})=>{
+  await ready(page);const stored=await uploadHtml(page,"HTML a corregir");
+  await page.locator("#splitViewBtn").click();const right=page.locator('.workspace-panel[data-side="right"]');await right.locator("select").selectOption(`material:${stored.id}`);
+  await right.locator(`[data-material-edit="${stored.id}"]`).click();await page.locator("#htmlTitleInput").fill("HTML corregido");await page.locator("#htmlImportSave").click();await expect(page.locator("#htmlImportModal")).toBeHidden();
+  const edited=await page.evaluate(id=>LBT_DB.get("userMaterials",id),stored.id);expect(edited.title).toBe("HTML corregido");expect(edited.textContent).toContain("Resumen propio");
+  await right.locator("select").selectOption(`material:${stored.id}`);page.once("dialog",dialog=>dialog.accept());await right.locator(`[data-material-delete="${stored.id}"]`).click();await expect.poll(async()=>page.evaluate(id=>LBT_DB.get("userMaterials",id).then(item=>!!item?.deletedAt),stored.id)).toBe(true);await expect(right.locator("select")).not.toHaveValue(`material:${stored.id}`);
 });
 
 test("@desktop persiste división, tamaño y panel colapsado",async({page})=>{
