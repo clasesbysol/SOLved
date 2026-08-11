@@ -170,6 +170,7 @@
     const host=panel.querySelector(".workspace-panel-scroll"),side=panel.dataset.side,item=findMaterial(value);
     host.classList.toggle("is-material-view",!!item);
     host.classList.toggle("is-library-view",value==="library:html");
+    host.classList.remove("is-rich-document-view");
     if(item){
       host.innerHTML=item.type==="html"?htmlViewer(item):item.type==="pdf"?pdfViewer(item):textViewer(item);
       if(item.type==="html"){
@@ -191,6 +192,7 @@
     const tab=value.slice(4),supportsMaterials=["summary","glossary"].includes(tab);
     host.innerHTML=`<div class="official-section"><span class="library-label">Biblioteca SOLved</span>${context.contentByTab[tab]||'<div class="content-card empty-state">Todavía no hay contenido publicado para esta sección.</div>'}${supportsMaterials?sectionExtras(tab):""}</div>`;
     window.LBT_CONTENT?.bind(host);
+    host.classList.toggle("is-rich-document-view",!!host.querySelector(".rich-document"));
     if(supportsMaterials)bindLibrary(host,side);
     host.querySelectorAll(".personal-pdf-frame").forEach(frame=>{
       const material=records.find(value=>value.id===frame.closest(".personal-material")?.dataset.materialId);
