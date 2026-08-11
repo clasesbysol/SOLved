@@ -1,43 +1,589 @@
 {
   "entries": [
-    {"id":"estadistica-glosario-acontecimiento-evento","term":"Acontecimiento o evento","definition":"Subconjunto del espacio muestral formado por los resultados que cumplen una condición.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-aditividad","term":"Aditividad","definition":"Si dos eventos son disjuntos, la probabilidad de su unión es la suma de sus probabilidades.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-axiomas","term":"Axiomas de probabilidad","definition":"Reglas fundamentales: no negatividad, probabilidad total igual a 1 y aditividad para eventos disjuntos.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-caso-favorable","term":"Caso favorable","definition":"Resultado que pertenece al evento cuya probabilidad se quiere calcular.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-caso-posible","term":"Caso posible","definition":"Cada resultado individual que puede producir el experimento.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-cardinal","term":"Cardinal","definition":"Cantidad de elementos de un conjunto; puede escribirse #A o |A|.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-combinacion","term":"Combinación","definition":"Selección de elementos en la que el orden no importa.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-complemento","term":"Complemento","definition":"Evento formado por los resultados del espacio muestral que no pertenecen a A.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-conjunto-vacio","term":"Conjunto vacío","definition":"Conjunto sin elementos, representado por ∅; en probabilidad corresponde al evento imposible.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-disjuntos","term":"Eventos disjuntos","definition":"Eventos que no pueden ocurrir simultáneamente porque no tienen resultados en común.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-equiprobabilidad","term":"Equiprobabilidad","definition":"Situación en la que todos los resultados elementales considerados tienen la misma probabilidad.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-espacio-muestral","term":"Espacio muestral","definition":"Conjunto de todos los resultados posibles de un experimento; se representa con Ω.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-evento-compuesto","term":"Evento compuesto","definition":"Evento que contiene más de un resultado del espacio muestral.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-evento-imposible","term":"Evento imposible","definition":"Evento que no contiene resultados posibles y cuya probabilidad es 0.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-evento-seguro","term":"Evento seguro","definition":"Evento que coincide con todo el espacio muestral y cuya probabilidad es 1.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-evento-simple","term":"Evento simple","definition":"Evento formado por un único resultado elemental.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-experimento-aleatorio","term":"Experimento aleatorio","definition":"Acción cuyo resultado exacto no puede conocerse antes de realizarla, aunque sí se conocen los resultados posibles.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-extraccion-con-reposicion","term":"Extracción con reposición","definition":"El elemento extraído se devuelve antes de la siguiente extracción, por lo que la composición se mantiene.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-extraccion-sin-reposicion","term":"Extracción sin reposición","definition":"El elemento extraído no se devuelve; la composición del conjunto cambia para la extracción siguiente.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-factorial","term":"Factorial","definition":"Producto de un número entero positivo por todos los enteros anteriores hasta 1; por convenio, 0! = 1.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-frecuencia-absoluta","term":"Frecuencia absoluta","definition":"Cantidad de veces que ocurre un evento en una serie de repeticiones.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-frecuencia-relativa","term":"Frecuencia relativa","definition":"Proporción de repeticiones en las que ocurre un evento respecto del total realizado.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-independencia","term":"Independencia","definition":"La ocurrencia de un evento no modifica la probabilidad del otro.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-interseccion","term":"Intersección","definition":"Conjunto de resultados que pertenecen simultáneamente a dos eventos.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-de-morgan","term":"Leyes de De Morgan","definition":"Relacionan los complementos de uniones e intersecciones y permiten transformar eventos equivalentes.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-numero-combinatorio","term":"Número combinatorio","definition":"Cantidad de grupos de tamaño m que pueden elegirse entre n elementos cuando el orden no importa.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-par-ordenado","term":"Par ordenado","definition":"Resultado con dos posiciones diferenciadas; cambiar el orden de los componentes produce, en general, otro resultado.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-particion","term":"Partición","definition":"Colección de eventos disjuntos entre sí cuya unión cubre todo el espacio muestral.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-permutacion","term":"Permutación","definition":"Ordenamiento de elementos en el que importa la posición que ocupa cada uno.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-permutacion-repeticion","term":"Permutación con repetición","definition":"Ordenamiento con elementos iguales en el que se corrigen las repeticiones dividiendo por los factoriales correspondientes.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-principio-multiplicacion","term":"Principio de multiplicación","definition":"Si una tarea se realiza en etapas sucesivas, la cantidad total de posibilidades se obtiene multiplicando las opciones de cada etapa.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-probabilidad","term":"Probabilidad","definition":"Número entre 0 y 1 que cuantifica qué tan posible es que ocurra un evento.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-probabilidad-condicional","term":"Probabilidad condicional","definition":"Probabilidad de que ocurra A cuando ya se sabe que ocurrió B.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-probabilidad-total","term":"Probabilidad total","definition":"Calcula la probabilidad de un evento sumando los distintos caminos de una partición que pueden producirlo.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-reposicion","term":"Reposición","definition":"Acción de devolver el elemento extraído antes de efectuar la siguiente selección.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-resultado","term":"Resultado","definition":"Valor o posibilidad individual obtenida al realizar un experimento aleatorio.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-sextupla","term":"Sextupla","definition":"Lista ordenada de seis componentes utilizada para representar seis elecciones o resultados sucesivos.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-bayes","term":"Teorema de Bayes","definition":"Permite invertir un condicionamiento y calcular la probabilidad de una causa a partir de una evidencia observada.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]},
-    {"id":"estadistica-glosario-union","term":"Unión","definition":"Evento formado por los resultados que pertenecen a A, a B o a ambos.","references":[{"sourceId":"estadistica-probabilidad-pdf","page":1}]}
+    {
+      "id": "estadistica-glosario-acontecimiento-evento",
+      "term": "Acontecimiento o evento",
+      "definition": "Subconjunto del espacio muestral formado por los resultados que cumplen una condición.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, acontecimiento o evento se interpreta como: Subconjunto del espacio muestral formado por los resultados que cumplen una condición.",
+      "example": "Ejemplo: identificar o aplicar “Acontecimiento o evento” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-aditividad",
+      "term": "Aditividad",
+      "definition": "Si dos eventos son disjuntos, la probabilidad de su unión es la suma de sus probabilidades.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, aditividad se interpreta como: Si dos eventos son disjuntos, la probabilidad de su unión es la suma de sus probabilidades.",
+      "example": "Ejemplo: identificar o aplicar “Aditividad” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-axiomas",
+      "term": "Axiomas de probabilidad",
+      "definition": "Reglas fundamentales: no negatividad, probabilidad total igual a 1 y aditividad para eventos disjuntos.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, axiomas de probabilidad se interpreta como: Reglas fundamentales: no negatividad, probabilidad total igual a 1 y aditividad para eventos disjuntos.",
+      "example": "Ejemplo: identificar o aplicar “Axiomas de probabilidad” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-caso-favorable",
+      "term": "Caso favorable",
+      "definition": "Resultado que pertenece al evento cuya probabilidad se quiere calcular.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, caso favorable se interpreta como: Resultado que pertenece al evento cuya probabilidad se quiere calcular.",
+      "example": "Ejemplo: identificar o aplicar “Caso favorable” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-caso-posible",
+      "term": "Caso posible",
+      "definition": "Cada resultado individual que puede producir el experimento.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, caso posible se interpreta como: Cada resultado individual que puede producir el experimento.",
+      "example": "Ejemplo: identificar o aplicar “Caso posible” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-cardinal",
+      "term": "Cardinal",
+      "definition": "Cantidad de elementos de un conjunto; puede escribirse #A o |A|.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, cardinal se interpreta como: Cantidad de elementos de un conjunto; puede escribirse #A o |A|.",
+      "example": "Ejemplo: identificar o aplicar “Cardinal” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-combinacion",
+      "term": "Combinación",
+      "definition": "Selección de elementos en la que el orden no importa.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, combinación se interpreta como: Selección de elementos en la que el orden no importa.",
+      "example": "Ejemplo: identificar o aplicar “Combinación” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-complemento",
+      "term": "Complemento",
+      "definition": "Evento formado por los resultados del espacio muestral que no pertenecen a A.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, complemento se interpreta como: Evento formado por los resultados del espacio muestral que no pertenecen a A.",
+      "example": "Ejemplo: identificar o aplicar “Complemento” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-conjunto-vacio",
+      "term": "Conjunto vacío",
+      "definition": "Conjunto sin elementos, representado por ∅; en probabilidad corresponde al evento imposible.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, conjunto vacío se interpreta como: Conjunto sin elementos, representado por ∅; en probabilidad corresponde al evento imposible.",
+      "example": "Ejemplo: identificar o aplicar “Conjunto vacío” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-disjuntos",
+      "term": "Eventos disjuntos",
+      "definition": "Eventos que no pueden ocurrir simultáneamente porque no tienen resultados en común.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, eventos disjuntos se interpreta como: Eventos que no pueden ocurrir simultáneamente porque no tienen resultados en común.",
+      "example": "Ejemplo: identificar o aplicar “Eventos disjuntos” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-equiprobabilidad",
+      "term": "Equiprobabilidad",
+      "definition": "Situación en la que todos los resultados elementales considerados tienen la misma probabilidad.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, equiprobabilidad se interpreta como: Situación en la que todos los resultados elementales considerados tienen la misma probabilidad.",
+      "example": "Ejemplo: identificar o aplicar “Equiprobabilidad” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-espacio-muestral",
+      "term": "Espacio muestral",
+      "definition": "Conjunto de todos los resultados posibles de un experimento; se representa con Ω.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, espacio muestral se interpreta como: Conjunto de todos los resultados posibles de un experimento; se representa con Ω.",
+      "example": "Ejemplo: identificar o aplicar “Espacio muestral” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-evento-compuesto",
+      "term": "Evento compuesto",
+      "definition": "Evento que contiene más de un resultado del espacio muestral.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, evento compuesto se interpreta como: Evento que contiene más de un resultado del espacio muestral.",
+      "example": "Ejemplo: identificar o aplicar “Evento compuesto” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-evento-imposible",
+      "term": "Evento imposible",
+      "definition": "Evento que no contiene resultados posibles y cuya probabilidad es 0.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, evento imposible se interpreta como: Evento que no contiene resultados posibles y cuya probabilidad es 0.",
+      "example": "Ejemplo: identificar o aplicar “Evento imposible” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-evento-seguro",
+      "term": "Evento seguro",
+      "definition": "Evento que coincide con todo el espacio muestral y cuya probabilidad es 1.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, evento seguro se interpreta como: Evento que coincide con todo el espacio muestral y cuya probabilidad es 1.",
+      "example": "Ejemplo: identificar o aplicar “Evento seguro” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-evento-simple",
+      "term": "Evento simple",
+      "definition": "Evento formado por un único resultado elemental.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, evento simple se interpreta como: Evento formado por un único resultado elemental.",
+      "example": "Ejemplo: identificar o aplicar “Evento simple” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-experimento-aleatorio",
+      "term": "Experimento aleatorio",
+      "definition": "Acción cuyo resultado exacto no puede conocerse antes de realizarla, aunque sí se conocen los resultados posibles.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, experimento aleatorio se interpreta como: Acción cuyo resultado exacto no puede conocerse antes de realizarla, aunque sí se conocen los resultados posibles.",
+      "example": "Ejemplo: identificar o aplicar “Experimento aleatorio” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-extraccion-con-reposicion",
+      "term": "Extracción con reposición",
+      "definition": "El elemento extraído se devuelve antes de la siguiente extracción, por lo que la composición se mantiene.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, extracción con reposición se interpreta como: El elemento extraído se devuelve antes de la siguiente extracción, por lo que la composición se mantiene.",
+      "example": "Ejemplo: identificar o aplicar “Extracción con reposición” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-extraccion-sin-reposicion",
+      "term": "Extracción sin reposición",
+      "definition": "El elemento extraído no se devuelve; la composición del conjunto cambia para la extracción siguiente.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, extracción sin reposición se interpreta como: El elemento extraído no se devuelve; la composición del conjunto cambia para la extracción siguiente.",
+      "example": "Ejemplo: identificar o aplicar “Extracción sin reposición” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-factorial",
+      "term": "Factorial",
+      "definition": "Producto de un número entero positivo por todos los enteros anteriores hasta 1; por convenio, 0! = 1.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, factorial se interpreta como: Producto de un número entero positivo por todos los enteros anteriores hasta 1; por convenio, 0! = 1.",
+      "example": "Ejemplo: identificar o aplicar “Factorial” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-frecuencia-absoluta",
+      "term": "Frecuencia absoluta",
+      "definition": "Cantidad de veces que ocurre un evento en una serie de repeticiones.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, frecuencia absoluta se interpreta como: Cantidad de veces que ocurre un evento en una serie de repeticiones.",
+      "example": "Ejemplo: identificar o aplicar “Frecuencia absoluta” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-frecuencia-relativa",
+      "term": "Frecuencia relativa",
+      "definition": "Proporción de repeticiones en las que ocurre un evento respecto del total realizado.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, frecuencia relativa se interpreta como: Proporción de repeticiones en las que ocurre un evento respecto del total realizado.",
+      "example": "Ejemplo: identificar o aplicar “Frecuencia relativa” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-independencia",
+      "term": "Independencia",
+      "definition": "La ocurrencia de un evento no modifica la probabilidad del otro.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, independencia se interpreta como: La ocurrencia de un evento no modifica la probabilidad del otro.",
+      "example": "Ejemplo: identificar o aplicar “Independencia” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-interseccion",
+      "term": "Intersección",
+      "definition": "Conjunto de resultados que pertenecen simultáneamente a dos eventos.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, intersección se interpreta como: Conjunto de resultados que pertenecen simultáneamente a dos eventos.",
+      "example": "Ejemplo: identificar o aplicar “Intersección” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-de-morgan",
+      "term": "Leyes de De Morgan",
+      "definition": "Relacionan los complementos de uniones e intersecciones y permiten transformar eventos equivalentes.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, leyes de de morgan se interpreta como: Relacionan los complementos de uniones e intersecciones y permiten transformar eventos equivalentes.",
+      "example": "Ejemplo: identificar o aplicar “Leyes de De Morgan” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-numero-combinatorio",
+      "term": "Número combinatorio",
+      "definition": "Cantidad de grupos de tamaño m que pueden elegirse entre n elementos cuando el orden no importa.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, número combinatorio se interpreta como: Cantidad de grupos de tamaño m que pueden elegirse entre n elementos cuando el orden no importa.",
+      "example": "Ejemplo: identificar o aplicar “Número combinatorio” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-par-ordenado",
+      "term": "Par ordenado",
+      "definition": "Resultado con dos posiciones diferenciadas; cambiar el orden de los componentes produce, en general, otro resultado.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, par ordenado se interpreta como: Resultado con dos posiciones diferenciadas; cambiar el orden de los componentes produce, en general, otro resultado.",
+      "example": "Ejemplo: identificar o aplicar “Par ordenado” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-particion",
+      "term": "Partición",
+      "definition": "Colección de eventos disjuntos entre sí cuya unión cubre todo el espacio muestral.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, partición se interpreta como: Colección de eventos disjuntos entre sí cuya unión cubre todo el espacio muestral.",
+      "example": "Ejemplo: identificar o aplicar “Partición” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-permutacion",
+      "term": "Permutación",
+      "definition": "Ordenamiento de elementos en el que importa la posición que ocupa cada uno.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, permutación se interpreta como: Ordenamiento de elementos en el que importa la posición que ocupa cada uno.",
+      "example": "Ejemplo: identificar o aplicar “Permutación” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-permutacion-repeticion",
+      "term": "Permutación con repetición",
+      "definition": "Ordenamiento con elementos iguales en el que se corrigen las repeticiones dividiendo por los factoriales correspondientes.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, permutación con repetición se interpreta como: Ordenamiento con elementos iguales en el que se corrigen las repeticiones dividiendo por los factoriales correspondientes.",
+      "example": "Ejemplo: identificar o aplicar “Permutación con repetición” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-principio-multiplicacion",
+      "term": "Principio de multiplicación",
+      "definition": "Si una tarea se realiza en etapas sucesivas, la cantidad total de posibilidades se obtiene multiplicando las opciones de cada etapa.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, principio de multiplicación se interpreta como: Si una tarea se realiza en etapas sucesivas, la cantidad total de posibilidades se obtiene multiplicando las opciones de cada etapa.",
+      "example": "Ejemplo: identificar o aplicar “Principio de multiplicación” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-probabilidad",
+      "term": "Probabilidad",
+      "definition": "Número entre 0 y 1 que cuantifica qué tan posible es que ocurra un evento.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, probabilidad se interpreta como: Número entre 0 y 1 que cuantifica qué tan posible es que ocurra un evento.",
+      "example": "Ejemplo: identificar o aplicar “Probabilidad” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-probabilidad-condicional",
+      "term": "Probabilidad condicional",
+      "definition": "Probabilidad de que ocurra A cuando ya se sabe que ocurrió B.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, probabilidad condicional se interpreta como: Probabilidad de que ocurra A cuando ya se sabe que ocurrió B.",
+      "example": "Ejemplo: identificar o aplicar “Probabilidad condicional” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-probabilidad-total",
+      "term": "Probabilidad total",
+      "definition": "Calcula la probabilidad de un evento sumando los distintos caminos de una partición que pueden producirlo.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, probabilidad total se interpreta como: Calcula la probabilidad de un evento sumando los distintos caminos de una partición que pueden producirlo.",
+      "example": "Ejemplo: identificar o aplicar “Probabilidad total” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-reposicion",
+      "term": "Reposición",
+      "definition": "Acción de devolver el elemento extraído antes de efectuar la siguiente selección.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, reposición se interpreta como: Acción de devolver el elemento extraído antes de efectuar la siguiente selección.",
+      "example": "Ejemplo: identificar o aplicar “Reposición” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-resultado",
+      "term": "Resultado",
+      "definition": "Valor o posibilidad individual obtenida al realizar un experimento aleatorio.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, resultado se interpreta como: Valor o posibilidad individual obtenida al realizar un experimento aleatorio.",
+      "example": "Ejemplo: identificar o aplicar “Resultado” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-sextupla",
+      "term": "Sextupla",
+      "definition": "Lista ordenada de seis componentes utilizada para representar seis elecciones o resultados sucesivos.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, sextupla se interpreta como: Lista ordenada de seis componentes utilizada para representar seis elecciones o resultados sucesivos.",
+      "example": "Ejemplo: identificar o aplicar “Sextupla” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-bayes",
+      "term": "Teorema de Bayes",
+      "definition": "Permite invertir un condicionamiento y calcular la probabilidad de una causa a partir de una evidencia observada.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, teorema de bayes se interpreta como: Permite invertir un condicionamiento y calcular la probabilidad de una causa a partir de una evidencia observada.",
+      "example": "Ejemplo: identificar o aplicar “Teorema de Bayes” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    },
+    {
+      "id": "estadistica-glosario-union",
+      "term": "Unión",
+      "definition": "Evento formado por los resultados que pertenecen a A, a B o a ambos.",
+      "references": [
+        {
+          "sourceId": "estadistica-probabilidad-pdf",
+          "page": 1
+        }
+      ],
+      "explanation": "En probabilidad, unión se interpreta como: Evento formado por los resultados que pertenecen a A, a B o a ambos.",
+      "example": "Ejemplo: identificar o aplicar “Unión” al resolver un experimento aleatorio y justificar el resultado con la definición.",
+      "unit": "Probabilidad · teoría y Práctica 1",
+      "related": []
+    }
   ]
 }
