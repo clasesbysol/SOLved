@@ -1,7 +1,7 @@
 (function(){
   let DB_NAME=window.SOLVED_PROFILE_DB_NAME||"solved-profile-guest";
-  const DB_VERSION=8;
-  const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","importedHtml","userMaterials","notes","studySessions","collections","bookmarks","activityLog"];
+  const DB_VERSION=9;
+  const STORES=["kv","subjects","events","highlights","cardProgress","exerciseProgress","syncQueue","meta","contentPackages","importedHtml","userMaterials","officialMaterials","notes","studySessions","collections","bookmarks","activityLog"];
   let db=null, fallback=false;
   const FALLBACK_KEY="biblioteca-lbt-v050-fallback",LEGACY_FALLBACK_KEY="biblioteca-lbt-v04-fallback",TRANSIENT_META=new Set(["drive-device-id","drive-authoritative-restore","drive-authoritative-cutoff","drive-preference","drive-auth-preference","drive-auth-state","locks"]);
   let memoryFallback=Object.fromEntries(STORES.map(s=>[s,{}]));
@@ -33,6 +33,7 @@
         if(!d.objectStoreNames.contains("contentPackages"))d.createObjectStore("contentPackages",{keyPath:"id"});
         if(!d.objectStoreNames.contains("importedHtml")){const s=d.createObjectStore("importedHtml",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("order","order")}
         if(!d.objectStoreNames.contains("userMaterials")){const s=d.createObjectStore("userMaterials",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("section","section");s.createIndex("order","order")}
+        if(!d.objectStoreNames.contains("officialMaterials")){const s=d.createObjectStore("officialMaterials",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("section","section");s.createIndex("order","order")}
         if(!d.objectStoreNames.contains("notes")){const s=d.createObjectStore("notes",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("unitId","unitId")}
         if(!d.objectStoreNames.contains("studySessions")){const s=d.createObjectStore("studySessions",{keyPath:"id"});s.createIndex("subjectId","subjectId");s.createIndex("status","status")}
         if(!d.objectStoreNames.contains("collections"))d.createObjectStore("collections",{keyPath:"id"});

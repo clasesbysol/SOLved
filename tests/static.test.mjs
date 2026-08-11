@@ -52,7 +52,7 @@ for(const ref of ["js/supabase-config.js?v=0.8.0","js/supabase-sync.js?v=0.10.0"
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
 assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.10.0");
 assert.ok(index.includes("v0.10.0"), "La versión visible debe ser 0.10.0");
-const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=8'));for(const store of ["contentPackages","importedHtml","userMaterials","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
+const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=9'));for(const store of ["contentPackages","importedHtml","userMaterials","officialMaterials","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
 const workspace=await readFile("js/study-workspace.js","utf8");for(const id of ["uploadHtmlBtn","splitViewBtn"])assert.ok(index.includes(`id="${id}"`)&&workspace.includes(`$("${id}")`),`${id} debe estar vinculado`);assert.ok(workspace.includes('sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"')&&workspace.includes("connect-src 'none'")&&!workspace.includes("allow-same-origin"),"el HTML debe permanecer aislado");assert.doesNotMatch(app,/Documentos de la materia|Documentos de \$\{/i,"la sección antigua no debe renderizarse");
 assert.ok(db.includes("biblioteca-lbt-v050-fallback")&&db.includes("biblioteca-lbt-v04-fallback"),"el fallback nuevo debe migrar la clave histórica");
 assert.ok(db.includes("lbt-fallback-error"),"una cuota agotada debe producir una advertencia visible");
