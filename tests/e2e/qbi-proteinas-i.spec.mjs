@@ -104,3 +104,6 @@ test("@desktop QBI integra la guía de Electroforesis con respuestas desplegable
   await exercise.getByText("Ver respuesta explicada").click();
   await expect(exercise.getByText(/movilidad electroforética puede pensarse/)).toBeVisible();
 });
+
+
+test("@desktop QBI ofrece pestañas de estudio continuo y portada de guías",async({page})=>{await openSubject(page);const frame=page.frameLocator(".rich-document");await frame.getByRole("button",{name:"Proteínas I",exact:true}).click();await expect(frame.locator("#p1-aminoacidos")).toContainText("zwitterion");await frame.getByRole("button",{name:"Proteínas II",exact:true}).click();await expect(frame.locator("#p2-plegamiento")).toContainText("Levinthal");await page.getByRole("button",{name:"Ejercicios"}).click();await expect(page.getByRole("heading",{name:"¿Qué guía querés revisar?"})).toBeVisible();await expect(page.locator("[data-open-guide]")).toHaveCount(2)});
