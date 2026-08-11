@@ -7,8 +7,8 @@
   <title>SOLved — Tu espacio de estudio</title>
   <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.9.1">
-  <link rel="stylesheet" href="styles-enhancements.css?v=0.9.1">
+  <link rel="stylesheet" href="styles.css?v=0.10.0">
+  <link rel="stylesheet" href="styles-enhancements.css?v=0.10.0">
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.3">
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
@@ -207,7 +207,8 @@
           <button class="tool-btn" id="readingBtn">Modo lectura</button>
           <button class="tool-btn" id="readingSettingsBtn" title="Configurar preferencias de lectura">Ajustes de lectura</button>
           <button class="tool-btn" id="factoryFromStudy" aria-label="Abrir fábrica de estudio">Fabricar resumen</button>
-          <button class="tool-btn" id="uploadHtmlBtn">Subir HTML</button>
+          <button class="tool-btn" id="addPersonalBtn">+ Agregar contenido personal</button>
+          <button class="tool-btn" id="uploadHtmlBtn">Subir mi resumen</button>
           <button class="tool-btn" id="splitViewBtn" aria-pressed="false">Vista dividida</button>
           <span class="selection-help" id="selectionHelp">Seleccioná texto dentro del resumen.</span>
           <div class="toolbar-spacer"></div>
@@ -283,12 +284,15 @@
 
 <div class="modal-backdrop" id="htmlImportModal" hidden>
   <form class="modal html-import-modal" id="htmlImportForm">
-    <div class="modal-head"><h2 id="htmlImportTitle">Subir HTML</h2><button type="button" class="icon-btn" id="htmlImportClose" aria-label="Cerrar">×</button></div>
-    <label>Archivo HTML <input id="htmlFileInput" type="file" accept=".html,.htm,text/html" required></label>
-    <label>Título <input id="htmlTitleInput" maxlength="160" required></label>
+    <div class="modal-head"><h2 id="htmlImportTitle">Agregar contenido personal</h2><button type="button" class="icon-btn" id="htmlImportClose" aria-label="Cerrar">×</button></div>
+    <label>Sección <select id="materialSection"><option value="summary">Resumen</option><option value="glossary">Glosario</option></select></label>
+    <label id="officialMaterialLabel" data-owner-only hidden><input id="officialMaterialInput" type="checkbox"> Publicar en Biblioteca SOLved para todas las cuentas</label>
+    <label>Archivo opcional <input id="htmlFileInput" type="file" accept=".txt,.md,.pdf,.html,.htm,text/plain,text/markdown,application/pdf,text/html"></label>
+    <label>Título opcional <input id="htmlTitleInput" maxlength="500"></label>
+    <label id="materialTextLabel">Texto <textarea id="materialTextInput" rows="12" placeholder="Escribí o pegá tus apuntes. No hay un límite pequeño de caracteres."></textarea></label>
     <div class="html-import-preview"><iframe id="htmlPreviewFrame" title="Vista previa segura" sandbox="allow-scripts"></iframe></div>
-    <p id="htmlImportMessage" role="status" aria-live="polite">Elegí un archivo .html o .htm para ver la vista previa.</p>
-    <div class="modal-actions"><button type="button" class="soft-btn" id="htmlImportCancel">Cancelar</button><button class="primary-btn" id="htmlImportSave" disabled>Guardar</button></div>
+    <p id="htmlImportMessage" role="status" aria-live="polite">Podés escribir directamente o elegir TXT, Markdown, PDF, HTML o HTM.</p>
+    <div class="modal-actions"><button type="button" class="soft-btn" id="htmlImportCancel">Cancelar</button><button class="primary-btn" id="htmlImportSave">Guardar</button></div>
   </form>
 </div>
 <div class="modal-backdrop" id="installHelpModal" hidden>
@@ -309,23 +313,24 @@
     <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn" data-auth-submit>Continuar</button></div>
   </form>
 </div>
-<span class="app-version" aria-label="Versión de SOLved">v0.9.1</span>
+<span class="app-version" aria-label="Versión de SOLved">v0.10.0</span>
+<link rel="stylesheet" href="styles-personal.css?v=0.10.0">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="js/supabase-config.js?v=0.8.0"></script>
 <script src="js/auth.js?v=0.8.1"></script>
-<script src="js/data.js?v=0.9.1"></script>
-<script src="js/db.js?v=0.9.1"></script>
-<script src="js/supabase-sync.js?v=0.9.1"></script>
+<script src="js/data.js?v=0.10.0"></script>
+<script src="js/db.js?v=0.10.0"></script>
+<script src="js/supabase-sync.js?v=0.10.0"></script>
 <script src="js/organic-cards.js?v=0.7.3"></script>
 <script src="js/organic-mind-map.js?v=0.7.3"></script>
 <script src="js/sync.js?v=0.7.3"></script>
 <script src="js/content.js?v=0.8.1"></script>
-<script src="js/study-workspace.js?v=0.9.1"></script>
+<script src="js/study-workspace.js?v=0.10.0"></script>
 <script src="js/notes.js?v=0.7.3"></script>
-<script src="js/utilities.js?v=0.9.1"></script>
+<script src="js/utilities.js?v=0.10.0"></script>
 <script src="js/summary-factory.js?v=0.7.3"></script>
 <script src="js/career-factory.js?v=0.7.3"></script>
-<script src="js/app.js?v=0.9.1"></script>
+<script src="js/app.js?v=0.10.0"></script>
 </body>
 </html>
