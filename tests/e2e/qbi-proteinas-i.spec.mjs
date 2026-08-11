@@ -106,4 +106,21 @@ test("@desktop QBI integra la guía de Electroforesis con respuestas desplegable
 });
 
 
-test("@desktop QBI ofrece pestañas de estudio continuo y portada de guías",async({page})=>{await openSubject(page);const frame=page.frameLocator(".rich-document");await frame.getByRole("button",{name:"Proteínas I",exact:true}).click();await expect(frame.locator("#p1-aminoacidos")).toContainText("zwitterion");await frame.getByRole("button",{name:"Proteínas II",exact:true}).click();await expect(frame.locator("#p2-plegamiento")).toContainText("Levinthal");await page.getByRole("button",{name:"Ejercicios"}).click();await expect(page.getByRole("heading",{name:"¿Qué guía querés revisar?"})).toBeVisible();await expect(page.locator("[data-open-guide]")).toHaveCount(2)});
+test("@desktop QBI ofrece unidades completas, carrusel de métodos y portada de guías",async({page})=>{
+  await openSubject(page);
+  const frame=page.frameLocator(".rich-document");
+  await frame.getByRole("button",{name:"Proteínas I",exact:true}).click();
+  await expect(frame.locator("#proteins1 .deep-study-unit")).toHaveCount(41);
+  await expect(frame.locator("#proteins1 .method-carousel-links a")).toHaveCount(10);
+  await expect(frame.locator("#proteins1")).toContainText("Henderson–Hasselbalch");
+  await expect(frame.locator("#proteins1")).toContainText("SDS-PAGE");
+  await frame.locator("#proteins1 .method-carousel-links a").filter({hasText:"PAGE nativa"}).click();
+  await expect(frame.locator("#p1-method-page-nativa")).toBeInViewport();
+  await frame.getByRole("button",{name:"Proteínas II",exact:true}).click();
+  await expect(frame.locator("#proteins2 .deep-study-unit")).toHaveCount(42);
+  await expect(frame.locator("#p2-folding")).toContainText("Levinthal");
+  await expect(frame.locator("#p2-calculations")).toContainText("actividad específica");
+  await page.getByRole("button",{name:"Ejercicios"}).click();
+  await expect(page.getByRole("heading",{name:"¿Qué guía querés revisar?"})).toBeVisible();
+  await expect(page.locator("[data-open-guide]")).toHaveCount(2);
+});
