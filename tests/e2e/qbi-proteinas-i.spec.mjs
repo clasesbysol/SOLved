@@ -99,8 +99,8 @@ test("@desktop QBI integra la guía de Electroforesis con respuestas desplegable
   const guide=page.getByText(/Guía de Problemas · Electroforesis · 7 ejercicios/);
   await expect(guide).toBeVisible();
   await guide.click();
-  const exercise=page.getByText(/Ejercicio 1 · Discuta las siguientes afirmaciones/);
-  await exercise.click();
-  await page.getByText("Ver respuesta explicada").first().click();
-  await expect(page.getByText(/movilidad electroforética puede pensarse/)).toBeVisible();
+  const exercise=page.locator(".qbi-solved-exercise").filter({hasText:/Ejercicio 1 · Discuta las siguientes afirmaciones/});
+  await exercise.locator("summary").first().click();
+  await exercise.getByText("Ver respuesta explicada").click();
+  await expect(exercise.getByText(/movilidad electroforética puede pensarse/)).toBeVisible();
 });
