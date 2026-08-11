@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0100-1";
+const CACHE_VERSION = "biblioteca-lbt-v0100-2";
 const CORE = [
   "./",
   "./index.html",
