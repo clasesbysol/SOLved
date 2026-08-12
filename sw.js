@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0100-5";
+const CACHE_VERSION = "biblioteca-lbt-v0100-6";
 const CORE = [
   "./",
   "./index.html",
@@ -17,7 +17,7 @@ const CORE = [
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
   "./js/sync.js?v=0.7.3",
-  "./js/content.js?v=0.8.2",
+  "./js/content.js?v=0.8.3",
   "./js/study-workspace.js?v=0.10.0",
   "./js/notes.js?v=0.7.3",
   "./js/utilities.js?v=0.10.0",
