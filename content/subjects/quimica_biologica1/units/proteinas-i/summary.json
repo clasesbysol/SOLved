@@ -6,10 +6,9 @@
       "text": "Resumen unificado de Química Biológica: aminoácidos, equilibrio ácido-base, péptidos, estructura y plegamiento de proteínas, membranas, purificación, cromatografías y electroforesis. La vista principal usa la interfaz SOLved con índice, búsqueda, color rosa personalizable, modo claro/oscuro, carrusel de métodos, simuladores y resaltado persistente mediante la sincronización nativa de la app.",
       "kind": "theory",
       "references": [
-        {"sourceId": "qbi-aa-peptidos-proteinas-pdf"},
-        {"sourceId": "qbi-proteinas-teorico-pdf"},
-        {"sourceId": "qbi-proteinas-exercises"},
-        {"sourceId": "qbi-electroforesis-video"}
+        {"sourceId": "qbi-teorico-proteinas-i"},
+        {"sourceId": "qbi-resumen-parcial-1"},
+        {"sourceId": "qbi-guide-proteinas-i"}
       ]
     }
   ]
