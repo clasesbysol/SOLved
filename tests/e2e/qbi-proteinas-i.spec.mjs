@@ -17,8 +17,8 @@ const openQbiExercises=async page=>{
 const startFullGuide=async page=>{
   await openQbiExercises(page);
   await page.getByRole("button",{name:"Seleccionar toda la guía"}).click();
-  await page.getByRole("button",{name:/Comenzar · 35 ejercicios/}).click();
-  await expect(page.getByText("Ejercicio 1 de 35",{exact:true})).toBeVisible();
+  await page.getByRole("button",{name:/Comenzar · 43 ejercicios/}).click();
+  await expect(page.getByText("Ejercicio 1 de 43",{exact:true})).toBeVisible();
 };
 
 test("@desktop QBI abre el resumen integral v3 con interfaz SOLved",async({page})=>{
@@ -26,7 +26,7 @@ test("@desktop QBI abre el resumen integral v3 con interfaz SOLved",async({page}
   await expect(page.locator("#studyUnit")).toHaveValue("proteinas-i");
   await expect(page.locator("#studyUnit option:checked")).toHaveText("Resumen integral · Proteínas y métodos");
   const frameElement=page.locator(".rich-document");
-  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=3\.0\.0$/);
+  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=3\.1\.0$/);
   await expect(frameElement).toHaveAttribute("sandbox","allow-scripts");
   const frame=page.frameLocator(".rich-document");
   await expect(frame.locator("#qb-top")).toBeVisible({timeout:20000});
@@ -80,24 +80,24 @@ test("@desktop QBI clasifica derecha, izquierda y abajo después de girar",async
   await startFullGuide(page);
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Correcta",exact:true}).click();
-  await expect(page.getByText("1 de 35 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("1 de 43 clasificados",{exact:true})).toBeVisible();
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Incorrecta",exact:true}).click();
-  await expect(page.getByText("2 de 35 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("2 de 43 clasificados",{exact:true})).toBeVisible();
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Revisar",exact:true}).click();
-  await expect(page.getByText("3 de 35 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("3 de 43 clasificados",{exact:true})).toBeVisible();
 });
 
 test("@desktop QBI conserva el progreso después de recargar",async({page})=>{
   await startFullGuide(page);
   await page.getByRole("button",{name:"Ver respuesta"}).click();
   await page.getByRole("button",{name:"Correcta",exact:true}).click();
-  await expect(page.getByText("1 de 35 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("1 de 43 clasificados",{exact:true})).toBeVisible();
   await page.reload();
   await page.locator('[data-open="quimica_biologica1"]').first().click();
   await page.getByRole("button",{name:"Ejercicios"}).click();
-  await expect(page.getByText("1 de 35 clasificados",{exact:true})).toBeVisible();
+  await expect(page.getByText("1 de 43 clasificados",{exact:true})).toBeVisible();
 });
 
 test("@desktop la integración QBI no altera tarjetas ni mapa de Orgánica",async({page})=>{

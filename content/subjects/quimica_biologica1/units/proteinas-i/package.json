@@ -5,10 +5,10 @@
   "subjectId": "quimica_biologica1",
   "unitId": "proteinas-i",
   "title": "Resumen integral · Proteínas y métodos",
-  "contentVersion": "3.0.0",
+  "contentVersion": "3.1.0",
   "status": "published",
-  "generatedAt": "2026-08-13T00:44:00.000Z",
-  "reviewedAt": "2026-08-13T00:44:00.000Z",
+  "generatedAt": "2026-08-13T11:30:00.000Z",
+  "reviewedAt": "2026-08-13T11:30:00.000Z",
   "files": {
     "summary": "summary.json",
     "glossary": "glossary.json",
