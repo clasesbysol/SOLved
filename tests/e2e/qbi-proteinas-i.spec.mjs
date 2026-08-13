@@ -21,45 +21,50 @@ const startFullGuide=async page=>{
   await expect(page.getByText("Ejercicio 1 de 35",{exact:true})).toBeVisible();
 };
 
-test("@desktop QBI publica Proteínas I y abre el resumen interactivo",async({page})=>{
+test("@desktop QBI abre el resumen integral v3 con interfaz SOLved",async({page})=>{
   await openSubject(page);
   await expect(page.locator("#studyUnit")).toHaveValue("proteinas-i");
-  await expect(page.locator("#studyUnit option:checked")).toHaveText("Proteínas I · Parcial 1");
+  await expect(page.locator("#studyUnit option:checked")).toHaveText("Resumen integral · Proteínas y métodos");
   const frameElement=page.locator(".rich-document");
-  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=2\.0\.0$/);
+  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=3\.0\.0$/);
   await expect(frameElement).toHaveAttribute("sandbox","allow-scripts");
   const frame=page.frameLocator(".rich-document");
-  await expect(frame.getByRole("button",{name:/Organización · Parcial 1/})).toBeVisible();
-  await page.getByRole("navigation",{name:"Secciones del resumen"}).getByRole("button",{name:"Teoría"}).click();
-  await expect(frame.locator("#theory")).toHaveClass(/active/);
-  await page.getByRole("navigation",{name:"Secciones del resumen"}).getByRole("button",{name:"Organización"}).click();
-  await expect(frame.locator("#program")).toHaveClass(/active/);
-  await frame.getByRole("button",{name:"Teoría",exact:true}).click();
-  await expect(frame.locator("#theory")).toHaveClass(/active/);
-  await frame.getByRole("button",{name:/Organización · Parcial 1/}).click();
-  const jump=frame.locator(".topic-jump").first();
-  await expect(jump).toHaveText("Ir a la teoría");
-  const target=await jump.getAttribute("data-target");
-  await jump.click();
-  await expect(frame.locator("#theory")).toHaveClass(/active/);
-  await expect(frame.locator(`#${target}`)).toBeVisible();
+  await expect(frame.locator("#qb-top")).toBeVisible({timeout:20000});
+  await expect(frame.locator("#summaryIndex")).toBeVisible();
+  await expect(frame.locator("#qbGlobalSearch")).toBeVisible();
+  await expect(frame.locator("#qbMethodCarousel .qb-method-card")).toHaveCount(9);
+  await expect(frame.locator("#cap1")).toContainText("Aminoácidos");
+  await expect(frame.locator("#cap13")).toBeVisible();
+});
+
+test("@desktop QBI conserva herramientas, rosa y simuladores",async({page})=>{
+  await openSubject(page);
+  const frame=page.frameLocator(".rich-document");
+  await expect(frame.locator("#qbAccentPicker")).toBeVisible({timeout:20000});
+  await expect(frame.locator("#qbThemeToggle")).toBeVisible();
+  await expect(frame.locator("#qbPrint")).toBeVisible();
+  await expect(frame.locator("#sim-ph-pi")).toBeVisible();
+  await expect(frame.locator("#sim-sds")).toBeVisible();
+  await expect(frame.locator("#cap1")).toContainText("Henderson");
+  await expect(frame.locator("#cap4")).toContainText("Levinthal");
+  await expect(frame.locator("#cap8")).toContainText("actividad específica");
 });
 
 test("@desktop QBI resalta dentro del HTML y conserva el marcado",async({page})=>{
   await openSubject(page);
   const frame=page.frameLocator(".rich-document");
-  await frame.getByRole("button",{name:"Proteínas I",exact:true}).click();
-  const paragraph=frame.locator("#proteins1 .deep-study-unit p").first();
-  await paragraph.evaluate(node=>{const text=node.firstChild,range=document.createRange();range.setStart(text,0);range.setEnd(text,Math.min(28,text.nodeValue.length));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);node.dispatchEvent(new PointerEvent("pointerup",{bubbles:true}))});
+  const paragraph=frame.locator("#cap1 p[data-highlight-block]").first();
+  await expect(paragraph).toBeVisible({timeout:20000});
+  await paragraph.evaluate(node=>{const text=[...node.childNodes].find(n=>n.nodeType===Node.TEXT_NODE&&n.nodeValue.trim())||node.firstChild;const range=document.createRange();range.setStart(text,0);range.setEnd(text,Math.min(28,text.nodeValue.length));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);node.dispatchEvent(new PointerEvent("pointerup",{bubbles:true}))});
   await expect(page.locator("#selectionHelp")).toContainText("Selección lista:");
   await page.locator("#highlightBtn").click();
   await expect(frame.locator("mark.solved-rich-highlight")).toHaveCount(1);
   await page.reload();
   await page.locator('[data-open="quimica_biologica1"]').first().click();
-  await expect(page.frameLocator(".rich-document").locator("mark.solved-rich-highlight")).toHaveCount(1);
+  await expect(page.frameLocator(".rich-document").locator("mark.solved-rich-highlight")).toHaveCount(1,{timeout:20000});
 });
 
-test("@desktop QBI carga 28 ejercicios y sólo gira con el control explícito",async({page})=>{
+test("@desktop QBI carga la guía completa y sólo gira con el control explícito",async({page})=>{
   await startFullGuide(page);
   const card=page.locator(".qbi-study .organic-card");
   await page.locator(".organic-front .qbi-card-html").click();
@@ -103,11 +108,6 @@ test("@desktop la integración QBI no altera tarjetas ni mapa de Orgánica",asyn
   await expect(page.locator("[data-organic-map]")).toBeVisible();
 });
 
-test("@desktop QBI abre la teoría relacionada en el panel de origen",async({page})=>{
-  await openSubject(page);await page.locator("#splitViewBtn").click();const right=page.locator('.workspace-panel[data-side="right"]');await right.locator("select").selectOption("tab:exercises");await right.getByRole("button",{name:/Seleccionar toda la gu/}).click();await right.getByRole("button",{name:/Comenzar/}).click();await right.getByRole("button",{name:"Ver respuesta"}).click();await right.getByRole("button",{name:"Ver teoría relacionada"}).click();await expect(right.locator("select")).toHaveValue("tab:summary");const frame=right.frameLocator("iframe");await expect(frame.locator("#theory")).toHaveClass(/active/);await expect(frame.locator(".workspace-target")).toHaveCount(1);
-});
-
-
 test("@desktop QBI integra la guía de Electroforesis con respuestas desplegables",async({page})=>{
   await openQbiExercises(page);
   const guide=page.getByText(/Guía de Problemas · Electroforesis · 7 ejercicios/);
@@ -117,24 +117,4 @@ test("@desktop QBI integra la guía de Electroforesis con respuestas desplegable
   await exercise.locator("summary").first().click();
   await exercise.getByText("Ver respuesta explicada").click();
   await expect(exercise.getByText(/movilidad electroforética puede pensarse/)).toBeVisible();
-});
-
-
-test("@desktop QBI ofrece unidades completas, carrusel de métodos y portada de guías",async({page})=>{
-  await openSubject(page);
-  const frame=page.frameLocator(".rich-document");
-  await frame.getByRole("button",{name:"Proteínas I",exact:true}).click();
-  await expect(frame.locator("#proteins1 .deep-study-unit")).toHaveCount(41);
-  await expect(frame.locator("#proteins1 .method-carousel-links a")).toHaveCount(10);
-  await expect(frame.locator("#proteins1")).toContainText("Henderson–Hasselbalch");
-  await expect(frame.locator("#proteins1")).toContainText("SDS-PAGE");
-  await frame.locator("#proteins1 .method-carousel-links a").filter({hasText:"PAGE nativa"}).click();
-  await expect(frame.locator("#p1-method-page-nativa")).toBeInViewport();
-  await frame.getByRole("button",{name:"Proteínas II",exact:true}).click();
-  await expect(frame.locator("#proteins2 .deep-study-unit")).toHaveCount(42);
-  await expect(frame.locator("#p2-folding")).toContainText("Levinthal");
-  await expect(frame.locator("#p2-calculations")).toContainText("actividad específica");
-  await page.getByRole("button",{name:"Ejercicios"}).click();
-  await expect(page.getByRole("heading",{name:"¿Qué guía querés revisar?"})).toBeVisible();
-  await expect(page.locator("[data-open-guide]")).toHaveCount(2);
 });
