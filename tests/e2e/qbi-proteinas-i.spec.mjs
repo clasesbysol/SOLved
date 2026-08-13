@@ -26,7 +26,7 @@ test("@desktop QBI abre el resumen integral v3 con interfaz SOLved",async({page}
   await expect(page.locator("#studyUnit")).toHaveValue("proteinas-i");
   await expect(page.locator("#studyUnit option:checked")).toHaveText("Resumen integral · Proteínas y métodos");
   const frameElement=page.locator(".rich-document");
-  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=3\.1\.0$/);
+  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=3\.2\.0$/);
   await expect(frameElement).toHaveAttribute("sandbox","allow-scripts");
   const frame=page.frameLocator(".rich-document");
   await expect(frame.locator("#qb-top")).toBeVisible({timeout:20000});
@@ -48,6 +48,16 @@ test("@desktop QBI conserva herramientas, rosa y simuladores",async({page})=>{
   await expect(frame.locator("#cap1")).toContainText("Henderson");
   await expect(frame.locator("#cap4")).toContainText("Levinthal");
   await expect(frame.locator("#cap8")).toContainText("actividad específica");
+});
+
+test("@desktop QBI desarrolla en profundidad los trece capítulos",async({page})=>{
+  await openSubject(page);
+  const frame=page.frameLocator(".rich-document");
+  await expect(frame.locator('[data-deepening="v32"]')).toHaveCount(13,{timeout:20000});
+  await expect(frame.locator("#cap2")).toContainText("Ángulo φ");
+  await expect(frame.locator("#cap3")).toContainText("Cadena polipeptídica");
+  await expect(frame.locator("#cap3")).toContainText("Subunidad");
+  await expect(frame.locator("#cap10")).toContainText("estequiometría");
 });
 
 test("@desktop QBI resalta dentro del HTML y conserva el marcado",async({page})=>{

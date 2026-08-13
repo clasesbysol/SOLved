@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0100-8";
+const CACHE_VERSION = "biblioteca-lbt-v0100-9";
 const CORE = [
   "./",
   "./index.html",
@@ -34,6 +34,7 @@ const CORE = [
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-4.txt",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-5.txt",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-6.txt",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-7.txt",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-v1.json",
   "./manifest.webmanifest",
