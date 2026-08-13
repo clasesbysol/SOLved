@@ -26,7 +26,7 @@ test("@desktop QBI publica Proteínas I y abre el resumen interactivo",async({pa
   await expect(page.locator("#studyUnit")).toHaveValue("proteinas-i");
   await expect(page.locator("#studyUnit option:checked")).toHaveText("Proteínas I · Parcial 1");
   const frameElement=page.locator(".rich-document");
-  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html$/);
+  await expect(frameElement).toHaveAttribute("src",/quimica_biologica1\/units\/proteinas-i\/original\.html\?v=2\.0\.0$/);
   await expect(frameElement).toHaveAttribute("sandbox","allow-scripts");
   const frame=page.frameLocator(".rich-document");
   await expect(frame.getByRole("button",{name:/Organización · Parcial 1/})).toBeVisible();
@@ -43,6 +43,20 @@ test("@desktop QBI publica Proteínas I y abre el resumen interactivo",async({pa
   await jump.click();
   await expect(frame.locator("#theory")).toHaveClass(/active/);
   await expect(frame.locator(`#${target}`)).toBeVisible();
+});
+
+test("@desktop QBI resalta dentro del HTML y conserva el marcado",async({page})=>{
+  await openSubject(page);
+  const frame=page.frameLocator(".rich-document");
+  await frame.getByRole("button",{name:"Proteínas I",exact:true}).click();
+  const paragraph=frame.locator("#proteins1 .deep-study-unit p").first();
+  await paragraph.evaluate(node=>{const text=node.firstChild,range=document.createRange();range.setStart(text,0);range.setEnd(text,Math.min(28,text.nodeValue.length));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);node.dispatchEvent(new PointerEvent("pointerup",{bubbles:true}))});
+  await expect(page.locator("#selectionHelp")).toContainText("Selección lista:");
+  await page.locator("#highlightBtn").click();
+  await expect(frame.locator("mark.solved-rich-highlight")).toHaveCount(1);
+  await page.reload();
+  await page.locator('[data-open="quimica_biologica1"]').first().click();
+  await expect(page.frameLocator(".rich-document").locator("mark.solved-rich-highlight")).toHaveCount(1);
 });
 
 test("@desktop QBI carga 28 ejercicios y sólo gira con el control explícito",async({page})=>{
