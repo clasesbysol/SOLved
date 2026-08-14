@@ -95,9 +95,15 @@
       if(!window.google?.accounts?.oauth2)throw new Error("Google Identity Services no pudo cargarse.");
       this.tokenClient=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPE,callback:async response=>{const resolve=this.authResolve,reject=this.authReject;try{if(response.error)throw new Error("Google no autorizó la conexión.");this.token=response.access_token;this.expiresAt=Date.now()+Number(response.expires_in||3600)*1000;this.needsReconnect=false;this.drivePreference="enabled";await this.DB.put("meta",{key:"drive-preference",value:"enabled",updatedAt:new Date().toISOString()});if(this.blockedAfterReplace){this.onState("pending-authoritative");resolve?.();return}await this.syncNow();resolve?.()}catch(error){reject?.(error)}},error_callback:error=>{this.authReject?.(new Error(error?.type==="popup_closed"?"Se cerró la ventana de Google.":error?.type==="popup_failed_to_open"?"Google no pudo abrir la ventana de autorización.":"Falló la autorización de Google."))}});return this.tokenClient
     }
-    requestToken(){
+    requestToken(options={prompt:""}){
       if(this.authInFlight)return this.authInFlight;
-      try{const client=this.ensureTokenClient();this.authInFlight=new Promise((resolve,reject)=>{this.authResolve=resolve;this.authReject=reject;client.requestAccessToken({prompt:""})}).finally(()=>{this.authInFlight=null;this.authResolve=null;this.authReject=null});return this.authInFlight}catch(error){return Promise.reject(error)}
+      try{const client=this.ensureTokenClient();this.authInFlight=new Promise((resolve,reject)=>{this.authResolve=resolve;this.authReject=reject;client.requestAccessToken(options)}).finally(()=>{this.authInFlight=null;this.authResolve=null;this.authReject=null});return this.authInFlight}catch(error){return Promise.reject(error)}
+    }
+    async tryAutoReconnect(){
+      if(this.drivePreference!=="enabled"||this.hasToken()||!navigator.onLine)return false;
+      for(let attempt=0;attempt<20&&!window.google?.accounts?.oauth2;attempt++)await new Promise(resolve=>setTimeout(resolve,250));
+      if(!window.google?.accounts?.oauth2){this.pauseForReconnect();return false}
+      try{await this.requestToken({prompt:""});return this.hasToken()}catch(_){this.pauseForReconnect();return false}
     }
     pauseForReconnect(){this.token=null;this.expiresAt=0;if(!this.needsReconnect){this.needsReconnect=true;this.onState("reconnect")}}
     async disconnect(){const token=this.token;this.token=null;this.expiresAt=0;this.needsReconnect=false;this.drivePreference="disconnected";clearTimeout(this.timer);await this.DB.put("meta",{key:"drive-preference",value:"disconnected",updatedAt:new Date().toISOString()});this.onState("disconnected");try{if(token&&window.google?.accounts?.oauth2?.revoke)google.accounts.oauth2.revoke(token,()=>{})}catch(_){/* la copia local sigue disponible */}}
