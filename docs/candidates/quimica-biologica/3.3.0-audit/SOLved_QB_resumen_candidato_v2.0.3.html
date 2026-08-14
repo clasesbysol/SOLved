@@ -1,0 +1,613 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ec4899"><title>SOLved · Química Biológica 3.0</title><style>body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#fff8fc}
+/* SOLved · Química Biológica · resumen integral v3 */
+.qb-summary{
+  --qb-hue:var(--subject-hue,334);
+  --qb-accent:hsl(var(--qb-hue) 78% 53%);
+  --qb-accent-strong:hsl(var(--qb-hue) 76% 41%);
+  --qb-accent-soft:hsl(var(--qb-hue) 82% 95%);
+  --qb-accent-faint:hsl(var(--qb-hue) 72% 98%);
+  --qb-ink:#2b2030;
+  --qb-muted:#76687c;
+  --qb-bg:#fff8fc;
+  --qb-panel:#ffffff;
+  --qb-panel-2:#fff1f7;
+  --qb-border:#efd3e0;
+  --qb-shadow:0 12px 28px rgba(104,42,75,.08);
+  --qb-highlight:#ffe56f;
+  --qb-sidebar-w:252px;
+  color:var(--qb-ink);background:var(--qb-bg);border-radius:24px;overflow:visible;position:relative;line-height:1.72;min-height:100vh;
+}
+[data-theme="dark"] .qb-summary,.dark .qb-summary,.qb-summary[data-standalone-theme="dark"]{
+  --qb-ink:#f8edf4;--qb-muted:#cbb8c4;--qb-bg:#171216;--qb-panel:#21191f;--qb-panel-2:#2a1c25;--qb-border:#4a3040;--qb-accent-soft:hsl(var(--qb-hue) 35% 18%);--qb-accent-faint:#1c151a;--qb-shadow:none;--qb-highlight:#9b7a08;
+}
+.qb-summary *{box-sizing:border-box}.qb-summary a{color:inherit}.qb-summary button,.qb-summary input{font:inherit}.qb-reading-progress{position:sticky;top:0;height:4px;z-index:60;background:transparent}.qb-reading-progress i{display:block;width:0;height:100%;background:var(--qb-accent);transition:width .08s linear}
+.qb-doc-shell{display:grid;grid-template-columns:var(--qb-sidebar-w) minmax(0,1fr);align-items:start;min-height:100vh}.qb-sidebar{position:sticky;top:14px;max-height:calc(100vh - 28px);overflow:auto;margin:14px 0 14px 14px;border:1px solid var(--qb-border);border-radius:20px;background:var(--qb-panel);box-shadow:var(--qb-shadow);z-index:20}.qb-sidebar::-webkit-scrollbar{width:5px}.qb-sidebar::-webkit-scrollbar-thumb{background:var(--qb-border);border-radius:10px}.qb-sidebar-brand{padding:20px 18px 15px;border-bottom:1px solid var(--qb-border)}.qb-sidebar-brand span{display:block;font-size:.68rem;letter-spacing:.16em;font-weight:900;color:var(--qb-accent);text-transform:uppercase}.qb-sidebar-brand strong{display:block;font-size:1.02rem;margin-top:3px}.qb-sidebar-brand small{display:block;color:var(--qb-muted);margin-top:2px}
+.qb-search{display:grid;grid-template-columns:24px 1fr 25px;align-items:center;gap:2px;margin:13px 12px 8px;padding:7px 9px;border:1px solid var(--qb-border);border-radius:11px;background:var(--qb-bg)}.qb-search input{min-width:0;border:0;outline:0;background:transparent;color:inherit;font-size:.83rem}.qb-search>span{color:var(--qb-accent);font-weight:900}.qb-search button{border:0;background:transparent;color:var(--qb-muted);cursor:pointer}.qb-search-results{display:none;margin:0 12px 10px;border:1px solid var(--qb-border);border-radius:11px;background:var(--qb-panel);overflow:hidden}.qb-search-results.open{display:block}.qb-search-results button{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--qb-border);padding:9px 10px;background:transparent;color:inherit;cursor:pointer;font-size:.78rem}.qb-search-results button:last-child{border-bottom:0}.qb-search-results button:hover{background:var(--qb-accent-soft)}.qb-search-results b{color:var(--qb-accent)}
+.qb-index{padding:6px 10px 10px;display:flex;flex-direction:column;gap:2px}.qb-index strong{display:block;padding:8px 8px 6px;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--qb-muted)}.qb-index a{display:block;text-decoration:none;padding:6px 8px;border-radius:8px;font-size:.79rem;line-height:1.25;color:var(--qb-muted);border-left:3px solid transparent}.qb-index a:hover,.qb-index a.active{background:var(--qb-accent-soft);color:var(--qb-ink);border-left-color:var(--qb-accent)}
+.qb-sidebar-tools{padding:7px 12px 14px;border-top:1px solid var(--qb-border)}.qb-sidebar-tools details{border-bottom:1px solid var(--qb-border);padding:3px 0}.qb-sidebar-tools summary{cursor:pointer;padding:9px 2px;font-weight:800;font-size:.8rem;color:var(--qb-accent-strong)}.qb-color-row{display:flex;gap:7px;flex-wrap:wrap;padding:2px 0 8px}.qb-color-row button{width:23px;height:23px;border-radius:50%;background:var(--swatch);border:2px solid var(--qb-panel);outline:1px solid var(--qb-border);cursor:pointer}.qb-color-row button.active{outline:3px solid var(--qb-accent)}.qb-color-custom{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.76rem;color:var(--qb-muted);margin-bottom:7px}.qb-color-custom input{width:38px;height:28px;border:0;background:transparent}.qb-side-button{width:100%;margin:4px 0;border:1px solid var(--qb-border);background:var(--qb-bg);color:inherit;border-radius:9px;padding:7px 9px;text-align:left;font-size:.77rem;cursor:pointer}.qb-side-button:hover{border-color:var(--qb-accent);background:var(--qb-accent-soft)}
+.qb-sidebar-scrim{display:none}.qb-mobile-index{display:none;position:fixed;left:16px;bottom:18px;z-index:80;border:0;border-radius:999px;width:48px;height:48px;background:var(--qb-accent);color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.18);font-weight:900}.qb-document{min-width:0;max-width:1180px;width:100%;margin:0 auto;padding:18px clamp(18px,4vw,56px) 70px;position:relative}.qb-utility-bar{position:sticky;top:8px;z-index:15;display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:8px 10px;margin:0 0 20px;border:1px solid var(--qb-border);border-radius:14px;background:color-mix(in srgb,var(--qb-panel) 94%,transparent);backdrop-filter:blur(10px)}.qb-utility-bar button{border:1px solid var(--qb-border);background:var(--qb-panel);color:inherit;border-radius:9px;padding:7px 10px;font-size:.77rem;font-weight:800;cursor:pointer}.qb-utility-bar button:hover{border-color:var(--qb-accent);color:var(--qb-accent-strong)}.qb-tool-status{margin-left:auto;color:var(--qb-muted);font-size:.73rem;min-height:1em}
+.qb-hero{padding:28px 0 34px;border-bottom:2px solid var(--qb-border)}.qb-kicker,.qb-eyebrow{display:inline-block;color:var(--qb-accent);font-size:.71rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.qb-hero h1{font-size:clamp(2.2rem,5vw,4.8rem);line-height:1.02;letter-spacing:-.052em;margin:8px 0 17px;max-width:920px;color:var(--qb-ink)}.qb-lead{max-width:910px;font-size:clamp(1.06rem,2vw,1.28rem);color:var(--qb-muted);margin:0}.qb-hero-badges,.qb-hero-rules{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.qb-hero-badges span{background:var(--qb-accent);color:white;padding:5px 9px;border-radius:8px;font-size:.72rem;font-weight:900}.qb-hero-rules{margin-top:10px}.qb-hero-rules span{border:1px solid var(--qb-border);background:var(--qb-panel);padding:6px 10px;border-radius:999px;font-size:.78rem}
+.qb-method-hub{padding:48px 0 26px;border-bottom:1px solid var(--qb-border);scroll-margin-top:90px}.qb-section-heading h2{font-size:clamp(1.55rem,3vw,2.3rem);margin:5px 0 8px;letter-spacing:-.03em}.qb-section-heading p{color:var(--qb-muted);max-width:760px;margin:0}.qb-carousel-shell{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;gap:8px;align-items:center;margin-top:18px}.qb-carousel-btn{height:52px;border:1px solid var(--qb-border);border-radius:12px;background:var(--qb-panel);color:var(--qb-accent);font-size:1.7rem;cursor:pointer}.qb-method-carousel{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,31%);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding:3px}.qb-method-card{scroll-snap-align:start;display:flex;flex-direction:column;min-height:260px;text-decoration:none;border:1px solid var(--qb-border);border-radius:16px;background:var(--qb-panel);padding:16px;transition:transform .15s,border-color .15s}.qb-method-card:hover{transform:translateY(-2px);border-color:var(--qb-accent)}.qb-method-tag{font-size:.63rem;letter-spacing:.12em;font-weight:900;color:var(--qb-accent);margin:10px 0 2px}.qb-method-card h3{margin:0 0 7px!important;font-size:1.05rem!important}.qb-method-card p{font-size:.85rem;margin:0!important}.qb-method-card small{margin-top:auto;padding-top:9px;color:var(--qb-muted);font-size:.75rem}.qb-mini-diagram{height:66px;border:1px solid var(--qb-border);border-radius:11px;background:var(--qb-accent-faint);position:relative;overflow:hidden}.qb-mini-diagram i{position:absolute;display:block;background:var(--qb-accent)}.qb-mini-diagram.ion i{width:18px;height:18px;border-radius:50%;top:23px}.qb-mini-diagram.ion i:nth-child(1){left:18%}.qb-mini-diagram.ion i:nth-child(2){left:48%;width:9px}.qb-mini-diagram.ion i:nth-child(3){right:16%;opacity:.35}.qb-mini-diagram.ion:after{content:'− − − −';position:absolute;right:8px;top:5px;color:var(--qb-accent-strong);letter-spacing:5px}.qb-mini-diagram.size i{border-radius:50%;bottom:12px}.qb-mini-diagram.size i:nth-child(1){width:34px;height:34px;left:12%}.qb-mini-diagram.size i:nth-child(2){width:20px;height:20px;left:48%}.qb-mini-diagram.size i:nth-child(3){width:10px;height:10px;right:13%}.qb-mini-diagram.affinity:before{content:'Y   Y   Y';position:absolute;bottom:6px;left:14px;color:var(--qb-accent-strong);font-weight:900;letter-spacing:12px}.qb-mini-diagram.affinity i{width:13px;height:13px;border-radius:50%;top:12px}.qb-mini-diagram.affinity i:nth-child(1){left:18%}.qb-mini-diagram.affinity i:nth-child(2){left:48%;opacity:.25}.qb-mini-diagram.affinity i:nth-child(3){right:18%;opacity:.25}.qb-mini-diagram.gel:before,.qb-mini-diagram.sds:before,.qb-mini-diagram.ief:before,.qb-mini-diagram.twod:before,.qb-mini-diagram.western:before,.qb-mini-diagram.ms:before{content:'';position:absolute;inset:8px 24px;border:1px solid var(--qb-border);background:var(--qb-panel)}.qb-mini-diagram.gel i,.qb-mini-diagram.sds i{height:4px;border-radius:4px;left:32%;right:32%}.qb-mini-diagram.gel i:nth-child(1){top:18px}.qb-mini-diagram.gel i:nth-child(2){top:34px;width:22%;left:20%}.qb-mini-diagram.gel i:nth-child(3){top:48px;width:18%;left:58%}.qb-mini-diagram.sds i:nth-child(1){top:18px}.qb-mini-diagram.sds i:nth-child(2){top:33px;width:27%;left:36%}.qb-mini-diagram.sds i:nth-child(3){top:50px;width:15%;left:42%}.qb-mini-diagram.ief:after{content:'3     7     10';position:absolute;bottom:5px;left:31px;font-size:.62rem;color:var(--qb-muted)}.qb-mini-diagram.ief i{width:4px;height:30px;top:14px}.qb-mini-diagram.ief i:nth-child(1){left:35%}.qb-mini-diagram.ief i:nth-child(2){left:58%}.qb-mini-diagram.ief i:nth-child(3){left:70%}.qb-mini-diagram.twod i{width:7px;height:7px;border-radius:50%}.qb-mini-diagram.twod i:nth-child(1){left:33%;top:18px}.qb-mini-diagram.twod i:nth-child(2){left:48%;top:35px}.qb-mini-diagram.twod i:nth-child(3){left:62%;top:22px}.qb-mini-diagram.twod i:nth-child(4){left:56%;top:48px}.qb-mini-diagram.western i{height:4px;left:30%;right:30%}.qb-mini-diagram.western i:nth-child(1){top:18px;opacity:.25}.qb-mini-diagram.western i:nth-child(2){top:34px}.qb-mini-diagram.western i:nth-child(3){top:48px;opacity:.25}.qb-mini-diagram.ms i{width:3px;bottom:14px}.qb-mini-diagram.ms i:nth-child(1){height:18px;left:35%}.qb-mini-diagram.ms i:nth-child(2){height:38px;left:50%}.qb-mini-diagram.ms i:nth-child(3){height:27px;left:66%}
+.qb-chapter{padding:54px 0 20px;border-bottom:1px solid var(--qb-border);scroll-margin-top:88px}.qb-chapter-number{font-size:.73rem;font-weight:900;letter-spacing:.18em;color:var(--qb-accent);margin-bottom:4px}.qb-chapter h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.08;letter-spacing:-.032em;margin:0 0 22px}.qb-chapter h3{font-size:1.18rem;margin:31px 0 9px;color:var(--qb-accent-strong)}.qb-chapter h4{font-size:1rem;margin:0 0 6px}.qb-chapter p{max-width:920px;margin:9px 0}.qb-muted{color:var(--qb-muted);font-size:.92rem}.qb-summary strong{font-weight:850}.qb-equation{max-width:920px;margin:16px 0;border-left:4px solid var(--qb-accent);background:var(--qb-panel-2);padding:11px 15px;border-radius:0 12px 12px 0;overflow:auto}.qb-equation math{font-size:1.2rem}.qb-callout{max-width:920px;margin:18px 0;border:1px solid var(--qb-border);border-left:5px solid var(--qb-accent);border-radius:12px;background:var(--qb-panel);padding:15px 17px}.qb-callout-key{background:var(--qb-accent-soft)}
+.qb-table-wrap,.qb-method-table{overflow:auto;margin:17px 0 23px;border:1px solid var(--qb-border);border-radius:13px;background:var(--qb-panel)}.qb-summary table{width:100%;border-collapse:collapse;font-size:.88rem}.qb-summary th,.qb-summary td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--qb-border)}.qb-summary thead th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--qb-accent-strong);color:white;position:sticky;top:0}.qb-summary tbody tr:last-child td{border-bottom:0}.qb-summary tbody tr:hover{background:var(--qb-accent-faint)}.qb-aa-table{min-width:760px}.qb-aa-table td:nth-child(3),.qb-aa-table td:nth-child(4){font-weight:900;white-space:nowrap}.aa-nonpolar{--aa:#d48b2a}.aa-aromatic{--aa:#8c61d9}.aa-polar{--aa:#2c9ead}.aa-acidic{--aa:#e45765}.aa-basic{--aa:#4f79d8}.qb-aa-table tr[class^="aa-"]{box-shadow:inset 5px 0 var(--aa)}.qb-aa-table tr[class^="aa-"] td:first-child{background:color-mix(in srgb,var(--aa) 15%,var(--qb-panel))}.qb-params{max-width:920px;margin:17px 0;border:1px solid var(--qb-border);border-radius:12px;background:var(--qb-panel);overflow:hidden}.qb-params summary{cursor:pointer;padding:12px 15px;color:var(--qb-accent-strong);font-weight:900}.qb-params[open] summary{background:var(--qb-accent-soft);border-bottom:1px solid var(--qb-border)}.qb-params>div{padding:10px 15px 14px}.qb-params p{margin:6px 0}.qb-two-col,.qb-compare-3,.qb-formula-grid,.qb-steps{display:grid;gap:10px;margin:17px 0}.qb-two-col,.qb-formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.qb-compare-3{grid-template-columns:repeat(3,minmax(0,1fr))}.qb-steps{grid-template-columns:repeat(4,minmax(0,1fr))}.qb-two-col>div,.qb-compare-3>div,.qb-formula-grid>div,.qb-steps>div{border:1px solid var(--qb-border);border-radius:12px;padding:13px;background:var(--qb-panel)}.qb-steps>div{border-top:4px solid var(--qb-accent)}.qb-steps b{display:block}.qb-steps span{font-size:.84rem;color:var(--qb-muted)}.qb-clean-list{max-width:920px;padding-left:1.25rem}.qb-clean-list li{margin:6px 0}.qb-errors li::marker{color:var(--qb-accent)}.qb-flow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:17px 0}.qb-flow span{border:1px solid var(--qb-border);border-radius:9px;background:var(--qb-panel);padding:7px 9px}.qb-flow i{font-style:normal;color:var(--qb-accent);font-weight:900}.qb-electro-diagram{display:grid;grid-template-columns:82px 1fr 82px;align-items:center;gap:9px;max-width:850px;margin:18px 0}.electrode{border:2px solid currentColor;border-radius:11px;text-align:center;padding:10px 5px}.electrode b{display:block;font-size:1.8rem}.electrode span{font-size:.72rem}.cathode{color:#4f79d8}.anode{color:#e45765}.gel-track{height:80px;position:relative;border:1px solid var(--qb-border);border-radius:10px;background:var(--qb-panel)}.gel-track .origin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:.7rem;color:var(--qb-muted)}.gel-track .band{position:absolute;top:20px;width:6px;height:40px;border-radius:4px;color:transparent}.gel-track .positive{left:24%;background:#4f79d8}.gel-track .negative{right:24%;background:#e45765}
+.qb-simulator{max-width:920px;margin:23px 0;border:1px solid var(--qb-border);border-radius:16px;background:var(--qb-panel);padding:16px 18px}.qb-sim-head{display:flex;justify-content:space-between;gap:15px;align-items:start}.qb-sim-head h3{margin:3px 0 0!important;color:var(--qb-ink)!important}.qb-sim-note{font-size:.7rem;color:var(--qb-muted);max-width:220px;text-align:right}.qb-sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:17px 0}.qb-sim-grid label{display:grid;grid-template-columns:1fr auto;gap:6px;font-size:.8rem;font-weight:800}.qb-sim-grid input{grid-column:1/-1;width:100%;accent-color:var(--qb-accent)}.qb-sim-grid output{color:var(--qb-accent-strong)}.qb-sim-result{display:flex;gap:12px;align-items:center;border-left:4px solid var(--qb-accent);padding:10px 12px;background:var(--qb-accent-soft);border-radius:0 10px 10px 0}.qb-sim-result span{font-size:.83rem}.qb-sim-electro{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:8px;margin-top:14px}.qb-sim-electrode{text-align:center;font-size:1.5rem;font-weight:900}.qb-sim-electrode small{display:block;font-size:.6rem;color:var(--qb-muted);font-weight:700}.qb-sim-track{height:42px;border:1px solid var(--qb-border);border-radius:9px;background:var(--qb-bg);position:relative}.qb-sim-track:before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1px dashed var(--qb-border)}.qb-sim-track em{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);font-size:.57rem;color:var(--qb-muted);font-style:normal}.qb-sim-track i{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--qb-accent);left:50%;top:10px;transform:translateX(-50%);transition:left .25s}.qb-sds-visual{display:flex;flex-direction:column;align-items:center;max-width:300px;margin:12px auto}.qb-wells{width:90%;height:20px;border:1px solid var(--qb-border);border-bottom:0;text-align:center;font-size:.62rem;color:var(--qb-muted);padding-top:2px}.qb-lane{height:190px;width:90%;border:1px solid var(--qb-border);background:var(--qb-bg);position:relative}.qb-lane:after{content:'';position:absolute;left:12%;right:12%;bottom:14px;border-top:1px dashed var(--qb-border)}.qb-lane>span{position:absolute;bottom:1px;left:50%;transform:translateX(-50%);font-size:.6rem;color:var(--qb-muted)}.qb-lane i{position:absolute;left:20%;right:20%;height:6px;border-radius:4px;background:var(--qb-accent);top:55px;transition:top .25s}.qb-sim-explain{font-size:.82rem;color:var(--qb-muted);text-align:center!important;margin-inline:auto!important}
+.qb-final-map{margin:28px 0 8px;border-top:4px solid var(--qb-accent);padding:14px 0}.qb-final-map b{font-size:1.05rem}.qb-footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:26px 0 10px;color:var(--qb-muted);font-size:.8rem}.qb-footer a{color:var(--qb-accent-strong);font-weight:900;text-decoration:none}.qb-back-top{position:fixed;right:22px;bottom:22px;z-index:50;width:44px;height:44px;border-radius:50%;border:1px solid var(--qb-border);background:var(--qb-accent);color:white;font-size:1.15rem;box-shadow:0 8px 22px rgba(0,0,0,.15);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}.qb-back-top.show{opacity:1;pointer-events:auto}.highlightable.selection-ready{outline:2px dashed var(--qb-accent);outline-offset:3px}.study-highlight{background:var(--qb-highlight)!important;color:#2d2500!important;padding:0 .04em;border-radius:3px}.qb-jump-hit{outline:3px solid var(--qb-accent)!important;outline-offset:5px;border-radius:6px}.qb-search-muted{opacity:.28}
+@media(max-width:1080px){.qb-doc-shell{grid-template-columns:1fr}.qb-sidebar{position:fixed;left:0;top:0;bottom:0;width:min(310px,88vw);max-height:none;margin:0;border-radius:0 18px 18px 0;transform:translateX(-105%);transition:transform .2s;z-index:90}.qb-sidebar.open{transform:translateX(0)}.qb-sidebar-scrim{position:fixed;inset:0;background:rgba(20,12,18,.45);z-index:85}.qb-sidebar-scrim.show{display:block}.qb-mobile-index{display:block}.qb-document{padding-inline:clamp(14px,3vw,28px)}.qb-utility-bar #qbIndexButton{display:inline-block}.qb-method-carousel{grid-auto-columns:minmax(230px,70%)}}
+@media(min-width:1081px){.qb-utility-bar #qbIndexButton{display:none}}
+@media(max-width:760px){.qb-summary{border-radius:0}.qb-utility-bar{position:static}.qb-utility-bar button{font-size:.7rem;padding:6px 8px}.qb-tool-status{width:100%;margin-left:0}.qb-method-carousel{grid-auto-columns:86%}.qb-carousel-shell{grid-template-columns:30px minmax(0,1fr) 30px}.qb-carousel-btn{height:44px}.qb-two-col,.qb-compare-3,.qb-formula-grid,.qb-steps,.qb-sim-grid{grid-template-columns:1fr}.qb-sim-head{display:block}.qb-sim-note{display:block;text-align:left;margin-top:5px}.qb-electro-diagram{grid-template-columns:62px 1fr 62px}.qb-document{padding-bottom:90px}.qb-back-top{right:15px;bottom:75px}}
+@media print{.qb-sidebar,.qb-mobile-index,.qb-sidebar-scrim,.qb-utility-bar,.qb-reading-progress,.qb-back-top,.qb-carousel-btn{display:none!important}.qb-doc-shell{display:block}.qb-document{max-width:none;padding:0}.qb-summary{background:white!important;color:#111!important}.qb-method-carousel{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.qb-chapter,.qb-method-card,.qb-simulator,.qb-table-wrap{break-inside:avoid}.qb-params{break-inside:avoid}.qb-params>div{display:block!important}.qb-summary{--qb-panel:#fff;--qb-bg:#fff;--qb-border:#bbb;--qb-ink:#111;--qb-muted:#555}}
+</style></head><body><article class="qb-summary zoom-target" id="qb-top">
+
+  <div class="qb-reading-progress" aria-hidden="true"><i id="qbReadingProgress"></i></div>
+  <button class="qb-mobile-index" id="qbSideToggle" type="button" aria-label="Abrir índice">☰</button>
+  <div class="qb-doc-shell">
+    <aside class="qb-sidebar" id="qbSidebar" aria-label="Índice y herramientas de Química Biológica">
+      <div class="qb-sidebar-brand"><span>SOLved</span><strong>Química Biológica</strong><small>Resumen integral · rosa</small></div>
+      <label class="qb-search"><span>⌕</span><input id="qbGlobalSearch" type="search" placeholder="Buscar en el resumen…" autocomplete="off"><button id="qbClearSearch" type="button" aria-label="Borrar búsqueda">×</button></label>
+      <div class="qb-search-results" id="qbSearchResults" aria-live="polite"></div>
+      <nav class="summary-index qb-index" id="summaryIndex" aria-label="Índice del resumen">
+    <strong>Índice del resumen</strong>
+    <a href="#methods">Mapa de métodos</a>
+    <a href="#cap1">1. Aminoácidos, pK<sub>a</sub> y pI</a>
+    <a href="#cap2">2. De péptido a proteína</a>
+    <a href="#cap3">3. Estructura globular y dominios</a>
+    <a href="#cap4">4. Desnaturalización y plegamiento</a>
+    <a href="#cap5">5. Proteínas de membrana</a>
+    <a href="#cap6">6. Estrategia de purificación</a>
+    <a href="#cap7">7. Cromatografías</a>
+    <a href="#cap8">8. Medir una purificación</a>
+    <a href="#cap9">9. Electroforesis: fundamento</a>
+    <a href="#cap10">10. PAGE nativa y SDS-PAGE</a>
+    <a href="#cap11">11. IEF y electroforesis 2D</a>
+    <a href="#cap12">12. Visualización, blots, MS y PCR</a>
+    <a href="#cap13">13. Integración y resolución</a>
+  </nav>
+      <div class="qb-sidebar-tools">
+        <details open><summary>Apariencia</summary>
+          <div class="qb-color-row" aria-label="Colores sugeridos">
+            <button type="button" data-qb-hue="334" style="--swatch:hsl(334 78% 55%)" aria-label="Rosa"></button>
+            <button type="button" data-qb-hue="344" style="--swatch:hsl(344 78% 52%)" aria-label="Frambuesa"></button>
+            <button type="button" data-qb-hue="315" style="--swatch:hsl(315 72% 52%)" aria-label="Fucsia"></button>
+            <button type="button" data-qb-hue="286" style="--swatch:hsl(286 68% 58%)" aria-label="Lila"></button>
+            <button type="button" data-qb-hue="16" style="--swatch:hsl(16 78% 57%)" aria-label="Coral"></button>
+          </div>
+          <label class="qb-color-custom">Color personalizado <input id="qbAccentPicker" type="color" value="#ec4899"></label>
+          <button class="qb-side-button" id="qbThemeToggle" type="button">Cambiar claro / oscuro</button>
+        </details>
+        <details><summary>Lectura</summary>
+          <button class="qb-side-button" id="qbOpenDetails" type="button">Abrir explicaciones</button>
+          <button class="qb-side-button" id="qbCloseDetails" type="button">Cerrar explicaciones</button>
+          <button class="qb-side-button" id="qbPrint" type="button">Imprimir / material</button>
+        </details>
+      </div>
+    </aside>
+    <div class="qb-sidebar-scrim" id="qbSidebarScrim"></div>
+    <main class="qb-document">
+      <div class="qb-utility-bar" aria-label="Herramientas rápidas">
+        <button type="button" id="qbIndexButton">☰ Índice</button>
+        <button type="button" id="qbHighlightButton">✦ Resaltar selección</button>
+        <button type="button" id="qbZoomButton">A+ Zoom</button>
+        <button type="button" id="qbFullscreenButton">⛶ Pantalla completa</button>
+        <span class="qb-tool-status" id="qbToolStatus" aria-live="polite"></span>
+      </div>
+
+  <header class="qb-hero">
+    <span class="qb-kicker">QUÍMICA BIOLÓGICA · RESUMEN INTEGRADO</span>
+    <h1>Aminoácidos, proteínas, purificación y electroforesis</h1>
+    <p class="qb-lead">Un único recorrido para entender <strong>cómo la estructura química determina la carga, el plegamiento, la función y el comportamiento experimental de las proteínas</strong>, y cómo esas propiedades se aprovechan para separarlas, identificarlas y estudiar su pureza.</p>
+    <div class="qb-hero-badges"><span>Resumen único</span><span>13 capítulos</span><span>Métodos comparados</span><span>Ejercicios integrados</span><span>Herramientas SOLved</span></div>
+    <div class="qb-hero-rules" aria-label="Reglas rápidas">
+      <span><b>pH &lt; pI</b> → proteína más positiva → cátodo (−)</span>
+      <span><b>pH &gt; pI</b> → proteína más negativa → ánodo (+)</span>
+      <span><b>SDS-PAGE</b> → separa principalmente por tamaño de cadena</span>
+      <span><b>Exclusión molecular</b> → las moléculas grandes eluyen primero</span>
+    </div>
+  </header>
+
+<section class="qb-method-hub" id="methods" aria-labelledby="methodsTitle">
+  <div class="qb-section-heading">
+    <span class="qb-eyebrow">MAPA DE TÉCNICAS</span>
+    <h2 id="methodsTitle">Elegí qué querés medir o separar</h2>
+    <p>No memorices nombres aislados: cada método explota una propiedad distinta. Deslizá las tarjetas y entrá al capítulo correspondiente.</p>
+  </div>
+  <div class="qb-carousel-shell">
+    <button class="qb-carousel-btn" type="button" data-qb-carousel="prev" aria-label="Método anterior">‹</button>
+    <div class="qb-method-carousel" id="qbMethodCarousel" tabindex="0">
+      <a class="qb-method-card" href="#cap7" data-method="ion">
+        <div class="qb-mini-diagram ion"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">CARGA</span><h3>Intercambio iónico</h3>
+        <p><b>Sirve para:</b> separar proteínas según carga neta a un pH dado.</p><small>pH y sal controlan unión y elución.</small>
+      </a>
+      <a class="qb-method-card" href="#cap7" data-method="size">
+        <div class="qb-mini-diagram size"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">TAMAÑO NATIVO</span><h3>Exclusión molecular</h3>
+        <p><b>Sirve para:</b> separar por volumen hidrodinámico sin desnaturalizar.</p><small>Grande → entra menos en poros → sale primero.</small>
+      </a>
+      <a class="qb-method-card" href="#cap7" data-method="affinity">
+        <div class="qb-mini-diagram affinity"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">RECONOCIMIENTO</span><h3>Afinidad</h3>
+        <p><b>Sirve para:</b> capturar una proteína por una interacción específica.</p><small>Ligando inmovilizado → lavado → elución específica.</small>
+      </a>
+      <a class="qb-method-card" href="#cap10" data-method="native">
+        <div class="qb-mini-diagram gel"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">CARGA + FORMA + TAMAÑO</span><h3>PAGE nativa</h3>
+        <p><b>Sirve para:</b> observar complejos y movilidad sin SDS.</p><small>Conserva gran parte de las asociaciones no covalentes.</small>
+      </a>
+      <a class="qb-method-card" href="#cap10" data-method="sds">
+        <div class="qb-mini-diagram sds"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">MASA DE CADENA</span><h3>SDS-PAGE</h3>
+        <p><b>Sirve para:</b> estimar masa aparente de subunidades.</p><small>SDS uniformiza carga/forma; las pequeñas migran más.</small>
+      </a>
+      <a class="qb-method-card" href="#cap11" data-method="ief">
+        <div class="qb-mini-diagram ief"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">pI</span><h3>Isoelectroenfoque</h3>
+        <p><b>Sirve para:</b> separar proteínas según punto isoeléctrico.</p><small>Cada proteína se enfoca donde pH = pI.</small>
+      </a>
+      <a class="qb-method-card" href="#cap11" data-method="2d">
+        <div class="qb-mini-diagram twod"><i></i><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">pI + MASA</span><h3>2D-PAGE</h3>
+        <p><b>Sirve para:</b> resolver mezclas proteicas complejas.</p><small>1ª dimensión IEF; 2ª dimensión SDS-PAGE.</small>
+      </a>
+      <a class="qb-method-card" href="#cap12" data-method="western">
+        <div class="qb-mini-diagram western"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">IDENTIDAD</span><h3>Western blot</h3>
+        <p><b>Sirve para:</b> detectar una proteína concreta con anticuerpos.</p><small>Separación → transferencia → inmunodetección.</small>
+      </a>
+      <a class="qb-method-card" href="#cap12" data-method="ms">
+        <div class="qb-mini-diagram ms"><i></i><i></i><i></i></div>
+        <span class="qb-method-tag">IDENTIFICACIÓN</span><h3>Espectrometría de masas</h3>
+        <p><b>Sirve para:</b> identificar proteínas y péptidos por m/z y fragmentación.</p><small>Clave para bandas, manchas y proteómica.</small>
+      </a>
+    </div>
+    <button class="qb-carousel-btn" type="button" data-qb-carousel="next" aria-label="Método siguiente">›</button>
+  </div>
+</section>
+
+
+  <section class="qb-chapter" id="cap1">
+    <div class="qb-chapter-number">01</div>
+    <h2>Aminoácidos: estructura, carga, pK<sub>a</sub> y punto isoeléctrico</h2>
+    <p class="highlightable" data-block-id="qb:c1:intro">Los aminoácidos proteicos son, salvo la glicina, moléculas quirales cuyo carbono α está unido a un grupo amino, un grupo carboxilo, un hidrógeno y una cadena lateral <strong>R</strong>. Esa cadena lateral es la que cambia entre aminoácidos y determina gran parte de su polaridad, carga, capacidad de formar puentes de hidrógeno, hidrofobicidad y reactividad.</p>
+
+    <div class="qb-equation" aria-label="Forma zwitteriónica de un aminoácido">
+      <math display="block"><mrow><msubsup><mi>H</mi><mn>3</mn><mo>+</mo></msubsup><mi>N</mi><mo>−</mo><mi>CH</mi><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo><mo>−</mo><mi>COO</mi><mo>−</mo></mrow></math>
+    </div>
+    <p class="highlightable" data-block-id="qb:c1:zwitterion">En agua, muchos aminoácidos predominan como <strong>zwitteriones</strong>: poseen simultáneamente una carga positiva y una negativa. Que la carga neta sea cero no significa que la molécula no tenga grupos cargados; significa que la suma algebraica de todas sus cargas es cero.</p>
+
+    <h3>Los 20 aminoácidos proteicos</h3>
+    <p class="qb-muted">La colorimetría agrupa por comportamiento predominante de la cadena lateral a pH cercano a neutro. Tyr y Cys merecen atención especial porque sus grupos laterales pueden ionizar a pH alto; His es básica, pero cerca de pH fisiológico puede coexistir en forma protonada y neutra.</p>
+    <div class="qb-table-wrap">
+      <table class="qb-aa-table">
+        <thead><tr><th>Grupo</th><th>Aminoácido</th><th>3 letras</th><th>1 letra</th><th>Cadena lateral / idea útil</th></tr></thead>
+        <tbody>
+          <tr class="aa-nonpolar"><td rowspan="7"><b>Apolares alifáticos</b></td><td>Glicina</td><td>Gly</td><td>G</td><td>R = H. Muy pequeña, flexible y aquiral.</td></tr>
+          <tr class="aa-nonpolar"><td>Alanina</td><td>Ala</td><td>A</td><td>Metilo pequeño; frecuente en interiores hidrofóbicos.</td></tr>
+          <tr class="aa-nonpolar"><td>Valina</td><td>Val</td><td>V</td><td>Ramificada e hidrofóbica.</td></tr>
+          <tr class="aa-nonpolar"><td>Leucina</td><td>Leu</td><td>L</td><td>Ramificada, muy común en núcleos hidrofóbicos.</td></tr>
+          <tr class="aa-nonpolar"><td>Isoleucina</td><td>Ile</td><td>I</td><td>Ramificada e hidrofóbica; posee otro centro quiral.</td></tr>
+          <tr class="aa-nonpolar"><td>Metionina</td><td>Met</td><td>M</td><td>Contiene tioéter; apolar.</td></tr>
+          <tr class="aa-nonpolar"><td>Prolina</td><td>Pro</td><td>P</td><td>Cadena cíclica unida al N; restringe la geometría y suele interrumpir hélices.</td></tr>
+
+          <tr class="aa-aromatic"><td rowspan="3"><b>Aromáticos</b></td><td>Fenilalanina</td><td>Phe</td><td>F</td><td>Anillo fenilo; muy hidrofóbica.</td></tr>
+          <tr class="aa-aromatic"><td>Tirosina</td><td>Tyr</td><td>Y</td><td>Fenol; aromática pero más polar. pK<sub>R</sub> ≈ 10.</td></tr>
+          <tr class="aa-aromatic"><td>Triptófano</td><td>Trp</td><td>W</td><td>Indol; aromático voluminoso. Trp y Tyr contribuyen mucho a A<sub>280</sub>.</td></tr>
+
+          <tr class="aa-polar"><td rowspan="5"><b>Polares sin carga</b></td><td>Serina</td><td>Ser</td><td>S</td><td>Alcohol; forma puentes de H y puede fosforilarse.</td></tr>
+          <tr class="aa-polar"><td>Treonina</td><td>Thr</td><td>T</td><td>Alcohol; polar y fosforilable.</td></tr>
+          <tr class="aa-polar"><td>Cisteína</td><td>Cys</td><td>C</td><td>Tiol; puede formar puentes disulfuro. pK<sub>R</sub> ≈ 8–9.</td></tr>
+          <tr class="aa-polar"><td>Asparagina</td><td>Asn</td><td>N</td><td>Amida; polar, no ionizable en el rango habitual.</td></tr>
+          <tr class="aa-polar"><td>Glutamina</td><td>Gln</td><td>Q</td><td>Amida; polar, no ionizable en el rango habitual.</td></tr>
+
+          <tr class="aa-acidic"><td rowspan="2"><b>Ácidos</b></td><td>Aspartato</td><td>Asp</td><td>D</td><td>Carboxilato lateral; negativo cerca de pH 7. pK<sub>R</sub> ≈ 4.</td></tr>
+          <tr class="aa-acidic"><td>Glutamato</td><td>Glu</td><td>E</td><td>Carboxilato lateral; negativo cerca de pH 7. pK<sub>R</sub> ≈ 4.</td></tr>
+
+          <tr class="aa-basic"><td rowspan="3"><b>Básicos</b></td><td>Lisina</td><td>Lys</td><td>K</td><td>ε-amino; positiva cerca de pH 7. pK<sub>R</sub> ≈ 10,5.</td></tr>
+          <tr class="aa-basic"><td>Arginina</td><td>Arg</td><td>R</td><td>Guanidinio; positiva en un rango muy amplio. pK<sub>R</sub> ≈ 12,5.</td></tr>
+          <tr class="aa-basic"><td>Histidina</td><td>His</td><td>H</td><td>Imidazol; pK<sub>R</sub> ≈ 6. Muy útil en catálisis ácido-base.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Qué significa un pK<sub>a</sub></h3>
+    <p class="highlightable" data-block-id="qb:c1:pka">Un pK<sub>a</sub> pertenece a <strong>un grupo ionizable concreto</strong>, no a toda la molécula. Indica el pH alrededor del cual ese grupo cambia de estado de protonación. Si el pH está muy por debajo de su pK<sub>a</sub>, predomina la forma protonada; si está muy por encima, predomina la forma desprotonada.</p>
+    <div class="qb-equation"><math display="block"><mrow><mi>pH</mi><mo>=</mo><msub><mi>pK</mi><mi>a</mi></msub><mo>+</mo><mi>log</mi><mfenced><mfrac><mrow><mo>[</mo><mi>A</mi><mo>−</mo><mo>]</mo></mrow><mrow><mo>[</mo><mi>HA</mi><mo>]</mo></mrow></mfrac></mfenced></mrow></math></div>
+    <p class="highlightable" data-block-id="qb:c1:hh"><strong>Henderson–Hasselbalch</strong> es útil cuando queremos conocer proporciones o carga fraccional. Si sólo se pide la especie predominante y el pH está lejos del pK<sub>a</sub>, suele alcanzar con comparar pH y pK<sub>a</sub>. En pH = pK<sub>a</sub>, las formas protonada y desprotonada están aproximadamente al 50 %.</p>
+
+    <h3>Punto isoeléctrico</h3>
+    <p class="highlightable" data-block-id="qb:c1:pi">El <strong>punto isoeléctrico (pI)</strong> es el pH al que la carga neta promedio de la molécula es cero. Para calcularlo no se promedian pK<sub>a</sub> al azar: se identifican los <strong>dos pK<sub>a</sub> que rodean a la especie de carga neta cero</strong> y se promedian.</p>
+    <div class="qb-equation"><math display="block"><mrow><mi>pI</mi><mo>=</mo><mfrac><mrow><msub><mi>pK</mi><mrow><mi>a</mi><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>pK</mi><mrow><mi>a</mi><mn>2</mn></mrow></msub></mrow><mn>2</mn></mfrac></mrow></math></div>
+    <div class="qb-callout qb-callout-key"><b>Regla que conecta ácido-base con electroforesis:</b><br>pH &lt; pI → mayor protonación → carga neta positiva → migra al cátodo (−).<br>pH &gt; pI → mayor desprotonación → carga neta negativa → migra al ánodo (+).<br>pH = pI → carga neta promedio ≈ 0 → movilidad electroforética neta mínima.</div>
+    <h3>Ejemplos de cálculo de pI</h3>
+    <p class="highlightable" data-block-id="qb:c1:pi-examples">Para un aminoácido ácido como Asp, la especie de carga cero queda entre la desprotonación del carboxilo α y la del carboxilo lateral; por eso se promedian esos dos pK<sub>a</sub>. Para uno básico como Arg, la especie neutra queda entre la desprotonación del grupo amino α y la del guanidinio lateral. El criterio siempre es seguir las cargas sucesivas hasta localizar el intervalo donde Q = 0.</p>
+    <div class="qb-two-col"><div><h4>Asp</h4><p>pK<sub>1</sub> = 1,99; pK<sub>R</sub> = 3,90</p><math display="block"><mrow><mi>pI</mi><mo>=</mo><mfrac><mrow><mn>1.99</mn><mo>+</mo><mn>3.90</mn></mrow><mn>2</mn></mfrac><mo>≈</mo><mn>2.95</mn></mrow></math></div><div><h4>Arg</h4><p>pK<sub>2</sub> = 8,99; pK<sub>R</sub> = 12,48</p><math display="block"><mrow><mi>pI</mi><mo>=</mo><mfrac><mrow><mn>8.99</mn><mo>+</mo><mn>12.48</mn></mrow><mn>2</mn></mfrac><mo>≈</mo><mn>10.74</mn></mrow></math></div></div>
+    <p class="highlightable" data-block-id="qb:c1:buffer">Un grupo presenta máxima capacidad tampón alrededor de su pK<sub>a</sub>, y una zona útil aproximada se extiende una unidad de pH a cada lado. Un péptido puede tener varias regiones tampón porque posee varios grupos ionizables independientes.</p>
+
+
+    <details class="qb-params"><summary>Cómo cambia el comportamiento si modifico el pH</summary><div><p><b>Bajar el pH</b> favorece protonación. Los carboxilatos tienden a pasar de COO<sup>−</sup> a COOH y los grupos básicos tienden a conservar carga positiva.</p><p><b>Subir el pH</b> favorece desprotonación. Los grupos ácidos adquieren carga negativa y los básicos pueden perder su carga positiva.</p><p>Cerca de un pK<sub>a</sub>, cambios pequeños de pH producen cambios grandes en la fracción protonada y la molécula posee buena capacidad tampón.</p></div></details>
+  </section>
+
+  <section class="qb-chapter" id="cap2">
+    <div class="qb-chapter-number">02</div>
+    <h2>De aminoácidos a péptidos y proteínas</h2>
+    <p class="highlightable" data-block-id="qb:c2:peptide">El <strong>enlace peptídico</strong> se forma por condensación entre el grupo carboxilo de un aminoácido y el grupo amino del siguiente. Se libera agua y queda una amida –CO–NH–. La cadena tiene dirección: se escribe desde el <strong>N-terminal</strong> libre hacia el <strong>C-terminal</strong> libre.</p>
+    <p class="highlightable" data-block-id="qb:c2:ionizable">En un péptido, los grupos α-amino y α-carboxilo internos ya forman enlaces peptídicos y no se cuentan como grupos ácido-base libres. Para calcular carga se consideran el N-terminal, el C-terminal y las cadenas laterales ionizables.</p>
+    <div class="qb-callout"><b>Consecuencia práctica:</b> un oligopéptido de alanina puede contener muchas alaninas pero, como las cadenas laterales de Ala no ionizan en el rango habitual, sus grupos ácido-base principales son esencialmente el N-terminal y el C-terminal.</div>
+    <h3>Por qué los pK<sub>a</sub> terminales cambian al formar péptidos</h3>
+    <p class="highlightable" data-block-id="qb:c2:terminal-pka">En alanina libre, NH<sub>3</sub><sup>+</sup> y COO<sup>−</sup> están muy próximos y se estabilizan electrostáticamente. Al formar y alargar un oligopéptido, los extremos se separan. El carboxilo C-terminal pierde parte de la estabilización que favorecía su forma desprotonada, por lo que su pK<sub>a</sub> puede aumentar; el amino N-terminal pierde estabilización de su forma protonada, por lo que su pK<sub>a</sub> puede disminuir. El microambiente modifica la acidez de un grupo aunque su identidad química básica sea la misma.</p>
+
+
+    <h3>Niveles de estructura</h3>
+    <div class="qb-steps">
+      <div><b>Primaria</b><span>Secuencia covalente de aminoácidos y ubicación de puentes disulfuro.</span></div>
+      <div><b>Secundaria</b><span>Patrones locales del esqueleto: hélice α, hoja β, giros y loops.</span></div>
+      <div><b>Terciaria</b><span>Organización tridimensional completa de una cadena.</span></div>
+      <div><b>Cuaternaria</b><span>Asociación organizada de varias cadenas o subunidades.</span></div>
+    </div>
+    <p class="highlightable" data-block-id="qb:c2:sequence-function">La idea que atraviesa toda la unidad es <strong>secuencia → interacciones → plegamiento → estructura tridimensional → función</strong>. La función depende de que grupos concretos queden colocados en posiciones concretas del espacio.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap3">
+    <div class="qb-chapter-number">03</div>
+    <h2>Proteínas globulares, motivos, dominios y estructura cuaternaria</h2>
+    <h3>El núcleo hidrofóbico</h3>
+    <p class="highlightable" data-block-id="qb:c3:roles">Las proteínas globulares realizan funciones muy diversas: catálisis, transporte, almacenamiento, reconocimiento, señalización, defensa y regulación. Su enorme variedad funcional surge de la capacidad de una cadena de plegarse en superficies, cavidades e interfaces químicamente específicas.</p>
+    <h3>Cómo representar una estructura tridimensional</h3>
+    <p class="highlightable" data-block-id="qb:c3:models"><strong>Cintas (ribbon)</strong> resalta hélices, hojas y el recorrido global; <strong>bolas y varillas</strong> ayuda a ver geometría y conexiones; <strong>space-filling</strong> aproxima el volumen ocupado por los átomos y muestra empaquetamiento; una <strong>superficie molecular</strong> hace visibles cavidades, bolsillos, accesibilidad y distribución de propiedades. Ningún modelo es “el verdadero”: cada representación responde una pregunta distinta.</p>
+
+    <p class="highlightable" data-block-id="qb:c3:hydrophobic">En una proteína globular soluble, muchos residuos apolares se entierran y forman un <strong>núcleo hidrofóbico</strong>, mientras que grupos polares y cargados aparecen con mayor frecuencia en la superficie acuosa. El motor principal es el efecto hidrofóbico: agrupar superficies apolares reduce el área expuesta al agua y libera moléculas de agua que estaban ordenadas alrededor de esas superficies.</p>
+    <p class="highlightable" data-block-id="qb:c3:london">Una vez empaquetadas las cadenas laterales, las <strong>fuerzas de dispersión de London</strong> y otras interacciones de van der Waals aportan estabilidad adicional. Cada interacción es débil, pero miles de contactos cercanos suman una contribución importante.</p>
+
+    <h3>Mioglobina como modelo estructural</h3>
+    <p class="highlightable" data-block-id="qb:c3:myoglobin">La mioglobina es monomérica, globular y rica en hélices α. Su estructura compacta crea una hendidura donde se aloja el <strong>grupo hemo</strong>. El Fe del hemo posee seis coordinaciones: cuatro con la porfirina, una con una histidina proximal y una disponible para O<sub>2</sub>. Una histidina distal ayuda a definir el entorno del ligando. El ejemplo muestra que la función del grupo prostético depende del microambiente construido por la proteína.</p>
+
+    <h3>Motivo ≠ dominio</h3>
+    <p class="highlightable" data-block-id="qb:c3:motif">Un <strong>motivo o estructura supersecundaria</strong> es una combinación recurrente de elementos de estructura secundaria con una topología concreta, como una horquilla β o un patrón β–α–β. Dos hebras β antiparalelas no forman automáticamente una horquilla: también importa cómo están conectadas en la secuencia y en el espacio.</p>
+    <p class="highlightable" data-block-id="qb:c3:domain">Un <strong>dominio</strong> es una unidad mayor, compacta, con núcleo hidrofóbico propio y capacidad de plegarse de manera relativamente independiente. Un dominio puede contener varios motivos y muchas veces corresponde a una unidad funcional, por ejemplo unión a NAD<sup>+</sup>, ADN o ATP.</p>
+    <p class="highlightable" data-block-id="qb:c3:rossmann">El <strong>plegamiento de Rossmann</strong> es un patrón frecuente en proteínas que unen dinucleótidos como NAD<sup>+</sup>/NADH. Es un buen ejemplo de cómo la evolución reutiliza geometrías que resuelven tareas químicas concretas.</p>
+
+    <h3>Los dominios pueden moverse</h3>
+    <p class="highlightable" data-block-id="qb:c3:citrate">La citrato sintasa posee un dominio grande y uno pequeño. La unión del oxaloacetato induce un cambio conformacional que cierra la hendidura, organiza el sitio de unión para acetil-CoA y limita el acceso indiscriminado de agua. Esto introduce una idea esencial: <strong>las proteínas son estructuras dinámicas</strong>; el movimiento entre dominios puede ser parte directa del mecanismo catalítico.</p>
+
+    <h3>Proteínas oligoméricas</h3>
+    <p class="highlightable" data-block-id="qb:c3:oligomers">Una proteína oligomérica contiene varias subunidades. Si son iguales hablamos de homooligómero; si son diferentes, heterooligómero. Las interfaces suelen estabilizarse por efecto hidrofóbico, puentes de hidrógeno, interacciones electrostáticas y van der Waals; algunas proteínas también poseen puentes disulfuro intercatenarios.</p>
+    <p class="highlightable" data-block-id="qb:c3:vocab"><strong>Multímero</strong> es el término general para una asociación de varias subunidades; <strong>oligómero</strong> suele reservarse para un número relativamente pequeño; <strong>protómero</strong> puede designar una unidad repetitiva dentro del ensamblaje. La oligomerización puede aumentar estabilidad, crear sitios activos en interfaces, separar funciones catalíticas y regulatorias o permitir comunicación cooperativa.</p>
+
+    <p class="highlightable" data-block-id="qb:c3:hb">La hemoglobina es un tetrámero α<sub>2</sub>β<sub>2</sub>. Su organización cuaternaria permite <strong>cooperatividad</strong>: la unión de O<sub>2</sub> en una subunidad modifica la afinidad de otras. La mioglobina monomérica no presenta ese mismo fenómeno cooperativo.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap4">
+    <div class="qb-chapter-number">04</div>
+    <h2>Desnaturalización, renaturalización y plegamiento</h2>
+    <p class="highlightable" data-block-id="qb:c4:denaturation">Desnaturalizar es perder suficiente estructura secundaria, terciaria y/o cuaternaria como para alterar la función. <strong>No equivale a hidrolizar</strong>: en condiciones habituales los enlaces peptídicos permanecen intactos.</p>
+    <div class="qb-method-table">
+      <table><thead><tr><th>Agente</th><th>Qué altera</th><th>Consecuencia principal</th></tr></thead><tbody>
+        <tr><td><b>Calor</b></td><td>Aumenta movimiento molecular y debilita interacciones no covalentes.</td><td>Desplegamiento; puede ser irreversible si aparece agregación.</td></tr>
+        <tr><td><b>pH extremo</b></td><td>Cambia protonación y cargas.</td><td>Rompe puentes salinos, crea repulsiones y altera H-bonds.</td></tr>
+        <tr><td><b>Urea / guanidinio</b></td><td>Favorecen exposición al solvente e interfieren con el plegamiento.</td><td>Desnaturalización sin cortar la cadena.</td></tr>
+        <tr><td><b>SDS</b></td><td>Detergente aniónico que interactúa con regiones hidrofóbicas.</td><td>Desnaturaliza y recubre con carga negativa.</td></tr>
+        <tr><td><b>β-mercaptoetanol / DTT</b></td><td>Reducen enlaces S–S.</td><td>Separan cadenas unidas por disulfuro y rompen disulfuros intramoleculares.</td></tr>
+        <tr><td><b>Alcohol / acetona</b></td><td>Modifican el entorno de solvatación.</td><td>Pueden desestabilizar y precipitar proteínas.</td></tr>
+      </tbody></table>
+    </div>
+    <p class="highlightable" data-block-id="qb:c4:cooperative">La desnaturalización suele ser <strong>cooperativa</strong>: cuando una región pierde interacciones que también estabilizaban otras, el resto se vuelve más fácil de desplegar. Por eso la transición puede ser brusca. En una curva térmica, T<sub>m</sub> es la temperatura donde aproximadamente la mitad de la población está desplegada; no significa que cada molécula esté “plegada a la mitad”.</p>
+
+    <h3>Anfinsen: la secuencia contiene la información del plegamiento</h3>
+    <p class="highlightable" data-block-id="qb:c4:anfinsen">La ribonucleasa A tratada con urea y β-mercaptoetanol pierde plegamiento, disulfuros y actividad. Si ambos agentes se eliminan bajo condiciones adecuadas, recupera estructura y actividad. Si los disulfuros se dejan formar mientras la cadena sigue desplegada por urea, aparecen combinaciones incorrectas y una proteína “revuelta”. Una pequeña cantidad de reductor permite intercambio de disulfuros hasta alcanzar la combinación compatible con el estado nativo.</p>
+    <p class="highlightable" data-block-id="qb:c4:anfinsen-numbers">La ribonucleasa A contiene ocho Cys que forman cuatro puentes disulfuro. Ocho Cys pueden emparejarse de 105 maneras distintas para formar cuatro pares; sólo una conectividad corresponde al estado nativo. Esto explica por qué oxidar una cadena todavía desplegada genera casi exclusivamente disulfuros incorrectos.</p>
+    <p class="highlightable" data-block-id="qb:c4:redox-buffer">In vitro, proteínas con disulfuros pueden plegarse mejor en un <strong>buffer rédox</strong> con glutatión reducido y oxidado (GSH/GSSG), que permite formar, romper e intercambiar enlaces S–S hasta alcanzar conexiones compatibles con la conformación estable.</p>
+
+    <div class="qb-callout qb-callout-key"><b>Conclusión de Anfinsen:</b> la secuencia de aminoácidos contiene la información necesaria para alcanzar la conformación nativa en condiciones apropiadas. Los puentes disulfuro estabilizan; no son una plantilla externa que “ordena” el plegamiento.</div>
+
+    <h3>Paradoja de Levinthal y embudo energético</h3>
+    <p class="highlightable" data-block-id="qb:c4:levinthal">Una proteína de 100 residuos con sólo tres conformaciones posibles por residuo tendría 3<sup>100</sup> ≈ 5 × 10<sup>47</sup> combinaciones. Probarlas al azar llevaría un tiempo astronómico. Por lo tanto, el plegamiento no es una búsqueda aleatoria exhaustiva: avanza por rutas energéticamente favorecidas.</p>
+    <div class="qb-equation"><math display="block"><mrow><mi>N</mi><mo>=</mo><msup><mn>3</mn><mn>100</mn></msup><mo>≈</mo><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>47</mn></msup></mrow></math></div>
+    <p class="highlightable" data-block-id="qb:c4:funnel">El <strong>embudo de plegamiento</strong> representa muchas conformaciones desplegadas de energía libre alta que convergen hacia menos estados y finalmente al estado nativo. Puede aparecer un <strong>molten globule</strong>: compacto y con mucha estructura secundaria ya formada, pero sin el empaquetamiento terciario definitivo.</p>
+
+    <h3>In vivo: chaperonas</h3>
+    <p class="highlightable" data-block-id="qb:c4:chaperones">Dentro de la célula hay altísima concentración macromolecular. Las superficies hidrofóbicas transitoriamente expuestas pueden asociarse entre moléculas y producir agregación. Las <strong>chaperonas</strong> reconocen estados no nativos, protegen esas superficies y facilitan nuevos intentos de plegamiento. Hsp70/Hsp40 utiliza ciclos de ATP; las chaperoninas ofrecen cámaras protegidas. No cambian la información codificada por la secuencia: ayudan a que la proteína llegue a su estado correcto sin quedar atrapada o agregada.</p>
+    <p class="highlightable" data-block-id="qb:c4:hsp70-cycle">En un ciclo simplificado de Hsp70, la forma unida a ATP está abierta y captura segmentos hidrofóbicos expuestos. Hsp40 favorece la hidrólisis de ATP; Hsp70-ADP se cierra y sujeta la cadena con mayor afinidad. Factores de intercambio de nucleótidos favorecen la salida de ADP y entrada de ATP, la “pinza” vuelve a abrirse y la proteína se libera. Si aún no está correctamente plegada puede repetir el ciclo o pasar a una chaperonina como GroEL/GroES.</p>
+
+
+    <details class="qb-params"><summary>Cómo puede cambiar la estructura de una hélice con el pH</summary><div><p>En poli(Glu), subir el pH favorece COO<sup>−</sup>. Muchas cargas negativas próximas se repelen y pueden desestabilizar la hélice α.</p><p>En poli(Lys), bajar el pH favorece NH<sub>3</sub><sup>+</sup>. Muchas cargas positivas próximas se repelen y también pueden desestabilizar la hélice.</p><p>La transición puede ser estrecha porque la respuesta estructural es cooperativa.</p></div></details>
+  </section>
+
+  <section class="qb-chapter" id="cap5">
+    <div class="qb-chapter-number">05</div>
+    <h2>Proteínas de membrana: adaptar la superficie al medio</h2>
+    <p class="highlightable" data-block-id="qb:c5:principle">La regla de distribución de grupos R depende del ambiente. En una proteína soluble, una superficie hidrofóbica extensa es desfavorable; en una proteína integral, la superficie que enfrenta las colas lipídicas debe ser en buena medida hidrofóbica. La estructura se adapta al medio.</p>
+    <div class="qb-method-table"><table><thead><tr><th>Tipo</th><th>Cómo se asocia</th><th>Cómo suele extraerse</th></tr></thead><tbody>
+      <tr><td><b>Integral</b></td><td>Interactúa directamente con el núcleo hidrofóbico de la bicapa; puede ser monotópica, bitópica o politópica.</td><td>Detergentes que formen complejos proteína–detergente.</td></tr>
+      <tr><td><b>Periférica</b></td><td>Interacciones electrostáticas, H-bonds o unión a proteínas integrales.</td><td>Alta sal, cambios de pH, quelantes u otros tratamientos suaves.</td></tr>
+      <tr><td><b>Anfitrópica</b></td><td>Alterna reversiblemente entre forma soluble y asociada a membrana; puede usar hélice anfipática, lípido o interacción proteica.</td><td>Depende del mecanismo regulador; la asociación puede revertirse fisiológicamente.</td></tr>
+    </tbody></table></div>
+
+    <h3>Bacteriorrodopsina</h3>
+    <p class="highlightable" data-block-id="qb:c5:bacterio">Posee siete hélices α transmembrana y retinal unido a una Lys mediante una base de Schiff. La absorción de luz cambia el retinal y dispara cambios conformacionales que bombean protones. El gradiente electroquímico resultante almacena energía utilizable para síntesis de ATP.</p>
+    <h3>GLUT-1</h3>
+    <p class="highlightable" data-block-id="qb:c5:glut">GLUT-1 posee 12 hélices transmembrana y transporta glucosa por <strong>difusión facilitada</strong>, sin hidrólisis directa de ATP. Varias hélices son anfipáticas: sus caras hidrofóbicas miran a los lípidos y caras polares contribuyen al sitio de unión. Funciona por <strong>acceso alternante</strong>: el sitio se expone a un lado, une glucosa, cambia de conformación y se expone al otro lado.</p>
+    <h3>Porinas</h3>
+    <p class="highlightable" data-block-id="qb:c5:porin">Muchas porinas son barriles β. Las cadenas laterales apolares miran hacia los lípidos, mientras los residuos polares y cargados miran al poro acuoso. Así, una misma estructura es compatible simultáneamente con la membrana y con el paso de solutos hidrofílicos.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap6">
+    <div class="qb-chapter-number">06</div>
+    <h2>Cómo se diseña una purificación de proteínas</h2>
+    <p class="highlightable" data-block-id="qb:c6:goal">Purificar una proteína significa separarla de miles de componentes para poder estudiar su actividad, estructura, masa, secuencia, interacciones o función. Una estrategia no se diseña alrededor de “hacer columnas”, sino alrededor de <strong>propiedades diferenciales</strong> y de un ensayo que nos permita localizar la proteína de interés después de cada etapa.</p>
+    <div class="qb-flow" aria-label="Flujo general de purificación">
+      <span>Fuente biológica</span><i>→</i><span>Ruptura</span><i>→</i><span>Extracto</span><i>→</i><span>Fraccionamiento / concentración</span><i>→</i><span>Cromatografías</span><i>→</i><span>Control de pureza</span>
+    </div>
+
+    <h3>Ruptura y extracto</h3>
+    <p class="highlightable" data-block-id="qb:c6:lysis">La ruptura puede ser mecánica (Potter, mortero, prensa, microesferas), física (sonicación, congelamiento-descongelamiento, choque osmótico en sistemas apropiados), química (detergentes) o enzimática. Después se centrifuga para separar restos grandes. El sobrenadante puede constituir el extracto soluble; si la proteína está en membranas u organelas, la fracción de interés puede ser un pellet.</p>
+    <div class="qb-callout"><b>Sonicación:</b> más energía puede aumentar la ruptura, pero también el calentamiento. Por eso se trabaja en pulsos y frío para proteger actividad y estructura.</div>
+
+    <h3>Precipitación, diálisis y ultrafiltración</h3>
+    <p class="highlightable" data-block-id="qb:c6:saltingout"><strong>Sulfato de amonio:</strong> a alta fuerza iónica muchas proteínas pierden solubilidad (salting out). Como distintas proteínas precipitan en diferentes rangos de saturación, permite fraccionar y concentrar conservando con frecuencia buena actividad.</p>
+    <p class="highlightable" data-block-id="qb:c6:saturation">Cuando se informa una fracción “30–60 % de saturación” no significa 30–60 % de pureza: significa que se recuperó el conjunto de proteínas que precipita al llevar la solución desde 30 % hasta 60 % de saturación de sulfato de amonio.</p>
+
+    <p class="highlightable" data-block-id="qb:c6:pi-precip"><strong>Precipitación por pH:</strong> cerca del pI disminuye la repulsión electrostática entre moléculas y puede caer la solubilidad. Es útil, pero un pH inadecuado también puede inactivar o desnaturalizar la proteína.</p>
+    <p class="highlightable" data-block-id="qb:c6:dialysis"><strong>Diálisis:</strong> una membrana retiene macromoléculas y permite difundir sales y solutos pequeños. Se usa para desalado o cambio de buffer, no para separar dos proteínas de tamaños parecidos.</p>
+    <p class="highlightable" data-block-id="qb:c6:ultra"><strong>Ultrafiltración:</strong> una membrana con corte de masa molecular retiene la proteína y deja pasar solvente y moléculas más pequeñas. Reduce volumen y concentra.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap7">
+    <div class="qb-chapter-number">07</div>
+    <h2>Cromatografías: misma arquitectura, propiedades distintas</h2>
+    <p class="highlightable" data-block-id="qb:c7:general">Una columna contiene una <strong>fase estacionaria</strong> y una <strong>fase móvil</strong> que transporta la muestra. El equilibrio de la columna fija pH, fuerza iónica y composición antes de cargar. Las moléculas interaccionan de forma distinta con la matriz y por eso tienen diferentes volúmenes o tiempos de elución.</p>
+    <p class="highlightable" data-block-id="qb:c7:packing">La matriz debe empaquetarse de manera homogénea, sin burbujas ni canales preferenciales. Una columna mal empaquetada produce caminos desiguales, ensanchamiento y pérdida de resolución. Antes de cargar, se equilibra con el buffer de trabajo.</p>
+    <p class="highlightable" data-block-id="qb:c7:chromatogram">El efluente se recolecta en fracciones y puede monitorearse por A<sub>280</sub>, señal dominada principalmente por Trp y Tyr. Un <strong>cromatograma</strong> grafica la señal frente a tiempo, volumen de elución o número de fracción. Un pico indica material que eluye, no una proteína necesariamente pura.</p>
+
+    <div class="qb-equation"><math display="block"><mrow><msub><mi>t</mi><mi>R</mi></msub><mo>=</mo><mfrac><msub><mi>V</mi><mi>e</mi></msub><mi>Q</mi></mfrac></mrow></math></div>
+    <p class="qb-muted">V<sub>e</sub> = volumen de elución; Q = caudal. Si V<sub>e</sub> = 15 mL y Q = 1 mL/min, t<sub>R</sub> = 15 min.</p>
+
+    <h3>Intercambio iónico — separar por carga</h3>
+    <div class="qb-two-col"><div><h4>Intercambiador catiónico</h4><p>La matriz es <b>negativa</b> y retiene proteínas <b>positivas</b>.</p><p>Ejemplos clásicos: CM, SP.</p></div><div><h4>Intercambiador aniónico</h4><p>La matriz es <b>positiva</b> y retiene proteínas <b>negativas</b>.</p><p>Ejemplos clásicos: DEAE, Q.</p></div></div>
+    <p class="highlightable" data-block-id="qb:c7:iex">La retención depende de la carga de la proteína al pH de trabajo y de la fuerza iónica. Una proteína débilmente unida puede salir con poca sal; una fuertemente unida necesita mayor concentración de sal o un cambio de pH que reduzca su carga.</p>
+    <details class="qb-params"><summary>Parámetros de intercambio iónico: qué cambia y por qué</summary><div><p><b>pH:</b> modifica la ionización y, por tanto, el signo y la magnitud de la carga proteica. Cerca del pI la interacción iónica suele debilitarse.</p><p><b>Sal:</b> los iones compiten y apantallan interacciones electrostáticas; aumentar NaCl favorece elución.</p><p><b>Gradiente continuo:</b> aumenta progresivamente la fuerza iónica y suele mejorar la resolución entre proteínas de afinidad similar.</p><p><b>Escalones:</b> son simples y rápidos, pero separan en grupos más amplios.</p><p><b>Caudal:</b> excesivo puede reducir equilibrio y resolución; demasiado bajo aumenta tiempo y difusión.</p></div></details>
+
+    <h3>Exclusión molecular — separar por tamaño</h3>
+    <p class="highlightable" data-block-id="qb:c7:sec">La matriz posee poros. Las moléculas grandes no entran en muchos poros y recorren un camino corto: <strong>eluyen primero</strong>. Las pequeñas penetran más poros, exploran un volumen mayor y eluyen después. No están “retenidas” por una unión química: simplemente recorren más volumen interno.</p>
+    <div class="qb-equation"><math display="block"><mrow><msub><mi>K</mi><mi>av</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>V</mi><mi>e</mi></msub><mo>−</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><mrow><msub><mi>V</mi><mi>t</mi></msub><mo>−</mo><msub><mi>V</mi><mn>0</mn></msub></mrow></mfrac></mrow></math></div>
+    <p class="highlightable" data-block-id="qb:c7:sec-cal">Dentro del rango de fraccionamiento puede calibrarse con patrones. Las moléculas totalmente excluidas salen cerca de V<sub>0</sub>. La técnica suele ser <strong>isocrática</strong>: no hace falta un gradiente de sal para que el tamaño produzca la separación.</p>
+    <details class="qb-params"><summary>Parámetros de exclusión molecular: qué cambia y por qué</summary><div><p><b>Tamaño de poros:</b> define el rango que puede fraccionarse. Si todas las proteínas son demasiado grandes, todas salen cerca de V<sub>0</sub>; si son demasiado pequeñas, todas acceden casi a todo el volumen.</p><p><b>Volumen de muestra:</b> una muestra muy grande ensancha bandas y empeora resolución.</p><p><b>Longitud de columna:</b> mayor longitud puede aumentar resolución a costa de tiempo y presión.</p><p><b>Forma:</b> separa por volumen hidrodinámico, por lo que una proteína alargada puede comportarse como una globular de masa diferente.</p></div></details>
+
+    <h3>Afinidad — separar por reconocimiento</h3>
+    <p class="highlightable" data-block-id="qb:c7:affinity">Un ligando específico está inmovilizado en la matriz. La proteína de interés queda retenida mientras muchas otras pasan. Luego se lava y se eluye alterando la interacción: puede añadirse ligando libre competitivo, cambiar sal o pH, o usar una condición específica del sistema. Por su selectividad, una sola etapa puede producir un aumento de pureza enorme.</p>
+    <p class="highlightable" data-block-id="qb:c7:affinity-examples">Ejemplos: un anticuerpo puede capturar su antígeno; una proteína con <strong>His-tag</strong> puede unirse a un metal inmovilizado; una enzima puede retenerse mediante un inhibidor o análogo de sustrato. La condición de elución debe liberar la proteína sin destruir irreversiblemente su actividad.</p>
+
+  </section>
+
+  <section class="qb-chapter" id="cap8">
+    <div class="qb-chapter-number">08</div>
+    <h2>Cómo se mide si una purificación realmente funcionó</h2>
+    <p class="highlightable" data-block-id="qb:c8:tracking">Un cromatograma de A<sub>280</sub> detecta material proteico, pero un pico no identifica por sí solo nuestra proteína. Si la proteína es una enzima, lo más potente es medir <strong>actividad enzimática en cada fracción</strong> y reunir sólo las fracciones activas en un pool.</p>
+    <div class="qb-formula-grid">
+      <div><b>Proteína total</b><math display="block"><mrow><msub><mi>P</mi><mi>tot</mi></msub><mo>=</mo><msub><mi>C</mi><mi>P</mi></msub><mo>·</mo><mi>V</mi></mrow></math></div>
+      <div><b>Actividad total</b><math display="block"><mrow><msub><mi>A</mi><mi>tot</mi></msub><mo>=</mo><msub><mi>A</mi><mi>vol</mi></msub><mo>·</mo><mi>V</mi></mrow></math></div>
+      <div><b>Actividad específica</b><math display="block"><mrow><mi>AE</mi><mo>=</mo><mfrac><msub><mi>A</mi><mi>tot</mi></msub><msub><mi>P</mi><mi>tot</mi></msub></mfrac></mrow></math></div>
+      <div><b>Factor de purificación</b><math display="block"><mrow><mi>FP</mi><mo>=</mo><mfrac><msub><mi>AE</mi><mi>etapa</mi></msub><msub><mi>AE</mi><mi>inicial</mi></msub></mfrac></mrow></math></div>
+      <div><b>Rendimiento</b><math display="block"><mrow><mi>R</mi><mo stretchy="false">(</mo><mo>%</mo><mo stretchy="false">)</mo><mo>=</mo><mfrac><msub><mi>A</mi><mi>etapa</mi></msub><msub><mi>A</mi><mi>inicial</mi></msub></mfrac><mo>·</mo><mn>100</mn></mrow></math></div>
+    </div>
+    <p class="highlightable" data-block-id="qb:c8:interpret">Una buena purificación suele mostrar <strong>actividad específica creciente</strong>, porque disminuye la proteína contaminante por unidad de actividad objetivo. El rendimiento, en cambio, suele caer porque también se pierde parte de la proteína de interés. Por eso pureza y recuperación deben evaluarse juntas.</p>
+
+    <h3>Ejemplo completo</h3>
+    <div class="qb-table-wrap"><table class="qb-data-table"><thead><tr><th>Etapa</th><th>Proteína total</th><th>Actividad total</th><th>Actividad específica</th><th>Rendimiento</th></tr></thead><tbody>
+      <tr><td>Extracto crudo</td><td>20 000 mg</td><td>4 000 000 U</td><td>200 U/mg</td><td>100 %</td></tr>
+      <tr><td>Precipitación salina</td><td>5 000 mg</td><td>3 000 000 U</td><td>600 U/mg</td><td>75 %</td></tr>
+      <tr><td>Precipitación por pH</td><td>4 000 mg</td><td>1 000 000 U</td><td>250 U/mg</td><td>25 %</td></tr>
+      <tr><td>Intercambio iónico</td><td>200 mg</td><td>800 000 U</td><td>4 000 U/mg</td><td>20 %</td></tr>
+      <tr><td>Afinidad</td><td>50 mg</td><td>750 000 U</td><td>15 000 U/mg</td><td>18,75 %</td></tr>
+      <tr><td>Exclusión molecular</td><td>45 mg</td><td>675 000 U</td><td>15 000 U/mg</td><td>16,875 %</td></tr>
+    </tbody></table></div>
+    <p class="highlightable" data-block-id="qb:c8:example">En este ejemplo, el intercambio iónico produce el mayor salto consecutivo de actividad específica (250 → 4000 U/mg, 16×). La exclusión final no aumenta actividad específica, por lo que no añade pureza detectable según este criterio. La precipitación por pH empeora la preparación porque se pierde mucha más actividad objetivo que proteína total.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap9">
+    <div class="qb-chapter-number">09</div>
+    <h2>Electroforesis: por qué una molécula migra en un campo eléctrico</h2>
+    <p class="highlightable" data-block-id="qb:c9:objective">La electroforesis separa moléculas cargadas aplicando un campo eléctrico. El objetivo puede ser distinguir componentes, analizar pureza, estimar masa molecular, estudiar carga/pI o preparar una etapa de identificación posterior.</p>
+    <div class="qb-formula-grid">
+      <div><b>Fuerza eléctrica</b><math display="block"><mrow><mi>F</mi><mo>=</mo><mi>q</mi><mi>E</mi></mrow></math></div>
+      <div><b>Campo aproximado</b><math display="block"><mrow><mi>E</mi><mo>≈</mo><mfrac><mi>V</mi><mi>L</mi></mfrac></mrow></math></div>
+      <div><b>Velocidad</b><math display="block"><mrow><mi>v</mi><mo>=</mo><mi>μ</mi><mi>E</mi></mrow></math></div>
+      <div><b>Movilidad</b><math display="block"><mrow><mi>μ</mi><mo>=</mo><mfrac><mi>v</mi><mi>E</mi></mfrac></mrow></math></div>
+      <div><b>Distancia a velocidad constante</b><math display="block"><mrow><mi>x</mi><mo>=</mo><mi>v</mi><mi>t</mi></mrow></math></div>
+    </div>
+    <p class="highlightable" data-block-id="qb:c9:mobility">En un modelo simple, la movilidad aumenta con la magnitud de la carga y disminuye con la fricción hidrodinámica. Esa fricción depende de tamaño, forma, viscosidad del medio y, en un gel, del tamizado de la red. Por eso en PAGE nativa no basta con decir “carga/masa”: también importan la conformación y el medio.</p>
+    <div class="qb-callout qb-callout-key"><b>A igual tamaño y forma:</b> mayor |carga| suele producir mayor movilidad.<br><b>A igual carga y forma:</b> una molécula más grande suele experimentar más fricción y migrar menos.<br><b>Pero en una proteína nativa real</b>, carga, tamaño y forma cambian simultáneamente.</div>
+
+    <h3>Ánodo, cátodo y pI</h3>
+    <div class="qb-electro-diagram" aria-label="Esquema de electroforesis">
+      <div class="electrode cathode"><b>−</b><span>Cátodo</span></div>
+      <div class="gel-track"><span class="band positive">proteína +</span><span class="origin">siembra</span><span class="band negative">proteína −</span></div>
+      <div class="electrode anode"><b>+</b><span>Ánodo</span></div>
+    </div>
+    <p class="highlightable" data-block-id="qb:c9:direction">Las especies positivas migran hacia el cátodo (−) y las negativas hacia el ánodo (+). En proteínas y péptidos, el signo se predice comparando pH y pI. En el pI la carga neta promedio es cero y la migración neta debida al campo es mínima.</p>
+
+    <h3>El soporte y el gel</h3>
+    <p class="highlightable" data-block-id="qb:c9:support">Papel y acetato de celulosa sirven para separaciones sencillas de especies cargadas. Agarosa forma poros grandes y se usa sobre todo para ácidos nucleicos o macromoléculas grandes. La poliacrilamida forma una red de poros pequeños y ajustables, ideal para proteínas.</p>
+    <p class="highlightable" data-block-id="qb:c9:polymer">El gel de poliacrilamida se prepara con acrilamida y bisacrilamida. El <strong>persulfato de amonio (APS)</strong> genera radicales que inician la polimerización y <strong>TEMED</strong> acelera la formación de radicales. Aumentar el porcentaje total de acrilamida y/o el entrecruzamiento suele producir poros menores.</p>
+    <details class="qb-params"><summary>Parámetros técnicos de una corrida: qué pasa si los cambio</summary><div><p><b>Voltaje / campo:</b> al aumentar E, aumenta v en primera aproximación. Pero también aumenta el calentamiento Joule, lo que puede deformar bandas, alterar pH o desnaturalizar.</p><p><b>Tiempo:</b> si la velocidad es aproximadamente constante, más tiempo produce más distancia. Demasiado tiempo puede hacer que las bandas pequeñas salgan del gel.</p><p><b>% de gel:</b> mayor % → poros menores → más tamizado, útil para proteínas pequeñas. Menor % → poros mayores, útil para proteínas grandes.</p><p><b>Buffer:</b> fija pH y aporta iones para conducir corriente. Fuerza iónica excesiva puede aumentar corriente y calentamiento.</p><p><b>Cantidad de muestra:</b> sobrecargar ensancha bandas y empeora resolución.</p><p><b>Horizontal vs vertical:</b> agarosa suele correrse horizontal; PAGE suele ser vertical porque una placa fina permite geles de poliacrilamida estables y buena resolución.</p></div></details>
+
+<div class="qb-simulator" id="sim-ph-pi">
+  <div class="qb-sim-head"><div><span class="qb-eyebrow">SIMULADOR CONCEPTUAL</span><h3>pH vs pI: predecí la migración</h3></div><span class="qb-sim-note">No calcula carga fraccional exacta.</span></div>
+  <div class="qb-sim-grid">
+    <label>pH del medio <output id="qbPhOut">7,0</output><input id="qbPhRange" type="range" min="0" max="14" step="0.1" value="7"></label>
+    <label>pI de la proteína <output id="qbPiOut">5,2</output><input id="qbPiRange" type="range" min="2" max="12" step="0.1" value="5.2"></label>
+  </div>
+  <div class="qb-sim-result" id="qbChargeResult"><b>pH &gt; pI</b><span>Carga neta predominante negativa → migra al ánodo (+).</span></div>
+  <div class="qb-sim-electro"><span class="qb-sim-electrode">−<small>cátodo</small></span><div class="qb-sim-track"><i id="qbSimProtein"></i><em>origen</em></div><span class="qb-sim-electrode">+<small>ánodo</small></span></div>
+</div>
+
+  </section>
+
+  <section class="qb-chapter" id="cap10">
+    <div class="qb-chapter-number">10</div>
+    <h2>PAGE nativa, SDS-PAGE y condiciones reductoras</h2>
+    <div class="qb-compare-3">
+      <div><h3>PAGE nativa</h3><p>Conserva gran parte de la estructura y asociaciones no covalentes.</p><b>Depende de carga + tamaño + forma.</b></div>
+      <div><h3>SDS-PAGE</h3><p>Desnaturaliza y recubre las cadenas con carga negativa.</p><b>Depende principalmente del tamaño de la cadena.</b></div>
+      <div><h3>SDS + BME/DTT</h3><p>Además reduce puentes disulfuro.</p><b>Revela cadenas unidas covalentemente por S–S.</b></div>
+    </div>
+
+    <h3>Qué hace el SDS</h3>
+    <p class="highlightable" data-block-id="qb:c10:sds">El SDS es un detergente aniónico con una cola hidrofóbica y un sulfato negativo. Se une extensamente a la cadena polipeptídica —aproximadamente un SDS por cada dos residuos, como regla útil—, rompe muchas interacciones no covalentes y produce una densidad de carga negativa aproximadamente uniforme. Así, las diferencias de carga nativa y forma dejan de dominar la migración.</p>
+    <p class="highlightable" data-block-id="qb:c10:small">En SDS-PAGE las cadenas pequeñas atraviesan la red con menor resistencia y migran más. Las grandes quedan más retardadas. Por eso la técnica permite estimar <strong>masa molecular aparente de subunidades</strong>.</p>
+
+    <h3>Qué no rompe el SDS</h3>
+    <p class="highlightable" data-block-id="qb:c10:reduction">El SDS por sí solo no reduce puentes disulfuro. Para eso se agregan <strong>β-mercaptoetanol (BME)</strong> o <strong>DTT</strong>. Comparar un gel no reductor con uno reductor permite inferir si dos cadenas estaban unidas por enlaces S–S.</p>
+
+    <h3>Partes del sistema</h3>
+    <ul class="qb-clean-list"><li><b>Buffer de corrida:</b> mantiene pH, transporta corriente y define condiciones iónicas.</li><li><b>Buffer de siembra:</b> acondiciona la muestra; puede incluir SDS, reductor, glicerol para aumentar densidad y colorante de frente.</li><li><b>Pocillos:</b> permiten cargar muestras separadas en carriles.</li><li><b>Gel de concentración (stacking):</b> comprime las proteínas en una banda fina antes de la separación.</li><li><b>Gel de resolución:</b> produce el tamizado por tamaño.</li><li><b>Marcadores:</b> proteínas de masas conocidas para calibrar.</li></ul>
+
+    <h3>Movilidad relativa y masa molecular</h3>
+    <div class="qb-equation"><math display="block"><mrow><msub><mi>R</mi><mi>f</mi></msub><mo>=</mo><mfrac><mtext>distancia recorrida por la proteína</mtext><mtext>distancia del frente de corrida</mtext></mfrac></mrow></math></div>
+    <p class="highlightable" data-block-id="qb:c10:calibration">En un rango útil de gel, suele obtenerse una relación aproximadamente lineal entre <strong>log(MM)</strong> y R<sub>f</sub>. Se corren patrones de masa conocida, se construye la curva y se interpola la muestra desconocida. Una comparación directa con la banda de marcador sirve para una estimación rápida; la curva aporta más rigor.</p>
+    <p class="highlightable" data-block-id="qb:c10:ferguson">Otra estrategia compara movilidad a diferentes porcentajes de gel. Al aumentar % de acrilamida, las proteínas grandes son mucho más penalizadas por el tamizado que las pequeñas. Analizar cómo cambia la movilidad con la concentración del gel permite separar el efecto de tamaño del comportamiento electroforético.</p>
+  </section>
+
+  
+<div class="qb-simulator" id="sim-sds">
+  <div class="qb-sim-head"><div><span class="qb-eyebrow">SIMULADOR CONCEPTUAL</span><h3>SDS-PAGE: masa, % de gel y distancia</h3></div><span class="qb-sim-note">Visualización didáctica; para PM real se calibra con patrones.</span></div>
+  <div class="qb-sim-grid">
+    <label>Masa aparente <output id="qbPmOut">80 kDa</output><input id="qbPmRange" type="range" min="10" max="250" step="5" value="80"></label>
+    <label>Poliacrilamida <output id="qbGelOut">10 %</output><input id="qbGelRange" type="range" min="5" max="20" step="1" value="10"></label>
+  </div>
+  <div class="qb-sds-visual"><div class="qb-wells">pocillo</div><div class="qb-lane"><i id="qbSdsBand"></i><span>frente</span></div></div>
+  <p class="qb-sim-explain" id="qbSdsExplain">A menor masa, mayor migración. Al aumentar % de gel, disminuye el tamaño de poro y aumenta el tamizado.</p>
+</div>
+
+
+  <section class="qb-chapter" id="cap11">
+    <div class="qb-chapter-number">11</div>
+    <h2>Isoelectroenfoque y electroforesis bidimensional</h2>
+    <h3>IEF: separar por punto isoeléctrico</h3>
+    <p class="highlightable" data-block-id="qb:c11:ief">En el <strong>isoelectroenfoque (IEF)</strong> existe un gradiente de pH. Una proteína migra hasta llegar a la región donde pH = pI. Allí su carga neta promedio se hace cero y deja de tener migración neta. Si difunde fuera de esa zona, recupera carga y el campo la empuja de nuevo hacia su pI: por eso las bandas se “enfocan”.</p>
+    <details class="qb-params"><summary>Parámetros de IEF: qué cambia y por qué</summary><div><p><b>Rango de pH:</b> uno amplio permite cubrir muchas proteínas; uno estrecho ofrece mayor resolución entre pI cercanos.</p><p><b>Sales:</b> demasiadas sales aumentan conductividad y pueden interferir con el enfoque.</p><p><b>Cantidad de muestra:</b> sobrecargar ensancha manchas.</p><p><b>Tiempo / voltaje-hora:</b> debe alcanzar para que las proteínas lleguen a su pI sin sobrecalentar el sistema.</p></div></details>
+
+    <h3>2D-PAGE: dos propiedades en un mismo experimento</h3>
+    <p class="highlightable" data-block-id="qb:c11:2d">La electroforesis bidimensional combina <strong>IEF en la primera dimensión</strong> y <strong>SDS-PAGE en la segunda</strong>. Primero las proteínas se ordenan horizontalmente según pI. Luego la tira se coloca sobre un gel SDS y cada proteína migra verticalmente según masa. El resultado es un patrón de manchas donde cada punto representa una especie proteica o forma modificada detectable.</p>
+    <p class="highlightable" data-block-id="qb:c11:expression">Comparar patrones entre condiciones permite estudiar <strong>expresión proteica</strong>: qué proteínas o formas aparecen, desaparecen o cambian de abundancia relativa. Un experimento puede resolver cientos o miles de especies, pero la técnica es laboriosa, tiene sesgos de detección y hoy suele complementarse con espectrometría de masas.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap12">
+    <div class="qb-chapter-number">12</div>
+    <h2>Cómo vemos e identificamos lo que se separó</h2>
+    <div class="qb-method-table"><table><thead><tr><th>Método</th><th>Qué detecta</th><th>Ventaja / limitación principal</th></tr></thead><tbody>
+      <tr><td><b>Coomassie</b></td><td>Proteína total en gel.</td><td>Simple y robusto; sensibilidad moderada.</td></tr>
+      <tr><td><b>Plata</b></td><td>Proteína total.</td><td>Mucho más sensible; más tediosa y fácil de sobre-revelar.</td></tr>
+      <tr><td><b>Fluorescencia</b></td><td>Proteína total o marcaje específico.</td><td>Amplio rango dinámico; requiere equipo de lectura.</td></tr>
+      <tr><td><b>Western / immunoblot</b></td><td>Una proteína reconocida por anticuerpo.</td><td>Alta especificidad; depende de anticuerpo y transferencia.</td></tr>
+      <tr><td><b>Espectrometría de masas</b></td><td>Masa/carga de iones y péptidos; permite identificación proteica.</td><td>Muy informativa; requiere instrumentación y análisis.</td></tr>
+    </tbody></table></div>
+
+    <h3>Western blot</h3>
+    <p class="highlightable" data-block-id="qb:c12:western">Después de SDS-PAGE, las proteínas se transfieren a una membrana. Se bloquean sitios inespecíficos, se agrega un anticuerpo primario contra la proteína objetivo y luego un sistema de detección, muchas veces con anticuerpo secundario. El Western responde principalmente <strong>“¿está esta proteína específica y en qué tamaño aparente?”</strong>.</p>
+
+    <h3>Southern, Northern y otros blots</h3>
+    <p class="highlightable" data-block-id="qb:c12:blots"><strong>Southern blot</strong> detecta secuencias específicas de ADN mediante hibridación; <strong>Northern blot</strong> detecta ARN; <strong>Western blot</strong> detecta proteína con anticuerpos. Dot/slot blot omite la separación electroforética y detecta material aplicado como punto o ranura. Far-Western puede estudiar interacción proteína-proteína usando una proteína como sonda.</p>
+    <p class="highlightable" data-block-id="qb:c12:other-blots"><strong>Southwestern</strong> se usa para estudiar proteínas que se unen a ADN usando ADN como sonda. El término <strong>Eastern blot</strong> no designa una técnica única y universal; se usa de manera variable para métodos que detectan modificaciones postraduccionales u otras propiedades de proteínas transferidas. Conviene siempre especificar qué molécula se separa, qué sonda se usa y qué pregunta responde el ensayo.</p>
+
+
+    <h3>Espectrometría de masas</h3>
+    <p class="highlightable" data-block-id="qb:c12:ms">Una proteína puede cortarse en péptidos, ionizarse y analizarse según relación masa/carga (m/z). Los patrones de masas y fragmentación permiten identificar proteínas, mapear modificaciones y comparar abundancias. En proteómica moderna es una herramienta central para identificar manchas o bandas y para análisis de mezclas complejas.</p>
+
+    <h3>PCR: repaso y conexión con electroforesis</h3>
+    <p class="highlightable" data-block-id="qb:c12:pcr">La PCR amplifica una región de ADN mediante ciclos de desnaturalización, alineamiento de primers y extensión. La PCR convencional suele verificarse por electroforesis en agarosa. <strong>RT-PCR</strong> comienza desde ARN y usa transcriptasa reversa para generar ADNc. <strong>qPCR</strong> mide fluorescencia durante la amplificación y permite cuantificación relativa o absoluta según el diseño. <strong>RT-qPCR</strong> combina ambas para cuantificar ARN a través de ADNc.</p>
+  </section>
+
+  <section class="qb-chapter" id="cap13">
+    <div class="qb-chapter-number">13</div>
+    <h2>Integración: cómo decidir y cómo resolver los ejercicios típicos</h2>
+    <h3>Elegir la técnica según la propiedad</h3>
+    <div class="qb-table-wrap"><table class="qb-data-table"><thead><tr><th>Pregunta</th><th>Técnica principal</th><th>Qué propiedad aprovecha</th></tr></thead><tbody>
+      <tr><td>¿Quiero separar proteínas por carga?</td><td>Intercambio iónico / PAGE nativa</td><td>Carga neta en condiciones dadas.</td></tr>
+      <tr><td>¿Quiero separarlas por tamaño nativo?</td><td>Exclusión molecular</td><td>Volumen hidrodinámico.</td></tr>
+      <tr><td>¿Quiero separar cadenas por masa?</td><td>SDS-PAGE</td><td>Tamaño de polipéptido desnaturalizado.</td></tr>
+      <tr><td>¿Quiero saber si hay subunidades unidas por S–S?</td><td>SDS-PAGE ± BME/DTT</td><td>Puentes disulfuro.</td></tr>
+      <tr><td>¿Quiero separar por pI?</td><td>IEF</td><td>Punto isoeléctrico.</td></tr>
+      <tr><td>¿Quiero máxima resolución de una mezcla proteica compleja?</td><td>2D-PAGE</td><td>pI + masa.</td></tr>
+      <tr><td>¿Quiero una proteína específica?</td><td>Afinidad / Western</td><td>Reconocimiento molecular específico.</td></tr>
+      <tr><td>¿Quiero identificar una banda/mancha desconocida?</td><td>Espectrometría de masas</td><td>m/z y fragmentación de péptidos.</td></tr>
+    </tbody></table></div>
+
+    <h3>Ejemplo 1 — dirección de migración</h3>
+    <p class="highlightable" data-block-id="qb:c13:migration">Para una proteína con pI = 5,2 a pH 7: pH &gt; pI, por lo tanto la proteína es netamente negativa y migra hacia el ánodo (+). Para una con pI = 8,3 a pH 7,4: pH &lt; pI, será positiva y migrará hacia el cátodo (−). Una proteína con pI = 7,4 a pH 7,4 queda cerca del origen.</p>
+
+    <h3>Ejemplo 2 — intercambio catiónico</h3>
+    <p class="highlightable" data-block-id="qb:c13:iex-order">Una columna de intercambio catiónico tiene matriz negativa y retiene especies positivas. Si C es negativa, B aproximadamente neutra y A positiva, el orden de elución esperado es <strong>C → B → A</strong>. C sale en el percolado, B interactúa poco y A requiere mayor fuerza iónica.</p>
+
+    <h3>Ejemplo 3 — separar A, B y C usando dos propiedades</h3>
+    <p class="highlightable" data-block-id="qb:c13:strategy">Si A = 450 kDa y neutra, B = 450 kDa y negativa, y C = 250 kDa y negativa, una estrategia limpia es: <strong>exclusión molecular</strong> primero, que da A+B en el pico temprano y C después; luego <strong>intercambio aniónico</strong> sobre A+B, donde A neutra sale sin retener y B negativa queda retenida y se eluye con un gradiente de NaCl. También puede invertirse el orden: primero separar A de B+C por carga y luego B de C por tamaño.</p>
+
+    <h3>Ejemplo 4 — inferir estructura con nativa, SDS y reductor</h3>
+    <p class="highlightable" data-block-id="qb:c13:subunits">Si una proteína aparece como una banda en PAGE nativa, dos bandas en SDS-PAGE y tres bandas después de SDS + BME, la interpretación mínima es que el complejo nativo contiene al menos tres cadenas; dos de ellas estaban unidas por uno o más puentes disulfuro y el conjunto estaba asociado por interacciones no covalentes.</p>
+
+    <h3>Errores que conviene evitar</h3>
+    <ul class="qb-clean-list qb-errors">
+      <li>Confundir <b>intercambiador catiónico</b> con matriz positiva: es al revés; retiene cationes, por eso la matriz es negativa.</li>
+      <li>Decir que en exclusión molecular “la pequeña pasa más fácil y sale primero”: entra en más poros y sale después.</li>
+      <li>Suponer que el SDS rompe disulfuros: hace falta BME o DTT.</li>
+      <li>Usar sólo pH para predecir dirección: en proteínas hay que compararlo con pI.</li>
+      <li>Promediar dos pK<sub>a</sub> cualquiera para calcular pI: deben rodear a la especie de carga cero.</li>
+      <li>Interpretar una sola banda de SDS-PAGE como prueba absoluta de pureza: dos proteínas de masa similar pueden comigrar.</li>
+      <li>Confundir “desnaturalizar” con “romper la estructura primaria”.</li>
+      <li>Mirar sólo A<sub>280</sub> para decidir qué fracciones juntar: hay que seguir específicamente la proteína objetivo.</li>
+    </ul>
+
+    <div class="qb-final-map">
+      <b>Mapa mental final</b>
+      <p>Aminoácidos → ionización y pI → carga de péptidos/proteínas → plegamiento y función → diferencias de carga/tamaño/afinidad → purificación → cromatografía → electroforesis y detección → identificación y control de pureza.</p>
+    </div>
+  </section>
+
+  <footer class="qb-footer"><a href="#qb-top">Volver arriba ↑</a><span>Resumen integrado de Química Biológica · Proteínas y métodos</span></footer>
+
+      <button class="qb-back-top" id="qbBackTop" type="button" aria-label="Volver arriba">↑</button>
+    </main>
+  </div>
+</article><script>
+(function(){
+  "use strict";
+  const state={bound:false,root:null,scrollHost:null,pendingSelection:null,highlights:[]};
+  const $=(root,sel)=>root?.querySelector(sel);
+  const $$=(root,sel)=>[...(root?.querySelectorAll(sel)||[])];
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const post=(command,payload={})=>{if(window.parent!==window)window.parent.postMessage({type:'solved-summary-command',command,...payload},'*')};
+  const storage={get:key=>{try{return localStorage.getItem(key)}catch{return null}},set:(key,value)=>{try{localStorage.setItem(key,value)}catch{}}};
+  const hueFromHex=hex=>{const s=String(hex||'').replace('#','');if(!/^[0-9a-f]{6}$/i.test(s))return 334;let r=parseInt(s.slice(0,2),16)/255,g=parseInt(s.slice(2,4),16)/255,b=parseInt(s.slice(4,6),16)/255,max=Math.max(r,g,b),min=Math.min(r,g,b),d=max-min,h=0;if(d){if(max===r)h=((g-b)/d)%6;else if(max===g)h=(b-r)/d+2;else h=(r-g)/d+4;h=Math.round(h*60);if(h<0)h+=360}return h};
+  function appHue(){try{return Number(window.LBT_THEME?.subjectHue?.('qb'))||334}catch{return 334}}
+  function setHue(hue,save=true){hue=Math.round(Number(hue)||334);state.root?.style.setProperty('--qb-hue',hue);$$ (state.root,'[data-qb-hue]').forEach(b=>b.classList.toggle('active',Number(b.dataset.qbHue)===hue));if(save){storage.set('solved-qb-hue',String(hue));post('save-color',{hue})}}
+  function currentTheme(){return document.documentElement.dataset.theme||state.root?.dataset.standaloneTheme||storage.get('solved-qb-theme')||'light'}
+  function toggleTheme(){const next=currentTheme()==='dark'?'light':'dark';state.root.dataset.standaloneTheme=next;storage.set('solved-qb-theme',next);post('save-theme',{theme:next});status(`Modo ${next==='dark'?'oscuro':'claro'}`)}
+  function status(text){const el=$(state.root,'#qbToolStatus');if(!el)return;el.textContent=text;clearTimeout(status._t);status._t=setTimeout(()=>{el.textContent=''},2200)}
+  function sidebar(open){const side=$(state.root,'#qbSidebar'),scrim=$(state.root,'#qbSidebarScrim');side?.classList.toggle('open',open);scrim?.classList.toggle('show',open)}
+  function scrollHost(){return state.root.closest('.content-pane')||document.scrollingElement||document.documentElement}
+  function progress(){const host=state.scrollHost,bar=$(state.root,'#qbReadingProgress');if(!host||!bar)return;let top,max;if(host===document.scrollingElement||host===document.documentElement){top=window.scrollY;max=document.documentElement.scrollHeight-innerHeight}else{top=host.scrollTop;max=host.scrollHeight-host.clientHeight}bar.style.width=`${max>0?clamp(top/max*100,0,100):0}%`;$(state.root,'#qbBackTop')?.classList.toggle('show',top>500)}
+  function findScroll(el){el?.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{el?.classList.add('qb-jump-hit');setTimeout(()=>el?.classList.remove('qb-jump-hit'),1200)},350)}
+  function textOffset(block,node,offset){if(node===block)return [...block.childNodes].slice(0,offset).reduce((n,child)=>n+(child.textContent?.length||0),0);let total=0;const walker=document.createTreeWalker(block,NodeFilter.SHOW_TEXT);while(walker.nextNode()){if(walker.currentNode===node)return total+offset;total+=walker.currentNode.nodeValue.length}return total}
+  function captureSelection(){const selection=getSelection();if(!selection||selection.isCollapsed||!selection.rangeCount)return null;const range=selection.getRangeAt(0),block=range.commonAncestorContainer.nodeType===1?range.commonAncestorContainer.closest?.('[data-block-id]'):range.commonAncestorContainer.parentElement?.closest('[data-block-id]');if(!block||!block.contains(range.startContainer)||!block.contains(range.endContainer))return null;const text=block.__baseText||block.textContent,start=textOffset(block,range.startContainer,range.startOffset),end=textOffset(block,range.endContainer,range.endOffset),exact=text.slice(start,end);if(!exact.trim())return null;return {blockId:block.dataset.blockId,start,end,exact,prefix:text.slice(Math.max(0,start-24),start),suffix:text.slice(end,end+24)}}
+  function applyHighlights(items=[]){state.highlights=items.filter(item=>!item.deletedAt);$$ (state.root,'[data-block-id]').forEach(block=>{block.__baseText=block.__baseText||block.textContent;block.textContent=block.__baseText;const matches=state.highlights.filter(item=>item.blockId===block.dataset.blockId).sort((a,b)=>a.start-b.start);let position=0;for(const item of matches){if(item.start<position||block.__baseText.slice(item.start,item.end)!==item.exact)continue;block.append(document.createTextNode(block.__baseText.slice(position,item.start)));const mark=document.createElement('mark');mark.className='study-highlight';mark.dataset.highlightId=item.id;mark.textContent=item.exact;mark.onclick=()=>post('remove-highlight',{highlightId:item.id});block.append(mark);position=item.end}block.append(document.createTextNode(block.__baseText.slice(position)))})}
+  function buildSearch(){const input=$(state.root,'#qbGlobalSearch'),box=$(state.root,'#qbSearchResults'),clear=$(state.root,'#qbClearSearch');if(!input||!box)return;const nodes=$$(state.root,'.qb-chapter h2,.qb-chapter h3,.qb-chapter h4,.qb-chapter p,.qb-chapter li,.qb-chapter td,.qb-method-card h3,.qb-method-card p');const render=()=>{const q=input.value.trim().toLowerCase();box.innerHTML='';if(q.length<2){box.classList.remove('open');return}const hits=nodes.filter(n=>n.textContent.toLowerCase().includes(q)).slice(0,14);box.classList.add('open');if(!hits.length){box.innerHTML='<button type="button" disabled>Sin resultados</button>';return}hits.forEach(n=>{const b=document.createElement('button');const chapter=n.closest('.qb-chapter'),title=chapter?.querySelector('h2')?.textContent||'Métodos';b.innerHTML=`<b>${title.slice(0,38)}</b><br>${n.textContent.trim().slice(0,92)}`;b.onclick=()=>{findScroll(n);box.classList.remove('open');sidebar(false)};box.append(b)})};input.oninput=render;clear.onclick=()=>{input.value='';render();input.focus()};input.onkeydown=e=>{if(e.key==='Escape'){input.value='';render()}}}
+  function bindNav(){const links=$$(state.root,'.qb-index a'),targets=links.map(a=>$(state.root,a.getAttribute('href'))).filter(Boolean);links.forEach(a=>a.onclick=e=>{e.preventDefault();const t=$(state.root,a.getAttribute('href'));findScroll(t);sidebar(false)});if(!('IntersectionObserver'in window))return;const obs=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)[0];if(!visible)return;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${visible.target.id}`))},{root:null,rootMargin:'-18% 0px -68% 0px',threshold:0});targets.forEach(t=>obs.observe(t))}
+  function bindCarousel(){const car=$(state.root,'#qbMethodCarousel');if(!car)return;$$ (state.root,'[data-qb-carousel]').forEach(b=>b.onclick=()=>car.scrollBy({left:(b.dataset.qbCarousel==='next'?1:-1)*Math.min(car.clientWidth*.86,700),behavior:'smooth'}))}
+  function bindTools(){
+    const bridgeButton=(selector,command,payload=()=>({}))=>$(state.root,selector)?.addEventListener('click',event=>{if(window.parent===window)return;event.preventDefault();event.stopImmediatePropagation();if(command==='open-index')sidebar(true);post(command,payload())},true);
+    bridgeButton('#qbIndexButton','open-index');bridgeButton('#qbSideToggle','open-index');bridgeButton('#qbThemeToggle','save-theme',()=>{const theme=currentTheme()==='dark'?'light':'dark';state.root.dataset.standaloneTheme=theme;storage.set('solved-qb-theme',theme);return {theme}});bridgeButton('#qbZoomButton','zoom');bridgeButton('#qbFullscreenButton','fullscreen');
+    $(state.root,'#qbHighlightButton')?.addEventListener('mousedown',event=>{if(window.parent===window)return;event.preventDefault();event.stopImmediatePropagation();const selection=captureSelection();if(selection){post('highlight',{selection});status('Resaltado enviado a SOLved')}else status('Seleccioná una frase dentro de un bloque de estudio')},true);
+    $(state.root,'#qbSideToggle')?.addEventListener('click',()=>sidebar(true));$(state.root,'#qbIndexButton')?.addEventListener('click',()=>sidebar(true));$(state.root,'#qbSidebarScrim')?.addEventListener('click',()=>sidebar(false));
+    if(window.parent===window)$(state.root,'#qbThemeToggle')?.addEventListener('click',toggleTheme);$(state.root,'#qbAccentPicker')?.addEventListener('input',e=>setHue(hueFromHex(e.target.value),true));$$ (state.root,'[data-qb-hue]').forEach(b=>b.onclick=()=>setHue(b.dataset.qbHue,true));
+    $(state.root,'#qbOpenDetails')?.addEventListener('click',()=>{$$(state.root,'details.qb-params').forEach(d=>d.open=true);status('Explicaciones abiertas')});$(state.root,'#qbCloseDetails')?.addEventListener('click',()=>{$$(state.root,'details.qb-params').forEach(d=>d.open=false);status('Explicaciones cerradas')});$(state.root,'#qbPrint')?.addEventListener('click',()=>window.print());
+    $(state.root,'#qbHighlightButton')?.addEventListener('mousedown',()=>{const btn=document.getElementById('highlightBtn');if(btn){setTimeout(()=>btn.click(),0);status('Resaltado guardado en SOLved y sincronizable con Drive')}else status('Abrí este resumen dentro de SOLved para guardar el resaltado con Drive')});
+    $(state.root,'#qbZoomButton')?.addEventListener('click',()=>{const btn=document.getElementById('zoomBtn');if(btn){btn.click();status(btn.textContent)}else{const v=Number(state.root.dataset.localZoom||1),next=v>=1.25?.9:v+.1;state.root.dataset.localZoom=next;state.root.style.fontSize=`${next}em`;status(`Zoom ${Math.round(next*100)}%`)}});
+    $(state.root,'#qbFullscreenButton')?.addEventListener('click',()=>{const btn=document.getElementById('fullscreenBtn');if(btn)btn.click();else state.root.requestFullscreen?.()});
+    $(state.root,'#qbBackTop')?.addEventListener('click',()=>findScroll($(state.root,'#qb-top')||state.root));
+  }
+  function bindSimulators(){const ph=$(state.root,'#qbPhRange'),pi=$(state.root,'#qbPiRange'),phOut=$(state.root,'#qbPhOut'),piOut=$(state.root,'#qbPiOut'),res=$(state.root,'#qbChargeResult'),dot=$(state.root,'#qbSimProtein');if(ph&&pi){const update=()=>{const a=Number(ph.value),b=Number(pi.value),d=a-b;phOut.textContent=a.toFixed(1).replace('.',',');piOut.textContent=b.toFixed(1).replace('.',',');let head,text,pos;if(Math.abs(d)<.15){head='pH ≈ pI';text='Carga neta promedio ≈ 0 → movilidad electroforética neta mínima.';pos=50}else if(d>0){head='pH > pI';text='Carga neta predominante negativa → migra al ánodo (+).';pos=78}else{head='pH < pI';text='Carga neta predominante positiva → migra al cátodo (−).';pos=22}res.innerHTML=`<b>${head}</b><span>${text}</span>`;dot.style.left=`${pos}%`};ph.oninput=pi.oninput=update;update()}
+    const pm=$(state.root,'#qbPmRange'),gel=$(state.root,'#qbGelRange'),pmOut=$(state.root,'#qbPmOut'),gelOut=$(state.root,'#qbGelOut'),band=$(state.root,'#qbSdsBand'),txt=$(state.root,'#qbSdsExplain');if(pm&&gel){const update=()=>{const m=Number(pm.value),g=Number(gel.value);pmOut.textContent=`${m} kDa`;gelOut.textContent=`${g} %`;const massNorm=(Math.log10(m)-1)/(Math.log10(250)-1);const porePenalty=1+(g-10)*.022*(.35+massNorm);const migration=clamp((1-massNorm)*porePenalty,0.05,.94);band.style.top=`${18+migration*145}px`;txt.textContent=`${m<55?'Proteína relativamente pequeña: tiende a migrar más.':m>150?'Proteína grande: queda más retardada.':'Masa intermedia: la posición depende del rango útil del gel.'} ${g>=14?'El % alto produce poros menores y aumenta el tamizado.':g<=7?'El % bajo produce poros mayores, más apropiados para proteínas grandes.':'El % intermedio ofrece un rango de separación intermedio.'}`};pm.oninput=gel.oninput=update;update()}}
+  function bind(root=document){const host=root.querySelector?.('.qb-summary')||document.querySelector('.qb-summary');if(!host)return;state.root=host;state.scrollHost=scrollHost();const stored=storage.get('solved-qb-hue');setHue(window.LBT_THEME?appHue():(stored||334),false);if(!window.LBT_THEME){host.dataset.standaloneTheme=storage.get('solved-qb-theme')||'light'}buildSearch();bindNav();bindCarousel();bindTools();bindSimulators();progress();window.addEventListener('scroll',progress,{passive:true});if(state.scrollHost&&state.scrollHost!==document.scrollingElement&&state.scrollHost!==document.documentElement)state.scrollHost.addEventListener('scroll',progress,{passive:true});state.bound=true}
+  window.addEventListener('message',event=>{const data=event.data||{};if(data.type==='solved-summary-state'&&state.root){if(data.theme)state.root.dataset.standaloneTheme=data.theme;if(Number.isFinite(Number(data.hue)))setHue(data.hue,false);if(Number.isFinite(Number(data.zoom)))state.root.style.zoom=Number(data.zoom);applyHighlights(data.highlights||[])}if(data.type==='lbt-qbi-section'&&data.section==='theory')findScroll($(state.root,'#cap-1'));if(data.type==='lbt-qbi-section'&&data.section==='program')findScroll($(state.root,'#qb-top'))});
+  window.SOLVED_QB={bind};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{bind(document);post('ready')});else setTimeout(()=>{bind(document);post('ready')},0);
+})();
+</script></body></html>
