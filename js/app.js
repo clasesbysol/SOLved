@@ -194,7 +194,7 @@
   function richHighlights(){const unit=window.LBT_CONTENT.getUnit(currentSubject?.id,els.studyUnit.value);return highlights.filter(item=>!item.deletedAt&&item.subjectId===currentSubject?.id&&item.unitId===unit?.unitId&&String(item.blockId||"").startsWith("iframe:"))}
   function sendRichFrameState(frame=richFrame()){if(!frame?.contentWindow)return;const state={hue:subjectHue(),theme:settings.theme||"light",zoom:ZOOMS[settings.zoomIndex]||1,highlights:richHighlights()};frame.contentWindow.postMessage({type:"solved-rich-state",...state},"*");frame.contentWindow.postMessage({type:"solved-summary-state",...state},"*")}
   async function handleSummaryCommand(event){
-    const frame=richFrame(),data=event.data||{};if(!frame||event.source!==frame.contentWindow||data.type!=="solved-summary-command")return false;
+    const frame=richFrame(),data=event.data||{},fromFrame=event.source===frame?.contentWindow||(event.origin==="null"&&frame?.getBoundingClientRect().width>0);if(!frame||!fromFrame||data.type!=="solved-summary-command")return false;
     const unit=window.LBT_CONTENT.getUnit(currentSubject?.id,els.studyUnit.value);
     if(data.command==="ready"){sendRichFrameState(frame);return true}
     if(data.command==="zoom"){await cycleZoom();sendRichFrameState(frame);return true}

@@ -13,3 +13,7 @@ html.immersive-reading .html-viewer-toolbar{display:none!important}html.immersiv
 
 /* El modo lectura también ocupa todo el panel para los documentos oficiales incrustados. */
 html.immersive-reading .workspace-panel-scroll.is-rich-document-view{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;padding:0!important;overflow:hidden!important}html.immersive-reading .workspace-panel-scroll.is-rich-document-view>.official-section,html.immersive-reading .workspace-panel-scroll.is-rich-document-view .rich-document-card{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}html.immersive-reading .workspace-panel-scroll.is-rich-document-view>.official-section>.library-label,html.immersive-reading .workspace-panel-scroll.is-rich-document-view .rich-document-head{display:none!important}html.immersive-reading .workspace-panel-scroll.is-rich-document-view .rich-document{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;border:0!important}
+
+
+/* Los documentos oficiales usan todo el ancho del panel normal. */
+.official-section>.rich-document-card{box-sizing:border-box;width:100%;max-width:none;margin:0}
