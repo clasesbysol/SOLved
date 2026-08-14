@@ -1,6 +1,6 @@
 {
-  "appVersion": "0.10.2",
-  "contentVersion": "catalog-v2",
+  "appVersion": "0.10.3",
+  "contentVersion": "catalog-v3",
   "publishedAt": "2026-08-13",
-  "stage": "0.10.2-ready"
+  "stage": "0.10.3-ready"
 }
