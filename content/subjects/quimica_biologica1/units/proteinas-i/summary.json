@@ -2,8 +2,8 @@
   "blocks": [
     {
       "id": "qbi-resumen-integral-v3",
-      "title": "Resumen integral · Proteínas y métodos",
-      "text": "Resumen unificado de Química Biológica: aminoácidos, equilibrio ácido-base, péptidos, estructura y plegamiento de proteínas, membranas, purificación, cromatografías y electroforesis. La vista principal usa la interfaz SOLved con índice, búsqueda, color rosa personalizable, modo claro/oscuro, carrusel de métodos, simuladores y resaltado persistente mediante la sincronización nativa de la app.",
+      "title": "Resumen integral · Proteínas, métodos y enzimas",
+      "text": "Resumen unificado de Química Biológica: aminoácidos, equilibrio ácido-base, péptidos, estructura y plegamiento de proteínas, membranas, purificación, cromatografías, electroforesis y Enzimas I. La vista principal mantiene la interfaz SOLved con índice lateral, búsqueda, color rosa personalizable, modo claro/oscuro, carrusel de métodos, simuladores, conceptos subrayados con definiciones interactivas y resaltado persistente mediante la sincronización nativa de la app. Enzimas I incorpora catálisis, energía interna y libre de Gibbs, energía de activación, sitio activo, ajuste inducido, clasificación IUBMB, velocidad inicial, efecto de la concentración de enzima, unidad enzimática, actividad y actividad específica.",
       "kind": "theory",
       "references": [
         {"sourceId": "qbi-teorico-proteinas-i"},
