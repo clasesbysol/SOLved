@@ -10,6 +10,7 @@ const [qParts,gParts,extensionCode]=await Promise.all([load(qNames),load(gNames)
 const [baseHtml,conceptCode]=await Promise.all([ungzip64(qParts.join('')),ungzip64(gParts.join(''))]);
 if(extensionCode){try{new Function(extensionCode)()}catch(error){console.error('Extensión Enzimas I',error)}}
 let html=window.SOLVED_QB_ENZYMES?.transform?window.SOLVED_QB_ENZYMES.transform(baseHtml):baseHtml;
+html=html.replace('el PDF 3 suele contener la guía de ejercicios y debe copiarse completa, resolverse paso a paso y añadirse a una sección o carpeta de Ejercicios análoga a las existentes.','el PDF 3 NUNCA se incorpora al HTML teórico: corresponde exclusivamente a la sección Ejercicios de Química Biológica, donde debe copiarse completo, resolverse paso a paso y añadirse como una guía independiente análoga a las existentes.');
 const installConcepts=new Function(conceptCode);
 try{history.scrollRestoration='manual'}catch{}
 document.open();document.write(html);document.close();
