@@ -1,12 +1,17 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e74888"><title>SOLved · Química Biológica · Resumen integral</title><style id="solved-standard-theme">:root{--solved-hue:344}html,body{margin:0;min-height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;background:#fff8fc;color:#382734}.loading{min-height:100vh;display:grid;place-items:center;padding:28px}.card{max-width:520px;border:1px solid #efd3e0;border-radius:18px;background:#fff;padding:24px;box-shadow:0 10px 30px rgba(104,42,75,.08)}.dot{width:12px;height:12px;border-radius:50%;background:#e74888;display:inline-block;margin-right:8px;animation:pulse 1s infinite alternate}@keyframes pulse{to{opacity:.25}}</style></head><body><div class="loading"><div class="card"><b><span class="dot"></span>Cargando Química Biológica</b><p>Preparando el resumen integral de SOLved…</p></div></div><script>const SOLVED_RICH_BRIDGE=['solved-rich-selection','solved-rich-state'];void SOLVED_RICH_BRIDGE;
 async function ungzip64(text){const raw=atob(String(text).replace(/\s+/g,''));const bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));if(typeof DecompressionStream==='undefined')throw Error('Tu navegador no soporta DecompressionStream');const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));return new Response(stream).text()}
 (async()=>{try{
+const version='3.4.0';
 const qNames=[1,2,3,4,5,6,7].map(n=>`qb3-payload-${n}.txt`);
 const gNames=[1,2,3,4,5,6].map(n=>`concept-glossary-${n}.txt`);
-const load=names=>Promise.all(names.map(name=>fetch(`${name}?v=3.3.3`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(name);return r.text()})));
-const [qParts,gParts]=await Promise.all([load(qNames),load(gNames)]);
-const [html,conceptCode]=await Promise.all([ungzip64(qParts.join('')),ungzip64(gParts.join(''))]);
+const load=names=>Promise.all(names.map(name=>fetch(`${name}?v=${version}`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(name);return r.text()})));
+const extensionPromise=fetch(`qbi-enzymes-extension.js?v=${version}`,{cache:'no-store'}).then(r=>r.ok?r.text():'').catch(()=> '');
+const [qParts,gParts,extensionCode]=await Promise.all([load(qNames),load(gNames),extensionPromise]);
+const [baseHtml,conceptCode]=await Promise.all([ungzip64(qParts.join('')),ungzip64(gParts.join(''))]);
+if(extensionCode){try{new Function(extensionCode)()}catch(error){console.error('Extensión Enzimas I',error)}}
+let html=window.SOLVED_QB_ENZYMES?.transform?window.SOLVED_QB_ENZYMES.transform(baseHtml):baseHtml;
 const installConcepts=new Function(conceptCode);
+try{history.scrollRestoration='manual'}catch{}
 document.open();document.write(html);document.close();
-setTimeout(()=>{try{installConcepts()}catch(error){console.error('Glosario interactivo',error)}},0)
+setTimeout(()=>{try{installConcepts()}catch(error){console.error('Glosario interactivo',error)}setTimeout(()=>{try{window.SOLVED_QB_ENZYMES?.after?.()}catch(error){console.error('Extensión Enzimas I',error)}},80)},0)
 }catch(error){console.error(error);document.body.innerHTML='<div class="loading"><div class="card"><b>No se pudo abrir el resumen</b><p>Actualizá SOLved y volvé a intentar. El contenido anterior no se modifica en tu Drive.</p></div></div>'}})();</script></body></html>
