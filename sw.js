@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-7";
+const CACHE_VERSION = "biblioteca-lbt-v0104-8";
 const CORE = [
   "./",
   "./index.html",
@@ -42,6 +42,7 @@ const CORE = [
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-4.txt?v=3.4.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-5.txt?v=3.4.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-6.txt?v=3.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js?v=1.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js?v=1.3.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-v1.json?v=1.2.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-enzimas-i.json?v=1.0.0",
@@ -58,45 +59,45 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_VERSION).map(key => caches.delete(key))))
-      .then(() => self.clients.claim())
+      .then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE_VERSION).map(key=>caches.delete(key))))
+      .then(()=>self.clients.claim())
   );
 });
 
-async function networkFirst(request, fallbackUrl) {
-  const cache = await caches.open(CACHE_VERSION);
-  try {
-    const response = await fetch(request,{cache:"no-store"});
-    if (response && response.ok) cache.put(request, response.clone());
+async function networkFirst(request,fallbackUrl){
+  const cache=await caches.open(CACHE_VERSION);
+  try{
+    const response=await fetch(request,{cache:"no-store"});
+    if(response&&response.ok)cache.put(request,response.clone());
     return response;
-  } catch (error) {
-    return (await caches.match(request)) || (fallbackUrl ? await caches.match(fallbackUrl) : Response.error());
+  }catch(error){
+    return (await caches.match(request))||(fallbackUrl?await caches.match(fallbackUrl):Response.error());
   }
 }
 
-async function staleWhileRevalidate(request) {
-  const cache = await caches.open(CACHE_VERSION);
-  const cached = await caches.match(request);
-  const update = fetch(request).then(response => {
-    if (response && response.ok) cache.put(request, response.clone());
+async function staleWhileRevalidate(request){
+  const cache=await caches.open(CACHE_VERSION);
+  const cached=await caches.match(request);
+  const update=fetch(request).then(response=>{
+    if(response&&response.ok)cache.put(request,response.clone());
     return response;
-  }).catch(() => null);
-  return cached || (await update) || Response.error();
+  }).catch(()=>null);
+  return cached||(await update)||Response.error();
 }
 
-self.addEventListener("fetch", event => {
-  const request = event.request;
-  if (request.method !== "GET") return;
-  const url = new URL(request.url);
-  if (url.origin !== self.location.origin) return;
+self.addEventListener("fetch",event=>{
+  const request=event.request;
+  if(request.method!=="GET")return;
+  const url=new URL(request.url);
+  if(url.origin!==self.location.origin)return;
 
-  if (request.mode === "navigate") {
-    event.respondWith(networkFirst(request, "./index.html"));
+  if(request.mode==="navigate"){
+    event.respondWith(networkFirst(request,"./index.html"));
     return;
   }
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
 
-  if (["script", "style", "worker"].includes(request.destination)) {
+  if(["script","style","worker"].includes(request.destination)){
     event.respondWith(networkFirst(request));
     return;
   }
@@ -104,6 +105,6 @@ self.addEventListener("fetch", event => {
   event.respondWith(staleWhileRevalidate(request));
 });
 
-self.addEventListener("message", event => {
-  if (event.data?.type === "SKIP_WAITING") self.skipWaiting();
+self.addEventListener("message",event=>{
+  if(event.data?.type==="SKIP_WAITING")self.skipWaiting();
 });
