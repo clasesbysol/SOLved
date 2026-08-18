@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "guide": {"id":"guia-estudio-enzimas-i","label":"Guía de estudio · Enzimas I"},
+  "topics": [
+    "Enzimas I · termodinámica y catálisis",
+    "Enzimas I · sitio activo y clasificación",
+    "Enzimas I · cinética enzimática",
+    "Enzimas I · purificación enzimática"
+  ],
+  "cards": [
+    {
+      "id":"enz1-01","number":"1","title":"Función de estado",
+      "question":"<p>¿Qué es una función de estado?</p>",
+      "answer":"<p>Una <strong>función de estado</strong> es una propiedad cuyo valor queda determinado por el estado actual del sistema. Su variación depende solamente del estado inicial y del estado final, y no del camino seguido para pasar de uno al otro.</p><p>Por eso, si una magnitud X es función de estado:</p><p>[\\Delta X=X_f-X_i]</p><p>y el mismo cambio entre dos estados tendrá el mismo ΔX aunque el proceso ocurra por caminos diferentes.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-02","number":"2","title":"Energía interna y transferencia de energía",
+      "question":"<p>¿Qué entiende por energía interna? ¿Por qué es una función de estado? ¿De qué manera puede transferirse energía entre el sistema de estudio y los alrededores?</p>",
+      "answer":"<p>La <strong>energía interna, U</strong>, es la suma de las energías cinéticas y potenciales de todas las moléculas que componen el sistema.</p><p>[U=\\sum(E_c+E_p)]</p><p>Es una función de estado porque su variación queda fijada por los estados inicial y final:</p><p>[\\Delta U=U_f-U_i]</p><p>La energía puede transferirse entre sistema y alrededores solamente de dos formas: <strong>calor, q</strong>, cuando la transferencia ocurre por una diferencia de temperatura, y <strong>trabajo, w</strong>, cuando la transferencia no se debe a esa diferencia.</p><p>[\\Delta U=q+w]</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-03","number":"3","title":"Agua fría en un baño a 60 °C",
+      "question":"<p>Si se coloca un tubo conteniendo agua fría en un baño termostatizado con agua a 60°C, ¿cómo variará la energía interna del agua en el tubo y de qué manera ocurrirá la transferencia de energía entre ambos sistemas?</p>",
+      "answer":"<p>El agua del baño está a mayor temperatura que el agua del tubo, por lo que transfiere energía al tubo en forma de <strong>calor</strong> hasta que se alcanza el equilibrio térmico.</p><p>Tomando como sistema el agua del tubo:</p><p>[q>0]</p><p>[\\Delta U>0]</p><p>Su energía interna aumenta porque recibe energía de los alrededores.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-04","number":"4","title":"Expansión de un gas y trabajo",
+      "question":"<p>Se tiene un gas en equilibrio en un cilindro con un pistón. Si la presión sobre el gas disminuye, ¿cómo variará su energía interna y cómo se transferirá la energía?</p>",
+      "answer":"<p>Al disminuir la presión externa, el gas se expande contra los alrededores. El gas realiza <strong>trabajo de expansión</strong> y transfiere energía hacia el exterior.</p><p>Con la convención usada en la clase, el trabajo realizado por el sistema es negativo:</p><p>[w<0]</p><p>En el ejemplo planteado, al entregar energía mediante trabajo, la energía interna del gas disminuye:</p><p>[\\Delta U<0]</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-05","number":"5","title":"Trabajo útil",
+      "question":"<p>¿Qué entiende por trabajo útil?</p>",
+      "answer":"<p>Se denomina <strong>trabajo útil</strong> a todo trabajo diferente del trabajo de expansión. En la clasificación de la clase incluye trabajo mecánico no expansivo, eléctrico, magnético y osmótico.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-06","number":"6","title":"Energía libre de Gibbs",
+      "question":"<p>¿Qué es la energía libre de Gibbs, G? ¿De qué variables o características depende su variación, ΔG, a presión y temperatura constantes, cuando se aplica a las reacciones químicas?</p>",
+      "answer":"<p>La <strong>energía libre de Gibbs, G</strong>, es una propiedad del sistema reaccionante. En una reacción química, la suma de las energías libres de reactivos y productos evoluciona hacia un mínimo en el equilibrio.</p><p>A presión y temperatura constantes:</p><p>[\\Delta G=\\sum G_f-\\sum G_i]</p><p>En la forma empleada en la clase:</p><p>[\\Delta G=\\Delta G'^\\circ+RT\\ln Q]</p><p>El término ΔG'° depende de la naturaleza del sistema reaccionante y está relacionado con su equilibrio; Q depende de las concentraciones de reactivos y productos. Las enzimas no modifican ni el ΔG ni la posición del equilibrio.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-07","number":"7","title":"ΔG y concentraciones iniciales",
+      "question":"<p>¿Cuál es la relación entre el ΔG y las concentraciones iniciales de reactivos y productos?</p>",
+      "answer":"<p>Las concentraciones entran en el <strong>cociente de reacción, Q</strong>. Para una reacción general R₁ + R₂ ⇌ P₁ + P₂:</p><p>[Q=\\frac{[P_1][P_2]}{[R_1][R_2]}]</p><p>[\\Delta G=\\Delta G'^\\circ+RT\\ln Q]</p><p>Por lo tanto, aun para la misma reacción y a la misma temperatura, cambiar las concentraciones iniciales cambia Q y puede cambiar el valor y el signo de ΔG. En equilibrio:</p><p>[Q=K_{eq}]</p><p>[\\Delta G=0]</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-08","number":"8","title":"Cociente de reacción y sentido espontáneo",
+      "question":"<p>En una reacción química, A y B son los reactivos y P el producto. Si [A] = 1 mM, [B] = 1 mM, K<sub>eq</sub> = 0,01 M<sup>−1</sup>, determine Q y el sentido en que ocurrirá la reacción para: a) [P] = 1×10<sup>−6</sup> mM; b) [P] = 10<sup>−5</sup> M; c) [P] = 10<sup>−3</sup> M.</p>",
+      "answer":"<p>Para A + B ⇌ P:</p><p>[Q=\\frac{[P]}{[A][B]}]</p><p>Primero convertimos los reactivos a molar:</p><p>[[A]=[B]=1\\,mM=10^{-3}\\,M]</p><h3>a) [P] = 1×10⁻⁶ mM</h3><p>[1\\times10^{-6}\\,mM=1\\times10^{-9}\\,M]</p><p>[Q=\\frac{10^{-9}}{(10^{-3})(10^{-3})}=10^{-3}\\,M^{-1}]</p><p>Como Q &lt; K<sub>eq</sub>:</p><p>[10^{-3}<10^{-2}]</p><p>la reacción avanza espontáneamente en el <strong>sentido directo</strong>, hacia P, hasta aumentar Q y alcanzar el equilibrio.</p><h3>b) [P] = 10⁻⁵ M</h3><p>[Q=\\frac{10^{-5}}{10^{-6}}=10\\,M^{-1}]</p><p>Como Q &gt; K<sub>eq</sub>, la reacción es espontánea en el <strong>sentido inverso</strong>, hacia A + B.</p><h3>c) [P] = 10⁻³ M</h3><p>[Q=\\frac{10^{-3}}{10^{-6}}=10^3\\,M^{-1}]</p><p>Nuevamente Q &gt; K<sub>eq</sub>, por lo que el sentido espontáneo es el <strong>inverso</strong>.</p><p><strong>Regla:</strong> Q &lt; K → avanza hacia productos; Q = K → equilibrio; Q &gt; K → avanza hacia reactivos.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-09","number":"9","title":"Espontaneidad, trabajo útil, tiempo y camino",
+      "question":"<p>Para Y → Z se obtienen: a) ΔG = −65 kJ/mol; b) ΔG = +65 kJ/mol. ¿Qué puede decir de la espontaneidad, el trabajo útil y el tiempo? Si Y se transforma en Z por otro camino que involucra otros compuestos, ¿cómo espera que sea el ΔG?</p>",
+      "answer":"<h3>a) ΔG = −65 kJ/mol</h3><p>La transformación Y → Z es espontánea en el sentido escrito y es <strong>exergónica</strong>. En condiciones ideales puede entregar un trabajo útil máximo cuya magnitud es 65 kJ/mol.</p><h3>b) ΔG = +65 kJ/mol</h3><p>Y → Z no es espontánea en el sentido escrito y es <strong>endergónica</strong>. Para que ocurra en ese sentido debe suministrarse al sistema, como mínimo ideal, trabajo útil de magnitud 65 kJ/mol.</p><h3>Tiempo</h3><p>El valor de ΔG <strong>no permite saber cuánto tarda</strong> una reacción. ΔG informa termodinámica, no velocidad.</p><h3>Camino alternativo</h3><p>Si los estados inicial Y y final Z son los mismos, el ΔG global será el mismo aunque cambie el camino o aparezcan intermediarios, porque G es una función de estado.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-10","number":"10","title":"Qué cambia al agregar una enzima",
+      "question":"<p>Si a la reacción del punto anterior, en las dos situaciones formuladas, se añade una enzima que cataliza la reacción, ¿cómo se afectará la espontaneidad y el trabajo útil? ¿Se modificará el tiempo de reacción?</p>",
+      "answer":"<p>La enzima <strong>no cambia ΔG</strong>, por lo que tampoco cambia la espontaneidad, el sentido termodinámicamente favorable, el equilibrio ni el trabajo útil máximo asociado a la reacción.</p><p>Lo que sí cambia es la <strong>velocidad</strong>: la enzima proporciona un camino con menor energía de activación y facilita la formación del estado de transición. Por eso el tiempo necesario para aproximarse al equilibrio disminuye.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-11","number":"11","title":"Energía de activación y estado de transición",
+      "question":"<p>¿Qué entiende por energía de activación y estado de transición?</p>",
+      "answer":"<p>El <strong>estado de transición</strong> es una especie extremadamente fugaz situada entre reactivos y productos y que posee la máxima energía libre a lo largo de la coordenada de reacción.</p><p>La <strong>energía libre de activación</strong> es la diferencia de energía libre entre ese estado de transición y los reactivos:</p><p>[\\Delta G^{\\ddagger}=G_{ET}-G_{reactivos}]</p><p>Es la barrera energética que debe superarse para que la reacción proceda.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-12","number":"12","title":"Arrhenius y acción de la enzima",
+      "question":"<p>¿Qué relación existe entre la velocidad de reacción y la energía de activación? ¿Cómo afecta una enzima a esta última? Explíquelo en términos de la ecuación de Arrhenius.</p>",
+      "answer":"<p>En la forma presentada en clase:</p><p>[v=k[S]]</p><p>y la constante de velocidad depende exponencialmente de la barrera de activación:</p><p>[k=Ae^{-\\Delta G^{\\ddagger}/RT}]</p><p>Al disminuir ΔG‡, el exponente se hace menos negativo y <strong>k aumenta</strong>. Como consecuencia aumenta la velocidad. Las enzimas aceleran las reacciones porque estabilizan/facilitan el estado de transición y disminuyen ΔG‡, sin modificar el ΔG global de la reacción.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · termodinámica y catálisis","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-13","number":"13","title":"Sitio activo y función de sus residuos",
+      "question":"<p>¿Qué es el sitio activo? ¿Por qué representa una pequeña porción del tamaño total de la enzima? ¿Qué funciones cumplen los residuos de aminoácidos que lo componen?</p>",
+      "answer":"<p>El <strong>sitio activo</strong> es una hendidura tridimensional donde se unen los sustratos y ocurre la catálisis. Ocupa una porción pequeña del volumen total porque la mayor parte de la proteína cumple una función estructural que permite formar y sostener esa geometría.</p><p>Los residuos del sitio activo pueden estar muy alejados en la secuencia primaria y quedar próximos gracias al plegamiento terciario. Se distinguen:</p><ul><li><strong>residuos de fijación:</strong> reconocen y unen estereoespecíficamente al sustrato mediante interacciones débiles;</li><li><strong>residuos catalíticos:</strong> participan directamente en ruptura/formación de enlaces y en la formación del estado de transición;</li><li><strong>residuos estructurales:</strong> mantienen la geometría correcta del sitio activo aunque no interactúen directamente con el sustrato.</li></ul>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · sitio activo y clasificación","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-14","number":"14","title":"Energía de fijación, catálisis y especificidad",
+      "question":"<p>¿Qué es la energía de fijación? Explique la contribución de la misma a la disminución de la energía de activación, a la catálisis y a la especificidad.</p>",
+      "answer":"<p>La <strong>energía de fijación</strong> es la energía libre favorable liberada cuando se forman numerosas interacciones débiles entre la enzima y el ligando, especialmente cuando éste adopta la geometría del estado de transición.</p><p>Al estabilizar preferentemente el estado de transición, esas interacciones disminuyen la diferencia energética entre reactivos y estado de transición:</p><p>[\\Delta G^{\\ddagger}\\downarrow]</p><p>La disminución de la barrera aumenta la velocidad y explica la <strong>catálisis</strong>. A la vez, sólo el sustrato correcto puede establecer de manera óptima el conjunto de interacciones requeridas, por lo que la misma energía de fijación contribuye a la <strong>especificidad</strong>.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · sitio activo y clasificación","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-15","number":"15","title":"Llave-cerradura versus ajuste inducido",
+      "question":"<p>¿En qué se diferencian los modelos de la llave–cerradura y de ajuste inducido para explicar la catálisis enzimática? ¿Cuál es el más ampliamente aceptado?</p>",
+      "answer":"<p>En el modelo de <strong>llave–cerradura</strong>, el sitio activo se considera rígido y perfectamente complementario al sustrato en su estado basal. Una complementariedad excesiva con el sustrato lo estabilizaría y no explicaría adecuadamente la disminución de la energía de activación.</p><p>En el modelo de <strong>ajuste inducido</strong> de Koshland, la unión inicial del sustrato induce cambios conformacionales y el sitio activo alcanza una geometría especialmente complementaria al <strong>estado de transición</strong>. Las interacciones débiles que aparecen durante ese ajuste aportan energía de fijación y disminuyen ΔG‡.</p><p>El modelo de ajuste inducido es el modelo aceptado para explicar de manera más completa la catálisis enzimática. La hexoquinasa es el ejemplo clásico de la clase.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · sitio activo y clasificación","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-16","number":"16","title":"Características de una enzima",
+      "question":"<p>¿Cuáles son las características de una enzima desde el punto de vista de un catalizador y de una proteína?</p>",
+      "answer":"<p><strong>Como catalizador:</strong> actúa en pequeña proporción respecto de los sustratos; no sufre alteraciones cualitativas ni cuantitativas netas al final del proceso; no modifica K<sub>eq</sub> ni ΔG de la reacción.</p><p><strong>Como proteína:</strong> es susceptible de regulación; es eficiente en condiciones suaves de temperatura y pH; es específica; posee un número limitado de sitios activos y por eso es saturable; y puede desnaturalizarse.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · sitio activo y clasificación","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-17","number":"17","title":"Las siete clases de enzimas",
+      "question":"<p>En cuanto a la clasificación de las enzimas, ¿cuántas clases de enzimas existen? ¿Qué tipo de reacciones catalizan?</p>",
+      "answer":"<p>El sistema de la IUBMB reconoce <strong>siete clases</strong>:</p><ol><li><strong>Oxidorreductasas:</strong> catalizan reacciones de oxidación-reducción.</li><li><strong>Transferasas:</strong> transfieren un grupo químico distinto del H entre sustratos.</li><li><strong>Hidrolasas:</strong> catalizan rupturas por hidrólisis, transfiriendo un grupo al agua.</li><li><strong>Liasas o sintasas:</strong> rompen de forma no hidrolítica enlaces C–C, C–N, C–O o C–S, o catalizan la reacción inversa de formación.</li><li><strong>Isomerasas:</strong> catalizan interconversión de isómeros.</li><li><strong>Ligasas o sintetasas:</strong> unen dos sustratos, acoplado a la hidrólisis de un nucleósido trifosfato.</li><li><strong>Translocasas:</strong> catalizan el movimiento de iones o moléculas a través de membranas.</li></ol>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · sitio activo y clasificación","summaryTarget":"cap14"
+    },
+    {
+      "id":"enz1-18","number":"18","title":"Qué estudia la cinética enzimática",
+      "question":"<p>¿Qué estudia la cinética enzimática?</p>",
+      "answer":"<p>La <strong>cinética enzimática</strong> estudia las velocidades de las reacciones catalizadas por enzimas y los factores que modifican esas velocidades.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-19","number":"19","title":"Mezcla de reacción",
+      "question":"<p>¿Qué es una mezcla de reacción? ¿Cómo está compuesta?</p>",
+      "answer":"<p>Una <strong>mezcla de reacción</strong> es el sistema experimental en el que se mide una reacción enzimática bajo condiciones definidas. Debe contener un buffer que determine pH y fuerza iónica, una concentración conocida de sustrato y una cantidad definida de enzima. Según el sistema también puede incluir cofactores, activadores o inhibidores. La temperatura y el volumen final deben estar especificados.</p><p>La reacción suele iniciarse agregando a último momento la enzima o el sustrato.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-20","number":"20","title":"Determinar velocidad y velocidad inicial",
+      "question":"<p>Se tiene una reacción catalizada por una enzima en donde A se transforma en B. Si se hace la representación gráfica de la concentración de B en función del tiempo, ¿cómo determinaría la velocidad de la reacción a un tiempo t? ¿Cómo determina la velocidad inicial? ¿Cómo podría expresar esa velocidad?</p>",
+      "answer":"<p>En un gráfico [B] frente a tiempo, la velocidad en un instante t es la <strong>pendiente de la recta tangente</strong> a la curva en ese instante:</p><p>[v=\\frac{d[B]}{dt}]</p><p>Si se siguiera la desaparición de A:</p><p>[v=-\\frac{d[A]}{dt}]</p><p>La <strong>velocidad inicial, v₀</strong>, es la pendiente al comienzo de la reacción, en la región inicial aproximadamente lineal.</p><p>Puede expresarse como cambio de concentración por tiempo:</p><p>[\\frac{mM}{min}=\\frac{mmol}{L\\cdot min}=\\frac{\\mu mol}{mL\\cdot min}]</p><p>o como cantidad total transformada por unidad de tiempo:</p><p>[\\frac{\\mu mol}{min}]</p><p>En ambos casos la velocidad se informa como magnitud positiva.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-21","number":"21","title":"Ventajas de trabajar con v₀",
+      "question":"<p>¿Qué ventajas tiene trabajar con velocidades iniciales?</p>",
+      "answer":"<p>Trabajar con v₀ minimiza factores que complican la medición. Al comienzo:</p><ul><li>[P] es muy pequeña, por lo que en una reacción reversible se minimiza la reacción inversa;</li><li>se minimiza la inhibición por producto;</li><li>se reduce el efecto de una eventual inactivación progresiva de la enzima;</li><li>v₀ suele permanecer aproximadamente constante durante un intervalo corto y puede medirse con facilidad.</li></ul>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-22","number":"22","title":"v₀ y concentración de enzima",
+      "question":"<p>¿Cuál es la relación entre la velocidad inicial y la concentración de enzima en una mezcla de reacción a concentración de sustrato saturante?</p>",
+      "answer":"<p>Con sustrato saturante y mientras exista un gran exceso de sustrato respecto de la enzima, la velocidad inicial es <strong>directamente proporcional</strong> a la concentración de enzima funcional:</p><p>[v_0\\propto[E]]</p><p>Por eso, dentro del rango lineal, duplicar [E] duplica v₀. Si se agrega tanta enzima que el sustrato deja de estar en exceso, el sustrato se vuelve limitante y la proporcionalidad se pierde.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-23","number":"23","title":"Actividad enzimática y actividad específica",
+      "question":"<p>¿Qué es la actividad enzimática? ¿Qué es la actividad específica?</p>",
+      "answer":"<p>Una <strong>unidad enzimática, U</strong>, es la cantidad de enzima que cataliza el consumo o producción de 1 μmol de sustrato o producto por minuto bajo condiciones definidas.</p><p>[1\\,U=1\\,\\mu mol/min]</p><p>La <strong>actividad enzimática</strong> expresa unidades por volumen de preparación enzimática:</p><p>[Actividad\\ enzimática=\\frac{U}{mL} ]</p><p>Es una medida funcional de la concentración de enzima activa.</p><p>La <strong>actividad específica</strong> expresa las unidades enzimáticas por masa total de proteínas:</p><p>[Actividad\\ específica=\\frac{U}{mg\\ de\\ proteína}]</p><p>Durante una purificación, su aumento indica enriquecimiento de la enzima de interés respecto de las demás proteínas.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-24","number":"24","title":"Dilución, actividad y actividad específica",
+      "question":"<p>Dispone de una enzima cuya concentración es 1 μg/μl y añade 1 μl a una mezcla de reacción: v₀ = 1 μmol/min. ¿Cuál será v₀ al añadir 5 μl a una mezcla idéntica? ¿Cuál será la actividad y la actividad específica en ambos casos? Si prepara un extracto diluido 10 veces, 0,1 μg/μl, y añade 1 μl, ¿cuál será la actividad y la actividad específica? ¿Qué conclusiones obtiene?</p>",
+      "answer":"<p>Suponemos las condiciones indicadas en la clase: sustrato saturante y trabajo dentro del rango donde v₀ es proporcional a la cantidad de enzima.</p><h3>Preparación original: 1 μL</h3><p>[v_0=1\\,\\mu mol/min=1\\,U]</p><p>La actividad de la preparación es:</p><p>[\\frac{1\\,U}{1\\,\\mu L}=1\\,U/\\mu L=1000\\,U/mL]</p><p>La masa de proteína agregada es:</p><p>[1\\,\\mu g=0.001\\,mg]</p><p>Entonces:</p><p>[Actividad\\ específica=\\frac{1\\,U}{0.001\\,mg}=1000\\,U/mg]</p><h3>Preparación original: 5 μL</h3><p>Se agrega cinco veces más enzima, por lo que:</p><p>[v_0=5\\,\\mu mol/min=5\\,U]</p><p>[Actividad=\\frac{5\\,U}{5\\,\\mu L}=1\\,U/\\mu L=1000\\,U/mL]</p><p>La masa agregada es 5 μg = 0,005 mg:</p><p>[Actividad\\ específica=\\frac{5\\,U}{0.005\\,mg}=1000\\,U/mg]</p><h3>Extracto diluido 10 veces</h3><p>La concentración es 0,1 μg/μL. Al agregar 1 μL se agrega la décima parte de enzima:</p><p>[v_0=0.1\\,\\mu mol/min=0.1\\,U]</p><p>[Actividad=\\frac{0.1\\,U}{1\\,\\mu L}=0.1\\,U/\\mu L=100\\,U/mL]</p><p>La masa agregada es 0,1 μg = 0,0001 mg:</p><p>[Actividad\\ específica=\\frac{0.1\\,U}{0.0001\\,mg}=1000\\,U/mg]</p><h3>Conclusiones</h3><ul><li>v₀ aumenta en proporción a la cantidad de enzima dentro del rango lineal.</li><li>La actividad en U/mL caracteriza la concentración funcional de la preparación y disminuye al diluirla.</li><li>La actividad específica no cambia por una simple dilución, porque las U y la masa total de proteína se diluyen en la misma proporción.</li></ul>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · cinética enzimática","summaryTarget":"cap15"
+    },
+    {
+      "id":"enz1-25","number":"25","title":"Tabla de purificación de fosfofructoquinasa",
+      "question":"<p>En la siguiente tabla se muestra un protocolo de purificación en 5 etapas de la fosfofructoquinasa de músculo cardíaco. En cada etapa se indica actividad enzimática (U/ml), unidades totales, concentración de proteínas (mg/ml) y actividad específica (U/mg).</p><table><thead><tr><th>Fracción</th><th>U/ml</th><th>U totales</th><th>Proteína mg/ml</th><th>Actividad específica U/mg</th></tr></thead><tbody><tr><td>1. Homogenate</td><td>6,7</td><td>288</td><td>31,0</td><td>0,21</td></tr><tr><td>2. Supernatant fluid, 24.000 × g</td><td>8,3</td><td>268</td><td>16,4</td><td>0,5</td></tr><tr><td>3. Mg-ethanol precipitate</td><td>32,3</td><td>103</td><td>14,0</td><td>2,3</td></tr><tr><td>4. DEAE-cellulose</td><td>7,9</td><td>61</td><td>0,57</td><td>13,8</td></tr><tr><td>5. Ammonium sulfate saturation, 0.4–0.6</td><td>40,7</td><td>49</td><td>1,34</td><td>30,0</td></tr></tbody></table><ol type='a'><li>Calcule y añada a la tabla otra columna con los volúmenes de cada fracción.</li><li>¿Qué pasó durante la purificación con las U totales y por qué?</li><li>¿Qué columna permite evaluar el grado de pureza de las fracciones sucesivas?</li></ol>",
+      "answer":"<h3>a) Volumen de cada fracción</h3><p>Como:</p><p>[U_{totales}=\\frac{U}{mL}\\times V]</p><p>despejamos:</p><p>[V=\\frac{U_{totales}}{U/mL}]</p><table><thead><tr><th>Etapa</th><th>Cálculo</th><th>Volumen</th></tr></thead><tbody><tr><td>1</td><td>288 / 6,7</td><td><strong>43,0 ml</strong></td></tr><tr><td>2</td><td>268 / 8,3</td><td><strong>32,3 ml</strong></td></tr><tr><td>3</td><td>103 / 32,3</td><td><strong>3,19 ml</strong></td></tr><tr><td>4</td><td>61 / 7,9</td><td><strong>7,72 ml</strong></td></tr><tr><td>5</td><td>49 / 40,7</td><td><strong>1,20 ml</strong></td></tr></tbody></table><h3>b) Unidades totales</h3><p>Las U totales disminuyen:</p><p>[288\\rightarrow268\\rightarrow103\\rightarrow61\\rightarrow49\\,U]</p><p>En una purificación real no se recupera el 100 % de la enzima en cada etapa. Parte puede quedar en fracciones descartadas, perderse durante manipulaciones o inactivarse. Por eso el rendimiento total disminuye aunque la preparación se enriquezca en la enzima buscada.</p><h3>c) Grado de pureza</h3><p>La columna que permite seguir el enriquecimiento es la <strong>actividad específica, U/mg de proteína</strong>, porque compara actividad de la enzima con la cantidad total de proteínas presentes.</p><p>En la tabla aumenta:</p><p>[0.21\\rightarrow0.5\\rightarrow2.3\\rightarrow13.8\\rightarrow30.0\\,U/mg]</p><p>Esto indica que la fosfofructoquinasa representa una fracción cada vez mayor de la proteína total. El enriquecimiento final respecto del homogenato es aproximadamente:</p><p>[\\frac{30.0}{0.21}\\approx143]</p><p>es decir, unas <strong>143 veces</strong>.</p>",
+      "guide":"Guía de estudio · Enzimas I","topic":"Enzimas I · purificación enzimática","summaryTarget":"cap15"
+    }
+  ]
+}
