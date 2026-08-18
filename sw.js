@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-5";
+const CACHE_VERSION = "biblioteca-lbt-v0104-6";
 const CORE = [
   "./",
   "./index.html",
@@ -42,8 +42,9 @@ const CORE = [
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-4.txt?v=3.4.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-5.txt?v=3.4.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-6.txt?v=3.4.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-v1.json",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises.js?v=1.3.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-v1.json?v=1.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-enzimas-i.json?v=1.0.0",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./privacy.html",
