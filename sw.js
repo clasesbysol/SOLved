@@ -61,6 +61,7 @@ self.addEventListener("install", event => {
       if(!response.ok)throw new Error(`No se pudo precachear ${url}`);
       await cache.put(url,response);
     }));
+    await self.skipWaiting();
   })());
 });
 
