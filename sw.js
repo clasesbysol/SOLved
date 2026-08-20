@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-9";
+const CACHE_VERSION = "biblioteca-lbt-v0104-10";
 const CORE = [
   "./",
   "./index.html",
@@ -54,7 +54,14 @@ const CORE = [
 ];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_VERSION).then(cache => cache.addAll(CORE)));
+  event.waitUntil((async()=>{
+    const cache=await caches.open(CACHE_VERSION);
+    await Promise.all(CORE.map(async url=>{
+      const response=await fetch(new Request(url,{cache:"reload"}));
+      if(!response.ok)throw new Error(`No se pudo precachear ${url}`);
+      await cache.put(url,response);
+    }));
+  })());
 });
 
 self.addEventListener("activate", event => {
@@ -65,15 +72,15 @@ self.addEventListener("activate", event => {
   );
 });
 
-async function networkFirst(request,fallbackUrl){
+async function cacheFirstAndRefresh(request,fallbackUrl){
   const cache=await caches.open(CACHE_VERSION);
-  try{
-    const response=await fetch(request,{cache:"no-store"});
+  const cached=(await cache.match(request))||(fallbackUrl?await cache.match(fallbackUrl):null);
+  const update=fetch(request,{cache:"no-store"}).then(response=>{
     if(response&&response.ok)cache.put(request,response.clone());
     return response;
-  }catch(error){
-    return (await caches.match(request))||(fallbackUrl?await caches.match(fallbackUrl):Response.error());
-  }
+  }).catch(()=>null);
+  if(cached){update.catch(()=>null);return cached}
+  return (await update)||Response.error();
 }
 
 async function staleWhileRevalidate(request){
@@ -93,13 +100,13 @@ self.addEventListener("fetch",event=>{
   if(url.origin!==self.location.origin)return;
 
   if(request.mode==="navigate"){
-    event.respondWith(networkFirst(request,"./index.html"));
+    event.respondWith(cacheFirstAndRefresh(request,"./index.html"));
     return;
   }
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
 
   if(["script","style","worker"].includes(request.destination)){
-    event.respondWith(networkFirst(request));
+    event.respondWith(cacheFirstAndRefresh(request));
     return;
   }
 
