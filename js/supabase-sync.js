@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   const SYNC_STORES=new Set(["kv","subjects","events","highlights","cardProgress","exerciseProgress","notes","studySessions","collections","bookmarks","activityLog"]);
-  let client=null,user=null,DB=null,channel=null,applying=false,onApplied=()=>{},bootstrapPromise=null;
+  let client=null,user=null,DB=null,channel=null,applying=false,onApplied=()=>{},bootstrapPromise=null,bootstrapScheduled=false;
   const keyFor=(store,value)=>store==="kv"?value.key:value.id;
   const clock=value=>Date.parse(value?.updatedAt||value?.deletedAt||value?.createdAt||0)||0;
   const newer=(local,remote)=>!local||clock(remote)>=clock(local)?remote:local;
@@ -22,9 +22,10 @@
   async function remove(store,key){if(applying||!user)return;if(store==="userMaterials"){const {error}=await client.from("user_materials").delete().eq("user_id",user.id).eq("id",key);if(error)cloudError(error);return}if(!SYNC_STORES.has(store))return;const {error}=await client.from("user_records").delete().eq("user_id",user.id).eq("store",store).eq("record_key",key);if(error)cloudError(error)}
   function subscribeRealtime(){if(!client||!user||channel)return;const refreshContent=()=>window.LBT_CONTENT?.syncSupabase?.().then(()=>onApplied()).catch(cloudError),refreshOfficial=()=>pullOfficialMaterials().then(onApplied).catch(cloudError);channel=client.channel(`solved:${user.id}`).on("postgres_changes",{event:"*",schema:"public",table:"user_records",filter:`user_id=eq.${user.id}`},async payload=>{if(payload.eventType==="DELETE")return;await applyRow(payload.new);await onApplied()}).on("postgres_changes",{event:"*",schema:"public",table:"official_materials"},refreshOfficial).on("postgres_changes",{event:"*",schema:"public",table:"official_content"},refreshContent).on("postgres_changes",{event:"*",schema:"public",table:"user_content",filter:`user_id=eq.${user.id}`},refreshContent).on("postgres_changes",{event:"*",schema:"public",table:"content_preferences",filter:`user_id=eq.${user.id}`},refreshContent).subscribe()}
   function bootstrap(){if(bootstrapPromise)return bootstrapPromise;bootstrapPromise=(async()=>{await pullOfficialMaterials();if(!user)return;subscribeRealtime();await pull();await pushLocal()})().catch(error=>{cloudError(error);return false}).finally(()=>{bootstrapPromise=null});return bootstrapPromise}
-  async function init(db,callback){client=window.SOLVED_AUTH?.client;DB=db;onApplied=callback||onApplied;await window.SOLVED_AUTH?.ready;const profile=window.SOLVED_AUTH?.profile();user=client&&profile?.mode==="authorized-google"&&profile.sub?{id:profile.sub}:null;subscribeRealtime();setTimeout(()=>bootstrap(),0);return {connected:!!user,background:true}}
+  function scheduleBootstrap(){if(bootstrapScheduled)return;const run=()=>{bootstrapScheduled=false;bootstrap()};if(document.documentElement.dataset.appReady==="true"){setTimeout(run,0);return}bootstrapScheduled=true;window.addEventListener("lbt-app-ready",run,{once:true})}
+  async function init(db,callback){client=window.SOLVED_AUTH?.client;DB=db;onApplied=callback||onApplied;await window.SOLVED_AUTH?.ready;const profile=window.SOLVED_AUTH?.profile();user=client&&profile?.mode==="authorized-google"&&profile.sub?{id:profile.sub}:null;subscribeRealtime();scheduleBootstrap();return {connected:!!user,background:true}}
   async function close(){if(channel&&client)await client.removeChannel(channel);channel=null}
-  window.addEventListener("online",()=>bootstrap());
+  window.addEventListener("online",()=>scheduleBootstrap());
   window.addEventListener("beforeunload",()=>close());
   window.SOLVED_CLOUD={init,queueChange,remove,pull,pullOfficialMaterials,publishOfficialMaterial,deleteOfficialMaterial,isConnected:()=>!!user};
 })();
