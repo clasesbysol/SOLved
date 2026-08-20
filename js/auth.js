@@ -6,19 +6,27 @@
   const config=window.SOLVED_SUPABASE_CONFIG||{};
   const configured=/^https:\/\/.+\.supabase\.co$/.test(config.url||"")&&!String(config.publishableKey||"").startsWith("TU_");
   const client=configured&&window.supabase?.createClient?window.supabase.createClient(config.url,config.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}):null;
-  let profile={mode:"guest"},session=null,recoveryMode=recoveryRequested;
+  let profile={mode:"guest"},session=null,recoveryMode=recoveryRequested,roleRefresh=null;
   const cached=()=>{try{return JSON.parse(localStorage.getItem(PROFILE_KEY))}catch(_){return null}};
   const write=value=>localStorage.setItem(PROFILE_KEY,JSON.stringify(value));
   const apply=next=>{profile=next;window.SOLVED_PROFILE=next;window.SOLVED_PROFILE_DB_NAME=next.mode==="authorized-google"&&next.sub?`solved-profile-${next.sub}`:"solved-profile-guest";document.documentElement.dataset.accessMode=next.mode;return next};
   apply(cached()?.mode==="authorized-google"?cached():{mode:"guest"});
 
-  async function profileFromSession(nextSession){
+  function localProfileFromSession(nextSession){
     session=nextSession||null;
     if(!session?.user){const next={mode:"guest"};write(next);return apply(next)}
-    const {data}=await client.from("solved_admins").select("user_id").eq("user_id",session.user.id).maybeSingle();
-    const next={mode:"authorized-google",sub:session.user.id,email:normalize(session.user.email),name:session.user.user_metadata?.name||session.user.email?.split("@")[0]||"Cuenta",role:data?"owner":"user"};write(next);return apply(next);
+    const previous=cached(),sameUser=previous?.mode==="authorized-google"&&previous.sub===session.user.id;
+    const next={mode:"authorized-google",sub:session.user.id,email:normalize(session.user.email),name:session.user.user_metadata?.name||session.user.email?.split("@")[0]||"Cuenta",role:sameUser&&previous.role?previous.role:"user"};write(next);return apply(next);
   }
-  const ready=(async()=>{if(!client)return profile;const {data,error}=await client.auth.getSession();if(error)console.warn("No se pudo restaurar la sesión",error);return profileFromSession(data?.session)})();
+  function refreshRole(nextSession){
+    if(!client||!nextSession?.user)return Promise.resolve(profile);if(roleRefresh)return roleRefresh;
+    roleRefresh=(async()=>{const {data,error}=await client.from("solved_admins").select("user_id").eq("user_id",nextSession.user.id).maybeSingle();if(error)throw error;if(session?.user?.id!==nextSession.user.id)return profile;const next={...profile,role:data?"owner":"user"};write(next);apply(next);if(document.readyState!=="loading")bindAccount();return next})().catch(error=>{console.warn("No se pudo actualizar el rol de la cuenta",error);return profile}).finally(()=>{roleRefresh=null});return roleRefresh;
+  }
+  async function profileFromSession(nextSession,{verifyRole=true}={}){
+    const next=localProfileFromSession(nextSession);if(next.mode!=="authorized-google")return next;
+    if(verifyRole)await refreshRole(nextSession);else queueMicrotask(()=>refreshRole(nextSession));return profile;
+  }
+  const ready=(async()=>{if(!client)return profile;const {data,error}=await client.auth.getSession();if(error)console.warn("No se pudo restaurar la sesión",error);return profileFromSession(data?.session,{verifyRole:false})})();
 
   function setRecoveryMode(active,message=""){
     recoveryMode=active;const form=document.querySelector("#supabaseAuthForm");if(!form)return;
