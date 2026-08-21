@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-16";
+const CACHE_VERSION = "biblioteca-lbt-v0104-17";
 const CORE = [
   "./",
   "./index.html",
@@ -17,6 +17,7 @@ const CORE = [
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
   "./js/fisica-first-partial-guide.js?v=1.1.0",
+  "./js/reading-mode-v2.js?v=1.0.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.8.4",
   "./js/study-workspace.js?v=0.10.4",
@@ -114,45 +115,18 @@ async function injectFisicaFirstPartialGuide(request){
   return new Response(body,{status:response.status,statusText:response.statusText,headers});
 }
 
-const READING_VIEWER_HOTFIX=`
-/* SOLved reading viewer hotfix v0.10.4-16: el iframe visible es el viewport. */
-html.immersive-reading .rich-document,
-html.immersive-reading .imported-html-frame,
-html.immersive-reading .personal-pdf-frame{
-  position:fixed!important;
-  inset:0!important;
-  display:block!important;
-  box-sizing:border-box!important;
-  width:100dvw!important;
-  height:100dvh!important;
-  min-width:0!important;
-  min-height:0!important;
-  max-width:none!important;
-  max-height:none!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:0!important;
-  transform:none!important;
-  transform-origin:0 0!important;
-  z-index:2147483400!important;
-  background:#fff!important;
-}
-html.immersive-reading .reading-mode-exit{
-  position:fixed!important;
-  z-index:2147483647!important;
-}
-`;
-
-async function injectReadingViewerHotfix(request){
-  const response=await cacheFirstAndRefresh(request);
+async function injectAppShell(request,fallbackUrl){
+  const response=await cacheFirstAndRefresh(request,fallbackUrl);
   if(!response||!response.ok)return response||Response.error();
-  const css=await response.text();
+  const text=await response.text();
+  const marker='data-solved-reading-v2="1"';
+  const injection=`<script src="./js/reading-mode-v2.js?v=1.0.0" ${marker}></script>`;
+  const body=text.includes(marker)?text:text.replace(/<\/body>/i,`${injection}</body>`);
   const headers=new Headers(response.headers);
   headers.delete("content-length");
   headers.delete("content-encoding");
-  headers.set("content-type","text/css; charset=utf-8");
-  return new Response(`${css}\n${READING_VIEWER_HOTFIX}`,{status:response.status,statusText:response.statusText,headers});
+  headers.set("content-type","text/html; charset=utf-8");
+  return new Response(body,{status:response.status,statusText:response.statusText,headers});
 }
 
 self.addEventListener("fetch",event=>{
@@ -162,16 +136,12 @@ self.addEventListener("fetch",event=>{
   if(url.origin!==self.location.origin)return;
 
   if(request.mode==="navigate"){
-    event.respondWith(cacheFirstAndRefresh(request,"./index.html"));
+    event.respondWith(injectAppShell(request,"./index.html"));
     return;
   }
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
   if(url.pathname.endsWith("/content/subjects/fisica1/units/resumen-integral/original.html")){
     event.respondWith(injectFisicaFirstPartialGuide(request));
-    return;
-  }
-  if(url.pathname.endsWith("/styles-personal.css")){
-    event.respondWith(injectReadingViewerHotfix(request));
     return;
   }
 
