@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-12";
+const CACHE_VERSION = "biblioteca-lbt-v0104-13";
 const CORE = [
   "./",
   "./index.html",
@@ -16,6 +16,7 @@ const CORE = [
   "./js/supabase-sync.js?v=0.10.4",
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
+  "./js/fisica-first-partial-guide.js?v=1.0.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.8.4",
   "./js/study-workspace.js?v=0.10.4",
@@ -94,6 +95,18 @@ async function staleWhileRevalidate(request){
   return cached||(await update)||Response.error();
 }
 
+async function injectFisicaFirstPartialGuide(request){
+  const response=await cacheFirstAndRefresh(request);
+  if(!response||!response.ok)return response||Response.error();
+  const text=await response.text();
+  const injection='<script src="/js/fisica-first-partial-guide.js?v=1.0.0"></script>';
+  const body=text.includes(injection)?text:text.replace(/<\/body>/i,`${injection}</body>`);
+  const headers=new Headers(response.headers);
+  headers.delete("content-length");
+  headers.delete("content-encoding");
+  return new Response(body,{status:response.status,statusText:response.statusText,headers});
+}
+
 self.addEventListener("fetch",event=>{
   const request=event.request;
   if(request.method!=="GET")return;
@@ -105,6 +118,10 @@ self.addEventListener("fetch",event=>{
     return;
   }
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
+  if(url.pathname.endsWith("/content/subjects/fisica1/units/resumen-integral/original.html")){
+    event.respondWith(injectFisicaFirstPartialGuide(request));
+    return;
+  }
 
   if(["script","style","worker"].includes(request.destination)){
     event.respondWith(cacheFirstAndRefresh(request));
