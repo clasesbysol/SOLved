@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-14";
+const CACHE_VERSION = "biblioteca-lbt-v0104-15";
 const CORE = [
   "./",
   "./index.html",
@@ -16,7 +16,7 @@ const CORE = [
   "./js/supabase-sync.js?v=0.10.4",
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
-  "./js/fisica-first-partial-guide.js?v=1.0.0",
+  "./js/fisica-first-partial-guide.js?v=1.1.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.8.4",
   "./js/study-workspace.js?v=0.10.4",
@@ -99,8 +99,15 @@ async function injectFisicaFirstPartialGuide(request){
   const response=await cacheFirstAndRefresh(request);
   if(!response||!response.ok)return response||Response.error();
   const text=await response.text();
-  const injection='<script src="/js/fisica-first-partial-guide.js?v=1.0.0"></script>';
-  const body=text.includes(injection)?text:text.replace(/<\/body>/i,`${injection}</body>`);
+  let guide="";
+  try{
+    const guideResponse=await fetch(new Request("./js/fisica-first-partial-guide.js?v=1.1.0",{cache:"no-store"}));
+    if(guideResponse.ok)guide=await guideResponse.text();
+  }catch(_){}
+  const safeGuide=guide.replace(/<\/script/gi,"<\\/script");
+  const marker="data-solved-fisica-guide=\"1\"";
+  const injection=safeGuide?`<script ${marker}>${safeGuide}</script>`:'<script src="/js/fisica-first-partial-guide.js?v=1.1.0" data-solved-fisica-guide="1"></script>';
+  const body=text.includes(marker)?text:text.replace(/<\/body>/i,`${injection}</body>`);
   const headers=new Headers(response.headers);
   headers.delete("content-length");
   headers.delete("content-encoding");
