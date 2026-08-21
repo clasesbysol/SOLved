@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-15";
+const CACHE_VERSION = "biblioteca-lbt-v0104-16";
 const CORE = [
   "./",
   "./index.html",
@@ -114,6 +114,47 @@ async function injectFisicaFirstPartialGuide(request){
   return new Response(body,{status:response.status,statusText:response.statusText,headers});
 }
 
+const READING_VIEWER_HOTFIX=`
+/* SOLved reading viewer hotfix v0.10.4-16: el iframe visible es el viewport. */
+html.immersive-reading .rich-document,
+html.immersive-reading .imported-html-frame,
+html.immersive-reading .personal-pdf-frame{
+  position:fixed!important;
+  inset:0!important;
+  display:block!important;
+  box-sizing:border-box!important;
+  width:100dvw!important;
+  height:100dvh!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important;
+  transform-origin:0 0!important;
+  z-index:2147483400!important;
+  background:#fff!important;
+}
+html.immersive-reading .reading-mode-exit{
+  position:fixed!important;
+  z-index:2147483647!important;
+}
+`;
+
+async function injectReadingViewerHotfix(request){
+  const response=await cacheFirstAndRefresh(request);
+  if(!response||!response.ok)return response||Response.error();
+  const css=await response.text();
+  const headers=new Headers(response.headers);
+  headers.delete("content-length");
+  headers.delete("content-encoding");
+  headers.set("content-type","text/css; charset=utf-8");
+  return new Response(`${css}\n${READING_VIEWER_HOTFIX}`,{status:response.status,statusText:response.statusText,headers});
+}
+
 self.addEventListener("fetch",event=>{
   const request=event.request;
   if(request.method!=="GET")return;
@@ -127,6 +168,10 @@ self.addEventListener("fetch",event=>{
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
   if(url.pathname.endsWith("/content/subjects/fisica1/units/resumen-integral/original.html")){
     event.respondWith(injectFisicaFirstPartialGuide(request));
+    return;
+  }
+  if(url.pathname.endsWith("/styles-personal.css")){
+    event.respondWith(injectReadingViewerHotfix(request));
     return;
   }
 
