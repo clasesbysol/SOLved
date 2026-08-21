@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-11";
+const CACHE_VERSION = "biblioteca-lbt-v0104-12";
 const CORE = [
   "./",
   "./index.html",
@@ -86,7 +86,7 @@ async function cacheFirstAndRefresh(request,fallbackUrl){
 
 async function staleWhileRevalidate(request){
   const cache=await caches.open(CACHE_VERSION);
-  const cached=await caches.match(request);
+  const cached=await cache.match(request);
   const update=fetch(request).then(response=>{
     if(response&&response.ok)cache.put(request,response.clone());
     return response;
