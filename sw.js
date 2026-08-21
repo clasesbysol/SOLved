@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-18";
+const CACHE_VERSION = "biblioteca-lbt-v0104-19";
 const CORE = [
   "./",
   "./index.html",
@@ -17,6 +17,7 @@ const CORE = [
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
   "./js/fisica-first-partial-guide.js?v=1.1.0",
+  "./js/fisica-topic-intros.js?v=1.2.0",
   "./js/reading-mode-v2.js?v=1.1.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.8.4",
@@ -38,7 +39,6 @@ const CORE = [
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-4.txt?v=3.5.1",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-5.txt?v=3.5.1",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-6.txt?v=3.5.1",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-7.txt?v=3.5.1",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-1.txt?v=3.5.1",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-2.txt?v=3.5.1",
   "./content/subjects/quimica_biologica1/units/proteinas-i/concept-glossary-3.txt?v=3.5.1",
@@ -96,22 +96,32 @@ async function staleWhileRevalidate(request){
   return cached||(await update)||Response.error();
 }
 
-async function injectFisicaFirstPartialGuide(request){
+async function fetchText(url){
+  try{
+    const response=await fetch(new Request(url,{cache:"no-store"}));
+    return response.ok?await response.text():"";
+  }catch(_){return ""}
+}
+
+async function injectFisicaGuides(request){
   const response=await cacheFirstAndRefresh(request);
   if(!response||!response.ok)return response||Response.error();
   const text=await response.text();
-  let guide="";
-  try{
-    const guideResponse=await fetch(new Request("./js/fisica-first-partial-guide.js?v=1.1.0",{cache:"no-store"}));
-    if(guideResponse.ok)guide=await guideResponse.text();
-  }catch(_){}
-  const safeGuide=guide.replace(/<\/script/gi,"<\\/script");
-  const marker="data-solved-fisica-guide=\"1\"";
-  const injection=safeGuide?`<script ${marker}>${safeGuide}</script>`:'<script src="/js/fisica-first-partial-guide.js?v=1.1.0" data-solved-fisica-guide="1"></script>';
-  const body=text.includes(marker)?text:text.replace(/<\/body>/i,`${injection}</body>`);
+  const [guide,intros]=await Promise.all([
+    fetchText("./js/fisica-first-partial-guide.js?v=1.1.0"),
+    fetchText("./js/fisica-topic-intros.js?v=1.2.0")
+  ]);
+  const safe=value=>value.replace(/<\/script/gi,"<\\/script");
+  const guideMarker='data-solved-fisica-guide="1"';
+  const introsMarker='data-solved-fisica-intros="1"';
+  const injections=[];
+  if(!text.includes(guideMarker))injections.push(guide?`<script ${guideMarker}>${safe(guide)}</script>`:`<script src="/js/fisica-first-partial-guide.js?v=1.1.0" ${guideMarker}></script>`);
+  if(!text.includes(introsMarker))injections.push(intros?`<script ${introsMarker}>${safe(intros)}</script>`:`<script src="/js/fisica-topic-intros.js?v=1.2.0" ${introsMarker}></script>`);
+  const body=injections.length?text.replace(/<\/body>/i,`${injections.join("")}</body>`):text;
   const headers=new Headers(response.headers);
   headers.delete("content-length");
   headers.delete("content-encoding");
+  headers.set("content-type","text/html; charset=utf-8");
   return new Response(body,{status:response.status,statusText:response.statusText,headers});
 }
 
@@ -141,7 +151,7 @@ self.addEventListener("fetch",event=>{
   }
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
   if(url.pathname.endsWith("/content/subjects/fisica1/units/resumen-integral/original.html")){
-    event.respondWith(injectFisicaFirstPartialGuide(request));
+    event.respondWith(injectFisicaGuides(request));
     return;
   }
 
