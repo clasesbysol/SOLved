@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0104-17";
+const CACHE_VERSION = "biblioteca-lbt-v0104-18";
 const CORE = [
   "./",
   "./index.html",
@@ -17,7 +17,7 @@ const CORE = [
   "./js/organic-cards.js?v=0.7.3",
   "./js/organic-mind-map.js?v=0.7.3",
   "./js/fisica-first-partial-guide.js?v=1.1.0",
-  "./js/reading-mode-v2.js?v=1.0.0",
+  "./js/reading-mode-v2.js?v=1.1.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.8.4",
   "./js/study-workspace.js?v=0.10.4",
@@ -120,7 +120,7 @@ async function injectAppShell(request,fallbackUrl){
   if(!response||!response.ok)return response||Response.error();
   const text=await response.text();
   const marker='data-solved-reading-v2="1"';
-  const injection=`<script src="./js/reading-mode-v2.js?v=1.0.0" ${marker}></script>`;
+  const injection=`<script src="./js/reading-mode-v2.js?v=1.1.0" ${marker}></script>`;
   const body=text.includes(marker)?text:text.replace(/<\/body>/i,`${injection}</body>`);
   const headers=new Headers(response.headers);
   headers.delete("content-length");
