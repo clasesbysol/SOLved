@@ -5,10 +5,10 @@
   "subjectId": "fisica1",
   "unitId": "resumen-integral",
   "title": "Resumen integral de Física I",
-  "contentVersion": "1.0.0",
+  "contentVersion": "1.1.0",
   "status": "published",
-  "generatedAt": "2026-08-03T00:00:00.000Z",
-  "reviewedAt": "2026-08-03T00:00:00.000Z",
+  "generatedAt": "2026-08-23T00:00:00.000Z",
+  "reviewedAt": "2026-08-23T00:00:00.000Z",
   "files": {
     "summary": "summary.json",
     "glossary": "glossary.json",
