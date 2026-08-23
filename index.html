@@ -107,7 +107,7 @@ table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--surface
 .hidden-by-search{display:none!important}.empty-result{display:none;padding:35px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:42px}.jump-highlight{animation:jumpPulse 1.35s ease}@keyframes jumpPulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0)}35%{box-shadow:0 0 0 5px rgba(var(--accent-rgb),.25)}}
 .search-highlight{background:rgba(var(--accent-rgb),.34);color:var(--ink);border-radius:3px;padding:0 1px}
 #menuToggle,#searchToggle,#backToTop{position:fixed;z-index:260;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.26)}
-#menuToggle{display:none;left:17px;bottom:18px;width:49px;height:49px;border-radius:50%;align-items:center;justify-content:center}#menuToggle span{display:block;width:20px;height:2px;background:var(--accent);margin:4px auto}
+#menuToggle{display:none;left:17px;bottom:18px;min-width:94px;height:49px;padding:0 17px;border-radius:25px;align-items:center;justify-content:center;gap:9px;font-weight:900;letter-spacing:.04em}#menuToggle svg{width:19px;height:19px;stroke:var(--accent)}
 #searchToggle{display:none;right:17px;bottom:18px;width:49px;height:49px;border-radius:50%;align-items:center;justify-content:center}#searchToggle svg{width:20px;height:20px}
 #backToTop{right:18px;bottom:80px;width:43px;height:43px;border-radius:12px;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s}#backToTop.show{opacity:1;pointer-events:auto;transform:none}#backToTop:hover{border-color:var(--accent);color:var(--accent)}
 .mobile-scrim{display:none;position:fixed;z-index:210;inset:0;background:rgba(0,0,0,.62)}
@@ -148,21 +148,19 @@ table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--surface
 </div>
 </details>
 </div>
-</aside><div class="mobile-scrim" id="mobileScrim"></div><button aria-label="Abrir índice" id="menuToggle" type="button"><span></span><span></span><span></span></button><button aria-label="Abrir búsqueda" id="searchToggle" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button><button aria-label="Volver arriba" id="backToTop" type="button">↑</button>
+</aside><div class="mobile-scrim" id="mobileScrim"></div><button aria-label="Abrir índice" id="menuToggle" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span>Índice</span></button><button aria-label="Abrir búsqueda" id="searchToggle" type="button"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button><button aria-label="Volver arriba" id="backToTop" type="button">↑</button>
 <div id="mainFrame"><div class="app-shell">
 <header class="hero">
 <div class="eyebrow">SOLved · Estadística Aplicada</div>
 <h1>Estadística Aplicada · Primer y segundo parcial</h1>
-<p>Archivo acumulativo en cinco vistas, con lectura en modo oscuro, índice lateral, búsqueda global y color personalizable. La teoría desarrolla Probabilidad y variables aleatorias discretas; las Prácticas 1 y 2 conservan sus consignas y resoluciones completas; el mapa mental conecta los conceptos y el Esqueleto total mantiene la organización de ambos parciales.</p>
+<p>Archivo acumulativo con lectura en modo oscuro, índice lateral, búsqueda global y color personalizable. La teoría desarrolla Probabilidad y variables aleatorias discretas; las Prácticas 1 y 2 conservan sus consignas y resoluciones completas, y el mapa mental conecta los conceptos.</p>
 <div class="badges"><span class="badge">Modo oscuro · amarillo</span><span class="badge">Color personalizable</span><span class="badge">Lupa global</span><span class="badge">Índice lateral</span><span class="badge">Práctica 1 · 17 ejercicios</span><span class="badge">Práctica 2 · 10 ejercicios</span></div>
-<div class="integration-note"><strong>Uso posterior en la app:</strong> la pestaña <b>Esqueleto total</b> es la estructura maestra de navegación. Cuando este HTML se incorpore a SOLved, ese mapa debe conservarse como índice general y enlazar cada tema con su teoría, glosario y prácticas; no debe mostrarse como un resumen duplicado sin función.</div>
 <div aria-label="Herramientas del documento" class="utility-bar"><button class="utility-button" id="openAll" type="button">Abrir módulos</button><button class="utility-button" id="closeAll" type="button">Cerrar módulos</button><button class="utility-button" id="printPage" type="button">Imprimir / PDF</button></div></header>
 <nav aria-label="Secciones" class="tabs">
 <button class="tab active" data-tab="theory">Teoría</button>
 <button class="tab" data-tab="glossary">Glosario</button>
 <button class="tab" data-tab="exercises">Ejercicios · Prácticas 1 y 2</button>
 <button class="tab" data-tab="mindmap">Mapa mental</button>
-<button class="tab" data-tab="skeleton">Esqueleto total</button>
 </nav>
 <main>
 <section class="tab-panel active" id="theory">
@@ -2413,6 +2411,7 @@ $$</p>
 <footer class="footer">SOLved · Estadística Aplicada · archivo acumulativo de estudio</footer>
 </div></div>
 <script>
+document.getElementById('skeleton')?.remove();
 const tabs=[...document.querySelectorAll('.tab')];
 const panels=[...document.querySelectorAll('.tab-panel')];
 const sidebar=document.getElementById('sidebar');
@@ -2427,7 +2426,7 @@ function activateTab(id,{updateHash=true}={}){
 }
 tabs.forEach(b=>b.addEventListener('click',()=>activateTab(b.dataset.tab)));
 const initial=location.hash.slice(1);
-if(['theory','glossary','exercises','mindmap','skeleton'].includes(initial)) activateTab(initial,{updateHash:false});
+if(['theory','glossary','exercises','mindmap'].includes(initial)) activateTab(initial,{updateHash:false});
 
 function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
 function setupSearch(inputId,itemSelector,emptyId,onRun){
@@ -2458,7 +2457,7 @@ document.querySelectorAll('[data-check]').forEach(box=>{const key='solved-estadi
 document.querySelectorAll('.map-nav a').forEach(a=>a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});target.classList.add('jump-highlight');setTimeout(()=>target.classList.remove('jump-highlight'),1400);}}));
 
 // Índice lateral dinámico
-const tabNames={theory:'Teoría',glossary:'Glosario',exercises:'Ejercicios',mindmap:'Mapa mental',skeleton:'Esqueleto total'};
+const tabNames={theory:'Teoría',glossary:'Glosario',exercises:'Ejercicios',mindmap:'Mapa mental'};
 const index=document.getElementById('sidebarIndex');
 function getTitle(el){
   const clone=el.cloneNode(true);clone.querySelectorAll('.module-number,.summary-hint,.source-label').forEach(x=>x.remove());
@@ -2474,7 +2473,6 @@ function addIndexGroup(panel){
   if(panel.id==='glossary')targets=[...panel.querySelectorAll('.glossary-paragraph')].slice(0,12);
   if(panel.id==='exercises')targets=[...panel.querySelectorAll('.exercise-card')];
   if(panel.id==='mindmap')targets=[...panel.querySelectorAll('.mindmap-card')];
-  if(panel.id==='skeleton')targets=[...panel.querySelectorAll('.legacy-skeleton > h1,.legacy-skeleton > h2')];
   targets.forEach((target,i)=>{
     if(!target.id)target.id=`index-${panel.id}-${i+1}`;
     const a=document.createElement('a');a.className='index-link';a.href='#'+target.id;a.dataset.panel=panel.id;a.textContent=panel.id==='glossary'?target.querySelector('strong')?.textContent||`Término ${i+1}`:getTitle(target.querySelector('summary,h1,h2')||target);
