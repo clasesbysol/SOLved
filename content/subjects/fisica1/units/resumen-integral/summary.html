@@ -1,0 +1,1692 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resumen integral de Física I</title><script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f0f7ff;--surface:#fff;--border:#c0d8f5;
+  --accent:#1a6fc4;--accent2:#38bdf8;--muted:#3d5a80;--text:#1a2e45;
+  --fml-bg:#eef6ff;--fml-b:#bdd9f7;
+  --red-bg:#fff0f0;--red-b:#fbb6b6;--red-text:#7f1d1d;
+  --green-bg:#f0fdf4;--green-b:#86efac;
+  --amber-bg:#fffbeb;--amber-b:#fde68a;
+}
+body{background:var(--bg);font-family:'Nunito',sans-serif;font-size:13px;color:var(--text);padding:14px;line-height:1.5}
+.main-content{max-width:860px;margin:0 auto}
+
+/* HEADER */
+.page-header{background:linear-gradient(135deg,#1a4fa0,#1e90d4);color:#fff;border-radius:14px;padding:14px 22px 12px;text-align:center;margin-bottom:16px}
+.page-header h1{font-size:19px;font-weight:800;margin-bottom:3px}
+.page-header p{font-size:11px;opacity:.75;font-weight:600}
+
+/* PART HEADER */
+.part-header{border-radius:10px;padding:10px 18px;margin:20px 0 10px;display:flex;align-items:center;gap:10px}
+.part-header.pA{background:linear-gradient(135deg,#1a4fa0,#2563eb)}
+.part-header.pB{background:linear-gradient(135deg,#065f46,#0ea5e9)}
+.part-header.pC{background:linear-gradient(135deg,#5b21b6,#6366f1)}
+.part-header h2{color:#fff;font-size:15px;font-weight:800;letter-spacing:-.1px}
+.part-header p{color:rgba(255,255,255,.75);font-size:11px;font-weight:600}
+
+/* TOPIC CARD */
+.topic-card{width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px}
+.topic-head{padding:7px 14px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:6px}
+.topic-head .num{background:rgba(255,255,255,.22);border-radius:4px;padding:1px 6px;font-size:9px}
+.topic-body{padding:10px 14px 12px}
+
+/* head colors */
+.h-blue   .topic-head{background:linear-gradient(90deg,#1a4fa0,#2176c7)}
+.h-sky    .topic-head{background:linear-gradient(90deg,#0284c7,#38bdf8)}
+.h-indigo .topic-head{background:linear-gradient(90deg,#3730a3,#6366f1)}
+.h-teal   .topic-head{background:linear-gradient(90deg,#0f766e,#0ea5e9)}
+.h-cyan   .topic-head{background:linear-gradient(90deg,#0369a1,#06b6d4)}
+.h-violet .topic-head{background:linear-gradient(90deg,#5b21b6,#7c3aed)}
+.h-ocean  .topic-head{background:linear-gradient(90deg,#0c4a6e,#0284c7)}
+.h-slate  .topic-head{background:linear-gradient(90deg,#1e3a5f,#2563eb)}
+.h-green  .topic-head{background:linear-gradient(90deg,#065f46,#059669)}
+.h-red    .topic-head{background:linear-gradient(90deg,#b91c1c,#ef4444)}
+.h-navy   .topic-head{background:linear-gradient(90deg,#1e3a8a,#3b82f6)}
+.h-emerald .topic-head{background:linear-gradient(90deg,#064e3b,#10b981)}
+
+/* LABEL */
+.lbl{font-size:9.5px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin:8px 0 3px;display:flex;align-items:center;gap:4px}
+.lbl::before{content:'';display:inline-block;width:2.5px;height:8px;background:var(--accent2);border-radius:2px}
+.lbl:first-child{margin-top:0}
+
+/* FORMULA */
+.fml{background:var(--fml-bg);border:1px solid var(--fml-b);border-radius:7px;padding:4px 8px;margin:3px 0;text-align:center;overflow-x:auto}
+.fml-green{background:var(--green-bg)!important;border-color:var(--green-b)!important}
+.fml-amber{background:var(--amber-bg)!important;border-color:var(--amber-b)!important}
+.fml-red{background:var(--red-bg)!important;border-color:var(--red-b)!important}
+.frow{display:flex;gap:6px;flex-wrap:wrap}
+.frow .fml{flex:1;min-width:120px}
+
+/* NOTE */
+.note{font-size:11.5px;color:var(--muted);margin:3px 0 3px 4px;line-height:1.4}
+
+/* OJO */
+.ojo{background:var(--red-bg);border:1px solid var(--red-b);border-left:3px solid #b91c1c;border-radius:6px;padding:4px 9px;font-size:11.5px;color:var(--red-text);margin:4px 0;line-height:1.35}
+.ojo strong{color:#b91c1c;font-size:9px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:1px}
+
+/* HR */
+hr{border:none;border-top:1px solid var(--border);margin:7px 0}
+
+/* BULLET LIST */
+.blist{list-style:none;margin:3px 0}
+.blist li{font-size:11.5px;color:var(--muted);padding-left:14px;position:relative;margin-bottom:2px;line-height:1.38}
+.blist li::before{content:'·';position:absolute;left:3px;color:var(--accent2);font-weight:900;font-size:14px;line-height:1.05}
+
+/* STEPS */
+.steps{list-style:none;counter-reset:step;margin:3px 0}
+.steps li{counter-increment:step;display:flex;gap:7px;align-items:flex-start;font-size:11.5px;color:var(--muted);margin-bottom:3px;line-height:1.35}
+.steps li::before{content:counter(step);background:var(--accent);color:#fff;font-size:8.5px;font-weight:800;border-radius:50%;min-width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+/* PENDING */
+.pending-card{background:#f5f3ff;border:2px dashed #a78bfa;border-radius:12px;padding:20px;text-align:center;color:#5b21b6;margin-bottom:10px}
+.pending-card h3{font-size:15px;font-weight:800;margin-bottom:6px}
+.pending-card p{font-size:12px;opacity:.8}
+.pending-items{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.pending-tag{background:#ede9fe;border:1px solid #c4b5fd;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:#5b21b6}
+
+
+/* COLLAPSIBLE EXPLANATIONS */
+.details-box{margin-top:8px;border-top:1px solid var(--border);padding-top:7px}
+details.explain{background:#f8fbff;border:1px solid #d5e7fb;border-radius:8px;margin:5px 0;overflow:hidden}
+details.explain summary{cursor:pointer;list-style:none;font-size:10px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;padding:6px 9px;display:flex;align-items:center;gap:6px}
+details.explain summary::-webkit-details-marker{display:none}
+details.explain summary::before{content:'+';background:var(--accent);color:#fff;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center;font-size:10px;line-height:1;flex-shrink:0}
+details.explain[open] summary::before{content:'−'}
+details.explain .inside{padding:0 10px 8px 30px;font-size:11.5px;color:var(--muted);line-height:1.45}
+details.explain .inside p{margin:3px 0}
+details.explain .inside ul{list-style:none;margin:3px 0}
+details.explain .inside li{position:relative;padding-left:12px;margin:2px 0}
+details.explain .inside li::before{content:'·';position:absolute;left:0;color:var(--accent2);font-weight:900}
+
+
+mjx-container{font-size:12.5px!important}
+mjx-container[display="true"]{margin:2px 0!important}
+
+@media(max-width:600px){
+  body{padding:8px}
+  .frow{flex-direction:column}
+  .frow .fml{min-width:unset}
+  .page-header h1{font-size:15px}
+  .part-header h2{font-size:13px}
+}
+@media print{
+  body{padding:5mm;background:#fff;font-size:11px}
+  .topic-card{break-inside:avoid}
+  @page{size:A4;margin:10mm}
+}
+
+/* QUICK NAV */
+.quick-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:-6px 0 14px;position:sticky;top:6px;z-index:30}
+.quick-nav a{background:#fff;border:1.5px solid var(--border);border-radius:999px;padding:7px 12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);text-decoration:none;box-shadow:0 2px 8px rgba(26,79,160,.08)}
+.quick-nav a:hover{background:var(--fml-bg);border-color:var(--accent2)}
+html{scroll-behavior:smooth}
+.part-header{scroll-margin-top:58px}
+</style><style>
+  /* ===== MODO OSCURO GENERAL ===== */
+  html, body {
+    background: #07131f !important;
+    color: #eaf6ff !important;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(0, 188, 212, 0.18), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(255, 152, 0, 0.10), transparent 28%),
+      #07131f !important;
+  }
+
+  .page, .container, main, section {
+    background: transparent !important;
+  }
+
+  .sec, .card, .box, .formula-card, details, .tipo-ejercicio {
+    background: #102235 !important;
+    border: 1px solid rgba(116, 220, 230, 0.35) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.28) !important;
+    color: #eaf6ff !important;
+  }
+
+  h1, h2, h3, h4, .title {
+    color: #bffcff !important;
+  }
+
+  .fml, .formula, .formula-box, code {
+    background: #071827 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(125, 232, 255, 0.30) !important;
+  }
+
+  details {
+    margin-top: 8px;
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #8eeeff !important;
+  }
+
+  a {
+    color: #7de8ff !important;
+  }
+
+  .tipos-parcial {
+    margin-top: 36px;
+    padding: 24px;
+    border-radius: 18px;
+    background: #0b1b2b !important;
+    border: 1px solid rgba(125, 232, 255, 0.35);
+  }
+
+  .tipos-parcial h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #bffcff !important;
+  }
+
+  .tipos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 16px;
+  }
+
+  .tipo-ejercicio {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .tipo-ejercicio h3 {
+    margin-top: 0;
+    color: #ffcf7a !important;
+    font-size: 1.05rem;
+  }
+
+  .tipo-ejercicio .fml {
+    display: block;
+    margin: 7px 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+  }
+
+  .tipo-ejercicio p,
+  .tipo-ejercicio li {
+    line-height: 1.45;
+  }
+</style><style>
+/* =========================================================
+   ESTILO FINAL LIMPIO
+   Fondo oscuro + tarjetas oscuras + fórmulas blancas simples
+   ========================================================= */
+
+/* FONDO GENERAL */
+html,
+body {
+  background: #020814 !important;
+  color: #eaf4ff !important;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(0, 160, 210, 0.10), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(120, 80, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, #020814 0%, #07111d 55%, #020814 100%) !important;
+}
+
+/* CONTENEDOR CENTRAL */
+.main-content,
+.page,
+.container,
+main,
+.wrapper {
+  background: transparent !important;
+}
+
+/* TARJETAS DE TEMA */
+.topic-card {
+  background: #10253b !important;
+  border: 1px solid rgba(150, 220, 245, 0.28) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+.topic-body {
+  background: #10253b !important;
+  color: #eaf4ff !important;
+}
+
+/* TÍTULOS INTERNOS */
+.lbl {
+  color: #9defff !important;
+}
+
+.lbl::before {
+  background: #57e6ff !important;
+}
+
+/* TEXTO NORMAL EN TARJETAS */
+.topic-body p,
+.topic-body li,
+.note,
+.steps li,
+.blist li {
+  color: #d9e8f5 !important;
+}
+
+/* SEPARADORES */
+hr {
+  border-top: 1px solid rgba(170, 230, 250, 0.22) !important;
+}
+
+/* =========================================================
+   FÓRMULAS: UN SOLO RECUADRO BLANCO, SIN DOBLE BORDE
+   ========================================================= */
+
+.fml,
+.fml-green,
+.fml-amber,
+.fml-red {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #cfd8df !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18) !important;
+  padding: 12px 14px !important;
+}
+
+/* Elimina globitos/recuadros internos dentro de fórmulas */
+.fml *,
+.fml-green *,
+.fml-amber *,
+.fml-red * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* MathJax dentro de fórmulas */
+.fml mjx-container,
+.fml-green mjx-container,
+.fml-amber mjx-container,
+.fml-red mjx-container {
+  color: #000000 !important;
+  background: transparent !important;
+}
+
+/* =========================================================
+   MATEMÁTICA INLINE EN ORACIONES
+   No debe aparecer como pastillita blanca
+   ========================================================= */
+
+.topic-body p mjx-container,
+.topic-body li mjx-container,
+details.explain p mjx-container,
+details.explain li mjx-container,
+details.explain span mjx-container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   DESPLEGABLES
+   Cerrados oscuros / abiertos como bloque blanco completo
+   ========================================================= */
+
+details.explain {
+  background: #183652 !important;
+  border: 1px solid rgba(160, 230, 245, 0.26) !important;
+  color: #eaf4ff !important;
+  border-radius: 14px !important;
+}
+
+details.explain summary {
+  color: #9defff !important;
+  font-weight: 700 !important;
+}
+
+details.explain summary::before {
+  background: #1f9ee7 !important;
+  color: #ffffff !important;
+}
+
+/* Desplegable abierto: bloque blanco completo */
+details.explain[open] {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #cfd8df !important;
+}
+
+/* Encabezado del desplegable abierto */
+details.explain[open] summary {
+  color: #00546c !important;
+  border-bottom: 1px solid #d8e0e7 !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 6px !important;
+}
+
+/* Todo el contenido interno del desplegable abierto en negro */
+details.explain[open] .inside,
+details.explain[open] .inside p,
+details.explain[open] .inside li,
+details.explain[open] .inside div,
+details.explain[open] .inside span {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* MathJax inline dentro de explicación abierta: sin globito */
+details.explain[open] .inside mjx-container,
+details.explain[open] .inside .MathJax,
+details.explain[open] .inside .mjx-chtml {
+  background: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Si dentro del desplegable hay una fórmula en bloque, queda blanca limpia */
+details.explain[open] .inside .fml,
+details.explain[open] .inside .fml-green,
+details.explain[open] .inside .fml-amber,
+details.explain[open] .inside .fml-red {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #cfd8df !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* =========================================================
+   HEADER Y BOTONES
+   ========================================================= */
+
+.page-header {
+  background: linear-gradient(135deg, #17406b, #2865d9) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38) !important;
+}
+
+.nav-btn,
+.top-btn,
+button,
+.btn {
+  background: #ffffff !important;
+  color: #53dfff !important;
+  border: 1px solid #b8d4e8 !important;
+}
+
+.nav-btn:hover,
+.top-btn:hover,
+button:hover,
+.btn:hover {
+  background: #eaf8ff !important;
+}
+
+/* ADVERTENCIAS */
+.ojo {
+  background: #fff7ed !important;
+  color: #7c2d12 !important;
+  border-color: #fed7aa !important;
+}
+
+.ojo strong {
+  color: #9a3412 !important;
+}
+
+/* =========================================================
+   TIPOS DE EJERCICIO DE PARCIAL
+   No lo fuerzo con estos estilos, para no romper lo que ya te gustaba.
+   ========================================================= */
+
+#tipos-parcial .tipo-ejercicio {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.26);
+}
+
+#tipos-parcial .fml {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d0d7de !important;
+  border-radius: 10px !important;
+}
+
+#tipos-parcial .fml * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#tipos-parcial .fml mjx-container {
+  color: #000000 !important;
+  background: transparent !important;
+}
+</style><style>
+/* ===== BOTONES SUPERIORES: FONDO CLARO + LETRA AZUL OSCURA ===== */
+
+.nav-btn,
+.top-btn,
+.btn,
+button {
+  background: #f4fbff !important;
+  color: #020814 !important;
+  border: 1.5px solid #b8d4e8 !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Si los botones son links */
+.nav-btn a,
+.top-btn a,
+.btn a,
+button a {
+  color: #020814 !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+}
+
+/* Hover */
+.nav-btn:hover,
+.top-btn:hover,
+.btn:hover,
+button:hover {
+  background: #ffffff !important;
+  color: #020814 !important;
+  border-color: #7fcde8 !important;
+  transform: translateY(-1px);
+}
+
+/* Si están dentro de una barra superior */
+.quick-nav a,
+.nav-pills a,
+.top-nav a {
+  background: #f4fbff !important;
+  color: #020814 !important;
+  border: 1.5px solid #b8d4e8 !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  padding: 8px 14px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22) !important;
+}
+
+.quick-nav a:hover,
+.nav-pills a:hover,
+.top-nav a:hover {
+  background: #ffffff !important;
+  border-color: #7fcde8 !important;
+}
+</style><style>html{scroll-behavior:smooth}body{overflow-wrap:anywhere}.main-content{width:100%!important;max-width:980px!important}.fml{font-family:Georgia,"Times New Roman",serif}.fml,.topic-body,details{min-width:0}table{display:block;max-width:100%;overflow:auto}@media(max-width:640px){body{padding:7px!important}.page-header{padding:13px!important}.part-header{align-items:flex-start!important}.frow{display:block!important}.topic-body{padding:9px!important}}</style><style id="solved-physics-summary">
+:root{--sum-accent:#38bdf8;--sum-deep:#075985;--sum-panel:#0b1b2b;--sum-line:rgba(125,232,255,.28)}
+body{padding-left:292px!important}.summary-sidebar{position:fixed;inset:0 auto 0 0;width:278px;background:#06111e;border-right:1px solid var(--sum-line);z-index:100;padding:18px 14px;overflow:auto}.summary-sidebar h2{font-size:1rem!important;margin:0 0 10px;color:#bffcff!important}.summary-sidebar input{width:100%;border:1px solid var(--sum-line);background:#10253b;color:#fff;border-radius:10px;padding:10px;margin-bottom:12px}.summary-sidebar a{display:block;color:#b9dcec!important;text-decoration:none;padding:6px 8px;border-radius:8px;font-size:.78rem}.summary-sidebar a:hover{background:#12304a;color:#fff!important}.summary-sidebar .part-link{color:#6ee7f9!important;font-weight:900;margin-top:8px}.theory-expansion{margin:9px 12px 12px;border:1px solid var(--sum-line);border-radius:12px;background:#0a1a2a;overflow:hidden}.theory-expansion summary{padding:10px 12px!important;color:#7de8ff!important;font-size:.72rem!important}.theory-expansion .inside{padding:0 14px 14px!important;color:#dbeafe!important;font-size:.82rem!important}.theory-expansion h4{color:#fcd34d!important;margin:12px 0 5px}.theory-expansion p{margin:5px 0}.theory-expansion .worked{background:#061522;border-left:3px solid #38bdf8;border-radius:8px;padding:10px;margin-top:8px}.summary-intro{background:linear-gradient(135deg,#082f49,#0c4a6e);border:1px solid var(--sum-line);border-radius:15px;padding:18px;margin-bottom:14px}.summary-intro h2{color:#cffafe!important}.summary-intro p{color:#dbeafe}.index-mobile{display:none;position:fixed;left:14px;bottom:16px;z-index:120;border:1px solid var(--sum-line);background:#082f49;color:#fff;border-radius:999px;padding:11px 16px;font-weight:900}
+.topic-card.hidden-topic{display:none!important}
+@media(max-width:850px){body{padding-left:7px!important}.summary-sidebar{transform:translateX(-105%);transition:.22s;width:min(88vw,310px)}.summary-sidebar.open{transform:none}.index-mobile{display:block}.quick-nav{padding-left:80px}.main-content{padding-bottom:65px}}
+</style></head><body><button class="index-mobile" id="physicsIndexButton" type="button">Índice</button><aside class="summary-sidebar" id="physicsSummaryIndex"><h2>Física I · Índice</h2><input id="physicsSummarySearch" type="search" placeholder="Buscar tema o fórmula…"><nav id="physicsIndexLinks"></nav></aside><div class="main-content"><section class="summary-intro"><h2>Resumen razonado de Física I</h2><p>Este resumen conserva todo el contenido de la hoja de fórmulas original y agrega la explicación que permite decidir qué modelo usar, cuáles son sus hipótesis y cómo encarar cada ejercicio. Abrí “Teoría y ejemplo” dentro de cada tema para estudiar el razonamiento; la hoja rápida original queda disponible, sin cambios, en la pestaña Fórmulas de SOLved.</p></section>
+<div class="page-header">
+<h1>📐 FORMULARIO DE FÍSICA</h1>
+<p>Cinemática · Newton · Energía · Laboratorio · Rotación · Oscilaciones · Fluidos</p>
+</div><div class="quick-nav"><a href="#primer-parcial">Primer parcial</a><a href="#laboratorio">Labo</a><a href="#segundo-parcial">Segundo parcial</a></div>
+<!-- ═══════════════════════════════════════════════════════════ PARTE A -->
+<div class="part-header pA" id="primer-parcial">
+<div>
+<h2>PARTE A — PRIMER PARCIAL</h2>
+<p>Cinemática · Vectores · Newton · Energía · Impulso</p>
+</div>
+</div>
+<!-- 1 CINEMÁTICA -->
+<div class="topic-card h-blue">
+<div class="topic-head"><span class="num">1</span> Cinemática</div>
+<div class="topic-body">
+<div class="lbl">MRU</div>
+<div class="fml">\[ x = x_0 + v\,t \]</div>
+<div class="lbl">MRUV</div>
+<div class="frow">
+<div class="fml">\[ v = v_0 + a\,t \]</div>
+<div class="fml">\[ x = x_0 + v_0 t + \tfrac{1}{2}a t^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ v^2 = v_0^2 + 2a\,\Delta x \]</div>
+<div class="fml">\[ \bar{v} = \dfrac{v_0+v}{2} \]</div>
+</div>
+<div class="lbl">Caída libre / Tiro vertical</div>
+<div class="frow">
+<div class="fml">\[ y = y_0 + v_0t - \tfrac{1}{2}g t^2 \]</div>
+<div class="fml">\[ v = v_0 - g\,t \]</div>
+</div>
+<p class="note">En caída libre \(v_0=0\). Tomar eje positivo hacia arriba salvo que el problema indique lo contrario.</p>
+<div class="lbl">Tiro oblicuo</div>
+<div class="frow">
+<div class="fml">\[ x = v_0\cos\theta\cdot t \]</div>
+<div class="fml">\[ y = v_0\sin\theta\cdot t - \tfrac{1}{2}g t^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ t_{\text{sub}} = \dfrac{v_0\sin\theta}{g} \]</div>
+<div class="fml">\[ R = \dfrac{v_0^2\sin 2\theta}{g} \]</div>
+</div>
+<div class="fml">\[ H = \dfrac{v_0^2\sin^2\!\theta}{2g} \]</div>
+<div class="lbl">Linealización útil</div>
+<p class="note">Para graficar \(v\) vs \(t\): pendiente \(=a\), ordenada \(=v_0\). Para graficar \(v^2\) vs \(\Delta x\): pendiente \(=2a\).</p>
+</div>
+</div>
+<!-- 2 VECTORES -->
+<div class="topic-card h-sky">
+<div class="topic-head"><span class="num">2</span> Vectores y componentes</div>
+<div class="topic-body">
+<div class="lbl">Componentes</div>
+<div class="frow">
+<div class="fml">\[ A_x = A\cos\theta \]</div>
+<div class="fml">\[ A_y = A\sin\theta \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ |\vec{A}| = \sqrt{A_x^2+A_y^2} \]</div>
+<div class="fml">\[ \theta = \arctan\!\left(\dfrac{A_y}{A_x}\right) \]</div>
+</div>
+<div class="lbl">Suma de vectores</div>
+<div class="fml">\[ \vec{R} = \vec{A}+\vec{B} \;\Rightarrow\; R_x=A_x+B_x,\quad R_y=A_y+B_y \]</div>
+<div class="lbl">Producto escalar y vectorial</div>
+<div class="frow">
+<div class="fml">\[ \vec{A}\cdot\vec{B} = AB\cos\alpha \]</div>
+<div class="fml">\[ |\vec{A}\times\vec{B}| = AB\sin\alpha \]</div>
+</div>
+</div>
+</div>
+<!-- 3 MOVIMIENTO RELATIVO -->
+<div class="topic-card h-indigo">
+<div class="topic-head"><span class="num">3</span> Movimiento relativo</div>
+<div class="topic-body">
+<div class="lbl">Composición de velocidades</div>
+<div class="fml fml-green">\[ \vec{v}_{A/C} = \vec{v}_{A/B} + \vec{v}_{B/C} \]</div>
+<p class="note">La velocidad de A respecto de C es la velocidad de A respecto de B más la de B respecto de C. Aplicar por componentes.</p>
+<div class="lbl">Posición relativa</div>
+<div class="fml">\[ \vec{r}_{A/B} = \vec{r}_A - \vec{r}_B \]</div>
+</div>
+</div>
+<!-- 4 CIRCULAR -->
+<div class="topic-card h-teal">
+<div class="topic-head"><span class="num">4</span> Movimiento circular</div>
+<div class="topic-body">
+<div class="lbl">Relaciones cinemáticas</div>
+<div class="frow">
+<div class="fml">\[ v = \omega\,r \]</div>
+<div class="fml">\[ \omega = \dfrac{2\pi}{T} = 2\pi f \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ a_c = \dfrac{v^2}{r} = \omega^2 r \]</div>
+<div class="fml">\[ a_t = \alpha\,r \]</div>
+</div>
+<p class="note">\(a_c\) apunta hacia el centro. \(a_t\) es tangencial (si el movimiento no es uniforme).</p>
+<div class="lbl">Aceleración total</div>
+<div class="fml">\[ a = \sqrt{a_c^2 + a_t^2} \]</div>
+</div>
+</div>
+<!-- 5 LEYES DE NEWTON -->
+<div class="topic-card h-ocean">
+<div class="topic-head"><span class="num">5</span> Leyes de Newton y DCL</div>
+<div class="topic-body">
+<div class="lbl">Segunda Ley</div>
+<div class="fml fml-green">\[ \sum \vec{F} = m\,\vec{a} \]</div>
+<p class="note">Por componentes: \(\sum F_x = ma_x\) y \(\sum F_y = ma_y\). En el DCL dibujar cada fuerza que actúa <em>sobre</em> el cuerpo.</p>
+<div class="lbl">Fuerza normal y peso</div>
+<div class="frow">
+<div class="fml">\[ P = mg \]</div>
+<div class="fml">\[ N = mg\cos\theta \text{ (plano inclinado)} \]</div>
+</div>
+<div class="lbl">Fuerzas en plano inclinado</div>
+<div class="frow">
+<div class="fml">\[ P_{\parallel} = mg\sin\theta \]</div>
+<div class="fml">\[ P_{\perp} = mg\cos\theta \]</div>
+</div>
+<div class="lbl">Tercera Ley</div>
+<p class="note">Si A ejerce fuerza sobre B, B ejerce sobre A una fuerza igual en módulo y dirección, opuesta en sentido. No actúan sobre el mismo cuerpo.</p>
+</div>
+</div>
+<!-- 6 ROZAMIENTO -->
+<div class="topic-card h-cyan">
+<div class="topic-head"><span class="num">6</span> Rozamiento</div>
+<div class="topic-body">
+<div class="lbl">Estático y cinético</div>
+<div class="frow">
+<div class="fml">\[ f_e \leq \mu_e\,N \]</div>
+<div class="fml">\[ f_c = \mu_c\,N \]</div>
+</div>
+<p class="note">Siempre \(\mu_e \geq \mu_c\). La fricción estática se opone al movimiento inminente; la cinética, al movimiento real.</p>
+<div class="lbl">Coeficiente en plano inclinado (límite)</div>
+<div class="fml fml-amber">\[ \mu_e = \tan\theta_{\text{crítico}} \]</div>
+</div>
+</div>
+<!-- 7 RESORTES -->
+<div class="topic-card h-violet">
+<div class="topic-head"><span class="num">7</span> Resortes</div>
+<div class="topic-body">
+<div class="lbl">Ley de Hooke</div>
+<div class="fml fml-green">\[ F = k\,x \]</div>
+<p class="note">\(k\) = constante del resorte [N/m]. \(x\) = deformación desde posición natural.</p>
+<div class="lbl">Energía potencial elástica</div>
+<div class="fml">\[ U_e = \tfrac{1}{2}\,k\,x^2 \]</div>
+<div class="lbl">Resortes en serie y paralelo</div>
+<div class="frow">
+<div class="fml">\[ \frac{1}{k_s} = \frac{1}{k_1}+\frac{1}{k_2} \]</div>
+<div class="fml">\[ k_p = k_1+k_2 \]</div>
+</div>
+</div>
+</div>
+<!-- 8 GRAVITACIÓN -->
+<div class="topic-card h-navy">
+<div class="topic-head"><span class="num">8</span> Gravitación</div>
+<div class="topic-body">
+<div class="lbl">Ley de gravitación universal</div>
+<div class="fml fml-green">\[ F = G\,\dfrac{m_1 m_2}{r^2} \qquad G = 6{,}674\times10^{-11}\,\text{N·m}^2/\text{kg}^2 \]</div>
+<div class="lbl">Campo gravitatorio</div>
+<div class="frow">
+<div class="fml">\[ g = \dfrac{GM}{r^2} \]</div>
+<div class="fml">\[ g_{\text{sup}} = \dfrac{GM}{R^2} \]</div>
+</div>
+<div class="lbl">Satélites — órbita circular</div>
+<div class="frow">
+<div class="fml">\[ v = \sqrt{\dfrac{GM}{r}} \]</div>
+<div class="fml">\[ T = 2\pi\sqrt{\dfrac{r^3}{GM}} \]</div>
+</div>
+<div class="lbl">Tercera ley de Kepler</div>
+<div class="fml">\[ \frac{T^2}{r^3} = \frac{4\pi^2}{GM} = \text{cte} \]</div>
+</div>
+</div>
+<!-- 9 TRABAJO Y ENERGÍA -->
+<div class="topic-card h-green">
+<div class="topic-head"><span class="num">9</span> Trabajo y energía</div>
+<div class="topic-body">
+<div class="lbl">Trabajo</div>
+<div class="frow">
+<div class="fml">\[ W = F\,d\,\cos\alpha \]</div>
+<div class="fml">\[ W = \vec{F}\cdot\vec{d} \]</div>
+</div>
+<div class="lbl">Energías</div>
+<div class="frow">
+<div class="fml">\[ E_k = \tfrac{1}{2}mv^2 \]</div>
+<div class="fml">\[ U_g = mgh \]</div>
+</div>
+<div class="fml">\[ U_e = \tfrac{1}{2}kx^2 \]</div>
+<div class="lbl">Teorema trabajo-energía</div>
+<div class="fml fml-green">\[ W_{\text{neto}} = \Delta E_k = E_{k,f}-E_{k,i} \]</div>
+<div class="lbl">Conservación de energía mecánica</div>
+<div class="fml fml-green">\[ E_{k,i}+U_i = E_{k,f}+U_f \quad\text{(sin fuerzas no conservativas)} \]</div>
+<div class="lbl">Con rozamiento</div>
+<div class="fml">\[ E_{k,i}+U_i = E_{k,f}+U_f + W_{\text{roz}} \]</div>
+<p class="note">\(W_{\text{roz}} = f_c\cdot d &gt; 0\) es la energía disipada (siempre positiva; restada del sistema).</p>
+<div class="lbl">Potencia</div>
+<div class="frow">
+<div class="fml">\[ P = \dfrac{W}{\Delta t} \]</div>
+<div class="fml">\[ P = \vec{F}\cdot\vec{v} \]</div>
+</div>
+</div>
+</div>
+<!-- 10 IMPULSO Y CHOQUES -->
+<div class="topic-card h-slate">
+<div class="topic-head"><span class="num">10</span> Cantidad de movimiento, centro de masa y choques</div>
+<div class="topic-body">
+<div class="lbl">Impulso y cantidad de movimiento</div>
+<div class="frow">
+<div class="fml">\[ \vec{p} = m\vec{v} \]</div>
+<div class="fml">\[ \vec{J} = \vec{F}\,\Delta t = \Delta\vec{p} \]</div>
+</div>
+<div class="lbl">Conservación del momento</div>
+<div class="fml fml-green">\[ \vec{p}_{\text{total,i}} = \vec{p}_{\text{total,f}} \quad\text{(si }\sum F_{\text{ext}}=0\text{)} \]</div>
+<div class="lbl">Choque perfectamente inelástico</div>
+<div class="fml">\[ m_1v_1 + m_2v_2 = (m_1+m_2)\,v' \]</div>
+<div class="lbl">Choque elástico (1D)</div>
+<div class="frow">
+<div class="fml">\[ v_1' = \dfrac{m_1-m_2}{m_1+m_2}v_1 + \dfrac{2m_2}{m_1+m_2}v_2 \]</div>
+<div class="fml">\[ v_2' = \dfrac{2m_1}{m_1+m_2}v_1 + \dfrac{m_2-m_1}{m_1+m_2}v_2 \]</div>
+</div>
+<p class="note">Elástico: se conservan \(\vec{p}\) y \(E_k\). Inelástico: solo \(\vec{p}\).</p>
+<div class="lbl">Centro de masa</div>
+<div class="fml">\[ x_{\text{cm}} = \dfrac{\sum m_i x_i}{\sum m_i} \qquad \vec{v}_{\text{cm}} = \dfrac{\sum m_i \vec{v}_i}{\sum m_i} \]</div>
+</div>
+</div>
+<!-- 11 TRUCOS RÁPIDOS A -->
+<div class="topic-card h-red">
+<div class="topic-head"><span class="num">11</span> Trucos rápidos — Primer parcial</div>
+<div class="topic-body">
+<ul class="blist">
+<li>Siempre definir el eje positivo antes de escribir ecuaciones.</li>
+<li>En plano inclinado, conviene rotar ejes: \(x\) paralelo al plano, \(y\) perpendicular.</li>
+<li>Si el sistema no acelera: \(\sum F = 0\) en cada eje.</li>
+<li>Choque elástico: verificar que \(E_k\) se conserva al final.</li>
+<li>Para tiro oblicuo, en el punto más alto \(v_y=0\), solo queda \(v_x = v_0\cos\theta\).</li>
+<li>El rozamiento cinético \(f_c = \mu_c N\) siempre se opone al movimiento real.</li>
+<li>Potencia puede pedirse como \(P = Fv\cos\alpha\): útil cuando no se conoce el tiempo.</li>
+<li>Tercera ley: las fuerzas del par acción-reacción nunca actúan sobre el mismo cuerpo.</li>
+</ul>
+</div>
+</div>
+<!-- ═══════════════════════════════════════════════════════════ PARTE B -->
+<div class="part-header pB" id="laboratorio">
+<div>
+<h2>PARTE B — LABORATORIO</h2>
+<p>Medición · Errores · Propagación · Compatibilidad · Péndulo · Rozamiento</p>
+</div>
+</div>
+<!-- B1 MEDICIÓN E INCERTIDUMBRE -->
+<div class="topic-card h-blue">
+<div class="topic-head"><span class="num">B1</span> Medición, magnitud e incertidumbre</div>
+<div class="topic-body">
+<p class="note">Una <strong>magnitud física</strong> es una propiedad medible: masa, longitud, tiempo, velocidad, período, etc. Toda medición requiere instrumento, método y unidad, y siempre tiene incertidumbre.</p>
+<div class="lbl">Resultado de medición</div>
+<div class="fml fml-green">\[ x = (\bar{x} \pm \Delta x)\;\text{unidad} \]</div>
+<p class="note">\(\bar{x}\) = valor central · \(\Delta x\) = error absoluto (incertidumbre absoluta).</p>
+<div class="lbl">Intervalo</div>
+<div class="fml">\[ \bar{x} - \Delta x \;\leq\; x \;\leq\; \bar{x} + \Delta x \]</div>
+</div>
+</div>
+<!-- B2 TIPOS DE ERROR -->
+<div class="topic-card h-sky">
+<div class="topic-head"><span class="num">B2</span> Tipos de error</div>
+<div class="topic-body">
+<div class="lbl">Error absoluto</div>
+<div class="fml">\[ \Delta x \]</div>
+<p class="note">Tiene las mismas unidades que la magnitud medida.</p>
+<div class="lbl">Error relativo y porcentual</div>
+<div class="frow">
+<div class="fml">\[ \varepsilon = \dfrac{\Delta x}{\bar{x}} \]</div>
+<div class="fml">\[ \varepsilon_{\%} = \dfrac{\Delta x}{\bar{x}}\cdot100\% \]</div>
+</div>
+<p class="note">El error relativo no tiene unidades. El porcentual expresa la misma información en %.</p>
+</div>
+</div>
+<!-- B3 CLASIFICACIÓN -->
+<div class="topic-card h-indigo">
+<div class="topic-head"><span class="num">B3</span> Clasificación de errores</div>
+<div class="topic-body">
+<ul class="blist">
+<li><strong>Accidentales:</strong> fluctuaciones aleatorias, se reducen repitiendo mediciones.</li>
+<li><strong>Sistemáticos:</strong> sesgo constante del instrumento o método; no se reducen repitiendo.</li>
+<li><strong>Metódicos:</strong> inherentes al método de medición.</li>
+</ul>
+<div class="lbl">Error total (combinación cuadrática)</div>
+<div class="fml fml-green">\[ E_{\text{total}} = \sqrt{E_{\text{ins}}^2 + E_{\text{est}}^2} \]</div>
+<p class="note">La suma en cuadratura se usa porque las contribuciones son independientes entre sí.</p>
+</div>
+</div>
+<!-- B4 ERROR DE APRECIACIÓN -->
+<div class="topic-card h-teal">
+<div class="topic-head"><span class="num">B4</span> Error de apreciación o instrumental</div>
+<div class="topic-body">
+<p class="note">Es la mínima variación que puede detectar el instrumento. Si el enunciado lo da, se usa directamente como \(\sigma_{\text{ap}}\) o \(E_{\text{ins}}\).</p>
+<div class="ojo"><strong>OJO</strong> Sumar siempre en cuadratura con el error estadístico, nunca directamente.</div>
+</div>
+</div>
+<!-- B5 ESTADÍSTICA -->
+<div class="topic-card h-cyan">
+<div class="topic-head"><span class="num">B5</span> Estadística de mediciones repetidas</div>
+<div class="topic-body">
+<div class="lbl">Para N mediciones \(x_1, x_2, \ldots, x_N\)</div>
+<div class="frow">
+<div class="fml">\[ \bar{x} = \dfrac{\sum x_i}{N} \]</div>
+<div class="fml">\[ \sigma = \sqrt{\dfrac{\sum(x_i-\bar{x})^2}{N-1}} \]</div>
+</div>
+<div class="lbl">Error estadístico del promedio</div>
+<div class="fml fml-amber">\[ \sigma_{\text{est}} = \dfrac{\sigma}{\sqrt{N}} \]</div>
+<div class="lbl">Error absoluto final (combinado)</div>
+<div class="fml fml-green">\[ \Delta x = \sqrt{\sigma_{\text{est}}^2 + \sigma_{\text{ap}}^2} = \sqrt{\!\left(\frac{\sigma}{\sqrt{N}}\right)^{\!2} + \sigma_{\text{ap}}^2} \]</div>
+<ul class="blist">
+<li>\(\sigma\): dispersión de los datos individuales.</li>
+<li>\(\sigma_{\text{est}}\): error estadístico del promedio (baja con \(\sqrt{N}\), no con \(N\)).</li>
+<li>\(\Delta x\): combina error estadístico e instrumental.</li>
+</ul>
+<div class="ojo"><strong>OJO</strong> No usar \(\sigma\) directamente como error del promedio. Siempre dividir por \(\sqrt{N}\).</div>
+</div>
+</div>
+<!-- B6 DIRECTA / INDIRECTA -->
+<div class="topic-card h-violet">
+<div class="topic-head"><span class="num">B6</span> Mediciones directas e indirectas</div>
+<div class="topic-body">
+<div class="lbl">Directa</div>
+<p class="note">Valor leído directamente del instrumento. Forma: \(x = (\bar{x} \pm \Delta x)\;\text{unidad}\).</p>
+<div class="lbl">Indirecta</div>
+<p class="note">Magnitud calculada con una fórmula \(f = f(x,y,z,\ldots)\) a partir de otras medidas. Si \(x,y,z\) tienen error, \(f\) también tendrá error → se necesita <strong>propagación</strong>.</p>
+</div>
+</div>
+<!-- B7 PROPAGACIÓN GENERAL -->
+<div class="topic-card h-ocean">
+<div class="topic-head"><span class="num">B7</span> Propagación de errores</div>
+<div class="topic-body">
+<div class="lbl">Fórmula general</div>
+<div class="fml fml-green">\[ \Delta f = \sqrt{\left(\frac{\partial f}{\partial x_1}\Delta x_1\right)^{\!2}+\left(\frac{\partial f}{\partial x_2}\Delta x_2\right)^{\!2}+\cdots} \]</div>
+<p class="note">Cada derivada parcial mide cuánto cambia \(f\) ante un cambio en esa variable. La fórmula surge de la expansión de Taylor de primer orden alrededor del valor medio.</p>
+<div class="lbl">Una sola variable</div>
+<div class="fml">\[ \Delta f = \left|\frac{df}{dx}\right|\Delta x \]</div>
+</div>
+</div>
+<!-- B8-9 REGLAS RÁPIDAS -->
+<div class="topic-card h-slate">
+<div class="topic-head"><span class="num">B8</span> Reglas rápidas de propagación</div>
+<div class="topic-body">
+<div class="lbl">Suma / Resta → errores absolutos</div>
+<div class="fml">\[ f = x \pm y \;\Rightarrow\; \Delta f = \sqrt{(\Delta x)^2+(\Delta y)^2} \]</div>
+<div class="lbl">Producto / Cociente → errores relativos</div>
+<div class="frow">
+<div class="fml">\[ \frac{\Delta f}{f} = \sqrt{\!\left(\frac{\Delta x}{x}\right)^{\!2}+\left(\frac{\Delta y}{y}\right)^{\!2}} \]</div>
+<div class="fml">\[ \Delta f = f\sqrt{\!\left(\frac{\Delta x}{x}\right)^{\!2}+\left(\frac{\Delta y}{y}\right)^{\!2}} \]</div>
+</div>
+<div class="lbl">Potencia</div>
+<div class="fml fml-amber">\[ f = x^n \;\Rightarrow\; \frac{\Delta f}{f} = |n|\,\frac{\Delta x}{x} \]</div>
+<p class="note">Las constantes exactas (\(\pi, 2, \tfrac{1}{2}, \ldots\)) no aportan error. Nunca olvidar multiplicar el error relativo por \(|n|\).</p>
+</div>
+</div>
+<!-- B10 INFORMAR RESULTADO -->
+<div class="topic-card h-emerald">
+<div class="topic-head"><span class="num">B9</span> Cómo informar correctamente un resultado</div>
+<div class="topic-body">
+<div class="fml fml-green">\[ x = (\bar{x} \pm \Delta x)\;\text{unidad} \]</div>
+<ol class="steps">
+<li>Calcular con todos los decimales disponibles.</li>
+<li>Redondear el error absoluto a <strong>1 cifra significativa</strong>.</li>
+<li>Redondear el valor central al <strong>mismo orden decimal</strong> que el error.</li>
+<li>Incluir siempre la unidad.</li>
+</ol>
+<div class="ojo"><strong>EJ.</strong> \(2{,}143\pm0{,}037 \;\to\; (2{,}14\pm0{,}04)\;\text{s}\)</div>
+<div class="ojo"><strong>EJ.</strong> \(1543\pm14 \;\to\; (1540\pm10)\)</div>
+</div>
+</div>
+<!-- B11 PRECISIÓN, EXACTITUD, COMPATIBILIDAD -->
+<div class="topic-card h-blue">
+<div class="topic-head"><span class="num">B10</span> Precisión, exactitud y compatibilidad</div>
+<div class="topic-body">
+<div class="lbl">Precisión</div>
+<p class="note">Mide cuán pequeño es el error relativo \(\varepsilon = \Delta x/\bar{x}\). Una medición es más precisa si tiene menor \(\varepsilon\), independientemente de si está cerca del valor real.</p>
+<div class="lbl">Exactitud</div>
+<p class="note">Mide la cercanía al valor verdadero o aceptado \(|\bar{x}-x_{\text{verdadero}}|\). No depende del error de la medición.</p>
+<div class="ojo"><strong>OJO</strong> Precisión ≠ exactitud. Una medición puede ser precisa (poco error) y poco exacta (lejos del valor real), o viceversa.</div>
+<hr>
+<div class="lbl">Compatibilidad entre dos mediciones</div>
+<div class="fml fml-green">\[ |\bar{x}_1 - \bar{x}_2| \;\leq\; \Delta x_1 + \Delta x_2 \]</div>
+<p class="note">Si se cumple → <strong>compatibles</strong> (los intervalos se superponen). Compatible no significa iguales ni tampoco misma precisión.</p>
+<div class="lbl">Compatibilidad con valor esperado</div>
+<div class="fml">\[ |\bar{x} - x_{\text{esp}}| \;\leq\; \Delta x \]</div>
+<p class="note">Si \(x_{\text{esp}}\) cae dentro del intervalo \([\bar{x}-\Delta x;\;\bar{x}+\Delta x]\), son compatibles.</p>
+</div>
+</div>
+<!-- B12 MAGNITUDES TÍPICAS -->
+<div class="topic-card h-sky">
+<div class="topic-head"><span class="num">B11</span> Fórmulas de magnitudes típicas del parcial</div>
+<div class="topic-body">
+<div class="lbl">Volumen de esfera (diámetro \(d\))</div>
+<div class="frow">
+<div class="fml">\[ V = \dfrac{\pi}{6}\,d^3 \]</div>
+<div class="fml">\[ \dfrac{\Delta V}{V} = 3\dfrac{\Delta d}{d} \]</div>
+</div>
+<div class="fml">\[ \Delta V = \left|\dfrac{\pi}{2}d^2\right|\Delta d \]</div>
+<hr>
+<div class="lbl">Área de círculo (diámetro \(d\))</div>
+<div class="frow">
+<div class="fml">\[ A = \dfrac{\pi d^2}{4} \]</div>
+<div class="fml">\[ \dfrac{\Delta A}{A} = 2\dfrac{\Delta d}{d} \]</div>
+</div>
+<div class="fml">\[ \Delta A = \left|\dfrac{\pi}{2}d\right|\Delta d \]</div>
+<hr>
+<div class="lbl">Velocidad media</div>
+<div class="frow">
+<div class="fml">\[ v = \dfrac{d}{t} \]</div>
+<div class="fml">\[ \dfrac{\Delta v}{v} = \sqrt{\!\left(\dfrac{\Delta d}{d}\right)^{\!2}+\left(\dfrac{\Delta t}{t}\right)^{\!2}} \]</div>
+</div>
+</div>
+</div>
+<!-- B13 PÉNDULO SIMPLE -->
+<div class="topic-card h-indigo">
+<div class="topic-head"><span class="num">B12</span> Péndulo simple</div>
+<div class="topic-body">
+<div class="lbl">Período</div>
+<div class="frow">
+<div class="fml">\[ T = 2\pi\sqrt{\dfrac{L}{g}} \]</div>
+<div class="fml">\[ T^2 = \dfrac{4\pi^2}{g}\,L \]</div>
+</div>
+<p class="note">Válido para ángulos pequeños (\(\sin\theta\approx\theta\)).</p>
+<div class="lbl">Linealización: \(T^2\) vs \(L\)</div>
+<div class="fml fml-green">\[ y = T^2,\quad x = L,\quad m = \frac{4\pi^2}{g},\quad b=0 \]</div>
+<div class="lbl">Gravedad desde pendiente \(m\)</div>
+<div class="frow">
+<div class="fml">\[ g = \dfrac{4\pi^2}{m} \]</div>
+<div class="fml">\[ \dfrac{\Delta g}{g} = \dfrac{\Delta m}{m} \]</div>
+</div>
+<div class="fml">\[ \Delta g = \dfrac{4\pi^2}{m^2}\,\Delta m \]</div>
+<p class="note">Unidad de la pendiente: \([m] = \text{s}^2/\text{m}\) si \(y=T^2\) y \(x=L\).</p>
+</div>
+</div>
+<!-- B14 ERROR DEL PERÍODO -->
+<div class="topic-card h-teal">
+<div class="topic-head"><span class="num">B13</span> Error del período del péndulo</div>
+<div class="topic-body">
+<div class="lbl">Caso general</div>
+<div class="fml">\[ \dfrac{\Delta T}{T} = \sqrt{\left(\dfrac{1}{2}\dfrac{\Delta L}{L}\right)^{\!2}+\left(\dfrac{1}{2}\dfrac{\Delta g}{g}\right)^{\!2}} \]</div>
+<div class="lbl">Si \(g\) se toma sin error</div>
+<div class="fml fml-amber">\[ \dfrac{\Delta T}{T} = \dfrac{1}{2}\dfrac{\Delta L}{L} \]</div>
+</div>
+</div>
+<!-- B15 GRAVEDAD DESDE L Y T -->
+<div class="topic-card h-cyan">
+<div class="topic-head"><span class="num">B14</span> Gravedad a partir de L y T</div>
+<div class="topic-body">
+<div class="fml fml-green">\[ g = \dfrac{4\pi^2 L}{T^2} \]</div>
+<div class="fml">\[ \Delta g = \sqrt{\left(\dfrac{4\pi^2}{T^2}\Delta L\right)^{\!2}+\left(\dfrac{8\pi^2 L}{T^3}\Delta T\right)^{\!2}} \]</div>
+<p class="note">El signo negativo en la derivada respecto a \(T\) no importa: se eleva al cuadrado.</p>
+<div class="lbl">Si te dan \(x = T^2/L\)</div>
+<div class="frow">
+<div class="fml">\[ g = \dfrac{4\pi^2}{x} \]</div>
+<div class="fml">\[ \dfrac{\Delta g}{g} = \dfrac{\Delta x}{x} \]</div>
+</div>
+</div>
+</div>
+<!-- B16 LINEALIZACIONES -->
+<div class="topic-card h-violet">
+<div class="topic-head"><span class="num">B15</span> Linealizaciones del péndulo</div>
+<div class="topic-body">
+<p class="note">Linealizar: transformar una relación en \(y=mx+b\) para obtener parámetros físicos desde la pendiente y la ordenada.</p>
+<div class="lbl">Linealización 1 — \(T^2\) vs \(L\)</div>
+<div class="fml">\[ y=T^2,\quad x=L,\quad m=\dfrac{4\pi^2}{g},\quad g=\dfrac{4\pi^2}{m} \]</div>
+<div class="lbl">Linealización 2 — \(L\) vs \(T^2\)</div>
+<div class="fml">\[ y=L,\quad x=T^2,\quad m=\dfrac{g}{4\pi^2},\quad g=4\pi^2 m \]</div>
+<div class="lbl">Linealización 3 — \(T\) vs \(\sqrt{L}\)</div>
+<div class="fml">\[ y=T,\quad x=\sqrt{L},\quad m=\dfrac{2\pi}{\sqrt{g}},\quad g=\left(\dfrac{2\pi}{m}\right)^{\!2} \]</div>
+<div class="lbl">Linealización 4 — log-log</div>
+<div class="fml">\[ y=\ln T,\quad x=\ln L,\quad m=\tfrac{1}{2} \]</div>
+<div class="ojo"><strong>OJO</strong> En \(T^2\) vs \(L\), la pendiente es \(4\pi^2/g\), no \(g\). En \(L\) vs \(T^2\), la pendiente es \(g/4\pi^2\).</div>
+<div class="lbl">Ajuste por cuadrados mínimos</div>
+<p class="note">Minimiza \(S = \sum[T_i - f(L_i)]^2\). Tres métodos: calcular \(g_i\) para cada par y promediar · ajuste no lineal · linealizar y hacer ajuste lineal.</p>
+</div>
+</div>
+<!-- B17 ROZAMIENTO PLANO INCLINADO -->
+<div class="topic-card h-ocean">
+<div class="topic-head"><span class="num">B16</span> Rozamiento en plano inclinado</div>
+<div class="topic-body">
+<div class="lbl">Coeficiente estático (en el límite)</div>
+<div class="fml fml-green">\[ \mu_e = \tan\theta \]</div>
+<div class="lbl">Componentes de peso</div>
+<div class="frow">
+<div class="fml">\[ P_{\parallel} = mg\sin\theta \]</div>
+<div class="fml">\[ P_{\perp} = mg\cos\theta = N \]</div>
+</div>
+<div class="lbl">Error del coeficiente</div>
+<div class="frow">
+<div class="fml">\[ \Delta\mu = \dfrac{1}{\cos^2\!\theta}\,\Delta\theta \]</div>
+<div class="fml">\[ \Delta\theta_{\text{rad}} = \Delta\theta_{\circ}\cdot\dfrac{\pi}{180} \]</div>
+</div>
+<div class="ojo"><strong>OJO</strong> \(\Delta\theta\) debe estar en <strong>radianes</strong> para derivar.</div>
+<div class="lbl">Fuerza de rozamiento estático máxima</div>
+<div class="fml">\[ F_{r,e}^{\text{máx}} = \mu_e\,m\,g \]</div>
+<div class="fml">\[ \dfrac{\Delta F}{F} = \sqrt{\!\left(\dfrac{\Delta\mu}{\mu}\right)^{\!2}+\left(\dfrac{\Delta m}{m}\right)^{\!2}+\left(\dfrac{\Delta g}{g}\right)^{\!2}} \]</div>
+</div>
+</div>
+<!-- B18 CINEMÁTICA CON ERROR -->
+<div class="topic-card h-slate">
+<div class="topic-head"><span class="num">B17</span> Cinemática con error</div>
+<div class="topic-body">
+<div class="lbl">Profundidad de pozo (caída)</div>
+<div class="fml">\[ h = v_0\,t_f + \tfrac{1}{2}\,g\,t_f^2 \]</div>
+<div class="lbl">Derivadas parciales</div>
+<div class="frow">
+<div class="fml">\[ \dfrac{\partial h}{\partial v_0} = t_f \]</div>
+<div class="fml">\[ \dfrac{\partial h}{\partial g} = \tfrac{1}{2}t_f^2 \]</div>
+<div class="fml">\[ \dfrac{\partial h}{\partial t_f} = v_0+g\,t_f \]</div>
+</div>
+<div class="lbl">Propagación</div>
+<div class="fml fml-green">\[ \Delta h = \sqrt{(t_f\Delta v_0)^2 + \!\left(\tfrac{1}{2}t_f^2\Delta g\right)^{\!2} + \!\left((v_0+gt_f)\Delta t_f\right)^{\!2}} \]</div>
+</div>
+</div>
+<!-- B19 RECONOCER TIPO DE EJERCICIO -->
+<div class="topic-card h-emerald">
+<div class="topic-head"><span class="num">B18</span> Cómo reconocer qué hacer</div>
+<div class="topic-body">
+<div class="lbl">Dan dos mediciones con error</div>
+<p class="note">→ Verificar compatibilidad \(|\bar{x}_1-\bar{x}_2|\leq\Delta x_1+\Delta x_2\) y comparar precisión \(\varepsilon=\Delta x/\bar{x}\).</p>
+<div class="lbl">Dan \(\bar{x},\,\sigma,\,N,\,\sigma_{\text{ap}}\)</div>
+<p class="note">→ Calcular \(\sigma_{\text{est}}=\sigma/\sqrt{N}\), luego \(\Delta x=\sqrt{\sigma_{\text{est}}^2+\sigma_{\text{ap}}^2}\), finalmente informar.</p>
+<div class="lbl">Dan fórmula + variable con error</div>
+<p class="note">→ Si es potencia: \(\Delta f/f=|n|\,\Delta x/x\). Si no: \(\Delta f=|df/dx|\,\Delta x\).</p>
+<div class="lbl">Dan varias variables con error</div>
+<p class="note">→ Propagar con la fórmula general de derivadas parciales.</p>
+<div class="lbl">Dan una pendiente de gráfico</div>
+<p class="note">→ Identificar \(y\), \(x\), qué representa la pendiente y sus unidades. Despejar la magnitud buscada. Propagar el error de la pendiente.</p>
+<div class="lbl">Piden compatibilidad con valor esperado</div>
+<p class="note">→ Verificar \(|\bar{x}-x_{\text{esp}}|\leq\Delta x\).</p>
+</div>
+</div>
+<!-- B20 ERRORES TÍPICOS -->
+<div class="topic-card h-red">
+<div class="topic-head"><span class="num">B19</span> Errores típicos a evitar</div>
+<div class="topic-body">
+<ul class="blist">
+<li>Usar \(\sigma\) como error del promedio en lugar de \(\sigma/\sqrt{N}\).</li>
+<li>Olvidar sumar cuadráticamente el error de apreciación instrumental.</li>
+<li>Informar más decimales de los que justifica el error.</li>
+<li>Redondear antes de terminar todos los cálculos.</li>
+<li>Comparar compatibilidad mirando solo los valores centrales.</li>
+<li>Confundir precisión con exactitud.</li>
+<li>Decir que un valor es más preciso porque está más cerca del esperado.</li>
+<li>Usar grados en derivadas trigonométricas (siempre radianes).</li>
+<li>Olvidar multiplicar el error relativo por \(|n|\) en potencias.</li>
+<li>Olvidar que la pendiente tiene unidades de \([y]/[x]\).</li>
+<li>Confundir \(m\) (pendiente) con \(m\) (masa) en el péndulo.</li>
+<li>En \(T^2\) vs \(L\): la pendiente es \(4\pi^2/g\), no \(g\) directamente.</li>
+<li>Olvidar las unidades al informar.</li>
+</ul>
+</div>
+</div>
+<!-- B21 FÓRMULAS CLAVE MEMORIZAR -->
+<div class="topic-card h-green">
+<div class="topic-head"><span class="num">B20</span> Fórmulas clave para memorizar</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ x=(\bar{x}\pm\Delta x)\,\text{u.} \]</div>
+<div class="fml">\[ \varepsilon=\dfrac{\Delta x}{\bar{x}} \]</div>
+<div class="fml">\[ \varepsilon_\%=\dfrac{\Delta x}{\bar{x}}\cdot100\% \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-amber">\[ \sigma_{\text{est}}=\dfrac{\sigma}{\sqrt{N}} \]</div>
+<div class="fml fml-green">\[ \Delta x=\sqrt{\sigma_{\text{est}}^2+\sigma_{\text{ap}}^2} \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ |\bar{x}_1-\bar{x}_2|\leq\Delta x_1+\Delta x_2 \]</div>
+<div class="fml">\[ |\bar{x}-x_{\text{esp}}|\leq\Delta x \]</div>
+</div>
+<div class="fml fml-green">\[ \Delta f=\sqrt{\!\left(\dfrac{\partial f}{\partial x_1}\Delta x_1\right)^{\!2}+\left(\dfrac{\partial f}{\partial x_2}\Delta x_2\right)^{\!2}+\cdots} \]</div>
+<div class="frow">
+<div class="fml">\[ \Delta f=\left|\dfrac{df}{dx}\right|\Delta x \]</div>
+<div class="fml">\[ \dfrac{\Delta f}{f}=|n|\dfrac{\Delta x}{x} \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ V=\dfrac{\pi}{6}d^3 \]</div>
+<div class="fml">\[ A=\dfrac{\pi d^2}{4} \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ T=2\pi\sqrt{\dfrac{L}{g}} \]</div>
+<div class="fml">\[ g=\dfrac{4\pi^2}{m} \]</div>
+<div class="fml">\[ \Delta g=\dfrac{4\pi^2}{m^2}\Delta m \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \mu_e=\tan\theta \]</div>
+<div class="fml">\[ F_{r,e}^{\text{máx}}=\mu_e mg \]</div>
+</div>
+<div class="fml">\[ \Delta h=\sqrt{(t\Delta v_0)^2+\!\left(\tfrac{1}{2}t^2\Delta g\right)^{\!2}+\!\left((v_0+gt)\Delta t\right)^{\!2}} \]</div>
+</div>
+</div>
+<!-- ═══════════════════════════════════════════════════════════ PARTE C -->
+<div class="part-header pC" id="segundo-parcial">
+<div>
+<h2>PARTE C — SEGUNDO PARCIAL</h2>
+<p>Fórmulas visibles · explicaciones y usos desplegables</p>
+</div>
+</div>
+<!-- C1 MOMENTO ANGULAR -->
+<div class="topic-card h-violet">
+<div class="topic-head"><span class="num">C1</span> Momento angular y choques</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ \vec L=\vec r\times\vec p \]</div>
+<div class="fml">\[ \vec p=m\vec v \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ |\vec L|=r\,p\,\sin\theta \]</div>
+<div class="fml fml-green">\[ |\vec L|=d\,p=d\,m\,v \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ L_x=y p_z-z p_y \]</div>
+<div class="fml">\[ L_y=z p_x-x p_z \]</div>
+<div class="fml">\[ L_z=x p_y-y p_x \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ \vec\tau=\vec r\times\vec F \]</div>
+<div class="fml">\[ |\vec\tau|=rF\sin\varphi=dF \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ \dfrac{d\vec L}{dt}=\vec\tau_{ext} \]</div>
+<div class="fml fml-green">\[ \vec\tau_{ext}=0\Rightarrow \vec L=\text{cte.} \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \vec J=\int \vec\tau\,dt \]</div>
+<div class="fml">\[ \vec L_f-\vec L_i=\vec J=\vec\tau_m\Delta t \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ L_i=L_f \]</div>
+<div class="fml">\[ I_{total}=I_{cuerpo}+m d^2 \]</div>
+</div>
+<div class="fml">\[ \vec L=\sum_i \vec r_i\times\vec p_i \qquad ; \qquad \vec L=\vec L\,'+\vec r_{CM}\times\vec P \]</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside">
+<ul>
+<li>\(\vec L\): momento angular respecto del punto/eje elegido.</li>
+<li>\(\vec r\): vector posición desde el punto elegido hasta la partícula o punto de aplicación.</li>
+<li>\(\vec p\): cantidad de movimiento; \(\vec p=m\vec v\).</li>
+<li>\(m\): masa; \(\vec v\): velocidad; \(d\): brazo perpendicular hasta la recta de movimiento o de acción de la fuerza.</li>
+<li>\(\theta\): ángulo entre \(\vec r\) y \(\vec p\); \(\varphi\): ángulo entre \(\vec r\) y \(\vec F\).</li>
+<li>\(\vec\tau\): torque; \(\vec F\): fuerza aplicada; \(\vec J\): impulso angular.</li>
+<li>\(L_i,L_f\): momento angular inicial y final. \(I\): momento de inercia. \(\omega\): velocidad angular cuando se usa \(L=I\omega\).</li>
+<li>\(\vec P\): cantidad de movimiento total del sistema; \(CM\): centro de masa.</li>
+</ul>
+<hr>
+<p>El momento angular mide la tendencia a girar respecto de un punto o eje. No alcanza con que algo tenga velocidad: importa a qué distancia pasa su línea de movimiento del punto elegido.</p>
+<p>La forma \(|\vec L|=dmv\) es la más útil en choques: si una bala pasa a distancia perpendicular \(d\) del pivote, su momento angular respecto del pivote es \(dmv\).</p>
+<p>El torque es la causa que cambia el momento angular. Si el torque externo neto es cero, el momento angular se conserva aunque haya fuerzas internas muy grandes.</p>
+</div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside">
+<ul>
+<li>Bala que se clava o atraviesa una varilla.</li>
+<li>Bloque que choca contra una barra articulada.</li>
+<li>Discos que giran y terminan acoplados.</li>
+<li>Choques con pivote: conviene tomar momentos respecto del pivote porque la reacción del apoyo tiene brazo cero.</li>
+<li>Si el choque es inelástico: usar \(L_i=L_f\), pero no conservar energía cinética.</li>
+</ul>
+</div></details>
+<details class="explain"><summary>trucos y errores</summary><div class="inside">
+<ul>
+<li>Elegí un sentido positivo de giro y respetalo: horario y antihorario llevan signos opuestos.</li>
+<li>No uses conservación de cantidad de movimiento lineal si hay pivote: el pivote hace fuerza externa.</li>
+<li>Si una masa queda pegada a distancia \(d\), sumá \(md^2\) al momento de inercia.</li>
+<li>Si el proyectil entra y sale: \(m v_i d = I\omega + m v_f d\), con signos según el sentido.</li>
+</ul>
+</div></details>
+</div>
+</div>
+</div>
+<!-- C2 CUERPO RIGIDO -->
+<div class="topic-card h-indigo">
+<div class="topic-head"><span class="num">C2</span> Cuerpo rígido y rotación</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ \omega=\dfrac{d\theta}{dt} \]</div>
+<div class="fml fml-green">\[ \alpha=\dfrac{d\omega}{dt} \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ v=r\omega \]</div>
+<div class="fml">\[ a_t=r\alpha \]</div>
+<div class="fml">\[ a_c=\dfrac{v^2}{r}=r\omega^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ I=\sum_i m_i r_i^2 \]</div>
+<div class="fml fml-green">\[ I=\int r^2\,dm \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ dm=\rho\,dV \]</div>
+<div class="fml">\[ dm=\sigma\,dA \]</div>
+<div class="fml">\[ dm=\lambda\,dx \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ L=I\omega \]</div>
+<div class="fml fml-green">\[ E_{c,rot}=\tfrac12 I\omega^2 \]</div>
+<div class="fml fml-green">\[ \sum\tau=I\alpha \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ dW=\tau\,d\theta \]</div>
+<div class="fml">\[ W=\int_{\theta_i}^{\theta_f}\tau\,d\theta \]</div>
+<div class="fml">\[ P=\tau\omega \]</div>
+</div>
+<div class="fml">\[ W_{total}=\tfrac12 I\omega_f^2-\tfrac12 I\omega_i^2 \]</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside">
+<ul>
+<li>\(\theta\): posición angular; \(\omega\): velocidad angular; \(\alpha\): aceleración angular.</li>
+<li>\(r\): distancia al eje de rotación; \(v\): velocidad lineal del punto; \(a_t\): aceleración tangencial; \(a_c\): aceleración centrípeta.</li>
+<li>\(I\): momento de inercia respecto del eje elegido; \(m_i\): masa de la partícula i; \(r_i\): distancia de esa partícula al eje.</li>
+<li>\(dm\): diferencial de masa; \(\rho\): densidad volumétrica; \(\sigma\): densidad superficial; \(\lambda\): densidad lineal.</li>
+<li>\(\tau\): torque neto respecto del eje; \(W\): trabajo; \(P\): potencia.</li>
+</ul>
+<hr>
+<p>Un cuerpo rígido mantiene fijas las distancias entre sus puntos. Si rota alrededor de un eje fijo, todos sus puntos tienen la misma \(\omega\) y la misma \(\alpha\), pero no la misma velocidad lineal.</p>
+<p>El momento de inercia es la “masa rotacional”: cuanto más lejos está la masa del eje, más difícil es cambiar su rotación.</p>
+<p>\(\sum\tau=I\alpha\) es la versión rotacional de \(\sum F=ma\).</p>
+</div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside">
+<ul>
+<li>Poleas, discos, cilindros, varillas, ruedas y carretes.</li>
+<li>Si la cuerda no desliza sobre una polea fija: \(a=R\alpha\).</li>
+<li>Si piden energía de un cuerpo que gira: incluir \(\tfrac12I\omega^2\).</li>
+<li>Si hay torque por tensión: \(\tau=RT\) cuando la tensión es tangencial.</li>
+</ul>
+</div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside">
+<ul>
+<li>No existe un único \(I\) del cuerpo: siempre depende del eje.</li>
+<li>Todos los puntos tienen igual \(\omega\), pero \(v=r\omega\) cambia con \(r\).</li>
+<li>Si una polea tiene masa, las tensiones a ambos lados pueden ser distintas.</li>
+</ul>
+</div></details>
+</div>
+</div>
+</div>
+<!-- C3 MOMENTOS INERCIA -->
+<div class="topic-card h-blue">
+<div class="topic-head"><span class="num">C3</span> Momentos de inercia y Steiner</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml">\[ \text{Partícula:}\quad I=mr^2 \]</div>
+<div class="fml">\[ \text{Aro/cil. hueco delgado:}\quad I=MR^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ \text{Disco/cil. macizo:}\quad I=\tfrac12MR^2 \]</div>
+<div class="fml fml-green">\[ \text{Varilla por centro:}\quad I_{CM}=\tfrac1{12}ML^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ \text{Varilla por extremo:}\quad I=\tfrac13ML^2 \]</div>
+<div class="fml">\[ \text{Esfera maciza:}\quad I=\tfrac25MR^2 \]</div>
+<div class="fml">\[ \text{Esfera hueca:}\quad I=\tfrac23MR^2 \]</div>
+</div>
+<div class="fml fml-green">\[ I_P=I_{CM}+Md^2 \]</div>
+<div class="details-box">
+<details class="explain"><summary>detalle</summary><div class="inside">
+<ul>
+<li>\(I\): momento de inercia respecto del eje indicado.</li>
+<li>\(M\): masa total; \(m\): masa puntual; \(R\): radio; \(L\): longitud de la varilla.</li>
+<li>\(I_{CM}\): momento de inercia respecto de un eje que pasa por el centro de masa.</li>
+<li>\(I_P\): momento de inercia respecto de un eje paralelo que pasa por el punto \(P\).</li>
+<li>\(d\): distancia entre el eje por el centro de masa y el eje nuevo.</li>
+</ul>
+</div></details>
+<details class="explain"><summary>cómo elegir</summary><div class="inside">
+<p>Primero mirá el eje de giro. Si el eje coincide con el de la tabla, usás la fórmula directa. Si el eje es paralelo pero está desplazado del centro de masa, usás Steiner.</p>
+<p>Ejemplo de varilla por extremo: \(I=\tfrac1{12}ML^2+M(L/2)^2=\tfrac13ML^2\).</p>
+</div></details>
+<details class="explain"><summary>uso en parciales</summary><div class="inside">
+<ul>
+<li>Varilla con bala o bloque pegado: usar \(I\) de la varilla respecto del pivote y sumar \(md^2\) si queda una masa pegada.</li>
+<li>Péndulo físico: siempre necesitás \(I_P\), no solo \(I_{CM}\).</li>
+<li>Discos, cilindros y poleas: casi siempre \(I=\tfrac12MR^2\), salvo que diga hueco o aro.</li>
+</ul>
+</div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>Usar \(I_{CM}\) cuando el eje está en un extremo o en un agujero.</li><li>Olvidar que una masa puntual pegada suma \(md^2\).</li><li>Confundir esfera maciza \(2/5\) con esfera hueca \(2/3\).</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C4 RODADURA -->
+<div class="topic-card h-teal">
+<div class="topic-head"><span class="num">C4</span> Rodadura, poleas y carretes</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ v_{CM}=R\omega \]</div>
+<div class="fml fml-green">\[ a_{CM}=R\alpha \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ E_c=\tfrac12Mv_{CM}^2+\tfrac12I_{CM}\omega^2 \]</div>
+<div class="fml">\[ E_c=\tfrac12(I_{CM}+MR^2)\omega^2 \]</div>
+<div class="fml">\[ I_A=I_{CM}+MR^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \sum F_{ext}=Ma_{CM} \]</div>
+<div class="fml">\[ \sum \tau_{CM}=I_{CM}\alpha \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ a_{cuerda}=R\alpha \]</div>
+<div class="fml fml-amber">\[ a_{bloque}=2R\alpha \]</div>
+<div class="fml fml-amber">\[ a_{cuerda}=\alpha(R\pm r) \]</div>
+</div>
+<div class="fml">\[ \text{Polea con inercia:}\quad (T_2-T_1)R=I\alpha \]</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul>
+<li>\(CM\): centro de masa. \(v_{CM}\) y \(a_{CM}\): velocidad y aceleración del centro de masa.</li>
+<li>\(R\): radio exterior que rueda o radio de la polea; \(r\): radio menor del carrete.</li>
+<li>\(I_{CM}\): momento de inercia respecto del centro de masa; \(I_A\): respecto del punto instantáneo de contacto.</li>
+<li>\(T_1,T_2\): tensiones en distintos tramos de cuerda.</li>
+</ul><hr>
+<p>Rodar sin deslizar significa que el punto de contacto con el piso está instantáneamente quieto respecto del piso. Por eso aparece \(v_{CM}=R\omega\).</p>
+<p>En rodadura pura, el rozamiento es estático. Puede generar torque, pero no necesariamente disipa energía.</p>
+</div></details>
+<details class="explain"><summary>relaciones especiales</summary><div class="inside"><ul>
+<li>Polea fija o tambor fijo sin deslizamiento: \(a=R\alpha\).</li>
+<li>Cilindro que rueda y el hilo sale por arriba: el punto superior combina traslación y rotación, entonces \(a=2R\alpha\).</li>
+<li>Carrete con radio grande \(R\) y radio chico \(r\): se suma o resta según el sentido, \(a=\alpha(R\pm r)\).</li>
+<li>Polea con masa: usar torque. Si tiene inercia, no asumir \(T_1=T_2\).</li>
+</ul></div></details>
+<details class="explain"><summary>método de ejercicio</summary><div class="inside"><ol class="steps"><li>Dibujar fuerzas: peso, normal, tensión y rozamiento.</li><li>Plantear \(\sum F=Ma_{CM}\).</li><li>Plantear \(\sum\tau_{CM}=I_{CM}\alpha\).</li><li>Agregar rodadura \(a_{CM}=R\alpha\).</li><li>Agregar la relación de cuerda correcta.</li></ol></div></details>
+</div>
+</div>
+</div>
+<!-- C5 EQUILIBRIO -->
+<div class="topic-card h-ocean">
+<div class="topic-head"><span class="num">C5</span> Equilibrio estático</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ \sum F_x=0 \]</div>
+<div class="fml fml-green">\[ \sum F_y=0 \]</div>
+<div class="fml fml-green">\[ \sum\tau=0 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \tau=dF \]</div>
+<div class="fml">\[ \tau=rF\sin\theta \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ f_e\le \mu_e N \]</div>
+<div class="fml fml-amber">\[ f_e=\mu_eN\quad\text{en límite} \]</div>
+<div class="fml">\[ f_d=\mu_dN \]</div>
+</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul>
+<li>\(F_x,F_y\): componentes de fuerzas. \(\tau\): torque.</li>
+<li>\(d\): brazo perpendicular de la fuerza. \(r\): distancia al punto de giro. \(\theta\): ángulo entre \(\vec r\) y \(\vec F\).</li>
+<li>\(f_e\): rozamiento estático; \(f_d\): rozamiento dinámico; \(\mu_e,\mu_d\): coeficientes de rozamiento; \(N\): normal.</li>
+</ul><hr><p>Un cuerpo en equilibrio no traslada ni rota. Por eso no alcanza con \(\sum F=0\): también debe cumplirse \(\sum\tau=0\).</p></div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside"><ul>
+<li>Barras, vigas, escaleras, semáforos, cajas o barras arrastradas con velocidad constante.</li>
+<li>Elegí momentos en el punto donde pasen más incógnitas, por ejemplo el pivote. Así esas fuerzas no generan torque.</li>
+<li>Si está “a punto de deslizar”, usar \(f_e=\mu_eN\). Si no está al límite, solo \(f_e\le\mu_eN\).</li>
+</ul></div></details>
+</div>
+</div>
+</div>
+<!-- C6 OSCILACIONES -->
+<div class="topic-card h-green">
+<div class="topic-head"><span class="num">C6</span> Oscilaciones y resortes</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ x''+\Omega^2x=0 \]</div>
+<div class="fml fml-green">\[ x(t)=A\cos(\Omega t+\varphi) \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ v(t)=-\Omega A\sin(\Omega t+\varphi) \]</div>
+<div class="fml">\[ a(t)=-\Omega^2x(t) \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \Omega=\dfrac{2\pi}{T}=2\pi f \]</div>
+<div class="fml">\[ T=\dfrac{2\pi}{\Omega} \]</div>
+<div class="fml">\[ f=\dfrac1T \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ \Omega=\sqrt{\dfrac{k}{m}} \]</div>
+<div class="fml fml-green">\[ T=2\pi\sqrt{\dfrac{m}{k}} \]</div>
+<div class="fml">\[ k_{eq}=k_1+k_2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ A=\sqrt{x_0^2+\left(\dfrac{v_0}{\Omega}\right)^2} \]</div>
+<div class="fml">\[ x_0=A\cos\varphi \]</div>
+<div class="fml">\[ v_0=-\Omega A\sin\varphi \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ v_{max}=\Omega A \]</div>
+<div class="fml">\[ a_{max}=\Omega^2A \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ y_e=l_0+\dfrac{mg}{k} \]</div>
+<div class="fml fml-amber">\[ \delta y=y-y_e \quad ; \quad F_y=-k\delta y \]</div>
+</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul>
+<li>\(x\) o \(\delta y\): apartamiento respecto de la posición de equilibrio.</li>
+<li>\(A\): amplitud; \(\Omega\): frecuencia angular del MAS; \(\varphi\): fase inicial.</li>
+<li>\(T\): período; \(f\): frecuencia; \(k\): constante del resorte; \(m\): masa.</li>
+<li>\(x_0,v_0\): posición y velocidad iniciales. \(y_e\): posición de equilibrio. \(l_0\): longitud natural.</li>
+</ul><hr><p>Hay MAS cuando la fuerza neta es restitutiva y proporcional al apartamiento. La aceleración siempre apunta hacia el equilibrio: \(a=-\Omega^2x\).</p><p>En un resorte vertical, si medís desde el equilibrio, la gravedad ya quedó incluida en \(y_e\). Por eso la ecuación queda limpia: \(x''+(k/m)x=0\).</p></div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside"><ul>
+<li>Si se separa y se suelta: \(x(0)=A\), \(v(0)=0\), usar coseno.</li>
+<li>Si parte del equilibrio con velocidad inicial: \(x_0=0\), \(A=v_0/\Omega\), conviene \(x(t)=(v_0/\Omega)\sin(\Omega t)\).</li>
+<li>Con dos resortes que tiran contra el movimiento: \(k_{eq}=k_1+k_2\).</li>
+</ul></div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>No volver a sumar \(mg\) si el origen está en equilibrio.</li><li>No confundir amplitud con posición inicial: si arranca en equilibrio con velocidad, \(A\neq0\).</li><li>Usar \(\Omega\) para frecuencia angular del MAS y reservar \(\omega\) para velocidad angular rotacional.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C7 ENERGIA MAS -->
+<div class="topic-card h-emerald">
+<div class="topic-head"><span class="num">C7</span> Energía en MAS</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ U=\tfrac12kx^2 \]</div>
+<div class="fml">\[ E_c=\tfrac12mv^2 \]</div>
+<div class="fml fml-green">\[ E_m=\tfrac12kA^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ E_c(x)=\tfrac12k(A^2-x^2) \]</div>
+<div class="fml">\[ U(t)=\tfrac12kA^2\cos^2(\Omega t+\varphi) \]</div>
+<div class="fml">\[ E_c(t)=\tfrac12kA^2\sin^2(\Omega t+\varphi) \]</div>
+</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul><li>\(U\): energía potencial elástica medida desde el equilibrio.</li><li>\(E_c\): energía cinética; \(E_m\): energía mecánica total.</li><li>\(x\): apartamiento; \(A\): amplitud; \(k\): constante del resorte; \(m\): masa.</li></ul><hr><p>En los extremos \(x=\pm A\): \(v=0\) y la energía está como potencial. En el equilibrio \(x=0\): la velocidad es máxima y la energía está como cinética.</p></div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside"><ul><li>Para hallar velocidad en una posición: usar \(E_c(x)=\tfrac12k(A^2-x^2)\).</li><li>Para hallar amplitud desde energía: usar \(E_m=\tfrac12kA^2\).</li><li>Para gráficos: \(U\) y \(E_c\) son periódicas y se intercambian; la suma queda constante.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C8 PENDULOS -->
+<div class="topic-card h-navy">
+<div class="topic-head"><span class="num">C8</span> Péndulos</div>
+<div class="topic-body">
+<div class="lbl">Péndulo simple</div>
+<div class="frow">
+<div class="fml fml-green">\[ \theta''+\dfrac{g}{L}\theta=0 \]</div>
+<div class="fml">\[ \Omega=\sqrt{\dfrac{g}{L}} \]</div>
+<div class="fml fml-green">\[ T=2\pi\sqrt{\dfrac{L}{g}} \]</div>
+</div>
+<div class="lbl">Péndulo físico</div>
+<div class="frow">
+<div class="fml">\[ \tau=-Mgd\sin\theta \]</div>
+<div class="fml">\[ \sin\theta\approx\theta \]</div>
+<div class="fml fml-green">\[ I_P\theta''=-Mgd\theta \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \Omega=\sqrt{\dfrac{Mgd}{I_P}} \]</div>
+<div class="fml fml-green">\[ T=2\pi\sqrt{\dfrac{I_P}{Mgd}} \]</div>
+<div class="fml">\[ I_P=I_{CM}+Md^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-amber">\[ d_{min}=\sqrt{\dfrac{I_{CM}}{M}} \]</div>
+<div class="fml">\[ \Delta U=Mgd(1-\cos\theta) \]</div>
+<div class="fml">\[ E_{c,rot}=\tfrac12I_P\omega_{ang}^2 \]</div>
+</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul>
+<li>\(\theta\): ángulo respecto del equilibrio, en radianes. \(L\): longitud del hilo en péndulo simple.</li>
+<li>\(M\): masa total del cuerpo rígido; \(g\): gravedad; \(d\): distancia desde pivote al centro de masa.</li>
+<li>\(I_P\): momento de inercia respecto del pivote; \(I_{CM}\): respecto del centro de masa.</li>
+<li>\(\Omega\): frecuencia angular de oscilación; \(T\): período; \(\omega_{ang}\): velocidad angular del cuerpo.</li>
+</ul><hr><p>El péndulo simple es masa puntual + hilo. El péndulo físico es un cuerpo rígido con tamaño y momento de inercia. En el físico, el peso genera torque restitutivo respecto del pivote.</p><p>Para pequeñas oscilaciones se usa \(\sin\theta\approx\theta\), con \(\theta\) en radianes.</p></div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside"><ul>
+<li>Disco colgado de un agujero: calcular \(I_P\) con Steiner.</li>
+<li>Varilla con pivote desplazado: encontrar \(d\) y \(I_P\), luego usar \(T=2\pi\sqrt{I_P/(Mgd)}\).</li>
+<li>Si piden período mínimo: usar \(d_{min}=\sqrt{I_{CM}/M}\).</li>
+<li>Para velocidad angular máxima: usar energía o \(\omega_{max}=\Omega A\).</li>
+</ul></div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>No usar grados en las aproximaciones: convertir a radianes.</li><li>No usar fórmula de péndulo simple cuando el cuerpo tiene tamaño.</li><li>No olvidar Steiner si el pivote no pasa por el centro de masa.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C9 FLUIDOS ESTATICA -->
+<div class="topic-card h-sky">
+<div class="topic-head"><span class="num">C9</span> Fluidos estática</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ p=\dfrac{F_n}{A} \]</div>
+<div class="fml">\[ F=pA \]</div>
+<div class="fml">\[ 1\,Pa=1\,N/m^2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ 1\,atm=1{,}013\times10^5\,Pa \]</div>
+<div class="fml">\[ \dfrac{dp}{dy}=-\rho g \]</div>
+<div class="fml fml-green">\[ p=p_0+\rho gh \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ p_{abs}=p_{atm}+p_{man} \]</div>
+<div class="fml">\[ p_{man}=p_{abs}-p_{atm} \]</div>
+<div class="fml fml-green">\[ p_{man}=\rho gh \]</div>
+</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul>
+<li>\(p\): presión; \(F_n\): fuerza normal a la superficie; \(A\): área.</li>
+<li>\(p_0\): presión en la superficie; \(p_{atm}\): presión atmosférica.</li>
+<li>\(p_{abs}\): presión absoluta; \(p_{man}\): presión manométrica.</li>
+<li>\(\rho\): densidad del fluido; \(g\): gravedad; \(h\): profundidad medida hacia abajo.</li>
+<li>\(y\): altura medida hacia arriba en \(dp/dy=-\rho g\).</li>
+</ul><hr><p>La presión es fuerza normal por área. En un fluido quieto aumenta con la profundidad porque hay más columna de fluido encima.</p><p>Si el recipiente está abierto, la presión absoluta es \(p_{atm}+\rho gh\). Si te piden manométrica, es solo la diferencia respecto de la atmósfera: \(\rho gh\).</p></div></details>
+<details class="explain"><summary>varios fluidos</summary><div class="inside"><p>Se suma por capas: \(p=p_0+\rho_1gh_1+\rho_2gh_2+...\). Al bajar sumás \(\rho gh\); al subir restás \(\rho gh\).</p></div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>Confundir presión absoluta y manométrica.</li><li>Usar densidad del objeto en lugar de densidad del fluido.</li><li>Olvidar dividir en tramos cuando hay aceite, agua, mercurio, etc.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C10 PASCAL MANOMETROS -->
+<div class="topic-card h-cyan">
+<div class="topic-head"><span class="num">C10</span> Pascal, manómetros y barómetro</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ \dfrac{F_1}{A_1}=\dfrac{F_2}{A_2} \]</div>
+<div class="fml">\[ F_2=\dfrac{A_2}{A_1}F_1 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ p-p_{atm}=\rho gh \]</div>
+<div class="fml">\[ p=p_{atm}\pm\rho gh \]</div>
+<div class="fml fml-amber">\[ \Delta p=(\rho_m-\rho_f)gh \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ p_{atm}=\rho_{Hg}gh \]</div>
+<div class="fml">\[ 760\,mmHg=1\,atm \]</div>
+<div class="fml">\[ 1\,mmHg\approx133\,Pa \]</div>
+</div>
+<div class="details-box">
+<details class="explain"><summary>detalle</summary><div class="inside"><ul>
+<li>\(F_1,F_2\): fuerzas sobre pistones; \(A_1,A_2\): áreas de pistones.</li>
+<li>\(\Delta p\): diferencia de presión. \(\rho_m\): densidad del líquido manométrico. \(\rho_f\): densidad del fluido de la tubería.</li>
+<li>\(\rho_{Hg}\): densidad del mercurio; \(h\): diferencia de altura de columnas.</li>
+</ul></div></details>
+<details class="explain"><summary>cómo recorrer manómetros</summary><div class="inside"><ul><li>En el mismo fluido y a la misma altura: misma presión.</li><li>Si bajás una altura \(h\), sumás \(\rho gh\).</li><li>Si subís una altura \(h\), restás \(\rho gh\).</li><li>Con mercurio midiendo agua en tubería suele aparecer \((\rho_{Hg}-\rho_{agua})gh\).</li></ul></div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside"><p>Pistones hidráulicos, tubos en U, diferencias de presión en Venturi, presión de gas, barómetro y columnas de agua/mercurio.</p></div></details>
+</div>
+</div>
+</div>
+<!-- C11 EMPUJE -->
+<div class="topic-card h-emerald">
+<div class="topic-head"><span class="num">C11</span> Empuje y flotación</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ E=\rho_{fluido}gV_{sumergido} \]</div>
+<div class="fml fml-amber">\[ E_{total}=\rho_1gV_1+\rho_2gV_2+... \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ E=P\quad\text{si flota} \]</div>
+<div class="fml">\[ \rho_{fluido}V_{sum}=\rho_{cuerpo}V_{total} \]</div>
+<div class="fml">\[ \dfrac{V_{sum}}{V_{total}}=\dfrac{\rho_{cuerpo}}{\rho_{fluido}} \]</div>
+</div>
+<div class="fml">\[ \rho_{cuerpo}V_{total}=\rho_1V_1+\rho_2V_2 \]</div>
+<div class="frow">
+<div class="fml fml-green">\[ T=P-E \]</div>
+<div class="fml">\[ P_{ap}=P-E \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ \text{Balanza resorte: }L=P_{bloque}-E \]</div>
+<div class="fml">\[ \text{Balanza recipiente: }L=P_{rec}+P_{liq}+E \]</div>
+</div>
+<div class="details-box">
+
+<details class="explain"><summary>explicación</summary><div class="inside"><ul>
+<li>\(E\): empuje; \(P\): peso real del cuerpo; \(P_{ap}\): peso aparente.</li>
+<li>\(\rho_{fluido}\): densidad del fluido; \(\rho_{cuerpo}\): densidad del cuerpo.</li>
+<li>\(V_{sumergido}\) o \(V_{sum}\): volumen sumergido; \(V_{total}\): volumen total del cuerpo.</li>
+<li>\(T\): tensión de cuerda; \(L\): lectura de balanza.</li>
+</ul><hr><p>El empuje es igual al peso del fluido desplazado. Depende de la densidad del fluido y del volumen sumergido, no de la densidad del objeto.</p><p>Si el cuerpo está entre dos fluidos, el empuje se calcula por partes.</p></div></details>
+<details class="explain"><summary>uso en ejercicios</summary><div class="inside"><ul>
+<li>Bloque flotando entre aceite y agua: usar \(E_1+E_2=P\).</li>
+<li>Cubo mitad en agua y mitad en mercurio: \(E=\rho_{agua}gV/2+\rho_{Hg}gV/2\).</li>
+<li>Cuerpo colgado y sumergido: \(T=P-E\).</li>
+<li>Boya + cuerpo pesado: conviene analizar el sistema completo con \(E_{total}=P_{total}\).</li>
+</ul></div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>Usar volumen total aunque el cuerpo no esté completamente sumergido.</li><li>Olvidar que la balanza del recipiente aumenta en \(E\) por acción y reacción.</li><li>Pensar que más profundidad cambia el empuje en fluido incompresible.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C12 FLUIDOS DINAMICA -->
+<div class="topic-card h-slate">
+<div class="topic-head"><span class="num">C12</span> Fluidos dinámica</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml fml-green">\[ Q=Av \]</div>
+<div class="fml fml-green">\[ A_1v_1=A_2v_2 \]</div>
+<div class="fml">\[ Q_1=Q_2 \]</div>
+</div>
+<div class="frow">
+<div class="fml">\[ A=\dfrac{\pi D^2}{4} \]</div>
+<div class="fml">\[ v=\dfrac{Q}{A} \]</div>
+<div class="fml">\[ 1\,L=10^{-3}m^3 \]</div>
+</div>
+<div class="fml fml-green">\[ p+\rho gy+\tfrac12\rho v^2=\text{cte.} \]</div>
+<div class="fml">\[ p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2 \]</div>
+<div class="frow">
+<div class="fml">\[ p_1+\tfrac12\rho v_1^2=p_2+\tfrac12\rho v_2^2 \]</div>
+<div class="fml fml-green">\[ p_1-p_2=\tfrac12\rho(v_2^2-v_1^2) \]</div>
+</div>
+<div class="details-box">
+<details class="explain"><summary>detalle</summary><div class="inside"><ul>
+<li>\(Q\): caudal volumétrico; \(A\): área de sección; \(D\): diámetro; \(v\): velocidad del fluido.</li>
+<li>\(p\): presión; \(\rho\): densidad del fluido; \(g\): gravedad; \(y\): altura.</li>
+<li>Subíndices 1 y 2: dos puntos o secciones de la tubería.</li>
+</ul></div></details>
+<details class="explain"><summary>continuidad</summary><div class="inside"><p>Expresa conservación de masa para fluido incompresible. Si el área disminuye, la velocidad aumenta. Ojo: el área circular depende de \(D^2\), no de \(D\).</p></div></details>
+<details class="explain"><summary>Bernoulli</summary><div class="inside"><p>Relaciona presión, altura y velocidad. Se usa con flujo estacionario, fluido incompresible, no viscoso, sin pérdidas ni bombas, y sobre una misma línea de corriente.</p><p>En tubería horizontal se cancela \(\rho gy\). Entonces donde la velocidad sube, la presión baja.</p></div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>Usar Bernoulli sin continuidad.</li><li>Olvidar el término de altura si la tubería no es horizontal.</li><li>Sumar presión atmosférica cuando aparece de ambos lados y se cancela.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C13 VENTURI PITOT TORRICELLI -->
+<div class="topic-card h-cyan">
+<div class="topic-head"><span class="num">C13</span> Venturi, Pitot y Torricelli</div>
+<div class="topic-body">
+<div class="frow">
+<div class="fml">\[ \Delta p=\rho gh \]</div>
+<div class="fml fml-amber">\[ \Delta p=(\rho_m-\rho_f)gh \]</div>
+</div>
+<div class="fml">\[ \tfrac12\rho_f(v_2^2-v_1^2)=\Delta p \]</div>
+<div class="frow">
+<div class="fml">\[ p_{est}-p=\tfrac12\rho v^2 \]</div>
+<div class="fml fml-green">\[ v_{Pitot}=\sqrt{2gh} \]</div>
+<div class="fml">\[ v_{Pitot}=\sqrt{\dfrac{2(\rho_m-\rho_f)gh}{\rho_f}} \]</div>
+</div>
+<div class="frow">
+<div class="fml fml-green">\[ v=\sqrt{2gh} \]</div>
+<div class="fml">\[ v=\sqrt{\dfrac{2\Delta p}{\rho}+2gh} \]</div>
+<div class="fml">\[ Q=Av \]</div>
+</div>
+<div class="fml">\[ h_{chorro}=\dfrac{v^2}{2g} \]</div>
+<div class="details-box">
+<details class="explain"><summary>detalle</summary><div class="inside"><ul>
+<li>\(\Delta p\): diferencia de presión; \(\rho_m\): densidad del fluido manométrico; \(\rho_f\): densidad del fluido que circula.</li>
+<li>\(p_{est}\): presión de estancamiento del Pitot; \(p\): presión estática.</li>
+<li>\(h\): altura de columna o desnivel; \(v\): velocidad de salida o del flujo; \(Q\): caudal.</li>
+</ul></div></details>
+<details class="explain"><summary>Venturi</summary><div class="inside"><ol class="steps"><li>Usar continuidad: \(A_1v_1=A_2v_2\).</li><li>Convertir altura manométrica en \(\Delta p\).</li><li>Usar Bernoulli horizontal: \(p_1-p_2=\tfrac12\rho_f(v_2^2-v_1^2)\).</li><li>Despejar velocidad, caudal, diámetro o altura.</li></ol></div></details>
+<details class="explain"><summary>Pitot</summary><div class="inside"><p>El Pitot compara presión estática con presión de estancamiento. En el punto de estancamiento la velocidad es cero, por eso la diferencia de presión vale \(\tfrac12\rho v^2\).</p></div></details>
+<details class="explain"><summary>tanques y chorros</summary><div class="inside"><p>Si el tanque es grande, \(v_{superficie}\approx0\). Si está abierto y la salida también está a atmósfera: \(v=\sqrt{2gh}\). Si está presurizado, agregar \(2\Delta p/\rho\) dentro de la raíz.</p><p>Después de obtener la velocidad del chorro vertical, la altura se calcula con \(h=v^2/(2g)\).</p></div></details>
+<details class="explain"><summary>errores típicos</summary><div class="inside"><ul><li>Usar \(\rho_mgh\) en vez de \((\rho_m-\rho_f)gh\) cuando el manómetro mide una tubería con otro fluido.</li><li>Aplicar Torricelli sin verificar que el tanque sea grande.</li><li>Olvidar calcular \(Q=Av\) después de hallar velocidad.</li></ul></div></details>
+</div>
+</div>
+</div>
+<!-- C14 GUIA RAPIDA -->
+<div class="topic-card h-red">
+<div class="topic-head"><span class="num">C14</span> Guía rápida para elegir fórmula</div>
+<div class="topic-body">
+<ul class="blist">
+<li>Choque con pivote: usar \(L_i=L_f\). No conservar energía si es inelástico.</li>
+<li>Cuerpo con eje fijo: usar \(\sum\tau=I\alpha\) y \(E_c=\tfrac12I\omega^2\).</li>
+<li>Rodadura: usar \(v_{CM}=R\omega\), \(a_{CM}=R\alpha\) y energía traslacional + rotacional.</li>
+<li>Polea con masa: usar \(\sum\tau=I\alpha\). No asumir \(T_1=T_2\).</li>
+<li>Equilibrio: usar \(\sum F_x=0\), \(\sum F_y=0\), \(\sum\tau=0\).</li>
+<li>Resorte: usar \(x''+\Omega^2x=0\), \(\Omega=\sqrt{k/m}\).</li>
+<li>Péndulo físico: usar \(I_P\theta''=-Mgd\theta\).</li>
+<li>Fluido quieto: usar \(p=p_0+\rho gh\) y \(E=\rho gV_{sumergido}\).</li>
+<li>Fluido en movimiento: usar \(Q=Av\) y Bernoulli.</li>
+</ul>
+<div class="details-box">
+<details class="explain"><summary>regla mental</summary><div class="inside"><p>Primero identificá qué te piden: choque, rotación, equilibrio, oscilación, fluido quieto o fluido en movimiento. Después recién elegí fórmula. La mayoría de errores salen de usar una fórmula correcta en el tipo de ejercicio equivocado.</p></div></details>
+</div>
+</div>
+</div>
+</div><script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const side=document.getElementById('physicsSummaryIndex'),links=document.getElementById('physicsIndexLinks');
+ document.querySelectorAll('.part-header,.topic-card').forEach((el,i)=>{
+   if(!el.id)el.id='fisica-tema-'+(i+1);
+   const label=el.classList.contains('part-header')?el.querySelector('h2')?.textContent:el.querySelector('.topic-head')?.textContent;
+   if(!label)return;const a=document.createElement('a');a.href='#'+el.id;a.textContent=label.trim();if(el.classList.contains('part-header'))a.className='part-link';links.appendChild(a);
+ });
+ const input=document.getElementById('physicsSummarySearch');
+ input.addEventListener('input',()=>{const q=input.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');document.querySelectorAll('.topic-card').forEach(card=>{const t=card.textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');card.classList.toggle('hidden-topic',q&&!t.includes(q))})});
+ document.getElementById('physicsIndexButton').onclick=()=>side.classList.toggle('open');
+ links.onclick=e=>{if(e.target.closest('a')&&innerWidth<=850)side.classList.remove('open')};
+});
+</script></body></html>
