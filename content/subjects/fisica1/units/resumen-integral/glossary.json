@@ -1,3 +1,174 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "id": "fisica-glosario-posicion",
+      "term": "Posición",
+      "definition": "Ubicación de un cuerpo respecto de un sistema de referencia.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-velocidad",
+      "term": "Velocidad",
+      "definition": "Tasa de cambio de la posición; es una magnitud vectorial.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-aceleracion",
+      "term": "Aceleración",
+      "definition": "Tasa de cambio de la velocidad, tanto en módulo como en dirección.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-fuerza",
+      "term": "Fuerza",
+      "definition": "Interacción capaz de modificar el movimiento; su resultante satisface ΣF = ma.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-dcl",
+      "term": "Diagrama de cuerpo libre",
+      "definition": "Representación del cuerpo aislado con todas y sólo las fuerzas externas que actúan sobre él.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-trabajo",
+      "term": "Trabajo",
+      "definition": "Transferencia de energía producida por una fuerza a lo largo de un desplazamiento.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-energia",
+      "term": "Energía mecánica",
+      "definition": "Suma de las energías cinética y potencial de un sistema.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-impulso",
+      "term": "Impulso",
+      "definition": "Integral de la fuerza en el tiempo; equivale al cambio de cantidad de movimiento.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-torque",
+      "term": "Torque",
+      "definition": "Momento de una fuerza respecto de un punto o eje; produce aceleración angular.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-inercia",
+      "term": "Momento de inercia",
+      "definition": "Medida de la resistencia de un cuerpo a cambiar su movimiento rotacional; depende del eje.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-mas",
+      "term": "Movimiento armónico simple",
+      "definition": "Oscilación cuya aceleración es proporcional y opuesta al desplazamiento.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-presion",
+      "term": "Presión",
+      "definition": "Fuerza normal por unidad de área.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-empuje",
+      "term": "Empuje",
+      "definition": "Fuerza vertical ascendente igual al peso del fluido desplazado.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-caudal",
+      "term": "Caudal",
+      "definition": "Volumen de fluido que atraviesa una sección por unidad de tiempo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-incertidumbre",
+      "term": "Incertidumbre",
+      "definition": "Intervalo asociado a una medición que expresa la resolución y dispersión del procedimiento.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-precision",
+      "term": "Precisión",
+      "definition": "Grado de concordancia entre mediciones repetidas.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-exactitud",
+      "term": "Exactitud",
+      "definition": "Cercanía entre un resultado y el valor de referencia.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    }
+  ]
 }
