@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id":"qg","type":"subject","label":"Química General"},
+    {"id":"formulas","type":"concept","label":"Fórmulas y ecuaciones"},
+    {"id":"mol","type":"concept","label":"Mol y masa molar"},
+    {"id":"estequiometria","type":"concept","label":"Estequiometría"},
+    {"id":"gases","type":"concept","label":"Gases"},
+    {"id":"soluciones","type":"concept","label":"Soluciones"},
+    {"id":"diluciones","type":"concept","label":"Diluciones"}
+  ],
+  "edges": [
+    {"from":"formulas","to":"mol","type":"requires"},
+    {"from":"mol","to":"estequiometria","type":"requires"},
+    {"from":"estequiometria","to":"gases","type":"related-to"},
+    {"from":"estequiometria","to":"soluciones","type":"requires"},
+    {"from":"soluciones","to":"diluciones","type":"requires"},
+    {"from":"qg","to":"formulas","type":"related-to"},
+    {"from":"qg","to":"gases","type":"related-to"},
+    {"from":"qg","to":"soluciones","type":"related-to"}
+  ]
+}
