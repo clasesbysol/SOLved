@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    {
+      "id": "quimica-general-primer-tramo",
+      "title": "Química General · base y primer tramo",
+      "text": "Recorrido inicial para Técnico Químico: formuleo operativo, mol, balanceo, estequiometría, gases, soluciones, diluciones y una introducción a neutralización, organizado a partir del diseño curricular oficial de CABA.",
+      "kind": "theory",
+      "references": [
+        {"sourceId": "dc-quimica-caba"},
+        {"sourceId": "et27-quimica-general"}
+      ]
+    }
+  ]
+}
