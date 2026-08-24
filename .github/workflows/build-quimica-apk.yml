@@ -6,6 +6,11 @@ on:
       - 'android-chemistry/**'
       - 'content/subjects/quimica_general/units/primer-tramo/**'
       - '.github/workflows/build-quimica-apk.yml'
+  pull_request:
+    paths:
+      - 'android-chemistry/**'
+      - 'content/subjects/quimica_general/units/primer-tramo/**'
+      - '.github/workflows/build-quimica-apk.yml'
   workflow_dispatch:
 
 jobs:
