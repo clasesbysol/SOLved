@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "document": "summary.html",
+  "exerciseDocument": "exercises.html",
   "formulaDocument": "original.html",
   "blocks": []
 }

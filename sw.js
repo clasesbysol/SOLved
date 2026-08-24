@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0105-1";
+const CACHE_VERSION = "biblioteca-lbt-v0108-1";
 const CORE = [
   "./",
   "./index.html",
@@ -18,6 +18,7 @@ const CORE = [
   "./js/organic-mind-map.js?v=0.7.3",
   "./js/fisica-first-partial-guide.js?v=1.1.0",
   "./js/fisica-topic-intros.js?v=1.2.0",
+  "./content/subjects/fisica1/units/resumen-integral/physics-mind-map.json?v=1.2.0",
   "./js/reading-mode-v2.js?v=1.1.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.8.4",
