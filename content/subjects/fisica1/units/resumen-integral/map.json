@@ -1,86 +1,10 @@
 {
   "nodes": [
     {
-      "id": "fisica-mapa-raiz",
+      "id": "fisica-map-entry",
       "type": "subject",
-      "label": "Física I"
-    },
-    {
-      "id": "fisica-mapa-cinematica",
-      "type": "concept",
-      "label": "Cinemática"
-    },
-    {
-      "id": "fisica-mapa-dinamica",
-      "type": "concept",
-      "label": "Dinámica"
-    },
-    {
-      "id": "fisica-mapa-energia",
-      "type": "concept",
-      "label": "Trabajo y energía"
-    },
-    {
-      "id": "fisica-mapa-momento",
-      "type": "concept",
-      "label": "Cantidad de movimiento"
-    },
-    {
-      "id": "fisica-mapa-lab",
-      "type": "concept",
-      "label": "Medición e incertidumbre"
-    },
-    {
-      "id": "fisica-mapa-rotacion",
-      "type": "concept",
-      "label": "Rotación y equilibrio"
-    },
-    {
-      "id": "fisica-mapa-oscilaciones",
-      "type": "concept",
-      "label": "Oscilaciones"
-    },
-    {
-      "id": "fisica-mapa-fluidos",
-      "type": "concept",
-      "label": "Fluidos"
+      "label": "Mapa mental integral de Física I"
     }
   ],
-  "edges": [
-    {
-      "from": "fisica-mapa-cinematica",
-      "to": "fisica-mapa-dinamica",
-      "type": "related-to"
-    },
-    {
-      "from": "fisica-mapa-dinamica",
-      "to": "fisica-mapa-energia",
-      "type": "related-to"
-    },
-    {
-      "from": "fisica-mapa-dinamica",
-      "to": "fisica-mapa-momento",
-      "type": "related-to"
-    },
-    {
-      "from": "fisica-mapa-raiz",
-      "to": "fisica-mapa-lab",
-      "type": "belongs-to"
-    },
-    {
-      "from": "fisica-mapa-raiz",
-      "to": "fisica-mapa-rotacion",
-      "type": "belongs-to"
-    },
-    {
-      "from": "fisica-mapa-raiz",
-      "to": "fisica-mapa-oscilaciones",
-      "type": "belongs-to"
-    },
-    {
-      "from": "fisica-mapa-raiz",
-      "to": "fisica-mapa-fluidos",
-      "type": "belongs-to"
-    }
-  ]
+  "edges": []
 }

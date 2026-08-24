@@ -1,9 +1,19 @@
 {
   "entries": [
     {
-      "id": "fisica-glosario-posicion",
+      "id": "fisica-glosario-1",
+      "term": "Sistema de referencia",
+      "definition": "Conjunto formado por un origen, ejes coordenados y un reloj respecto del cual se describen posiciones y movimientos.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-2",
       "term": "Posición",
-      "definition": "Ubicación de un cuerpo respecto de un sistema de referencia.",
+      "definition": "Vector que ubica un cuerpo respecto del origen del sistema de referencia.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -11,9 +21,9 @@
       ]
     },
     {
-      "id": "fisica-glosario-velocidad",
-      "term": "Velocidad",
-      "definition": "Tasa de cambio de la posición; es una magnitud vectorial.",
+      "id": "fisica-glosario-3",
+      "term": "Desplazamiento",
+      "definition": "Cambio de posición entre dos instantes. Es vectorial y no coincide necesariamente con la distancia recorrida.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -21,9 +31,59 @@
       ]
     },
     {
-      "id": "fisica-glosario-aceleracion",
+      "id": "fisica-glosario-4",
+      "term": "Trayectoria",
+      "definition": "Conjunto de posiciones sucesivas ocupadas por un móvil.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-5",
+      "term": "Distancia recorrida",
+      "definition": "Longitud total de la trayectoria. Es escalar y siempre no negativa.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-6",
+      "term": "Velocidad media",
+      "definition": "Cociente entre desplazamiento e intervalo de tiempo; informa el cambio neto de posición.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-7",
+      "term": "Velocidad instantánea",
+      "definition": "Derivada de la posición respecto del tiempo; es tangente a la trayectoria.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-8",
+      "term": "Rapidez",
+      "definition": "Módulo de la velocidad. Es una magnitud escalar.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-9",
       "term": "Aceleración",
-      "definition": "Tasa de cambio de la velocidad, tanto en módulo como en dirección.",
+      "definition": "Derivada de la velocidad respecto del tiempo; puede cambiar su módulo, su dirección o ambos.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -31,9 +91,159 @@
       ]
     },
     {
-      "id": "fisica-glosario-fuerza",
+      "id": "fisica-glosario-10",
+      "term": "MRU",
+      "definition": "Movimiento rectilíneo con velocidad constante y aceleración nula.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-11",
+      "term": "MRUV",
+      "definition": "Movimiento rectilíneo con aceleración constante; sus ecuaciones no valen para aceleración variable.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-12",
+      "term": "Caída libre",
+      "definition": "Movimiento sometido únicamente a la gravedad, despreciando el rozamiento con el aire.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-13",
+      "term": "Vector",
+      "definition": "Magnitud definida por módulo, dirección y sentido.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-14",
+      "term": "Componente",
+      "definition": "Proyección de un vector sobre un eje elegido.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-15",
+      "term": "Versor",
+      "definition": "Vector de módulo uno que indica una dirección y un sentido.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-16",
+      "term": "Producto escalar",
+      "definition": "Operación entre vectores cuyo resultado es un escalar; mide cuánto apunta uno en la dirección del otro.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-17",
+      "term": "Producto vectorial",
+      "definition": "Operación cuyo resultado es perpendicular al plano de los vectores y cuyo módulo mide el área del paralelogramo que forman.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-18",
+      "term": "Movimiento relativo",
+      "definition": "Descripción del movimiento de un cuerpo visto desde otro sistema de referencia.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-19",
+      "term": "Velocidad angular",
+      "definition": "Rapidez con la que cambia el ángulo; se mide en radianes por segundo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-20",
+      "term": "Período",
+      "definition": "Tiempo necesario para completar un ciclo o una vuelta.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-21",
+      "term": "Frecuencia",
+      "definition": "Cantidad de ciclos por unidad de tiempo; es la inversa del período.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-22",
+      "term": "Aceleración centrípeta",
+      "definition": "Componente de la aceleración dirigida hacia el centro que cambia la dirección de la velocidad.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-23",
+      "term": "Aceleración tangencial",
+      "definition": "Componente que cambia el módulo de la velocidad en un movimiento curvo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-24",
+      "term": "Inercia",
+      "definition": "Tendencia de un cuerpo a conservar su estado de reposo o movimiento rectilíneo uniforme.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-25",
       "term": "Fuerza",
-      "definition": "Interacción capaz de modificar el movimiento; su resultante satisface ΣF = ma.",
+      "definition": "Interacción vectorial capaz de cambiar la cantidad de movimiento de un cuerpo.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -41,7 +251,17 @@
       ]
     },
     {
-      "id": "fisica-glosario-dcl",
+      "id": "fisica-glosario-26",
+      "term": "Fuerza neta",
+      "definition": "Suma vectorial de todas las fuerzas externas que actúan sobre el cuerpo elegido.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-27",
       "term": "Diagrama de cuerpo libre",
       "definition": "Representación del cuerpo aislado con todas y sólo las fuerzas externas que actúan sobre él.",
       "references": [
@@ -51,9 +271,79 @@
       ]
     },
     {
-      "id": "fisica-glosario-trabajo",
+      "id": "fisica-glosario-28",
+      "term": "Peso",
+      "definition": "Fuerza gravitatoria ejercida por la Tierra sobre un cuerpo; cerca de la superficie vale mg.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-29",
+      "term": "Normal",
+      "definition": "Fuerza de contacto perpendicular a la superficie; no es necesariamente igual al peso.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-30",
+      "term": "Tensión",
+      "definition": "Fuerza transmitida por una cuerda o cable ideal, dirigida a lo largo de él.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-31",
+      "term": "Rozamiento estático",
+      "definition": "Fuerza que evita el deslizamiento y se ajusta desde cero hasta un valor máximo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-32",
+      "term": "Rozamiento cinético",
+      "definition": "Fuerza que se opone al deslizamiento entre superficies y cuyo módulo ideal es proporcional a la normal.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-33",
+      "term": "Equilibrio",
+      "definition": "Estado con aceleración lineal y angular nulas; exige fuerza neta y torque neto iguales a cero.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-34",
+      "term": "Ley de Hooke",
+      "definition": "Modelo lineal de un resorte ideal: la fuerza restauradora es proporcional y opuesta a la deformación.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-35",
       "term": "Trabajo",
-      "definition": "Transferencia de energía producida por una fuerza a lo largo de un desplazamiento.",
+      "definition": "Transferencia de energía debida a la componente de una fuerza paralela al desplazamiento.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -61,9 +351,29 @@
       ]
     },
     {
-      "id": "fisica-glosario-energia",
+      "id": "fisica-glosario-36",
+      "term": "Energía cinética",
+      "definition": "Energía asociada al movimiento traslacional de un cuerpo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-37",
+      "term": "Energía potencial",
+      "definition": "Energía asociada a la configuración de un sistema bajo fuerzas conservativas.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-38",
       "term": "Energía mecánica",
-      "definition": "Suma de las energías cinética y potencial de un sistema.",
+      "definition": "Suma de las energías cinética y potencial.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -71,7 +381,37 @@
       ]
     },
     {
-      "id": "fisica-glosario-impulso",
+      "id": "fisica-glosario-39",
+      "term": "Fuerza conservativa",
+      "definition": "Fuerza cuyo trabajo depende sólo de las posiciones inicial y final y permite definir energía potencial.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-40",
+      "term": "Potencia",
+      "definition": "Rapidez con la que se realiza trabajo o se transfiere energía.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-41",
+      "term": "Cantidad de movimiento",
+      "definition": "Producto de masa y velocidad; es vectorial y se conserva si el impulso externo es nulo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-42",
       "term": "Impulso",
       "definition": "Integral de la fuerza en el tiempo; equivale al cambio de cantidad de movimiento.",
       "references": [
@@ -81,9 +421,9 @@
       ]
     },
     {
-      "id": "fisica-glosario-torque",
-      "term": "Torque",
-      "definition": "Momento de una fuerza respecto de un punto o eje; produce aceleración angular.",
+      "id": "fisica-glosario-43",
+      "term": "Choque elástico",
+      "definition": "Colisión que conserva cantidad de movimiento y energía cinética.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -91,9 +431,9 @@
       ]
     },
     {
-      "id": "fisica-glosario-inercia",
-      "term": "Momento de inercia",
-      "definition": "Medida de la resistencia de un cuerpo a cambiar su movimiento rotacional; depende del eje.",
+      "id": "fisica-glosario-44",
+      "term": "Choque inelástico",
+      "definition": "Colisión que conserva cantidad de movimiento pero no energía cinética.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -101,9 +441,9 @@
       ]
     },
     {
-      "id": "fisica-glosario-mas",
-      "term": "Movimiento armónico simple",
-      "definition": "Oscilación cuya aceleración es proporcional y opuesta al desplazamiento.",
+      "id": "fisica-glosario-45",
+      "term": "Centro de masa",
+      "definition": "Punto promedio de la distribución de masa cuyo movimiento responde a la fuerza externa neta.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -111,39 +451,9 @@
       ]
     },
     {
-      "id": "fisica-glosario-presion",
-      "term": "Presión",
-      "definition": "Fuerza normal por unidad de área.",
-      "references": [
-        {
-          "sourceId": "fisica-html"
-        }
-      ]
-    },
-    {
-      "id": "fisica-glosario-empuje",
-      "term": "Empuje",
-      "definition": "Fuerza vertical ascendente igual al peso del fluido desplazado.",
-      "references": [
-        {
-          "sourceId": "fisica-html"
-        }
-      ]
-    },
-    {
-      "id": "fisica-glosario-caudal",
-      "term": "Caudal",
-      "definition": "Volumen de fluido que atraviesa una sección por unidad de tiempo.",
-      "references": [
-        {
-          "sourceId": "fisica-html"
-        }
-      ]
-    },
-    {
-      "id": "fisica-glosario-incertidumbre",
+      "id": "fisica-glosario-46",
       "term": "Incertidumbre",
-      "definition": "Intervalo asociado a una medición que expresa la resolución y dispersión del procedimiento.",
+      "definition": "Intervalo asociado a una medición que expresa la resolución y variabilidad del procedimiento.",
       "references": [
         {
           "sourceId": "fisica-html"
@@ -151,7 +461,37 @@
       ]
     },
     {
-      "id": "fisica-glosario-precision",
+      "id": "fisica-glosario-47",
+      "term": "Error sistemático",
+      "definition": "Sesgo que desplaza repetidamente las mediciones en una misma dirección y no desaparece promediando.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-48",
+      "term": "Error aleatorio",
+      "definition": "Variación impredecible entre mediciones que produce dispersión y puede reducirse mediante repeticiones.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-49",
+      "term": "Exactitud",
+      "definition": "Cercanía de un resultado al valor de referencia.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-50",
       "term": "Precisión",
       "definition": "Grado de concordancia entre mediciones repetidas.",
       "references": [
@@ -161,9 +501,239 @@
       ]
     },
     {
-      "id": "fisica-glosario-exactitud",
-      "term": "Exactitud",
-      "definition": "Cercanía entre un resultado y el valor de referencia.",
+      "id": "fisica-glosario-51",
+      "term": "Propagación de incertidumbres",
+      "definition": "Cálculo de la incertidumbre de una magnitud obtenida a partir de otras magnitudes medidas.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-52",
+      "term": "Linealización",
+      "definition": "Transformación de variables que permite representar una relación mediante una recta y extraer parámetros de su pendiente u ordenada.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-53",
+      "term": "Torque",
+      "definition": "Efecto rotacional de una fuerza respecto de un punto o eje.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-54",
+      "term": "Momento de inercia",
+      "definition": "Medida de cómo está distribuida la masa respecto de un eje y de la resistencia a cambiar la rotación.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-55",
+      "term": "Momento angular",
+      "definition": "Magnitud rotacional cuya variación es producida por el torque externo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-56",
+      "term": "Rodadura sin deslizamiento",
+      "definition": "Movimiento en el que el punto de contacto está instantáneamente en reposo y se cumple la restricción v=ωR.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-57",
+      "term": "Movimiento armónico simple",
+      "definition": "Oscilación producida por una fuerza restauradora lineal, con aceleración opuesta y proporcional al desplazamiento.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-58",
+      "term": "Amplitud",
+      "definition": "Máximo desplazamiento respecto de la posición de equilibrio.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-59",
+      "term": "Fase",
+      "definition": "Estado del ciclo oscilatorio que fija la posición y el sentido de movimiento en un instante.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-60",
+      "term": "Presión",
+      "definition": "Fuerza normal por unidad de área.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-61",
+      "term": "Densidad",
+      "definition": "Masa por unidad de volumen.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-62",
+      "term": "Presión manométrica",
+      "definition": "Diferencia entre la presión absoluta y la atmosférica.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-63",
+      "term": "Principio de Pascal",
+      "definition": "Una variación de presión aplicada a un fluido confinado se transmite a todos sus puntos.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-64",
+      "term": "Empuje",
+      "definition": "Fuerza vertical ascendente igual al peso del fluido desplazado.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-65",
+      "term": "Caudal volumétrico",
+      "definition": "Volumen de fluido que atraviesa una sección por unidad de tiempo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-66",
+      "term": "Flujo estacionario",
+      "definition": "Flujo cuyas variables en cada punto no cambian con el tiempo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-67",
+      "term": "Ecuación de continuidad",
+      "definition": "Expresión de conservación de masa; para fluido incompresible establece que Av permanece constante.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-68",
+      "term": "Ecuación de Bernoulli",
+      "definition": "Balance de energía mecánica por unidad de volumen para flujo estacionario, incompresible y no viscoso.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-69",
+      "term": "Viscosidad",
+      "definition": "Medida de la resistencia interna de un fluido a deformarse y fluir.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-70",
+      "term": "Número de Reynolds",
+      "definition": "Parámetro adimensional que compara efectos inerciales y viscosos y ayuda a distinguir regímenes de flujo.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-71",
+      "term": "Línea de corriente",
+      "definition": "Curva tangente en cada punto al vector velocidad del fluido.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-72",
+      "term": "Venturi",
+      "definition": "Dispositivo que infiere caudal mediante el cambio de velocidad y presión causado por una reducción de sección.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-73",
+      "term": "Tubo de Pitot",
+      "definition": "Instrumento que obtiene velocidad comparando presión estática y presión de estancamiento.",
+      "references": [
+        {
+          "sourceId": "fisica-html"
+        }
+      ]
+    },
+    {
+      "id": "fisica-glosario-74",
+      "term": "Ley de Torricelli",
+      "definition": "Resultado ideal que relaciona la velocidad de salida de un tanque grande con el desnivel de carga.",
       "references": [
         {
           "sourceId": "fisica-html"
