@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "id": "dc-quimica-caba",
+      "title": "Diseño Curricular Jurisdiccional del Segundo Ciclo de la Modalidad Técnico Profesional de Nivel Secundario · Especialidad Química · Resolución 4149/SSGECP/2012",
+      "authors": ["Ministerio de Educación de la Ciudad de Buenos Aires"],
+      "year": 2012,
+      "private": false
+    },
+    {
+      "id": "et27-quimica-general",
+      "title": "ET 27 Hipólito Yrigoyen · Química General · segundo ciclo de la especialidad Química",
+      "authors": ["Gobierno de la Ciudad Autónoma de Buenos Aires"],
+      "year": 2026,
+      "private": false
+    }
+  ]
+}
