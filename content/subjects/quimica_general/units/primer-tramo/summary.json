@@ -3,7 +3,7 @@
     {
       "id": "quimica-general-primer-tramo",
       "title": "Química General · primer tramo",
-      "text": "Fórmulas y ecuaciones, mol y masa molar, estequiometría, gases, soluciones, diluciones y neutralización.",
+      "text": "Formuleo y estados de oxidación, mol, regla de tres, estequiometría, gases y Dalton, machete de concentraciones, fracción molar, diluciones y factor de dilución, neutralización y problemas resueltos e integradores.",
       "kind": "theory",
       "references": [
         {"sourceId": "dc-quimica-caba"},
