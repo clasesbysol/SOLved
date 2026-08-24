@@ -1,325 +1,3691 @@
 {
   "exercises": [
     {
-      "id": "fisica-ej-cinematica",
+      "id": "fisica1-g1-p01",
       "origin": "source",
-      "prompt": "Un móvil parte con 2 m/s y acelera uniformemente a 3 m/s² durante 4 s. Hallar la velocidad final y el desplazamiento.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 1,
+      "prompt": "Guía 1 · Repaso matemático · Problema 1. Determine el módulo y la dirección de los siguientes vectores. Represéntelos gráficamente. a) A = (−4; 3) b) B = (2; 0) c) C = −2 î − 3 j d) D = 0 î – 5 j RESOLUCIÓN EXPLICADA — Para un vector (x,y), el módulo es √(x²+y²) y la dirección se obtiene con atan2(y,x), que ubica correctamente el cuadrante. A: |A|=√((-4)²+3²)=5 y θ=143.13°. B: |B|=2 y θ=0°. C: |C|=√13≈3.61 y θ=236.31° (equivalente a -123.69°). D: |D|=5 y θ=270° (equivalente a -90°).",
       "basedOn": [],
-      "breakdown": [
-        "v=v₀+at=14 m/s.",
-        "Δx=v₀t+(1/2)at²=32 m."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "v=v₀+at=14 m/s.",
-        "Δx=v₀t+(1/2)at²=32 m."
+        "Para un vector (x,y), el módulo es √(x²+y²) y la dirección se obtiene con atan2(y,x), que ubica correctamente el cuadrante. A: |A|=√((-4)²+3²)=5 y θ=143.13°. B: |B|=2 y θ=0°. C: |C|=√13≈3.61 y θ=236.31° (equivalente a -123.69°). D: |D|=5 y θ=270° (equivalente a -90°)."
       ],
-      "result": "v=14 m/s; Δx=32 m.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-vectores",
+      "id": "fisica1-g1-p02",
       "origin": "source",
-      "prompt": "Dado A=(3,4), hallar módulo y ángulo medido desde +x.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 2,
+      "prompt": "Guía 1 · Repaso matemático · Problema 2. Dados los vectores del ejercicio anterior, halle vectores de módulo 1 en su misma dirección y sentido. RESOLUCIÓN EXPLICADA — El versor asociado a V se calcula como V/|V|. Por lo tanto: uA=(-4/5,3/5); uB=(1,0); uC=(-2/√13,-3/√13); uD=(0,-1). En todos los casos el módulo del resultado es 1.",
       "basedOn": [],
-      "breakdown": [
-        "|A|=√(3²+4²)=5.",
-        "θ=atan2(4,3)=53,1°."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "|A|=√(3²+4²)=5.",
-        "θ=atan2(4,3)=53,1°."
+        "El versor asociado a V se calcula como V/|V|. Por lo tanto: uA=(-4/5,3/5); uB=(1,0); uC=(-2/√13,-3/√13); uD=(0,-1). En todos los casos el módulo del resultado es 1."
       ],
-      "result": "|A|=5; θ=53,1°.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-newton",
+      "id": "fisica1-g1-p03",
       "origin": "source",
-      "prompt": "Un bloque de 2 kg recibe una fuerza horizontal de 10 N sobre una mesa sin rozamiento. Hallar la aceleración.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 3,
+      "prompt": "Guía 1 · Repaso matemático · Problema 3. Le han pedido a usted programar un brazo robot de una línea de ensamble que se mueve en el plano xy. Su primer desplazamiento es A; el segundo es B, de magnitud 6.40 cm y dirección 63o medida en el sentido del eje +x al eje -y. La resultante de los dos desplazamientos también debería tener una magnitud de 6.40 cm, pero una dirección de 22o medida en el sentido del eje +x al eje +y. Obtenga el módulo de A. RESOLUCIÓN EXPLICADA — Se toma +x hacia el este y +y hacia arriba. B=(6.40 cos63°,-6.40 sen63°)=(2.906,-5.702) cm. La resultante es R=(6.40 cos22°,6.40 sen22°)=(5.934,2.397) cm. Como A+B=R, A=R-B=(3.028,8.100) cm. Entonces |A|=√(3.028²+8.100²)=8.65 cm.",
       "basedOn": [],
-      "breakdown": [
-        "N−mg=0.",
-        "10=2a.",
-        "a=5 m/s²."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "N−mg=0.",
-        "10=2a.",
-        "a=5 m/s²."
+        "Se toma +x hacia el este y +y hacia arriba. B=(6.40 cos63°,-6.40 sen63°)=(2.906,-5.702) cm. La resultante es R=(6.40 cos22°,6.40 sen22°)=(5.934,2.397) cm. Como A+B=R, A=R-B=(3.028,8.100) cm. Entonces |A|=√(3.028²+8.100²)=8.65 cm."
       ],
-      "result": "a=5 m/s².",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-energia",
+      "id": "fisica1-g1-p04",
       "origin": "source",
-      "prompt": "Un cuerpo cae desde 5 m, partiendo del reposo y sin rozamiento. Hallar la rapidez al llegar abajo.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 4,
+      "prompt": "Guía 1 · Repaso matemático · Problema 4. Dos vectores de 6 y 9 unidades de longitud, forman un ángulo entre ellos de (a) 0º, (b) 60º, (c) 90º, (d) 150º y (e) 180º. Encontrar la magnitud y las componentes cartesianas de la resultante en cada caso. RESOLUCIÓN EXPLICADA — Se orienta el vector de 6 unidades sobre +x y el de 9 formando el ángulo θ. Entonces R=(6+9 cosθ,9 senθ). Para 0°: R=(15,0), |R|=15. Para 60°: R=(10.5,7.794), |R|≈13.08. Para 90°: R=(6,9), |R|=√117≈10.82. Para 150°: R=(-1.794,4.5), |R|≈4.84. Para 180°: R=(-3,0), |R|=3.",
       "basedOn": [],
-      "breakdown": [
-        "mgh=(1/2)mv².",
-        "v=√(2gh)=9,90 m/s."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "mgh=(1/2)mv².",
-        "v=√(2gh)=9,90 m/s."
+        "Se orienta el vector de 6 unidades sobre +x y el de 9 formando el ángulo θ. Entonces R=(6+9 cosθ,9 senθ). Para 0°: R=(15,0), |R|=15. Para 60°: R=(10.5,7.794), |R|≈13.08. Para 90°: R=(6,9), |R|=√117≈10.82. Para 150°: R=(-1.794,4.5), |R|≈4.84. Para 180°: R=(-3,0), |R|=3."
       ],
-      "result": "v≈9,90 m/s.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-choque",
+      "id": "fisica1-g1-p05",
       "origin": "source",
-      "prompt": "Un cuerpo de 2 kg a 3 m/s choca con otro de 1 kg en reposo y quedan unidos. Hallar la velocidad final.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 5,
+      "prompt": "Guía 1 · Repaso matemático · Problema 5. Dados A=(3,2,3), B=(4,-3,2) y C=(0,-2,-5), efectúe: a) (A-B)/|C|+C; b) 5A-2C; c) -2A+B-C/5. RESOLUCIÓN EXPLICADA — Con A=(3,2,3), B=(4,-3,2), C=(0,-2,-5) y |C|=√29: a) (A-B)/|C|+C=(-1/√29,5/√29-2,1/√29-5). b) 5A-2C=(15,14,25). c) -2A+B-C/5=(-2,-33/5,-3).",
       "basedOn": [],
-      "breakdown": [
-        "2·3=(2+1)v_f.",
-        "v_f=2 m/s."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "2·3=(2+1)v_f.",
-        "v_f=2 m/s."
+        "Con A=(3,2,3), B=(4,-3,2), C=(0,-2,-5) y |C|=√29: a) (A-B)/|C|+C=(-1/√29,5/√29-2,1/√29-5). b) 5A-2C=(15,14,25). c) -2A+B-C/5=(-2,-33/5,-3)."
       ],
-      "result": "v_f=2 m/s.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-incertidumbre",
+      "id": "fisica1-g1-p06",
       "origin": "source",
-      "prompt": "Informar una longitud de 12,4 cm con incertidumbre 0,1 cm.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 6,
+      "prompt": "Guía 1 · Repaso matemático · Problema 6. Se define el producto escalar por A·B=|A||B|cosθ. Para los versores cartesianos î=(1,0,0), ĵ=(0,1,0) y k̂=(0,0,1), calcule los nueve productos escalares posibles entre ellos. RESOLUCIÓN EXPLICADA — Los versores de una base cartesiana ortonormal tienen módulo 1 y son mutuamente perpendiculares. Por eso î·î=ĵ·ĵ=k̂·k̂=1 y todos los productos entre versores distintos valen 0.",
       "basedOn": [],
-      "breakdown": [
-        "Valor e incertidumbre llevan la misma posición decimal.",
-        "L=(12,4±0,1) cm."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "Valor e incertidumbre llevan la misma posición decimal.",
-        "L=(12,4±0,1) cm."
+        "Los versores de una base cartesiana ortonormal tienen módulo 1 y son mutuamente perpendiculares. Por eso î·î=ĵ·ĵ=k̂·k̂=1 y todos los productos entre versores distintos valen 0."
       ],
-      "result": "L=(12,4±0,1) cm.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-rotacion",
+      "id": "fisica1-g1-p07",
       "origin": "source",
-      "prompt": "Sobre un cuerpo con I=0,50 kg·m² actúa un torque neto de 2 N·m. Hallar α.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 7,
+      "prompt": "Guía 1 · Repaso matemático · Problema 7. Usando la propiedad distributiva del producto escalar y los productos entre versores, demuestre que para A=Axî+Ayĵ+Azk̂ y B=Bxî+Byĵ+Bzk̂ se cumple A·B=AxBx+AyBy+AzBz. RESOLUCIÓN EXPLICADA — Se desarrolla distributivamente (Axî+Ayĵ+Azk̂)·(Bxî+Byĵ+Bzk̂). Los términos con versores diferentes se anulan y los términos î·î, ĵ·ĵ y k̂·k̂ valen 1. Queda A·B=AxBx+AyBy+AzBz.",
       "basedOn": [],
-      "breakdown": [
-        "Στ=Iα.",
-        "α=2/0,50=4 rad/s²."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "Στ=Iα.",
-        "α=2/0,50=4 rad/s²."
+        "Se desarrolla distributivamente (Axî+Ayĵ+Azk̂)·(Bxî+Byĵ+Bzk̂). Los términos con versores diferentes se anulan y los términos î·î, ĵ·ĵ y k̂·k̂ valen 1. Queda A·B=AxBx+AyBy+AzBz."
       ],
-      "result": "α=4 rad/s².",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-equilibrio",
+      "id": "fisica1-g1-p08",
       "origin": "source",
-      "prompt": "Indicar las condiciones de equilibrio estático.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 8,
+      "prompt": "Guía 1 · Repaso matemático · Problema 8. Dos vectores de 4 y 8 unidades de longitud, forman un ángulo entre ellos de a) 0º; b) 30º; c) 90º; d) 120º; e) 180º. Encontrar cuanto vale A . B en cada caso. RESOLUCIÓN EXPLICADA — Se usa A·B=|A||B|cosθ=32cosθ. Para 0° vale 32; para 30°, 16√3≈27.71; para 90°, 0; para 120°, -16; para 180°, -32.",
       "basedOn": [],
-      "breakdown": [
-        "La resultante de fuerzas es cero.",
-        "La suma de torques es cero."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "La resultante de fuerzas es cero.",
-        "La suma de torques es cero."
+        "Se usa A·B=|A||B|cosθ=32cosθ. Para 0° vale 32; para 30°, 16√3≈27.71; para 90°, 0; para 120°, -16; para 180°, -32."
       ],
-      "result": "ΣF=0 y Στ=0.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-resorte",
+      "id": "fisica1-g1-p09",
       "origin": "source",
-      "prompt": "Un resorte de k=200 N/m se comprime 0,10 m. Hallar fuerza y energía.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 9,
+      "prompt": "Guía 1 · Repaso matemático · Problema 9. Efectúe el producto escalar de los vectores A y B y diga si en algún caso A es perpendicular a B. a) A = 3 î – 2 j + k B = − î + 3 k b) A = (2; 3; −1) B = (6; −5; 2) c) |A| = 3 |B| = 2 θ = 60° (θ ángulo entre A y B) RESOLUCIÓN EXPLICADA — a) (3,-2,1)·(-1,0,3)=-3+0+3=0, luego son perpendiculares. b) (2,3,-1)·(6,-5,2)=12-15-2=-5, no son perpendiculares. c) A·B=3·2·cos60°=3, tampoco son perpendiculares.",
       "basedOn": [],
-      "breakdown": [
-        "|F|=kx=20 N.",
-        "U=(1/2)kx²=1 J."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "|F|=kx=20 N.",
-        "U=(1/2)kx²=1 J."
+        "a) (3,-2,1)·(-1,0,3)=-3+0+3=0, luego son perpendiculares. b) (2,3,-1)·(6,-5,2)=12-15-2=-5, no son perpendiculares. c) A·B=3·2·cos60°=3, tampoco son perpendiculares."
       ],
-      "result": "|F|=20 N; U=1 J.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-empuje",
+      "id": "fisica1-g1-p10",
       "origin": "source",
-      "prompt": "Un cuerpo desplaza 0,002 m³ de agua. Hallar el empuje con g=9,8 m/s².",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 10,
+      "prompt": "Guía 1 · Repaso matemático · Problema 10. Ángulos entre vectores: a) ¿Cuál es el ángulo que forma el vector (1, 1) con el eje X? (Ayuda: hay una forma de contestar a esta pregunta sin hacer cálculos). b) ¿Qué ángulo forman una arista cualquiera de un cubo y una diagonal de este que pase por uno de los vértices contenidos por la arista?. RESOLUCIÓN EXPLICADA — a) El vector (1,1) tiene componentes iguales y positivas, por simetría forma 45° con +x. b) Puede representarse una arista por (1,0,0) y la diagonal espacial por (1,1,1). Así cosθ=1/√3 y θ=arccos(1/√3)≈54.74°.",
       "basedOn": [],
-      "breakdown": [
-        "E=ρgV.",
-        "E=1000·9,8·0,002=19,6 N."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "E=ρgV.",
-        "E=1000·9,8·0,002=19,6 N."
+        "a) El vector (1,1) tiene componentes iguales y positivas, por simetría forma 45° con +x. b) Puede representarse una arista por (1,0,0) y la diagonal espacial por (1,1,1). Así cosθ=1/√3 y θ=arccos(1/√3)≈54.74°."
       ],
-      "result": "E=19,6 N.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
     },
     {
-      "id": "fisica-ej-torricelli",
+      "id": "fisica1-g1-p11",
       "origin": "source",
-      "prompt": "Un orificio está 1,25 m debajo de la superficie de un tanque grande. Hallar la rapidez ideal.",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 11,
+      "prompt": "Guía 1 · Repaso matemático · Problema 11. Si A+B=(-4,6,9) y A-B=(8,-2,-3), determine: a) los vectores A y B; b) el ángulo entre A+B y A. RESOLUCIÓN EXPLICADA — Sea S=A+B=(-4,6,9) y D=A-B=(8,-2,-3). Sumando: 2A=S+D, de donde A=(2,2,3). Restando: 2B=S-D, de donde B=(-6,4,6). Para el ángulo entre S y A: cosθ=(S·A)/(|S||A|)=31/(√133√17), por lo que θ≈49.31°.",
       "basedOn": [],
-      "breakdown": [
-        "v=√(2gh).",
-        "v=√(2·9,8·1,25)=4,95 m/s."
-      ],
+      "breakdown": [],
       "data": [],
       "unknowns": [],
       "theory": [],
       "formulas": [],
-      "strategy": "Identificar el modelo, declarar ejes e hipótesis y desarrollar cada igualdad por separado.",
+      "strategy": "",
       "hints": [],
       "solution": [
-        "v=√(2gh).",
-        "v=√(2·9,8·1,25)=4,95 m/s."
+        "Sea S=A+B=(-4,6,9) y D=A-B=(8,-2,-3). Sumando: 2A=S+D, de donde A=(2,2,3). Restando: 2B=S-D, de donde B=(-6,4,6). Para el ángulo entre S y A: cosθ=(S·A)/(|S||A|)=31/(√133√17), por lo que θ≈49.31°."
       ],
-      "result": "v≈4,95 m/s.",
-      "check": "Controlar unidades, signos y orden de magnitud.",
+      "result": "",
+      "check": "",
       "commonErrors": [],
       "related": [],
       "references": [
         {
-          "sourceId": "fisica-html"
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
         }
-      ]
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p12",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 12,
+      "prompt": "Guía 1 · Repaso matemático · Problema 12. Se define A×B=C, con |C|=|A||B|senθ, dirección perpendicular al plano de A y B y sentido dado por la regla de la mano derecha. Para î, ĵ y k̂, calcule los nueve productos vectoriales posibles entre ellos. RESOLUCIÓN EXPLICADA — Por la regla de la mano derecha: î×ĵ=k̂, ĵ×k̂=î y k̂×î=ĵ. Al invertir el orden cambia el signo: ĵ×î=-k̂, k̂×ĵ=-î e î×k̂=-ĵ. El producto de cualquier versor consigo mismo vale 0.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Por la regla de la mano derecha: î×ĵ=k̂, ĵ×k̂=î y k̂×î=ĵ. Al invertir el orden cambia el signo: ĵ×î=-k̂, k̂×ĵ=-î e î×k̂=-ĵ. El producto de cualquier versor consigo mismo vale 0."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p13",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 13,
+      "prompt": "Guía 1 · Repaso matemático · Problema 13. Usando la propiedad distributiva del producto vectorial y los productos entre versores, demuestre que A×B=(AyBz-AzBy, AzBx-AxBz, AxBy-AyBx). RESOLUCIÓN EXPLICADA — Al distribuir A×B aparecen nueve términos. Los productos de un versor consigo mismo son nulos y los seis restantes se reemplazan usando la tabla de la mano derecha. Al agrupar componentes se obtiene A×B=(AyBz-AzBy, AzBx-AxBz, AxBy-AyBx).",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Al distribuir A×B aparecen nueve términos. Los productos de un versor consigo mismo son nulos y los seis restantes se reemplazan usando la tabla de la mano derecha. Al agrupar componentes se obtiene A×B=(AyBz-AzBy, AzBx-AxBz, AxBy-AyBx)."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p14",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 14,
+      "prompt": "Guía 1 · Repaso matemático · Problema 14. Dos vectores de 4 y 8 unidades de longitud, forman un ángulo entre ellos de a) 0º; b) 30º; c) 90º; d) 120º; e) 180º. Encontrar cuanto vale A x B en cada caso. RESOLUCIÓN EXPLICADA — El módulo es |A×B|=|A||B|senθ=32senθ. Para 0° vale 0; para 30°, 16; para 90°, 32; para 120°, 16√3≈27.71; para 180°, 0. La dirección, cuando el módulo no es cero, es perpendicular al plano de A y B y el sentido se fija con la mano derecha.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "El módulo es |A×B|=|A||B|senθ=32senθ. Para 0° vale 0; para 30°, 16; para 90°, 32; para 120°, 16√3≈27.71; para 180°, 0. La dirección, cuando el módulo no es cero, es perpendicular al plano de A y B y el sentido se fija con la mano derecha."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p15",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 15,
+      "prompt": "Guía 1 · Repaso matemático · Problema 15. Sean los vectores A = (3; 2; 1) B = (1; 0; −1) C = (0; −2; 4) calcule: a) B x C b) − 4(B x B) − A c) (A + B) x C d) (A x B) . C RESOLUCIÓN EXPLICADA — Con A=(3,2,1), B=(1,0,-1) y C=(0,-2,4): a) B×C=(-2,-4,-2). b) B×B=0, por lo tanto -4(B×B)-A=(-3,-2,-1). c) (A+B)×C=(4,2,0)×(0,-2,4)=(8,-16,-8). d) A×B=(-2,4,-2) y (A×B)·C=-16.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Con A=(3,2,1), B=(1,0,-1) y C=(0,-2,4): a) B×C=(-2,-4,-2). b) B×B=0, por lo tanto -4(B×B)-A=(-3,-2,-1). c) (A+B)×C=(4,2,0)×(0,-2,4)=(8,-16,-8). d) A×B=(-2,4,-2) y (A×B)·C=-16."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p16",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 16,
+      "prompt": "Guía 1 · Repaso matemático · Problema 16. Si A=î+ĵ+k̂, determine un vector unitario perpendicular a A y además ortogonal al eje x. RESOLUCIÓN EXPLICADA — Un vector ortogonal al eje x debe tener componente x igual a cero: u=(0,a,b). Además debe cumplir u·A=a+b=0, de modo que b=-a. Al normalizar se obtienen los dos sentidos posibles: u=(0,1/√2,-1/√2) o su opuesto.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Un vector ortogonal al eje x debe tener componente x igual a cero: u=(0,a,b). Además debe cumplir u·A=a+b=0, de modo que b=-a. Al normalizar se obtienen los dos sentidos posibles: u=(0,1/√2,-1/√2) o su opuesto."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p17",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 17,
+      "prompt": "Guía 1 · Repaso matemático · Problema 17. Considere los dos vectores que se muestran en la figura. Demuestre que la magnitud del producto vectorial da, numéricamente, el área del paralelogramo formado por los dos vectores componentes como lado. ¿Sugiere esto cómo un elemento de área orientado en el espacio podría estar representado por un vector? RESOLUCIÓN EXPLICADA — El área del paralelogramo es base por altura. Si la base mide |A| y la altura relativa es |B|senθ, entonces área=|A||B|senθ=|A×B|. Esto permite representar un área orientada mediante el vector A×B: su módulo es el área y su dirección es normal al plano.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "El área del paralelogramo es base por altura. Si la base mide |A| y la altura relativa es |B|senθ, entonces área=|A||B|senθ=|A×B|. Esto permite representar un área orientada mediante el vector A×B: su módulo es el área y su dirección es normal al plano."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p18",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 18,
+      "prompt": "Guía 1 · Repaso matemático · Problema 18. Los vectores A=2î+5k̂ y B=2î+3ĵ son lados de un triángulo. a) Determine la longitud del tercer lado. b) Calcule el área del triángulo. c) Determine el ángulo entre la perpendicular al plano del triángulo y el eje z. RESOLUCIÓN EXPLICADA — El tercer lado es B-A=(0,3,-5), cuyo módulo es √34≈5.83. El área del triángulo es |A×B|/2. Como A×B=(-15,10,6), su módulo es 19 y el área vale 9.5. Para la normal dada por A×B, cosθ=6/19, luego θ≈71.60° respecto de +z.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "El tercer lado es B-A=(0,3,-5), cuyo módulo es √34≈5.83. El área del triángulo es |A×B|/2. Como A×B=(-15,10,6), su módulo es 19 y el área vale 9.5. Para la normal dada por A×B, cosθ=6/19, luego θ≈71.60° respecto de +z."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p19",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 19,
+      "prompt": "Guía 1 · Repaso matemático · Problema 19. Se dan A=pî+(1-p)ĵ y B=-2î+3ĵ. a) Calcule p para que A sea perpendicular a B. b) Calcule p para que A sea paralelo a B. RESOLUCIÓN EXPLICADA — A=(p,1-p) y B=(-2,3). a) Para perpendicularidad: A·B=-2p+3(1-p)=3-5p=0, luego p=3/5. b) Para paralelismo, el determinante debe anularse: 3p-[-2(1-p)]=p+2=0, luego p=-2.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "A=(p,1-p) y B=(-2,3). a) Para perpendicularidad: A·B=-2p+3(1-p)=3-5p=0, luego p=3/5. b) Para paralelismo, el determinante debe anularse: 3p-[-2(1-p)]=p+2=0, luego p=-2."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p20",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 20,
+      "prompt": "Guía 1 · Repaso matemático · Problema 20. Demuestre que A.(BxC) es igual en magnitud al volumen del paralelepípedo formado sobre los tres vectores A, B y C. A B RESOLUCIÓN EXPLICADA — La base del paralelepípedo generado por B y C tiene área |B×C|. Si θ es el ángulo entre A y la normal a esa base, la altura es |A||cosθ|. Por tanto V=|B×C||A||cosθ|=|A·(B×C)|.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "La base del paralelepípedo generado por B y C tiene área |B×C|. Si θ es el ángulo entre A y la normal a esa base, la altura es |A||cosθ|. Por tanto V=|B×C||A||cosθ|=|A·(B×C)|."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g1-p21",
+      "origin": "source",
+      "guide": 1,
+      "guideTitle": "Repaso matemático",
+      "number": 21,
+      "prompt": "Guía 1 · Repaso matemático · Problema 21. Dado r(t)=(t³+2t+1)î-e^(2t)ĵ+cos(3t)k̂, halle: a) dr/dt; b) |dr/dt|; c) d²r/dt². Evalúe los tres resultados en t=0 y t=π/6. RESOLUCIÓN EXPLICADA — r(t)=(t³+2t+1,-e^(2t),cos3t). Entonces r′(t)=(3t²+2,-2e^(2t),-3sen3t), |r′(t)|=√[(3t²+2)²+4e^(4t)+9sen²(3t)] y r″(t)=(6t,-4e^(2t),-9cos3t). En t=0: r′=(2,-2,0), |r′|=2√2 y r″=(0,-4,-9). En t=π/6: r′=(π²/12+2,-2e^(π/3),-3), |r′|=√[(π²/12+2)²+4e^(2π/3)+9] y r″=(π,-4e^(π/3),0).",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "r(t)=(t³+2t+1,-e^(2t),cos3t). Entonces r′(t)=(3t²+2,-2e^(2t),-3sen3t), |r′(t)|=√[(3t²+2)²+4e^(4t)+9sen²(3t)] y r″(t)=(6t,-4e^(2t),-9cos3t). En t=0: r′=(2,-2,0), |r′|=2√2 y r″=(0,-4,-9). En t=π/6: r′=(π²/12+2,-2e^(π/3),-3), |r′|=√[(π²/12+2)²+4e^(2π/3)+9] y r″=(π,-4e^(π/3),0)."
+      ],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "resolved"
+    },
+    {
+      "id": "fisica1-g2-p01",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 1,
+      "prompt": "Guía 2 · Cinemática · Problema 1. Un radar detecta un avión moviéndose horizontalmente en línea recta que se aproxima hacia él desde el este. En el primer contacto, la distancia del radar al avión es de 18 km con un ángulo de 40° sobre el horizonte. El avión es detectado nuevamente, ya alejándose, luego de 1.5 minutos a una distancia de 14000 m. Determine: a) La altura de vuelo del avión. b) El vector desplazamiento y velocidad media del avión entre los puntos de detección. c) Obtenga el tiempo transcurrido desde la primera detección hasta que pasa por arriba del radar, asumiendo que el avión viaja a velocidad constante.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p02",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 2,
+      "prompt": "Guía 2 · Cinemática · Problema 2. La población A está situada 160 km al Este y 120 km al Norte, con respecto a la población 𝑀𝑀. La población B se sitúa 90 km al Sur, también con respecto a 𝑀𝑀. Una avioneta realiza un viaje de 3 tramos, sale de A a las 7: 00 h y pasa por B a las 9: 00 h donde cambia de rumbo y se dirige a 𝑀𝑀 aterrizando allí a las 11: 00 h. A las 12: 00 h parte con destino a A llegando a las 16: 40 h. Elija un sistema de referencia con origen en A. a) Calcule el vector posición de las otras dos poblaciones. b) Determinar el vector desplazamiento en el viaje de A a B y de B y 𝑀𝑀. c) Hallar el vector velocidad media de la avioneta desde que parte hasta que pasa por B, y también para todo el viaje.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p03",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 3,
+      "prompt": "Guía 2 · Cinemática · Problema 3. Considere que la posición en función del tiempo de un objeto unido a un resorte está dada por la expresión x(t) = 0.15 m sen �0.8 rad s t + π 2 �. (Recuerde que 2π rad = 360°). a) Haga un gráfico de x como función de t, entre 0 s y 15 s . b) Obtenga la distancia recorrida por el objeto entre t1 = 3 s y t2 = 9 s. ¿Cuál es el desplazamiento y la velocidad media en ese mismo intervalo de tiempo? c) Derive y grafique v(t) y a(t) entre 0 s y 15 s especificando sus valores máximos y mínimos.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p04",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 4,
+      "prompt": "Guía 2 · Cinemática · Problema 4. Juan, está ubicado en un tramo rectilíneo de una ruta, estudia el movimiento de los coches que circulan con velocidad constante. A su derecha, y a 40 metros de él hay un árbol, y más lejos un cartel. En cierto instante ve que un automóvil se le acerca por la izquierda, y dispara el cronómetro cuando lo tiene a 100 metros; el auto pasa frente a él 5 segundos después y 25 segundos más tarde el auto pasa frente al cartel. Utilizando como origen la posición de Juan: a) Halle la velocidad del auto en km/h y encuentre la ecuación horaria de su posición. b) Halle en qué instante el auto pasará frente al árbol. c) Calcule qué distancia hay entre el cartel y el árbol.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p05",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 5,
+      "prompt": "Guía 2 · Cinemática · Problema 5. Considere un automóvil que, al aplicar los frenos, genera una aceleración de módulo |a| (constante) en sentido contrario al desplazamiento del vehículo. Dicha aceleración le permite detenerse recorriendo una distancia 𝑑𝑑1en un tiempo t1 al aplicar los frenos cuando circula a una velocidad v1. Si el automóvil viaja ahora a una velocidad 20% mayor a la anterior, y frena con la misma aceleración se detendrá recorriendo una distancia 𝑑𝑑2 en un tiempo t2. a) Halle t2 en términos de t1. b) Halle 𝑑𝑑2 en términos de 𝑑𝑑1. c) Considere que el módulo de la aceleración es de 3m/s2 y calcule la distancia de frenado para cada una de las siguientes velocidades iniciales: v0 = 40km/h, 60km/h, 90km/h, 120km/h.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p06",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 6,
+      "prompt": "Guía 2 · Cinemática · Problema 6. Un corredor inicia su carrera partiendo desde el reposo con una aceleración de 0.3 m/s2 hasta pasar un por un puesto de control con una velocidad de 8 m/s donde cambia su aceleración a 0.1 m/s2 y llega a la meta luego de recorrer 80 metros más. a) Calcule distancia total que recorrió y la velocidad media para toda la carrera. b) Utilizando un sistema de referencia con origen en la largada obtenga x(t) y v(t) y grafíquelos.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p07",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 7,
+      "prompt": "Guía 2 · Cinemática · Problema 7. Una cuadrilla de empleados del ferrocarril viaja en una zorra por una vía rectilínea a una velocidad de 5 m/s hacia un desvío para seguir por él. En un instante dado cuando la cuadrilla está a 120 m del desvío, un tren que se encuentra a 180 m por detrás se acerca viajando por la misma vía a 54 km/h. En ese mismo instante el conductor del tren aplica los frenos para evitar el choque. a) Calcule el módulo mínimo que deberá tener la aceleración (constante) del tren para evitar el choque. b) Grafique la posición y la velocidad en función del tiempo para ambos móviles, use el valor de aceleración obtenido en a) para el tren.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p08",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 8,
+      "prompt": "Guía 2 · Cinemática · Problema 8. Un automóvil pasa frente a un puesto caminero, moviéndose con velocidad constante de 144 km/h, en una ruta recta. Un policía parte en su moto desde el puesto caminero 5 segundos más tarde, con aceleración constante, hasta llegar a su velocidad máxima de 50 m/s, que luego mantendrá constante. a) ¿Qué aceleración mínima deberá tener la moto para alcanzar al automóvil, sin que se distancie de éste más de 350 m durante la persecución? b) ¿A qué distancia del puesto caminero la moto alcanzará al automóvil, si su aceleración fue la aceleración mínima calculada en el punto a)? c) Representar velocidad y posición en función del tiempo para cada móvil. Para la moto use la aceleración calculada en a).",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p09",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 9,
+      "prompt": "Guía 2 · Cinemática · Problema 9. Una piedra es lanzada verticalmente hacia arriba con una velocidad inicial v0 de manera tal que pasa por una altura h tanto de ida como de vuelta en tiempos t𝐼𝐼 y t𝑉𝑉 que satisfacen t𝑉𝑉 = 2t𝐼𝐼. a) Determine la velocidad inicial de la piedra en función de g y h. b) Determine el cociente v(t𝐼𝐼)/v0. c) Escriba la altura máxima h𝑚𝑚𝑚𝑚𝑚𝑚 que alcanza la piedra en función de h.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p10",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 10,
+      "prompt": "Guía 2 · Cinemática · Problema 10. Una moneda se deja caer verticalmente en un tiempo t1 dentro de un ascensor, desde una altura de 2 m, medida desde el suelo del ascensor. El ascensor se mueve respecto del edificio de manera tal que su altura yA está dada por la ecuación horaria yA(t) = v0t + 1 2 at2 . Calcule cuánto tiempo transcurre desde que se suelta la moneda hasta que llega al piso del ascensor en las siguientes condiciones. a) Para a = 0 y muestre que no depende de los valores de v0 y t1. b) Para t1 = 0 s, v0 = 4 m/s y a = 1 m/s2 . c) Para t1 = 0 s, v0 = 4 m/s y a = −1 m/s2 . d) Recalcule los ítems (b) y (c) considerando t1 = 1 s.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p11",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 11,
+      "prompt": "Guía 2 · Cinemática · Problema 11. Tres automóviles A, B y C se mueven en línea recta con posiciones descritas desde el origen tal que sus evoluciones en función del tiempo son xA(t) = −15 m + 5 m/s t, xB(t) = 15 m + 3 m/s t y xC(t) = 5 m + 6 m/s (t − 2 s). Calcule: a) La posición de A medida desde B en función del tiempo y para t = 10 s. b) La posición de C medida desde B en función del tiempo y para t = 10 s. c) La distancia entre A y C a los 10 s.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p12",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 12,
+      "prompt": "Guía 2 · Cinemática · Problema 12. Dos proyectiles se lanzan verticalmente hacia arriba con dos segundos de intervalo. El 1º con una velocidad inicial de 50 m/s y el 2º con una velocidad inicial de 80 m/s. a) Determine la posición vertical del primer proyectil con respecto al segundo en función del tiempo para 2 s < t < 10 𝑠𝑠. ¿En qué instante el primer proyectil se encuentra 50 m debajo del segundo? b) Encuentre el tiempo transcurrido desde que parte el primer proyectil hasta que los dos se encuentren a la misma altura. ¿Cuál es esta altura? c) En un mismo gráfico represente la altura en función del tiempo para ambos proyectiles, indicando el encuentro.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p13",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 13,
+      "prompt": "Guía 2 · Cinemática · Problema 13. Una persona camina horizontalmente a una velocidad constante lanzando autitos periódicamente cada 1𝑠𝑠. Estos se mueven a velocidad constante, hacia una pared ubicada frente a él. Considere que la velocidad con que lanza los autitos es va = 2.4 m/s respecto de la persona. a) Determine la velocidad de la persona en la dirección de movimiento de los autitos, si el intervalo de tiempo que pasa entre que cada autito choca con la pared es de 0.6 s. b) Indique cuántos autitos lanza al recorrer 6.5 m (considere que lanza el primer autito al inicio del recorrido) y cuánto tiempo transcurre desde que llega el primer autito hasta el último.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p14",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 14,
+      "prompt": "Guía 2 · Cinemática · Problema 14. Considere que xAA(t) y xBB(t) describen respectivamente las posiciones de los cuerpos A y B, medidas desde el origen 𝑂𝑂. Sabiendo que xAA(t) = −15 m + 5 m/s t es la posición del cuerpo A respecto del cuerpo B y xBB(t) = 6 m + 4 m/s t + 1 m/s2 t2 la posición del cuerpo B respecto del origen. a) Determine la posición xAA(t). b) Determine el tiempo en que cada cuerpo pasa por el origen. c) Determine el tiempo en que A y B se encuentran.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p15",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 15,
+      "prompt": "Guía 2 · Cinemática · Problema 15. El conductor de un automóvil desea rebasar un camión que viaja a una rapidez constante de 20 m/s. Inicialmente, el auto viaja a la misma velocidad y su parachoques delantero está a 24 m detrás del parachoques trasero del camión. El auto adquiere una aceleración constante de 0.6 m/s2 y regresa al carril del camión cuando su parachoques trasero está a 26 m delante del frente del camión. El auto tiene una longitud de 4.5 m, y el camión tiene una longitud de 21 m. Determine: a) El tiempo que tardaría el auto en toda la maniobra de sobrepaso despreciando el tiempo en pasar de un carril. b) Antes de iniciar la maniobra de sobrepaso, el conductor del automóvil ve en el carril contrario, un vehículo que se encuentra a 600 m y que se aproxima a 70 km/h. Indique si el conductor del automóvil puede realizar el sobrepaso de forma segura. c) Realice los gráficos de posición y velocidad de cada móvil en función del tiempo.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p16",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 16,
+      "prompt": "Guía 2 · Cinemática · Problema 16. Una batería antiaérea con los cañones ubicados verticalmente detecta un avión enemigo cuando éste se encuentra a 30 km (medidos horizontalmente) y a 20 km de altura, moviéndose hacia la batería con una velocidad de 1080 km/h en vuelo horizontal. a) ¿Cuánto tiempo transcurre desde que el avión es detectado hasta que pasa sobre la batería? b) ¿Cuánto tiempo debe esperar la batería, desde que se detecta el avión, para disparar los cañones asegurando el blanco directo, si la velocidad inicial de los proyectiles es de 800 m/s? c) Grafique x(t) e y(t) para el avión y el proyectil.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p17",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 17,
+      "prompt": "Guía 2 · Cinemática · Problema 17. La posición en función del tiempo de una esfera que se mueve verticalmente en un fluido viscoso está dada por: y(t) = v𝑙𝑙t + (v𝑙𝑙 − v0)𝑇𝑇(𝑒𝑒−t/𝑇𝑇 − 1) donde todos los parámetros son constantes (excepto el tiempo) y la coordenada y se toma positiva hacia abajo. a) Derive las ecuaciones horarias para la velocidad v(t) y para la aceleración a(t) de la esfera. b) Si los valores de los parámetros son 𝑇𝑇 = 1 s, v𝑙𝑙 = 1 m/s y v0 = 6 m/s, identifique posición, velocidad y aceleración en el gráfico. c) Si ha transcurrido un tiempo t ≫ 𝑇𝑇 estime los valores de velocidad y aceleración. ¿Qué forma aproximada tiene la función que representa posición en función del tiempo?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p18",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 18,
+      "prompt": "Guía 2 · Cinemática · Problema 18. Se desea describir el movimiento de un cuerpo que asciende por un plano inclinado desde su base sabiendo que el módulo de la velocidad inicial es de 25 m/s y su aceleración es constante y vale 5 m/s2 siendo paralela al plano y hacia abajo, utilizando el sistema de referencia indicado en la figura: a) Escriba las ecuaciones horarias x(t) e y(t). b) Determine la posición x′ en función del tiempo donde x′ se mide desde el origen hacia arriba a lo largo del plano inclinado. c) Calcule la distancia recorrida hasta llegar al punto de máxima altura y el tiempo que tardará en alcanzarlo.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p19",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 19,
+      "prompt": "Guía 2 · Cinemática · Problema 19. Se lanza un objeto con una velocidad inicial cuyo módulo es 16 m/s y con un ángulo θ0 respecto de la horizontal desde una altura h = 25 m respecto del piso. Determine las componentes del vector velocidad, justo antes de chocar con el piso, en función del ángulo de lanzamiento y muestre que su módulo es constante.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p20",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 20,
+      "prompt": "Guía 2 · Cinemática · Problema 20. Un objeto es lanzado formando un ángulo de 75° con la horizontal, con una velocidad inicial con módulo v0 = 18 m/s tal que, en su movimiento ascendente, pasa por una altura h en la que el vector velocidad forma un ángulo de θ1 = 30° con la horizontal. a) Determine las componentes del vector velocidad al pasar por la altura h. b) Determine la altura h y el tiempo transcurrido desde que se lanzó la piedra. c) Determine las componentes del vector aceleración en las direcciones tangencial y radial al pasar por la altura h.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p21",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 21,
+      "prompt": "Guía 2 · Cinemática · Problema 21. Se lanza un objeto con una velocidad inicial cuyo módulo es 16 m/s y con un ángulo θ = 53.1° respecto de la horizontal desde una altura h = 25 m respecto del piso. a) Determine el módulo de la velocidad y su ángulo 2 s después de ser lanzado. b) Determine las componentes radial y tangencial de aceleración 2 s después de ser lanzado.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p22",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 22,
+      "prompt": "Guía 2 · Cinemática · Problema 22. Para el instante que se muestra en la figura, h = 450 m y 𝑑𝑑 = 1430 m, y el avión tiene una velocidad de 432 km/h formando un ángulo θ = 36.9° con la horizontal y suelta un proyectil con la intención de hundir a la lancha que se mueve con velocidad constante. Si el avión logra su objetivo: a) Determine la velocidad de la lancha. b) Determine la velocidad del proyectil en el instante del impacto. c) Grafique y vs. t para el proyectil.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p23",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 23,
+      "prompt": "Guía 2 · Cinemática · Problema 23. Un esquiador deja una rampa de salto con una velocidad de 10.0 m/s formando un ángulo θ = 25o sobre la horizontal, como se muestra en la figura. La pendiente está inclinada un ángulo φ = 40o . a) Determine el tiempo de vuelo del esquiador y la distancia desde el extremo de la rampa (punto O) hasta donde aterriza el esquiador sobre la pendiente. b) Determine el módulo de la velocidad del esquiador cuando esta velocidad es paralela a la superficie inclinada.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p24",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 24,
+      "prompt": "Guía 2 · Cinemática · Problema 24. Un autito a radiocontrol se mueve en el plano xy con una velocidad constante de 3.2 m/s en la dirección indicada en la figura. El autito ingresa a una cinta transportadora de 1.2 m de ancho que se mueve con velocidad de 2 m/s en la dirección del eje y, en sentido positivo. a) Si θ = 0 y considerando que el autito no dobla, Obtenga: i. El vector velocidad del autito cuando se encuentra sobre la cinta. ii. El vector posición del autito cuando este egresa de la cinta. iii. El tiempo que tarda en cruzar la cinta transportadora. b) Determine qué ángulo θ debe tomar el autito antes de ingresar a la cinta para poder cruzarla sin desplazarse en la dirección y al estar sobre la cinta transportadora. Para este valor de θ, obtenga: i. El vector velocidad del autito cuando se encuentra sobre la cinta. ii. El tiempo que tarda en cruzar la cinta.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p25",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 25,
+      "prompt": "Guía 2 · Cinemática · Problema 25. Un hombre desea cruzar un río de 1660 m de ancho. Su lancha a motor tiene una rapidez (en relación al agua) de 17.5 m/s. El río fluye a 5.33 m/s. El hombre quiere llegar a un punto de la orilla opuesta justo enfrente del punto de partida. a) Halle el vector velocidad de la lancha con respecto al agua y con respecto a la tierra (módulo, dirección y sentido). b) ¿Cuánto tarda la lancha en cruzar el río de esta manera?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p26",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 26,
+      "prompt": "Guía 2 · Cinemática · Problema 26. La ciudad A se ubica directamente al oeste de la ciudad B a una distancia de 2775 km. Un viento fuerte y constante de 225 km/h sopla de oeste a este. Con este fuerte viento soplando, un avión realiza el viaje de ida y vuelta entre ambas ciudades en un tiempo de 7.1 h, siempre volando con la misma rapidez con respecto al aire. Determine la rapidez del avión con respecto al aire.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p27",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 27,
+      "prompt": "Guía 2 · Cinemática · Problema 27. Un cuerpo que sigue movimiento circular uniforme de radio fijo 𝑅𝑅 con centro en el origen, puede describirse con el vector posición 𝑟𝑟 ⃗(t) = [𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅(ωω + 𝜙𝜙); 𝑅𝑅𝑅𝑅𝑅𝑅𝑅𝑅(ωω + 𝜙𝜙)], donde ω y 𝜙𝜙 son constantes. a) Calcule el módulo del vector posición para todo tiempo. b) Determine el vector velocidad y muestre que su módulo permanece constante. c) Determine el vector aceleración, indicando su dirección y sentido, y obtenga su módulo. d) Muestre que la dirección del vector aceleración es perpendicular al vector velocidad en todo instante.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p28",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 28,
+      "prompt": "Guía 2 · Cinemática · Problema 28. La luna se mueve alrededor de la Tierra en una órbita circular cuyo radio (distancia Tierra-Luna) es de 3.844 × 108 m y tiene una aceleración de 2.7 × 10−3 m/s2 , dirigida hacia el centro de la Tierra. Dertermine: a) La velocidad tangencial y angular del movimiento. b) El tiempo que tarda la Luna en dar una vuelta completa, expresado en días.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p29",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 29,
+      "prompt": "Guía 2 · Cinemática · Problema 29. Al lanzar un objeto horizontalmente éste irá curvando su trayectoria describiendo un tiro oblicuo debido a la aceleración gravitatoria g. Sin considerar otros efectos, si la velocidad es suficientemente elevada este radio de curvatura puede alcanzar el radio de curvatura de la tierra 𝑅𝑅 = 6380 km y darse un movimiento circular uniforme, alrededor de la misma. a) Determine la velocidad con la que debe lanzarse este cuerpo para describir un 𝑀𝑀𝑀𝑀𝑀𝑀. b) Determine el tiempo en el cual el objeto da una vuelta completa.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g2-p30",
+      "origin": "source",
+      "guide": 2,
+      "guideTitle": "Cinemática",
+      "number": 30,
+      "prompt": "Guía 2 · Cinemática · Problema 30. La Tierra tiene 6380 km de radio y gira una vez sobre su eje en 24 hs. Para una persona que se encuentra sobre la línea ecuatorial, determine: a) La velocidad tangencial y la velocidad angular. b) La aceleración radial, expresada tanto en m/s2 y como en porcentaje del valor de g.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p01",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 1,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 1. En el diagrama puntual mostrado en la figura, los módulos de las fuerzas actuantes son F1 = 22 N, F2 = 18 N y F3 = 16 N. a) Determine las componentes de cada una de las fuerzas. b) Determine las componentes ( Fx,  Fy ) de la fuerza resultante. c) Exprese la fuerza resultante en función de los vectores unitarios i y j d) Halle el módulo, dirección y sentido de la fuerza resultante.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p02",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 2,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 2. Determine la tensión en las cuerdas AC y BC de las figuras si M tiene una masa de 40 kg.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p03",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 3,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 3. Para los sistemas de la figura, dibuje todas las fuerzas aplicadas sobre cada parte de cada sistema, indicando cuales fuerzas forman pares interacción (acción-reacción). Considere a la Tierra como parte de cada sistema.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p04",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 4,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 4. Un bloque de 5 kg, en reposo sobre una superficie sin rozamiento, recibe la acción de las fuerzas que se ilustran en la figura cuyos módulos son F1 = 5.5 N y F2 = 3.5 N. a) ¿Qué aceleración adquiere el bloque? b) ¿Cuál es el valor de la fuerza que la superficie le ejerce al bloque?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p05",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 5,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 5. Se tienen dos cuerpos en contacto sobre una mesa sin fricción. A uno de ellos se le aplica una fuerza F como indica la figura. a) Si el módulo de la fuerza vale F = 3 N, m1 = 2 kg y m2 = 1 kg, encuentre la aceleración de los bloques y la fuerza de contacto entre ellos. b) Demuestre que si se aplica la misma fuerza F al bloque 2 en lugar de al bloque 1, la fuerza de contacto no tiene el mismo valor que el obtenido en a). Explique por qué sucede esto. 30o 37o 2 F 1 F 2",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p06",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 6,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 6. El sistema de los dos bloques de la figura, cuyas masas son mA = 3 kg y mB = 2 kg respectivamente, se está moviendo hacia arriba. Determinar el valor de la aceleración y la magnitud de la fuerza que soporta la soga 2 cuando se tira de la soga 1 con una fuerza F como se indica en la figura. Considerar los siguientes casos para el módulo de la fuerza (tenga en cuenta la gravedad): a) F = 80 N; b) F = 50 N; c) F = 30 N; d) F = 0",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p07",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 7,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 7. Una máquina de Atwood, como muestra la figura, puede usarse para medir g (la aceleración de la gravedad). Si los bloques tienen masas casi iguales, la aceleración del sistema es pequeña y g puede determinarse sin necesidad de medir intervalos de tiempo pequeños. Suponga que las masas de la cuerda y de la polea, así como la fricción en la polea se pueden despreciar y que por lo tanto el único efecto de la polea es cambiar de la dirección de la cuerda. a) Demuestre que g puede determinarse a partir de la expresión ) ( ) ( 1 2 2 1 m m m m a g − + = . En esta expresión a es el módulo de la aceleración de los bloques y se ha supuesto que la masa m2 del bloque 2 es mayor que la masa m1 del bloque 1. b) Suponga que lo envían al planeta Norc a medir el módulo de la aceleración de la gravedad g en su superficie. Usando una máquina de Atwood con m2 = 4.85 kg y m1 = 4.65 kg, suelta los bloques desde el reposo y encuentra que se mueven una distancia de 0.50 m en 2.5 s. ¿Cuánto vale g en el planeta Norc?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p08",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 8,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 8. Demuestre que la tensión de la cuerda en una máquina de Atwood es: ) ( 2 1 2 2 1 m m g m m T + = y que para el caso en que m2 > m1, entonces m1 g < T < m2 g.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p09",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 9,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 9. Dos bloques cuyas masas son mA = 50 kg y mB desconocida son arrastrados por una fuerza F cuyo módulo es de 450 N, tal como se indica en la figura. No hay rozamiento. a) Encuentre el valor de la masa del bloque mB que le permita al sistema ascender con una velocidad constante. b) Halle el valor de la tensión en la cuerda que une ambos bloques c) Analice las fuerzas que actúan sobre cada bloque en términos de la 3ra ley de Newton, es decir indicando cuales fuerzas forman pares interacción (acción-reacción). Considere a la Tierra como parte del sistema y tome al mismo en equilibrio estático.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p10",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 10,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 10. Una persona, cuya masa es 70 kg, se encuentra parado en un ascensor. ¿Qué fuerza ejerce el piso sobre la persona cuando el ascensor está: a) en reposo, b) moviéndose con una aceleración hacia arriba de 0.525 m/s2 , c) moviéndose con una aceleración hacia debajo de 0.525 m/s2 , d) subiendo con velocidad uniforme, e) bajando con velocidad uniforme, f) se rompen los cables del ascensor y cae libremente? 3",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p11",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 11,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 11. El andamio de un pintor cuelga de una polea como se indica en la figura. Considere a la polea sin masa ni rozamiento, la cuerda sin peso y que el andamio no puede volcarse. El pintor se encuentra sobre la plataforma, sosteniéndose a sí mismo. El andamio pesa 40 kg y el pintor 80 kg. a) Dibuje por separado al pintor y al andamio indicando claramente todas las fuerzas aplicadas, en módulo, dirección y sentido en cada caso. b) Hallar la tensión en las cuerdas en los puntos A, B y C. c) ¿Cuál es la fuerza que se ejerce sobre los pies del pintor? d) El ayudante del pintor se asoma por la ventana y coloca un tarro de pintura de 50 kg sobre el andamio. ¿Pasa algo?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p12",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 12,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 12. Considere el sistema de masas conectadas por cuerdas de masa despreciable y poleas sin masa y sin rozamiento de la figura. Calcule las aceleraciones de los bloques y las tensiones de las cuerdas.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p13",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 13,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 13. En el sistema de la figura los bloques tienen masas m0= 5 kg, m1=3 kg y m2=4 kg. Las masas de las cuerdas y de las poleas, así como la fricción en las poleas y en la superficie horizontal se pueden despreciar. Determine la aceleración de los bloques y las tensiones de las cuerdas.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p14",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 14,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 14. Una cuña de masa M descansa en una mesa horizontal sin rozamiento. Un bloque de masa m se coloca sobre la cuña. No hay rozamiento entre el bloque y la cuña. Se aplica una fuerza horizontal F a la cuña como se muestra en la figura. ¿Qué magnitud debe tener F para que el bloque permanezca a una altura constante sobre la mesa?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g3-p15",
+      "origin": "source",
+      "guide": 3,
+      "guideTitle": "Dinámica: Leyes de Newton",
+      "number": 15,
+      "prompt": "Guía 3 · Dinámica: Leyes de Newton · Problema 15. Una cuña de masa M descansa en una mesa horizontal sin rozamiento. Un bloque de masa m se coloca sobre la cuña, como se muestra en la figura. No hay rozamiento entre el bloque y la cuña. a) Calcule la aceleración de la cuña y las componentes horizontal y vertical de la aceleración del bloque. b) ¿Sus respuestas a la parte a) se reducen a los resultados correctos cuando M es muy grande?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p01",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 1,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 1. Los coeficientes de rozamiento estático y dinámico entre un piso y un cajón de 25 kg es 0.68 y 0.34, respectivamente. Si se aplican horizontalmente fuerzas de: a) 150 N y b) 180 N, ¿cuál es la fuerza neta sobre el cajón aplicada en cada caso?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p02",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 2,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 2. Un cajón que contiene partes de maquinarias descansa sin seguro sobre la parte trasera de un camión que viaja a lo largo de un camino recto a una velocidad de 80 km/h. El conductor aplica una fuerza de frenado constante y puede detenerse en 220 m. ¿Cuál es el coeficiente mínimo de rozamiento entre el cajón y el piso del camión, si el cajón no se deslizó hacia delante?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p03",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 3,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 3. Un hombre arrastra por el suelo una canasta de 70 kg tirando de ella con una cuerda que está inclinada 15o con la horizontal. a) Si el coeficiente de rozamiento estático es de 0.50, ¿cuál debe ser la tensión necesaria en la cuerda para empezar a mover a la canasta? b) Si el µd = 0.35. ¿Cuál es la aceleración de la canasta? Asuma que la tensión en la cuerda es la hallada en a).",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p04",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 4,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 4. En el laboratorio se realizan los experimentos siguientes: a) Se arma el sistema de la figura donde el bloque A de 2 kg está y permanece en reposo sobre la mesa horizontal. Se va echando arena en el balde B, de modo que en cierto instante se rompe el equilibrio y el sistema se acelera. Sabiendo que en B se ha totalizado una masa de 1.2 kg y que tarda 0.8 segundos en llegar al piso, hallar los coeficientes de rozamiento estático y dinámico entre el bloque A y la mesa, despreciando la masa de la cuerda y los rozamientos en la polea. b) Se quitan el balde y la cuerda, se deja el bloque A en reposo sobre la mesa y se inclina lentamente. Hallar el máximo valor del ángulo que podrá formar con la horizontal sin que A comience a moverse. Si habiendo fijado ese ángulo se rompe el equilibrio, hallar con qué aceleración descenderá el bloque. c) Se vuelve a la configuración del inciso a) con el balde vacío. ¿Cuál debe ser la masa total de B para que al darle una velocidad cualquiera hacia la derecha al bloque A, el sistema prosiga moviéndose con velocidad constante?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p05",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 5,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 5. Dos bloques con masas m1 = 2 kg y m2 = 4 kg, unidos por una varilla sin masa, paralela a un plano inclinado, por el cual resbalan ambos, descienden por el plano, tal como se muestra en la figura, tirando m2 de m1. El ángulo de inclinación es q = 30o . El coeficiente de rozamiento dinámico entre m1 y el plano es µ1 = 0.226 y entre m2 y el plano es µ2 = 0.113. Calcule a) la tensión de la varilla que une los bloques y b) la aceleración común de las dos masas. c) ¿Cambiarán las respuestas a) y b) si m1 tirase de m2, es decir si se intercambian los cuerpos? 2",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p06",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 6,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 6. Un cuerpo de 4 kg se coloca encima de otro cuerpo de 5 kg. Para hacer que el cuerpo superior resbale sobre el inferior, que se mantiene fijo, se debe aplicar una fuerza horizontal mayor que 12 N sobre el cuerpo superior. El conjunto de los dos cuerpos se coloca ahora en una mesa horizontal sin rozamiento. a) Determine la fuerza horizontal máxima que puede aplicarse en el cuerpo inferior para que los dos cuerpos se muevan unidos y b) la aceleración resultante de estos cuerpos.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p07",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 7,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 7. Un bloque se coloca contra el frente vertical de un carrito como se muestra en la figura. ¿Qué aceleración debe tener el carrito para que el bloque A no caiga? El coeficiente de rozamiento estático entre el bloque y el carro es µe. ¿Cómo describiría un observador en el carro el comportamiento del bloque?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p08",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 8,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 8. El bloque A, de masa 3m resbala con velocidad constante bajando por un plano S inclinado 36.9° mientras la tabla B, de masa m, descansa sobre A, estando sujeta con un hilo a la pared como se muestra en la figura. a) Dibuje un diagrama de todas las fuerzas que actúan sobre el bloque A . b) Si el coeficiente de rozamiento dinámico es igual entre A y B y entre S y A, determine su valor. .",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p09",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 9,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 9. Un hámster de mh = 200 g de masa está sentado sobre la superficie inclinada de un bloque de mb=800 g de masa, como muestra la figura. El bloque está apoyado sobre una balanza calibrada en Newtons. Inicialmente el rozamiento estático entre el hámster y el bloque es suficiente para que el hámster no se mueva. En este caso el hámster y el bloque corresponde efectivamente a una sola masa de 1 kg y la balanza marca (mh+mb)g. Mostrar este resultado analizando las fuerzas que actúan sobre el hámster y el bloque por separado. Se agrega un aceite lubricante sobre la superficie del bloque y ahora el hámster desliza sin rozamiento. Determine la lectura de la balanza. El rozamiento entre el bloque y la balanza es suficientemente grande para impedir el deslizamiento del bloque respecto de la balanza.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p10",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 10,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 10. Un resorte de masa despreciable, cuya longitud es de 40 cm cuando está descargado, tiene un extremo unido al techo a 2.4 m del piso, y en el otro extremo está colgado un cuerpo que pesa 120 N. a) Hallar la constante elástica del resorte si al quedar en equilibrio su longitud es de 60 cm. b) Si se eleva al cuerpo 5 cm desde su posición de equilibrio, ¿cuál es su aceleración al soltarlo? c) ¿Cuánto habría que desplazar el cuerpo hacia abajo, respecto de la posición de equilibrio, para que al soltarlo partiera con una aceleración hacia arriba de módulo igual a g?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p11",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 11,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 11. Los carritos A (de 4 kg) y B (de 3 kg) de la figura, permanecen en reposo sobre un riel horizontal, por el cual pueden moverse con rozamiento despreciable. Ambos están vinculados por un resorte de masa despreciable cuya constante elástica es de 300 N/m y su longitud en esas condiciones es de 0.3 m. En un instante dado, se aplica una fuerza horizontal de 50 N sobre el carrito A. a) Hallar la aceleración inicial de cada carrito. b) Hallar la aceleración de cada carrito cuando la longitud del resorte es de 0.2 m. F 3",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p12",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 12,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 12. Se utiliza un resorte, cuya constante elástica es 500 N/m y su longitud sin carga es 0.3 m, para mantener en equilibrio una caja de 30 kg sobre el plano inclinado de la figura. a) Suponiendo despreciable el rozamiento, calcular qué longitud tendrá el resorte. Si los coeficientes de rozamiento fueran µe = 0.4 y µd = 0.15, b) Hallar la máxima longitud que podrá darse al resorte sin romper el equilibrio. c) Hallar la mínima longitud del resorte que conserve el equilibrio. Resistencia de fluidos y rapidez terminal",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p13",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 13,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 13. Una piedra de masa m=3.00 kg cae desde el reposo en un medio viscoso. Sobre ella actúan una fuerza neta constante hacia abajo de 18.0 N (combinación de la gravedad y la fuerza de flotabilidad ejercida por el medio) y una fuerza de resistencia del fluido f =kv, donde v es la rapidez en m/s y k es una constante que vale k = 2.20 N s/m. a) Calcule la aceleración inicial. b) Calcule la aceleración cuando la rapidez es de 3.00 m/s. c) Calcule la rapidez terminal vT. d) Obtenga la rapidez y la aceleración 2.00 s después de iniciado el movimiento. e) Calcule el tiempo necesario para alcanzar una rapidez de 0.9vT.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p14",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 14,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 14. Un ciclista puede descender libremente por una colina inclinada 7.0° con rapidez constante de 9.5 km/h. Si la fuerza de resistencia del aire es proporcional al cuadrado de la rapidez v, de manera que f= Dv2 , calcule: a) el valor de la constante D y b) la fuerza promedio que debe aplicarse para descender por la colina a 25 km/h. La masa del ciclista más la bicicleta es de 80.0 kg. Desprecie otros tipos de fricción, aparte de la resistencia del aire. Dinámica del movimiento circular. Fuerzas gravitatorias",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p15",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 15,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 15. El bloque de 4.00 kg de la figura está unido a una varilla vertical con dos hilos. Cuando el sistema gira alrededor del eje de la varilla, los hilos se extienden como se muestra y la tensión en el hilo superior es de 80.0 N. a) ¿Qué tensión hay en el otro hilo? b) ¿Cuántas revoluciones por minuto (rpm) da el sistema? c) Ca1cule las rpm con las que el hilo inferior pierde toda tensión. d) Explique qué sucede si el número de rpm es menor que en c).",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p16",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 16,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 16. En parques de diversiones encontramos un juego llamado rotor. Consiste en un cuarto en forma de cilindro hueco que se puede poner en rotación alrededor del eje vertical del cilindro. Una persona entra en el rotor, cierra la puerta y se para contra la pared. El rotor gradualmente va aumentando su velocidad de rotación a partir del reposo hasta que a una velocidad determinada el piso bajo la persona se abre hacia abajo dejando ver un pozo profundo. El pasajero no cae sino que permanece prendido contra la pared del rotor. El coeficiente de rozamiento estático entre la persona y la pared es µe=0.4 y el radio del rotor R=4 m. Encontrar el máximo periodo de revolución necesario impedir la caída. 4",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p17",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 17,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 17. Un automóvil recorre un tramo de una autopista que tiene un radio de curvatura R. El automóvil se mueve con velocidad constante v. El tramo de autopista es horizontal (sin peralte). a) ¿Cuál debe ser el mínimo coeficiente de rozamiento para que el automóvil no deslice? (¿Estático o dinámico?¿Por qué?) b) ¿Con qué peralte le aconsejaría a un ingeniero que construya este tramo de autopista? Suponga que no hay rozamiento y que todos los autos tienen velocidad v.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p18",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 18,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 18. Una pequeña esfera de masa m puede deslizar sin rozamiento a lo largo de un alambre circular de radio R=10 cm, que gira alrededor de un eje vertical a razón de 2 revoluciones por segundo. La esfera se encuentra engarzada en el alambre. a) Determine el valor del ángulo q ( q para el cual la esfera permanecerá estacionaria con respecto al alambre en rotación. b) ¿Qué sucede si el alambre gira a 1 rev/s?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p19",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 19,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 19. Se hace girar un balde con agua siguiendo una circunferencia vertical de radio r. Si la velocidad del balde en su parte más alta es va, calcular: a) La fuerza ejercida por el balde sobre el agua en ese punto. b) El valor mínimo de vt para que el agua no salga del balde. c) La fuerza ejercida por el balde sobre el agua en la parte más baja del círculo, en donde la velocidad del balde es vb.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p20",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 20,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 20. Un satélite artificial, cuya masa es 100 kg, gira alrededor de la Tierra, dando una vuelta completa cada 90 minutos. Suponiendo que su órbita es circular, que el radio medio de la Tierra es 6360 km, y que la altura media del satélite sobre la superficie terrestre es de 280 km, determinar su velocidad tangencial, su aceleración y la fuerza gravitatoria a la que lo somete la Tierra.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p21",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 21,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 21. Hallar cuánto pesa un meteorito de 2 kg en el campo gravitatorio de la superficie del planeta Marte. Hallar cuánto pesa Marte en el campo gravitatorio del meteorito, en la misma posición anterior. Datos: constante universal de gravitación G = 6.67 x 10-11 N m2 /kg2 ; masa de Marte = 6.6 x 1023 kg; radio marciano = 3380 km.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p22",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 22,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 22. Sabiendo que la masa de la Luna es de 7.38 x 1022 kg y el radio lunar es de 1700 km, determinar la aceleración de la gravedad en la superficie de nuestro satélite. La escalerilla del módulo lunar fue diseñada para resistir una carga máxima de 400 N, ¿podrá utilizarla confiadamente un astronauta que pesó 1200 N (con su equipo) aquí en la Tierra?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p23",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 23,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 23. Suponiendo que el campo gravitatorio a nivel del mar tiene una intensidad de 9.8 m/s2 , cuál será su intensidad en el Aconcagua a 6960 m de altura. Expresarla en porcentaje con respecto a g. Radio terrestre = 6360 km. ¿A qué altura sobre el nivel del mar deberá estar una persona de 75 kg para “reducir” su peso 10 %?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p24",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 24,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 24. Hallar a qué altura sobre la superficie terrestre la aceleración de la gravedad se reduce a la mitad de la que existe a nivel del mar. ¿A qué altura se hace cero? Radio terrestre = 6360 km.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p25",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 25,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 25. La distancia media Tierra-Sol es de 150.000.000 km. ¿Cuál es la masa aproximada del Sol, si la Tierra recorre su órbita, que puede suponerse una circunferencia, en 365 días aproximadamente? 5",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p26",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 26,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 26. Se quiere poner en órbita un satélite de comunicaciones que parezca “fijo” sobre un punto del Ecuador terrestre. ¿A qué altura constante sobre la superficie de nuestro planeta deberá situarse? Radio terrestre = 6360 km.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g4-p27",
+      "origin": "source",
+      "guide": 4,
+      "guideTitle": "Dinámica: Rozamiento, fuerzas elásticas y gravitación",
+      "number": 27,
+      "prompt": "Guía 4 · Dinámica: Rozamiento, fuerzas elásticas y gravitación · Problema 27. En un laboratorio se tiene suspendida en equilibrio una esfera de 10 kg y 12 cm de diámetro, por medio de un dispositivo a resorte muy sensible. Se lleva debajo de la misma otra esfera, de 2000 kg y 70 cm de diámetro, de modo tal que el equilibrio se establece con ambas esferas a 1 cm de distancia. Hallar la intensidad de la fuerza gravitatoria entre ambas. Si la constante elástica del resorte fuera 50 N/m, ¿qué desplazamiento sufriría la esfera de 10 kg?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p01",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 1,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 1. Claudia pesa 600 N y viaja en un ascensor desde el 4to piso hasta planta baja. Hallar el trabajo que realiza la fuerza que hace el piso del ascensor (la normal) sobre ella, en los siguientes tramos de 4 m de longitud cada uno: a) arranque con aceleración constante de 0.5 m/s2 . b) descenso con velocidad constante de 2 m/s. c) frenado con aceleración constante de 0.5 m/s2 .",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p02",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 2,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 2. En el gráfico de la figura se representa la velocidad de un móvil de 20 kg, en función del tiempo. Encontrar el trabajo que realiza la fuerza resultante de las que actúan sobre el mismo, para las distintas etapas de su movimiento y para el viaje total.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p03",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 3,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 3. Un bloque de 50 kg asciende por el plano inclinado de la figura y recorre 2 m sobre el mismo, bajo la acción de una fuerza horizontal 1 F aplicada de 600 N. Actúa además una fuerza de rozamiento de 10 N entre el bloque y el plano. Calcular: a) El trabajo que realiza 1 F . b) El trabajo que realiza la fuerza de rozamiento. c) El trabajo que realiza la fuerza peso. d) El trabajo que realiza la fuerza de vínculo, normal al plano. e) Determinar la resultante de todas las fuerzas que actúan sobre el bloque y calcular su trabajo por dos métodos distintos. f) Calcular, usando cinemática, la velocidad del bloque al terminar de recorrer los 2 m, si al comienzo tenía una velocidad de 0.6 m/s. g) Hallar las energías cinéticas inicial y final del bloque.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p04",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 4,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 4. En el gráfico de la figura se representa la componente Fx de una fuerza que actúa sobre un cuerpo que se mueve sobre una recta paralela al eje x, en función de su posición. Calcular el trabajo que realiza dicha fuerza en las siguientes etapas: a) desde la posición x1 = 0 hasta x2 = 10 m. b) entre x2 = 10 m y x3 = 15 m. c) entre x1 = 0 y x3 =15 m.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p05",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 5,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 5. Se lanza una piedra de 20 N verticalmente hacia arriba desde el suelo. Se observa que, cuando se encuentra a 15.0 m sobre el suelo, viaja con velocidad de 25.0 m/s hacia arriba. Use el teorema de trabajo-energía cinética para determinar: a) la velocidad en el momento de ser lanzada, b) su altura máxima.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p06",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 6,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 6. Un cuerpo de masa m se desliza sobre una semiesfera de radio R sin fricción. a) Calcular el ángulo q para el cual se separa de la superficie esférica si inicialmente el cuerpo es apartado, en un ángulo muy pequeño, de q = 0 y su velocidad inicial es cero. b) Si el cuerpo se engarza en un riel semicircular sin fricción de radio R, hallar la velocidad con que llega al suelo. ¿Qué aceleración tangencial tiene cuerpo en ese instante? g R m q 2",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p07",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 7,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 7. Considere e1 sistema de la figura. La cuerda y la po1ea tienen masas despreciables, y la polea no tiene rozamiento. El bloque de 6.00 kg se mueve inicialmente hacia abajo, y el de 8.00 kg hacia la derecha, ambos con velocidad de 0.900 m/s. Los bloques se detienen después de moverse 2.00 m. Use el teorema de trabajo-energía para calcular el coeficiente de rozamiento dinámico.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p08",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 8,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 8. Varias fuerzas actúan sobre un objeto. Una de ellas es ˆ F xyi a = , una fuerza en la dirección x cuya magnitud depende de la posición del objeto, con α = 2.50 N/m2 . Calcule el trabajo realizado por esta fuerza sobre el objeto para cada uno de 1os siguientes desplazamientos del objeto: a) El objeto parte del punto x = 0, y =3.00 m y se mueve paralelo al eje x hasta el punto x = 2.00 m, y= 3.00 m. b) El objeto parte del punto x = 2.00 m, y = 0 y se mueve en 1a dirección y hasta el punto x = 2.00 m, y = 3.00 m. c) El objeto parte del origen y se mueve sobre la línea y = 1.5x hasta el punto x = 2.00 m, y = 3.00m.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p09",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 9,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 9. Se empuja un carro de masa m = 20 kg sobre una superficie sin rozamiento por medio de una fuerza de 30 N durante 10 segundos. Suponiendo que inicialmente estaba en reposo: a) Calcular la potencia media desarrollada en los 10 segundos. b) Calcular la potencia instantánea a los 0, 5 y 10 segundos.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p10",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 10,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 10. Una grúa iza verticalmente una caja de caudales de 400 kg que parte del reposo con aceleración constante durante 2 s hasta alcanzar una velocidad de 2 m/s; prosigue con ella durante 5 s para frenar luego y detenerse en otros 2 s. a) Graficar la velocidad de la caja en función del tiempo. b) Graficar la fuerza que ejerce el cable en función del tiempo. c) Graficar la potencia que desarrolla la fuerza que ejerce el cable en función del tiempo. d) A partir de este último gráfico, determinar el trabajo que realiza dicha fuerza y expresarlo en kWh. Comparar con el trabajo del peso. e) Determinar la potencia media desarrollada por el cable. f) Hallar la potencia máxima en todo el proceso. Energías potencial y mecánica. Fuerzas disipativas.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p11",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 11,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 11. La figura representa la ladera de una montaña por la que se desliza con rozamiento despreciable un esquiador de 80 kg. Se sabe que pasa por el punto A con una velocidad de 5 m/s y por el punto C con una velocidad de 10 m/s. Calcular la energía potencial gravitatoria, la energía cinética y la energía mecánica total en los puntos B, C, D, E, y G. Hallar la distancia qué necesitará para detenerse en la planicie horizontal si a partir de G actúa una fuerza de rozamiento cuya intensidad es de 500 N.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p12",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 12,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 12. Una caja de 30 kg es arrastrada en línea recta, apoyada sobre un plano horizontal, aplicándole una fuerza horizontal constante de 60 N. Determinar el coeficiente de rozamiento entre la caja y el plano, para que se desplace manteniendo constante su energía mecánica. La misma caja 3 desciende por un plano inclinado de 37º donde el coeficiente de rozamiento es µd = 0.25. Determinar qué fuerza paralela al plano la hará moverse con energía mecánica constante.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p13",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 13,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 13. Un bloque de 6 kg que está en reposo, se deja caer desde una altura de 5 m por una rampa curva que finaliza en un tramo recto horizontal, como muestra la figura, para el que puede despreciarse el rozamiento en todo el viaje. En la cabecera hay un resorte, inicialmente no deformado, cuya constante elástica es 15000 N/m. a) Determinar el desplazamiento máximo del extremo del resorte. b) Calcular la intensidad máxima de la fuerza que el resorte ejerce sobre la pared. c) Describir el movimiento del bloque.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p14",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 14,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 14. Una caja de 30 kg se desliza sobre una superficie horizontal con rozamiento, cuyo coeficiente dinámico es 0.40, hasta chocar con un resorte horizontal de masa despreciable, cuya constante elástica es 7200 N/m y que se comprime 0.5 m desde su posición inicial no deformada. Calcular la velocidad con que la caja choca con el resorte, y la que tenía a 10 m antes del choque.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p15",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 15,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 15. El resorte de un rifle de resorte tiene masa despreciable y k =400 N/m. El resorte se comprime 6.00 cm y una esfera de 0.0300 kg se coloca en el cañón horizontal contra el resorte. El resorte se libera y la esfera sale por el cañón. Este mide 6.00 cm, así que la esfera sale de él en el instante en que pierde contacto con el resorte. El rifle se sostiene con el cañón horizontal. a) Calcule la velocidad con que la esfera sale del cañón, haciendo caso omiso del rozamiento. b) Repita e1 cálculo suponiendo que una fuerza resistiva constante de 6.00 N actúa sobre la esfera mientras se mueve dentro del cañón. c) Para la situación de la parte b), ¿en qué posición dentro del cañón la esfera tiene mayor velocidad? Determine esta velocidad. (En este caso la velocidad máxima no se alcanza en el extremo del cañón.)",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p16",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 16,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 16. Un cajón de 200 kg, lanzado hacia arriba por un plano inclinado 37º con una velocidad inicial de 9 m/s, tiene aplicada una fuerza horizontal constante de 800 N. El coeficiente de rozamiento dinámico entre el cajón y el plano es µd = 0.25. a) A partir de un planteo energético, hallar qué distancia recorre sobre el plano hasta detenerse. b) Calcular la variación de energía mecánica que sufre en el ascenso. c) Hallar la potencia instantánea correspondiente a cada una de las fuerzas actuantes, en el punto de partida. d) Determinar la potencia media desarrollada por cada una de las fuerzas durante el ascenso.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p17",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 17,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 17. Una pesa de 0.3 kg está suspendida del techo por un hilo de 1 m de longitud. Se la aparta de la posición de equilibrio hasta que el hilo forme un ángulo de 37º con la vertical y se lo deja libre. Despreciando los rozamientos y la masa del hilo, determinar con qué velocidad pasará por el punto más bajo de la trayectoria, y la fuerza que soportará el hilo en ese instante. Hallar a qué distancia mínima del techo llegará al otro lado. Si se coloca 4 un clavo horizontal, normal al plano de oscilación, a 50 cm del techo: determinar a qué altura llegará al otro lado; hallar en qué posición deberá ubicarse el clavo, para que la pesa dé una vuelta completa a su alrededor, sin que el hilo se afloje en ningún momento.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p18",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 18,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 18. Un carrito de un juego de un parque de diversiones rueda sin rozamiento por la vía de la figura, partiendo del reposo en A a una altura h sobre la base del rizo. Trate el carrito como una partícula. a) ¿Qué valor mínimo debe tener h (en términos de R) para que el carrito no caiga en el punto B? b) Si h = 3.50R y R = 20.0 m, calcule la rapidez, aceleración radial y aceleración tangencial de los pasajeros cuando el carrito está en el punto C, en el extremo de un diámetro horizontal.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p19",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 19,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 19. Resuelva el problema 6 empleando conservación de la energía mecánica.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p20",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 20,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 20. El coche de un ascensor, de 400 kg, está en reposo en el primer piso, a 3 m de altura sobre el extremo libre de un resorte paragolpes cuya constante elástica es 19200 N/m. En esas condiciones se rompe el cable que lo sostiene y automáticamente actúa un freno de fricción contra las guías que le aplica una fuerza vertical en sentido opuesto a su desplazamiento, cuyo módulo constante es 1600 N. Hallar: a) La velocidad del coche al llegar al extremo del resorte. b) La distancia máxima que lo comprimirá. c) La altura máxima que alcanzará luego del primer rebote.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p21",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 21,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 21. En el esquema de la figura se puede despreciar la masa de la cuerda y de la polea, así como todos los rozamientos. El carrito 1 tiene una masa de 80 kg y la del bloque 2 es 20 kg. a) Por consideraciones energéticas hallar con qué velocidad llegará al piso el bloque 2 si ambos parten del reposo. b) Si ahora hay rozamiento entre el carrito 1 y el plano y el coeficiente dinámico es µd = 0.16, hallar nuevamente con qué velocidad llega al piso el bloque 2 si también parten del reposo.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g5-p22",
+      "origin": "source",
+      "guide": 5,
+      "guideTitle": "Trabajo y Energía Cinética",
+      "number": 22,
+      "prompt": "Guía 5 · Trabajo y Energía Cinética · Problema 22. El sistema de la figura se libera desde el reposo con el resorte sin deformar. La constante del resorte el k=440 N/m. Determinar la velocidad máxima alcanzada por los pesos.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p01",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 1,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 1. Determinar el centro de masa de las tres partículas mostradas en la figura. ¿Cómo cambia este centro de masa si se elimina la partícula en el origen?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p02",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 2,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 2. El hacha de piedra de la figura está formada por una piedra simétrica de 8 kg atada al extremo de un palo homogéneo de 2.5 kg. ¿A qué distancia del extremo izquierdo del mango del hacha se encuentra su centro de masa?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p03",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 3,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 3. a) Determine, utilizando la definición analítica, el centro de masa de una varilla recta y homogénea de longitud L y masa M. b) La varilla del punto a) se dobla y forma un arco de circunferencia como se muestra en la figura. Determine el centro de masa. c) Determine el centro de masa de una varilla no homogénea rectilínea con una densidad lineal de masa variable dada por: l=lo (x / L), donde x es la distancia a uno de sus extremos y L su longitud. d) Para el punto c), determine la masa que se debe colocar en un extremo para que el centro de masa se desplace al centro de la barra.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p04",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 4,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 4. Dos patinadores, uno con 60 kg y el otro de 40 kg de masa, están de pie en una pista de hielo y unidos por una soga de 10 m de largo y de masa despreciable. Se atraen mutuamente desde los bordes de la soga acercándose hasta chocar. ¿Qué distancia recorre el patinador de 40 kg?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p05",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 5,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 5. Una persona que pesa 80 kg y otra de menor peso están dentro de una canoa de 30 kg de masa. Cuando la canoa está en reposo en aguas tranquilas, intercambian asientos, los cuales se hallan separados una distancia de 3 m y simétricamente situados con respecto al centro de la canoa. Observan que la canoa se movió 40 cm con relación a un tronco sumergido. Calcular la masa de la otra persona.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p06",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 6,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 6. Dos bloques de masas M y 3M se colocan sobre una superficie horizontal sin rozamiento. Un resorte de masa despreciable está unido a uno de ellos y los bloques son empujados junto con el resorte entre ellos. Una cuerda que inicialmente mantiene juntos a los bloques se rompe. Después de esto el bloque de masa 3M adquiere una velocidad de 2 m/s. a) ¿Cuál es la velocidad del otro bloque? b) Encuentre la energía potencial original en el resorte si M=0.35 kg.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p07",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 7,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 7. Un disco de hockey B descansa sobre hielo liso y es golpeado por otro disco, A que viajaba a 40 m/s y se desvía 30º respecto a su dirección original. B adquiere una velocidad a 45º respecto a la velocidad original de A. Los discos tienen la misma masa. a) Calcule la velocidad de cada disco después del choque. b) ¿Qué fracción de la energía cinética original de A se disipa durante el choque?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p08",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 8,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 8. Una cuña de masa m2 se encuentra en reposo sobre una balanza como indica la figura. Un bloque pequeño de masa m1 desliza por el plano inclinado sin rozamiento de la cuña. Determine la lectura de la balanza mientras el bloque se desliza.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p09",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 9,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 9. Una bala de 3.54 g se dispara horizontalmente contra dos bloques que descansan sobre una mesa horizontal sin fricción como se muestra en la figura. La bala atraviesa el primer bloque que tiene una masa de 1.22 kg y se empotra en el segundo de 1.78 kg de masa. Al hacerlo se imprimen en los bloques velocidades de 0.63 m/s y 1.48 m/s respectivamente. Despreciando la masa extraída del primer bloque por la bala, determine: a) la velocidad de la bala después de salir del primer bloque. b) la velocidad original de la bala.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p10",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 10,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 10. Un cuerpo de 0.3 kg se deja caer desde una altura de 8 m. Choca contra el suelo y queda en reposo. a) ¿Cuál es el impulso ejercido por el suelo sobre el cuerpo? b) Si desde que el cuerpo toca el suelo hasta que queda en reposo transcurren 0.0013 s, ¿cuál es la fuerza media ejercida por el suelo sobre el cuerpo?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p11",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 11,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 11. Una pelota de frontón de 60 g a la velocidad de 5 m/s, choca contra la pared bajo un ángulo de 40º con la normal a la pared y rebota con la misma velocidad y el mismo ángulo. Si está en contacto con la pared durante 2 ms, ¿cuál es la fuerza media ejercida por la bola sobre la pared?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p12",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 12,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 12. Una ametralladora dispara balas de 35 g con una velocidad de 750 m/s. Si el arma puede disparar 200 balas/min, ¿Cuál es la fuerza promedio que el tirador debe ejercer para evitar que la ametralladora se mueva?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p13",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 13,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 13. Un coche de 2000 kg se mueve hacia la derecha a 30 m/s en persecución de un segundo coche de igual masa que se mueve también hacia la derecha a 10 m/s. a) Si los dos coches chocan y quedan acoplados, ¿cuál es su velocidad inmediatamente después de la colisión? b) ¿Qué fracción de la energía cinética inicial de los coches se pierde durante esta colisión? ¿A dónde va a parar esta energía?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p14",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 14,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 14. Un protón de masa m realiza un choque elástico frontal con un núcleo de carbono estacionario de masa 12m. La velocidad del protón es de 300 m/s. a) Determinar la velocidad del centro de masa del sistema. b) Determinar la velocidad del protón y del núcleo de carbono después del choque.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p15",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 15,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 15. La figura muestra un péndulo balístico para medir la velocidad de una bala. La bala, de masa m, se dispara contra un bloque de madera de masa M que cuelga como un péndulo, y tiene un choque totalmente inelástico con él. Después del impacto, el bloque oscila hasta una altura máxima y. Dados los valores de y=10.4 cm, m=12 g y M=2 kg, determine la velocidad inicial de la bala.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p16",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 16,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 16. Un paquete de 10 kg cae desde una rampa a una velocidad de 3 m/s en un carro de 25 kg. Si el carro está al inicio en reposo y puede rodar libremente determine: a) la velocidad final del carro, b) el impulso ejercido por el carro sobre el paquete, c) la fracción de la energía inicial perdida en el impacto.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p17",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 17,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 17. Un cohete de fuegos artificiales se dispara verticalmente hacia arriba. En su altura máxima de 80 m, explota y se divide en dos fragmentos, uno con masa de 1.4 kg y otro con masa de 0.28 kg. En la explosión, 860 J de energía química se convierte en energía cinética de los fragmentos. a) ¿Qué velocidad tiene cada fragmento inmediatamente después de la explosión? b) Se observa que los dos fragmentos caen al suelo al mismo tiempo. ¿Qué distancia hay entre los puntos en los que caen? Suponga que el suelo es horizontal y que la resistencia del aire es despreciable.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p18",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 18,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 18. Dos carritos análogos están unidos rígidamente y tienen una masa combinada de 4 kg. El carrito C tiene una masa de 1 kg. Inicialmente A y B tienen una velocidad de 5 m/s hacia la derecha y C, que está en el punto medio, entre A y B está en reposo a) Suponga que el choque entre A y C es totalmente inelástico. ¿Cuál es la velocidad final del sistema? b) Suponga que el choque entre A y C es elástico pero el choque entre C y B totalmente inelástico. ¿Cuál sería la velocidad final? Comparar con la parte a). c) Suponga que los choques entre A y C y entre C y B son elásticos. ¿Cuál es la velocidad de C después del primer choque y del segundo choque?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p19",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 19,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 19. Un objeto de masa igual a 7 kg que se encuentra en reposo explota en el aire y se desintegra en tres fragmentos de los cuales solo dos se observan que se desplazan uno perpendicular al otro como lo indica la figura. Teniendo en cuenta las masas y velocidades observadas, ¿con qué velocidad (módulo y dirección) se desplaza el tercer fragmento?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
+    },
+    {
+      "id": "fisica1-g6-p20",
+      "origin": "source",
+      "guide": 6,
+      "guideTitle": "Cantidad de Movimiento",
+      "number": 20,
+      "prompt": "Guía 6 · Cantidad de Movimiento · Problema 20. Un bloque de madera de 2 kg se desliza sobre una mesa sin rozamiento a 10 m/s. Directamente delante, otro bloque de 5 kg se mueve en la misma dirección a 3 m/s y está conectado a un resorte de masa despreciable y constante k=1120 N/m. a) Determine la velocidad del centro de masa antes y después del choque. b) Determine la compresión máxima del resorte. c) Determine las velocidades finales de ambos bloques.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [],
+      "result": "",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "fisica-primer-parcial-guias-1-a-6"
+        }
+      ],
+      "status": "prompt-ready"
     }
   ]
 }
