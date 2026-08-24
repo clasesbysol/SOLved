@@ -27,6 +27,14 @@
       "path": "content/subjects/quimica_biologica1/units/proteinas-i/"
     },
     {
+      "subjectId": "quimica_general",
+      "unitId": "primer-tramo",
+      "title": "Química General · base y primer tramo",
+      "contentVersion": "0.1.0",
+      "status": "published",
+      "path": "content/subjects/quimica_general/units/primer-tramo/"
+    },
+    {
       "subjectId": "quimica_organica",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Química Orgánica",
