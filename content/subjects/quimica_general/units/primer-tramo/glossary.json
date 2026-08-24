@@ -1,0 +1,19 @@
+{
+  "entries": [
+    {"id":"qg-mol","term":"Mol","definition":"Unidad de cantidad de sustancia. Un mol contiene 6,022 × 10^23 entidades elementales.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-masa-molar","term":"Masa molar","definition":"Masa correspondiente a un mol de sustancia, normalmente expresada en g/mol.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-coeficiente","term":"Coeficiente estequiométrico","definition":"Número colocado delante de una fórmula en una ecuación balanceada; expresa la proporción molar entre las sustancias.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-limitante","term":"Reactivo limitante","definition":"Reactivo que se consume primero según la relación estequiométrica y fija la cantidad máxima de producto que puede formarse.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-exceso","term":"Reactivo en exceso","definition":"Reactivo presente en una cantidad mayor que la necesaria para reaccionar con el reactivo limitante.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-pureza","term":"Pureza","definition":"Fracción o porcentaje de la muestra que corresponde realmente a la sustancia de interés.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-rendimiento","term":"Rendimiento","definition":"Relación entre la cantidad real de producto obtenida y la cantidad teórica calculada estequiométricamente.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-gas-ideal","term":"Gas ideal","definition":"Modelo de gas cuyas partículas se consideran puntuales, sin interacciones intermoleculares apreciables y con choques elásticos.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-presion-parcial","term":"Presión parcial","definition":"Presión que ejercería un componente de una mezcla gaseosa si ocupara por sí solo el mismo volumen a la misma temperatura.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-solucion","term":"Solución","definition":"Mezcla homogénea formada por uno o más solutos distribuidos en un solvente.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-molaridad","term":"Molaridad","definition":"Cantidad de moles de soluto por litro de solución.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-molalidad","term":"Molalidad","definition":"Cantidad de moles de soluto por kilogramo de solvente.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-normalidad","term":"Normalidad","definition":"Cantidad de equivalentes de soluto por litro de solución; depende de la reacción considerada.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-dilucion","term":"Dilución","definition":"Proceso en el que se agrega solvente para disminuir la concentración sin modificar la cantidad de soluto presente.","references":[{"sourceId":"dc-quimica-caba"}]},
+    {"id":"qg-neutralizacion","term":"Neutralización","definition":"Reacción ácido-base en la que las cantidades reaccionan según una relación estequiométrica definida.","references":[{"sourceId":"dc-quimica-caba"}]}
+  ]
+}
