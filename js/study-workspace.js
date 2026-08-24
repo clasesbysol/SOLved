@@ -4,6 +4,7 @@
   let context=null,records=[],pendingFile=null,editingId=null;
   const $=id=>document.getElementById(id),safe=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const key=ctx=>`solved-study-workspace-v2:${ctx?.subjectId||"global"}`;
+  const interactionKey=value=>`solved-study-state-v1:${context?.subjectId||"global"}:${context?.unitId||"legacy"}:${value||"content"}`;
   const defaults=()=>({mode:"single",ratio:50,collapsed:null,left:"tab:summary",right:"tab:cards",unitId:null,tabContext:null});
   function loadLayout(){try{return {...defaults(),...JSON.parse(localStorage.getItem(key(context))||"{}")}}catch(_){return defaults()}}
   function saveLayout(state){state.subjectId=context?.subjectId||null;state.unitId=context?.unitId||null;localStorage.setItem(key(context),JSON.stringify(state));return state}
@@ -61,18 +62,19 @@
   const findMaterial=value=>records.find(item=>materialValue(item)===value||`html:${item.id}`===value);
 
   function normalize(state){
-    const valid=value=>value?.startsWith("tab:")&&TABS[value.slice(4)]||value==="library:html"||value?.startsWith("material:")&&currentRecords().some(item=>materialValue(item)===value)||value?.startsWith("html:")&&currentRecords().some(item=>`html:${item.id}`===value);
+    const valid=value=>value?.startsWith("tab:")&&availableTabs().some(([id])=>id===value.slice(4))||value==="library:html"||value?.startsWith("material:")&&currentRecords().some(item=>materialValue(item)===value)||value?.startsWith("html:")&&currentRecords().some(item=>`html:${item.id}`===value);
     if(!valid(state.left))state.left=`tab:${context?.tab||"summary"}`;
-    if(!valid(state.right))state.right="tab:cards";
+    if(!valid(state.right))state.right=context?.subjectId==="quimica_biologica1"?"tab:exercises":"tab:cards";
     state.ratio=Math.min(90,Math.max(10,Number(state.ratio)||50));
     if(!["left","right",null].includes(state.collapsed))state.collapsed=null;
     state.unitId=context?.unitId||null;
     return state;
   }
 
+  function availableTabs(){return Object.entries(TABS).filter(([id])=>!(context?.subjectId==="quimica_biologica1"&&id==="cards"))}
   function options(selected){
     const htmlCount=currentHtml().length;
-    const tabs=Object.entries(TABS).map(([id,title])=>`<option value="tab:${id}" ${selected===`tab:${id}`?"selected":""}>${title}</option>`).join("");
+    const tabs=availableTabs().map(([id,title])=>`<option value="tab:${id}" ${selected===`tab:${id}`?"selected":""}>${title}</option>`).join("");
     const library=htmlCount?`<option value="library:html" ${selected==="library:html"?"selected":""}>Biblioteca · Todos los HTML (${htmlCount})</option>`:"";
     const materials=currentRecords().map(item=>`<option value="material:${item.id}" ${selected===`material:${item.id}`||selected===`html:${item.id}`?"selected":""}>${item.origin==="official"?"SOLved":"Mi"} ${String(item.type||"archivo").toUpperCase()} · ${safe(item.title||item.originalFilename||"Sin título")}</option>`).join("");
     return tabs+library+materials;
@@ -181,13 +183,13 @@
       }
       if(item.type==="pdf")loadPdf(host.querySelector(".personal-pdf-frame"),item);
       bindMaterialActions(host);
-      return;
+      bindInteractionState(panel,value);return;
     }
     if(value==="library:html"){
       host.innerHTML=libraryView(currentHtml(),{title:"Todos los HTML",all:true});
       bindLibrary(host,side);
       bindMaterialActions(host);
-      return;
+      bindInteractionState(panel,value);return;
     }
     const tab=value.slice(4),supportsMaterials=["summary","glossary"].includes(tab);
     host.innerHTML=`<div class="official-section"><span class="library-label">Biblioteca SOLved</span>${context.contentByTab[tab]||'<div class="content-card empty-state">Todavía no hay contenido publicado para esta sección.</div>'}${supportsMaterials?sectionExtras(tab):""}</div>`;
@@ -199,6 +201,15 @@
       loadPdf(frame,material);
     });
     bindMaterialActions(host);
+    bindInteractionState(panel,value);
+  }
+
+  function readInteractionState(value){try{return JSON.parse(localStorage.getItem(interactionKey(value))||"{}")||{}}catch(_){return {}}}
+  function bindInteractionState(panel,value){
+    const host=panel.querySelector(".workspace-panel-scroll"),saved=readInteractionState(value),details=[...host.querySelectorAll("details")];
+    details.forEach((item,index)=>{if(Array.isArray(saved.open))item.open=saved.open.includes(index);item.addEventListener("toggle",()=>{const state=readInteractionState(value);state.open=details.flatMap((detail,i)=>detail.open?[i]:[]);state.scrollTop=host.scrollTop;localStorage.setItem(interactionKey(value),JSON.stringify(state))})});
+    if(Number.isFinite(saved.scrollTop))requestAnimationFrame(()=>{host.scrollTop=saved.scrollTop});
+    let timer=0;host.addEventListener("scroll",()=>{clearTimeout(timer);timer=setTimeout(()=>{const state=readInteractionState(value);state.scrollTop=host.scrollTop;state.open=details.flatMap((detail,i)=>detail.open?[i]:[]);localStorage.setItem(interactionKey(value),JSON.stringify(state))},120)},{passive:true});
   }
 
   function bindPanels(root,state){
