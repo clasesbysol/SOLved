@@ -1,0 +1,16 @@
+{
+  "id": "/SOLved/qg/",
+  "name": "Química General ET27 - clases particulares de Male @clasesbysol",
+  "short_name": "Química ET27",
+  "description": "Apuntes, ejercicios e integradores de Química General ET27 de @clasesbysol.",
+  "start_url": "/SOLved/qg/",
+  "scope": "/SOLved/qg/",
+  "display": "standalone",
+  "background_color": "#f5fafb",
+  "theme_color": "#14a8b0",
+  "orientation": "any",
+  "icons": [
+    {"src":"../assets/brand/solved-icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"../assets/brand/solved-icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
