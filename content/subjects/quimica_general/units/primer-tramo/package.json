@@ -5,10 +5,10 @@
   "subjectId": "quimica_general",
   "unitId": "primer-tramo",
   "title": "Química General · primer tramo",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "published",
-  "generatedAt": "2026-08-24T16:46:00.000Z",
-  "reviewedAt": "2026-08-24T16:46:00.000Z",
+  "generatedAt": "2026-08-25T02:17:00.000Z",
+  "reviewedAt": "2026-08-25T02:17:00.000Z",
   "files": {
     "summary": "summary.json",
     "glossary": "glossary.json",
