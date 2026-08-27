@@ -1,8 +1,9 @@
 (function(){
   const SUBJECTS = [
+    {id:"fisica_aplicada",code:"4.º año",name:"Física Aplicada",term:4,hours:0,hue:205,offering:"2.º cuatrimestre",defaultStatus:"en_curso",schoolHome:true},
     {id:"analisis1",code:"N1",name:"Análisis I",term:1,hours:128,hue:211,offering:"Mar-Jun / Ago-Nov",defaultStatus:"aprobada"},
     {id:"cts",code:"CB02",name:"Ciencia, Tecnología y Sociedad",term:1,hours:64,hue:28,offering:"Mar-Jun / Ago-Nov",defaultStatus:"sin_estado"},
-    {id:"quimica_general",code:"CB03",name:"Química General",term:1,hours:128,hue:186,offering:"Mar-Jun / Ago-Nov",defaultStatus:"sin_estado"},
+    {id:"quimica_general",code:"4.º año",name:"Química General",term:4,hours:0,hue:186,offering:"Material publicado",defaultStatus:"en_curso",schoolHome:true},
     {id:"biologia1",code:"CB04",name:"Biología I",term:1,hours:64,hue:133,offering:"Mar-Jun / Ago-Nov",defaultStatus:"aprobada"},
 
     {id:"intro_biotec",code:"N2",name:"Introducción a la Biotecnología",term:2,hours:80,hue:169,offering:"Mar-Jun / Ago-Nov",defaultStatus:"sin_estado",courseReqCursadas:["quimica_general","cts"],finalReqFinals:["quimica_general","cts"]},
@@ -61,8 +62,8 @@
     visualTheme:"classic",
     subjectHueOverrides:{},
     studyIdleSeconds:75,
-    currentIds:["fisica1","estadistica","quimica_biologica1"],
-    order:["fisica1","estadistica","quimica_biologica1"],
+    currentIds:["quimica_general","fisica_aplicada"],
+    order:["quimica_general","fisica_aplicada"],
     recentSubjectIds:[],
     weeklySchedule:[],
     calendar:{year:2026,month:6},
@@ -70,10 +71,10 @@
     zoomIndex:1,
     viewerVisible:true,
     indexVisible:false,
-    lastSubject:"fisica1",
+    lastSubject:"fisica_aplicada",
     lastTab:"summary",
     lastBlock:"Vista integral",
-    lastUnitBySubject:{fisica1:"resumen-integral"},
+    lastUnitBySubject:{fisica_aplicada:"tension-superficial",fisica1:"resumen-integral"},
     readingGlobal:{narrow:false,wideLine:false,large:false,hideSecondary:false,contrast:false,ruler:false,focus:false},
     readingBySubject:{}
   };
@@ -89,5 +90,5 @@
     item.sourceVerified=true;
   }
 
-window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.10.10",CONTENT_VERSION:"catalog-v10"};
+window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.11.0",CONTENT_VERSION:"catalog-v11"};
 })();
