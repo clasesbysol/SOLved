@@ -70,7 +70,7 @@
   <aside class="sidebar">
     <nav class="nav">
       <button class="nav-btn active" data-page="dashboard"><svg class="icon"><use href="#i-home"/></svg><span>Vista general</span></button>
-      <button class="nav-btn" data-page="subjects"><svg class="icon"><use href="#i-books"/></svg><span>Años y materias</span></button>
+      <button class="nav-btn" data-page="subjects"><svg class="icon"><use href="#i-books"/></svg><span>Plan y materias</span></button>
       <button class="nav-btn" data-page="calendar"><svg class="icon"><use href="#i-calendar"/></svg><span>Calendario</span></button>
       <button class="nav-btn" data-page="favorites"><svg class="icon"><use href="#i-books"/></svg><span>Favoritos</span></button>
       <button class="nav-btn" data-page="review"><svg class="icon"><use href="#i-flask"/></svg><span>Repaso aleatorio</span></button>
@@ -88,7 +88,7 @@
     <section class="page" id="dashboardPage">
       <div class="dashboard-layout">
         <div>
-          <article class="hero et27-hero"><div><small>ESCUELA TÉCNICA N.º 27</small><h1>¿Qué vamos a estudiar hoy?</h1><p>Entrá por año, retomá lo reciente o abrí una materia fijada.</p></div><span id="currentCount" hidden>0</span></article>
+          <article class="hero"><div><h1>Mesa de estudio</h1></div><span id="currentCount" hidden>0</span></article>
           <section class="section weekly-schedule-section" id="weeklyScheduleSection">
             <div class="section-head"><div><h2>Horario semanal</h2><p>Lunes a viernes, de 07:00 a 23:00.</p></div><button class="soft-btn" id="addScheduleBlock"><svg class="icon"><use href="#i-plus"/></svg>Agregar materia</button></div>
             <div class="schedule-empty" id="scheduleEmpty" hidden><strong>Tu horario todavía está vacío</strong><p>Agregá la primera materia para organizar tu semana.</p></div>
@@ -97,15 +97,13 @@
 
           <section class="section">
             <div class="section-head">
-              <div><h2>Fijadas</h2><p>Tus materias principales, siempre a mano.</p></div>
+              <div><h2>Materias en curso</h2><p>Arrastrá las tarjetas para cambiar el orden.</p></div>
               <button class="soft-btn" id="addEventTop"><svg class="icon"><use href="#i-plus"/></svg>Agregar fecha</button>
             </div>
             <div class="current-grid" id="currentGrid"></div>
           </section>
 
-          <section class="section"><div class="section-head"><div><h2>Recientes</h2><p>Volvé rápido a lo último que estuviste viendo.</p></div></div><div class="current-grid" id="recentHomeGrid"></div></section>
-
-          <section class="section"><article class="career-progress-card" id="careerProgress"><h2>Avance general</h2><strong>Calculando…</strong></article></section>
+          <section class="section"><article class="career-progress-card" id="careerProgress"><h2>Avance de la carrera</h2><strong>Calculando…</strong></article></section>
         </div>
 
         <aside class="dashboard-side">
@@ -135,7 +133,7 @@
       <div class="plan-toolbar">
         <div class="segmented" id="termFilter">
           <button class="active" data-term="all">Todos</button>
-          <button data-term="1">1.º año</button><button data-term="2">2.º año</button><button data-term="3">3.º año</button><button data-term="4">4.º año</button><button data-term="5">5.º año</button><button data-term="6">6.º año</button>
+          <button data-term="1">1.º</button><button data-term="2">2.º</button><button data-term="3">3.º</button><button data-term="4">4.º</button><button data-term="5">5.º</button><button data-term="6">6.º</button><button data-term="7">7.º</button><button data-term="8">8.º</button><button data-term="9">9.º</button><button data-term="10">10.º</button>
         </div>
         <div class="top-spacer"></div>
         <button class="soft-btn" id="manageCoursesPlan"><svg class="icon"><use href="#i-settings"/></svg>Materias a mano</button>

@@ -3,14 +3,6 @@
   "generatedFrom": "package manifests; do not edit manually",
   "packages": [
     {
-      "subjectId": "fisica_aplicada",
-      "unitId": "tension-superficial",
-      "title": "2.º cuatrimestre · Tensión superficial",
-      "contentVersion": "1.0.0",
-      "status": "published",
-      "path": "content/subjects/fisica_aplicada/units/tension-superficial/"
-    },
-    {
       "subjectId": "estadistica",
       "unitId": "probabilidad-practica-1",
       "title": "Probabilidad · teoría, glosario y Práctica 1",

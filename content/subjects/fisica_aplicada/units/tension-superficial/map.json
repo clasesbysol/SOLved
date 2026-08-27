@@ -1,1 +1,0 @@
-{"nodes":[{"id":"ts","type":"unit","label":"Tensión superficial"},{"id":"cap","type":"concept","label":"Capilaridad"},{"id":"met","type":"process","label":"Métodos de medición"}],"edges":[{"from":"ts","to":"cap","type":"applied-in"},{"from":"ts","to":"met","type":"related-to"}]}
