@@ -5,7 +5,9 @@
     '#qbiEmbeddedExercises',
     '#ejercicios-qbi',
     '.qbi-exercise-bank',
-    '.qbi-exercises-section'
+    '.qbi-exercises-section',
+    '.qbi-solution-body',
+    '.qbi-exercise-solution'
   ].join(',');
   const SKIP='script,style,textarea,pre,code,mjx-container,svg,.MathJax,.mjx-chtml,.qbi-no-math';
   const mathCommand=/\\(?:mathrm|text|frac|dfrac|tfrac|sqrt|Delta|delta|alpha|beta|gamma|varepsilon|epsilon|mu|sigma|pi|lambda|theta|omega|rightarrow|leftrightarrow|rightleftharpoons|cdot|times|pm|approx|leq|geq|neq|infty|ln|log|exp)\b/;
@@ -33,6 +35,7 @@
       /\\(?:mathrm|text)\{[^{}]+\}(?:[_^](?:\{[^{}]+\}|[+\-A-Za-z0-9\\]+))*/g,
       /\\(?:sqrt)\{[^{}]+\}(?:[_^](?:\{[^{}]+\}|[+\-A-Za-z0-9\\]+))*/g,
       /\\(?:Delta|delta|alpha|beta|gamma|varepsilon|epsilon|mu|sigma|pi|lambda|theta|omega|infty)(?:[_^](?:\{[^{}]+\}|[+\-A-Za-z0-9\\]+))*/g,
+      /\\(?:rightarrow|leftrightarrow|rightleftharpoons|cdot|times|pm|approx|leq|geq|neq|ln|log|exp)\b/g,
       /\b(?:pK|K|V|v|k|C|A|E|S|P|Q|R)[A-Za-z0-9]*(?:_\{[^{}]+\}|_[A-Za-z0-9\\]+|\^\{[^{}]+\}|\^[+\-A-Za-z0-9\\]+)+/g,
       /\[[A-Za-z0-9+\-]+\](?:_\{[^{}]+\}|_[A-Za-z0-9\\]+|\^\{[^{}]+\}|\^[+\-A-Za-z0-9\\]+)+/g,
       /\b[A-Z][A-Za-z0-9]*(?:_\{?\d+\}?)+(?:\^\{?[+\-0-9]+\}?)?/g
@@ -54,7 +57,7 @@
     const whole=value.match(/^(\s*)\[\s*([\s\S]*?)\s*\](\s*)$/);
     if(whole&&hasMathish(whole[2]))return guarded.restore(`${whole[1]}\\[${whole[2].trim()}\\]${whole[3]}`);
 
-    value=value.replace(/\(([^()\n]{1,220})\)/g,(match,inner)=>hasMathish(inner)?`\\(${inner.trim()}\\)`:match);
+    value=value.replace(/\(([^()\n]{1,220})\)/g,(match,inner)=>hasMathish(inner)?`(\\(${inner.trim()}\\))`:match);
     const newlyProtected=protectDelimited(value,'N');
     value=wrapStandalone(newlyProtected.value);
     value=newlyProtected.restore(value);
