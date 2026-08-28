@@ -1,0 +1,49 @@
+{
+  "exercises": [
+    {
+      "id": "estadistica-practica2-ej06", "origin": "source",
+      "prompt": "Un comerciante sabe que hay una probabilidad p = 0,20 de que en un día cualquiera le sea pedido un televisor de una marca determinada. Supongamos, además, que en un día le es solicitado a lo sumo un televisor de esa marca, y que la demanda de un día es independiente de la de cualquier otro día.\na) Definimos la variable aleatoria X = Cantidad de televisores pedidos en un período de 15 días. ¿Qué distribución tiene X?\nb) Hallar la probabilidad de que no le soliciten ningún televisor de esa marca en un período de 15 días de actividad.\nc) En el mismo período, ¿cuál es la probabilidad de que la demanda sea de a lo sumo 3 televisores?\nd) Si al comienzo de ese período tiene 6 televisores de esa marca, ¿cuál es la probabilidad de que no pueda satisfacer la demanda?",
+      "basedOn": [], "breakdown": ["a) Distribución","b) Ningún pedido","c) A lo sumo tres","d) Demanda que supera el stock"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["X∼Binomial(n=15,p=0,20)","P(X=k)=C(15,k)(0,20)^k(0,80)^(15-k)","P(X=0)=C(15,0)(0,20)^0(0,80)^(15)","P(X=0)=(0,80)^(15)≈0,03518","P(X≤3)=Σ[k=0..3]C(15,k)(0,20)^k(0,80)^(15-k)","P(X≤3)≈0,64816","P(X>6)=P(X≥7)","P(X≥7)=1-P(X≤6)","P(X≥7)=1-Σ[k=0..6]C(15,k)(0,20)^k(0,80)^(15-k)","P(X≥7)≈0,01806"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Distribución","Hay 15 ensayos independientes, con dos resultados por día y probabilidad constante de pedido:","X∼Binomial(n=15,p=0,20)","P(X=k)=C(15,k)(0,20)^k(0,80)^(15-k)","b) Ningún pedido","P(X=0)=C(15,0)(0,20)^0(0,80)^(15)","P(X=0)=(0,80)^(15)≈0,03518","c) A lo sumo tres","P(X≤3)=Σ[k=0..3]C(15,k)(0,20)^k(0,80)^(15-k)","P(X≤3)≈0,64816","d) Demanda que supera el stock","No puede satisfacerla cuando se piden más de seis televisores:","P(X>6)=P(X≥7)","P(X≥7)=1-P(X≤6)","P(X≥7)=1-Σ[k=0..6]C(15,k)(0,20)^k(0,80)^(15-k)","P(X≥7)≈0,01806"],
+      "result": "P(X≥7)≈0,01806", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej07", "origin": "source",
+      "prompt": "Un examen de elección múltiple consta de 10 preguntas cada una de las cuales posee 5 posibles respuestas, siendo sólo una la correcta. Suponga que un estudiante rinde el examen contestando cada pregunta en forma independiente y al azar. Si Z es el número de respuestas correctas\na) Halle la distribución de Z.\nb) Halle la probabilidad de que el alumno responda correctamente 7 preguntas.\nc) Si para aprobar es necesario tener más de 5 respuestas correctas. Halle la probabilidad de que un estudiante apruebe.",
+      "basedOn": [], "breakdown": ["a) Distribución","b) Exactamente siete correctas","c) Probabilidad de aprobar"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["P(respuesta correcta)=1/5=0,20","Z∼Binomial(n=10,p=0,20)","P(Z=k)=C(10,k)(0,20)^k(0,80)^(10-k)","P(Z=7)=C(10,7)(0,20)^7(0,80)^3","P(Z=7)=0,000786432","P(aprobar)=P(Z>5)","P(Z>5)=Σ[k=6..10]C(10,k)(0,20)^k(0,80)^(10-k)","P(Z>5)≈0,006369"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Distribución","P(respuesta correcta)=1/5=0,20","Z∼Binomial(n=10,p=0,20)","P(Z=k)=C(10,k)(0,20)^k(0,80)^(10-k)","b) Exactamente siete correctas","P(Z=7)=C(10,7)(0,20)^7(0,80)^3","P(Z=7)=0,000786432","c) Probabilidad de aprobar","P(aprobar)=P(Z>5)","P(Z>5)=Σ[k=6..10]C(10,k)(0,20)^k(0,80)^(10-k)","P(Z>5)≈0,006369"],
+      "result": "P(Z>5)≈0,006369", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej08", "origin": "source",
+      "prompt": "La probabilidad de que Carola encienda un cigarrillo con su encendedor es 0,85.\na) Definimos la variable aleatoria X = cantidad de intentos hasta que Carola enciende un cigarrillo. Indicar la distribución de X.\nb) Calcular la probabilidad de que sean necesarios más de tres intentos hasta prender el cigarrillo.",
+      "basedOn": [], "breakdown": ["a) Distribución","b) Más de tres intentos"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["X∼Geométrica(p=0,85)","R_X=1,2,3,…","P(X=k)=(1-p)^(k-1)p","P(X=k)=(0,15)^(k-1)(0,85)","P(X>3)=(1-p)^3","P(X>3)=(0,15)^3","P(X>3)=0,003375"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Distribución","X cuenta intentos independientes hasta el primer éxito:","X∼Geométrica(p=0,85)","R_X=1,2,3,…","P(X=k)=(1-p)^(k-1)p","P(X=k)=(0,15)^(k-1)(0,85)","b) Más de tres intentos","Para necesitar más de tres intentos, los primeros tres deben fallar:","P(X>3)=(1-p)^3","P(X>3)=(0,15)^3","P(X>3)=0,003375"],
+      "result": "P(X>3)=0,003375", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej09", "origin": "source",
+      "prompt": "Un minorista ha verificado que la demanda semanal de cajones de cierto producto es una v.a. con distribución de Poisson de parámetro λ = 2. Completa su existencia los lunes por la mañana de manera de tener 4 cajones al principio de la semana. Al efectuar un análisis de la actividad de su negocio, se le plantean las siguientes preguntas:\na) ¿Cuál es la probabilidad de vender todo su stock durante la semana?\nb) ¿Cuál es la probabilidad de que sea incapaz de cumplir con un pedido por lo menos?\nc) ¿Cuál es la distribución del número de cajones vendidos en una semana?",
+      "basedOn": [], "breakdown": ["a) Vender los cuatro cajones","b) No poder cumplir al menos un pedido","c) Distribución de los cajones vendidos"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["D∼Poisson(2)","P(D=k)=e^(-2)(2^k)/(k!)","P(vende todo)=P(D≥4)","P(D≥4)=1-Σ[k=0..3]e^(-2)(2^k)/(k!)","P(D≥4)≈0,14288","P(no cumple)=P(D>4)","P(D>4)=1-Σ[k=0..4]e^(-2)(2^k)/(k!)","P(D>4)≈0,05265","R_V=0,1,2,3,4","P(V=k)=e^(-2)(2^k)/(k!) k=0,1,2,3","P(V=4)=P(D≥4)"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["D∼Poisson(2)","P(D=k)=e^(-2)(2^k)/(k!)","a) Vender los cuatro cajones","P(vende todo)=P(D≥4)","P(D≥4)=1-Σ[k=0..3]e^(-2)(2^k)/(k!)","P(D≥4)≈0,14288","b) No poder cumplir al menos un pedido","Hay demanda insatisfecha cuando se piden más de cuatro cajones:","P(no cumple)=P(D>4)","P(D>4)=1-Σ[k=0..4]e^(-2)(2^k)/(k!)","P(D>4)≈0,05265","c) Distribución de los cajones vendidos","Sea V=min(D,4) . Entonces:","R_V=0,1,2,3,4","P(V=k)=e^(-2)(2^k)/(k!) k=0,1,2,3","P(V=4)=P(D≥4)","v | 0 | 1 | 2 | 3 | 4","P(V=v) | 0,13534 | 0,27067 | 0,27067 | 0,18045 | 0,14288"],
+      "result": "P(V=4)=P(D≥4)", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej10", "origin": "source",
+      "prompt": "El número de ciero tipo de bacterias en un estanque tiene una distribución Poisson de parámetro λ = 3 bacterias por cm3 de agua.\na) Calcule la probabilidad de que una muestra de 1 cm3 contenga 4 o más bacterias.\nb) Si ahora se toman en forma independiente 5 muestras de 1 cm3 de volumen cada una. ¿Cuál es la probabilidad de que exactamente 3 de ellas contengas 4 o más bacterias?",
+      "basedOn": [], "breakdown": ["a) Cuatro o más bacterias","b) Exactamente tres de las cinco muestras"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["X∼Poisson(3)","P(X=k)=e^(-3)(3^k)/(k!)","P(X≥4)=1-P(X≤3)","P(X≥4)=1-Σ[k=0..3]e^(-3)(3^k)/(k!)","P(X≥4)=1-e^(-3)(1+3+(3^2)/(2!)+(3^3)/(3!))","P(X≥4)≈0,35277","q=P(X≥4)≈0,35277","Y∼Binomial(n=5,p=q)","P(Y=3)=C(5,3)q^3(1-q)^2","P(Y=3)=C(5,3)(0,35277)^3(0,64723)^2","P(Y=3)≈0,18390"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Cuatro o más bacterias","X∼Poisson(3)","P(X=k)=e^(-3)(3^k)/(k!)","P(X≥4)=1-P(X≤3)","P(X≥4)=1-Σ[k=0..3]e^(-3)(3^k)/(k!)","P(X≥4)=1-e^(-3)(1+3+(3^2)/(2!)+(3^3)/(3!))","P(X≥4)≈0,35277","b) Exactamente tres de las cinco muestras","Definimos como éxito que una muestra contenga al menos cuatro bacterias:","q=P(X≥4)≈0,35277","Como las cinco muestras son independientes:","Y∼Binomial(n=5,p=q)","P(Y=3)=C(5,3)q^3(1-q)^2","P(Y=3)=C(5,3)(0,35277)^3(0,64723)^2","P(Y=3)≈0,18390"],
+      "result": "P(Y=3)≈0,18390", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    }
+  ]
+}
