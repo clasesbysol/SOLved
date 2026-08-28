@@ -79,8 +79,18 @@
     return changed;
   }
 
+  async function waitForMathJax(rounds){
+    for(let i=0;i<rounds&&!window.MathJax?.typesetPromise;i++)await new Promise(resolve=>setTimeout(resolve,100));
+    return window.MathJax?.typesetPromise?window.MathJax:null;
+  }
+
   async function ensureMathJax(){
     if(window.MathJax?.typesetPromise)return window.MathJax;
+    const existing=[...document.scripts].some(script=>/mathjax/i.test(script.src||''));
+    if(existing){
+      const ready=await waitForMathJax(40);
+      if(ready)return ready;
+    }
     if(!document.getElementById('qbi-math-render-fix-mathjax')){
       window.MathJax=window.MathJax||{};
       window.MathJax.tex=window.MathJax.tex||{};
@@ -93,8 +103,7 @@
       script.defer=true;
       document.head.append(script);
     }
-    for(let i=0;i<60&&!window.MathJax?.typesetPromise;i++)await new Promise(resolve=>setTimeout(resolve,100));
-    return window.MathJax;
+    return (await waitForMathJax(60))||window.MathJax;
   }
 
   let timer=0,running=false,pending=false;
