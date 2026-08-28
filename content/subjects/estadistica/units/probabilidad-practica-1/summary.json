@@ -3,13 +3,53 @@
     {
       "id": "estadistica-probabilidad-resumen",
       "title": "Probabilidad · resumen desarrollado",
-      "text": "Teoría desarrollada del capítulo de Probabilidad, con técnicas de conteo, teoría de conjuntos, frecuencia relativa, axiomas y propiedades de la probabilidad, equiprobabilidad y ejemplos resueltos. La vista enriquecida usa theory.html para conservar la presentación detallada y las fórmulas renderizadas.",
+      "text": "Teoría desarrollada de probabilidad con técnicas de conteo, teoría de conjuntos, frecuencia relativa, axiomas y propiedades, equiprobabilidad, probabilidad condicional, probabilidad total, Bayes e independencia. La vista enriquecida usa theory.html para conservar la presentación detallada y las fórmulas visuales.",
       "kind": "theory",
       "references": [
         {
           "sourceId": "estadistica-probabilidad-pdf",
           "pageStart": 1,
           "pageEnd": 8
+        },
+        {
+          "sourceId": "estadistica-practica-1"
+        }
+      ]
+    },
+    {
+      "id": "estadistica-va-discretas-resumen",
+      "title": "Variables aleatorias discretas famosas",
+      "text": "Una variable aleatoria discreta permite asignar probabilidades a valores puntuales. El material nuevo desarrolla cómo reconocer y usar las distribuciones binomial, geométrica, hipergeométrica y Poisson, incluyendo su función de probabilidad puntual, rango, función de distribución y comandos de R indicados por la cátedra. La binomial negativa queda sólo identificada porque el propio apunte aclara que no se verá este cuatrimestre.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "estadistica-discretas-famosas",
+          "pageStart": 1,
+          "pageEnd": 5
+        }
+      ]
+    },
+    {
+      "id": "estadistica-va-continuas-resumen",
+      "title": "Variables aleatorias continuas, densidad y distribución",
+      "text": "En variables continuas la probabilidad se trabaja sobre intervalos y se interpreta como área bajo una función de densidad. Se desarrollan la diferencia con las variables discretas, la relación histograma-densidad, las propiedades de una densidad, la función de distribución acumulada, percentiles como lectura inversa de la acumulada y la distribución uniforme continua.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "estadistica-continuas",
+          "pageStart": 1,
+          "pageEnd": 6
+        }
+      ]
+    },
+    {
+      "id": "estadistica-lab-24-08-resumen",
+      "title": "Clase de Laboratorio 24/08",
+      "text": "La clase de laboratorio conecta variables aleatorias con herramientas ya estudiadas: Suma Siete para construir una función de probabilidad puntual; urnas condicionadas por un dado para combinar binomiales mediante probabilidad total y construir una distribución acumulada; fábricas defectuosas para aplicar Bayes; y un sistema de tres componentes para usar independencia y complementos.",
+      "kind": "relations",
+      "references": [
+        {
+          "sourceId": "estadistica-lab-24-08"
         }
       ]
     }
