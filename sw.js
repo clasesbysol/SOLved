@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-1";
+const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-2";
 const CORE = [
   "./",
   "./index.html",
@@ -30,7 +30,8 @@ const CORE = [
   "./content/catalog.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.1",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.0.1",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzymes-extension.js?v=4.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-tp1-extension.js?v=4.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-1.txt?v=4.0.0",
