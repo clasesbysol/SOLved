@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-6-stats110";
+const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-7-stats110-full";
 const CORE = [
   "./",
   "./index.html",
@@ -32,6 +32,7 @@ const CORE = [
   "./content/catalog.json",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-va-extension.html?v=1.1.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-lab-24-08.html?v=1.1.0",
+  "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-campus-exercises.html?v=1.1.0",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json",
   "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.4",
