@@ -1,0 +1,50 @@
+{
+  "exercises": [
+    {
+      "id": "estadistica-practica2-ej01",
+      "origin": "source",
+      "prompt": "Sea X una variable aleatoria ¿Cuál de las siguientes funciones es pX, la función de probabilidad puntual de X?\n\nx | 0 | 1 | 2 | 3 | 4\np1(x) | 0.3 | 0.2 | 0.1 | 0.05 | 0.05\np2(x) | 0.4 | 0.1 | 0.1 | 0.1 | 0.3\np3(x) | 0.4 | 0.1 | 0.2 | 0.1 | 0.3\n\nCon la función de probabilidad obtenida en el item anterior, calcular\nP(1 ≤ X ≤ 3), P(X ≤ 2), P(X ≠ 0).",
+      "basedOn": [], "breakdown": [], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["p_X(x)≥0","Σ_x p_X(x)=1","Σ_xp_1(x)=0,3+0,2+0,1+0,05+0,05=0,7","Σ_xp_2(x)=0,4+0,1+0,1+0,1+0,3=1","Σ_xp_3(x)=0,4+0,1+0,2+0,1+0,3=1,1","p_X=p_2","P(1≤ X≤3)=p_X(1)+p_X(2)+p_X(3)","P(1≤ X≤3)=0,1+0,1+0,1","P(1≤ X≤3)=0,3","P(X≤2)=p_X(0)+p_X(1)+p_X(2)","P(X≤2)=0,4+0,1+0,1=0,6","P(X≠0)=1-P(X=0)","P(X≠0)=1-0,4=0,6"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["Una función puntual debe cumplir:","p_X(x)≥0","Σ_x p_X(x)=1","Σ_xp_1(x)=0,3+0,2+0,1+0,05+0,05=0,7","Σ_xp_2(x)=0,4+0,1+0,1+0,1+0,3=1","Σ_xp_3(x)=0,4+0,1+0,2+0,1+0,3=1,1","p_X=p_2","P(1≤ X≤3)=p_X(1)+p_X(2)+p_X(3)","P(1≤ X≤3)=0,1+0,1+0,1","P(1≤ X≤3)=0,3","P(X≤2)=p_X(0)+p_X(1)+p_X(2)","P(X≤2)=0,4+0,1+0,1=0,6","P(X≠0)=1-P(X=0)","P(X≠0)=1-0,4=0,6"],
+      "result": "P(X≠0)=1-0,4=0,6", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej02", "origin": "source",
+      "prompt": "Se define la variable aleatoria X = número computadoras en uso en un centro de datos en un momento determinado. Su función de probabilidad puntual pX está dada por\n\nk | 0 | 1 | 2 | 3\npX(k) | 0,20 | 0,35 | 0,30 | 0,15\n\na) Hallar función de distribución acumulada FX(t) y graficarla.\nb) Calcular la probabilidad de que se esté usando al menos una computadora de dos maneras: usando la función de distribución acumulada y usando la función de probabilidad puntual.",
+      "basedOn": [], "breakdown": ["a) Función de distribución acumulada","b) Al menos una computadora"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["F_X(t)=P(X≤ t)","F_X(t)= 0, si t<0; 0,20, si 0≤ t<1; 0,55, si 1≤ t<2; 0,85, si 2≤ t<3; 1, si t≥3","P(X≥1)=1-P(X=0)","P(X≥1)=1-F_X(0)","P(X≥1)=1-0,20=0,80","P(X≥1)=p_X(1)+p_X(2)+p_X(3)","P(X≥1)=0,35+0,30+0,15=0,80"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Función de distribución acumulada","F_X(t)=P(X≤ t)","F_X(t)= 0, si t<0; 0,20, si 0≤ t<1; 0,55, si 1≤ t<2; 0,85, si 2≤ t<3; 1, si t≥3","b) Al menos una computadora","P(X≥1)=1-P(X=0)","P(X≥1)=1-F_X(0)","P(X≥1)=1-0,20=0,80","Usando la función puntual:","P(X≥1)=p_X(1)+p_X(2)+p_X(3)","P(X≥1)=0,35+0,30+0,15=0,80"],
+      "result": "P(X≥1)=0,35+0,30+0,15=0,80", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej03", "origin": "source",
+      "prompt": "Sea Y = cantidad de veces que un operario debe reiniciar una máquina en un turno. La función de distribución acumulada de la variable aleatoria Y viene dada por:\n\nFY(t) = 0, t < 1; 0,40, 1 ≤ t < 2; 0,75, 2 ≤ t < 3; 0,90, 3 ≤ t < 4; 1, t ≥ 4.\n\na) Determinar RY el rango de Y.\nb) Hallar la función de probabilidad puntual pY(k).\nc) Calcular la probabilidad de que la cantidad de reinicios sea estrictamente mayor a 2.\nd) Calcular P(1,5 ≤ Y ≤ 3).",
+      "basedOn": [], "breakdown": ["a) Rango","b) Función puntual","c) Más de dos reinicios","d) Entre 1,5 y 3"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["R_Y=1,2,3,4","p_Y(k)=P(Y=k)=F_Y(k)-F_Y(k^-)","p_Y(1)=0,40-0=0,40","p_Y(2)=0,75-0,40=0,35","p_Y(3)=0,90-0,75=0,15","p_Y(4)=1-0,90=0,10","P(Y>2)=1-P(Y≤2)","P(Y>2)=1-F_Y(2)","P(Y>2)=1-0,75=0,25","P(1,5≤ Y≤3)=P(Y=2)+P(Y=3)","P(1,5≤ Y≤3)=0,35+0,15=0,50"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Rango","Los saltos de la función acumulada indican los valores posibles:","R_Y=1,2,3,4","b) Función puntual","p_Y(k)=P(Y=k)=F_Y(k)-F_Y(k^-)","p_Y(1)=0,40-0=0,40","p_Y(2)=0,75-0,40=0,35","p_Y(3)=0,90-0,75=0,15","p_Y(4)=1-0,90=0,10","k | 1 | 2 | 3 | 4","p_Y(k) | 0,40 | 0,35 | 0,15 | 0,10","c) Más de dos reinicios","P(Y>2)=1-P(Y≤2)","P(Y>2)=1-F_Y(2)","P(Y>2)=1-0,75=0,25","d) Entre 1,5 y 3","P(1,5≤ Y≤3)=P(Y=2)+P(Y=3)","P(1,5≤ Y≤3)=0,35+0,15=0,50"],
+      "result": "P(1,5≤ Y≤3)=0,35+0,15=0,50", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej04", "origin": "source",
+      "prompt": "Un juego consiste en tirar simultáneamente una moneda y un dado. Si sale cara se ganan tantos miles de pesos como puntos aparecen en la cara superior del dado y si sale cruz se pierden tantos miles de pesos como puntos aparecen en la cara superior del dado. Definimos X = miles de pesos gandos en una jugada. Hallar la función de probabilidad puntual y de distribución de X.",
+      "basedOn": [], "breakdown": [], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["R_X=-6,-5,-4,-3,-2,-1,1,2,3,4,5,6","p_X(k)=P(X=k)=1/12 k∈ R_X","p_X(k)=0 k∉ R_X","F_X(t)= 0, si t<-6; 1/12, si -6≤ t<-5; 2/12, si -5≤ t<-4; 3/12, si -4≤ t<-3; 4/12, si -3≤ t<-2; 5/12, si -2≤ t<-1; 6/12, si -1≤ t<1; 7/12, si 1≤ t<2; 8/12, si 2≤ t<3; 9/12, si 3≤ t<4; 10/12, si 4≤ t<5; 11/12, si 5≤ t<6; 1, si t≥6"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["Los doce resultados moneda-dado son equiprobables:","R_X=-6,-5,-4,-3,-2,-1,1,2,3,4,5,6","p_X(k)=P(X=k)=1/12 k∈ R_X","p_X(k)=0 k∉ R_X","La acumulada aumenta 1/12 en cada valor posible:","F_X(t)= 0, si t<-6; 1/12, si -6≤ t<-5; 2/12, si -5≤ t<-4; 3/12, si -4≤ t<-3; 4/12, si -3≤ t<-2; 5/12, si -2≤ t<-1; 6/12, si -1≤ t<1; 7/12, si 1≤ t<2; 8/12, si 2≤ t<3; 9/12, si 3≤ t<4; 10/12, si 4≤ t<5; 11/12, si 5≤ t<6; 1, si t≥6","No hay salto en 0 porque P(X=0)=0 ."],
+      "result": "F_X(t)= 0, si t<-6; 1/12, si -6≤ t<-5; 2/12, si -5≤ t<-4; 3/12, si -4≤ t<-3; 4/12, si -3≤ t<-2; 5/12, si -2≤ t<-1; 6/12, si -1≤ t<1; 7/12, si 1≤ t<2; 8/12, si 2≤ t<3; 9/12, si 3≤ t<4; 10/12, si 4≤ t<5; 11/12, si 5≤ t<6; 1, si t≥6", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    },
+    {
+      "id": "estadistica-practica2-ej05", "origin": "source",
+      "prompt": "De un lote que contiene 15 artículos, de los cuales 4 son defectuosos, se eligen 5 artículos al azar sin reposición. Llamamos X al número de artículos defectuosos entre los seleccionados.\na) Hallar la función de probabilidad puntual asociada a X y graficarla. ¿Qué distribución tiene X?\nb) ¿Cuál es la probabilidad de que al menos 2 artículos sean defectuosos?",
+      "basedOn": [], "breakdown": ["a) Distribución","b) Al menos dos defectuosos"], "data": [], "unknowns": [], "theory": [],
+      "formulas": ["X∼Hipergeométrica(N=15,K=4,n=5)","R_X=0,1,2,3,4","p_X(k)=(C(4,k)C(11,5-k))/(C(15,5)) k∈ R_X","C(15,5)=3003","P(X≥2)=p_X(2)+p_X(3)+p_X(4)","P(X≥2)=990+220+11/3003","P(X≥2)=1221/3003=407/1001≈0,4066"],
+      "strategy": "Leer la consigna completa, identificar la variable y la herramienta probabilística antes de calcular.", "hints": [],
+      "solution": ["a) Distribución","La selección es sin reposición desde una población finita:","X∼Hipergeométrica(N=15,K=4,n=5)","R_X=0,1,2,3,4","p_X(k)=(C(4,k)C(11,5-k))/(C(15,5)) k∈ R_X","C(15,5)=3003","k | 0 | 1 | 2 | 3 | 4","p_X(k) | 462/3003 | 1320/3003 | 990/3003 | 220/3003 | 11/3003","Aproximación | 0,1538 | 0,4396 | 0,3297 | 0,0733 | 0,0037","b) Al menos dos defectuosos","P(X≥2)=p_X(2)+p_X(3)+p_X(4)","P(X≥2)=990+220+11/3003","P(X≥2)=1221/3003=407/1001≈0,4066"],
+      "result": "P(X≥2)=1221/3003=407/1001≈0,4066", "check": "Revisar que las probabilidades queden entre 0 y 1 y que la interpretación final responda exactamente a la consigna.", "commonErrors": [], "related": [], "references": [{"sourceId":"estadistica-practica-2"}]
+    }
+  ]
+}
