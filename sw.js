@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-5";
+const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-6-stats110";
 const CORE = [
   "./",
   "./index.html",
@@ -20,6 +20,7 @@ const CORE = [
   "./js/fisica-topic-intros.js?v=1.2.0",
   "./js/reading-mode-v2.js?v=1.1.0",
   "./js/qbi-official-frame-fix.js?v=1.0.0",
+  "./js/estadistica-v110.js?v=1.1.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.10.11",
   "./js/study-workspace.js?v=0.10.10",
@@ -29,6 +30,8 @@ const CORE = [
   "./js/career-factory.js?v=0.7.3",
   "./js/app.js?v=0.10.10",
   "./content/catalog.json",
+  "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-va-extension.html?v=1.1.0",
+  "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-lab-24-08.html?v=1.1.0",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json",
   "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.4",
@@ -119,6 +122,16 @@ async function fetchText(url){
   }catch(_){return ""}
 }
 
+async function fetchTextWithCache(url){
+  const cache=await caches.open(CACHE_VERSION);
+  const cached=await cache.match(url);
+  try{
+    const response=await fetch(new Request(url,{cache:"no-store"}));
+    if(response.ok){await cache.put(url,response.clone());return response.text()}
+  }catch(_){}
+  return cached?cached.text():"";
+}
+
 async function injectFisicaGuides(request){
   const response=await cacheFirstAndRefresh(request);
   if(!response||!response.ok)return response||Response.error();
@@ -141,15 +154,37 @@ async function injectFisicaGuides(request){
   return new Response(body,{status:response.status,statusText:response.statusText,headers});
 }
 
+async function injectEstadisticaTheory(request){
+  const response=await cacheFirstAndRefresh(request);
+  if(!response||!response.ok)return response||Response.error();
+  let text=await response.text();
+  const marker='data-stats-va-extension="1"';
+  if(!text.includes(marker)){
+    const extension=await fetchTextWithCache("./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-va-extension.html?v=1.1.0");
+    if(extension){
+      const nav='<a href="#va-discreta">Variables discretas</a><a href="#va-continua">Continuas</a><a href="#laboratorio-24-08">Lab 24/08</a><a href="#videos-campus">Videos</a>';
+      text=text.replace(/<\/nav>/i,`${nav}</nav>`);
+      text=text.replace(/<\/main>/i,`${extension}</main>`);
+    }
+  }
+  const headers=new Headers(response.headers);
+  headers.delete("content-length");
+  headers.delete("content-encoding");
+  headers.set("content-type","text/html; charset=utf-8");
+  return new Response(text,{status:response.status,statusText:response.statusText,headers});
+}
+
 async function injectAppShell(request,fallbackUrl){
   const response=await cacheFirstAndRefresh(request,fallbackUrl);
   if(!response||!response.ok)return response||Response.error();
   let text=await response.text();
   const readingMarker='data-solved-reading-v2="1"';
   const qbiMarker='data-solved-qbi-frame-fix="1"';
+  const statsMarker='data-solved-estadistica-v110="1"';
   const injections=[];
   if(!text.includes(readingMarker))injections.push(`<script src="./js/reading-mode-v2.js?v=1.1.0" ${readingMarker}></script>`);
   if(!text.includes(qbiMarker))injections.push(`<script src="./js/qbi-official-frame-fix.js?v=1.0.0" ${qbiMarker}></script>`);
+  if(!text.includes(statsMarker))injections.push(`<script src="./js/estadistica-v110.js?v=1.1.0" ${statsMarker}></script>`);
   if(injections.length)text=text.replace(/<\/body>/i,`${injections.join("")}</body>`);
   const headers=new Headers(response.headers);
   headers.delete("content-length");
@@ -171,6 +206,10 @@ self.addEventListener("fetch",event=>{
   if(url.pathname.endsWith("/content/catalog.json")){event.respondWith(fetch(request,{cache:"no-store"}));return}
   if(url.pathname.endsWith("/content/subjects/fisica1/units/resumen-integral/original.html")){
     event.respondWith(injectFisicaGuides(request));
+    return;
+  }
+  if(url.pathname.endsWith("/content/subjects/estadistica/units/probabilidad-practica-1/theory.html")){
+    event.respondWith(injectEstadisticaTheory(request));
     return;
   }
 
