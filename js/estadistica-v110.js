@@ -4,6 +4,7 @@
   const UNIT_ID="probabilidad-practica-1";
   const THEORY_PATH="/content/subjects/estadistica/units/probabilidad-practica-1/theory.html";
   const LAB_PATH="content/subjects/estadistica/units/probabilidad-practica-1/estadistica-lab-24-08.html?v=1.1.0";
+  const CAMPUS_EXERCISES_PATH="content/subjects/estadistica/units/probabilidad-practica-1/estadistica-campus-exercises.html?v=1.1.0";
   const INDEX=[
     ["conteo","1 · Conteo"],
     ["conjuntos","2 · Conjuntos"],
@@ -28,7 +29,7 @@
     ["videos-campus","21 · Material del campus"]
   ];
 
-  let labMarkupPromise=null;
+  const markupPromises=new Map();
   let scheduled=false;
 
   const statsUnitActive=()=>{
@@ -91,35 +92,41 @@
     if(index&&button)index.hidden=!button.classList.contains("active");
   }
 
-  async function labMarkup(){
-    if(!labMarkupPromise){
-      const url=new URL(LAB_PATH,location.href).href;
-      labMarkupPromise=fetch(url,{cache:"default"}).then(async response=>{
-        if(!response.ok)throw Error(`Laboratorio 24/08 respondió ${response.status}`);
+  async function fetchMarkup(path){
+    if(!markupPromises.has(path)){
+      const url=new URL(path,location.href).href;
+      markupPromises.set(path,fetch(url,{cache:"default"}).then(async response=>{
+        if(!response.ok)throw Error(`${path} respondió ${response.status}`);
         return response.text();
       }).catch(error=>{
-        console.error("SOLved Estadística · laboratorio",error);
+        console.error("SOLved Estadística · ejercicios",error);
         return "";
-      });
+      }));
     }
-    return labMarkupPromise;
+    return markupPromises.get(path);
   }
 
-  async function ensureLabExercises(){
-    if(!statsUnitActive()||activeTab()!=="exercises")return;
-    const host=[...document.querySelectorAll("#studyBody .official-section")].find(section=>section.querySelector(".content-card"));
-    if(!host||host.querySelector('[data-stats-lab-24-08="1"]'))return;
-    const html=await labMarkup();
-    if(!html||!statsUnitActive()||activeTab()!=="exercises"||host.querySelector('[data-stats-lab-24-08="1"]'))return;
+  function appendMarkup(host,html,marker){
+    if(!html||host.querySelector(marker))return;
     const template=document.createElement("template");
     template.innerHTML=html;
     host.append(template.content.cloneNode(true));
   }
 
+  async function ensureExercises(){
+    if(!statsUnitActive()||activeTab()!=="exercises")return;
+    const host=[...document.querySelectorAll("#studyBody .official-section")].find(section=>section.querySelector(".content-card"));
+    if(!host)return;
+    const [lab,campus]=await Promise.all([fetchMarkup(LAB_PATH),fetchMarkup(CAMPUS_EXERCISES_PATH)]);
+    if(!statsUnitActive()||activeTab()!=="exercises")return;
+    appendMarkup(host,lab,'[data-stats-lab-24-08="1"]');
+    appendMarkup(host,campus,'[data-stats-campus-exercises="1"]');
+  }
+
   function refresh(){
     scheduled=false;
     ensureStatsIndex();
-    ensureLabExercises();
+    ensureExercises();
   }
   function schedule(){
     if(scheduled)return;
