@@ -15,6 +15,7 @@ jobs:
           node-version: 20
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
+      - run: node tests/qbi-loader.test.mjs
       - run: node factory/validators/content-validate.mjs
       - run: node factory/validators/content-catalog.mjs
       - run: node tests/content.test.mjs
