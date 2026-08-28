@@ -1,0 +1,137 @@
+<section data-stats-va-extension="1" id="variables-aleatorias-nuevas">
+<style>
+.stats-new-title{margin:32px 0 8px;padding:18px 20px;border:1px solid #5c531f;border-left:6px solid var(--accent);border-radius:14px;background:linear-gradient(135deg,var(--paper),var(--soft))}.stats-new-title h2{margin:0 0 6px;color:var(--accent2)}.stats-new-title p{margin:0;color:var(--muted)}.decision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}.decision-card{border:1px solid var(--line);background:#141619;border-radius:11px;padding:14px}.decision-card strong{color:var(--accent2);display:block;margin-bottom:5px}.tag{display:inline-block;border:1px solid #5c531f;background:var(--soft);border-radius:999px;padding:3px 8px;font-size:.78rem;margin:2px 3px 2px 0}.source-link{display:block;color:var(--accent2);overflow-wrap:anywhere;margin:7px 0}.piecewise{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}.piecewise b{font-family:"Times New Roman",serif;font-size:1.08rem}.why{border:1px dashed #746a2d;background:#1b1a12;border-radius:9px;padding:11px 13px;margin:12px 0}.why strong{color:var(--accent2)}@media(max-width:700px){.decision-grid{grid-template-columns:1fr}.stats-new-title{margin-top:22px}}
+</style>
+<div class="stats-new-title"><h2>Variables aleatorias · material nuevo del campus</h2><p>Actualización 24/08: variables discretas famosas, variables continuas, densidad, distribución, percentiles y puente con el laboratorio.</p></div>
+
+<details id="va-discreta" open><summary>9. Variable aleatoria discreta: qué estamos describiendo</summary><div class="inside">
+<p>Una <strong>variable aleatoria</strong> asigna un número a cada resultado posible de un experimento. La idea importante es que dejamos de mirar el resultado completo y nos quedamos con la característica numérica que nos interesa.</p>
+<div class="example"><strong>Ejemplo: dos dados.</strong><p>El resultado completo puede ser (2,5), pero si definimos X = suma de los dados, entonces a ese resultado le corresponde X=7. Muchos resultados distintos pueden dar el mismo valor de X.</p></div>
+<h3>Rango de X</h3><p>El <strong>rango R<sub>X</sub></strong> es el conjunto de valores que realmente puede tomar la variable. Si X cuenta cuántas bolillas blancas salen en dos extracciones, entonces R<sub>X</sub>={0,1,2}.</p>
+<h3>Función de probabilidad puntual</h3><p>Para una variable discreta sí tiene sentido preguntar la probabilidad de un valor exacto.</p>
+<div class="eq">p<span class="sub">X</span>(k) = P(X = k)</div>
+<p>La función debe cumplir dos cosas: ninguna probabilidad puede ser negativa y la suma de todas las probabilidades posibles debe dar 1.</p>
+<div class="eq">p<span class="sub">X</span>(k) ≥ 0 &nbsp;&nbsp; y &nbsp;&nbsp; Σ p<span class="sub">X</span>(k) = 1</div>
+<h3>Función de distribución acumulada</h3><p>La acumulada responde: “¿qué probabilidad hay de que X sea menor o igual que este valor?”.</p>
+<div class="eq">F<span class="sub">X</span>(t) = P(X ≤ t)</div>
+<p>En una variable discreta F<sub>X</sub> se construye <strong>sumando</strong> las probabilidades puntuales hasta t. Por eso tiene forma de escalones (cada valor posible agrega un salto).</p>
+<div class="note"><strong>Mapa mental:</strong> experimento → definís X → buscás R<sub>X</sub> → calculás p<sub>X</sub> → acumulando p<sub>X</sub> construís F<sub>X</sub>.</div>
+</div></details>
+
+<details id="discretas-famosas" open><summary>10. Cómo reconocer las distribuciones discretas famosas</summary><div class="inside">
+<p>No conviene memorizar cuatro fórmulas aisladas. Primero identificá <strong>qué historia cuenta el experimento</strong>.</p>
+<div class="decision-grid">
+<div class="decision-card"><strong>Binomial</strong><span class="tag">n fijo</span><span class="tag">éxito/fracaso</span><span class="tag">independencia</span><span class="tag">p constante</span><p>Cuenta cuántos éxitos aparecen en una cantidad fija de ensayos.</p></div>
+<div class="decision-card"><strong>Geométrica</strong><span class="tag">repetir hasta éxito</span><span class="tag">primer éxito</span><p>Cuenta cuántos intentos hacen falta hasta que aparece el primer éxito.</p></div>
+<div class="decision-card"><strong>Hipergeométrica</strong><span class="tag">población finita</span><span class="tag">sin reposición</span><p>Cuenta éxitos en una muestra extraída sin devolver los elementos: las extracciones dejan de ser independientes.</p></div>
+<div class="decision-card"><strong>Poisson</strong><span class="tag">conteo</span><span class="tag">intervalo</span><span class="tag">tasa λ</span><p>Cuenta cuántos eventos aparecen en una región de tiempo, espacio, volumen, masa, etc., con una tasa media λ.</p></div>
+</div>
+<table><thead><tr><th>Pregunta rápida</th><th>Si la respuesta es sí…</th></tr></thead><tbody><tr><td>¿Tengo n ensayos fijos y cuento éxitos?</td><td>Binomial</td></tr><tr><td>¿Repito hasta el primer éxito?</td><td>Geométrica</td></tr><tr><td>¿Extraigo de una población finita sin reposición?</td><td>Hipergeométrica</td></tr><tr><td>¿Cuento ocurrencias en un intervalo con media λ?</td><td>Poisson</td></tr></tbody></table>
+<div class="note"><strong>Binomial negativa:</strong> el apunte también la define como “número de repeticiones hasta el r-ésimo éxito”, pero aclara expresamente <strong>“NO LA VEREMOS ESTE CUATRI”</strong>. La dejamos identificada para que no la confundas con la geométrica, pero no como contenido a memorizar para esta cursada.</div>
+</div></details>
+
+<details id="binomial" open><summary>11. Variable aleatoria binomial</summary><div class="inside">
+<p>Usamos una binomial cuando hay <strong>n ensayos de Bernoulli</strong> (cada ensayo sólo tiene éxito o fracaso), n es fijo, los ensayos son independientes y la probabilidad de éxito p se mantiene constante.</p>
+<p>Si X cuenta la cantidad de éxitos:</p>
+<div class="eq">X ∼ Bi(n,p)</div>
+<div class="eq">P(X=k) = <span style="font-size:1.45em">(</span><span class="frac"><span>n</span><span>k</span></span><span style="font-size:1.45em">)</span> p<span class="sup">k</span>(1−p)<span class="sup">n−k</span></div>
+<div class="why"><strong>¿De dónde sale cada parte?</strong><br>p<sup>k</sup> representa los k éxitos; (1−p)<sup>n−k</sup> los fracasos; el número combinatorio cuenta de cuántas maneras pueden ubicarse esos k éxitos entre los n lugares.</div>
+<p>El rango es R<sub>X</sub>={0,1,2,…,n}. Si n=1, la variable se llama <strong>Bernoulli</strong>.</p>
+<div class="example"><strong>Ejemplo del apunte.</strong><p>Si 37% de los estudiantes fuma y se eligen 7 estudiantes con reposición, X=cantidad que fuma es Bi(7,0,37). “Por lo menos 3” se traduce X≥3 y conviene usar complemento: 1−P(X≤2).</p></div>
+<h3>Comandos en R del apunte</h3><div class="eq sm">p<span class="sub">X</span>(k): dbinom(k,n,p)</div><div class="eq sm">F<span class="sub">X</span>(t): pbinom(t,n,p)</div>
+</div></details>
+
+<details id="geometrica" open><summary>12. Variable aleatoria geométrica</summary><div class="inside">
+<p>Se repite el mismo ensayo, de manera independiente, con probabilidad de éxito p constante, <strong>hasta que aparece el primer éxito</strong>. X cuenta el número de intento en el que aparece.</p>
+<div class="eq">X ∼ G(p)</div>
+<div class="eq">P(X=k) = (1−p)<span class="sup">k−1</span> p &nbsp;&nbsp; k=1,2,3,…</div>
+<div class="why"><strong>Razonamiento:</strong> para que el primer éxito aparezca en el intento k, necesariamente los primeros k−1 intentos tienen que ser fracasos y el intento k tiene que ser éxito.</div>
+<div class="example"><strong>Ruleta del apunte.</strong><p>Hay 2 sectores verdes entre 38. Si éxito=caer en verde, p=2/38. Que hagan falta 3 jugadas significa fracaso, fracaso, éxito.</p><div class="eq">P(X=3) = (1−2/38)<span class="sup">2</span>·(2/38)</div></div>
+<h3>Comandos en R</h3><div class="eq sm">p<span class="sub">X</span>(k): dgeom(k−1,p)</div><div class="eq sm">F<span class="sub">X</span>(t): pgeom(t−1,p)</div>
+<div class="note">R usa la cantidad de <strong>fracasos antes</strong> del primer éxito; por eso en el comando aparece k−1, mientras que el apunte define X como número total de intentos.</div>
+</div></details>
+
+<details id="hipergeometrica" open><summary>13. Variable aleatoria hipergeométrica</summary><div class="inside">
+<p>Se usa cuando tenemos una población finita de N elementos, D pertenecen a la categoría que llamamos “éxito” y elegimos n elementos <strong>sin reposición</strong>. X cuenta cuántos éxitos aparecen en la muestra.</p>
+<div class="eq">X ∼ H(D, N−D, n)</div>
+<div class="eq">P(X=k) = <span class="frac"><span><span style="font-size:1.35em">(</span><span class="frac"><span>D</span><span>k</span></span><span style="font-size:1.35em">)</span> · <span style="font-size:1.35em">(</span><span class="frac"><span>N−D</span><span>n−k</span></span><span style="font-size:1.35em">)</span></span><span><span style="font-size:1.35em">(</span><span class="frac"><span>N</span><span>n</span></span><span style="font-size:1.35em">)</span></span></span></div>
+<div class="why"><strong>Lectura de la fórmula:</strong> arriba contamos formas de elegir k éxitos y n−k no-éxitos; abajo contamos todas las formas de elegir n elementos de la población.</div>
+<p>Los valores posibles de k tienen que ser físicamente realizables:</p><div class="eq sm">max{n−(N−D),0} ≤ k ≤ min{D,n}</div>
+<div class="example"><strong>Urna del apunte.</strong><p>2 blancas y 7 negras; se extraen 3 sin reposición. Si X=número de blancas, es hipergeométrica. La palabra decisiva es <strong>sin reposición</strong>.</p></div>
+<h3>Comandos en R</h3><div class="eq sm">p<span class="sub">X</span>(k): dhyper(k,D,N−D,n)</div><div class="eq sm">F<span class="sub">X</span>(t): phyper(t,D,N−D,n)</div>
+<div class="note"><strong>Binomial vs hipergeométrica:</strong> con reposición (o ensayos realmente independientes) la probabilidad de éxito se mantiene; sin reposición cambia después de cada extracción.</div>
+</div></details>
+
+<details id="poisson" open><summary>14. Variable aleatoria Poisson</summary><div class="inside">
+<p>Poisson modela un <strong>conteo de ocurrencias</strong>. El parámetro λ representa el número medio de eventos esperado en la unidad de observación elegida.</p>
+<div class="eq">X ∼ P(λ)</div>
+<div class="eq">P(X=k) = <span class="frac"><span>e<span class="sup">−λ</span> λ<span class="sup">k</span></span><span>k!</span></span> &nbsp;&nbsp; k=0,1,2,…</div>
+<div class="example"><strong>Microorganismos del apunte.</strong><p>Si el número de microorganismos por gramo sigue Poisson con λ=8, X cuenta microorganismos en un gramo. “La preparación se vuelve turbia” significa X≥1. Si después preguntan por la cantidad sabiendo que se volvió turbia, aparece además una probabilidad condicional.</p></div>
+<h3>Comandos en R</h3><div class="eq sm">p<span class="sub">X</span>(k): dpois(k,λ)</div><div class="eq sm">F<span class="sub">X</span>(t): ppois(t,λ)</div>
+<div class="note">No confundas λ con una probabilidad: λ puede ser mayor que 1. Es una <strong>cantidad media de eventos</strong>, no un número obligado a estar entre 0 y 1.</div>
+</div></details>
+
+<details id="va-continua" open><summary>15. Variable aleatoria continua: qué cambia respecto de una discreta</summary><div class="inside">
+<p>Una variable es continua cuando entre dos valores posibles hay infinitos valores intermedios. Altura, tiempo, concentración o diámetro son ejemplos típicos.</p>
+<p>Como hay infinitos valores posibles, en una muestra real casi nunca se repite exactamente el mismo valor. Por eso <strong>ya no usamos una función de probabilidad puntual</strong> como en las discretas.</p>
+<div class="eq">P(X=x)=0</div>
+<p>Esto no significa que “x sea imposible”. Significa que la probabilidad se reparte en infinitos puntos y la probabilidad relevante se calcula sobre <strong>intervalos</strong>.</p>
+<h3>Del histograma a la densidad</h3><p>El apunte parte de muchas mediciones, las agrupa en intervalos y construye un histograma. La altura de cada barra se elige para que el <strong>área</strong> represente frecuencia relativa.</p>
+<div class="eq">altura del rectángulo = <span class="frac"><span>frecuencia relativa</span><span>longitud del intervalo</span></span></div>
+<p>Con muchas observaciones, la frecuencia relativa de un intervalo se aproxima a su probabilidad. Una curva suave que aproxima ese histograma motiva la <strong>función de densidad</strong>.</p>
+</div></details>
+
+<details id="densidad" open><summary>16. Función de densidad: la probabilidad es un área</summary><div class="inside">
+<p>Una densidad f para una variable continua no da directamente “la probabilidad en x”. Lo que importa es el <strong>área bajo la curva</strong> entre dos valores.</p>
+<div class="eq">P(a &lt; X &lt; b) = ∫<span class="sub">a</span><span class="sup">b</span> f(x) dx</div>
+<h3>Tres propiedades que hay que controlar siempre</h3>
+<ul><li><strong>f(x)≥0.</strong> Una densidad no puede ser negativa.</li><li><strong>El área total vale 1.</strong> ∫ f(x)dx sobre toda la recta =1.</li><li><strong>Probabilidad de un intervalo = área.</strong> Se integra la densidad entre los límites.</li></ul>
+<div class="note"><strong>Clave conceptual:</strong> la altura f(x) puede incluso ser mayor que 1. Lo que nunca puede superar 1 es una <em>probabilidad</em>, es decir, un área apropiada bajo la densidad.</div>
+<h3>Extremos abiertos o cerrados</h3><p>Para una variable continua, incluir o excluir puntos aislados no cambia la probabilidad, porque P(X=a)=P(X=b)=0.</p><div class="eq sm">P(a&lt;X≤b)=P(a≤X≤b)=P(a&lt;X&lt;b)</div>
+</div></details>
+
+<details id="distribucion-continua" open><summary>17. Función de distribución acumulada en variables continuas</summary><div class="inside">
+<p>La función de distribución acumulada sigue significando exactamente lo mismo: probabilidad de estar a la izquierda de x. La diferencia es que ahora se obtiene integrando la densidad.</p>
+<div class="eq">F<span class="sub">X</span>(x) = P(X≤x) = ∫<span class="sub">−∞</span><span class="sup">x</span> f<span class="sub">X</span>(t) dt</div>
+<h3>Propiedades</h3><ul><li>0≤F<sub>X</sub>(x)≤1.</li><li>Es monótona no decreciente (al movernos a la derecha nunca podemos perder probabilidad acumulada).</li><li>Para una variable continua, F<sub>X</sub> es continua.</li><li>Cuando x→−∞, F<sub>X</sub>(x)→0; cuando x→+∞, F<sub>X</sub>(x)→1.</li></ul>
+<p>Para probabilidades entre dos puntos:</p><div class="eq">P(a&lt;X≤b) = F<span class="sub">X</span>(b) − F<span class="sub">X</span>(a)</div>
+<div class="why"><strong>Interpretación:</strong> F(b) contiene toda el área a la izquierda de b. Si le sacamos F(a), queda solamente el área entre a y b.</div>
+</div></details>
+
+<details id="percentiles" open><summary>18. Percentiles y cuantiles</summary><div class="inside">
+<p>Un <strong>percentil</strong> cambia la pregunta. En vez de darte un valor x y pedir P(X≤x), te dan una probabilidad acumulada y te piden encontrar el valor que la deja a la izquierda.</p>
+<p>El percentil p·100% (o cuantil de orden p) es un valor q<sub>p</sub> tal que, en una distribución continua:</p>
+<div class="eq">F<span class="sub">X</span>(q<span class="sub">p</span>) = p</div>
+<div class="example"><strong>Percentil 90.</strong><p>q<sub>0,90</sub> es el valor por debajo del cual queda el 90% de la distribución. A la derecha queda el 10%.</p></div>
+<p>La <strong>mediana</strong> es el percentil 50:</p><div class="eq">F<span class="sub">X</span>(q<span class="sub">0,50</span>) = 0,50</div>
+<div class="note">Para resolver percentiles: 1) escribí F(x); 2) igualala a p; 3) despejá x; 4) verificá que el resultado esté dentro del soporte de la variable.</div>
+</div></details>
+
+<details id="uniforme" open><summary>19. Distribución uniforme continua</summary><div class="inside">
+<p>En una uniforme U(a,b), todos los subintervalos de igual longitud dentro de [a,b] tienen la misma probabilidad. La densidad es constante: la curva es un rectángulo.</p>
+<div class="eq">X ∼ U(a,b)</div>
+<div class="eq">f<span class="sub">X</span>(x) = <span class="frac"><span>1</span><span>b−a</span></span> &nbsp; para a≤x&lt;b; &nbsp; 0 fuera del intervalo</div>
+<p>La altura 1/(b−a) hace que el área total del rectángulo sea 1.</p>
+<h3>Función de distribución</h3><div class="piecewise"><b>F<sub>X</sub>(x)=0</b><span>si x&lt;a</span><b>F<sub>X</sub>(x)=(x−a)/(b−a)</b><span>si a≤x&lt;b</span><b>F<sub>X</sub>(x)=1</b><span>si x≥b</span></div>
+<div class="example"><strong>Cola de supermercado del apunte.</strong><p>Si X∼U(1,9), todo el rango mide 8 minutos. Para P(X&lt;6), el intervalo favorable de 1 a 6 mide 5 minutos.</p><div class="eq">P(X&lt;6) = <span class="frac"><span>6−1</span><span>9−1</span></span> = <span class="frac"><span>5</span><span>8</span></span></div></div>
+<div class="note">En una uniforme, cuando el intervalo pedido está completamente dentro de [a,b], podés pensar directamente: probabilidad = longitud favorable / longitud total.</div>
+</div></details>
+
+<details id="laboratorio-24-08" open><summary>20. Clase de Laboratorio 24/08: qué herramienta está practicando cada ejercicio</summary><div class="inside">
+<p>Los cuatro ejercicios nuevos mezclan ideas viejas con variables aleatorias. La clave es reconocer el esqueleto antes de calcular.</p>
+<table><thead><tr><th>Ejercicio</th><th>Qué está entrenando</th><th>Pregunta que tenés que hacerte</th></tr></thead><tbody><tr><td>1 · Suma Siete</td><td>Definir una v.a. y su función de probabilidad puntual</td><td>¿Qué valores monetarios puede tomar G y con qué probabilidad?</td></tr><tr><td>2 · Dos urnas + dado</td><td>Probabilidad total + binomial condicional + F<sub>X</sub></td><td>¿Qué urna se eligió primero y cómo cambia la distribución de X?</td></tr><tr><td>3 · Tres fábricas</td><td>Probabilidad total + Bayes</td><td>Ya observé “defectuoso”: ¿de qué fábrica es más probable que venga?</td></tr><tr><td>4 · Calculadora</td><td>Independencia + complementos</td><td>Para que funcione, ¿qué tiene que pasar con los tres componentes a la vez?</td></tr></tbody></table>
+<div class="note">Las resoluciones completas, con cada justificación y verificación numérica, están en la pestaña <strong>Ejercicios</strong>. Acá queda solamente el mapa conceptual para que sepas qué reconocer.</div>
+</div></details>
+
+<details id="videos-campus" open><summary>21. Material del campus · videos y apuntes</summary><div class="inside">
+<p>Estos son los recursos que acompañan a los apuntes nuevos. La teoría anterior está desarrollada en SOLved para que puedas estudiar aun sin reproducir el video.</p>
+<h3>Variables aleatorias discretas famosas</h3>
+<p><strong>Binomial:</strong></p><a class="source-link" href="https://drive.google.com/file/d/1UEP0FKZs83XYfev5oeLD5o8pNVFwCRK6/view?usp=sharing" target="_blank" rel="noopener noreferrer">https://drive.google.com/file/d/1UEP0FKZs83XYfev5oeLD5o8pNVFwCRK6/view?usp=sharing</a>
+<p><strong>Geométrica:</strong></p><a class="source-link" href="https://drive.google.com/file/d/1xuW7how_zkfgeeYO0ftZ6vIAUhNEyfQs/view?usp=sharing" target="_blank" rel="noopener noreferrer">https://drive.google.com/file/d/1xuW7how_zkfgeeYO0ftZ6vIAUhNEyfQs/view?usp=sharing</a>
+<p><strong>Hipergeométrica:</strong></p><a class="source-link" href="https://drive.google.com/file/d/1-on6CA7t4FgmSdb-b3HdnShHU8g--e62/view" target="_blank" rel="noopener noreferrer">https://drive.google.com/file/d/1-on6CA7t4FgmSdb-b3HdnShHU8g--e62/view</a>
+<p><strong>Poisson:</strong></p><a class="source-link" href="https://drive.google.com/file/d/1i-r1IE-hdYuSCKhhekOdRoNfE-LWHGww/view" target="_blank" rel="noopener noreferrer">https://drive.google.com/file/d/1i-r1IE-hdYuSCKhhekOdRoNfE-LWHGww/view</a>
+<h3>Variables aleatorias continuas</h3>
+<p><strong>Definición de densidad y ejemplos:</strong></p><a class="source-link" href="https://www.youtube.com/watch?v=2K4G3dPT6uc&feature=youtu.be&id_curso=369" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=2K4G3dPT6uc&feature=youtu.be&id_curso=369</a>
+<p><strong>Percentiles:</strong></p><a class="source-link" href="https://youtu.be/P6OM7LtRZBU" target="_blank" rel="noopener noreferrer">https://youtu.be/P6OM7LtRZBU</a>
+</div></details>
+</section>
