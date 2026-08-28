@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-4";
+const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-5";
 const CORE = [
   "./",
   "./index.html",
@@ -19,6 +19,7 @@ const CORE = [
   "./js/fisica-first-partial-guide.js?v=1.1.0",
   "./js/fisica-topic-intros.js?v=1.2.0",
   "./js/reading-mode-v2.js?v=1.1.0",
+  "./js/qbi-official-frame-fix.js?v=1.0.0",
   "./js/sync.js?v=0.10.4",
   "./js/content.js?v=0.10.11",
   "./js/study-workspace.js?v=0.10.10",
@@ -30,10 +31,10 @@ const CORE = [
   "./content/catalog.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-cards-v2.json",
   "./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.3",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.0.3",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-maps.js?v=4.0.3",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-equations.js?v=4.0.3",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.4",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.0.4",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-maps.js?v=4.0.4",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-equations.js?v=4.0.4",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzymes-extension.js?v=4.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-tp1-extension.js?v=4.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qb3-payload-1.txt?v=4.0.0",
@@ -143,15 +144,18 @@ async function injectFisicaGuides(request){
 async function injectAppShell(request,fallbackUrl){
   const response=await cacheFirstAndRefresh(request,fallbackUrl);
   if(!response||!response.ok)return response||Response.error();
-  const text=await response.text();
-  const marker='data-solved-reading-v2="1"';
-  const injection=`<script src="./js/reading-mode-v2.js?v=1.1.0" ${marker}></script>`;
-  const body=text.includes(marker)?text:text.replace(/<\/body>/i,`${injection}</body>`);
+  let text=await response.text();
+  const readingMarker='data-solved-reading-v2="1"';
+  const qbiMarker='data-solved-qbi-frame-fix="1"';
+  const injections=[];
+  if(!text.includes(readingMarker))injections.push(`<script src="./js/reading-mode-v2.js?v=1.1.0" ${readingMarker}></script>`);
+  if(!text.includes(qbiMarker))injections.push(`<script src="./js/qbi-official-frame-fix.js?v=1.0.0" ${qbiMarker}></script>`);
+  if(injections.length)text=text.replace(/<\/body>/i,`${injections.join("")}</body>`);
   const headers=new Headers(response.headers);
   headers.delete("content-length");
   headers.delete("content-encoding");
   headers.set("content-type","text/html; charset=utf-8");
-  return new Response(body,{status:response.status,statusText:response.statusText,headers});
+  return new Response(text,{status:response.status,statusText:response.statusText,headers});
 }
 
 self.addEventListener("fetch",event=>{
