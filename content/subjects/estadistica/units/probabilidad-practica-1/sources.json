@@ -13,6 +13,27 @@
       "authors": [],
       "year": null,
       "private": false
+    },
+    {
+      "id": "estadistica-lab-24-08",
+      "title": "Estadística Aplicada — Clase Laboratorio 24/08",
+      "authors": [],
+      "year": 2026,
+      "private": false
+    },
+    {
+      "id": "estadistica-discretas-famosas",
+      "title": "Variables aleatorias discretas famosas",
+      "authors": [],
+      "year": null,
+      "private": false
+    },
+    {
+      "id": "estadistica-continuas",
+      "title": "Variables aleatorias continuas",
+      "authors": [],
+      "year": null,
+      "private": false
     }
   ]
 }
