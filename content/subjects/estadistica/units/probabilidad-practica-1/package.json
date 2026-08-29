@@ -4,17 +4,18 @@
   "contentStandard": "LBT-V1",
   "subjectId": "estadistica",
   "unitId": "probabilidad-practica-1",
-  "title": "Probabilidad y variables aleatorias · Prácticas 1 y 2, teoría y laboratorio",
-  "contentVersion": "1.2.0",
+  "title": "Estadística Aplicada · Probabilidad y variables aleatorias · guías resueltas",
+  "contentVersion": "1.3.0",
   "status": "published",
-  "generatedAt": "2026-08-28T15:30:00.000Z",
-  "reviewedAt": "2026-08-28T15:30:00.000Z",
+  "generatedAt": "2026-08-29T01:45:00.000Z",
+  "reviewedAt": "2026-08-29T01:45:00.000Z",
   "files": {
     "summary": "summary.json",
     "glossary": "glossary.json",
     "cards": "cards.json",
     "exercises": "exercises.json",
     "map": "map.json",
-    "sources": "sources.json"
+    "sources": "sources.json",
+    "rich": "rich.json"
   }
 }
