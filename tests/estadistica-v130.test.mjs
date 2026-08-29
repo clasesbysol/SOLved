@@ -2,7 +2,8 @@ import { chromium } from 'playwright';
 import { spawn } from 'node:child_process';
 import assert from 'node:assert/strict';
 
-const server=spawn(process.execPath,['node_modules/http-server/bin/http-server','-p','4174','-c-1','.'],{stdio:'ignore'});
+const PORT=4176;
+const server=spawn(process.execPath,['node_modules/http-server/bin/http-server','-p',String(PORT),'-c-1','.'],{stdio:'ignore'});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 try{
   await sleep(1200);
@@ -10,7 +11,7 @@ try{
   const page=await browser.newPage();
   const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('http://127.0.0.1:4174/content/subjects/estadistica/units/probabilidad-practica-1/estadistica-integral.html?v=1.3.0#guide',{waitUntil:'domcontentloaded'});
+  await page.goto(`http://127.0.0.1:${PORT}/content/subjects/estadistica/units/probabilidad-practica-1/estadistica-integral.html?v=1.3.0#guide`,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>document.documentElement.dataset.statsIntegralReady==='1',{timeout:15000});
 
   const tabs=(await page.locator('.tabs .tab').allTextContents()).map(x=>x.trim());
