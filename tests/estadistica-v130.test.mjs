@@ -1,18 +1,30 @@
-import { chromium } from 'playwright';
+import { chromium } from '@playwright/test';
 import { spawn } from 'node:child_process';
 import assert from 'node:assert/strict';
 
 const PORT=4176;
-const server=spawn(process.execPath,['node_modules/http-server/bin/http-server','-p',String(PORT),'-c-1','.'],{stdio:'ignore'});
-const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const ROOT=`http://127.0.0.1:${PORT}`;
+const UNIT='content/subjects/estadistica/units/probabilidad-practica-1';
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+
+async function waitServer(){
+  for(let i=0;i<80;i++){
+    try{const response=await fetch(`${ROOT}/index.html`);if(response.ok)return}catch{}
+    await sleep(125);
+  }
+  throw new Error('No inició el servidor de prueba de Estadística');
+}
+
+const server=spawn('pnpm',['exec','http-server','-p',String(PORT),'-c-1','.'],{stdio:'ignore'});
+let browser;
 try{
-  await sleep(1200);
-  const browser=await chromium.launch({headless:true});
+  await waitServer();
+  browser=await chromium.launch({headless:true});
   const page=await browser.newPage();
   const errors=[];
-  page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(`http://127.0.0.1:${PORT}/content/subjects/estadistica/units/probabilidad-practica-1/estadistica-integral.html?v=1.3.0#guide`,{waitUntil:'domcontentloaded'});
-  await page.waitForFunction(()=>document.documentElement.dataset.statsIntegralReady==='1',{timeout:15000});
+  page.on('pageerror',e=>errors.push(String(e)));
+  await page.goto(`${ROOT}/${UNIT}/estadistica-integral.html?v=1.3.0#guide`,{waitUntil:'domcontentloaded'});
+  await page.waitForFunction(()=>document.documentElement.dataset.statsIntegralReady==='1',null,{timeout:30000});
 
   const tabs=(await page.locator('.tabs .tab').allTextContents()).map(x=>x.trim());
   assert.deepEqual(tabs,['Programa · Parcial 1','Teoría','Guías y ejercicios','Mapa mental','Glosario']);
@@ -41,8 +53,8 @@ try{
   await first.locator('summary').click();
   assert.equal(await first.evaluate(el=>el.open),true);
 
-  await browser.close();
-  console.log('Estadística v1.3.0: OK');
+  console.log('Estadística v1.3.0: OK · 39 ejercicios · 5 mapas · consignas fuente');
 } finally {
+  await browser?.close().catch(()=>{});
   server.kill('SIGTERM');
 }
