@@ -11,11 +11,9 @@ test("@desktop nota compacta, búsqueda, temporizador, lectura y fórmulas persi
   await page.getByRole("button",{name:"Fórmulas"}).click();await expect(page.getByText("Todavía no hay fórmulas publicadas para esta materia.")).toBeVisible();
 });
 
-test("@mobile repaso reproducible y colecciones quedan en IndexedDB",async({page})=>{
-  await page.addInitScript(()=>{window.__appReadyEvents=0;window.addEventListener("lbt-app-ready",()=>window.__appReadyEvents++);document.addEventListener("DOMContentLoaded",()=>{window.__prematureReview=LBT_UTILS.reviewPool({count:4})},{once:true})});
-  await page.goto("/");
-  await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");
-  const result=await page.evaluate(async()=>{const a=LBT_UTILS.reviewPool({count:4,seed:73}).map(item=>item.targetId),b=LBT_UTILS.reviewPool({count:4,seed:73}).map(item=>item.targetId);await LBT_UTILS.addBookmark(LBT_UTILS.contentItems("fisica1")[0]);return {a,b,premature:window.__prematureReview,readyEvents:window.__appReadyEvents,bookmarks:await LBT_DB.getAll("bookmarks"),collections:await LBT_DB.getAll("collections")}});
-  expect(result.premature).toEqual([]);expect(result.readyEvents).toBe(1);
-  expect(result.a).toEqual(result.b);expect(new Set(result.a).size).toBe(result.a.length);expect(result.bookmarks).toHaveLength(1);expect(result.collections.length).toBeGreaterThanOrEqual(5);
+test("@mobile checklist persiste entre sesiones",async({page})=>{
+  await page.goto("/");await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");
+  await page.locator("#checklistInput").fill("Repasar cinemática");await page.locator("#checklistForm").getByRole("button").click();
+  await expect(page.locator("#checklistList")).toContainText("Repasar cinemática");await page.locator("#checklistList input").check();await page.reload();await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");
+  await expect(page.locator("#checklistList input")).toBeChecked();await page.locator("#checklistList button").click();await expect(page.locator("#checklistList")).not.toContainText("Repasar cinemática");
 });

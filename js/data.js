@@ -65,6 +65,7 @@
     order:["fisica1","estadistica","quimica_biologica1"],
     recentSubjectIds:[],
     weeklySchedule:[],
+    checklist:[],
     calendar:{year:2026,month:6},
     lastPage:"dashboard",
     zoomIndex:1,
@@ -89,5 +90,5 @@
     item.sourceVerified=true;
   }
 
-window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.10.10",CONTENT_VERSION:"catalog-v10"};
+window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.11.0",CONTENT_VERSION:"catalog-v10"};
 })();

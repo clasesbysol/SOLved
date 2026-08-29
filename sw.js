@@ -1,11 +1,11 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0110-qbi4-11-stats140-qbi-current";
+const CACHE_VERSION = "biblioteca-lbt-v0111-home-settings-checklist";
 const CORE = [
   "./","./index.html","./bienvenida.html",
-  "./styles.css?v=0.10.9","./styles-enhancements.css?v=0.10.9","./styles-personal.css?v=0.10.9",
+  "./styles.css?v=0.11.0","./styles-enhancements.css?v=0.10.9","./styles-personal.css?v=0.10.9",
   "./organic-cards.css?v=0.7.3","./organic-mind-map.css?v=0.7.3",
-  "./js/supabase-config.js?v=0.8.0","./js/auth.js?v=0.8.1","./js/data.js?v=0.10.10","./js/db.js?v=0.10.9","./js/supabase-sync.js?v=0.10.9",
-  "./js/organic-cards.js?v=0.7.3","./js/organic-mind-map.js?v=0.10.9","./js/sync.js?v=0.10.9","./js/content.js?v=0.10.11","./js/study-workspace.js?v=0.10.10","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.10.9","./js/summary-factory.js?v=0.7.3","./js/career-factory.js?v=0.7.3","./js/app.js?v=0.10.10",
+  "./js/supabase-config.js?v=0.8.0","./js/auth.js?v=0.8.1","./js/data.js?v=0.11.0","./js/db.js?v=0.10.9","./js/supabase-sync.js?v=0.10.9",
+  "./js/organic-cards.js?v=0.7.3","./js/organic-mind-map.js?v=0.10.9","./js/sync.js?v=0.11.0","./js/content.js?v=0.10.11","./js/study-workspace.js?v=0.10.10","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.11.0","./js/app.js?v=0.11.0",
   "./js/reading-mode-v2.js?v=1.1.0","./js/qbi-official-frame-fix.js?v=1.0.0","./js/fisica-first-partial-guide.js?v=1.1.0","./js/fisica-topic-intros.js?v=1.2.0",
   "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.0.0",
   "./content/catalog.json",

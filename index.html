@@ -7,7 +7,7 @@
   <title>SOLved — Tu espacio de estudio</title>
   <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=0.10.9">
+  <link rel="stylesheet" href="styles.css?v=0.11.0">
   <link rel="stylesheet" href="styles-enhancements.css?v=0.10.9">
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.3">
@@ -46,7 +46,7 @@
 
   <header class="topbar">
     <div>
-      <div class="page-title" id="pageTitle">Vista general</div>
+      <div class="page-title" id="pageTitle">Inicio</div>
       <div class="crumb" id="crumb"></div>
     </div>
     <div class="top-spacer"></div>
@@ -69,13 +69,10 @@
 
   <aside class="sidebar">
     <nav class="nav">
-      <button class="nav-btn active" data-page="dashboard"><svg class="icon"><use href="#i-home"/></svg><span>Vista general</span></button>
+      <button class="nav-btn active" data-page="dashboard"><svg class="icon"><use href="#i-home"/></svg><span>Inicio</span></button>
       <button class="nav-btn" data-page="subjects"><svg class="icon"><use href="#i-books"/></svg><span>Plan y materias</span></button>
       <button class="nav-btn" data-page="calendar"><svg class="icon"><use href="#i-calendar"/></svg><span>Calendario</span></button>
-      <button class="nav-btn" data-page="favorites"><svg class="icon"><use href="#i-books"/></svg><span>Favoritos</span></button>
-      <button class="nav-btn" data-page="review"><svg class="icon"><use href="#i-flask"/></svg><span>Repaso aleatorio</span></button>
-      <button class="nav-btn" data-page="factory" aria-label="Abrir fábrica de estudio"><svg class="icon"><use href="#i-file"/></svg><span>Fabricar resumen</span></button>
-      <button class="nav-btn" data-page="career" data-owner-only hidden><svg class="icon"><use href="#i-plus"/></svg><span>Crear mi carrera</span></button>
+      <button class="nav-btn" data-page="settings"><svg class="icon"><use href="#i-settings"/></svg><span>Configuración</span></button>
     </nav>
     <div class="side-divider"></div>
     <div class="side-head"><span>Materias a mano</span><button class="tiny-btn" id="manageCourses" title="Elegir materias"><svg class="icon" style="width:15px"><use href="#i-settings"/></svg></button></div>
@@ -86,9 +83,8 @@
 
   <main class="workspace">
     <section class="page" id="dashboardPage">
-      <div class="dashboard-layout">
-        <div>
-          <article class="hero"><div><h1>Mesa de estudio</h1></div><span id="currentCount" hidden>0</span></article>
+      <div class="home-dashboard">
+          <article class="hero home-hero"><div><span class="eyebrow">Tu espacio académico</span><h1>Mesa de estudio</h1><p>Organizá la semana y retomá tus materias desde un mismo lugar.</p></div><span id="currentCount" hidden>0</span></article>
           <section class="section weekly-schedule-section" id="weeklyScheduleSection">
             <div class="section-head"><div><h2>Horario semanal</h2><p>Lunes a viernes, de 07:00 a 23:00.</p></div><button class="soft-btn" id="addScheduleBlock"><svg class="icon"><use href="#i-plus"/></svg>Agregar materia</button></div>
             <div class="schedule-empty" id="scheduleEmpty" hidden><strong>Tu horario todavía está vacío</strong><p>Agregá la primera materia para organizar tu semana.</p></div>
@@ -103,29 +99,17 @@
             <div class="current-grid" id="currentGrid"></div>
           </section>
 
-          <section class="section"><article class="career-progress-card" id="careerProgress"><h2>Avance de la carrera</h2><strong>Calculando…</strong></article></section>
-        </div>
-
-        <aside class="dashboard-side">
-          <article class="right-card weekly-panel" id="weeklyPanel"><h3>Esta semana</h3><p>Sin datos registrados</p></article>
-          <article class="right-card factory-entry"><div class="right-title"><h3>Fabricar resumen</h3><span>guía</span></div><p>Prepará una instrucción completa para transformar tus documentos con la IA que elijas.</p><button class="soft-btn" data-open-factory>Preparar solicitud</button></article>
-          <article class="right-card">
+          <section class="home-secondary">
+          <article class="right-card important-dates-card">
             <div class="right-title"><h3>Fechas importantes</h3><button class="tiny-btn" id="addEventSide"><svg class="icon" style="width:15px"><use href="#i-plus"/></svg></button></div>
             <div class="event-list" id="upcomingEvents"></div>
           </article>
-          <article class="right-card">
-            <div class="right-title"><h3 id="miniMonthTitle">Calendario</h3><button class="tiny-btn" data-page-link="calendar"><svg class="icon" style="width:15px"><use href="#i-chevron-right"/></svg></button></div>
-            <div class="mini-calendar" id="miniCalendar"></div>
+          <article class="right-card checklist-card">
+            <div class="right-title"><div><h3>Checklist</h3><p>Pendientes de estudio</p></div><span id="checklistCount">0</span></div>
+            <form class="checklist-form" id="checklistForm"><input id="checklistInput" maxlength="160" placeholder="Agregar una tarea…" aria-label="Nueva tarea" required><button class="soft-btn" aria-label="Agregar tarea"><svg class="icon"><use href="#i-plus"/></svg>Agregar</button></form>
+            <div class="checklist-list" id="checklistList"></div>
           </article>
-          <article class="right-card">
-            <div class="right-title"><h3>Seguridad del progreso</h3><span>local</span></div>
-            <p style="color:var(--muted);font-size:11px;line-height:1.55;margin-bottom:11px">El avance se guarda automáticamente. Exportá un respaldo para no depender solamente de este navegador.</p>
-            <div style="display:flex;gap:7px">
-              <button class="soft-btn" style="flex:1;height:34px;font-size:10px" id="exportBackup"><svg class="icon" style="width:14px"><use href="#i-download"/></svg>Exportar</button>
-              <button class="soft-btn" style="flex:1;height:34px;font-size:10px" id="importBackup"><svg class="icon" style="width:14px"><use href="#i-upload"/></svg>Importar</button>
-            </div>
-          </article>
-        </aside>
+          </section>
       </div>
     </section>
 
@@ -139,6 +123,7 @@
         <button class="soft-btn" id="manageCoursesPlan"><svg class="icon"><use href="#i-settings"/></svg>Materias a mano</button>
       </div>
       <div class="correlation-help"><strong>Cómo leer las correlatividades</strong><span><b>Cursada de</b>: alcanza con tener la cursada aprobada. <b>Final de</b>: esa materia debe estar aprobada con final. Tocá cualquier materia para ver el detalle y qué te falta.</span></div><div class="plan-grid" id="planGrid"></div>
+      <section class="section plan-progress-section"><article class="career-progress-card" id="careerProgress"><h2>Avance de la carrera</h2><strong>Calculando…</strong></article></section>
     </section>
 
     <section class="page" id="calendarPage" hidden>
@@ -175,10 +160,11 @@
       </div>
     </section>
 
-    <section class="page utility-page" id="favoritesPage" hidden><div class="utility-content"></div></section>
-    <section class="page utility-page" id="reviewPage" hidden><div class="utility-content"><div class="section-head"><div><h2>Repaso aleatorio</h2><p>Elegí el alcance y revelá cada respuesta a tu ritmo.</p></div></div><div id="reviewControls" class="review-builder"><fieldset><legend>¿Qué querés repasar?</legend><div class="review-scopes"><button type="button" data-review-scope="subject">Esta materia</button><button type="button" data-review-scope="unit">Unidad actual</button><button type="button" data-review-scope="favorites">Favoritos</button><button type="button" data-review-scope="global" class="active">Repaso global</button></div></fieldset><button type="button" id="reviewAdvancedToggle" aria-expanded="false">Opciones avanzadas</button><div id="reviewAdvanced" hidden><label>Cantidad <input id="reviewCount" type="number" min="1" max="50" value="10"></label><label>Semilla <input id="reviewSeed" type="number" value="1"></label><label>Tipos <select id="reviewType"><option value="">Todos</option><option value="card">Tarjetas</option><option value="glossary">Glosario</option><option value="formula">Fórmulas</option><option value="summary">Resumen</option><option value="exercise">Ejercicios</option></select></label><label><input id="reviewPrioritizeFavorites" type="checkbox"> Priorizar favoritos</label><label><input id="reviewPrioritizeDifficult" type="checkbox"> Priorizar difíciles</label></div><p id="reviewScopeSummary">Contenido publicado de todas las materias.</p><button class="primary-btn" id="startReview">Crear repaso</button></div><div id="reviewDeck"></div></div></section>
-    <section class="page utility-page" id="factoryPage" hidden><div class="utility-content factory-page" id="summaryFactory"></div></section>
-    <section class="page utility-page" id="careerPage" hidden><div class="utility-content career-create"><h1>Crear mi carrera</h1><p>SOLved te entrega las instrucciones necesarias. Copialas y seguí tu camino en ChatGPT.</p><ol><li>Copiar las instrucciones.</li><li>Abrir ChatGPT.</li><li>Pegar el texto.</li><li>Adjuntar el plan oficial.</li><li>Continuar el proyecto desde esa conversación.</li></ol><pre id="careerPrompt"></pre><div class="factory-actions"><button type="button" id="copyCareerPrompt">Copiar instrucciones completas</button><button type="button" class="primary-btn" id="openCareerChatGPT">Seguir mi camino en ChatGPT</button></div><p id="careerCopyStatus" role="status" aria-live="polite"></p></div></section>
+    <section class="page settings-page" id="settingsPage" hidden><div class="settings-layout">
+      <section class="settings-section"><div class="section-head"><div><h2>Perfil</h2><p>Tu cuenta y el alcance del guardado.</p></div></div><article class="profile-panel"><img src="assets/brand/solved-icon-192.png" alt="Logo de SOLved"><div><strong id="settingsProfileName">Modo invitado</strong><span id="settingsProfileEmail">Datos guardados en este dispositivo</span><small id="settingsProfileStatus">Sin cuenta conectada</small></div></article></section>
+      <section class="settings-section"><div class="section-head"><div><h2>Tiempo de uso</h2><p>Actividad de estudio de los últimos siete días.</p></div></div><article class="weekly-panel" id="weeklyPanel"><p>Sin datos registrados</p></article></section>
+      <section class="settings-section settings-data"><div class="section-head"><div><h2>Datos y respaldo</h2><p>El avance se guarda automáticamente.</p></div></div><div class="settings-actions"><button class="soft-btn" id="exportBackup"><svg class="icon"><use href="#i-download"/></svg>Exportar respaldo</button><button class="soft-btn" id="importBackup"><svg class="icon"><use href="#i-upload"/></svg>Importar respaldo</button></div></section>
+    </div></section>
 
     <section class="study-page" id="studyPage" hidden>
       <div class="study-shell">
@@ -206,7 +192,6 @@
           <button class="tool-btn" id="timerBtn">Temporizador</button>
           <button class="tool-btn" id="readingBtn">Modo lectura</button>
           <button class="tool-btn" id="readingSettingsBtn" title="Configurar preferencias de lectura">Ajustes de lectura</button>
-          <button class="tool-btn" id="factoryFromStudy" aria-label="Abrir fábrica de estudio">Fabricar resumen</button>
           <button class="tool-btn" id="addPersonalBtn">+ Agregar contenido personal</button>
           <button class="tool-btn" id="uploadHtmlBtn">Subir mi resumen</button>
           <button class="tool-btn" id="splitViewBtn" aria-pressed="false">Vista dividida</button>
@@ -313,24 +298,22 @@
     <div class="modal-actions"><button type="button" class="soft-btn" onclick="document.querySelector('#supabaseAuthModal').hidden=true">Cancelar</button><button class="primary-btn" data-auth-submit>Continuar</button></div>
   </form>
 </div>
-<span class="app-version" aria-label="Versión de SOLved">v0.10.10</span>
+<span class="app-version" aria-label="Versión de SOLved">v0.11.0</span>
 <link rel="stylesheet" href="styles-personal.css?v=0.10.9">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="js/supabase-config.js?v=0.8.0"></script>
 <script src="js/auth.js?v=0.8.1"></script>
-<script src="js/data.js?v=0.10.10"></script>
+<script src="js/data.js?v=0.11.0"></script>
 <script src="js/db.js?v=0.10.9"></script>
 <script src="js/supabase-sync.js?v=0.10.9"></script>
 <script src="js/organic-cards.js?v=0.7.3"></script>
 <script src="js/organic-mind-map.js?v=0.10.9"></script>
-<script src="js/sync.js?v=0.10.9"></script>
+<script src="js/sync.js?v=0.11.0"></script>
   <script src="js/content.js?v=0.10.11"></script>
 <script src="js/study-workspace.js?v=0.10.10"></script>
 <script src="js/notes.js?v=0.7.3"></script>
-<script src="js/utilities.js?v=0.10.9"></script>
-<script src="js/summary-factory.js?v=0.7.3"></script>
-<script src="js/career-factory.js?v=0.7.3"></script>
-<script src="js/app.js?v=0.10.10"></script>
+<script src="js/utilities.js?v=0.11.0"></script>
+<script src="js/app.js?v=0.11.0"></script>
 </body>
 </html>

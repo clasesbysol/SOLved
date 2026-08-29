@@ -17,17 +17,9 @@ test.skip("@desktop resaltado y controles usan el sistema cromático",async({pag
   const select=page.locator("#studyUnit");expect(parseFloat(await select.evaluate(element=>getComputedStyle(element).borderRadius))).toBeGreaterThanOrEqual(10);expect(parseFloat(await select.evaluate(element=>getComputedStyle(element).minHeight))).toBeGreaterThanOrEqual(40);
 });
 
-test("@desktop Favoritos filtra por materia, colección y tipo",async({page})=>{
-  await ready(page);await page.evaluate(async()=>{const stamp=new Date().toISOString();for(const item of [{id:"fav-a",collectionId:"default-0",subjectId:"fisica1",unitId:"resumen-integral",contentType:"summary",targetId:"fisica1:resumen-integral:fisica-import",title:"Física favorita"},{id:"fav-b",collectionId:"default-1",subjectId:"estadistica",unitId:"legacy",contentType:"formula",targetId:"missing-formula",title:"Estadística parcial"}])await LBT_DB.put("bookmarks",{...item,createdAt:stamp,updatedAt:stamp,deletedAt:null})});await page.locator('[data-page="favorites"]').click();
-  await expect(page.locator("#favoriteSubject")).toBeVisible();await expect(page.locator("#favoriteCollection option")).toContainText(["Todas las colecciones","Favoritos","Para el parcial","No entiendo","Memorizar","Preguntar en clase"]);await expect(page.locator("#favoriteCount")).toHaveText("2 elementos");
-  await page.locator("#favoriteSubject").selectOption("fisica1");await expect(page.locator("#favoriteCount")).toHaveText("1 elemento");await expect(page.locator(".favorite-groups")).toContainText("Física favorita");await expect(page.locator(".favorite-groups")).not.toContainText("Estadística parcial");
-  await page.locator("#favoriteSubject").selectOption("all");await page.locator("#favoriteCollection").selectOption("default-1");await expect(page.locator("#favoriteCount")).toHaveText("1 elemento");await expect(page.locator(".orphan-bookmarks")).toContainText("Estadística parcial");
-});
-
-test("@desktop Repaso distingue materia, unidad, favoritos y global",async({page})=>{
-  await openPhysics(page);await page.locator('[data-page="review"]').click();await expect(page.locator("[data-review-scope]")).toHaveCount(4);await expect(page.locator("#reviewAdvanced")).toBeHidden();
-  await page.locator('[data-review-scope="subject"]').click();await page.locator("#startReview").click();await expect(page.locator(".review-card").first()).toContainText("Física I");
-  await page.locator('[data-review-scope="global"]').click();await page.locator("#reviewAdvancedToggle").click();await expect(page.locator("#reviewAdvanced")).toBeVisible();await page.locator("#reviewType").selectOption("summary");await page.locator("#startReview").click();await expect(page.locator(".review-card").first()).toBeVisible();await page.locator(".review-card [data-reveal]").first().click();await expect(page.locator(".review-answer").first()).toBeVisible();
+test("@desktop Inicio y Configuración tienen la nueva jerarquía",async({page})=>{
+  await ready(page);await expect(page.getByRole("heading",{name:"Horario semanal"})).toBeVisible();await expect(page.getByRole("heading",{name:"Materias en curso"})).toBeVisible();await expect(page.getByRole("heading",{name:"Fechas importantes"})).toBeVisible();await expect(page.getByRole("heading",{name:"Checklist"})).toBeVisible();
+  await expect(page.locator("#dashboardPage #weeklyPanel")).toHaveCount(0);await expect(page.locator("#dashboardPage #careerProgress")).toHaveCount(0);await page.locator('[data-page="settings"]').click();await expect(page.locator("#weeklyPanel")).toBeVisible();await page.locator('[data-page="subjects"]').click();await expect(page.locator("#careerProgress")).toBeVisible();
 });
 
 test("@desktop panel semanal separa temporizador, detectado y total",async({page})=>{
@@ -41,6 +33,6 @@ test("@desktop detector no cuenta dashboard, background y coordina pestañas",as
   const second=await context.newPage();await openPhysics(second);await page.evaluate(()=>Object.defineProperty(document,"hidden",{configurable:true,value:false}));await page.evaluate(()=>LBT_UTILS.noteStudyInteraction());await second.evaluate(()=>LBT_UTILS.noteStudyInteraction());await expect.poll(()=>page.evaluate(async()=>{const state=await navigator.locks.query();return state.held.filter(lock=>lock.name==="lbt-passive-study").length})).toBe(1);await page.evaluate(()=>LBT_UTILS.stopDetectedStudy());await second.evaluate(()=>LBT_UTILS.stopDetectedStudy());
 });
 
-test("@mobile temas, favoritos y repaso conservan jerarquía básica",async({page})=>{
-  await ready(page);await page.locator("#themeBtn").click();await expect(page.locator("#appearancePanel")).toBeVisible();await page.locator("#appearanceClose").click();await page.locator('[data-page="favorites"]').click();await expect(page.locator(".favorite-filters")).toBeVisible();await page.locator('[data-page="review"]').click();await expect(page.locator(".review-scopes")).toBeVisible();expect(await page.locator(".review-scopes").evaluate(element=>getComputedStyle(element).display)).toBe("grid");
+test("@mobile Inicio apila fechas y checklist",async({page})=>{
+  await ready(page);await expect(page.locator(".home-secondary")).toHaveCSS("grid-template-columns",/^[^ ]+$/);await expect(page.locator(".important-dates-card")).toBeVisible();await expect(page.locator(".checklist-card")).toBeVisible();
 });
