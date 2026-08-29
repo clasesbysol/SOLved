@@ -18,9 +18,9 @@ try{
   assert.equal(await page.locator('#guide.tab-panel.active').count(),1);
   assert.equal(await page.locator('#guide-p1 .exercise-card').count(),17);
   assert.equal(await page.locator('#guide-p2 .exercise-card').count(),10);
-  assert.equal(await page.locator('#guide-discretas .stats-lab details').count(),5);
-  assert.equal(await page.locator('#guide-continuas .stats-lab details').count(),3);
-  assert.equal(await page.locator('#guide-lab .stats-lab details').count(),4);
+  assert.equal(await page.locator('#guide-discretas [data-dis] > details').count(),5);
+  assert.equal(await page.locator('#guide-continuas [data-con] > details').count(),3);
+  assert.equal(await page.locator('#guide-lab [data-lab] > details').count(),4);
   assert.equal(await page.locator('#guide .memory-guide').count(),5);
 
   const body=await page.locator('body').innerText();
