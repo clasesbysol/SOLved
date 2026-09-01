@@ -5,7 +5,7 @@ const THEORY_ID='qbi-enzimas3-theory';
 const GUIDE_ID='qbi-enzimas3-guide';
 const STYLE_ID='qbi-enzimas3-style';
 const FILES={
- theory:['qbi-enzimas3-theory-1.txt','qbi-enzimas3-theory-2.txt','qbi-enzimas3-theory-3.txt'],
+ theory:['qbi-enzimas3-theory-1.txt'],
  exercises:['qbi-enzimas3-exercises-1.txt','qbi-enzimas3-exercises-2.txt','qbi-enzimas3-exercises-3.txt','qbi-enzimas3-exercises-4.txt'],
  style:['qbi-enzimas3-style-1.txt']
 };
