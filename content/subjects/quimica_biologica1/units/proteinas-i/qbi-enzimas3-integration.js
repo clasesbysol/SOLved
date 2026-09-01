@@ -32,8 +32,9 @@ function wire(root){
  });
 }
 function typeset(root){
- const run=()=>window.MathJax?.typesetPromise?window.MathJax.typesetPromise([root]).catch(()=>{}):null;
- if(!run())setTimeout(run,450);
+ const run=()=>{if(!window.MathJax?.typesetPromise)return false;window.MathJax.typesetPromise([root]).catch(()=>{});return true};
+ if(run())return;
+ [350,900,1800,3200].forEach(delay=>setTimeout(()=>run(),delay));
 }
 function roots(){
  return {
