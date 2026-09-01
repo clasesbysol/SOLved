@@ -23,6 +23,18 @@
     {
       "id": "qbi-tp1-video-intro",
       "title": "TP1 · Video introductorio y material visual de cuantificación de proteínas"
+    },
+    {
+      "id": "qbi-teorico-enzimas-iii",
+      "title": "Teórico Enzimas III"
+    },
+    {
+      "id": "qbi-texto-enzimas-iii",
+      "title": "Enzimas III · Texto"
+    },
+    {
+      "id": "qbi-guide-enzimas-iii",
+      "title": "Guía de estudio Enzimas III"
     }
   ]
 }
