@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0111-home-settings-checklist";
+const CACHE_VERSION = "biblioteca-lbt-v0112-qbi420-native";
 const CORE = [
   "./","./index.html","./bienvenida.html",
   "./styles.css?v=0.11.0","./styles-enhancements.css?v=0.10.9","./styles-personal.css?v=0.10.9",
@@ -30,10 +30,17 @@ const CORE = [
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-va-extension.html?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-lab-24-08.html?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-campus-exercises.html?v=1.4.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.0.4",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.0.4",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-maps.js?v=4.0.4",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-equations.js?v=4.0.4",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-maps.js?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-equations.js?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-integration.js?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-theory-1.txt?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-figures.txt?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-exercises-1.txt?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-exercises-2.txt?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-exercises-3.txt?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-exercises-4.txt?v=4.2.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzymes-extension.js?v=4.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-tp1-extension.js?v=4.0.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-exercises-v1.json?v=1.2.0",
