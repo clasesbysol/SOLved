@@ -1,258 +1,94 @@
 (()=>{
 'use strict';
-const VERSION='4.1.2';
-const THEORY_ID='qbi-enzimas3-theory';
+const VERSION='4.2.0';
+const STYLE_ID='qbi-enzimas3-native-style';
 const GUIDE_ID='qbi-enzimas3-guide';
-const STYLE_ID='qbi-enzimas3-style';
-const INDEX_CLASS='qbi-e3-index-link';
 const FILES={
   theory:['qbi-enzimas3-theory-1.txt'],
   figures:['qbi-enzimas3-figures.txt'],
-  exercises:['qbi-enzimas3-exercises-1.txt','qbi-enzimas3-exercises-2.txt','qbi-enzimas3-exercises-3.txt','qbi-enzimas3-exercises-4.txt'],
-  style:['qbi-enzimas3-style-1.txt']
+  exercises:['qbi-enzimas3-exercises-1.txt','qbi-enzimas3-exercises-2.txt','qbi-enzimas3-exercises-3.txt','qbi-enzimas3-exercises-4.txt']
 };
-const TOPICS=[
-  ['qbi-e3-t1','20.1 Inhibición enzimática e irreversibles'],
-  ['qbi-e3-t2','20.2 Inhibición competitiva'],
-  ['qbi-e3-t3','20.3 Inhibición acompetitiva'],
-  ['qbi-e3-t4','20.4 Inhibición mixta y no competitiva'],
-  ['qbi-e3-t5','20.5 Dixon y Cornish–Bowden'],
-  ['qbi-e3-t6','20.6 pH: actividad y estabilidad'],
-  ['qbi-e3-t7','20.7 Temperatura y Arrhenius'],
-  ['qbi-e3-t8','20.8 Cooperatividad y alosterismo'],
-  ['qbi-e3-t9','20.9 Modificación covalente y proteólisis']
+const CHAPTERS=[
+  ['cap20','20','Enzimas III: inhibición enzimática e inhibidores irreversibles'],
+  ['cap21','21','Inhibición competitiva'],
+  ['cap22','22','Inhibición acompetitiva'],
+  ['cap23','23','Inhibición mixta y no competitiva'],
+  ['cap24','24','Dixon y Cornish–Bowden'],
+  ['cap25','25','Efecto del pH'],
+  ['cap26','26','Efecto de la temperatura'],
+  ['cap27','27','Enzimas reguladoras: cooperatividad y alosterismo'],
+  ['cap28','28','Modificación covalente y proteólisis']
 ];
-let payloadPromise=null,running=false,timer=0,attempts=0;
-const norm=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
-
-async function fetchParts(names){
-  const rows=await Promise.all(names.map(name=>
-    fetch(name+'?v='+VERSION,{cache:'reload'}).then(r=>{
-      if(!r.ok) throw Error(name+' '+r.status);
-      return r.text();
-    })
-  ));
-  return rows.join('');
-}
-function payload(){
-  return payloadPromise||(payloadPromise=Promise.all([
-    fetchParts(FILES.theory),
-    fetchParts(FILES.figures),
-    fetchParts(FILES.exercises),
-    fetchParts(FILES.style)
-  ]).then(([theory,figures,exercises,css])=>({theory,figures,exercises,css}))
-    .catch(error=>{payloadPromise=null;throw error}));
-}
-function readState(){try{return JSON.parse(localStorage.getItem('qbi-enzimas3-open-v1')||'{}')||{}}catch{return {}}}
-function saveState(value){try{localStorage.setItem('qbi-enzimas3-open-v1',JSON.stringify(value))}catch{}}
-function wire(root){
-  if(!root||root.dataset.e3Wired)return;
-  root.dataset.e3Wired='1';
-  const state=readState();
-  root.querySelectorAll('details[data-e3-key]').forEach(detail=>{
-    const key=detail.dataset.e3Key;
-    if(Object.hasOwn(state,key)) detail.open=Boolean(state[key]);
-    detail.addEventListener('toggle',event=>{
-      if(!event.isTrusted)return;
-      state[key]=detail.open;
-      saveState(state);
-    });
-  });
-  root.querySelector('.qbi-e3-collapse')?.addEventListener('click',()=>{
-    root.querySelectorAll('details[data-e3-key]').forEach(detail=>{
-      detail.open=false;
-      state[detail.dataset.e3Key]=false;
-    });
-    saveState(state);
-  });
-}
-function typeset(root){
-  const run=()=>{
-    if(!window.MathJax?.typesetPromise)return false;
-    window.MathJax.typesetPromise([root]).catch(()=>{});
-    return true;
-  };
-  if(run())return;
-  [300,800,1600,3000].forEach(delay=>setTimeout(run,delay));
-}
-function getSummary(){
-  return document.querySelector('.qb-summary')||
-         document.querySelector('.qb-main')||
-         document.querySelector('main')||
-         document.body;
-}
-function chapterText(node){
-  return norm(node?.querySelector?.('h1,h2,h3,.qb-chapter-title')?.textContent||node?.textContent||'');
-}
-function findTp2Chapter(summary){
-  const chapters=[...summary.querySelectorAll('.qb-chapter,section[id^="cap"],section')];
-  const exact=chapters.filter(node=>{
-    const text=chapterText(node);
-    return /\btp\s*2\b/.test(text) ||
-      (/trabajo (practico|práctico|de laboratorio)/.test(text)&&/\b2\b/.test(text)) ||
-      (/cin[eé]tica enzim[aá]tica/.test(text)&&/tp/.test(text));
-  });
-  if(exact.length)return exact[exact.length-1];
-
-  const byAnchor=[...document.querySelectorAll('#summaryIndex a[href^="#"],.summary-index a[href^="#"],.qb-index a[href^="#"]')]
-    .find(a=>/\btp\s*2\b/.test(norm(a.textContent)));
-  if(byAnchor){
-    const id=String(byAnchor.getAttribute('href')||'').slice(1);
-    const target=id&&document.getElementById(id);
-    if(target)return target.closest?.('.qb-chapter,section')||target;
-  }
-  return document.getElementById('cap19')||chapters.at(-1)||null;
-}
-function appendFigures(theory,html){
-  if(theory.querySelector('[data-e3-key="figures"]'))return;
-  const holder=document.createElement('div');
-  holder.innerHTML=html.trim();
-  const node=holder.firstElementChild;
-  if(node)theory.append(node);
-}
-function prepareAnchors(theory){
-  theory.dataset.qbiChapter='20';
-  theory.style.scrollMarginTop='24px';
-  [...theory.querySelectorAll('details.qbi-e3-topic[data-e3-key]')]
-    .filter(d=>/^t\d+$/.test(d.dataset.e3Key||''))
-    .forEach((detail,index)=>{
-      if(TOPICS[index]) detail.id=TOPICS[index][0];
-      detail.style.scrollMarginTop='24px';
-    });
-}
-function placeContent(summary,theory,guide){
-  const tp2=findTp2Chapter(summary);
-  let parent=tp2?.parentNode||summary;
-  let ref=tp2?.nextSibling||null;
-
-  if(!tp2){
-    const footer=summary.querySelector('.qb-footer,footer');
-    if(footer){parent=footer.parentNode;ref=footer;}
-  }
-  parent.insertBefore(theory,ref);
-  theory.insertAdjacentElement('afterend',guide);
-  return tp2;
-}
-function indexHost(){
-  return document.querySelector('#summaryIndex,.summary-index.qb-index,.qb-index,.qb-toc,.summary-index,nav[aria-label*="ndice" i]');
-}
-function findTp2IndexLink(host,tp2){
-  if(!host)return null;
-  if(tp2?.id){
-    const exact=[...host.querySelectorAll('a[href^="#"]')].find(a=>a.getAttribute('href')==='#'+tp2.id);
-    if(exact)return exact;
-  }
-  const byText=[...host.querySelectorAll('a[href^="#"]')].reverse()
-    .find(a=>/\btp\s*2\b/.test(norm(a.textContent)));
-  if(byText)return byText;
-  return [...host.querySelectorAll('a[href^="#cap"]')].at(-1)||
-         host.querySelector('a[href="#methods"]')||
-         null;
-}
-function makeIndexLink(template,href,label,kind){
-  const link=template?template.cloneNode(false):document.createElement('a');
-  link.removeAttribute('id');
-  link.href='#'+href;
-  link.textContent=label;
-  link.classList.add(INDEX_CLASS,'qbi-e3-index-'+kind);
-  link.dataset.qbiE3Index='1';
-  return link;
-}
-function ensureIndex(theory,guide,tp2){
-  prepareAnchors(theory);
-  const host=indexHost();
-  if(!host)return false;
-
-  host.querySelectorAll('[data-qbi-e3-index="1"]').forEach(node=>node.remove());
-  const anchor=findTp2IndexLink(host,tp2);
-  const items=[
-    [THEORY_ID,'20. Enzimas III · inhibición y regulación','main'],
-    ...TOPICS.map(([id,label])=>[id,label,'sub']),
-    [GUIDE_ID,'✎ Ejercicios · Enzimas III (21)','exercise']
-  ];
-  let cursor=anchor;
-  for(const [id,label,kind] of items){
-    const link=makeIndexLink(anchor,id,label,kind);
-    if(cursor){cursor.insertAdjacentElement('afterend',link);cursor=link;}
-    else host.append(link);
-  }
-  return true;
-}
-function auditGuide(guide){
-  const keys=new Set([...guide.querySelectorAll('details.qbi-e3-exercise[data-e3-key]')].map(d=>d.dataset.e3Key));
-  const missing=[];
-  for(let i=1;i<=21;i++)if(!keys.has('e'+i))missing.push(i);
-  guide.dataset.e3Audit=missing.length?'missing-'+missing.join('-'):'complete-21';
-  if(missing.length)console.error('QBI Enzimas III: faltan ejercicios',missing);
-  return !missing.length;
-}
-async function insert(){
-  if(running)return false;
-  const summary=getSummary();
-  if(!summary)return false;
-  running=true;
-  try{
-    const data=await payload();
-
-    if(!document.getElementById(STYLE_ID)){
-      const style=document.createElement('style');
-      style.id=STYLE_ID;
-      style.textContent=data.css+`
-        .qbi-e3-index-sub{padding-left:1.3rem!important;font-size:.9em;opacity:.9}
-        .qbi-e3-index-main{font-weight:900!important}
-        .qbi-e3-index-exercise{margin-top:.35rem!important;font-weight:800!important}
-      `;
-      document.head.append(style);
-    }
-
-    let theory=document.getElementById(THEORY_ID);
-    if(!theory){
-      const holder=document.createElement('div');
-      holder.innerHTML=data.theory.trim();
-      theory=holder.firstElementChild;
-    }
-    appendFigures(theory,data.figures);
-
-    let guide=document.getElementById(GUIDE_ID);
-    if(!guide){
-      const holder=document.createElement('div');
-      holder.innerHTML=data.exercises.trim();
-      guide=holder.firstElementChild;
-    }
-
-    const tp2=placeContent(summary,theory,guide);
-    ensureIndex(theory,guide,tp2);
-    wire(theory);
-    wire(guide);
-    auditGuide(guide);
-    typeset(theory);
-    typeset(guide);
-    window.QBI_MATH_RENDER_FIX?.repair?.();
-
-    document.documentElement.dataset.qbiEnzimas3='loaded-'+VERSION;
-    return true;
-  }catch(error){
-    console.error('QBI Enzimas III',error);
-    document.documentElement.dataset.qbiEnzimas3='error';
-    return false;
-  }finally{
-    running=false;
-  }
-}
-function retry(){
-  insert();
-  if(++attempts<120)timer=setTimeout(retry,200);
-}
-const observer=new MutationObserver(()=>{
-  clearTimeout(timer);
-  timer=setTimeout(insert,100);
-});
-function start(){
-  observer.observe(document.documentElement,{subtree:true,childList:true});
-  retry();
-  [700,1500,3000,6000].forEach(delay=>setTimeout(insert,delay));
-}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});
-else start();
-window.QBI_ENZIMAS3={version:VERSION,insert};
+const EXTRA_FIGURES={
+  0:['qbi-e3-fig-t1','qbi-e3-fig-t2'],
+  2:['qbi-e3-fig-t4'],
+  3:['qbi-e3-fig-t5','qbi-e3-fig-t6'],
+  6:['qbi-e3-fig-t9'],
+  8:['qbi-e3-fig-t12','qbi-e3-fig-t13']
+};
+const SUPPLEMENTS={
+  0:`<h3>Alcance completo de la clasificación presentada en clase</h3><p>Además de los inhibidores reversibles michaelianos desarrollados en esta clase, el texto menciona inhibidores reversibles <strong>no michaelianos</strong>, cuyo estudio queda para más adelante. Para los inhibidores suicidas, el material destaca su utilidad en el diseño racional de fármacos: pueden ser muy específicos porque se vuelven reactivos una vez que alcanzan el sitio activo adecuado, y también permiten identificar residuos esenciales para la catálisis. En la quimotripsina, el DIFP permitió reconocer el papel de Ser195. Los análogos del estado de transición se unen de manera no covalente pero con gran afinidad; el fosfoglicolhidroxamato se une a la aldolasa más de 10.000 veces más fuertemente que la fructosa 1,6-bisfosfato.</p>`,
+  5:`<h3>Ejemplos y valores del material</h3><p>La actividad enzimática siempre debe informarse junto con el pH del ensayo. El teórico muestra que los pH óptimos suelen guardar relación con el medio donde actúa la enzima: la pepsina funciona de manera óptima en condiciones ácidas y algunas enzimas presentan un <strong>rango</strong> de pH óptimo, no un único valor. En el ejemplo de His/Glu, la mayor coincidencia entre His-imidazol protonado y Glu-COO<sup>−</sup> desprotonado se da alrededor de pH 7.</p><p>El experimento de la diapositiva de actividad versus estabilidad tiene un pH óptimo de 6,5. Si la enzima se preincuba a pH 4 y luego se mide a pH óptimo, recupera la velocidad: el efecto fue reversible. Si se preincuba a pH 9 y no recupera la actividad al volver al óptimo, el cambio fue irreversible y afectó la estabilidad de la estructura nativa.</p>`,
+  6:`<h3>Datos experimentales que acompañan a Arrhenius</h3><p>El texto remarca que, como regla general, la velocidad de una reacción enzimática puede aproximadamente duplicarse por cada incremento de 10 °C. En la rama ascendente y para una concentración de sustrato dada, la concentración de ES se considera determinada y se usa la relación <span class="qbi-e3-math">\\(v_0=k_{cat}[ES]\\)</span>; por eso <span class="qbi-e3-math">\\(v_0\\)</span> y <span class="qbi-e3-math">\\(k_{cat}\\)</span> difieren por una constante y puede analizarse <span class="qbi-e3-math">\\(\\ln v_0\\)</span> frente a <span class="qbi-e3-math">\\(1/T\\)</span>.</p><p>En el ejemplo de estabilidad térmica de la diapositiva se recupera la velocidad óptima luego de preincubaciones de hasta 35 °C; por encima de esa temperatura aparecen cambios que ya no se revierten. El teórico también muestra curvas de formación de producto a 40, 50, 60 y 70 °C para recordar que una temperatura alta puede aumentar inicialmente la velocidad y, al mismo tiempo, acelerar la pérdida de actividad con el tiempo.</p>`,
+  7:`<h3>Detalles regulatorios conservados del texto y las diapositivas</h3><p>El material señala que las enzimas reguladas por alosterismo y por modificación covalente tienen más de una subunidad y que, en algunos casos, el sitio regulador y el sitio activo se encuentran en subunidades diferentes. En cooperatividad positiva, el aumento de la concentración de sustrato incrementa la afinidad aparente; en cooperatividad negativa ocurre lo contrario.</p><p>Para ATCasa, Asp actúa como efector homotrópico positivo; CTP es un efector heterotrópico negativo y ATP uno positivo. Concentraciones altas de CTP hacen más marcado el comportamiento sigmoideo; al aumentar ATP la sigmoidalidad disminuye y, a concentraciones muy elevadas, la respuesta puede aproximarse a un comportamiento michaeliano.</p><h3>Ejemplo de regulación en el metabolismo de la glucosa</h3><p>La diapositiva integra varios efectores: PFK es activada por fructosa 2,6-bisfosfato y AMP e inhibida por ATP, citrato y H<sup>+</sup>; fructosa 1,6-bisfosfatasa es inhibida por fructosa 2,6-bisfosfato y AMP y activada por citrato; piruvato quinasa es activada por fructosa 1,6-bisfosfato e inhibida por ATP y alanina; fosfoenolpiruvato carboxiquinasa es inhibida por ADP; y piruvato carboxilasa es activada por acetil-CoA e inhibida por ADP.</p>`,
+  8:`<h3>Detalles conservados de modificación covalente y proteólisis</h3><p>Entre los grupos de modificación covalente mencionados en el texto se encuentran fosforilo, acetilo, metilo, adenililo y uridilo. En la fosforilación, las proteínas quinasas pueden transferir grupos fosforilo a residuos específicos de Ser, Thr, Tyr o His; las fosfoproteínas fosfatasas los retiran. El ejemplo de la clase es la regulación de la glucógeno fosforilasa por fosforilasa quinasa y fosfoproteína fosfatasa.</p><p>En la regulación por proteólisis, tripsina y quimotripsina se sintetizan como tripsinógeno y quimotripsinógeno. La activación es irreversible y se requieren otros mecanismos para inactivar las proteasas, entre ellos proteínas inhibidoras que se unen fuertemente al sitio activo. En la coagulación sanguínea, muchos factores son serin-proteinasas del tipo de la quimotripsina que provienen de proenzimas sintetizadas en hígado; otros factores actúan como cofactores. La cascada amplifica la señal hasta la formación de fibrina y existen inhibidores de la coagulación capaces de interrumpir el proceso.</p>`
+};
+const QUESTIONS={
+1:`<p>¿Qué es un inhibidor? ¿Qué diferencia existe entre un inhibidor irreversible y uno reversible?</p>`,
+2:`<p>¿Qué tipo de inhibidores irreversibles conoce? ¿Cómo actúan?</p>`,
+3:`<p>¿Qué tipo de inhibidores reversibles michaelianos conoce?</p>`,
+4:`<p>¿En qué consiste la inhibición competitiva? ¿Cómo serán los parámetros cinéticos en presencia de inhibidor respecto de los que se obtienen en su ausencia? ¿Por qué? ¿Cómo será la ecuación de velocidad inicial en función de concentración de sustrato? Esquematice un gráfico directo con y sin inhibidor. ¿Cómo será la linealización de Lineweaver – Burk? Esquematice un gráfico con y sin inhibidor. Muestre qué información proporcionan las pendientes y ordenadas y abscisas al origen para determinar los parámetros cinéticos aparentes y verdaderos.</p>`,
+5:`<p>Conteste la pregunta del ejercicio 4 para la inhibición acompetitiva.</p>`,
+6:`<p>Conteste la pregunta del ejercicio 4 para inhibición mixta.</p>`,
+7:`<p>Conteste la pregunta del ejercicio 4 para inhibición no competitiva.</p>`,
+8:`<p>Una enzima presenta un Km = 1 mM y una Vmax = 1 μmol/min para su sustrato S. Determine el Km aparente y la Vmax aparente en presencia de un inhibidor I que se encuentra a una concentración 1 μM cuando presenta las siguientes características:</p><p>a- Inhibidor competitivo, Ki = 1 μM<br>b- Inhibidor acompetitivo, K’i = 1 μM<br>c- Inhibidor mixto, Ki = 1 μM, K’i = 2 μM<br>d- Inhibidor mixto, Ki = 2 μM, K’i = 1 μM<br>e- Inhibidor no competitivo, Ki = 1 μM, K’i = 1 μM</p><p>Discuta las diferencias o coincidencias que encuentre entre los parámetros cinéticos obtenidos en ausencia y en presencia de inhibidor.</p>`,
+9:`<p>¿Qué grafica cuando utiliza el método de Dixon? ¿Qué grafica cuando utiliza el método de Cornish-Bowden? ¿Qué ventaja presentan respecto de la representación de Lineweaver-Burk? ¿Cómo interpreta la información que proporcionan?</p>`,
+10:`<p>¿Cómo puede afectar el pH a la velocidad inicial? ¿Cómo puede determinar el pH óptimo? ¿Cómo puede discriminar entre un efecto reversible y un fenómeno de inestabilidad o desnaturalización?</p>`,
+11:`<p>¿Cómo puede afectar la temperatura a la velocidad inicial? ¿Cómo puede determinar la temperatura óptima? ¿Cómo puede determinar la energía de activación? ¿Cómo puede realizar un estudio de inestabilidad térmica?</p>`,
+12:`<p>¿Qué son las enzimas alostéricas? ¿Qué entiende por cooperatividad? ¿Qué entiende por alosterismo?</p>`,
+13:`<p>¿Qué clases de comportamiento cooperativo conoce? ¿Qué cinética siguen estas enzimas y de qué parámetros dependen?</p>`,
+14:`<p>¿Qué establecen el modelo concertado de Monod y el modelo secuencial de Koshland?</p>`,
+15:`<p>¿Qué clases de comportamiento alostérico conoce?</p>`,
+16:`<p>¿Qué entiende por modificación covalente?</p>`,
+17:`<p>¿En qué consiste la regulación por proteólisis?</p>`,
+18:`<p>Se hizo un estudio cinético de la enzima fosfofructoquinasa (PFK) que cataliza la transferencia de un grupo fosforilo desde el ATP a la fructosa 6-fosfato (F6P):</p><p>ATP + F6P = ADP + FBP</p><p>Las siguientes figuras muestran los gráficos a partir de los que se determinaron los parámetros cinéticos:</p>{{FIG0}}<p>a- ¿Qué valor toman los parámetros cinéticos y en qué condiciones?</p><p>b- ¿Qué interpretación hace de la curva superior de la figura B?</p><p>Dadas las discrepancias de velocidad observadas en diferentes condiciones, se evaluó la influencia del pH sobre la velocidad inicial:</p><p>c- ¿Cuál es el pH óptimo?</p><p>d- ¿Qué interpretación puede hacer de las 2 curvas inferiores de la figura B en base a la información aportada por la figura C?</p><p>e- Si la medición a pH 6,9 se hubiera hecho utilizando una [F6P]=10<sup>-4</sup>M, ¿dónde se ubicaría aproximadamente el punto experimental en la figura C?</p><p>f- ¿Qué experimento efectuaría para evaluar si la velocidad inicial a pH 9 estaría afectada por un proceso de inestabilidad (desnaturalización)?</p><p>Posteriormente, se evaluó el efecto del AMP cíclico (AMPc) en presencia de diferentes concentraciones de F6P a pH 6,9 y con una concentración inhibitoria de ATP, obteniéndose una curva sigmoidea en ausencia del nucleótido y una curva michaeliana en su presencia, como muestra la figura D.</p>{{FIG1}}<p>g- ¿Qué comportamiento cinético presenta la enzima en ausencia de AMPc? ¿Qué compuesto será el regulador de la actividad de la enzima en estas condiciones? ¿Qué valores aproximados de Vmax y S0,5 tendrá la PFK?</p><p>f- ¿Qué comportamiento cinético presenta la enzima en presencia de AMPc? ¿Qué valores aproximados de Vmax y Km tendrá la PFK? ¿Qué tipo de modulador será el AMPc en estas condiciones?</p><p>h- Si analiza el intervalo de concentraciones de F6P comprendido entre 0,75 x 10<sup>-4</sup>M y 1,5 x 10<sup>-4</sup>M, ¿en qué condición (con o sin AMPc) presentará la enzima mayor capacidad regulatoria? ¿Por qué?</p>`,
+19:`<p>La enzima glutamato deshidrogenasa de lupín cataliza la reacción reversible (deaminacion/aminacion) que se detalla a continuación:</p><p>NAD<sup>+</sup> + L-Gutamato + H<sub>2</sub>O &nbsp;&nbsp; == &nbsp;&nbsp; NADH + 2-oxoglutarato + NH<sub>4</sub><sup>+</sup></p><p>a- En el estudio de sus propiedades cinéticas se analizó el efecto de los productos finales NADH (A), 2-oxoglutarato (B) y NH<sub>4</sub><sup>+</sup> (C) sobre la velocidad de la reacción de deaminación, utilizando el sustrato NAD<sup>+</sup> variable (L-glutamato concentración fija 20mM para A y B y 14 mM para C), obteniéndose los siguientes resultados para A: NADH (0-0.04 mM); B: 2-oxoglutarato (0-25 mM); C: NH<sub>4</sub><sup>+</sup> (0-50 mM).</p>{{FIG0}}<p>Indique que tipo de inhibición producen sobre la reacción cada uno de los productos finales. Explique por qué las categorizó así. ¿A que se une el inhibidor? ¿Cómo serán el Km ap y la Vmax ap respecto de los parámetros cinéticos verdaderos?</p>`,
+20:`<p>Teniendo como objetivo la caracterización bioquímica la vía de síntesis de tetrahidrobiopterina del hongo <em>Morteriella alpina</em>, se efectuó un estudio de las enzimas que participan en esta vía: GTPCH-1, GTPCH-2, PTPS y SR. La siguiente figura muestra un estudio de temperatura óptima, pH óptimo y de sensibilidad a distintos cationes para cada una de estas enzimas.</p>{{FIG0}}<p>a) En base a la figura que corresponda, ¿a qué pH determinaría la actividad de GTPCH-1? ¿Cómo evaluaría la estabilidad de esta enzima frente al pH? Dibuje una curva de estabilidad superpuesta a la de pH óptimo para esta enzima considerando que la enzima es inestable a pH 6 e inferiores.</p><p>b) ¿Cómo haría un estudio de estabilidad térmica de PTPS? Dibuje una curva superpuesta a la de la temperatura óptima para esta enzima.</p><p>c)- Si para las 4 enzimas estudiadas, la determinación de la velocidad de reacción sin agregado de catión fue de 1 mmol/min, ¿qué velocidades esperaría obtener de manera aproximada en cada caso si agregara a la mezcla de reacción Mg<sup>2+</sup>?</p>`,
+21:`<p>La fosfoenolpiruvato carboxilasa (PEPC) es una enzima citosólica de plantas que cataliza la carboxilación del fosfoenolpiruvato (PEP) según la siguiente reacción:</p><p>PEP + HCO<sub>3</sub><sup>-</sup> → oxalacetato + Pi</p><p>Luego de la purificación, el análisis estructural de la enzima demostró que se trataba de un heterotetrámero constituido por dos tipos de subunidades ligeramente diferentes, en una relación α<sub>2</sub>β<sub>2</sub>. Posteriormente se efectuó un estudio cinético a pH 7.0 en presencia y ausencia de glicerol, como condiciones control y con el agregado de glucosa 6-fosfato (Glc 6-P) y malato según se muestra en la figura. El comportamiento fue Michaeliano en todos los casos con excepción de la curva inferior.</p>{{FIG0}}<p>¿Qué efecto tiene el glicerol sobre la enzima? ¿Qué tipo de efecto cinético ejercen Glc 6-P y malato sobre la enzima respecto de los controles correspondientes con y sin glicerol? ¿Qué efecto produce el PEP sobre la enzima en presencia de malato y ausencia de glicerol? ¿Cómo interpreta este último efecto a nivel molecular? De acuerdo a la estructura cuaternaria encontrada y a los efectos cinéticos observados, ¿qué tipo de regulación ejercería la PEPC?</p>`
+};
+const SUPPORT_CSS=`
+.qbi-e3-native-chapter .qbi-e3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px;margin:14px 0}.qbi-e3-native-chapter .qbi-e3-grid article{padding:14px;border:1px solid var(--qb-border);border-radius:14px;background:var(--qb-panel)}
+.qbi-e3-native-chapter .qbi-e3-key{max-width:920px;margin:16px 0;padding:13px 15px;border-left:4px solid var(--qb-accent);border-radius:0 12px 12px 0;background:var(--qb-accent-soft)}
+.qbi-e3-table-wrap{overflow:auto;max-width:920px}.qbi-e3-table-wrap table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem}.qbi-e3-table-wrap th,.qbi-e3-table-wrap td{padding:8px 9px;border-bottom:1px solid var(--qb-border);vertical-align:top}.qbi-e3-table-wrap th{background:var(--qb-accent-soft)}
+.qbi-e3-figure{max-width:860px;margin:18px auto;text-align:center}.qbi-e3-figure svg{display:block;width:100%;height:auto;max-height:540px;border:1px solid var(--qb-border);border-radius:12px;background:#fff}.qbi-e3-figure figcaption{margin-top:7px;color:var(--qb-muted);font-size:.82rem;line-height:1.35}
+.qbi-e3-svg .ax{stroke:#4c3a45;stroke-width:1.8}.qbi-e3-svg path,.qbi-e3-svg line{fill:none}.qbi-e3-svg .c1{stroke:#b02d63;stroke-width:3}.qbi-e3-svg .c2{stroke:#486f9b;stroke-width:3}.qbi-e3-svg .c3{stroke:#7a5b96;stroke-width:3}.qbi-e3-svg .c4{stroke:#5b8460;stroke-width:3}.qbi-e3-svg .dash{stroke:#7c7077;stroke-width:1.5;stroke-dasharray:6 5}.qbi-e3-svg text{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:13px;fill:#40343b}.qbi-e3-svg .lab{font-size:13px;font-weight:700;text-anchor:middle}.qbi-e3-svg .rot{transform-box:fill-box;transform-origin:center;transform:rotate(-90deg)}.qbi-e3-svg .ttl,.qbi-e3-svg .rowlab{font-size:14px;font-weight:800;fill:#8d2452}.qbi-e3-svg .note{font-size:12px;fill:#6f5b67}.qbi-e3-svg .box{fill:#fff7fb;stroke:#d781a8;stroke-width:2}.qbi-e3-svg .bar{fill:#d782aa;stroke:#8d2452;stroke-width:1}
+.qbi-e3-eqs{text-align:center;margin:12px 0;overflow:auto}.qbi-e3-native-guide .qbi-e3-eqs{text-align:center}.qbi-e3-native-guide .qbi-e3-question-figure{margin:15px auto}.qbi-e3-native-guide .qbi-e3-solution-native>h4:first-child{display:none}
+`;
+let cache=null,running=false,timer=0,attempts=0;
+const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+async function fetchParts(names){const rows=await Promise.all(names.map(name=>fetch(name+'?v='+VERSION,{cache:'reload'}).then(r=>{if(!r.ok)throw Error(name+' '+r.status);return r.text()})));return rows.join('')}
+function payload(){return cache||(cache=Promise.all([fetchParts(FILES.theory),fetchParts(FILES.figures),fetchParts(FILES.exercises)]).then(([theory,figures,exercises])=>({theory,figures,exercises})).catch(e=>{cache=null;throw e}))}
+function injectStyle(){if(document.getElementById(STYLE_ID))return;const s=document.createElement('style');s.id=STYLE_ID;s.textContent=SUPPORT_CSS;document.head.append(s)}
+function findSummary(){return document.querySelector('.qb-summary')||document.querySelector('main')||document.body}
+function findTp2(summary){const nodes=[...summary.querySelectorAll('.qb-chapter,section[id^="cap"]')];return nodes.findLast?.(n=>/\btp\s*2\b/.test(norm(n.querySelector('h1,h2,h3')?.textContent||'')))||nodes.findLast?.(n=>/\btp\s*2\b/.test(norm(n.textContent)))||document.getElementById('cap19')||null}
+function removeOld(){document.getElementById('qbi-enzimas3-theory')?.remove();document.querySelectorAll('.qbi-e3-native-chapter').forEach(n=>n.remove());document.querySelectorAll('[data-qbi-e3-index="1"]').forEach(n=>n.remove())}
+function extractExtraFigures(html){const holder=document.createElement('div');holder.innerHTML=html;const map=new Map;holder.querySelectorAll('article[id^="qbi-e3-fig-t"]').forEach(article=>map.set(article.id,article));return map}
+function buildChapters(theoryHtml,figuresHtml){const holder=document.createElement('div');holder.innerHTML=theoryHtml.trim();const source=holder.querySelector('#qbi-enzimas3-theory')||holder.firstElementChild;const topics=[...source.querySelectorAll('details.qbi-e3-topic[data-e3-key]')].filter(d=>/^t\d+$/.test(d.dataset.e3Key||''));const extras=extractExtraFigures(figuresHtml);const nodes=[];CHAPTERS.forEach(([id,num,title],index)=>{const topic=topics[index];if(!topic)return;const section=document.createElement('section');section.className='qb-chapter qbi-e3-native-chapter';section.id=id;section.dataset.qbiE3Chapter=String(index+1);section.innerHTML=`<div class="qb-chapter-number">${num}</div><h2>${title}</h2>`;const body=topic.querySelector('.qbi-e3-body');if(body){[...body.childNodes].forEach(node=>section.append(node.cloneNode(true)))}if(SUPPLEMENTS[index])section.insertAdjacentHTML('beforeend',SUPPLEMENTS[index]);for(const figId of EXTRA_FIGURES[index]||[]){const article=extras.get(figId);if(!article)continue;const h=article.querySelector('h3');const f=article.querySelector('figure');if(h)section.append(h.cloneNode(true));if(f)section.append(f.cloneNode(true))}nodes.push(section)});return nodes}
+function placeChapters(nodes,summary){const tp2=findTp2(summary);if(!tp2?.parentNode)return false;let cursor=tp2;for(const node of nodes){cursor.insertAdjacentElement('afterend',node);cursor=node}const badges=[...summary.querySelectorAll('.qb-hero-badges span')];const badge=badges.find(n=>/\b(?:19|20)\s+capitulos\b/.test(norm(n.textContent)));if(badge)badge.textContent='28 capítulos';return true}
+function sidebarHost(){return document.querySelector('#summaryIndex,.summary-index.qb-index,.qb-index')}
+function ensureSidebar(summary){const nav=sidebarHost();if(!nav)return false;const ready=[...nav.querySelectorAll('[data-qbi-e3-index="1"]')];if(ready.length===CHAPTERS.length&&ready.every((a,i)=>a.getAttribute('href')==='#'+CHAPTERS[i][0]))return true;nav.querySelectorAll('[data-qbi-e3-index="1"]').forEach(n=>n.remove());const tp2=findTp2(summary);let anchor=null;if(tp2?.id)anchor=nav.querySelector(`a[href="#${CSS.escape(tp2.id)}"]`);if(!anchor)anchor=[...nav.querySelectorAll('a[href^="#"]')].findLast?.(a=>/\btp\s*2\b/.test(norm(a.textContent)))||null;if(!anchor)return false;let cursor=anchor;for(const [id,num,title] of CHAPTERS){const link=anchor.cloneNode(false);link.removeAttribute('id');link.classList.remove('active');link.removeAttribute('style');link.dataset.qbiE3Index='1';link.href='#'+id;link.textContent=`${num}. ${title}`;cursor.insertAdjacentElement('afterend',link);cursor=link}return true}
+function fillFigures(template,figures){let out=template;figures.forEach((figure,index)=>{const clone=figure.cloneNode(true);clone.classList.add('qbi-e3-question-figure');out=out.replace(`{{FIG${index}}}`,clone.outerHTML)});return out.replace(/\{\{FIG\d+\}\}/g,'')}
+function buildNativeGuide(exercisesHtml){const holder=document.createElement('div');holder.innerHTML=exercisesHtml.trim();const source=holder.querySelector('#qbi-enzimas3-guide')||holder;const details=[...source.querySelectorAll('details.qbi-e3-exercise[data-e3-key]')];const guide=document.createElement('details');guide.className='qbi-guide-library qbi-e3-native-guide';guide.id=GUIDE_ID;guide.dataset.guideName='Guía de estudio · Enzimas III';guide.dataset.qbiE3Guide='1';guide.innerHTML='<summary>Guía de estudio · Enzimas III · 21 ejercicios</summary><div></div>';const list=guide.querySelector(':scope>div');details.forEach((old,index)=>{const n=index+1;const title=old.querySelector(':scope>summary b')?.textContent?.trim()||`Ejercicio ${n}`;const solution=old.querySelector('.qbi-e3-solution')?.innerHTML||'';const figures=[...old.querySelectorAll('.qbi-e3-question figure')];const question=fillFigures(QUESTIONS[n]||old.querySelector('.qbi-e3-question')?.innerHTML||'',figures);const item=document.createElement('details');item.className='qbi-solved-exercise';item.dataset.e3Key='e'+n;item.innerHTML=`<summary>Ejercicio ${n} · ${title}</summary><div class="qbi-solved-body"><h4>Consigna</h4>${question}<details data-e3-answer="${n}"><summary>Ver respuesta explicada</summary><div class="qbi-e3-solution-native">${solution}</div></details></div>`;list.append(item)});return guide}
+function exerciseLibrary(){return document.querySelector('.qbi-guide-library-list')}
+function wireGuide(guide){if(!guide||guide.dataset.e3NativeWired)return;guide.dataset.e3NativeWired='1';let state={};try{state=JSON.parse(localStorage.getItem('qbi-enzimas3-native-open-v1')||'{}')||{}}catch{};const details=[guide,...guide.querySelectorAll('details')];details.forEach((d,index)=>{const key=d===guide?'guide':d.dataset.e3Key||('answer-'+d.dataset.e3Answer)||String(index);if(Object.hasOwn(state,key))d.open=Boolean(state[key]);d.addEventListener('toggle',e=>{if(!e.isTrusted)return;state[key]=d.open;try{localStorage.setItem('qbi-enzimas3-native-open-v1',JSON.stringify(state))}catch{}})})}
+function addGuideCover(guide,library){const study=library.closest('.qbi-study')||library.parentElement;const covers=study?.querySelector('.qbi-guide-covers');if(!covers)return;covers.querySelector('[data-qbi-e3-cover="1"]')?.remove();const template=covers.querySelector('button:last-of-type');const button=template?template.cloneNode(false):document.createElement('button');button.type='button';button.dataset.qbiE3Cover='1';const count=covers.querySelectorAll('button').length+1;button.innerHTML=`<b>${count}</b><strong>Guía de estudio · Enzimas III</strong><small>21 ejercicios resueltos</small>`;button.onclick=()=>{guide.open=true;guide.scrollIntoView({behavior:'smooth',block:'start'})};covers.append(button)}
+function placeGuide(exercisesHtml){const library=exerciseLibrary();if(!library)return false;const current=document.getElementById(GUIDE_ID);if(current&&library.contains(current)){wireGuide(current);addGuideCover(current,library);return true}current?.remove();const guide=buildNativeGuide(exercisesHtml);const existing=[...library.querySelectorAll(':scope>details.qbi-guide-library')];if(existing.length)existing.at(-1).insertAdjacentElement('afterend',guide);else library.append(guide);wireGuide(guide);addGuideCover(guide,library);return true}
+function typeset(root){const run=()=>{if(!window.MathJax?.typesetPromise)return false;try{window.MathJax.typesetClear?.([root]);window.MathJax.typesetPromise([root]).catch(()=>{})}catch{}return true};window.QBI_MATH_RENDER_FIX?.repair?.();if(run())return;[250,600,1200,2200,4200].forEach(delay=>setTimeout(run,delay))}
+function audit(summary){const chapters=CHAPTERS.filter(([id])=>document.getElementById(id)).length;const links=sidebarHost()?.querySelectorAll('[data-qbi-e3-index="1"]').length||0;const guide=document.getElementById(GUIDE_ID);const exercises=guide?.querySelectorAll(':scope>div>details.qbi-solved-exercise').length||0;const figures=[...summary.querySelectorAll('.qbi-e3-native-chapter .qbi-e3-figure')].length;const okay=chapters===9&&links===9&&exercises===21&&figures>=13;document.documentElement.dataset.qbiE3Audit=okay?'complete':'incomplete';if(!okay)console.error('QBI Enzimas III audit',{chapters,links,exercises,figures});return okay}
+async function insert(){if(running)return false;const summary=findSummary();if(!summary)return false;running=true;try{const data=await payload();injectStyle();const present=CHAPTERS.filter(([id])=>document.getElementById(id)).length;if(present!==CHAPTERS.length){removeOld();const nodes=buildChapters(data.theory,data.figures);if(nodes.length!==9)throw Error('No se pudieron reconstruir los 9 capítulos de Enzimas III');if(!placeChapters(nodes,summary))return false;typeset(summary)}ensureSidebar(summary);const guideReady=placeGuide(data.exercises);if(guideReady)typeset(document.getElementById(GUIDE_ID));setTimeout(()=>audit(summary),800);return true}catch(error){console.error('QBI Enzimas III 4.2',error);return false}finally{running=false}}
+function retry(){insert();if(++attempts<120)timer=setTimeout(retry,250)}
+const observer=new MutationObserver(m=>{if(m.some(x=>[...x.addedNodes].some(n=>n.nodeType===1&&!n.matches?.('mjx-container')&&!n.closest?.('mjx-container')))){clearTimeout(timer);timer=setTimeout(insert,120)}});
+function start(){observer.observe(document.documentElement,{subtree:true,childList:true});retry();setTimeout(insert,1200);setTimeout(insert,3200)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+window.QBI_ENZIMAS3={version:VERSION,insert,audit:()=>audit(findSummary())};
 })();
