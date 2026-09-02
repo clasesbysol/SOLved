@@ -53,7 +53,7 @@ try{
     await page.waitForFunction(()=>document.querySelector('iframe.imported-html-frame')?.sandbox.contains('allow-same-origin'),null,{timeout:10000});
     await page.waitForFunction(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
-      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===2}catch{return false}
+      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===5}catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
@@ -65,7 +65,7 @@ try{
     await page.close();
   }
 
-  console.log('QBI loader: OK directo + sandbox SOLved + 2 mapas');
+  console.log('QBI loader: OK directo + sandbox SOLved + 5 mapas');
 }finally{
   await browser?.close().catch(()=>{});
   server.kill('SIGTERM');
