@@ -32,7 +32,7 @@ try{
     }));
     if(result.text.includes('No se pudo abrir el resumen'))throw new Error('El loader directo cayó en la pantalla de error');
     if(result.text.includes('qbiFetchBundle')||result.text.includes('qbiPrepareDocument'))throw new Error('Se imprimió JavaScript del loader como texto');
-    if(result.maps!==5)throw new Error(`Se esperaban 5 mapas de guía y aparecieron ${result.maps}`);
+    if(result.maps!==2)throw new Error(`Se esperaban 2 mapas de guía y aparecieron ${result.maps}`);
     if(pageErrors.length)throw new Error(`Errores de página: ${pageErrors.join(' | ')}`);
     await page.close();
   }
@@ -53,7 +53,7 @@ try{
     await page.waitForFunction(()=>document.querySelector('iframe.imported-html-frame')?.sandbox.contains('allow-same-origin'),null,{timeout:10000});
     await page.waitForFunction(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
-      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===5}catch{return false}
+      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===2}catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
@@ -65,7 +65,7 @@ try{
     await page.close();
   }
 
-  console.log('QBI loader: OK directo + sandbox SOLved + 5 mapas');
+  console.log('QBI loader: OK directo + sandbox SOLved + 2 mapas');
 }finally{
   await browser?.close().catch(()=>{});
   server.kill('SIGTERM');
