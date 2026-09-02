@@ -32,7 +32,7 @@ try{
     }));
     if(result.text.includes('No se pudo abrir el resumen'))throw new Error('El loader directo cayó en la pantalla de error');
     if(result.text.includes('qbiFetchBundle')||result.text.includes('qbiPrepareDocument'))throw new Error('Se imprimió JavaScript del loader como texto');
-    if(result.maps!==2)throw new Error(`Se esperaban 2 mapas de guía y aparecieron ${result.maps}`);
+    if(result.maps!==5)throw new Error(`Se esperaban 5 mapas de guía y aparecieron ${result.maps}`);
     if(pageErrors.length)throw new Error(`Errores de página: ${pageErrors.join(' | ')}`);
     await page.close();
   }
