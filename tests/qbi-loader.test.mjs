@@ -26,6 +26,7 @@ try{
     page.on('pageerror',error=>pageErrors.push(String(error)));
     await page.goto(`${ROOT}/${UNIT}/original.html?v=4.0.4`,{waitUntil:'domcontentloaded'});
     await page.waitForSelector('#qbi-guide-memory-maps',{timeout:30000});
+    await page.waitForSelector('#cap-tp2',{timeout:30000});
     const result=await page.evaluate(()=>({
       text:document.body.innerText,
       maps:document.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length
