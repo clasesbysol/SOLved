@@ -65,7 +65,8 @@
 
   function inject(){
     const root=document.querySelector('.qb-summary');
-    if(!root||document.getElementById('cap-tp2'))return;
+    if(!root)return false;
+    if(document.getElementById('cap-tp2'))return true;
     const template=document.createElement('template');template.innerHTML=CHAPTER.trim();
     const next=document.getElementById('cap16')||document.getElementById('cap17')||root.querySelector('.qb-footer');
     (next?.parentNode||root).insertBefore(template.content,next||null);
@@ -75,7 +76,12 @@
       const link=document.createElement('a');link.href='#cap-tp2';link.textContent='TP2. Puesta a punto y cinética enzimática';
       const before=nav.querySelector('a[href="#cap16"],a[href="#cap17"]');nav.insertBefore(link,before||null);
     }
+    return true;
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',inject,{once:true});else inject();
+  function start(){
+    if(inject())return;
+    let attempts=0;const timer=setInterval(()=>{attempts++;if(inject()||attempts>=120)clearInterval(timer)},100);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
   window.SOLVED_QB_TP2={version:VERSION,inject};
 })();
