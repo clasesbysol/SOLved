@@ -50,8 +50,8 @@ for (const ref of ["./index.html", "./styles.css", "./styles-enhancements.css", 
 assert.ok(index.includes("js/study-workspace.js?v=0.10.10")&&sw.includes("./js/study-workspace.js?v=0.10.10"),"el workspace debe estar disponible offline");
 for(const ref of ["js/supabase-config.js?v=0.8.0","js/supabase-sync.js?v=0.10.9","@supabase/supabase-js"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
 assert.match(sw, /key\.startsWith\(CACHE_PREFIX\)/, "El service worker solo debe borrar cachés de la aplicación");
-assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.11.7");
-assert.ok(index.includes("v0.11.7"), "La versión visible debe ser 0.11.7");
+assert.equal(JSON.parse(await readFile("version.json", "utf8")).appVersion, "0.12.0");
+assert.ok(index.includes("v0.12.0"), "La versión visible debe ser 0.12.0");
 const db=await readFile("js/db.js","utf8");assert.ok(db.includes('DB_VERSION=9'));for(const store of ["contentPackages","importedHtml","userMaterials","officialMaterials","notes","studySessions","collections","bookmarks","activityLog"])assert.ok(db.includes(`"${store}"`),`falta store ${store}`);
 const contentSource=await readFile("js/content.js","utf8");assert.ok(contentSource.includes("compareContentVersions(staticRecord.contentVersion,item.content_version)>=0"),"Supabase no debe reemplazar un paquete estático más nuevo");assert.ok(contentSource.includes('record.origin==="official-supabase"')&&contentSource.includes('DB.del("contentPackages",key)'),"la sincronización debe retirar copias cloud obsoletas");
 assert.ok(contentSource.includes('version=`?v=${encodeURIComponent(record.contentVersion||"latest")}`')&&contentSource.includes("base+document+version"),"los HTML enriquecidos deben invalidar caché según su versión de contenido");

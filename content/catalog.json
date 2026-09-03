@@ -3,10 +3,18 @@
   "generatedFrom": "package manifests; do not edit manually",
   "packages": [
     {
+      "subjectId": "analisis2",
+      "unitId": "materia-integrada",
+      "title": "Análisis II · Materia integrada",
+      "contentVersion": "1.0.0",
+      "status": "published",
+      "path": "content/subjects/analisis2/units/materia-integrada/"
+    },
+    {
       "subjectId": "estadistica",
       "unitId": "probabilidad-practica-1",
       "title": "Estadística Aplicada · Probabilidad y variables aleatorias · guías resueltas",
-      "contentVersion": "1.4.0",
+      "contentVersion": "1.5.0",
       "status": "published",
       "path": "content/subjects/estadistica/units/probabilidad-practica-1/"
     },
@@ -14,7 +22,7 @@
       "subjectId": "fisica1",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Física I",
-      "contentVersion": "1.3.2",
+      "contentVersion": "1.4.0",
       "status": "published",
       "path": "content/subjects/fisica1/units/resumen-integral/"
     },
@@ -38,7 +46,7 @@
       "subjectId": "quimica_organica",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Química Orgánica",
-      "contentVersion": "0.6.2",
+      "contentVersion": "0.7.0",
       "status": "published",
       "path": "content/subjects/quimica_organica/units/resumen-integral/"
     }
