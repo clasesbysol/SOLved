@@ -27,13 +27,18 @@ try{
     await page.goto(`${ROOT}/${UNIT}/original.html?v=4.0.4`,{waitUntil:'domcontentloaded'});
     await page.waitForSelector('#qbi-guide-memory-maps',{timeout:30000});
     await page.waitForSelector('#cap-tp2',{timeout:30000});
+    await page.waitForSelector('#qbi-mapa-integral',{timeout:30000});
     const result=await page.evaluate(()=>({
       text:document.body.innerText,
-      maps:document.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length
+      maps:document.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length,
+      integratedChapters:document.querySelectorAll('#qbi-mapa-integral .qbi-integrated-chapter').length,
+      notes:Boolean(document.querySelector('[data-add-note]')),
+      searchNext:Boolean(document.querySelector('[data-search-next]'))
     }));
     if(result.text.includes('No se pudo abrir el resumen'))throw new Error('El loader directo cayó en la pantalla de error');
     if(result.text.includes('qbiFetchBundle')||result.text.includes('qbiPrepareDocument'))throw new Error('Se imprimió JavaScript del loader como texto');
     if(result.maps!==2)throw new Error(`Se esperaban 2 mapas de guía y aparecieron ${result.maps}`);
+    if(result.integratedChapters<15||!result.notes||!result.searchNext)throw new Error('La interfaz de materia integrada no quedó completa');
     if(!result.text.includes('Trabajo Práctico Nº 2 · Puesta a punto y cinética enzimática'))throw new Error('TP2 no apareció como capítulo práctico independiente');
     if(!result.text.includes('Enzimas III')||!result.text.includes('Dixon'))throw new Error('El resumen definitivo perdió contenido posterior al TP2');
     if(pageErrors.length)throw new Error(`Errores de página: ${pageErrors.join(' | ')}`);
@@ -56,7 +61,7 @@ try{
     await page.waitForFunction(()=>document.querySelector('iframe.imported-html-frame')?.sandbox.contains('allow-same-origin'),null,{timeout:10000});
     await page.waitForFunction(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
-      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===2}catch{return false}
+      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===2&&!!frame.contentDocument.querySelector('#qbi-mapa-integral')}catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');

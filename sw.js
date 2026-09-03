@@ -1,11 +1,11 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v0114-qbi-tp-expanded";
+const CACHE_VERSION = "biblioteca-lbt-v0115-qbi-integrated-subject";
 const CORE = [
   "./","./index.html","./bienvenida.html",
-  "./styles.css?v=0.11.0","./styles-enhancements.css?v=0.10.9","./styles-personal.css?v=0.10.9",
+  "./styles.css?v=0.11.0","./styles-enhancements.css?v=0.11.2","./styles-personal.css?v=0.10.9",
   "./organic-cards.css?v=0.7.3","./organic-mind-map.css?v=0.7.4",
   "./js/supabase-config.js?v=0.8.0","./js/auth.js?v=0.8.1","./js/data.js?v=0.11.1","./js/db.js?v=0.10.9","./js/supabase-sync.js?v=0.10.9",
-  "./js/organic-cards.js?v=0.7.3","./js/qbi-mind-map-data.js?v=1.1.0","./js/organic-mind-map.js?v=0.11.1","./js/sync.js?v=0.11.0","./js/content.js?v=0.10.11","./js/study-workspace.js?v=0.10.10","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.11.0","./js/app.js?v=0.11.2",
+  "./js/organic-cards.js?v=0.7.3","./js/qbi-mind-map-data.js?v=1.1.0","./js/qbi-mind-map-data.js?v=4.4.0","./js/organic-mind-map.js?v=0.11.1","./js/sync.js?v=0.11.0","./js/content.js?v=0.10.11","./js/study-workspace.js?v=0.10.10","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.11.0","./js/app.js?v=0.11.2",
   "./js/reading-mode-v2.js?v=1.1.0","./js/qbi-official-frame-fix.js?v=1.0.0","./js/fisica-first-partial-guide.js?v=1.1.0","./js/fisica-topic-intros.js?v=1.2.0",
   "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.0.0",
   "./content/catalog.json",
@@ -30,11 +30,13 @@ const CORE = [
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-va-extension.html?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-lab-24-08.html?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-campus-exercises.html?v=1.4.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.2.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.2.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-maps.js?v=4.2.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-equations.js?v=4.2.0",
-  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-integration.js?v=4.2.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/original.html?v=4.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-integrated-subject.js?v=4.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-math-render-fix.js?v=4.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-maps.js?v=4.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-guide-memory-equations.js?v=4.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-integration.js?v=4.4.0",
+  "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-tp2-extension.js?v=4.4.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-theory-1.txt?v=4.2.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-figures.txt?v=4.2.0",
   "./content/subjects/quimica_biologica1/units/proteinas-i/qbi-enzimas3-exercises-1.txt?v=4.2.0",
