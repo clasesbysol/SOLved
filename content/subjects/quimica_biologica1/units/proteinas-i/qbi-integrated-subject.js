@@ -64,6 +64,11 @@
     const find=back=>{const value=input.value.trim();if(value)window.find(value,false,back,true,false,true,false)};
     stepper.querySelector('[data-search-prev]').onclick=()=>find(true);stepper.querySelector('[data-search-next]').onclick=()=>find(false);
   }
+  function removeObsoleteFullscreen(){
+    document.querySelectorAll('button,[role="button"]').forEach(button=>{
+      if(/pantalla completa/i.test(button.textContent||''))button.remove();
+    });
+  }
   function installNotes(side,root){
     let notes={};try{notes=JSON.parse(localStorage.getItem(NOTES_KEY)||'{}')}catch{}
     const tools=side.querySelector('.qb-sidebar-tools')||side;
@@ -92,10 +97,10 @@
     if(!root||!documentMain||!side||!index||document.getElementById(MAP_ID))return false;
     const style=document.createElement('style');style.id='qbi-integrated-subject-style';style.textContent=css;document.head.append(style);
     const firstContent=documentMain.querySelector('.qb-hero,.qbi-exercises-section,.qb-method-hub,.qb-chapter');documentMain.insertBefore(renderMap(),firstContent||documentMain.firstChild);
-    addIndexEntry(index);enhanceSearch(side);installNotes(side,root);
+    addIndexEntry(index);enhanceSearch(side);installNotes(side,root);removeObsoleteFullscreen();
     root.dataset.integratedSubject=VERSION;
     parent.postMessage({type:'qbi-integrated-ready'},'*');
     return true;
   }
-  let attempts=0;const timer=setInterval(()=>{if(install()||attempts++>240)clearInterval(timer)},100);
+  let attempts=0;const timer=setInterval(()=>{if(install()||attempts++>240){clearInterval(timer);removeObsoleteFullscreen()}},100);
 })();
