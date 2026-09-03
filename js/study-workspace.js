@@ -257,11 +257,11 @@
     }
     saveLayout(state);
     const integrated=INTEGRATED_SUBJECTS.has(context.subjectId);
-    if(integrated){state.mode="single";state.collapsed=null}
+    if(integrated){state.mode="single";state.collapsed=null;if(state.left?.startsWith("tab:"))state.left="tab:summary"}
     root.className=`study-body workspace-${state.mode}${integrated?" workspace-integrated":""}`;
     root.style.setProperty("--split",`${state.ratio}%`);
     if(state.mode==="single"){
-      root.innerHTML=(integrated?integratedIndex(state):"")+panel("left",state);bindPanels(root,state);if(integrated)bindIntegratedIndex(root,state);
+      root.innerHTML=panel("left",state);bindPanels(root,state);
     }else{
       root.innerHTML=panel("left",state)+`<div class="workspace-divider" role="separator" aria-label="Ajustar tamaño de paneles" aria-orientation="${matchMedia("(max-width:760px)").matches?"horizontal":"vertical"}" aria-valuemin="10" aria-valuemax="90" aria-valuenow="${Math.round(state.ratio)}" tabindex="0"><i></i></div>`+panel("right",state);
       bindPanels(root,state);bindDivider(root,state);

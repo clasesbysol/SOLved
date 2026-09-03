@@ -27,10 +27,10 @@ test("Estadística conserva y puede reconstruir exactamente la versión 1.4",asy
   assert.ok(html.length>150_000,"la versión acumulativa de Estadística fue recortada");
 });
 
-test("el formato integrado incluye Física I, Estadística y Física II",async()=>{
+test("el formato integrado usa sólo el índice interno coloreado",async()=>{
   const app=await readFile("js/app.js","utf8"),workspace=await readFile("js/study-workspace.js","utf8");
   for(const id of ["fisica1","estadistica","fisica2"])assert.ok(app.includes(`"${id}"`)&&workspace.includes(`"${id}"`));
-  assert.ok(workspace.includes("currentRecords()")&&workspace.includes("data-integrated-content"),"el índice debe incluir materiales personales");
-  assert.ok(workspace.includes("data-integrated-highlight")&&workspace.includes("data-integrated-note"));
+  assert.ok(workspace.includes('root.innerHTML=panel("left",state)'),"no debe renderizarse un segundo índice blanco");
+  assert.ok(workspace.includes('state.left="tab:summary"'),"la materia integrada debe abrir su HTML integral");
   assert.doesNotMatch(workspace,/INTEGRATED_SUBJECTS[^\n]*quimica_organica/);
 });
