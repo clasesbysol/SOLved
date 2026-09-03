@@ -1,6 +1,7 @@
 (function(){
   "use strict";
   const DB=window.LBT_DB,TABS={summary:"Resumen",glossary:"Glosario",cards:"Tarjetas",exercises:"Ejercicios",map:"Mapa mental",formulas:"Fórmulas"};
+  const INTEGRATED_SUBJECTS=new Set(["fisica1","estadistica","fisica2"]);
   let context=null,records=[],pendingFile=null,editingId=null;
   const $=id=>document.getElementById(id),safe=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const key=ctx=>`solved-study-workspace-v2:${ctx?.subjectId||"global"}`;
@@ -83,6 +84,20 @@
   function panel(side,state){
     const value=state[side],material=findMaterial(value),title=value==="library:html"?"Biblioteca de HTML":material?.title||TABS[value.slice(4)]||"Contenido",collapsed=state.collapsed===side;
     return `<section class="workspace-panel ${collapsed?"is-collapsed":""}" data-side="${side}"><header class="workspace-panel-head"><select aria-label="Contenido del panel ${side}">${options(value)}</select><strong>${safe(title)}</strong><button data-panel-action="collapse">${collapsed?"Restaurar":"Colapsar"}</button><button data-panel-action="expand">Expandir</button><button data-panel-action="close">Cerrar</button></header><div class="workspace-panel-scroll content-pane"></div></section>`;
+  }
+
+  function integratedIndex(state){
+    const active=state.left,sectionButtons=availableTabs().map(([id,title])=>`<button type="button" data-integrated-content="tab:${id}" class="${active===`tab:${id}`?"active":""}">${safe(title)}</button>`).join("");
+    const materials=currentRecords().map(item=>`<button type="button" data-integrated-content="${safe(materialValue(item))}" class="${active===materialValue(item)?"active":""}"><span>${item.origin==="official"?"SOLved":"Mi contenido"}</span>${safe(item.title||item.originalFilename||"Sin título")}</button>`).join("");
+    const library=currentHtml().length?`<button type="button" data-integrated-content="library:html" class="${active==="library:html"?"active":""}"><span>Biblioteca</span>Todos mis HTML (${currentHtml().length})</button>`:"";
+    return `<aside class="integrated-subject-index"><header><small>SOLVED</small><h1>${safe(context.subjectTitle)}</h1></header><nav aria-label="Contenido de ${safe(context.subjectTitle)}"><span>Contenido de la materia</span>${sectionButtons}${materials?`<span>HTML y apuntes guardados</span>${library}${materials}`:""}</nav><footer><button type="button" data-integrated-highlight>◆ Resaltar selección</button><button type="button" data-integrated-note>＋ Agregar nota</button></footer></aside>`;
+  }
+
+  function bindIntegratedIndex(root,state){
+    root.querySelectorAll("[data-integrated-content]").forEach(button=>button.onclick=async()=>{state.left=button.dataset.integratedContent;state.mode="single";state.collapsed=null;state.tabContext=context?.tab||null;saveLayout(state);await render(context)});
+    const highlight=root.querySelector("[data-integrated-highlight]"),note=root.querySelector("[data-integrated-note]");
+    if(highlight)highlight.onclick=()=>document.querySelector("#highlightBtn")?.click();
+    if(note)note.onclick=()=>document.querySelector("#newNoteBtn")?.click();
   }
 
   function manageButtons(item,{reorder=false}={}){
@@ -241,10 +256,12 @@
       if(state.mode==="single")state.left=`tab:${context.tab}`;
     }
     saveLayout(state);
-    root.className=`study-body workspace-${state.mode}`;
+    const integrated=INTEGRATED_SUBJECTS.has(context.subjectId);
+    if(integrated){state.mode="single";state.collapsed=null}
+    root.className=`study-body workspace-${state.mode}${integrated?" workspace-integrated":""}`;
     root.style.setProperty("--split",`${state.ratio}%`);
     if(state.mode==="single"){
-      root.innerHTML=panel("left",state);bindPanels(root,state);
+      root.innerHTML=(integrated?integratedIndex(state):"")+panel("left",state);bindPanels(root,state);if(integrated)bindIntegratedIndex(root,state);
     }else{
       root.innerHTML=panel("left",state)+`<div class="workspace-divider" role="separator" aria-label="Ajustar tamaño de paneles" aria-orientation="${matchMedia("(max-width:760px)").matches?"horizontal":"vertical"}" aria-valuemin="10" aria-valuemax="90" aria-valuenow="${Math.round(state.ratio)}" tabindex="0"><i></i></div>`+panel("right",state);
       bindPanels(root,state);bindDivider(root,state);

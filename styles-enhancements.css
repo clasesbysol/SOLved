@@ -47,6 +47,25 @@ html.qbi-subject-mode .rich-document-card{position:absolute!important;inset:0!im
 html.qbi-subject-mode .rich-document{position:absolute!important;inset:0!important;display:block;width:100%!important;height:100%!important;min-height:100%!important;border:0!important;border-radius:0!important;background:#fff8fc}
 .home-dashboard>.home-hero{display:none!important}
 @media(max-width:760px){html.qbi-subject-mode .app{grid-template-columns:58px minmax(0,1fr);grid-template-rows:58px minmax(0,1fr)}html.qbi-subject-mode .workspace{grid-column:2;grid-row:1 / 3}html.qbi-subject-mode .sidebar{display:flex!important;grid-column:1;grid-row:2}html.qbi-subject-mode .brand{display:flex!important;grid-column:1;grid-row:1}html.qbi-subject-mode .study-shell{grid-template-rows:minmax(0,1fr)!important}}
+
+.workspace-integrated{display:grid!important;grid-template-columns:260px minmax(0,1fr)!important;height:100%!important;background:var(--panel)}
+.workspace-integrated .integrated-subject-index{display:flex;min-height:0;flex-direction:column;border-right:1px solid var(--line);background:var(--panel);padding:18px 14px;overflow:hidden}
+.workspace-integrated .integrated-subject-index header{padding:2px 8px 15px;border-bottom:1px solid var(--line)}
+.workspace-integrated .integrated-subject-index header small{color:hsl(var(--subject-hue) 65% 48%);font-weight:900;letter-spacing:.12em}
+.workspace-integrated .integrated-subject-index h1{margin:7px 0 0;font-size:19px}
+.workspace-integrated .integrated-subject-index nav{display:grid;gap:5px;min-height:0;overflow:auto;padding:14px 0}
+.workspace-integrated .integrated-subject-index nav>span{padding:9px 9px 3px;color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.workspace-integrated .integrated-subject-index button{width:100%;border:0;border-radius:10px;background:transparent;color:var(--text);padding:10px 11px;text-align:left;cursor:pointer}
+.workspace-integrated .integrated-subject-index button:hover,.workspace-integrated .integrated-subject-index button.active{background:var(--active-soft);color:hsl(var(--subject-hue) 60% 42%)}
+.workspace-integrated .integrated-subject-index button.active{font-weight:850}
+.workspace-integrated .integrated-subject-index button span{display:block;margin-bottom:2px;color:var(--muted);font-size:9px;font-weight:750;text-transform:uppercase}
+.workspace-integrated .integrated-subject-index footer{display:grid;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
+.workspace-integrated .workspace-panel{height:100%!important;min-width:0;min-height:0}
+.workspace-integrated .workspace-panel-scroll{height:100%!important;padding:0!important;overflow:auto!important}
+.workspace-integrated .rich-document-card,.workspace-integrated .html-viewer{height:100%!important;margin:0!important;border:0!important;border-radius:0!important;padding:0!important}
+.workspace-integrated .rich-document,.workspace-integrated .imported-html-frame{height:100%!important;min-height:100%!important;border:0!important;border-radius:0!important}
+html.qbi-subject-mode .study-body.workspace-integrated .notes-layer{display:block!important}
+@media(max-width:760px){.workspace-integrated{grid-template-columns:92px minmax(0,1fr)!important}.workspace-integrated .integrated-subject-index{padding:8px 6px}.workspace-integrated .integrated-subject-index header{padding:4px}.workspace-integrated .integrated-subject-index h1{font-size:11px}.workspace-integrated .integrated-subject-index header small{font-size:8px}.workspace-integrated .integrated-subject-index nav>span{display:none}.workspace-integrated .integrated-subject-index button{padding:9px 5px;font-size:10px;text-align:center}.workspace-integrated .integrated-subject-index button span{font-size:7px}.workspace-integrated .integrated-subject-index footer button{font-size:0}.workspace-integrated .integrated-subject-index footer button::first-letter{font-size:16px}}
 .organic-back{pointer-events:none}.organic-card.flipped .organic-front{pointer-events:none}.organic-card.flipped .organic-back{pointer-events:auto}
 .auth-modal{max-width:430px}.auth-modal>label{display:grid;gap:7px;margin:14px 0}.auth-modal input[type="email"],.auth-modal input[type="password"]{box-sizing:border-box;width:100%;min-height:42px;border:1px solid var(--line);border-radius:10px;padding:0 12px;background:var(--panel);color:var(--text)}.auth-mode{display:flex;gap:18px;margin:16px 0}.auth-mode label{display:flex;align-items:center;gap:7px}.auth-forgot{display:block;margin:-3px 0 12px;padding:4px 0;border:0;background:transparent;color:var(--orange-strong);font-weight:800;text-align:left;text-decoration:underline;cursor:pointer}
 html.immersive-reading #studyTabs{display:none!important}
