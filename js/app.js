@@ -88,7 +88,11 @@
   function orderedCurrent(){const ids=[...settings.order.filter(id=>settings.currentIds.includes(id)),...settings.currentIds.filter(id=>!settings.order.includes(id))];settings.order=ids;return ids.map(subject).filter(Boolean)}
   function setPage(page){
     if(!["dashboard","subjects","calendar","settings","study"].includes(page))page="dashboard";["dashboard","subjects","calendar","settings","study"].forEach(p=>{const el=$(p+"Page");if(el)el.hidden=p!==page});
-    document.documentElement.classList.toggle("qbi-subject-mode",page==="study"&&currentSubject?.id==="quimica_biologica1");
+    const qbiIntegrated=page==="study"&&currentSubject?.id==="quimica_biologica1";
+    document.documentElement.classList.toggle("qbi-subject-mode",qbiIntegrated);
+    els.studyTabs.hidden=qbiIntegrated;els.studyToolbar.hidden=qbiIntegrated;
+    document.querySelector(".study-head").hidden=qbiIntegrated;
+    els.previewWarning.hidden=qbiIntegrated;
     document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
     const titles={dashboard:["Inicio",""],subjects:["Plan y materias","Plan completo y correlatividades"],calendar:["Calendario","Fechas importantes por materia"],settings:["Configuración","Perfil y preferencias personales"],study:[currentSubject?.name||"Materia","SOLved"]};
     els.pageTitle.textContent=titles[page][0];els.crumb.textContent=titles[page][1];settings.lastPage=page;saveSettings();
