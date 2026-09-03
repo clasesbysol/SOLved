@@ -669,7 +669,7 @@
       "guide": 2,
       "guideTitle": "Cinemática",
       "number": 3,
-      "prompt": "Guía 2 · Cinemática · Problema 3. Considere que la posición en función del tiempo de un objeto unido a un resorte está dada por la expresión x(t) = 0.15 m sen �0.8 rad s t + π 2 �. (Recuerde que 2π rad = 360°). a) Haga un gráfico de x como función de t, entre 0 s y 15 s . b) Obtenga la distancia recorrida por el objeto entre t1 = 3 s y t2 = 9 s. ¿Cuál es el desplazamiento y la velocidad media en ese mismo intervalo de tiempo? c) Derive y grafique v(t) y a(t) entre 0 s y 15 s especificando sus valores máximos y mínimos.",
+      "prompt": "Guía 2 · Cinemática · Problema 3. Considere que la posición en función del tiempo de un objeto unido a un resorte está dada por la expresión x(t) = 0.15 m sen[(0.8 rad/s)t + π/2]. (Recuerde que 2π rad = 360°). a) Haga un gráfico de x como función de t, entre 0 s y 15 s . b) Obtenga la distancia recorrida por el objeto entre t1 = 3 s y t2 = 9 s. ¿Cuál es el desplazamiento y la velocidad media en ese mismo intervalo de tiempo? c) Derive y grafique v(t) y a(t) entre 0 s y 15 s especificando sus valores máximos y mínimos.",
       "basedOn": [],
       "breakdown": [],
       "data": [],

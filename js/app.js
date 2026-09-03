@@ -20,7 +20,7 @@
   let currentSubject=null,currentTab="summary",draggedId=null,activeHighlightId=null,pendingSelection=null,restoreMode="merge",deferredInstallPrompt=null,waitingWorker=null,savedSettingsSnapshot={};
   let driveSync=null;
   const ZOOMS=[.9,1,1.1,1.25,1.4];
-  const INTEGRATED_SUBJECT_IDS=new Set(["quimica_biologica1","fisica1","estadistica","fisica2"]);
+  const INTEGRATED_SUBJECT_IDS=new Set(["quimica_biologica1","fisica1","estadistica","fisica2","analisis1"]);
 
   function subject(id){return SUBJECTS.find(s=>s.id===id)}
   function icon(id){return `<svg class="icon"><use href="#${id}"/></svg>`}

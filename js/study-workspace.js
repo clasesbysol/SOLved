@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   const DB=window.LBT_DB,TABS={summary:"Resumen",glossary:"Glosario",cards:"Tarjetas",exercises:"Ejercicios",map:"Mapa mental",formulas:"Fórmulas"};
-  const INTEGRATED_SUBJECTS=new Set(["fisica1","estadistica","fisica2"]);
+  const INTEGRATED_SUBJECTS=new Set(["fisica1","estadistica","fisica2","analisis1"]);
   let context=null,records=[],pendingFile=null,editingId=null;
   const $=id=>document.getElementById(id),safe=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const key=ctx=>`solved-study-workspace-v2:${ctx?.subjectId||"global"}`;
@@ -257,7 +257,7 @@
     }
     saveLayout(state);
     const integrated=INTEGRATED_SUBJECTS.has(context.subjectId);
-    if(integrated){state.mode="single";state.collapsed=null;if(state.left?.startsWith("tab:"))state.left="tab:summary"}
+    if(integrated){state.mode="single";state.collapsed=null;if(context.subjectId==="fisica1"||state.left?.startsWith("tab:"))state.left="tab:summary"}
     root.className=`study-body workspace-${state.mode}${integrated?" workspace-integrated":""}`;
     root.style.setProperty("--split",`${state.ratio}%`);
     if(state.mode==="single"){

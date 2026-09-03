@@ -1,0 +1,13 @@
+{
+  "packageSchemaVersion": 1,
+  "factoryVersion": "0.6.3",
+  "contentStandard": "LBT-V1",
+  "subjectId": "analisis1",
+  "unitId": "interfaz-base",
+  "title": "Análisis I",
+  "contentVersion": "1.0.0",
+  "status": "published",
+  "generatedAt": "2026-09-03T00:00:00.000Z",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "files": {"summary":"summary.json","glossary":"glossary.json","cards":"cards.json","exercises":"exercises.json","map":"map.json","sources":"sources.json"}
+}
