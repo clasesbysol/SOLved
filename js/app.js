@@ -20,7 +20,6 @@
   let currentSubject=null,currentTab="summary",draggedId=null,activeHighlightId=null,pendingSelection=null,restoreMode="merge",deferredInstallPrompt=null,waitingWorker=null,savedSettingsSnapshot={};
   let driveSync=null;
   const ZOOMS=[.9,1,1.1,1.25,1.4];
-  const INTEGRATED_SUBJECT_IDS=new Set(["quimica_biologica1","fisica1","quimica_organica","estadistica","analisis2"]);
 
   function subject(id){return SUBJECTS.find(s=>s.id===id)}
   function icon(id){return `<svg class="icon"><use href="#${id}"/></svg>`}
@@ -89,7 +88,7 @@
   function orderedCurrent(){const ids=[...settings.order.filter(id=>settings.currentIds.includes(id)),...settings.currentIds.filter(id=>!settings.order.includes(id))];settings.order=ids;return ids.map(subject).filter(Boolean)}
   function setPage(page){
     if(!["dashboard","subjects","calendar","settings","study"].includes(page))page="dashboard";["dashboard","subjects","calendar","settings","study"].forEach(p=>{const el=$(p+"Page");if(el)el.hidden=p!==page});
-    const qbiIntegrated=page==="study"&&INTEGRATED_SUBJECT_IDS.has(currentSubject?.id);
+    const qbiIntegrated=page==="study"&&currentSubject?.id==="quimica_biologica1";
     document.documentElement.classList.toggle("qbi-subject-mode",qbiIntegrated);
     els.studyTabs.hidden=qbiIntegrated;els.studyToolbar.hidden=qbiIntegrated;
     document.querySelector(".study-head").hidden=qbiIntegrated;
@@ -186,7 +185,7 @@
   function formulaSheet(subjectId){const unit=window.LBT_CONTENT.getUnit(subjectId,els.studyUnit?.value),formulaDocument=unit?.data?.["rich.json"]?.formulaDocument;if(formulaDocument&&/^[a-z0-9-]+\.html$/.test(formulaDocument)){const base=unit.path||`content/subjects/${subjectId}/units/${unit.unitId}/`,version=`?v=${encodeURIComponent(unit.contentVersion||"latest")}`;return `<div class="content-card rich-content rich-document-card zoom-target"><div class="rich-document-head"><h2>Hoja de fórmulas</h2></div><iframe class="rich-document" title="Hoja de fórmulas" src="${safe(base+formulaDocument+version)}" sandbox="allow-scripts"></iframe></div>`}const formulas=window.LBT_UTILS.contentItems(subjectId).filter(item=>item.contentType==="formula");if(!formulas.length)return '<div class="content-card"><h2>Fórmulas</h2><p>Todavía no hay fórmulas publicadas para esta materia.</p></div>';return `<div class="formula-sheet"><div class="section-head"><h2>Hoja rápida de fórmulas</h2><button onclick="window.print()">Imprimir</button></div>${formulas.map(item=>{const f=item.source,refs=f.references||[];return `<article class="formula-card" data-anchor-id="${safe(item.targetId)}"><small>${safe(item.unitId)}</small><h3>${safe(item.title)}</h3><div class="formula-visual">${safe(f.visual||f.linear)}</div><code>${safe(f.linear)}</code>${f.latex?`<code>LaTeX: ${safe(f.latex)}</code>`:""}<dl>${(f.variables||[]).map(v=>`<div><dt>${safe(v.symbol)}</dt><dd>${safe(v.definition)}</dd></div>`).join("")}</dl>${f.units?.length?`<p>Unidades: ${safe(f.units.join(", "))}</p>`:""}${f.conditions?.length?`<p>Condiciones: ${safe(f.conditions.join(", "))}</p>`:""}${f.relatedExercises?.length?`<p>Ejercicios relacionados: ${safe(f.relatedExercises.join(", "))}</p>`:""}<p>${refs.map(r=>`${safe(r.sourceId)}${r.page?` · p. ${r.page}`:""}`).join("; ")}</p><button data-copy="${safe(f.linear)}">Copiar fórmula</button></article>`}).join("")}</div>`}
   async function renderStudy(){
     const s=currentSubject,unitId=els.studyUnit.value;activeHighlightId=null;pendingSelection=null;updateHighlightButton();
-    if(INTEGRATED_SUBJECT_IDS.has(s.id))currentTab="summary";
+    if(s.id==="quimica_biologica1")currentTab="summary";
     if(s.id==="quimica_biologica1"&&currentTab==="cards")currentTab="summary";
     els.studyTabs.querySelectorAll('[data-tab="cards"]').forEach(tab=>tab.hidden=s.id==="quimica_biologica1");
     const selectedUnit=window.LBT_CONTENT.getUnit(s.id,unitId),duplicateButton=$("duplicateOfficialBtn"),hideButton=$("hideOfficialBtn"),canPersonalize=window.SOLVED_AUTH?.profile().mode==="authorized-google"&&selectedUnit?.origin==="official-supabase";duplicateButton.hidden=!canPersonalize;hideButton.hidden=!canPersonalize;duplicateButton.onclick=async()=>{try{await window.LBT_CONTENT.duplicateOfficial(selectedUnit.cloudId);refreshUnitSelector(s.id);toast("Copia personal creada")}catch(error){toast(error.message)}};hideButton.onclick=async()=>{try{await window.LBT_CONTENT.setOfficialHidden(selectedUnit.cloudId,true);refreshUnitSelector(s.id);renderStudy();toast("Contenido oficial ocultado para tu cuenta")}catch(error){toast(error.message)}};
