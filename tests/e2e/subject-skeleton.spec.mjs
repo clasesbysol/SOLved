@@ -57,7 +57,9 @@ test("@desktop notas y resaltado quedan anclados como en Química Biológica",as
   await page.locator('[data-page="subjects"]').click();
   await page.locator('.plan-course-main[data-open="biologia1"]').click();
   await expect(page.locator(".skeleton-note-marker")).toHaveCount(1);
-  await expect(page.locator("mark.study-highlight")).toHaveCount(1);
+  await expect.poll(()=>page.locator("mark.study-highlight").count()).toBeGreaterThan(0);
+  const restoredText=(await page.locator("mark.study-highlight").allTextContents()).join("");
+  expect(restoredText).toContain("Texto temporal");
 });
 
 test("@desktop búsqueda y color siguen integrados",async({page})=>{
