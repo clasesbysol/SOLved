@@ -9,16 +9,16 @@ const statistics="content/subjects/estadistica/units/probabilidad-practica-1/";
 test("Física conserva el HTML integral, las fórmulas y los ejercicios",async()=>{
   const manifest=JSON.parse(await readFile(physics+"package.json","utf8"));
   const rich=JSON.parse(await readFile(physics+"rich.json","utf8"));
-  assert.equal(manifest.contentVersion,"1.6.0");
+  assert.equal(manifest.contentVersion,"1.7.0");
   assert.deepEqual([rich.document,rich.exerciseDocument,rich.formulaDocument],["summary.html","summary.html","summary.html"]);
   assert.ok((await stat(physics+"summary.html")).size>700_000,"el documento único fue recortado");
   const html=await readFile(physics+"summary.html","utf8");
   const payload=html.match(/atob\('([^']+)'\)/)?.[1];
   assert.ok(payload,"falta el documento integrado de fórmulas");
   const embedded=Buffer.from(payload,"base64").toString("utf8");
-  for(const expected of ["SOLVED","Física Aplicada","data-exam-tab=\"formula-guias\"","Hoja de fórmulas"])assert.match(html,new RegExp(expected));
-  for(const expected of ["FORMULARIO DE FÍSICA APLICADA","Ejercicios del primer parcial","tex-svg.js"])assert.match(embedded,new RegExp(expected));
-  assert.equal((embedded.match(/class="exercise-card/g)||[]).length,135);
+  for(const expected of ["FÍSICA APLICADA","Hoja de fórmulas","Ejercitación","Parciales","FORMULARIO DE FÍSICA APLICADA","Ejercicios del primer parcial","tex-svg.js"])assert.match(html,new RegExp(expected));
+  for(const expected of ["Parciales resueltos","repair-partial-math"])assert.match(embedded,new RegExp(expected));
+  assert.equal((html.match(/class="exercise-card/g)||[]).length,135);
   for(const retired of ["exercises.html","original.html","parciales.html","physics-integrated-partials.js"]){
     await assert.rejects(access(physics+retired),`${retired} ya no debe existir`);
   }
@@ -49,16 +49,15 @@ test("las navegaciones internas no vuelven a cargar la app dentro del HTML",asyn
   assert.match(sw,/internalDocument\?cacheFirstAndRefresh\(request\):injectAppShell/);
 });
 
-test("Física usa intacta la estructura de parciales como documento principal",async()=>{
+test("Física conserva el diseño integral y encapsula intactos los parciales",async()=>{
   const html=await readFile(physics+"summary.html","utf8");
-  assert.doesNotMatch(html,/physics-partials-frame|parciales\.html|Cargando parciales resueltos|<physics-partials>/);
-  assert.match(html,/class="app"><aside class="sidebar"/);
-  assert.match(html,/class="exam-tabs"/);
-  assert.equal((html.match(/data-exam-tab="20/g)||[]).length,7);
-  assert.equal((html.match(/class="exercise"/g)||[]).length,28);
-  assert.match(html,/class="exam-panel active formula-sheet-panel"/);
-  assert.match(html,/class="exam-tab active" data-exam-tab="formula-guias"/);
-  assert.doesNotMatch(html,/physics-formula-guides|<physics-formula-guides>/);
+  const embedded=Buffer.from(html.match(/atob\('([^']+)'\)/)[1],"base64").toString("utf8");
+  assert.match(html,/class="summary-sidebar"/);
+  assert.match(html,/id="physicsIndexClose"/);
+  assert.match(html,/id="physicsPartialsDocument"/);
+  assert.equal((embedded.match(/data-exam-tab="20/g)||[]).length,7);
+  assert.equal((embedded.match(/class="exercise"/g)||[]).length,28);
+  assert.doesNotMatch(embedded,/formula-guias|physics-formula-guides/);
 });
 
 test("Física no vuelve a montar el HTML oficial antiguo de parciales",async()=>{
