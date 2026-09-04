@@ -19,6 +19,7 @@ jobs:
       - run: node --check js/integral-frame-tools.js
       - run: node --check js/persistence-repair.js
       - run: node --check js/supabase-config.js
+      - run: node --check js/study-chrome.js
       - run: node tests/qbi-loader.test.mjs
       - run: pnpm exec playwright test tests/e2e/subject-skeleton.spec.mjs --reporter=list
       - run: node tests/estadistica-v140.test.mjs
