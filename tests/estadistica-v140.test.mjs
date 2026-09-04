@@ -28,7 +28,7 @@ try{
 
   const indexText=await page.locator('#summaryIndex').innerText();
   for(const heading of ['Técnicas de conteo','Probabilidad condicional','Variables aleatorias discretas','Binomial','Poisson','Distribución acumulada continua'])assert.match(indexText,new RegExp(heading));
-  assert.equal(await page.locator('.qb-chapter').count(),22);
+  assert.equal(await page.locator('.qb-chapter').count(),23);
   assert.equal(await page.locator('#guide-p1 .exercise-card').count(),17);
   assert.equal(await page.locator('#guide-p2 .exercise-card').count(),10);
   assert.equal(await page.locator('#guide-discretas .exercise-card').count(),5);
@@ -52,5 +52,5 @@ try{
   await first.locator('summary').click();
   assert.equal(await first.evaluate(el=>el.open),true);
 
-  console.log('Estadística v1.4.0: OK · diseño QBI vigente · 22 capítulos · 39 ejercicios · 5 mapas conceptuales');
+  console.log('Estadística v1.4.0: OK · diseño QBI vigente · 23 capítulos · 39 ejercicios · 5 mapas conceptuales');
 } finally { await browser?.close().catch(()=>{}); server.kill('SIGTERM'); }
