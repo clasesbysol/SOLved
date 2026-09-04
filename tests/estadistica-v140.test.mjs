@@ -38,7 +38,7 @@ try{
   assert.match(memoryHeading,/Mapas mentales para memorizar las guías/);
   assert.match(memoryHeading,/No siguen el orden de los ejercicios: reagrupan la teoría por conexiones para que una idea lleve a la siguiente\./);
   const body=await page.locator('body').innerText();
-  assert.match(body,/Consigna textual de la fuente · sin resumir/);
+  assert.match(body,/39 ejercicios de fuente/);
   assert.match(body,/Resolución completa · paso por paso/);
   assert.match(body,/Se sabe que el comportamiento de la planta de lechuga obedece a las siguientes reglas/);
   assert.match(body,/El número de ciero tipo de bacterias en un estanque/);
