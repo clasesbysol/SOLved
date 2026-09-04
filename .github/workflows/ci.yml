@@ -15,7 +15,9 @@ jobs:
           node-version: 20
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
+      - run: node --check js/subject-skeleton.js
       - run: node tests/qbi-loader.test.mjs
+      - run: pnpm exec playwright test tests/e2e/subject-skeleton.spec.mjs --reporter=list
       - run: node tests/estadistica-v140.test.mjs
       - run: node factory/validators/content-validate.mjs
       - run: node factory/validators/content-catalog.mjs
