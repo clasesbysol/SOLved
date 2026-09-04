@@ -90,5 +90,13 @@
     item.sourceVerified=true;
   }
 
-window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.11.16",CONTENT_VERSION:"catalog-v17"};
+  window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.11.17",CONTENT_VERSION:"catalog-v17"};
+
+  if(typeof document!=="undefined"&&!document.querySelector('script[data-subject-skeleton-loader]')){
+    const script=document.createElement("script");
+    script.src="js/subject-skeleton.js?v=0.1.0";
+    script.async=true;
+    script.dataset.subjectSkeletonLoader="true";
+    document.head.append(script);
+  }
 })();
