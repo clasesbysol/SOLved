@@ -22,7 +22,7 @@
       "subjectId": "fisica1",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Física I",
-      "contentVersion": "1.3.3",
+      "contentVersion": "1.4.0",
       "status": "published",
       "path": "content/subjects/fisica1/units/resumen-integral/"
     },

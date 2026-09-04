@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v01110-stable-integrated-subjects";
+const CACHE_VERSION = "biblioteca-lbt-v01111-physics-single-document";
 const CORE = [
   "./","./index.html","./bienvenida.html",
   "./styles.css?v=0.11.0","./styles-enhancements.css?v=0.11.10","./styles-personal.css?v=0.10.9",
@@ -10,9 +10,7 @@ const CORE = [
   "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.0.0",
   "./content/catalog.json",
   "./content/subjects/analisis1/units/interfaz-base/summary.html?v=1.0.0",
-  "./content/subjects/fisica1/units/resumen-integral/summary.html?v=1.3.3",
-  "./content/subjects/fisica1/units/resumen-integral/physics-integrated-partials.js?v=1.0.0",
-  "./content/subjects/fisica1/units/resumen-integral/parciales.html?integrado=1",
+  "./content/subjects/fisica1/units/resumen-integral/summary.html?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-integral.html?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-v140-payload-1.txt?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-v140-payload-2.txt?v=1.4.0",

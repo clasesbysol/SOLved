@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {readFile,stat} from "node:fs/promises";
+import {access,readFile,stat} from "node:fs/promises";
 import {gunzipSync} from "node:zlib";
 
 const physics="content/subjects/fisica1/units/resumen-integral/";
@@ -9,13 +9,14 @@ const statistics="content/subjects/estadistica/units/probabilidad-practica-1/";
 test("Física conserva el HTML integral, las fórmulas y los ejercicios",async()=>{
   const manifest=JSON.parse(await readFile(physics+"package.json","utf8"));
   const rich=JSON.parse(await readFile(physics+"rich.json","utf8"));
-  assert.equal(manifest.contentVersion,"1.3.3");
-  assert.deepEqual([rich.document,rich.exerciseDocument,rich.formulaDocument],["summary.html","exercises.html","original.html"]);
-  assert.ok((await stat(physics+"summary.html")).size>450_000,"el resumen integral fue recortado");
-  assert.ok((await stat(physics+"exercises.html")).size>450_000,"el banco de ejercicios fue recortado");
-  assert.ok((await stat(physics+"original.html")).size>70_000,"la hoja de fórmulas fue recortada");
-  assert.ok((await stat(physics+"parciales.html")).size>40_000,"los 7 parciales fueron recortados");
-  assert.match(await readFile(physics+"summary.html","utf8"),/physics-integrated-partials\.js/);
+  assert.equal(manifest.contentVersion,"1.4.0");
+  assert.deepEqual([rich.document,rich.exerciseDocument,rich.formulaDocument],["summary.html","summary.html","summary.html"]);
+  assert.ok((await stat(physics+"summary.html")).size>700_000,"el documento único fue recortado");
+  const html=await readFile(physics+"summary.html","utf8");
+  for(const expected of ["FORMULARIO DE FÍSICA","Ejercicios del primer parcial","Parciales resueltos","7 exámenes y 28 ejercicios completos","<physics-partials>"])assert.match(html,new RegExp(expected));
+  for(const retired of ["exercises.html","original.html","parciales.html","physics-integrated-partials.js"]){
+    await assert.rejects(access(physics+retired),`${retired} ya no debe existir`);
+  }
 });
 
 test("Estadística conserva y puede reconstruir exactamente la versión 1.4",async()=>{
@@ -43,10 +44,8 @@ test("las navegaciones internas no vuelven a cargar la app dentro del HTML",asyn
   assert.match(sw,/internalDocument\?cacheFirstAndRefresh\(request\):injectAppShell/);
 });
 
-test("Física integra los siete parciales sin mostrar el cargador central",async()=>{
-  const partials=await readFile(physics+"parciales.html","utf8");
-  const integration=await readFile(physics+"physics-integrated-partials.js","utf8");
-  assert.match(partials,/\.loading\{[^}]*display:none/);
-  assert.match(integration,/7 exámenes y 28 ejercicios completos/);
-  assert.match(integration,/parciales\.html\?integrado=1/);
+test("Física integra los siete parciales sin iframe ni cargador central",async()=>{
+  const html=await readFile(physics+"summary.html","utf8");
+  assert.doesNotMatch(html,/physics-partials-frame|parciales\.html|Cargando parciales resueltos/);
+  assert.match(html,/customElements\.define\('physics-partials'/);
 });
