@@ -11,6 +11,7 @@
   function saveLayout(state){state.subjectId=context?.subjectId||null;state.unitId=context?.unitId||null;localStorage.setItem(key(context),JSON.stringify(state));return state}
   const uuid=()=>crypto.randomUUID?.()||`${Date.now()}-${Math.random().toString(16).slice(2)}`;
   const isOwner=()=>window.SOLVED_AUTH?.profile()?.role==="owner";
+  const isRetiredPhysicsPartial=item=>item?.origin==="official"&&item?.subjectId==="fisica1"&&item?.type==="html"&&/^primeros parciales resueltos$/i.test(String(item?.title||"").trim());
 
   function prepareDocument(source,{preview=false}={}){
     const doc=new DOMParser().parseFromString(String(source||""),"text/html");
@@ -53,7 +54,7 @@
       await DB.put("meta",{key:"user-materials-html-v1",done:true,updatedAt:new Date().toISOString()});
     }
     records=[...(await DB.getAll("officialMaterials")),...(await DB.getAll("userMaterials"))]
-      .filter(item=>!item.deletedAt)
+      .filter(item=>!item.deletedAt&&!isRetiredPhysicsPartial(item))
       .sort((a,b)=>(a.subjectId||"").localeCompare(b.subjectId||"")||(a.order||0)-(b.order||0));
     return records;
   }

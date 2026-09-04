@@ -49,3 +49,10 @@ test("Física integra los siete parciales sin iframe ni cargador central",async(
   assert.doesNotMatch(html,/physics-partials-frame|parciales\.html|Cargando parciales resueltos/);
   assert.match(html,/customElements\.define\('physics-partials'/);
 });
+
+test("Física no vuelve a montar el HTML oficial antiguo de parciales",async()=>{
+  const workspace=await readFile("js/study-workspace.js","utf8");
+  assert.match(workspace,/isRetiredPhysicsPartial/);
+  assert.match(workspace,/primeros parciales resueltos/);
+  assert.match(workspace,/!item\.deletedAt&&!isRetiredPhysicsPartial\(item\)/);
+});
