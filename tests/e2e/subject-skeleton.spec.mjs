@@ -9,7 +9,7 @@ async function openSubject(page,id){
   await expect(page.locator("#studyPage")).toBeVisible();
 }
 
-test("las materias vacías usan el esqueleto SOLved común",async({page})=>{
+test("@desktop las materias vacías usan el esqueleto SOLved común",async({page})=>{
   await openSubject(page,"biologia1");
   await expect(page.locator("#studyPage")).toHaveAttribute("data-skeleton","true");
   await expect(page.locator(".subject-skeleton")).toHaveCount(1);
@@ -25,7 +25,7 @@ test("las materias vacías usan el esqueleto SOLved común",async({page})=>{
   await expect(page.locator("[data-skeleton-slot]").first()).toBeEmpty();
 });
 
-test("el esqueleto prepara búsqueda, resaltado y notas para contenido futuro",async({page})=>{
+test("@desktop el esqueleto prepara búsqueda, resaltado y notas para contenido futuro",async({page})=>{
   await openSubject(page,"biologia1");
   await page.evaluate(()=>{
     const p=document.createElement("p");
@@ -50,7 +50,7 @@ test("el esqueleto prepara búsqueda, resaltado y notas para contenido futuro",a
   await expect(page.locator(".note-window")).toBeVisible();
 });
 
-test("las materias ya trabajadas y Química Orgánica quedan fuera del esqueleto vacío",async({page})=>{
+test("@desktop las materias ya trabajadas y Química Orgánica quedan fuera del esqueleto vacío",async({page})=>{
   await page.goto("/");
   await page.waitForFunction(()=>document.documentElement.dataset.appReady==="true");
   await page.waitForFunction(()=>!!window.SOLVED_SUBJECT_SKELETON);
