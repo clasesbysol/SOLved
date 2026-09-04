@@ -14,7 +14,7 @@
       "subjectId": "estadistica",
       "unitId": "probabilidad-practica-1",
       "title": "Estadística Aplicada · Probabilidad y variables aleatorias · guías resueltas",
-      "contentVersion": "1.7.0",
+      "contentVersion": "1.4.1",
       "status": "published",
       "path": "content/subjects/estadistica/units/probabilidad-practica-1/"
     },
@@ -22,7 +22,7 @@
       "subjectId": "fisica1",
       "unitId": "resumen-integral",
       "title": "Resumen integral de Física I",
-      "contentVersion": "1.4.0",
+      "contentVersion": "1.8.0",
       "status": "published",
       "path": "content/subjects/fisica1/units/resumen-integral/"
     },
@@ -30,7 +30,7 @@
       "subjectId": "quimica_biologica1",
       "unitId": "proteinas-i",
       "title": "Resumen integral · Proteínas, métodos, TP1, enzimas I–II, TP2 y Enzimas III",
-      "contentVersion": "4.5.1",
+      "contentVersion": "4.5.2",
       "status": "published",
       "path": "content/subjects/quimica_biologica1/units/proteinas-i/"
     },

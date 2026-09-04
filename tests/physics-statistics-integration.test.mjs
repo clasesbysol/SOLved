@@ -9,14 +9,14 @@ const statistics="content/subjects/estadistica/units/probabilidad-practica-1/";
 test("Física conserva el HTML integral, las fórmulas y los ejercicios",async()=>{
   const manifest=JSON.parse(await readFile(physics+"package.json","utf8"));
   const rich=JSON.parse(await readFile(physics+"rich.json","utf8"));
-  assert.equal(manifest.contentVersion,"1.7.0");
+  assert.equal(manifest.contentVersion,"1.8.0");
   assert.deepEqual([rich.document,rich.exerciseDocument,rich.formulaDocument],["summary.html","summary.html","summary.html"]);
   assert.ok((await stat(physics+"summary.html")).size>700_000,"el documento único fue recortado");
   const html=await readFile(physics+"summary.html","utf8");
   const payload=html.match(/atob\('([^']+)'\)/)?.[1];
   assert.ok(payload,"falta el documento integrado de fórmulas");
   const embedded=Buffer.from(payload,"base64").toString("utf8");
-  for(const expected of ["FÍSICA APLICADA","Hoja de fórmulas","Ejercitación","Parciales","FORMULARIO DE FÍSICA APLICADA","Ejercicios del primer parcial","tex-svg.js"])assert.match(html,new RegExp(expected));
+  for(const expected of ["FÍSICA I","Hoja de fórmulas","Ejercitación","Parciales","Ejercicios del primer parcial","tex-svg.js"])assert.match(html,new RegExp(expected));
   for(const expected of ["Parciales resueltos","repair-partial-math"])assert.match(embedded,new RegExp(expected));
   assert.equal((html.match(/class="exercise-card/g)||[]).length,135);
   for(const retired of ["exercises.html","original.html","parciales.html","physics-integrated-partials.js"]){
@@ -27,7 +27,7 @@ test("Física conserva el HTML integral, las fórmulas y los ejercicios",async()
 test("Estadística conserva y puede reconstruir exactamente la versión 1.4",async()=>{
   const manifest=JSON.parse(await readFile(statistics+"package.json","utf8"));
   const rich=JSON.parse(await readFile(statistics+"rich.json","utf8"));
-  assert.equal(manifest.contentVersion,"1.4.0");
+  assert.equal(manifest.contentVersion,"1.4.1");
   assert.equal(rich.document,"estadistica-integral.html");
   const payloads=await Promise.all(Array.from({length:10},(_,i)=>readFile(`${statistics}estadistica-v140-payload-${i+1}.txt`,"utf8")));
   const html=gunzipSync(Buffer.from(payloads.join("").replace(/\s/g,""),"base64")).toString("utf8");
@@ -58,6 +58,23 @@ test("Física conserva el diseño integral y encapsula intactos los parciales",a
   assert.equal((embedded.match(/data-exam-tab="20/g)||[]).length,7);
   assert.equal((embedded.match(/class="exercise"/g)||[]).length,28);
   assert.doesNotMatch(embedded,/formula-guias|physics-formula-guides/);
+  assert.doesNotMatch(html,/<section class="summary-intro subject-title-only"|<div class="quick-nav"/);
+  assert.match(html,/<details class="formula-index-group">/);
+  assert.match(html,/<h1>FÍSICA I<\/h1>/);
+});
+
+test("Física, Estadística y Química Biológica incluyen defensas responsive",async()=>{
+  const physicsHtml=await readFile(physics+"summary.html","utf8");
+  const statisticsHtml=await readFile(statistics+"estadistica-integral.html","utf8");
+  const biologyHtml=await readFile("content/subjects/quimica_biologica1/units/proteinas-i/original.html","utf8");
+  assert.match(physicsHtml,/max-width:none!important/);
+  assert.match(physicsHtml,/@media\(max-width:640px\)/);
+  assert.match(statisticsHtml,/solved-responsive-fix/);
+  assert.match(biologyHtml,/solved-responsive-fix/);
+  for(const html of [statisticsHtml,biologyHtml]){
+    assert.match(html,/overflow-x:hidden/);
+    assert.match(html,/@media\(max-width:700px\)/);
+  }
 });
 
 test("Física no vuelve a montar el HTML oficial antiguo de parciales",async()=>{
