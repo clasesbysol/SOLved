@@ -22,7 +22,6 @@
     const style=document.createElement("style");
     style.id=STYLE_ID;
     style.textContent=`
-      /* Las materias vacías abren directamente en el documento integral, igual que Estadística. */
       #studyPage[data-unit-id="skeleton"] .study-head,
       #studyPage[data-unit-id="skeleton"] #studyTabs,
       #studyPage[data-unit-id="skeleton"] #studyToolbar,
@@ -53,11 +52,10 @@
       #studyPage[data-skeleton="true"] .content-pane{padding:0!important;margin:0!important;min-height:calc(100vh - 64px);height:auto!important;overflow:visible!important;background:transparent!important}
       html:has(#studyPage[data-unit-id="skeleton"]:not([hidden])) #newNoteBtn{display:none!important}
 
-      /* Mismo sistema visual del resumen integral de Estadística / Química Biológica. */
       .subject-skeleton.qb-summary{
         --qb-hue:var(--hue,var(--subject-hue,214));
         --qb-accent:hsl(var(--qb-hue) 72% 45%);
-        --qb-accent-strong:hsl(var(--qb-hue) 70% 31%);
+        --qb-accent-strong:hsl(var(--qb-hue) 70% 28%);
         --qb-accent-soft:hsl(var(--qb-hue) 72% 94%);
         --qb-accent-faint:hsl(var(--qb-hue) 58% 98%);
         --qb-ink:#202a38;
