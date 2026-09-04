@@ -26,6 +26,9 @@ try{
   assert.equal(await page.locator('[data-qb-hue]').count(),5);
   assert.match(await page.locator('#qbThemeToggle').innerText(),/Cambiar claro \/ oscuro/);
 
+  const indexText=await page.locator('#summaryIndex').innerText();
+  for(const heading of ['Técnicas de conteo','Probabilidad condicional','Variables aleatorias discretas','Binomial','Poisson','Distribución acumulada continua'])assert.match(indexText,new RegExp(heading));
+  assert.equal(await page.locator('.qb-chapter').count(),22);
   assert.equal(await page.locator('#guide-p1 .exercise-card').count(),17);
   assert.equal(await page.locator('#guide-p2 .exercise-card').count(),10);
   assert.equal(await page.locator('#guide-discretas .exercise-card').count(),5);
@@ -38,19 +41,16 @@ try{
   assert.match(memoryHeading,/Mapas mentales para memorizar las guías/);
   assert.match(memoryHeading,/No siguen el orden de los ejercicios: reagrupan la teoría por conexiones para que una idea lleve a la siguiente\./);
   const body=await page.locator('body').innerText();
+  assert.match(body,/ESTADÍSTICA APLICADA · RESUMEN INTEGRADO/);
   assert.match(body,/39 ejercicios de fuente/);
-  assert.match(body,/Resolución completa · paso por paso/);
-  assert.match(body,/Se sabe que el comportamiento de la planta de lechuga obedece a las siguientes reglas/);
-  assert.match(body,/El número de ciero tipo de bacterias en un estanque/);
-  assert.match(body,/exactamente 3 de ellas contengas 4 o más bacterias/);
-  assert.match(body,/El número de microorganismos por gramo de una cierta muestra de suelo diluida en agua destilada/);
-  assert.match(body,/El diámetro D \(expresado en dm\) del tronco de cierta especie de árboles/);
-  assert.match(body,/Un juego, llamado Suma Siete, consiste en tirar dos dados/);
+  assert.match(body,/5 mapas para memorizar/);
+  assert.match(body,/Primero reconocé la historia, después elegí la fórmula/);
+  assert.match(body,/Las técnicas de conteo permiten averiguar cuántos resultados distintos puede producir una situación/);
 
   const first=page.locator('#guide-p1 .exercise-card').first();
   await first.evaluate(el=>el.open=false);
   await first.locator('summary').click();
   assert.equal(await first.evaluate(el=>el.open),true);
 
-  console.log('Estadística v1.4.0: OK · diseño QBI vigente · 39 ejercicios · 5 mapas conceptuales');
+  console.log('Estadística v1.4.0: OK · diseño QBI vigente · 22 capítulos · 39 ejercicios · 5 mapas conceptuales');
 } finally { await browser?.close().catch(()=>{}); server.kill('SIGTERM'); }
