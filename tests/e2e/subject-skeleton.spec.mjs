@@ -62,8 +62,37 @@ test("@desktop notas y resaltado quedan anclados como en Química Biológica",as
   expect(restoredText).toContain("Texto temporal");
 });
 
+test("@desktop lateral fijo, machete y desresaltado comparten la misma base",async({page})=>{
+  await openSubject(page,"biologia1");
+  await expect(page.locator("#solvedAppSidebarToggle")).toBeVisible();
+  await expect(page.locator(".subject-skeleton .solved-sidecar-tabs")).toHaveCount(1);
+  await expect(page.locator('[data-sidecar-mode="formulas"]')).toContainText("Machete");
+  await expect(page.locator(".solved-formula-sheet")).toContainText("Machete acumulativo");
+  await expect(page.locator(".subject-skeleton-section")).toHaveCount(4);
+  for(const section of await page.locator(".subject-skeleton-section").all())await expect(section).toBeVisible();
+
+  const paragraph=page.locator('[data-block-id="skeleton:biologia1:resumen:intro-2"]');
+  await paragraph.evaluate(node=>{const selection=getSelection(),range=document.createRange();range.selectNodeContents(node);selection.removeAllRanges();selection.addRange(range)});
+  await page.locator("[data-highlight]").dispatchEvent("mousedown");
+  await expect(page.locator("mark[data-skeleton-highlight-id]")).toHaveCount(1);
+  await page.locator("mark[data-skeleton-highlight-id]").evaluate(mark=>{const selection=getSelection(),range=document.createRange();range.selectNodeContents(mark);selection.removeAllRanges();selection.addRange(range)});
+  await page.locator("[data-highlight]").dispatchEvent("mousedown");
+  await expect(page.locator("mark[data-skeleton-highlight-id]")).toHaveCount(0);
+
+  const before=await page.locator(".workspace").evaluate(node=>node.scrollTop);
+  await page.locator(".subject-skeleton-main").hover();
+  await page.mouse.wheel(0,700);
+  await expect.poll(()=>page.locator(".workspace").evaluate(node=>node.scrollTop)).toBeGreaterThan(before);
+
+  await page.locator("#solvedAppSidebarToggle").click();
+  await expect(page.locator("html")).toHaveClass(/solved-app-sidebar-collapsed/);
+  await page.locator("#solvedAppSidebarToggle").click();
+  await expect(page.locator("html")).not.toHaveClass(/solved-app-sidebar-collapsed/);
+});
+
 test("@desktop búsqueda y color siguen integrados",async({page})=>{
   await openSubject(page,"biologia1");
+  await page.locator("[data-sidecar-mode=\"index\"]").click();
   await page.locator("[data-skeleton-search]").fill("conexiones y cierre");
   await expect(page.locator("[data-skeleton-results]")).toContainText("Conexiones y cierre");
   const colors=await page.locator(".subject-skeleton").evaluate(node=>({ink:getComputedStyle(node).getPropertyValue("--qb-ink").trim(),bg:getComputedStyle(node).getPropertyValue("--qb-bg").trim(),accent:getComputedStyle(node).getPropertyValue("--qb-accent-strong").trim()}));
