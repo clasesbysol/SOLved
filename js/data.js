@@ -92,11 +92,15 @@
 
   window.LBT_DATA={SUBJECTS,STATUS,DEFAULT_SETTINGS,SUMMARY_BLOCKS,APP_VERSION:"0.11.17",CONTENT_VERSION:"catalog-v17"};
 
-  if(typeof document!=="undefined"&&!document.querySelector('script[data-subject-skeleton-loader]')){
+  const loadOnce=(src,datasetKey,selector)=>{
+    if(typeof document==="undefined"||document.querySelector(selector))return;
     const script=document.createElement("script");
-    script.src="js/subject-skeleton.js?v=0.1.0";
+    script.src=src;
     script.async=true;
-    script.dataset.subjectSkeletonLoader="true";
+    script.dataset[datasetKey]="true";
     document.head.append(script);
-  }
+  };
+  loadOnce("js/subject-skeleton.js?v=0.1.0","subjectSkeletonLoader","script[data-subject-skeleton-loader]");
+  loadOnce("js/integral-frame-tools.js?v=1.0.0","solvedIntegralFrameTools","script[data-solved-integral-frame-tools]");
+  loadOnce("js/persistence-repair.js?v=1.0.0","solvedPersistenceRepair","script[data-solved-persistence-repair]");
 })();
