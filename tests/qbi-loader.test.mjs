@@ -64,33 +64,31 @@ try{
   {
     const page=await browser.newPage();
     await page.goto(`${ROOT}/index.html`,{waitUntil:'domcontentloaded'});
-    await page.addScriptTag({url:`${ROOT}/js/qbi-official-frame-fix.js?v=1.0.0`});
-    await page.evaluate(async ({unit,version})=>{
+    await page.evaluate(({root,unit,version})=>{
       document.body.innerHTML='';
-      const source=await fetch(`${unit}/original.html?v=${version}`,{cache:'no-store'}).then(response=>response.text());
       const frame=document.createElement('iframe');
-      frame.className='imported-html-frame';
-      frame.setAttribute('sandbox','allow-scripts allow-popups allow-popups-to-escape-sandbox');
+      frame.className='rich-document';
+      frame.title='Química Biológica';
+      frame.setAttribute('sandbox','allow-scripts allow-same-origin');
+      frame.src=`${root}/${unit}/original.html?v=${version}`;
       document.body.append(frame);
-      frame.srcdoc=source;
-    },{unit:UNIT,version:VERSION});
-    await page.waitForFunction(()=>document.querySelector('iframe.imported-html-frame')?.sandbox.contains('allow-same-origin'),null,{timeout:10000});
+    },{root:ROOT,unit:UNIT,version:VERSION});
     await page.waitForFunction(()=>{
-      const frame=document.querySelector('iframe.imported-html-frame');
+      const frame=document.querySelector('iframe.rich-document');
       try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===8&&!!frame.contentDocument.querySelector('#qbi-mapa-integral')&&!!frame.contentDocument.querySelector('#cap41')&&frame.contentDocument.querySelectorAll('[data-qbi-glucidos-index="1"]').length===13}catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
-      const frame=document.querySelector('iframe.imported-html-frame');
+      const frame=document.querySelector('iframe.rich-document');
       return {sandbox:frame.getAttribute('sandbox'),text:frame.contentDocument?.body?.innerText||'',glucidos:frame.contentDocument?.querySelectorAll('.qbi-glu-native-chapter').length||0,index:frame.contentDocument?.querySelectorAll('[data-qbi-glucidos-index="1"]').length||0};
     });
-    if(!state.sandbox.includes('allow-same-origin'))throw new Error('El iframe oficial siguió aislado sin allow-same-origin');
+    if(!state.sandbox.includes('allow-same-origin'))throw new Error('El iframe de SOLved no tiene allow-same-origin');
     if(state.text.includes('No se pudo abrir el resumen'))throw new Error('El loader falló dentro del iframe de SOLved');
     if(state.text.includes('qbiFetchBundle')||state.text.includes('qbiPrepareDocument'))throw new Error('El iframe imprimió JavaScript del loader como texto');
     if(state.glucidos!==13||state.index!==13)throw new Error(`Glúcidos I no quedó completo dentro de SOLved: capítulos=${state.glucidos}, índice=${state.index}`);
     await page.close();
   }
 
-  console.log('QBI loader: OK directo + sandbox SOLved + Glúcidos I 29-41 + navegación por fragmentos');
+  console.log('QBI loader: OK directo + iframe SOLved + Glúcidos I 29-41 + navegación por fragmentos');
 }finally{
   await browser?.close().catch(()=>{});
   server.kill('SIGTERM');
