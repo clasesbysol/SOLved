@@ -1,0 +1,165 @@
+Glúcidos I — resumen integrado de clase + bibliografía
+Estructura, estereoquímica, reactividad, polisacáridos, glicoconjugados y reconocimiento molecular
+
+
+Cómo está armado este resumen
+Este apunte cruza el material de clase de Glúcidos I con el capítulo completo de bibliografía. La secuencia sigue principalmente el orden y los énfasis de la clase; la bibliografía se usa para completar mecanismos, terminología, relaciones estructura-función y ejemplos que ayudan a entender por qué ocurre cada cosa. Al final se conserva una sección de ampliaciones bibliográficas para que los contenidos menos centrales de la clase no desaparezcan.
+
+
+1. Panorama general: qué son los glúcidos y por qué importan
+1.1 Definición y funciones
+Los glúcidos o carbohidratos son, en términos generales, polihidroxialdehídos, polihidroxicetonas o sustancias que por hidrólisis pueden dar este tipo de compuestos. Muchos responden aproximadamente a una relación empírica carbono-hidrógeno-oxígeno, aunque existen derivados que contienen nitrógeno, fósforo o azufre.
+
+
+La idea más importante de toda la unidad es que los glúcidos no son solamente “azúcares que dan energía”. Sus funciones principales son tres:
+- Energética: la glucosa es un combustible central y los organismos almacenan unidades de glucosa en polímeros como almidón y glucógeno.
+- Estructural: celulosa, quitina, peptidoglucano y varios heteropolisacáridos forman estructuras resistentes o matrices hidratadas.
+- Informacional y de reconocimiento: oligosacáridos unidos a proteínas y lípidos actúan como señales, etiquetas de destino y sitios de reconocimiento molecular.
+
+
+En plantas, la fotosíntesis convierte energía luminosa en energía química almacenada en glúcidos. A escala biológica, esto conecta a los carbohidratos con la obtención de energía, el almacenamiento, la estructura y la comunicación celular.
+
+
+1.2 Clasificación general
+Según el número de unidades de azúcar se distinguen:
+- Monosacáridos: una sola unidad de polihidroxialdehído o polihidroxicetona.
+- Oligosacáridos: cadenas cortas de monosacáridos unidos por enlaces glucosídicos. Los más comunes son los disacáridos.
+- Polisacáridos o glicanos: polímeros que contienen numerosas unidades de monosacáridos; pueden ser lineales o ramificados.
+
+
+La estructura final de un glúcido depende de qué monosacáridos lo forman, cómo están enlazados, cuál es la configuración de cada carbono relevante y cuánto se ramifica la cadena. Pequeños cambios en cualquiera de estos factores pueden cambiar por completo la función biológica.
+
+
+IMAGEN PARA INSERTAR 01 - Esquema general de funciones de los glúcidos: energía, estructura y reconocimiento celular.
+
+
+2. Monosacáridos: estructura, nomenclatura y estereoquímica
+2.1 Aldosas y cetosas
+Los monosacáridos comunes tienen una cadena carbonada no ramificada. En su forma lineal poseen un grupo carbonilo y varios grupos hidroxilo.
+
+
+Si el carbonilo está en el extremo de la cadena y forma un aldehído, el monosacárido es una aldosa. El gliceraldehído es la aldotriosa más simple.
+
+
+Si el carbonilo está en una posición interna y forma una cetona, el monosacárido es una cetosa. La dihidroxiacetona es la cetotriosa más simple.
+
+
+El nombre también informa el número de carbonos:
+- Triosa: 3 carbonos.
+- Tetrosa: 4 carbonos.
+- Pentosa: 5 carbonos.
+- Hexosa: 6 carbonos.
+- Heptosa: 7 carbonos.
+
+
+Por eso la glucosa es una aldohexosa y la fructosa una cetohexosa. Ribosa y 2-desoxirribosa son aldopentosas importantes porque forman parte de los nucleótidos y de los ácidos nucleicos.
+
+
+2.2 Carbono quiral y estereoisomería
+Un carbono es quiral o asimétrico cuando está unido a cuatro sustituyentes diferentes. Esto permite dos disposiciones espaciales que son imágenes especulares no superponibles.
+
+
+Casi todos los monosacáridos poseen uno o más carbonos quirales; la dihidroxiacetona es la excepción destacada porque no posee centro quiral. La estereoquímica es biológicamente crucial: las enzimas y proteínas de unión reconocen la disposición tridimensional del azúcar y pueden discriminar fuertemente entre estereoisómeros.
+
+
+Cuando una molécula tiene n centros quirales, el máximo teórico de estereoisómeros es 2 elevado a n.
+
+
+2.3 Enantiómeros y series D y L
+El gliceraldehído tiene un único carbono quiral y, por lo tanto, dos enantiómeros. Por convención se denominan D-gliceraldehído y L-gliceraldehído.
+
+
+En las proyecciones de Fischer, los enlaces horizontales salen hacia el observador y los verticales se orientan hacia atrás. Para asignar D o L a un monosacárido se observa el carbono quiral más alejado del carbonilo. Si, con el carbonilo arriba, el grupo hidroxilo de ese carbono de referencia queda a la derecha, pertenece a la serie D; si queda a la izquierda, pertenece a la serie L.
+
+
+La mayoría de los azúcares presentes en los organismos pertenecen a la serie D. La bibliografía remarca que no existe una explicación definitiva de por qué la evolución fijó preferentemente esta serie; una vez establecida una preferencia, las enzimas que reconocían eficazmente esos estereoisómeros habrían tenido una ventaja selectiva.
+
+
+IMAGEN PARA INSERTAR 02 - D-gliceraldehído y L-gliceraldehído en proyección de Fischer y como imágenes especulares tridimensionales.
+
+
+2.4 Diastereoisómeros y epímeros
+Los diastereoisómeros tienen la misma fórmula molecular y conectividad, pero no son imágenes especulares entre sí.
+
+
+Los epímeros son un caso particular: dos azúcares que difieren solamente en la configuración de un carbono quiral. Los ejemplos que hay que reconocer son:
+- D-glucosa y D-manosa: epímeros en C2.
+- D-glucosa y D-galactosa: epímeros en C4.
+
+
+Esto parece un cambio mínimo, pero modifica la geometría de la molécula y, con ella, el reconocimiento enzimático y las propiedades de los polímeros o glicoconjugados que la contienen.
+
+
+IMAGEN PARA INSERTAR 03 - Proyecciones de Fischer de D-glucosa, D-manosa y D-galactosa, señalando C2 y C4 para visualizar los epímeros.
+
+
+3. De la forma lineal al anillo: ciclación, anómeros y conformación
+3.1 Por qué los monosacáridos ciclan
+Aunque las proyecciones de Fischer son útiles para representar la forma lineal, los monosacáridos de cinco o más carbonos se encuentran predominantemente en formas cíclicas en solución acuosa.
+
+
+La ciclación ocurre por una reacción intramolecular entre el grupo carbonilo y un grupo hidroxilo de la misma molécula:
+- Una aldosa forma un hemiacetal.
+- Una cetosa forma un hemicetal.
+
+
+En la D-glucosa, el hidroxilo de C5 reacciona con el aldehído de C1. Se forma así un anillo de seis miembros y el antiguo carbono carbonílico, C1, pasa a ser un nuevo centro quiral: el carbono anomérico.
+
+
+En la fructosa, el carbonilo está en C2 y puede reaccionar con un hidroxilo de la misma molécula. Una de las formas importantes es el anillo de cinco miembros o furanosa.
+
+
+3.2 Piranosas y furanosas
+Los anillos de seis miembros se denominan piranosas por su semejanza con el pirano. Los anillos de cinco miembros se denominan furanosas por su semejanza con el furano.
+
+
+La glucosa se representa habitualmente como glucopiranosa. La fructosa puede encontrarse en formas furanosa y piranosa; en muchos compuestos biológicos aparece como fructofuranosa.
+
+
+3.3 Anómeros alfa y beta
+Cuando el carbonilo se transforma en hemiacetal o hemicetal aparece el carbono anomérico. Como el ataque puede ocurrir desde dos orientaciones, se generan dos anómeros.
+
+
+En un azúcar D, una forma práctica de reconocerlos en Haworth es comparar el hidroxilo anomérico con el grupo CH2OH de referencia:
+- Alfa: están en lados opuestos del anillo.
+- Beta: están del mismo lado.
+
+
+Alfa y beta no son enantiómeros: son anómeros, es decir, estereoisómeros que difieren específicamente en el carbono anomérico.
+
+
+IMAGEN PARA INSERTAR 04 - Ciclación de la D-glucosa desde Fischer a Haworth, mostrando la formación del hemiacetal, el carbono anomérico y los anómeros alfa y beta.
+
+
+3.4 Cómo pasar de Fischer a Haworth
+Para una D-hexosa se puede usar esta regla práctica:
+- Los grupos que están a la derecha en Fischer quedan hacia abajo en Haworth.
+- Los grupos que están a la izquierda en Fischer quedan hacia arriba en Haworth.
+- El CH2OH de la serie D se representa hacia arriba.
+- La orientación del hidroxilo anomérico define alfa o beta.
+
+
+Esta regla sirve para no memorizar cada dibujo de manera aislada: permite reconstruir la estructura cíclica a partir de la configuración lineal.
+
+
+3.5 Mutarrotación
+Los anómeros alfa y beta pueden interconvertirse en solución porque el anillo puede abrirse transitoriamente a la forma lineal y volver a cerrarse. Este proceso se denomina mutarrotación.
+
+
+En agua, la D-glucosa alcanza una mezcla de equilibrio en la que predomina la beta-D-glucopiranosa, seguida por la alfa-D-glucopiranosa; la forma abierta está presente en una proporción muy pequeña. El material de clase muestra aproximadamente 63,6 % de beta, 36,4 % de alfa y alrededor de 0,003 % de forma abierta.
+
+
+La mutarrotación es importante porque demuestra que las formas cíclicas no son estructuras estáticas: mientras el carbono anomérico sea un hemiacetal libre, el anillo puede abrirse y cerrarse.
+
+
+IMAGEN PARA INSERTAR 05 - Equilibrio de mutarrotación de la D-glucosa con beta-D-glucopiranosa, forma abierta y alfa-D-glucopiranosa, incluyendo las proporciones aproximadas.
+
+
+3.6 Haworth no es la forma tridimensional real: conformación silla
+La proyección de Haworth ayuda a ver qué grupos quedan arriba o abajo, pero el anillo de seis miembros no es plano. Las piranosas adoptan principalmente conformaciones silla.
+
+
+En una silla, los sustituyentes pueden ocupar posiciones axiales o ecuatoriales. Los grupos voluminosos son más estables en posiciones ecuatoriales porque así disminuyen las interacciones estéricas, especialmente las interacciones 1,3-diaxiales.
+
+
+La beta-D-glucopiranosa es particularmente estable porque en su conformación silla preferida los sustituyentes voluminosos se encuentran en posiciones ecuatoriales. En manosa o galactosa, ciertos grupos quedan axiales y aumentan la repulsión estérica. Esto conecta directamente estereoquímica con estabilidad y función.
