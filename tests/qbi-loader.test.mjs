@@ -24,7 +24,7 @@ try{
     const page=await browser.newPage();
     const pageErrors=[];
     page.on('pageerror',error=>pageErrors.push(String(error)));
-    await page.goto(`${ROOT}/${UNIT}/original.html?v=4.0.4`,{waitUntil:'domcontentloaded'});
+    await page.goto(`${ROOT}/${UNIT}/original.html?v=4.5.5`,{waitUntil:'domcontentloaded'});
     await page.waitForSelector('#qbi-guide-memory-maps',{timeout:30000});
     await page.waitForSelector('#cap-tp2',{timeout:30000});
     await page.waitForSelector('#qbi-mapa-integral',{timeout:30000});
@@ -37,7 +37,7 @@ try{
     }));
     if(result.text.includes('No se pudo abrir el resumen'))throw new Error('El loader directo cayó en la pantalla de error');
     if(result.text.includes('qbiFetchBundle')||result.text.includes('qbiPrepareDocument'))throw new Error('Se imprimió JavaScript del loader como texto');
-    if(result.maps!==2)throw new Error(`Se esperaban 2 mapas de guía y aparecieron ${result.maps}`);
+    if(result.maps!==8)throw new Error(`Se esperaban 8 mapas de guía y aparecieron ${result.maps}`);
     if(result.integratedChapters<15||!result.notes||!result.searchNext)throw new Error('La interfaz de materia integrada no quedó completa');
     if(!result.text.includes('Trabajo Práctico Nº 2 · Puesta a punto y cinética enzimática'))throw new Error('TP2 no apareció como capítulo práctico independiente');
     if(!result.text.includes('Enzimas III')||!result.text.includes('Dixon'))throw new Error('El resumen definitivo perdió contenido posterior al TP2');
@@ -51,7 +51,7 @@ try{
     await page.addScriptTag({url:`${ROOT}/js/qbi-official-frame-fix.js?v=1.0.0`});
     await page.evaluate(async ({unit})=>{
       document.body.innerHTML='';
-      const source=await fetch(`${unit}/original.html?v=4.0.4`,{cache:'no-store'}).then(response=>response.text());
+      const source=await fetch(`${unit}/original.html?v=4.5.5`,{cache:'no-store'}).then(response=>response.text());
       const frame=document.createElement('iframe');
       frame.className='imported-html-frame';
       frame.setAttribute('sandbox','allow-scripts allow-popups allow-popups-to-escape-sandbox');
@@ -61,7 +61,7 @@ try{
     await page.waitForFunction(()=>document.querySelector('iframe.imported-html-frame')?.sandbox.contains('allow-same-origin'),null,{timeout:10000});
     await page.waitForFunction(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
-      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===2&&!!frame.contentDocument.querySelector('#qbi-mapa-integral')}catch{return false}
+      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===8&&!!frame.contentDocument.querySelector('#qbi-mapa-integral')}catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
@@ -73,7 +73,7 @@ try{
     await page.close();
   }
 
-  console.log('QBI loader: OK directo + sandbox SOLved + 2 mapas');
+  console.log('QBI loader: OK directo + sandbox SOLved + 8 mapas');
 }finally{
   await browser?.close().catch(()=>{});
   server.kill('SIGTERM');
