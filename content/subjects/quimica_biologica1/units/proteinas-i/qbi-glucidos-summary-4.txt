@@ -1,0 +1,135 @@
+
+
+Una interacción individual puede tener afinidad moderada, pero muchas lectinas y muchos glicanos son multivalentes. Varias uniones simultáneas producen una gran avidez global, algo especialmente importante en superficies celulares.
+
+
+9.3 Ejemplos de reconocimiento que hay que entender
+Selectinas y reclutamiento de leucocitos
+Las selectinas son lectinas de membrana. Durante la inflamación, P-selectina y otras selectinas reconocen glicanos específicos, como sialyl-Lewis X, en las superficies celulares. Estas interacciones transitorias permiten que los leucocitos rueden sobre el endotelio; luego interacciones de adhesión más fuertes detienen la célula y facilitan su paso al tejido.
+
+
+Receptor de manosa-6-fosfato
+Un glicano que contiene manosa-6-fosfato funciona como etiqueta de direccionamiento para proteínas destinadas a lisosomas. El receptor reconoce esa señal en el sistema de endomembranas y dirige la proteína hacia el compartimiento lisosomal.
+
+
+Toxina colérica y GM1
+La toxina del cólera reconoce el gangliósido GM1 en la superficie de células intestinales. El glicano funciona como receptor y la unión facilita la entrada o acción de la toxina.
+
+
+Virus influenza
+La hemaglutinina viral reconoce residuos de ácido siálico de la superficie celular para iniciar la infección. Posteriormente, la neuraminidasa viral elimina ácido siálico y facilita la liberación de nuevas partículas virales. La bibliografía usa este sistema para mostrar cómo una interacción azúcar-proteína puede ser un blanco farmacológico.
+
+
+Recambio de glicoproteínas plasmáticas
+Los residuos terminales de ácido siálico pueden proteger glicoproteínas circulantes. Cuando se pierde ese ácido siálico y queda expuesta galactosa, receptores lectina de hepatocitos pueden reconocer la glicoproteína y favorecer su endocitosis y degradación.
+
+
+IMAGEN PARA INSERTAR 19 - Lámina con tres o cuatro ejemplos de reconocimiento lectina-glicano: selectina/sialyl-Lewis X, receptor de manosa-6-fosfato, toxina colérica/GM1 e influenza/ácido siálico.
+
+
+10. Cómo se estudian experimentalmente los carbohidratos
+Esta sección está principalmente en la bibliografía y conviene conservarla aunque no haya sido el eje central de la clase.
+
+
+Analizar oligosacáridos es más difícil que secuenciar proteínas o ácidos nucleicos porque los glicanos pueden estar ramificados, contener distintos tipos de enlaces y presentar grupos lábiles como sulfatos.
+
+
+Las herramientas que describe el capítulo incluyen:
+- Metilación exhaustiva seguida de hidrólisis para inferir qué hidroxilos participaban en enlaces glucosídicos.
+- Exoglicosidasas de especificidad conocida para retirar residuos desde extremos no reductores y deducir secuencia, posición y estereoquímica de enlaces.
+- Glicosidasas específicas para liberar oligosacáridos O- o N-unidos de glicoproteínas, y lipasas para separar cabezas de glicolípidos.
+- Hidrólisis ácida para obtener la composición global en monosacáridos.
+- Precipitación fraccionada y cromatografía de intercambio iónico o exclusión por tamaño para separar carbohidratos.
+- Cromatografía de afinidad con lectinas inmovilizadas para seleccionar glicanos según estructura.
+- Espectrometría de masas y RMN de alta resolución para obtener información sobre composición, secuencia, posiciones de enlace y configuración anomérica.
+- Síntesis química y síntesis en fase sólida de oligosacáridos definidos para estudiar interacciones entre glicanos y lectinas.
+
+
+La idea final de esta sección es que la estructura completa de un glicano exige combinar métodos: composición, secuencia, ramificación, posición de los enlaces y estereoquímica deben resolverse conjuntamente.
+
+
+IMAGEN PARA INSERTAR 20 - Diagrama de flujo de análisis de carbohidratos: liberación/hidrólisis, separación cromatográfica, exoglicosidasas, espectrometría de masas, RMN y síntesis.
+
+
+11. Conexiones que conviene razonar, no memorizar aisladas
+11.1 Del carbono anomérico al poder reductor
+Si el carbono anomérico conserva un hemiacetal libre, el anillo puede abrirse. Si puede abrirse a una forma carbonílica reactiva, el azúcar puede comportarse como reductor.
+
+
+Cuando el carbono anomérico forma un acetal glucosídico, su configuración queda fijada. Si todos los carbonos anoméricos de un disacárido están comprometidos, como en sacarosa o trehalosa, la molécula es no reductora.
+
+
+11.2 De alfa/beta a la función del polímero
+No cambia necesariamente el monómero: cambia la orientación del enlace.
+- Enlaces alfa(1-4) de almidón y glucógeno favorecen cadenas curvadas o helicoidales y estructuras adecuadas para reserva.
+- Enlaces beta(1-4) de celulosa favorecen cadenas extendidas capaces de asociarse mediante numerosos puentes de hidrógeno y formar fibras resistentes.
+
+
+Por eso una diferencia estereoquímica local puede producir una diferencia macroscópica enorme.
+
+
+11.3 De la ramificación a la velocidad de movilización
+Una ramificación alfa(1-6) genera un nuevo extremo no reductor. Cuantos más extremos no reductores haya, más sitios pueden ser atacados simultáneamente por las enzimas. Esta es una de las razones por las que el glucógeno, muy ramificado, puede movilizarse con rapidez.
+
+
+11.4 De la carga negativa de los GAG a sus propiedades
+Carboxilatos y sulfatos generan una alta densidad de carga negativa. La repulsión obliga a las cadenas a mantenerse extendidas y la interacción con iones y agua genera estructuras muy hidratadas. De allí surgen lubricación, resistencia a compresión y formación de matriz.
+
+
+11.5 De la diversidad de glicanos al reconocimiento
+Un glicano puede cambiar por un solo monosacárido, un enlace, una ramificación o un sulfato. Cada cambio modifica su superficie tridimensional. Las lectinas reconocen esa superficie, de modo que la diversidad química se transforma en información biológica.
+
+
+12. Ampliaciones de bibliografía que no conviene perder
+Esta sección conserva contenidos del capítulo largo que no son el núcleo del recorrido de las diapositivas, pero ayudan a completar la unidad y pueden aparecer como ejemplos.
+
+
+Dulzor y estereoquímica
+El capítulo usa el receptor del gusto dulce y el aspartamo para mostrar que el reconocimiento biológico depende de la estereoquímica. Dos estereoisómeros con la misma conectividad pueden activar receptores diferentes porque sólo uno encaja correctamente en el sitio de unión.
+
+
+HbA1c y productos de glicación avanzada
+Además de la explicación general de glicación, la bibliografía detalla que la HbA1c se usa para estimar exposición promedio a glucosa y que productos de glicación avanzada pueden alterar proteínas y señalización celular.
+
+
+Glicómica
+La glicómica busca caracterizar el conjunto de carbohidratos de una célula o tejido, incluidos los unidos a proteínas y lípidos, e identificar sitios de glicosilación. La bibliografía destaca el papel de RMN y espectrometría de masas en este campo.
+
+
+Glicosilación y enfermedad
+Alteraciones en la glicosilación pueden afectar plegamiento, estabilidad, destino y reconocimiento de proteínas. El capítulo menciona múltiples trastornos genéticos de glicosilación como evidencia de la importancia biológica de estas modificaciones.
+
+
+Glicanos de superficie y grupos sanguíneos
+Determinados oligosacáridos de glicoproteínas y glicolípidos contribuyen a la identidad de grupos sanguíneos. Es otro ejemplo de cómo pequeñas diferencias estructurales en carbohidratos generan señales de reconocimiento.
+
+
+Patógenos y glicanos
+Además del cólera y la influenza, el capítulo señala que bacterias, virus y parásitos pueden aprovechar glicanos de superficie para adherirse a células o protegerse. El principio general es más importante que memorizar cada organismo: el reconocimiento lectina-glicano puede controlar tropismo, adhesión, entrada y respuesta del huésped.
+
+
+13. Qué hay que saber sí o sí
+Si tuvieras que reconstruir toda la unidad desde unas pocas ideas, deberían quedar estas:
+
+
+1. Un glúcido no es sólo una fuente de energía: también puede ser estructura e información.
+2. Aldosa/cetosa describe el tipo de carbonilo; triosa, pentosa, hexosa, etc., describe el número de carbonos.
+3. La estereoquímica importa porque las proteínas reconocen moléculas tridimensionales.
+4. D y L se definen por el carbono quiral de referencia más alejado del carbonilo; no indican directamente el signo de rotación óptica.
+5. Glucosa-manosa y glucosa-galactosa son epímeros en C2 y C4, respectivamente.
+6. La ciclación crea el carbono anomérico y los anómeros alfa y beta.
+7. Mientras exista un hemiacetal anomérico libre puede ocurrir apertura de anillo, mutarrotación y poder reductor.
+8. Un enlace glucosídico fija la configuración del carbono anomérico que participa.
+9. Maltosa y lactosa son reductoras; sacarosa y trehalosa son no reductoras.
+10. Almidón y glucógeno usan enlaces alfa; celulosa usa beta. Ese cambio altera completamente la geometría y la función.
+11. Más ramificación significa más extremos no reductores y una movilización más rápida; por eso el glucógeno es muy ramificado.
+12. Los GAG son cadenas cargadas e hidratadas que explican propiedades mecánicas de la matriz extracelular.
+13. Proteoglicano, glicoproteína y glicolípido no son sinónimos: difieren en el componente principal y en el tipo/longitud de carbohidrato.
+14. Los glicanos pueden actuar como etiquetas y sitios de reconocimiento.
+15. Las lectinas “leen” el código de azúcares y explican procesos como adhesión leucocitaria, direccionamiento lisosomal y unión de patógenos.
+16. La estructura completa de un carbohidrato exige conocer composición, configuración, posición de enlaces y ramificación; por eso su análisis experimental es especialmente complejo.
+
+
+Fuentes integradas
+Material de clase: “Glúcidos I: estructura y función”.
+Bibliografía: capítulo “Carbohydrates and Glycobiology”, completo, incluidas las secciones 7.1 a 7.5.
