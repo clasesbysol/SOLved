@@ -1,0 +1,170 @@
+
+
+IMAGEN PARA INSERTAR 12 - Comparación amilopectina versus glucógeno, mostrando frecuencia de ramificación y numerosos extremos no reductores.
+
+
+6.4 Celulosa: misma glucosa, otra geometría
+La celulosa también es un homopolímero de D-glucosa, pero sus residuos están unidos por enlaces beta(1-4). Ese cambio de alfa a beta modifica completamente la geometría.
+
+
+En la celulosa, las unidades se orientan de forma que la cadena queda extendida. Varias cadenas paralelas forman una red extensa de puentes de hidrógeno intra e intermoleculares y generan fibras de gran resistencia mecánica.
+
+
+En almidón, los enlaces alfa favorecen cadenas curvadas y helicoidales, adecuadas para reserva energética. En celulosa, los enlaces beta favorecen cadenas rectas y empaquetadas, adecuadas para función estructural.
+
+
+Esta comparación resume una idea central de la unidad: no alcanza con saber qué monómero hay. La configuración del enlace determina la estructura tridimensional y, por lo tanto, la función.
+
+
+IMAGEN PARA INSERTAR 13 - Comparación almidón/celulosa con la misma D-glucosa pero enlaces alfa(1-4) versus beta(1-4), mostrando hélice frente a cadena extendida y puentes de hidrógeno.
+
+
+6.5 Quitina y quitosano
+La quitina es un homopolisacárido lineal de N-acetilglucosamina unido por enlaces beta(1-4). Forma fibras resistentes y constituye un componente estructural fundamental de exoesqueletos de artrópodos y paredes de hongos.
+
+
+Químicamente se parece a la celulosa, pero en C2 posee un grupo amino acetilado en lugar del hidroxilo. La clase compara quitina con quitosano: la desacetilación de la quitina genera un polímero con mayor proporción de grupos amino libres y propiedades físico-químicas distintas.
+
+
+IMAGEN PARA INSERTAR 14 - Quitina y quitosano lado a lado, mostrando la N-acetilglucosamina, la desacetilación y el cambio de grupo N-acetilo a amino.
+
+
+6.6 Peptidoglucano
+La bibliografía incluye al peptidoglucano como un heteropolímero estructural de la pared bacteriana. Está formado por residuos alternantes de N-acetilglucosamina y ácido N-acetilmurámico unidos en cadenas que se entrecruzan mediante péptidos cortos.
+
+
+Los entrecruzamientos convierten las cadenas en una envoltura resistente capaz de soportar la presión osmótica. La lisozima hidroliza el enlace glucosídico entre los dos azúcares; penicilina y antibióticos relacionados afectan la formación de los puentes peptídicos.
+
+
+7. Glicosaminoglicanos y matriz extracelular
+7.1 Qué son los GAG
+Los glicosaminoglicanos, GAG, son heteropolisacáridos lineales formados por unidades disacáridas repetidas. En general, uno de los monosacáridos es un aminoazúcar N-acetilado, como GlcNAc o GalNAc, y el otro suele ser un ácido urónico.
+
+
+Muchos GAG poseen grupos sulfato además de carboxilatos. Esa gran densidad de cargas negativas provoca repulsión entre grupos cercanos y favorece conformaciones extendidas. También atrae cationes y grandes cantidades de agua.
+
+
+De aquí salen sus propiedades macroscópicas:
+- Gran hidratación.
+- Formación de geles.
+- Resistencia a la compresión.
+- Lubricación y viscoelasticidad.
+- Interacción electrostática con proteínas de la matriz.
+
+
+7.2 Principales GAG
+Hialuronano
+Está formado por ácido glucurónico y N-acetilglucosamina. No está sulfatado y puede alcanzar longitudes enormes. Forma soluciones viscosas y no compresibles. Se encuentra en líquido sinovial, humor vítreo, cartílago y otros tejidos conectivos.
+
+
+Condroitín sulfato
+Contiene ácido glucurónico y N-acetilgalactosamina sulfatada. Contribuye a la resistencia mecánica de cartílago, tendones, ligamentos y otros tejidos.
+
+
+Dermatán sulfato
+Se relaciona con condroitín sulfato, pero contiene una proporción importante de ácido idurónico. Participa en propiedades mecánicas de piel y vasos.
+
+
+Queratán sulfato
+Es una excepción importante porque no contiene ácido urónico. Aparece en córnea, cartílago, hueso y otras estructuras.
+
+
+Heparán sulfato y heparina
+El heparán sulfato posee patrones no aleatorios de regiones sulfatadas y no sulfatadas que permiten interacciones específicas con numerosas proteínas. La heparina es una forma muy sulfatada; su capacidad de unirse a antitrombina explica su uso terapéutico como anticoagulante.
+
+
+IMAGEN PARA INSERTAR 15 - Tabla o esquema de GAG con sus unidades repetitivas: hialuronano, condroitín sulfato, dermatán sulfato, queratán sulfato y heparán/heparina; señalar grupos sulfato y carboxilato.
+
+
+8. Glicoconjugados: cuando el azúcar se une a proteínas o lípidos
+8.1 Idea general
+Muchos glúcidos celulares no están libres. Se encuentran unidos covalentemente a proteínas o lípidos y forman glicoconjugados. En las células eucariotas, los oligosacáridos expuestos en la superficie contribuyen al glicocálix, una capa rica en información que participa en reconocimiento, adhesión, migración, respuesta inmune y señalización.
+
+
+Hay tres grupos principales:
+- Proteoglicanos: proteína central con una o más cadenas largas de GAG.
+- Glicoproteínas: proteína con oligosacáridos generalmente más cortos y ramificados.
+- Glicolípidos: lípido de membrana con uno o más azúcares en su cabeza polar.
+
+
+8.2 Proteoglicanos
+Un proteoglicano tiene una proteína central a la que se unen covalentemente cadenas de GAG. En muchos casos la unión se realiza a un residuo de serina mediante una región enlazadora de azúcares.
+
+
+No son simples materiales de relleno. Sus GAG:
+- Retienen agua y forman geles hidratados.
+- Resisten compresión.
+- Organizan la matriz extracelular.
+- Se unen a proteínas, factores de crecimiento y moléculas de adhesión.
+- Modulan interacciones entre ligandos y receptores.
+
+
+La bibliografía describe proteoglicanos de membrana como sindecanos y glipicanos y grandes agregados extracelulares como los que se organizan sobre una molécula de hialuronano. El material de clase destaca el agrecano del cartílago como ejemplo de una arquitectura capaz de retener agua y soportar compresión.
+
+
+IMAGEN PARA INSERTAR 16 - Proteoglicano y agregado de agrecano sobre hialuronano, mostrando proteína central, cadenas de GAG, proteínas de enlace y agua retenida.
+
+
+8.3 Glicoproteínas
+Las glicoproteínas contienen oligosacáridos covalentemente unidos a proteínas. Los carbohidratos pueden modificar:
+- Solubilidad y polaridad.
+- Plegamiento y estabilidad.
+- Protección frente a proteólisis.
+- Control de calidad de proteínas recién sintetizadas.
+- Etiquetas de destino intracelular.
+- Reconocimiento por receptores, anticuerpos, lectinas o patógenos.
+
+
+La bibliografía diferencia dos grandes tipos de unión:
+- O-glicosídica: el oligosacárido se une al hidroxilo de serina o treonina.
+- N-glicosídica: el oligosacárido se une al nitrógeno amida de asparagina.
+
+
+Las mucinas son ejemplos de glicoproteínas muy ricas en oligosacáridos O-unidos. Muchas proteínas plasmáticas, anticuerpos, hormonas y proteínas lisosomales también están glicosiladas.
+
+
+IMAGEN PARA INSERTAR 17 - Comparación de glicosilación O-unida en Ser/Thr y N-unida en Asn, con un ejemplo de oligosacárido ramificado.
+
+
+8.4 Glicolípidos y glicoesfingolípidos
+Los glicolípidos son componentes de membrana cuyos grupos polares contienen carbohidratos expuestos hacia el exterior celular. Los glicoesfingolípidos forman una familia importante y son abundantes en tejido nervioso. Sus oligosacáridos intervienen en organización de membrana, señalización y reconocimiento célula-célula.
+
+
+Los gangliósidos son glicoesfingolípidos que contienen ácido siálico. Algunos oligosacáridos de glicolípidos y glicoproteínas participan en la determinación de grupos sanguíneos y sirven como receptores para toxinas o microorganismos.
+
+
+8.5 Lipopolisacárido bacteriano, LPS
+El LPS es un componente dominante de la membrana externa de bacterias Gram negativas. Posee tres regiones generales:
+- Lípido A, que ancla la molécula en la membrana.
+- Núcleo oligosacárido.
+- Antígeno O, una región polisacárida repetitiva y variable.
+
+
+El lípido A es la porción endotóxica. La clase enfatiza además una aplicación biotecnológica: el LPS puede contaminar preparaciones de proteínas recombinantes producidas en bacterias y desencadenar una respuesta inflamatoria intensa, por lo que la eliminación y el control de endotoxinas son críticos en productos destinados a uso biológico.
+
+
+IMAGEN PARA INSERTAR 18 - Estructura del LPS de una bacteria Gram negativa mostrando lípido A, núcleo y antígeno O; idealmente junto con un esquema de reconocimiento por TLR4.
+
+
+9. Los carbohidratos como información: el “código de azúcares”
+9.1 Por qué los oligosacáridos pueden almacenar tanta información
+Un oligosacárido puede variar en:
+- Tipo de monosacárido.
+- Secuencia.
+- Posición de cada enlace.
+- Configuración alfa o beta.
+- Ramificaciones.
+- Modificaciones como sulfatos, fosfatos o acetilos.
+
+
+Por eso, con un número relativamente pequeño de tipos de monómeros, pueden construirse cantidades enormes de estructuras tridimensionales diferentes. La bibliografía remarca que la densidad potencial de información estructural de los glicanos supera ampliamente la de secuencias lineales equivalentes de nucleótidos o aminoácidos.
+
+
+La secuencia de un glicano no se copia de una plantilla como ocurre con ADN, ARN o proteínas. Surge de las enzimas biosintéticas presentes, de su localización y de la disponibilidad de precursores. La “información” está codificada en la estructura final y es leída por proteínas capaces de reconocerla.
+
+
+9.2 Lectinas: proteínas que leen el código
+Las lectinas son proteínas que se unen a carbohidratos con elevada especificidad y afinidad sin catalizar necesariamente su modificación. Reconocen no sólo el tipo de monosacárido, sino también su configuración, la posición de los enlaces, la ramificación y el contexto del glicano.
+
+
+La unión depende de complementariedad molecular: puentes de hidrógeno, interacciones electrostáticas, contactos hidrofóbicos y, en algunos casos, iones metálicos contribuyen a la especificidad.
