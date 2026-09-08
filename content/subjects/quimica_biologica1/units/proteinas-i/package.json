@@ -5,10 +5,10 @@
   "subjectId": "quimica_biologica1",
   "unitId": "proteinas-i",
   "title": "Resumen integral · Proteínas, métodos, TP1, enzimas I–II, TP2 y Enzimas III",
-  "contentVersion": "4.5.4",
+  "contentVersion": "4.5.5",
   "status": "published",
   "generatedAt": "2026-09-01T15:30:00.000Z",
-  "reviewedAt": "2026-09-08T12:46:00.000Z",
+  "reviewedAt": "2026-09-08T14:00:00.000Z",
   "files": {
     "summary": "summary.json",
     "glossary": "glossary.json",
