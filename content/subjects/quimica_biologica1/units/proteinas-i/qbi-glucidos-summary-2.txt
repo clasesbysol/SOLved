@@ -1,0 +1,172 @@
+
+
+IMAGEN PARA INSERTAR 06 - Comparación de las conformaciones silla de beta-D-glucopiranosa, beta-D-manopiranosa y beta-D-galactopiranosa, marcando posiciones axiales, ecuatoriales e interacciones 1,3-diaxiales.
+
+
+4. Reactividad de los monosacáridos y derivados biológicos
+4.1 Azúcares reductores
+Un azúcar es reductor si puede generar una forma con carbono carbonílico libre capaz de oxidarse. Los monosacáridos con un carbono anomérico libre pueden abrir el anillo y acceder a la forma lineal.
+
+
+Por eso las aldosas son reductoras. Algunas cetosas, como la fructosa, también pueden comportarse como reductoras porque en condiciones adecuadas pueden tautomerizar a formas que contienen aldehído.
+
+
+En el reactivo de Fehling, el azúcar reductor se oxida mientras el cobre se reduce y aparece un precipitado rojo ladrillo. La clase usa esta reacción para distinguir, por ejemplo, glucosa, lactosa y maltosa de sacarosa.
+
+
+La idea que hay que retener es estructural: el poder reductor depende de que exista un carbono anomérico libre que pueda volver a la forma abierta.
+
+
+IMAGEN PARA INSERTAR 07 - Ensayo de Fehling comparando un blanco con glucosa, lactosa, maltosa y sacarosa, con resultados positivo y negativo.
+
+
+4.2 Derivados de monosacáridos
+Pequeñas modificaciones químicas amplían enormemente la diversidad funcional de los azúcares.
+
+
+Aminozúcares
+Un grupo hidroxilo se reemplaza por un grupo amino, que con frecuencia aparece acetilado. Ejemplos relevantes:
+- Glucosamina.
+- Galactosamina.
+- N-acetilglucosamina, GlcNAc.
+- N-acetilgalactosamina, GalNAc.
+
+
+GlcNAc aparece en glicoproteínas, glicolípidos, quitina y peptidoglucano. GalNAc participa en mucinas y en estructuras de reconocimiento, incluido el sistema ABO.
+
+
+Desoxiazúcares
+Uno o más hidroxilos se reemplazan por hidrógeno. La L-fucosa es un ejemplo importante y aparece en glicoproteínas y glicolípidos de superficie, donde puede participar en reconocimiento celular.
+
+
+Azúcares ácidos
+La oxidación puede producir diferentes derivados:
+- Oxidación del carbono aldehído C1: ácido aldónico, como el ácido glucónico.
+- Oxidación del alcohol primario terminal C6: ácido urónico, como el ácido glucurónico.
+- Oxidación de ambos extremos: ácido aldárico.
+Los grupos carboxilo están ionizados cerca de pH fisiológico y aportan carga negativa. Los ácidos urónicos son componentes importantes de los glicosaminoglicanos.
+
+
+Lactonas
+Algunos ácidos de azúcar pueden formar ésteres intramoleculares cíclicos llamados lactonas.
+
+
+Ésteres fosfato
+La fosforilación genera intermediarios como glucosa-6-fosfato, fructosa-1-fosfato y ribosa-5-fosfato. La carga negativa ayuda a retener estos compuestos dentro de la célula y la fosforilación también los activa para transformaciones metabólicas.
+
+
+Azúcares nucleotídicos
+Azúcares unidos a nucleótidos funcionan como formas activadas y donadores de residuos durante la síntesis de oligosacáridos y glicoconjugados. Ejemplos mostrados en clase incluyen UDP-glucosa, UDP-GlcNAc y CMP-ácido siálico.
+
+
+Ácidos siálicos
+Son una familia de azúcares de nueve carbonos; un ejemplo central es el ácido N-acetilneuramínico, Neu5Ac. Se encuentra con frecuencia en los extremos de glicoproteínas y glicolípidos animales y participa en reconocimiento celular, estabilidad de glicoproteínas y unión de patógenos.
+
+
+IMAGEN PARA INSERTAR 08 - Mapa de derivados de monosacáridos que incluya aminoazúcares, desoxiazúcares, ácidos urónicos, lactonas, azúcares fosfato, azúcares nucleotídicos y ácido siálico.
+
+
+4.3 Glicación, glicosilación y reacción de Maillard
+La clase conecta el poder reductor de los azúcares con reacciones de grupos carbonilo con grupos amino.
+
+
+Glicosilación es la incorporación enzimática y biológicamente programada de azúcares a proteínas o lípidos.
+
+
+Glicación es una reacción no enzimática entre azúcares reductores y grupos amino de biomoléculas. En hemoglobina, la exposición sostenida a glucosa produce hemoglobina glicada. La HbA1c refleja el promedio de glucemia durante un período prolongado porque la reacción avanza lentamente durante la vida del eritrocito.
+
+
+La bibliografía amplía este proceso: la glicación puede generar productos finales de glicación avanzada, AGE, capaces de formar entrecruzamientos entre proteínas y alterar su función. La acumulación de AGE se relaciona con daño tisular asociado a hiperglucemia crónica.
+
+
+La reacción de Maillard es otro ejemplo de reacción no enzimática entre un azúcar reductor y grupos amino, muy visible en alimentos calentados, donde se generan color, aroma y sabor.
+
+
+IMAGEN PARA INSERTAR 09 - Esquema comparativo de reacción de Maillard, glicación de proteínas y formación de HbA1c, diferenciando glicación de glicosilación.
+
+
+5. Enlace glucosídico y disacáridos
+5.1 Cómo se forma un enlace glucosídico
+Un enlace glucosídico se forma cuando el carbono anomérico de un monosacárido reacciona con un grupo hidroxilo de otra molécula. El hemiacetal pasa a formar un acetal y queda fijada la configuración del carbono anomérico que participa en el enlace.
+
+
+Para describir el enlace hay que indicar:
+- Qué monosacáridos participan.
+- Si el carbono anomérico tiene configuración alfa o beta.
+- Qué carbonos quedan unidos.
+
+
+Por ejemplo, un enlace alfa(1-4) une el C1 anomérico de un residuo en configuración alfa con el C4 del siguiente residuo.
+
+
+Si un carbono anomérico queda libre, el compuesto puede seguir abriendo su anillo y puede ser reductor. Si todos los carbonos anoméricos están comprometidos en enlaces glucosídicos, el compuesto es no reductor.
+
+
+5.2 Extremo reductor y extremo no reductor
+En una cadena, el extremo con un carbono anomérico libre se denomina extremo reductor. Los otros extremos, cuyo carbono anomérico está fijado en un enlace glucosídico, son extremos no reductores.
+
+
+Esta distinción se vuelve especialmente importante en polisacáridos ramificados como el glucógeno: posee un único extremo reductor, pero numerosos extremos no reductores desde los cuales las enzimas pueden movilizar glucosa simultáneamente.
+
+
+5.3 Disacáridos que hay que reconocer
+Maltosa
+Está formada por dos glucosas unidas por un enlace alfa(1-4). Conserva libre el carbono anomérico de la segunda glucosa, por lo que es reductora.
+
+
+Lactosa
+Está formada por galactosa y glucosa mediante un enlace beta(1-4). El carbono anomérico de la glucosa queda libre, por lo que también es reductora.
+
+
+Sacarosa
+Está formada por glucosa y fructosa. El enlace compromete los carbonos anoméricos de ambos monosacáridos, de modo que no queda un carbono anomérico libre. Por eso es no reductora y no presenta mutarrotación.
+
+
+Trehalosa
+Está formada por dos glucosas cuyos carbonos anoméricos quedan unidos entre sí mediante un enlace alfa-alfa(1-1). También es no reductora. La bibliografía destaca su función como reserva energética en insectos y como molécula protectora en algunos organismos.
+
+
+IMAGEN PARA INSERTAR 10 - Estructuras de maltosa, lactosa, sacarosa y trehalosa con los carbonos numerados, el enlace glucosídico indicado y una marca de cuáles son reductoras.
+
+
+5.4 Complemento de bibliografía: intolerancia a la lactosa
+La lactasa intestinal hidroliza el enlace beta(1-4) de la lactosa y permite obtener galactosa y glucosa absorbibles. Cuando la actividad de lactasa es insuficiente, la lactosa no digerida llega al intestino grueso. Allí aumenta la carga osmótica y es fermentada por bacterias, lo que explica la combinación de diarrea osmótica, distensión y gases.
+
+
+6. Polisacáridos: de la secuencia a la arquitectura
+6.1 Homopolisacáridos y heteropolisacáridos
+Un homopolisacárido contiene un solo tipo de monosacárido. Un heteropolisacárido contiene dos o más tipos.
+
+
+A diferencia de proteínas y ácidos nucleicos, la síntesis de polisacáridos no depende de una plantilla que determine una longitud y secuencia exactas. La estructura surge de la especificidad y actividad de las enzimas biosintéticas. Por eso estos polímeros pueden presentar distribuciones de tamaño y grado de ramificación.
+
+
+Almacenar glucosa como polímero tiene una ventaja física fundamental: reduce enormemente la cantidad de partículas osmóticamente activas. Si toda la glucosa de reserva estuviera libre como monómeros, la osmolaridad intracelular sería muy alta y favorecería una entrada peligrosa de agua.
+
+
+6.2 Almidón: amilosa y amilopectina
+El almidón es la principal reserva de glucosa de las plantas y contiene dos polímeros.
+
+
+Amilosa
+Es esencialmente lineal y está formada por D-glucosas unidas por enlaces alfa(1-4). Su geometría permite que la cadena adopte una estructura helicoidal. La bibliografía señala que el yodo puede alojarse en el interior de la hélice y producir la coloración azul característica utilizada como ensayo cualitativo.
+
+
+Amilopectina
+Posee cadenas principales con enlaces alfa(1-4) y puntos de ramificación alfa(1-6), aproximadamente cada 24 a 30 residuos. Es más ramificada que la amilosa, pero menos que el glucógeno.
+
+
+IMAGEN PARA INSERTAR 11 - Comparación estructural de amilosa y amilopectina, mostrando enlaces alfa(1-4), ramificaciones alfa(1-6) y la hélice de la amilosa.
+
+
+6.3 Glucógeno
+El glucógeno es el principal polisacárido de reserva de animales. Al igual que la amilopectina, tiene cadenas alfa(1-4) y ramificaciones alfa(1-6), pero se ramifica con mayor frecuencia, aproximadamente cada 8 a 12 residuos.
+
+
+Esta alta ramificación tiene consecuencias funcionales:
+- Produce una molécula compacta y muy hidratada.
+- Genera numerosos extremos no reductores.
+- Permite que muchas enzimas actúen al mismo tiempo sobre distintos extremos, favoreciendo una movilización rápida de glucosa.
+
+
+El glucógeno es especialmente abundante en hígado y músculo esquelético. El hígado contribuye al mantenimiento de la glucemia; el músculo utiliza su reserva principalmente para sus propias necesidades energéticas.
