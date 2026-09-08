@@ -31,6 +31,7 @@ try{
     await page.waitForSelector('#qbi-mapa-integral',{timeout:30000});
     await page.waitForSelector('#cap28',{timeout:30000});
     await page.waitForSelector('#cap41',{timeout:30000});
+    await page.waitForFunction(()=>document.querySelectorAll('[data-qbi-glucidos-index="1"]').length===13,null,{timeout:10000});
     const result=await page.evaluate(()=>({
       text:document.body.innerText,
       maps:document.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length,
@@ -76,16 +77,16 @@ try{
     await page.waitForFunction(()=>document.querySelector('iframe.imported-html-frame')?.sandbox.contains('allow-same-origin'),null,{timeout:10000});
     await page.waitForFunction(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
-      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===8&&!!frame.contentDocument.querySelector('#qbi-mapa-integral')&&!!frame.contentDocument.querySelector('#cap41')}catch{return false}
+      try{return frame?.contentDocument?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===8&&!!frame.contentDocument.querySelector('#qbi-mapa-integral')&&!!frame.contentDocument.querySelector('#cap41')&&frame.contentDocument.querySelectorAll('[data-qbi-glucidos-index="1"]').length===13}catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
       const frame=document.querySelector('iframe.imported-html-frame');
-      return {sandbox:frame.getAttribute('sandbox'),text:frame.contentDocument?.body?.innerText||'',glucidos:frame.contentDocument?.querySelectorAll('.qbi-glu-native-chapter').length||0};
+      return {sandbox:frame.getAttribute('sandbox'),text:frame.contentDocument?.body?.innerText||'',glucidos:frame.contentDocument?.querySelectorAll('.qbi-glu-native-chapter').length||0,index:frame.contentDocument?.querySelectorAll('[data-qbi-glucidos-index="1"]').length||0};
     });
     if(!state.sandbox.includes('allow-same-origin'))throw new Error('El iframe oficial siguió aislado sin allow-same-origin');
     if(state.text.includes('No se pudo abrir el resumen'))throw new Error('El loader falló dentro del iframe de SOLved');
     if(state.text.includes('qbiFetchBundle')||state.text.includes('qbiPrepareDocument'))throw new Error('El iframe imprimió JavaScript del loader como texto');
-    if(state.glucidos!==13)throw new Error(`Glúcidos I no quedó completo dentro de SOLved: ${state.glucidos}`);
+    if(state.glucidos!==13||state.index!==13)throw new Error(`Glúcidos I no quedó completo dentro de SOLved: capítulos=${state.glucidos}, índice=${state.index}`);
     await page.close();
   }
 
