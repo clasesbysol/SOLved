@@ -42,7 +42,7 @@ try{
   assert.equal(await page.locator('#stats-integral-mental-map').count(),1);
   assert.equal(await page.locator('#stats-integral-mental-map details.stats-im-chapter').count(),4);
   const integralMapText=await page.locator('#stats-integral-mental-map').innerText();
-  for(const marker of ['Axioma 1','Probabilidad condicional','Variable aleatoria','Binomial','Geométrica','Hipergeométrica','Poisson','Percentiles y cuantiles','Distribución uniforme continua'])assert.match(integralMapText,new RegExp(marker));
+  for(const marker of ['Axioma 1','Probabilidad condicional','Variable aleatoria','Binomial','Geométrica','Hipergeométrica','Poisson','Percentil / cuantil','Uniforme continua'])assert.match(integralMapText,new RegExp(marker));
   const orderOk=await page.evaluate(()=>{
     const map=document.querySelector('#stats-integral-mental-map');
     const next=document.querySelector('#methods, #stats-guide-memory-maps, #ejercicios-estadistica');
