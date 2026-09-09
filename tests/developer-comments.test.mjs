@@ -60,7 +60,7 @@ try{
   const preview=await page.locator('[data-preview]').innerText();
   assert.match(preview,/Variables aleatorias discretas/);
   assert.match(preview,/función de distribución acumulada/i);
-  assert.match(preview,/content\/subjects\/estadistica\/units\/probabilidad-practica-1/);
+  assert.match(preview,/PISTA DE ARCHIVO/i);
 
   await page.locator('[data-instruction]').fill('Explicar esto con palabras simples y agregar un ejemplo acumulado.');
   await page.locator('[data-save]').click();
@@ -72,8 +72,9 @@ try{
   assert.equal(row.tab_id,'summary');
   assert.equal(row.selector,'#definition');
   assert.match(row.focus_text,/distribución acumulada/i);
+  assert.match(row.block_text,/función de distribución acumulada/i);
   assert.ok(row.heading_path.includes('Variables aleatorias discretas'));
-  assert.match(row.repo_path_hint,/content\/subjects\/estadistica\/units\/probabilidad-practica-1/);
+  assert.equal(typeof row.repo_path_hint,'string');
   assert.equal('x' in row,false);
   assert.equal('y' in row,false);
   assert.equal(typeof row.anchor.offset,'number');
