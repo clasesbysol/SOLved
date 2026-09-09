@@ -21,7 +21,7 @@ jobs:
       - run: node --check js/supabase-config.js
       - run: node --check js/study-chrome.js
       - run: node --check js/analysis2-integrated.js
-      - run: node --check js/developer-comments.js
+      - run: node --check js/developer-comments-v101.js
       - run: node --check content/subjects/estadistica/units/probabilidad-practica-1/estadistica-mapa-integral-v150.js
       - run: node tests/estadistica-v140.test.mjs
       - run: node tests/developer-comments.test.mjs
