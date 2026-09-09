@@ -76,7 +76,7 @@ try{
   {
     const page=await browser.newPage();
     await page.goto(`${ROOT}/index.html`,{waitUntil:'domcontentloaded'});
-    await page.waitForSelector('script[data-solved-qbi-frame-fix]',{timeout:10000});
+    await page.waitForSelector('script[data-solved-qbi-frame-fix]',{state:'attached',timeout:10000});
     await page.evaluate(({root,unit})=>{
       const frame=document.createElement('iframe');
       frame.id='qbi-old-cache-probe';
