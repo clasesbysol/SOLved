@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v01119-qbi-split-v130";
+const CACHE_VERSION = "biblioteca-lbt-v01120-no-split-workspace";
 const CORE = [
   "./","./index.html","./bienvenida.html",
   "./styles.css?v=0.11.0","./styles-enhancements.css?v=0.11.16","./styles-personal.css?v=0.10.9",
