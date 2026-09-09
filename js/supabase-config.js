@@ -7,7 +7,7 @@ window.SOLVED_SUPABASE_CONFIG = Object.freeze({
 (()=>{
   if(!document.querySelector('script[data-solved-qbi-frame-fix]')){
     const script=document.createElement('script');
-    script.src='js/qbi-official-frame-fix.js?v=1.2.0';
+    script.src='js/qbi-official-frame-fix.js?v=1.3.0';
     script.dataset.solvedQbiFrameFix='1';
     script.async=false;
     document.head.append(script);
