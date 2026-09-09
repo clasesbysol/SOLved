@@ -5,6 +5,13 @@ window.SOLVED_SUPABASE_CONFIG = Object.freeze({
 });
 
 (()=>{
+  if(!document.querySelector('script[data-solved-qbi-frame-fix]')){
+    const script=document.createElement('script');
+    script.src='js/qbi-official-frame-fix.js?v=1.2.0';
+    script.dataset.solvedQbiFrameFix='1';
+    script.async=false;
+    document.head.append(script);
+  }
   if(!document.querySelector('script[data-solved-study-chrome]')){
     const script=document.createElement('script');
     script.src='js/study-chrome.js?v=0.11.17';
