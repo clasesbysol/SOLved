@@ -116,4 +116,11 @@ window.SOLVED_SUPABASE_CONFIG = Object.freeze({
     script.async=false;
     document.head.append(script);
   }
+  if(!document.querySelector('script[data-solved-developer-comments]')){
+    const script=document.createElement('script');
+    script.src='js/developer-comments.js?v=1.0.0';
+    script.dataset.solvedDeveloperComments='1';
+    script.async=false;
+    document.head.append(script);
+  }
 })();
