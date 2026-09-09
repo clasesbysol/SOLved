@@ -84,7 +84,8 @@ try{
       frame.title='Química Biológica';
       frame.setAttribute('sandbox','allow-scripts allow-same-origin');
       frame.src=`${root}/${unit}/original.html?v=4.6.4`;
-      document.body.append(frame);
+      // Fuera de los contenedores que app.js vuelve a renderizar durante el arranque.
+      document.documentElement.append(frame);
     },{root:ROOT,unit:UNIT});
     await page.waitForFunction(()=>{
       const frame=document.getElementById('qbi-old-cache-probe');
@@ -100,22 +101,24 @@ try{
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
       const frame=document.getElementById('qbi-old-cache-probe');
-      const doc=frame.contentDocument;
-      const nav=doc.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc.querySelector('#summaryIndex');
+      const doc=frame?.contentDocument;
+      const nav=doc?.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc?.querySelector('#summaryIndex');
       return {
-        src:frame.src,
-        chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>doc.getElementById(`cap${n}`)).length,
+        exists:!!frame,
+        src:frame?.src||'',
+        chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>doc?.getElementById(`cap${n}`)).length,
         links:Array.from({length:41},(_,i)=>i+1).filter(n=>nav?.querySelector(`a[href="#cap${n}"]`)).length
       };
     });
-    if(!state.src.endsWith('/qbi-static.html?v=4.7.0')||state.chapters!==41||state.links!==41)throw new Error(`El shell no corrigió la copia vieja: ${JSON.stringify(state)}`);
+    if(!state.exists||!state.src.endsWith('/qbi-static.html?v=4.7.0')||state.chapters!==41||state.links!==41)throw new Error(`El shell no corrigió la copia vieja: ${JSON.stringify(state)}`);
     await page.waitForTimeout(5000);
     const stable=await page.evaluate(()=>{
-      const doc=document.getElementById('qbi-old-cache-probe').contentDocument;
-      const nav=doc.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc.querySelector('#summaryIndex');
-      return {chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>doc.getElementById(`cap${n}`)).length,links:Array.from({length:41},(_,i)=>i+1).filter(n=>nav?.querySelector(`a[href="#cap${n}"]`)).length};
+      const frame=document.getElementById('qbi-old-cache-probe');
+      const doc=frame?.contentDocument;
+      const nav=doc?.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc?.querySelector('#summaryIndex');
+      return {exists:!!frame,src:frame?.src||'',chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>doc?.getElementById(`cap${n}`)).length,links:Array.from({length:41},(_,i)=>i+1).filter(n=>nav?.querySelector(`a[href="#cap${n}"]`)).length};
     });
-    if(stable.chapters!==41||stable.links!==41)throw new Error(`QBI volvió para atrás dentro del shell: ${JSON.stringify(stable)}`);
+    if(!stable.exists||!stable.src.endsWith('/qbi-static.html?v=4.7.0')||stable.chapters!==41||stable.links!==41)throw new Error(`QBI volvió para atrás dentro del shell: ${JSON.stringify(stable)}`);
     await page.close();
   }
 
