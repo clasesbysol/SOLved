@@ -47,9 +47,7 @@ jobs:
             content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html \
             content/subjects/quimica_biologica1/units/proteinas-i/rich.json \
             content/subjects/quimica_biologica1/units/proteinas-i/package.json \
-            content/catalog.json \
-            js/qbi-official-frame-fix.js \
-            sw.js
+            content/catalog.json
           if git diff --cached --quiet; then
             echo 'No hay cambios generados.'
           else
