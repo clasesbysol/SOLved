@@ -13,13 +13,15 @@ try{
   await waitServer();
   browser=await chromium.launch({headless:true});
   const page=await browser.newPage({viewport:{width:1440,height:1000}});
-  await page.goto(`${ROOT}/${UNIT}/estadistica-integral.html?v=1.4.0#ejercicios-estadistica`,{waitUntil:'domcontentloaded'});
+  await page.goto(`${ROOT}/${UNIT}/estadistica-integral.html?v=1.5.0#ejercicios-estadistica`,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>document.documentElement.dataset.statsIntegralReady==='1',null,{timeout:30000});
+  await page.waitForFunction(()=>document.documentElement.dataset.statsIntegralMentalMapReady==='1',null,{timeout:30000});
 
   assert.equal(await page.locator('.qb-doc-shell').count(),1);
   assert.equal(await page.locator('#qbSidebar.qb-sidebar').count(),1);
   assert.equal(await page.locator('#qbGlobalSearch').getAttribute('placeholder'),'Buscar en el resumen…');
   assert.equal(await page.locator('#summaryIndex').count(),1);
+  assert.match(await page.locator('#summaryIndex').innerText(),/Mapa mental integral/);
   assert.match(await page.locator('#summaryIndex').innerText(),/Mapa de métodos/);
   assert.match(await page.locator('#summaryIndex').innerText(),/Ejercicios/);
   assert.match(await page.locator('.qb-sidebar-tools').innerText(),/Apariencia/);
@@ -37,6 +39,18 @@ try{
   assert.equal(await page.locator('.exercise-card').count(),39);
   assert.equal(await page.locator('#stats-guide-memory-maps .qbi-memory-guide').count(),5);
 
+  assert.equal(await page.locator('#stats-integral-mental-map').count(),1);
+  assert.equal(await page.locator('#stats-integral-mental-map details.stats-im-chapter').count(),4);
+  const integralMapText=await page.locator('#stats-integral-mental-map').innerText();
+  for(const marker of ['Axioma 1','Probabilidad condicional','Variable aleatoria','Binomial','Geométrica','Hipergeométrica','Poisson','Percentiles y cuantiles','Distribución uniforme continua'])assert.match(integralMapText,new RegExp(marker));
+  const orderOk=await page.evaluate(()=>{
+    const map=document.querySelector('#stats-integral-mental-map');
+    const next=document.querySelector('#methods, #stats-guide-memory-maps, #ejercicios-estadistica');
+    if(!map||!next)return false;
+    return !!(map.compareDocumentPosition(next)&Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  assert.equal(orderOk,true,'el mapa mental integral debe aparecer antes de métodos/mapas/ejercicios');
+
   const memoryHeading=await page.locator('.stats-memory-heading').innerText();
   assert.match(memoryHeading,/Mapas mentales para memorizar las guías/);
   assert.match(memoryHeading,/No siguen el orden de los ejercicios: reagrupan la teoría por conexiones para que una idea lleve a la siguiente\./);
@@ -52,5 +66,5 @@ try{
   await first.locator('summary').click();
   assert.equal(await first.evaluate(el=>el.open),true);
 
-  console.log('Estadística v1.4.0: OK · diseño QBI vigente · 23 capítulos · 39 ejercicios · 5 mapas conceptuales');
+  console.log('Estadística v1.5.0: OK · mapa mental integral + diseño QBI · 23 capítulos · 39 ejercicios · 5 mapas conceptuales');
 } finally { await browser?.close().catch(()=>{}); server.kill('SIGTERM'); }
