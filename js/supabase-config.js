@@ -118,7 +118,7 @@ window.SOLVED_SUPABASE_CONFIG = Object.freeze({
   }
   if(!document.querySelector('script[data-solved-developer-comments]')){
     const script=document.createElement('script');
-    script.src='js/developer-comments.js?v=1.0.0';
+    script.src='js/developer-comments-v101.js?v=1.0.1';
     script.dataset.solvedDeveloperComments='1';
     script.async=false;
     document.head.append(script);
