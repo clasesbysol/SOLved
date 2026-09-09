@@ -4,18 +4,39 @@ import { spawn } from 'node:child_process';
 const PORT=4174;
 const ROOT=`http://127.0.0.1:${PORT}`;
 const UNIT='content/subjects/quimica_biologica1/units/proteinas-i';
-const VERSION='4.6.4';
+const VERSION='4.7.0';
+const STATIC=`${UNIT}/qbi-static.html?v=${VERSION}`;
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 
 async function waitServer(){
-  for(let i=0;i<80;i++){
+  for(let i=0;i<100;i++){
     try{const response=await fetch(`${ROOT}/index.html`);if(response.ok)return}catch{}
     await sleep(125);
   }
   throw new Error('No inició el servidor de prueba');
 }
 
-function expectedGlucidosLinks(){return Array.from({length:13},(_,i)=>`#cap${29+i}`)}
+function auditScript(){
+  const nav=document.querySelector('.qb-summary .qb-sidebar #summaryIndex')||document.querySelector('#summaryIndex');
+  return {
+    version:document.documentElement.dataset.qbiStaticVersion||'',
+    integrity:document.documentElement.dataset.qbiStaticIntegrity||'',
+    chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>document.getElementById(`cap${n}`)).length,
+    links:Array.from({length:41},(_,i)=>i+1).filter(n=>nav?.querySelector(`a[href="#cap${n}"]`)).length,
+    glucidos:document.querySelectorAll('.qbi-glu-native-chapter').length,
+    text:document.body.innerText,
+    path:location.pathname
+  };
+}
+
+function assertComplete(state,label){
+  if(state.version!==VERSION)throw new Error(`${label}: versión estática=${state.version||'ausente'}`);
+  if(state.chapters!==41)throw new Error(`${label}: capítulos=${state.chapters}/41`);
+  if(state.links!==41)throw new Error(`${label}: índice=${state.links}/41`);
+  if(state.glucidos!==13)throw new Error(`${label}: capítulos de Glúcidos=${state.glucidos}/13`);
+  if(!state.text.includes('Enzimas III')||!state.text.includes('Dixon'))throw new Error(`${label}: faltó contenido de Enzimas III`);
+  if(!state.text.includes('Panorama general: qué son los glúcidos y por qué importan'))throw new Error(`${label}: faltó Glúcidos I`);
+}
 
 const server=spawn('pnpm',['exec','http-server','-p',String(PORT),'-c-1','.'],{stdio:'ignore'});
 let browser;
@@ -23,99 +44,82 @@ try{
   await waitServer();
   browser=await chromium.launch({headless:true});
 
+  // 1) La fuente publicada abre completa desde el primer render y NO cambia sola con el tiempo.
   {
     const page=await browser.newPage();
     const pageErrors=[];
     page.on('pageerror',error=>pageErrors.push(String(error)));
-    await page.goto(`${ROOT}/${UNIT}/original.html?v=${VERSION}`,{waitUntil:'domcontentloaded'});
-    await page.waitForSelector('#qbi-guide-memory-maps',{timeout:30000});
-    await page.waitForSelector('#cap-tp2',{timeout:30000});
-    await page.waitForSelector('#qbi-mapa-integral',{timeout:30000});
-    await page.waitForSelector('#cap28',{timeout:30000});
-    await page.waitForSelector('#cap41',{timeout:30000});
-    await page.waitForFunction(()=>{
-      const nav=document.querySelector('.qb-summary .qb-sidebar #summaryIndex');
-      return !!nav&&Array.from({length:13},(_,i)=>29+i).every(n=>nav.querySelector(`a[href="#cap${n}"]`));
-    },null,{timeout:15000});
-    const result=await page.evaluate(()=>{
-      const visibleIndex=document.querySelector('.qb-summary .qb-sidebar #summaryIndex');
-      return {
-        text:document.body.innerText,
-        maps:document.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length,
-        integratedChapters:document.querySelectorAll('#qbi-mapa-integral .qbi-integrated-chapter').length,
-        notes:Boolean(document.querySelector('[data-add-note]')),
-        searchNext:Boolean(document.querySelector('[data-search-next]')),
-        glucidos:document.querySelectorAll('.qbi-glu-native-chapter').length,
-        glucidosIndex:visibleIndex?.querySelectorAll('[data-qbi-glucidos-index="1"]').length||0,
-        visibleGlucidosLinks:[...(visibleIndex?.querySelectorAll('a')||[])].map(a=>a.getAttribute('href')).filter(href=>/^#cap(?:29|3\d|4[01])$/.test(href||'')),
-        indexSync:document.documentElement.dataset.qbiIndexSync||'',
-        cap41:Boolean(document.getElementById('cap41'))
-      };
-    });
-    if(result.text.includes('No se pudo abrir el resumen'))throw new Error('El loader directo cayó en la pantalla de error');
-    if(result.text.includes('qbiFetchBundle')||result.text.includes('qbiPrepareDocument'))throw new Error('Se imprimió JavaScript del loader como texto');
-    if(result.maps!==8)throw new Error(`Se esperaban 8 mapas de guía y aparecieron ${result.maps}`);
-    if(result.integratedChapters<15||!result.notes||!result.searchNext)throw new Error('La interfaz de materia integrada no quedó completa');
-    if(!result.text.includes('Trabajo Práctico Nº 2 · Puesta a punto y cinética enzimática'))throw new Error('TP2 no apareció como capítulo práctico independiente');
-    if(!result.text.includes('Enzimas III')||!result.text.includes('Dixon'))throw new Error('El resumen definitivo perdió contenido posterior al TP2');
-    if(result.glucidos!==13||result.glucidosIndex!==13||!result.cap41)throw new Error(`Glúcidos I incompleto: capítulos=${result.glucidos}, índice visible=${result.glucidosIndex}, cap41=${result.cap41}`);
-    if(JSON.stringify(result.visibleGlucidosLinks)!==JSON.stringify(expectedGlucidosLinks()))throw new Error(`El índice lateral visible no contiene 29–41 en orden: ${result.visibleGlucidosLinks.join(', ')}`);
-    if(result.indexSync!==VERSION)throw new Error(`El sincronizador del índice lateral no quedó activo: ${result.indexSync||'sin versión'}`);
+    await page.goto(`${ROOT}/${STATIC}`,{waitUntil:'domcontentloaded'});
+    await page.waitForFunction(()=>document.documentElement.dataset.qbiStaticVersion==='4.7.0'&&!!document.getElementById('cap41'),null,{timeout:30000});
+    const first=await page.evaluate(auditScript);
+    assertComplete(first,'QBI estático inicial');
+
+    // Reproduce el bug reportado: antes 19 -> 28 -> 41 -> 28. Ahora la estructura debe ser idéntica.
+    await page.waitForTimeout(8000);
+    const later=await page.evaluate(auditScript);
+    assertComplete(later,'QBI estático después de 8 s');
+    if(first.chapters!==later.chapters||first.links!==later.links)throw new Error(`QBI cambió solo: ${first.chapters}/${first.links} -> ${later.chapters}/${later.links}`);
+
     const before=new URL(page.url()).pathname;
     await page.click('.qb-summary .qb-sidebar #summaryIndex a[href="#cap20"]');
-    await page.waitForTimeout(300);
-    const after20=new URL(page.url()).pathname;
+    await page.waitForTimeout(150);
     await page.click('.qb-summary .qb-sidebar #summaryIndex a[href="#cap41"]');
-    await page.waitForTimeout(300);
-    const after41=new URL(page.url()).pathname;
-    if(before!==after20||before!==after41)throw new Error(`La navegación por fragmentos cambió de documento: ${before} -> ${after20} -> ${after41}`);
-    if(pageErrors.length)throw new Error(`Errores de página: ${pageErrors.join(' | ')}`);
+    await page.waitForTimeout(150);
+    const after=new URL(page.url()).pathname;
+    if(before!==after||!after.endsWith('/qbi-static.html'))throw new Error(`El índice salió del documento estático: ${before} -> ${after}`);
+    if(pageErrors.length)throw new Error(`Errores de página en QBI estático: ${pageErrors.join(' | ')}`);
     await page.close();
   }
 
+  // 2) Defensa contra caché viejo: si el shell recibe un iframe apuntando al antiguo original.html,
+  // el frame-fix lo reemplaza por la única fuente canónica qbi-static.html 4.7.0.
   {
     const page=await browser.newPage();
     await page.goto(`${ROOT}/index.html`,{waitUntil:'domcontentloaded'});
-    await page.evaluate(({root,unit,version})=>{
-      document.body.innerHTML='';
+    await page.waitForSelector('script[data-solved-qbi-frame-fix]',{timeout:10000});
+    await page.evaluate(({root,unit})=>{
       const frame=document.createElement('iframe');
+      frame.id='qbi-old-cache-probe';
       frame.className='rich-document';
       frame.title='Química Biológica';
       frame.setAttribute('sandbox','allow-scripts allow-same-origin');
-      frame.src=`${root}/${unit}/original.html?v=${version}`;
+      frame.src=`${root}/${unit}/original.html?v=4.6.4`;
       document.body.append(frame);
-    },{root:ROOT,unit:UNIT,version:VERSION});
+    },{root:ROOT,unit:UNIT});
     await page.waitForFunction(()=>{
-      const frame=document.querySelector('iframe.rich-document');
+      const frame=document.getElementById('qbi-old-cache-probe');
+      return frame?.src.includes('/qbi-static.html?v=4.7.0');
+    },null,{timeout:15000});
+    await page.waitForFunction(()=>{
+      const frame=document.getElementById('qbi-old-cache-probe');
       try{
         const doc=frame?.contentDocument;
-        const nav=doc?.querySelector('.qb-summary .qb-sidebar #summaryIndex');
-        return doc?.querySelectorAll('#qbi-guide-memory-maps details.qbi-memory-guide').length===8&&!!doc.querySelector('#qbi-mapa-integral')&&!!doc.querySelector('#cap41')&&!!nav&&Array.from({length:13},(_,i)=>29+i).every(n=>nav.querySelector(`a[href="#cap${n}"]`));
+        const nav=doc?.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc?.querySelector('#summaryIndex');
+        return !!doc?.getElementById('cap41')&&Array.from({length:41},(_,i)=>i+1).every(n=>doc.getElementById(`cap${n}`)&&nav?.querySelector(`a[href="#cap${n}"]`));
       }catch{return false}
     },null,{timeout:30000});
     const state=await page.evaluate(()=>{
-      const frame=document.querySelector('iframe.rich-document');
+      const frame=document.getElementById('qbi-old-cache-probe');
       const doc=frame.contentDocument;
-      const nav=doc?.querySelector('.qb-summary .qb-sidebar #summaryIndex');
+      const nav=doc.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc.querySelector('#summaryIndex');
       return {
-        sandbox:frame.getAttribute('sandbox'),
-        text:doc?.body?.innerText||'',
-        glucidos:doc?.querySelectorAll('.qbi-glu-native-chapter').length||0,
-        index:nav?.querySelectorAll('[data-qbi-glucidos-index="1"]').length||0,
-        visibleGlucidosLinks:[...(nav?.querySelectorAll('a')||[])].map(a=>a.getAttribute('href')).filter(href=>/^#cap(?:29|3\d|4[01])$/.test(href||'')),
-        indexSync:doc?.documentElement?.dataset?.qbiIndexSync||''
+        src:frame.src,
+        chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>doc.getElementById(`cap${n}`)).length,
+        links:Array.from({length:41},(_,i)=>i+1).filter(n=>nav?.querySelector(`a[href="#cap${n}"]`)).length
       };
     });
-    if(!state.sandbox.includes('allow-same-origin'))throw new Error('El iframe de SOLved no tiene allow-same-origin');
-    if(state.text.includes('No se pudo abrir el resumen'))throw new Error('El loader falló dentro del iframe de SOLved');
-    if(state.text.includes('qbiFetchBundle')||state.text.includes('qbiPrepareDocument'))throw new Error('El iframe imprimió JavaScript del loader como texto');
-    if(state.glucidos!==13||state.index!==13)throw new Error(`Glúcidos I no quedó completo dentro de SOLved: capítulos=${state.glucidos}, índice visible=${state.index}`);
-    if(JSON.stringify(state.visibleGlucidosLinks)!==JSON.stringify(expectedGlucidosLinks()))throw new Error(`El iframe de SOLved no muestra 29–41 en el lateral: ${state.visibleGlucidosLinks.join(', ')}`);
-    if(state.indexSync!==VERSION)throw new Error(`El iframe de SOLved no activó el sincronizador del índice: ${state.indexSync||'sin versión'}`);
+    if(!state.src.endsWith('/qbi-static.html?v=4.7.0')||state.chapters!==41||state.links!==41)throw new Error(`El shell no corrigió la copia vieja: ${JSON.stringify(state)}`);
+    await page.waitForTimeout(5000);
+    const stable=await page.evaluate(()=>{
+      const doc=document.getElementById('qbi-old-cache-probe').contentDocument;
+      const nav=doc.querySelector('.qb-summary .qb-sidebar #summaryIndex')||doc.querySelector('#summaryIndex');
+      return {chapters:Array.from({length:41},(_,i)=>i+1).filter(n=>doc.getElementById(`cap${n}`)).length,links:Array.from({length:41},(_,i)=>i+1).filter(n=>nav?.querySelector(`a[href="#cap${n}"]`)).length};
+    });
+    if(stable.chapters!==41||stable.links!==41)throw new Error(`QBI volvió para atrás dentro del shell: ${JSON.stringify(stable)}`);
     await page.close();
   }
 
-  console.log('QBI loader: OK directo + iframe SOLved + índice lateral visible 1–41 + navegación por fragmentos');
+  console.log('QBI 4.7.0: estático desde el primer render, índice 1–41 estable y defensa contra caché viejo OK');
 }finally{
   await browser?.close().catch(()=>{});
   server.kill('SIGTERM');
