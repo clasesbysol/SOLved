@@ -2,7 +2,7 @@ import {chromium} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
-const source=await readFile('js/developer-comments.js','utf8');
+const source=await readFile('js/developer-comments-v101.js','utf8');
 const browser=await chromium.launch({headless:true});
 try{
   const page=await browser.newPage({viewport:{width:1200,height:800}});
@@ -79,11 +79,25 @@ try{
   assert.equal(typeof row.anchor.offset,'number');
   assert.match(row.anchor.exactQuote,/distribución acumulada/i);
 
-  await page.waitForSelector('#definition .solved-dev-marker');
+  await page.waitForSelector('#definition .dev-marker');
   await page.locator('[data-badge]').click();
   await page.locator('[data-panel]').waitFor({state:'visible'});
   assert.match(await page.locator('[data-list]').innerText(),/Explicar esto con palabras simples/);
-  console.log('Comentarios dev: OK · ancla semántica + texto buscable + persistencia mock');
+
+  await page.evaluate(()=>{
+    const f=document.createElement('iframe');
+    f.id='lateFrame';
+    f.srcdoc='<!doctype html><html><body><section><h2>Densidad continua</h2><p id="lateText">La densidad reparte probabilidad sobre intervalos.</p></section></body></html>';
+    document.body.append(f);
+  });
+  const frame=page.frameLocator('#lateFrame');
+  await frame.locator('#lateText').waitFor();
+  await fab.click();
+  await frame.locator('#lateText').click();
+  await page.locator('[data-modal]').waitFor({state:'visible'});
+  assert.match(await page.locator('[data-preview]').innerText(),/densidad reparte probabilidad/i);
+
+  console.log('Comentarios dev v1.0.1: OK · ancla semántica + sin coordenadas + iframe tardío');
 } finally {
   await browser.close();
 }
