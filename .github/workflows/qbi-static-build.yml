@@ -1,0 +1,58 @@
+name: Build static QBI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build-qbi-static-v470.mjs'
+      - '.github/workflows/qbi-static-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-qbi-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Compile stable QBI 1-41
+        run: node scripts/build-qbi-static-v470.mjs
+      - name: Verify generated document
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from 'node:fs/promises';
+          const html=await readFile('content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html','utf8');
+          const chapterIds=Array.from({length:41},(_,i)=>`id="cap${i+1}"`);
+          const links=Array.from({length:41},(_,i)=>`href="#cap${i+1}"`);
+          for(const token of [...chapterIds,...links]) if(!html.includes(token)) throw new Error(`Falta ${token}`);
+          if(!html.includes('data-qbi-static-version="4.7.0"')) throw new Error('Falta marca de QBI estático 4.7.0');
+          console.log('QBI estático verificado: capítulos e índice 1–41.');
+          NODE
+      - name: Commit generated static QBI
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html \
+            content/subjects/quimica_biologica1/units/proteinas-i/rich.json \
+            content/subjects/quimica_biologica1/units/proteinas-i/package.json \
+            content/catalog.json \
+            js/qbi-official-frame-fix.js \
+            sw.js
+          if git diff --cached --quiet; then
+            echo 'No hay cambios generados.'
+          else
+            git commit -m 'Publish static QBI 4.7.0 with chapters 1-41'
+            git push origin HEAD:main
+          fi
