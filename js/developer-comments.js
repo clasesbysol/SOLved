@@ -1,0 +1,110 @@
+(()=>{
+  'use strict';
+  if(window.__SOLVED_DEVELOPER_COMMENTS_V1)return;
+  window.__SOLVED_DEVELOPER_COMMENTS_V1=true;
+
+  const TABLE='developer_comments',ROOT_ID='solvedDeveloperComments',STYLE_ID='solved-developer-comments-style',QUEUE_KEY='solved-developer-comments-queue-v1';
+  const BLOCKS='p,li,blockquote,td,th,h1,h2,h3,h4,h5,h6,summary,figure,figcaption,img,mjx-container,math,.qb-equation,.formula,.formula-box,.formula-card,.fml,.fml-box,.topic-card,.qb-callout,.exercise-card,[data-block-id],[data-integral-anchor],[id]';
+  const compact=v=>String(v??'').replace(/\s+/g,' ').trim();
+  const clip=(v,n)=>{const s=compact(v);return s.length>n?s.slice(0,n-1)+'…':s};
+  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const css=v=>window.CSS?.escape?CSS.escape(String(v)):String(v).replace(/["\\]/g,'\\$&');
+  const isOwner=()=>window.SOLVED_AUTH?.profile?.()?.role==='owner';
+  const db=()=>window.SOLVED_AUTH?.client||null;
+  const readQueue=()=>{try{return JSON.parse(localStorage.getItem(QUEUE_KEY)||'[]')}catch{return []}};
+  const writeQueue=q=>{try{localStorage.setItem(QUEUE_KEY,JSON.stringify(q))}catch{}};
+  let comments=[],capture=false,draft=null,refreshTimer=null;
+
+  function context(){
+    const title=compact(document.getElementById('studyTitle')?.textContent),subjects=window.LBT_DATA?.SUBJECTS||[];
+    const subjectId=subjects.find(x=>title===compact(x.name)||title.includes(compact(x.name)))?.id||document.querySelector('.subject-skeleton')?.dataset.skeletonSubject||null;
+    const unitId=document.getElementById('studyUnit')?.value||null;
+    const tabNode=document.querySelector('#studyTabs .active,[data-tab].active,[role="tab"][aria-selected="true"]');
+    const tabId=tabNode?.dataset?.tab||tabNode?.dataset?.studyTab||compact(tabNode?.textContent)||null;
+    let record=null;try{record=subjectId&&unitId?window.LBT_CONTENT?.getUnit?.(subjectId,unitId):null}catch{}
+    return {subjectId,unitId,tabId,title:title||null,contentVersion:record?.contentVersion||null,unitPath:record?.path||null};
+  }
+  function repoPath(doc,frame,ctx){
+    const vals=[frame?.getAttribute?.('src')||'',(()=>{try{return doc.location?.pathname||''}catch{return ''}})(),ctx.unitPath||''];
+    for(const raw of vals){
+      if(!raw||/^about:|^blob:|^data:/i.test(raw))continue;
+      const p=String(raw).split('#')[0].split('?')[0].replace(/^https?:\/\/[^/]+/,'').replace(/^\/biblioteca-lbt\//,'').replace(/^\//,'');
+      if(p&&p!=='.')return p;
+    }
+    return 'index.html';
+  }
+  function stableSelector(el,root){
+    if(!el||el.nodeType!==1)return '';
+    if(el.id)return '#'+css(el.id);
+    if(el.dataset?.blockId)return `[data-block-id="${css(el.dataset.blockId)}"]`;
+    if(el.dataset?.integralAnchor)return `[data-integral-anchor="${css(el.dataset.integralAnchor)}"]`;
+    const parts=[];let n=el;
+    while(n&&n!==root&&parts.length<4){
+      let p=n.localName;if(!p)break;
+      const parent=n.parentElement;if(parent){const same=[...parent.children].filter(x=>x.localName===n.localName);if(same.length>1)p+=`:nth-of-type(${same.indexOf(n)+1})`}
+      parts.unshift(p);n=parent;
+    }
+    return parts.join(' > ');
+  }
+  function offsetIn(doc,parent,node,offset){try{const r=doc.createRange();r.selectNodeContents(parent);r.setEnd(node,offset);return r.toString().length}catch{return 0}}
+  function headingPath(doc,target){
+    const out=[],boxes=[];let n=target;
+    while(n&&n!==doc.body){if(n.matches?.('section,article,details,main,.qb-chapter,.topic-card,.exercise-card'))boxes.push(n);n=n.parentElement}
+    boxes.reverse().forEach(box=>{let h=null;try{h=box.querySelector(':scope > summary,:scope > h1,:scope > h2,:scope > h3,:scope > h4,:scope > header h1,:scope > header h2,:scope > header h3')}catch{}const t=clip(h?.textContent,140);if(t&&!out.includes(t))out.push(t)});
+    for(const h of doc.querySelectorAll('h1,h2,h3,h4,h5,h6,summary')){if(h===target||h.contains(target))continue;if(h.compareDocumentPosition(target)&Node.DOCUMENT_POSITION_FOLLOWING){const t=clip(h.textContent,140);if(t&&!out.includes(t))out.push(t)}}
+    return out.slice(-6);
+  }
+  function blockAt(doc,target){const el=target?.nodeType===3?target.parentElement:target;return el?.closest?.(BLOCKS)||el?.closest?.('article,section,main,div')||doc.body}
+  function pointRange(doc,x,y){let r=doc.caretRangeFromPoint?.(x,y)||null;if(!r&&doc.caretPositionFromPoint){const p=doc.caretPositionFromPoint(x,y);if(p){r=doc.createRange();r.setStart(p.offsetNode,p.offset);r.collapse(true)}}return r}
+  function semanticAnchor(doc,frame,event){
+    const sel=doc.getSelection?.();let range=sel&&sel.rangeCount&&!sel.isCollapsed?sel.getRangeAt(0).cloneRange():null;
+    if(range&&!doc.body.contains(range.commonAncestorContainer))range=null;if(!range)range=pointRange(doc,event.clientX,event.clientY);
+    const block=blockAt(doc,range?.startContainer||event.target),root=doc.querySelector('.qb-summary,.main-content,.subject-skeleton-main,.content-pane,main')||doc.body;
+    const text=compact(block?.textContent||block?.getAttribute?.('alt')||block?.getAttribute?.('src')||'');
+    const selected=sel&&!sel.isCollapsed&&block?.contains(sel.anchorNode)&&block?.contains(sel.focusNode)?compact(sel.toString()):'';
+    const at=range&&block?offsetIn(doc,block,range.startContainer,range.startOffset):0,start=selected&&range?offsetIn(doc,block,range.startContainer,range.startOffset):at,end=selected&&range?offsetIn(doc,block,range.endContainer,range.endOffset):start;
+    const before=text.slice(Math.max(0,start-420),start),after=text.slice(end,Math.min(text.length,end+420)),focus=selected||text.slice(Math.max(0,at-90),Math.min(text.length,at+90));
+    const ctx=context();let documentPath='';try{documentPath=frame?.getAttribute?.('src')||doc.location?.pathname||location.pathname}catch{documentPath=frame?.getAttribute?.('src')||location.pathname}
+    return {subject_id:ctx.subjectId,unit_id:ctx.unitId,tab_id:ctx.tabId,surface:frame?'embedded-document':'app',document_title:clip(doc.title||ctx.title||document.title,220),document_path:clip(documentPath,500),repo_path_hint:clip(repoPath(doc,frame,ctx),500),heading_path:headingPath(doc,block),selected_text:clip(selected,1800)||null,focus_text:clip(focus,700)||clip(text,700)||null,block_text:clip(text,1400)||null,context_before:clip(before,420)||null,context_after:clip(after,420)||null,selector:stableSelector(block,root)||null,anchor:{version:1,blockTag:block?.localName||null,blockId:block?.id||null,blockDataId:block?.dataset?.blockId||null,integralAnchor:block?.dataset?.integralAnchor||null,offset:at,selectionStart:selected?start:null,selectionEnd:selected?end:null,exactQuote:clip(selected||focus,700)||null,textPrefix:clip(before.slice(-160),160)||null,textSuffix:clip(after.slice(0,160),160)||null,imageAlt:block?.localName==='img'?clip(block.getAttribute('alt'),300)||null:null,imageSrc:block?.localName==='img'?clip(block.getAttribute('src'),500)||null:null},app_version:compact(document.querySelector('.app-version')?.textContent)||null,content_version:ctx.contentVersion};
+  }
+
+  function injectStyle(){
+    if(document.getElementById(STYLE_ID))return;const s=document.createElement('style');s.id=STYLE_ID;s.textContent=`
+    #${ROOT_ID}{position:fixed;left:14px;bottom:14px;z-index:2147483100;font:13px/1.4 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#302a16}#${ROOT_ID}[hidden]{display:none!important}
+    .solved-dev-fab{position:relative;height:44px;padding:0 14px;border:1px solid #d8bd64;border-radius:999px;background:#fff2a7;color:#4e3d08;box-shadow:0 10px 28px #231e0f2e;font:850 13px/1 inherit;cursor:pointer}.solved-dev-fab.active{outline:3px solid #d8a90042;background:#ffe166}.solved-dev-badge{position:absolute;right:-6px;top:-8px;min-width:22px;height:22px;padding:0 6px;border:2px solid #fff;border-radius:999px;background:#815900;color:#fff;font:800 11px/1 inherit;cursor:pointer}.solved-dev-badge[hidden]{display:none!important}
+    .solved-dev-banner{position:fixed;left:50%;top:70px;transform:translateX(-50%);z-index:2147483200;max-width:min(650px,calc(100vw - 24px));padding:10px 14px;border:1px solid #d4aa25;border-radius:13px;background:#fff7cc;color:#4e3d08;box-shadow:0 9px 26px #372d0a2e;font-weight:800;text-align:center}.solved-dev-target{outline:3px dashed #d49a00!important;outline-offset:4px!important;cursor:crosshair!important}
+    .solved-dev-modal,.solved-dev-panel{position:fixed;z-index:2147483300;border:1px solid #dfca78;border-radius:18px;background:#fffdf3;color:#302a16;box-shadow:0 22px 65px #2d260e47;overflow:hidden}.solved-dev-modal{left:50%;top:50%;transform:translate(-50%,-50%);width:min(590px,calc(100vw - 24px));max-height:calc(100vh - 30px)}.solved-dev-panel{left:14px;bottom:68px;width:min(430px,calc(100vw - 24px));max-height:calc(100vh - 100px)}.solved-dev-modal[hidden],.solved-dev-panel[hidden]{display:none!important}
+    .solved-dev-head{display:flex;justify-content:space-between;gap:12px;padding:13px 15px;background:#fff1aa;border-bottom:1px solid #ead78e}.solved-dev-head h3{margin:0;font-size:1rem}.solved-dev-head p{margin:3px 0 0;font-size:.78rem;opacity:.75}.solved-dev-head button{border:0;background:transparent;font:900 20px/1 inherit;cursor:pointer}.solved-dev-body{padding:14px 15px;max-height:480px;overflow:auto}.solved-dev-card{padding:9px 10px;border:1px solid #e7d898;border-radius:11px;background:#fffaf0;margin-bottom:9px}.solved-dev-card b{display:block;color:#765504;font-size:.72rem;text-transform:uppercase}.solved-dev-card code{display:block;margin-top:4px;font-size:.77rem;white-space:pre-wrap;overflow-wrap:anywhere}.solved-dev-modal textarea{width:100%;min-height:150px;padding:11px;border:1px solid #d9c57b;border-radius:11px;font:inherit;resize:vertical}.solved-dev-actions{display:flex;justify-content:flex-end;gap:8px;padding:11px 15px;border-top:1px solid #ead78e}.solved-dev-actions button,.solved-dev-item button{border:1px solid #d9c57b;border-radius:9px;background:#fff;padding:7px 10px;font:750 12px/1 inherit;cursor:pointer}.solved-dev-actions .primary{background:#765400;color:#fff}.solved-dev-status{min-height:18px;margin-top:8px;font-size:.78rem;color:#755d19}.solved-dev-list{display:grid;gap:8px}.solved-dev-item{padding:10px;border:1px solid #e3d49a;border-radius:11px;background:#fff}.solved-dev-item.resolved{opacity:.58}.solved-dev-item p{margin:6px 0}.solved-dev-item code{display:block;padding:5px;background:#f8f2dd;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.solved-dev-item footer{display:flex;gap:6px;margin-top:7px}.solved-dev-marker{display:inline-grid;place-items:center;width:24px;height:24px;margin:0 4px;border:2px solid #cc9500;border-radius:50%;background:#fff0a3;color:#4b3905;vertical-align:middle;cursor:pointer;font-size:.7rem;position:relative;z-index:5}@media(max-width:680px){#${ROOT_ID}{left:10px;bottom:10px}.solved-dev-panel{left:10px;bottom:62px;width:calc(100vw - 20px)}.solved-dev-modal{width:calc(100vw - 18px)}}`;document.head.append(s);
+  }
+  function ui(){
+    injectStyle();let r=document.getElementById(ROOT_ID);if(r)return r;r=document.createElement('div');r.id=ROOT_ID;r.hidden=true;r.innerHTML=`<button type="button" class="solved-dev-fab" data-capture>🛠 Comentario dev<span class="solved-dev-badge" data-badge hidden>0</span></button><div class="solved-dev-panel" data-panel hidden><div class="solved-dev-head"><div><h3>Comentarios de desarrollo</h3><p>Anclados al texto, no a la pantalla.</p></div><button data-panel-close>×</button></div><div class="solved-dev-body"><div class="solved-dev-list" data-list></div></div></div><div class="solved-dev-modal" data-modal hidden><div class="solved-dev-head"><div><h3>Nuevo comentario</h3><p>Guardo automáticamente la referencia textual.</p></div><button data-modal-close>×</button></div><div class="solved-dev-body"><div data-preview></div><label><strong>¿Qué querés que cambie?</strong><textarea data-instruction placeholder="Ej.: Acá falta explicar por qué usamos esta fórmula y agregar un ejemplo simple."></textarea></label><div class="solved-dev-status" data-status></div></div><div class="solved-dev-actions"><button data-cancel>Cancelar</button><button class="primary" data-save>Guardar comentario</button></div></div>`;document.body.append(r);
+    r.querySelector('[data-capture]').onclick=e=>{if(e.target.closest('[data-badge]'))return;setCapture(!capture)};r.querySelector('[data-badge]').onclick=e=>{e.stopPropagation();setCapture(false);renderPanel();r.querySelector('[data-panel]').hidden=false};r.querySelector('[data-panel-close]').onclick=()=>r.querySelector('[data-panel]').hidden=true;r.querySelector('[data-modal-close]').onclick=r.querySelector('[data-cancel]').onclick=closeModal;r.querySelector('[data-save]').onclick=saveDraft;return r;
+  }
+  function setCapture(on){capture=!!on;const r=ui();r.querySelector('[data-capture]').classList.toggle('active',capture);document.querySelectorAll('.solved-dev-target').forEach(x=>x.classList.remove('solved-dev-target'));document.getElementById('solvedDevBanner')?.remove();if(capture){const b=document.createElement('div');b.id='solvedDevBanner';b.className='solved-dev-banner';b.textContent='Tocá el texto, fórmula, imagen o bloque que querés corregir. Si seleccionás palabras, guardo exactamente esa selección.';document.body.append(b);scan()}}
+  function preview(a){const path=[a.subject_id,a.unit_id,...(a.heading_path||[])].filter(Boolean).join(' › '),quote=a.selected_text||a.focus_text||a.block_text||'(bloque sin texto)';return `<div class="solved-dev-card"><b>Ubicación semántica</b><code>${esc(path||a.document_title||'SOLved')}</code></div><div class="solved-dev-card"><b>Texto buscable</b><code>${esc(clip(quote,700))}</code></div><div class="solved-dev-card"><b>Pista de archivo</b><code>${esc(a.repo_path_hint||a.document_path||'index.html')}</code></div>`}
+  function openDraft(a){draft=a;setCapture(false);const r=ui();r.querySelector('[data-preview]').innerHTML=preview(a);r.querySelector('[data-instruction]').value='';r.querySelector('[data-status]').textContent='';r.querySelector('[data-modal]').hidden=false;setTimeout(()=>r.querySelector('[data-instruction]').focus(),0)}
+  function closeModal(){ui().querySelector('[data-modal]').hidden=true;draft=null}
+  async function insert(payload){const {data,error}=await db().from(TABLE).insert(payload).select().single();if(error)throw error;return data}
+  async function saveDraft(){if(!draft)return;const r=ui(),ta=r.querySelector('[data-instruction]'),status=r.querySelector('[data-status]'),instruction=compact(ta.value);if(!instruction){status.textContent='Escribí la instrucción antes de guardar.';return ta.focus()}const payload={...draft,instruction,status:'pending',user_id:window.SOLVED_AUTH?.profile?.()?.sub||undefined};status.textContent='Guardando…';try{const saved=await insert(payload);comments.unshift(saved);status.textContent='Guardado. Ya queda disponible para revisar desde el repositorio.';badge();setTimeout(()=>{closeModal();markers()},400)}catch(error){const q=readQueue();q.push({...payload,id:`local-${Date.now()}-${Math.random().toString(16).slice(2)}`,created_at:new Date().toISOString()});writeQueue(q);status.textContent='Sin conexión: quedó en cola local y se sincronizará automáticamente.';console.warn(error);badge();setTimeout(closeModal,800)}}
+  async function flushQueue(){if(!isOwner()||!db())return;const q=readQueue(),left=[];for(const item of q){try{const {id,...payload}=item;comments.unshift(await insert(payload))}catch{left.push(item)}}writeQueue(left);badge();markers()}
+  async function refresh(){if(!isOwner()||!db())return;const {data,error}=await db().from(TABLE).select('*').order('created_at',{ascending:false}).limit(400);if(error)return console.warn(error);comments=data||[];badge();markers();renderPanel()}
+  function badge(){const b=ui().querySelector('[data-badge]'),n=comments.filter(x=>x.status==='pending').length+readQueue().length;b.textContent=String(n);b.hidden=!n}
+  const label=x=>[x.subject_id,x.unit_id,...(x.heading_path||[])].filter(Boolean).slice(-4).join(' › ')||x.document_title||'SOLved';
+  function renderPanel(){const r=ui(),list=r.querySelector('[data-list]'),items=[...readQueue().map(x=>({...x,status:'queued'})),...comments].slice(0,160);if(!items.length){list.innerHTML='<p>No hay comentarios todavía.</p>';return}list.innerHTML=items.map(x=>`<article class="solved-dev-item ${x.status==='resolved'?'resolved':''}" data-item="${esc(x.id)}"><strong>${esc(label(x))}</strong><small> · ${esc(x.status==='queued'?'pendiente de sincronizar':x.status)}</small><p>${esc(x.instruction||'')}</p><code>${esc(clip(x.selected_text||x.focus_text||x.block_text||'',180))}</code><footer>${x.status==='pending'?`<button data-go="${esc(x.id)}">Ir al lugar</button><button data-resolve="${esc(x.id)}">Marcar resuelto</button>`:''}</footer></article>`).join('');list.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));list.querySelectorAll('[data-resolve]').forEach(b=>b.onclick=()=>resolve(b.dataset.resolve))}
+  async function resolve(id){const x=comments.find(v=>v.id===id);if(!x)return;const now=new Date().toISOString(),{error}=await db().from(TABLE).update({status:'resolved',resolved_at:now}).eq('id',id);if(error)return console.warn(error);x.status='resolved';x.resolved_at=now;renderPanel();badge();removeMarkers(id)}
+  function docs(){const out=[{doc:document,frame:null}];document.querySelectorAll('iframe').forEach(frame=>{try{if(frame.contentDocument?.body)out.push({doc:frame.contentDocument,frame})}catch{}});return out}
+  function findTarget(doc,x){if(x.selector){try{const hit=doc.querySelector(x.selector);if(hit)return hit}catch{}}const needles=[x.selected_text,x.anchor?.exactQuote,x.focus_text].map(compact).filter(v=>v.length>=5),blocks=[...doc.querySelectorAll(BLOCKS)];for(const n of needles){const q=n.slice(0,120),hit=blocks.find(el=>compact(el.textContent||el.getAttribute?.('alt')||'').includes(q));if(hit)return hit}return null}
+  function docMatch(doc,frame,x){if(!x.document_path&&!x.repo_path_hint)return true;let here='';try{here=frame?.getAttribute?.('src')||doc.location?.pathname||''}catch{here=frame?.getAttribute?.('src')||''}const a=String(here).split('?')[0],b=String(x.document_path||'').split('?')[0];return !!(a&&b&&(a.includes(b)||b.includes(a)))||!!(x.repo_path_hint&&a.includes(String(x.repo_path_hint).split('?')[0]))||(doc===document&&x.surface==='app')}
+  function marker(x,doc){const b=doc.createElement('button');b.type='button';b.className='solved-dev-marker';b.dataset.devCommentId=x.id;b.title=x.instruction;b.textContent='💬';b.onclick=e=>{e.preventDefault();e.stopPropagation();ui().querySelector('[data-panel]').hidden=false;renderPanel();ui().querySelector(`[data-item="${css(x.id)}"]`)?.scrollIntoView({block:'nearest'})};return b}
+  function removeMarkers(id){docs().forEach(({doc})=>doc.querySelectorAll(id?`[data-dev-comment-id="${css(id)}"]`:'.solved-dev-marker').forEach(n=>n.remove()))}
+  function markers(){if(!isOwner())return;removeMarkers();for(const x of comments.filter(v=>v.status==='pending')){const ctx=context();if(x.subject_id&&ctx.subjectId&&x.subject_id!==ctx.subjectId)continue;if(x.unit_id&&ctx.unitId&&x.unit_id!==ctx.unitId)continue;for(const {doc,frame} of docs()){if(!docMatch(doc,frame,x))continue;const t=findTarget(doc,x);if(t){t.append(marker(x,doc));break}}}}
+  function go(id){const x=comments.find(v=>v.id===id);if(!x)return;for(const {doc,frame} of docs()){const t=findTarget(doc,x);if(!t)continue;t.scrollIntoView({behavior:'smooth',block:'center'});t.animate?.([{outline:'4px solid #d49a00'},{outline:'0 solid transparent'}],{duration:1400});frame?.scrollIntoView({behavior:'smooth',block:'center'});return}}
+  function frameStyle(doc){if(doc===document||doc.getElementById('solved-dev-frame-style'))return;const s=doc.createElement('style');s.id='solved-dev-frame-style';s.textContent='.solved-dev-target{outline:3px dashed #d49a00!important;outline-offset:4px!important;cursor:crosshair!important}.solved-dev-marker{display:inline-grid;place-items:center;width:24px;height:24px;margin:0 4px;border:2px solid #cc9500;border-radius:50%;background:#fff0a3;color:#4b3905;vertical-align:middle;cursor:pointer;font-size:.7rem;position:relative;z-index:2147483000}';(doc.head||doc.documentElement).append(s)}
+  function bind(doc,frame){if(doc.documentElement.dataset.solvedDevCommentsBound==='1')return;frameStyle(doc);doc.documentElement.dataset.solvedDevCommentsBound='1';doc.addEventListener('click',e=>{if(!capture||!isOwner())return;if(doc===document&&e.target.closest?.(`#${ROOT_ID},.solved-dev-banner`))return;if(e.target.closest?.('.solved-dev-marker'))return;e.preventDefault();e.stopPropagation();openDraft(semanticAnchor(doc,frame,e))},true);doc.addEventListener('mouseover',e=>{if(!capture)return;doc.querySelectorAll('.solved-dev-target').forEach(n=>n.classList.remove('solved-dev-target'));const b=blockAt(doc,e.target);if(b&&b!==doc.body)b.classList.add('solved-dev-target')},true)}
+  function scan(){docs().forEach(({doc,frame})=>bind(doc,frame));markers()}
+  function visibility(){const r=ui();r.hidden=!isOwner();if(r.hidden)setCapture(false);return !r.hidden}
+  function schedule(){clearTimeout(refreshTimer);refreshTimer=setTimeout(scan,120)}
+  async function boot(){ui();try{await window.SOLVED_AUTH?.ready}catch{}let tries=0;const timer=setInterval(()=>{tries++;if(visibility()){clearInterval(timer);refresh();flushQueue()}else if(tries>25)clearInterval(timer)},240);visibility();new MutationObserver(schedule).observe(document.documentElement,{childList:true,subtree:true});addEventListener('online',()=>{flushQueue();refresh()});setInterval(()=>isOwner()&&flushQueue(),45000)}
+  window.SOLVED_DEV_COMMENTS={refresh,list:()=>comments.slice(),pending:()=>comments.filter(x=>x.status==='pending'),capture:()=>setCapture(true),stopCapture:()=>setCapture(false)};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
