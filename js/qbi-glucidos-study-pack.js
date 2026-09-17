@@ -54,10 +54,12 @@
     if(host.dataset.qbiHubReady===VERSION)return;
     host.dataset.qbiHubReady=VERSION;host.innerHTML='<div class="qbi-hub-loading">Armando las guías de Química Biológica…</div>';
     try{
-      const [protein,enz1,glucidos,e3a,e3b,e3c,e3d]=await Promise.all([
-        loadJson(BASE+'qbi-exercises-v1.json'),loadJson(BASE+'qbi-exercises-enzimas-i.json'),loadJson(BASE+'qbi-exercises-glucidos.json'),
+      const [protein,enz1,glu1,glu2,glu3,e3a,e3b,e3c,e3d]=await Promise.all([
+        loadJson(BASE+'qbi-exercises-v1.json'),loadJson(BASE+'qbi-exercises-enzimas-i.json'),
+        loadJson(BASE+'qbi-exercises-glucidos-part-1.json'),loadJson(BASE+'qbi-exercises-glucidos-part-2.json'),loadJson(BASE+'qbi-exercises-glucidos-part-3.json'),
         loadText(BASE+'qbi-enzimas3-exercises-1.txt'),loadText(BASE+'qbi-enzimas3-exercises-2.txt'),loadText(BASE+'qbi-enzimas3-exercises-3.txt'),loadText(BASE+'qbi-enzimas3-exercises-4.txt')
       ]);
+      const glucidos={cards:[...(glu1.cards||[]),...(glu2.cards||[]),...(glu3.cards||[])]};
       const parts=splitProtein(protein.cards||[]);
       host.innerHTML=`<div class="qbi-hub" id="${HUB_ID}"><div class="qbi-hub-head"><h2>Ejercicios · Química Biológica I</h2><p>Las guías quedaron ordenadas por bloque. Abrí sólo la que vas a estudiar; cada ejercicio mantiene la consigna y la resolución queda colapsada para que puedas intentarlo primero.</p></div>
         <details class="qbi-hub-family" open><summary>Proteínas y enzimas</summary><div class="qbi-hub-family-body">
