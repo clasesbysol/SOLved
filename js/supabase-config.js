@@ -102,6 +102,13 @@ window.SOLVED_SUPABASE_CONFIG = Object.freeze({
     script.async=false;
     document.head.append(script);
   }
+  if(!document.querySelector('script[data-solved-qbi-glucidos-pack]')){
+    const script=document.createElement('script');
+    script.src='js/qbi-glucidos-study-pack.js?v=1.0.0';
+    script.dataset.solvedQbiGlucidosPack='1';
+    script.async=false;
+    document.head.append(script);
+  }
   if(!document.querySelector('script[data-solved-study-chrome]')){
     const script=document.createElement('script');
     script.src='js/study-chrome.js?v=0.11.17';
