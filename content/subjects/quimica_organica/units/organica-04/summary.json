@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-04-resumen",
+      "title": "Estudio de las reacciones químicas",
+      "text": "La energía de activación es la energía mínima que deben tener las moléculas para que una reacción ocurra. Aunque una reacción sea termodinámicamente favorable, no ocurre si las moléculas no superan esa barrera energética.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

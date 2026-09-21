@@ -1,0 +1,130 @@
+{
+  "entries": [
+    {
+      "id": "organica-07-glosario-2",
+      "term": "Quiralidad Wade p. 170",
+      "definition": "Una molécula es quiral cuando no es superponible con su imagen especular. La causa más común de quiralidad es la presencia de un carbono quiral: un carbono sp³ unido a cuatro grupos diferentes.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-3",
+      "term": "Nomenclatura R/S de átomos de carbono asimétricos Wade p. 176",
+      "definition": "La configuración R/S se asigna con las reglas de Cahn-Ingold-Prelog.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-4",
+      "term": "Actividad óptica Wade p. 181",
+      "definition": "Una sustancia ópticamente activa rota el plano de la luz polarizada.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-5",
+      "term": "Mezclas racémicas Wade p. 187",
+      "definition": "Una mezcla racémica contiene cantidades iguales de dos enantiómeros (50% R + 50% S). Aunque cada enantiómero por separado rota la luz polarizada, la mezcla racémica no presenta rotación óptica neta porque las rotaciones se cancelan.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-6",
+      "term": "Proyecciones de Fischer Wade p. 193",
+      "definition": "Una proyección de Fischer representa moléculas quirales en dos dimensiones.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-7",
+      "term": "Diastereómeros Wade p. 198",
+      "definition": "Los diastereómeros son estereoisómeros que no son imágenes especulares entre sí. A diferencia de los enantiómeros, los diastereómeros suelen tener propiedades físicas diferentes (punto de ebullición, punto de fusión, solubilidad, densidad y reactividad).",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-8",
+      "term": "Compuestos meso Wade p. 201",
+      "definition": "Un compuesto meso tiene centros quirales, pero la molécula completa es aquiral porque posee un plano interno de simetría.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-9",
+      "term": "Configuraciones absolutas y relativas Wade p. 203",
+      "definition": "La configuración absoluta describe la disposición tridimensional exacta de los átomos alrededor de un centro quiral, expresada como R o S para cada centro. Ej: (2R)-butan-2-ol.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-07-glosario-10",
+      "term": "Propiedades físicas de los diastereómeros Wade p. 205",
+      "definition": "Los enantiómeros tienen propiedades físicas iguales en medios aquirales, excepto la dirección en que rotan la luz polarizada.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-07",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

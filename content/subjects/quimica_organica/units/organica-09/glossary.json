@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "id": "organica-09-glosario-2",
+      "term": "Nomenclatura de los alquenos Wade p. 285",
+      "definition": "Los alquenos son hidrocarburos que contienen al menos un doble enlace carbono-carbono.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-09",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-09-glosario-3",
+      "term": "Nomenclatura cis-trans y E/Z de alquenos Wade p. 287",
+      "definition": "La isomería cis/trans aparece cuando los carbonos del doble enlace tienen sustituyentes que permiten comparar lados.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-09",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-09-glosario-4",
+      "term": "Estabilidad de los alquenos Wade p. 292",
+      "definition": "La estabilidad de los alquenos aumenta con el grado de sustitución del doble enlace.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-09",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-09-glosario-5",
+      "term": "Propiedades físicas de los alquenos Wade p. 298",
+      "definition": "El doble enlace tiene un enlace sigma y un enlace pi. El enlace pi es más débil y está más expuesto, por eso reacciona fácilmente con electrófilos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-09",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

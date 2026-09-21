@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-efdb32e3c945",
+      "summary": "HALUROS DE ALQUILO WADE VOL. 1 · CAP. 6",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-7f7c2e496480",
+          "text": "HALUROS DE ALQUILO WADE VOL. 1 · CAP. 6"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-2aa0488951e5",
+      "summary": "Nomenclatura de los haluros de alquilo Wade p. 216",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-a22662caeb9a",
+          "text": "Nomenclatura de los haluros de alquilo Wade p. 216"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-16928c3eb8ed",
+          "text": "Los haluros de alquilo son compuestos donde un halógeno está unido a un carbono sp³. Forma general: R-X (X = F, Cl, Br, I)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-44f30b0f9376",
+          "text": "En nomenclatura IUPAC, los halógenos se nombran como sustituyentes: fluoro-, cloro-, bromo-, yodo-."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-4840ba989bea",
+      "summary": "Propiedades físicas de los haluros de alquilo Wade p. 221",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-ed3a2f53afea",
+          "text": "Propiedades físicas de los haluros de alquilo Wade p. 221"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-208561392e52",
+          "text": "Los haluros de alquilo son más polares que los alcanos porque el enlace C-X es polar."
+        },
+        {
+          "type": "list",
+          "id": "list-0b3f25dfed61",
+          "ordered": false,
+          "items": [
+            "Tienen puntos de ebullición mayores que alcanos de masa similar.",
+            "El punto de ebullición aumenta al aumentar el tamaño y polarizabilidad del halógeno.",
+            "Son poco solubles en agua.",
+            "Suelen ser solubles en solventes orgánicos.",
+            "Bromuros y yoduros suelen ser más densos que el agua."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-cca46ba8ad4f",
+      "summary": "Preparación / síntesis de haluros de alquilo Wade p. 223",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-f151811ae33f",
+          "text": "Preparación / síntesis de haluros de alquilo Wade p. 223"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-6921b22c462e",
+          "text": "Halogenación por radicales libres Wade p. 223 Radicales libres"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-7d3b8a3e1942",
+          "text": "Bromación alílica Wade p. 223 Radical alílico"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-c7f44c115268",
+          "text": "A partir de alquenos: adición de HX Wade p. 223 Adición electrofílica Markovnikov"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-68f00a26d54b",
+          "text": "El mecanismo detallado se desarrolla en Reacciones de alquenos → Adición de haluros de hidrógeno."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-6628c91561da",
+          "text": "A partir de alquenos: adición de X₂ Wade p. 223 Adición anti"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-19dbf1278d5b",
+          "text": "El mecanismo detallado se desarrolla en Reacciones de alquenos → Adición de halógenos / ion halonio."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1885a5dfea1e",
+          "text": "A partir de alquinos: adición de 2 HX o 2 X₂ Wade p. 223 Adición electrofílica"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9db17672fa39",
+          "text": "Ver también Reacciones de alquinos → Reacciones de adición de alquinos."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-bcc1efad646f",
+          "text": "A partir de alcoholes Wade p. 223 Sustitución nucleofílica"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-241ff2806b23",
+          "text": "A partir de otros haluros de alquilo Wade p. 223 SN2"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-a302547c5bec",
+      "summary": "IMG 02 — Bromación alílica",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-076d2300ece16c4e",
+          "alt": "IMG 02: Bromación alílica",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-88cff4f70638",
+      "summary": "IMG 06 — Adición de HBr a alquenos por radicales libres (peróxidos)",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-00829e117df73b85",
+          "alt": "IMG 06: Adición de HBr a alquenos por radicales libres (peróxidos)",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-c5986e5487b2",
+      "summary": "Reacciones de haluros de alquilo Wade p. 270",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-4a8fe1b1e9e3",
+          "text": "Reacciones de haluros de alquilo Wade p. 270"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-6b975ec376bb",
+          "text": "Sustituciones nucleofílicas Wade p. 270 SN1 SN2"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-5b5c73fe6a2a",
+          "text": "Formación de alcoholes"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-8b2ad30e60de",
+          "text": "Intercambio de haluros"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-bf53989ab740",
+          "text": "Síntesis de éteres de Williamson"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6e7d332f3b50",
+          "text": "Ver mecanismo completo en Éteres → Síntesis de Williamson"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-c1450c8b82ab",
+          "text": "Síntesis de aminas"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-fb4945ac4899",
+          "text": "Síntesis de nitrilos"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-aa4403a54b88",
+          "text": "Síntesis de alquinos"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-a5b5a8448558",
+          "text": "Eliminaciones Wade p. 270 E1 E2"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ce9556949026",
+          "text": "Deshidrohalogenación"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-3f70756ff20b",
+          "text": "Deshalogenación"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-11192dac13ae",
+          "text": "Formación de reactivos organometálicos Wade p. 270"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-8905c666c74f",
+          "text": "Reactivos de Grignard"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-918900a0e716",
+          "text": "Reactivos organolitiados"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-487ee9ae9709",
+          "text": "Reactivos de Gilman / organocupratos"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-9eee6e8c1109",
+          "text": "Acoplamiento de organocupratos (Corey-House)"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-3d48a60bf214",
+          "text": "Reducciones Wade p. 270"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-38dcd6e403e9",
+          "text": "Reducción de haluros de alquilo a alcanos"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8d894ab48b43",
+      "summary": "IMG 16 — Alquilación de aminas por halogenuros de alquilo",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-d58cbb252c91e671",
+          "alt": "IMG 16: Alquilación de aminas por halogenuros de alquilo",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-0713252a639d",
+      "summary": "IMG 04 — Deshidrohalogenación mediante mecanismo E2",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-29caedfc091c88f3",
+          "alt": "IMG 04: Deshidrohalogenación mediante mecanismo E2",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1ee91ee71d84",
+      "summary": "IMG 14 — Reducción de halogenuros a alcanos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-44252430a871ece9",
+          "alt": "IMG 14: Reducción de halogenuros a alcanos",
+          "caption": ""
+        }
+      ]
+    }
+  ]
+}

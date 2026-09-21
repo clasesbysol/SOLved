@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-13-resumen",
+      "title": "Reacciones de compuestos aromáticos",
+      "text": "La sustitución electrofílica aromática permite reemplazar un hidrógeno del anillo aromático por un electrófilo, conservando la aromaticidad al final de la reacción.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

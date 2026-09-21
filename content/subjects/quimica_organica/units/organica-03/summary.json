@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-03-resumen",
+      "title": "Estructura y propiedades de las moléculas orgánicas",
+      "text": "La hibridación explica cómo se combinan orbitales atómicos para formar orbitales híbridos que determinan la geometría de los enlaces.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

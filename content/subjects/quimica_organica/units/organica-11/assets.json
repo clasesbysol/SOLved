@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-804cb8cb97d15f01",
+      "path": "assets/804cb8cb97d15f01252b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "804cb8cb97d15f01252bdeffc6d5b5bfeb1ae2f28c53f36ef5ad057f59367461",
+      "alt": "IMG 10: Reducción de alquinos con metal-amoníaco (trans)"
+    },
+    {
+      "id": "asset-dc1cd48d25206250",
+      "path": "assets/dc1cd48d252062505ffd.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "dc1cd48d252062505ffd1d1a243faff48c1ee078f9574338f3eb100af9dd8fb8",
+      "alt": "Alquinos terminales: acidez, formación de acetiluros y uso como nucleófilos para formar enlaces C–C. — imagen webo2-15"
+    },
+    {
+      "id": "asset-f896359f1b5de282",
+      "path": "assets/f896359f1b5de282eea3.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f896359f1b5de282eea3149119637cd494dad22efb8b52b9ab2f338408f2c383",
+      "alt": "Alquinos terminales: acidez, formación de acetiluros y uso como nucleófilos para formar enlaces C–C. — imagen webo2-7"
+    },
+    {
+      "id": "asset-173de093468e5356",
+      "path": "assets/173de093468e53560df3.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "173de093468e53560df35940f2613706ef7acee1aa63f08e5d71bb8a7023fec9",
+      "alt": "Alquilación de iones acetiluro para formar enlaces C–C."
+    },
+    {
+      "id": "asset-15c01b931a38f84c",
+      "path": "assets/15c01b931a38f84c2861.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "15c01b931a38f84c2861948e77dcac225e685dff5c9d5cf3bfffd199c227afb0",
+      "alt": "Doble deshidrohalogenación de dihaluros para formar alquinos."
+    },
+    {
+      "id": "asset-7976a38bf7e74545",
+      "path": "assets/7976a38bf7e745455be7.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7976a38bf7e745455be754ae334439d4c1048c1692ab8a639a4f546f0cf5cdb5",
+      "alt": "Consejo visual para elegir condiciones de eliminación hacia alquinos internos o terminales."
+    },
+    {
+      "id": "asset-d92e866a4fb17f0b",
+      "path": "assets/d92e866a4fb17f0be40b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "d92e866a4fb17f0be40b0e4535511a93370c278ac95410b4f431ff740df105cd",
+      "alt": "Resumen de métodos de síntesis de alquinos."
+    },
+    {
+      "id": "asset-676c44913e574576",
+      "path": "assets/676c44913e574576c81c.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "676c44913e574576c81cdde662f978d4a2487ef22da746186d90e079e91f88b8",
+      "alt": "Adición de HX y X₂ a alquinos."
+    },
+    {
+      "id": "asset-99d29c815c09688a",
+      "path": "assets/99d29c815c09688a03ce.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "99d29c815c09688a03ce925365108014b752ac1a23b32ffe8da011952d66f4db",
+      "alt": "Hidratación de alquinos y tautomería enol-cetona."
+    },
+    {
+      "id": "asset-ca500beca6d4c585",
+      "path": "assets/ca500beca6d4c5856687.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "ca500beca6d4c585668794320ee4d8545dc382a80058c5f87da0ad865670ddcb",
+      "alt": "Hidroboración-oxidación de alquinos: formación de aldehídos o cetonas según el sustrato."
+    },
+    {
+      "id": "asset-84833d30b5593e89",
+      "path": "assets/84833d30b5593e89afb1.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "84833d30b5593e89afb1f795faaee18b90d709b810644ece7b5f2d0678273208",
+      "alt": "Reducción parcial de alquinos a alquenos cis con catalizador de Lindlar."
+    },
+    {
+      "id": "asset-317bbe83258cfbcd",
+      "path": "assets/317bbe83258cfbcdff84.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "317bbe83258cfbcdff84f787837248e768a31565c536d88408a443d144c093b8",
+      "alt": "Hidrogenación catalítica completa de alquinos a alcanos."
+    },
+    {
+      "id": "asset-16321826fb743192",
+      "path": "assets/16321826fb743192c683.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "16321826fb743192c683e7cf112993ceca349349c22b9874fd6898e9ab78cd83",
+      "alt": "IMG 11: Hidratación de alquinos para formar cetonas y aldehídos"
+    },
+    {
+      "id": "asset-d5bba07707950cb2",
+      "path": "assets/d5bba07707950cb278f7.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "d5bba07707950cb278f757acdcf2312670daf150319717e991daf11d8721bede",
+      "alt": "IMG 12: Ruptura oxidativa de alquinos con permanganato"
+    },
+    {
+      "id": "asset-1472f055654b77d4",
+      "path": "assets/1472f055654b77d4a24e.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1472f055654b77d4a24ee507d00e1b3fddbb53afddc0ebc6a64424dacc9589c6",
+      "alt": "IMG 13: Ozonólisis de alquinos"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-12-resumen",
+      "title": "Compuestos aromáticos",
+      "text": "El benceno tiene fórmula molecular C₆H₆ y es un compuesto aromático. Aunque suele dibujarse con dobles enlaces alternados, todos los enlaces C-C del benceno son equivalentes por resonancia. Los electrones pi están deslocalizados en todo el anillo, lo que le da una estabilidad especial.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-aef821da55fb35e8",
+      "path": "assets/aef821da55fb35e8c0eb.png",
+      "mimeType": "image/png",
+      "sha256": "aef821da55fb35e8c0eb0e2025018257f0f89a80aa4092953be2074710d20529",
+      "alt": "Radiación electromagnética: onda, campo eléctrico y campo magnético"
+    },
+    {
+      "id": "asset-db7424b457287bb0",
+      "path": "assets/db7424b457287bb0091d.png",
+      "mimeType": "image/png",
+      "sha256": "db7424b457287bb0091dda67fdf0765a42631260eba6d7c7225ca6f28a4a186f",
+      "alt": "Espectro electromagnético y tipos de transiciones"
+    },
+    {
+      "id": "asset-a1333cc94663b741",
+      "path": "assets/a1333cc94663b74180cc.png",
+      "mimeType": "image/png",
+      "sha256": "a1333cc94663b74180cc991d6d1d2b3059594ac4a02976a281c6492a0ce111e0",
+      "alt": "UV-Visible: absorción, cromóforos y ley de Lambert-Beer"
+    },
+    {
+      "id": "asset-bee2cf72ff1414a3",
+      "path": "assets/bee2cf72ff1414a3ce44.png",
+      "mimeType": "image/png",
+      "sha256": "bee2cf72ff1414a3ce44d393d82cebba2101c0ef83b42234fef90e06de06dff8",
+      "alt": "Curva de calibración y rango dinámico lineal"
+    }
+  ]
+}

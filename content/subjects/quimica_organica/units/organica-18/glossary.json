@@ -1,0 +1,326 @@
+{
+  "entries": [
+    {
+      "id": "organica-18-glosario-2",
+      "term": "MAPA DE NOMBRES DE CARBOHIDRATOS",
+      "definition": "Esta parte sirve para ordenar los nombres que parecen sueltos. En carbohidratos, un nombre mezcla cuatro datos: cantidad de carbonos, aldosa o cetosa, serie D/L y, si está ciclado, furanosa o piranosa.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-6",
+      "term": "4. D, L, alfa, beta, furanosa y piranosa",
+      "definition": "Se miran en Fischer usando el carbono quiral más alejado del carbonilo.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-7",
+      "term": "PANORAMA GENERAL Y CLASIFICACIÓN",
+      "definition": "Los hidratos de carbono son compuestos muy abundantes en la naturaleza. Funcionan como fuente de energía, participan en el metabolismo y también cumplen funciones estructurales, como ocurre con la celulosa en las plantas.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-8",
+      "term": "Clasificación por cantidad de unidades",
+      "definition": "Son los azúcares más simples. No pueden hidrolizarse para dar carbohidratos más pequeños. Ejemplos: glucosa, fructosa, ribosa y galactosa.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-9",
+      "term": "Clasificación de monosacáridos",
+      "definition": "Los monosacáridos se clasifican por el tipo de carbonilo y por la cantidad de carbonos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-10",
+      "term": "NOMENCLATURA, AZÚCARES D/L Y PROYECCIONES DE FISCHER",
+      "definition": "La terminación –osa indica carbohidrato. Los prefijos aldo– y ceto– indican el tipo de carbonilo, y la raíz indica la cantidad de carbonos: tri–, tetr–, pent–, hex– o hept–.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-11",
+      "term": "ESTEREOISOMERÍA, EPÍMEROS Y FAMILIAS DE ALDOSAS",
+      "definition": "La cantidad de estereoisómeros depende de la cantidad de carbonos quirales.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-12",
+      "term": "Epímeros",
+      "definition": "Los epímeros son hidratos de carbono que difieren en la configuración de un solo carbono quiral. No hace falta que sea el último carbono quiral.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-13",
+      "term": "Aldotetrosas",
+      "definition": "Tienen 2 carbonos quirales, por lo tanto dan 2² = 4 estereoisómeros.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-14",
+      "term": "Aldopentosas",
+      "definition": "Tienen 3 carbonos quirales, por lo tanto dan 2³ = 8 estereoisómeros. Los cuatro azúcares de la serie D son ribosa, arabinosa, xilosa y lixosa.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-15",
+      "term": "Aldohexosas",
+      "definition": "Tienen 4 carbonos quirales, por lo tanto dan 2⁴ = 16 estereoisómeros. En la serie D aparecen alosa, altrosa, glucosa, manosa, gulosa, idosa, galactosa y talosa.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-16",
+      "term": "Armado sistemático de aldohexosas",
+      "definition": "Para armar sistemáticamente la serie D, se parte del último OH a la derecha y se van alternando los patrones de derecha e izquierda en los carbonos superiores.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-17",
+      "term": "CICLACIÓN DE MONOSACÁRIDOS: HEMIACETALES, ANÓMEROS Y HAWORTH",
+      "definition": "Los monosacáridos tienen un carbonilo y varios grupos OH. Por eso pueden reaccionar consigo mismos: un OH de la molécula ataca al carbonilo y se forma un hemiacetal cíclico.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-18",
+      "term": "Hemiacetal y acetal",
+      "definition": "Un hemiacetal tiene un carbono unido a un OH y a un OR. Un acetal tiene ese carbono unido a dos OR. Esta diferencia es central para entender glicósidos y enlaces glicosídicos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-19",
+      "term": "Ciclación intramolecular y carbono anomérico",
+      "definition": "Cuando el carbonilo se transforma en hemiacetal, el carbono que antes era plano pasa a tener cuatro grupos distintos. Ese nuevo centro quiral se llama carbono anomérico.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-21",
+      "term": "Anómeros α y β. Proyección de Haworth",
+      "definition": "Los anómeros sólo difieren en la orientación del OH del carbono anomérico. En azúcares D, si el OH anomérico queda opuesto al CH₂OH es α; si queda del mismo lado es β.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-22",
+      "term": "Mutarrotación",
+      "definition": "La mutarrotación es el equilibrio entre los anómeros α y β a través de la forma abierta.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-23",
+      "term": "REACCIONES DE HIDRATOS DE CARBONO",
+      "definition": "Las reacciones van después de la clasificación y de la ciclación, porque casi todas dependen de entender si el azúcar está como carbonilo abierto, hemiacetal o acetal.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-24",
+      "term": "Formación de glicósidos",
+      "definition": "Un glicósido se forma cuando un hemiacetal de monosacárido reacciona con un alcohol en medio ácido. El OH anomérico se reemplaza por OR y se forma un acetal.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-25",
+      "term": "Azúcares reductores y oxidaciones",
+      "definition": "Un azúcar reductor puede oxidarse con agentes suaves. En general, es reductor si puede abrirse a una forma con aldehído, o si puede isomerizarse a aldosa en medio básico.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-26",
+      "term": "Reducción a alditoles",
+      "definition": "Las aldosas y cetosas se reducen con NaBH₄ para dar polialcoholes llamados alditoles. El grupo carbonilo se transforma en alcohol.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-27",
+      "term": "Kiliani-Fischer, Ruff, Wohl y osazonas",
+      "definition": "Alarga la cadena de una aldosa en un carbono. Como el aldehído es plano, el ataque puede ocurrir por dos caras y se forman dos epímeros.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-18-glosario-29",
+      "term": "Disacáridos",
+      "definition": "Un disacárido se forma por unión de dos monosacáridos mediante un enlace glicosídico. Ese enlace es un acetal.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-18",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

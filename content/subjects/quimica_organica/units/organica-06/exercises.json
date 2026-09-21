@@ -1,0 +1,54 @@
+{
+  "exercises": [
+    {
+      "id": "ejercicio-org-sin-alc-01",
+      "origin": "source",
+      "prompt": "Sintetizá pentano usando 1-bromopropano y un reactivo organometálico apropiado.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Preparar etil-litio, convertirlo en (Et)₂CuLi y acoplarlo con 1-bromopropano."
+      ],
+      "result": "Preparar etil-litio, convertirlo en (Et)₂CuLi y acoplarlo con 1-bromopropano.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-alc-02",
+      "origin": "source",
+      "prompt": "Convertí ciclohexeno en ciclohexano en un solo paso.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "H₂, Pd/C."
+      ],
+      "result": "H₂, Pd/C.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    }
+  ]
+}

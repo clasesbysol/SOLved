@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-6eb8cb344b2daa41",
+      "path": "assets/6eb8cb344b2daa418265.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6eb8cb344b2daa41826584bdd5c94f656b75415655196690f4ab8640995be548",
+      "alt": "IMG 1 — Grupo funcional carboxilo R–COOH"
+    },
+    {
+      "id": "asset-3a2cb895a74c9e65",
+      "path": "assets/3a2cb895a74c9e65d2df.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "3a2cb895a74c9e65d2df58e20e76c39379a72600591738f64c33bdbd0b66379f",
+      "alt": "IMG 2 — Estructura, geometría, hibridización y resonancia del grupo carboxilo"
+    },
+    {
+      "id": "asset-7ba45551510a5267",
+      "path": "assets/7ba45551510a5267000e.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7ba45551510a5267000e7ec4f737cf4b1f3b30c6f289cea29c7ae15e7477b207",
+      "alt": "IMG 3 — Acidez, equilibrio ácido-base y comparación alcohol/carboxilato"
+    },
+    {
+      "id": "asset-69c9d2fea8550e33",
+      "path": "assets/69c9d2fea8550e330259.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "69c9d2fea8550e330259def9e571d81b0df7adc474b4a63becbadfc33ffc242d",
+      "alt": "IMG 4 — Efecto de sustituyentes atractores y distancia sobre la acidez"
+    },
+    {
+      "id": "asset-b9b1da806c098d1c",
+      "path": "assets/b9b1da806c098d1cc1a8.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "b9b1da806c098d1cc1a802d002f8527a557e07b2d4712ce9d82cc0b88eac70ea",
+      "alt": "IMG 9 — Resumen de síntesis de ácidos carboxílicos I"
+    },
+    {
+      "id": "asset-66490089051849de",
+      "path": "assets/66490089051849de1653.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "66490089051849de1653d7a20c0191c1255c292a90e199da7e83c74fed04204b",
+      "alt": "IMG 10 — Resumen de síntesis de ácidos carboxílicos II"
+    },
+    {
+      "id": "asset-e6861b6bd1d23faa",
+      "path": "assets/e6861b6bd1d23faa0fc7.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "e6861b6bd1d23faa0fc73a8406d148d8c20305640e37e9723f85aa8028ab45fb",
+      "alt": "IMG 5 — Oxidación de alcoholes primarios a ácidos carboxílicos"
+    },
+    {
+      "id": "asset-14ea2e413045e6a4",
+      "path": "assets/14ea2e413045e6a463d5.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "14ea2e413045e6a463d508a3b85d38fc0549e8fc7576c9b2086e2e8083e396ce",
+      "alt": "IMG 6 — Ruptura oxidativa de alquenos con permanganato caliente"
+    },
+    {
+      "id": "asset-b35641315c08951d",
+      "path": "assets/b35641315c08951d55bc.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "b35641315c08951d55bc7ed7e6f0e20d077c5b165af72127337edfe20ae981cf",
+      "alt": "IMG 7 — Oxidación fuerte de alquilbencenos a ácido benzoico o derivados"
+    },
+    {
+      "id": "asset-41422b6ab78910ad",
+      "path": "assets/41422b6ab78910ad895e.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "41422b6ab78910ad895ed442d4bc1ba2ff42207fd57bdb3d8c9001e55dd6ea8c",
+      "alt": "IMG 8 — Síntesis con Grignard y CO₂"
+    },
+    {
+      "id": "asset-ee049e57942f4a9a",
+      "path": "assets/ee049e57942f4a9a1392.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "ee049e57942f4a9a1392c97e7f4d3a4cf26cc69a545e75c447fa93b852d94751",
+      "alt": "IMG 11 — Mecanismo general de sustitución nucleofílica acílica I"
+    },
+    {
+      "id": "asset-d28a933ecb58d212",
+      "path": "assets/d28a933ecb58d212fd5e.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "d28a933ecb58d212fd5e480a982f7715df3ad5d930cb4c7e77b6e4d6af0438dd",
+      "alt": "IMG 12 — Mecanismo general de sustitución nucleofílica acílica II"
+    },
+    {
+      "id": "asset-df7293d9ad0a3a1b",
+      "path": "assets/df7293d9ad0a3a1bda66.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "df7293d9ad0a3a1bda66f69d59334fd2070f1e9afcf7d884f5901458bc436da6",
+      "alt": "IMG 14 — Mecanismo en medio básico con Z como nucleófilo fuerte"
+    },
+    {
+      "id": "asset-1501ab12cc6b0229",
+      "path": "assets/1501ab12cc6b02293bea.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1501ab12cc6b02293beaf47dad0084e631d5c150b7a47044cef31b1b209e34e9",
+      "alt": "IMG 15 — Mecanismo en medio ácido con nucleófilo débil"
+    },
+    {
+      "id": "asset-7b1d7648028dea0d",
+      "path": "assets/7b1d7648028dea0d352a.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7b1d7648028dea0d352a4a731e70c7b50931de15c6a1f951dc9f12678a30dbd7",
+      "alt": "IMG 13 — Protonación del carbonilo y activación frente a nucleófilos débiles"
+    },
+    {
+      "id": "asset-8b3ec92c4a4563b3",
+      "path": "assets/8b3ec92c4a4563b31121.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "8b3ec92c4a4563b311217fbeff8403d3777e2ecac7a25c4c0bdc27da03e8282c",
+      "alt": "IMG 16 — Reactividad de derivados: orden y factores"
+    },
+    {
+      "id": "asset-1c0b640b8c16e835",
+      "path": "assets/1c0b640b8c16e8352f25.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1c0b640b8c16e8352f258d1904f96937c3e1c8ae513c3054ccf91b138c749aea",
+      "alt": "IMG 17 — Reactividad afectada por resonancia"
+    },
+    {
+      "id": "asset-687a08d7c33cd9e9",
+      "path": "assets/687a08d7c33cd9e9130a.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "687a08d7c33cd9e9130ab6b9db1e64c4a955f3ac7bacf93312e7a2d08309939f",
+      "alt": "IMG 18 — Grupo saliente, base débil y ácido conjugado fuerte"
+    },
+    {
+      "id": "asset-b36e05a16cd9c488",
+      "path": "assets/b36e05a16cd9c488c0bf.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "b36e05a16cd9c488c0bfa7825972b23e85c847062fd9f20868bc4ce909a2d1d0",
+      "alt": "IMG 19 — Comparación de grupos salientes"
+    },
+    {
+      "id": "asset-f66db539ca4e4cc0",
+      "path": "assets/f66db539ca4e4cc09b61.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f66db539ca4e4cc09b616db346c77a80a511aa25f56db2609243315403ac00a7",
+      "alt": "IMG 20 — Interconversión entre derivados según reactividad"
+    },
+    {
+      "id": "asset-de982c5fc585b4c6",
+      "path": "assets/de982c5fc585b4c6240b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "de982c5fc585b4c6240bb8a074b0403f08c07750f20f41cb9677788b0a5654e5",
+      "alt": "IMG 25 — Mapa de interconversión entre derivados"
+    },
+    {
+      "id": "asset-fadf0d1d5eb9996f",
+      "path": "assets/fadf0d1d5eb9996f29b0.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "fadf0d1d5eb9996f29b03a573a0d123d106907b9c95d7f23d45072e97eaeabf7",
+      "alt": "IMG 41 — Interconversión: nucleófilo fuerte desplaza al nucleófilo débil"
+    },
+    {
+      "id": "asset-f7636a7bca35ce93",
+      "path": "assets/f7636a7bca35ce93086c.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f7636a7bca35ce93086c77587a341f098c75c291a0915a2f17e73c55beb5a32e",
+      "alt": "IMG 21 — Cloruro de ácido a anhídrido"
+    },
+    {
+      "id": "asset-4265e798ddd1c82e",
+      "path": "assets/4265e798ddd1c82eae85.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4265e798ddd1c82eae851f1a204d5fcaaee9fdc6e41e1ebcfc4bac9110cd26cf",
+      "alt": "IMG 22 — Cloruro de ácido a éster"
+    },
+    {
+      "id": "asset-4f70f745853e565a",
+      "path": "assets/4f70f745853e565a064a.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4f70f745853e565a064a561105bb3912e8f2d18afaf36e72cbb161d8b11d2c62",
+      "alt": "IMG 42 — Mapa de interconversión de derivados"
+    },
+    {
+      "id": "asset-19ddfa184efc7fd9",
+      "path": "assets/19ddfa184efc7fd99c9f.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "19ddfa184efc7fd99c9fe6ea033e001f62a3d9ded51aa31e255d87ed20dc4e6b",
+      "alt": "IMG 43 — Pasaje de cloruro de ácido a anhídrido y éster"
+    },
+    {
+      "id": "asset-e4ef2dbdfee32cd8",
+      "path": "assets/e4ef2dbdfee32cd8db76.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "e4ef2dbdfee32cd8db76911b60a9eafdbddf138e0b1b151e000b47dbbd5a4c84",
+      "alt": "IMG 44 — Pasaje de anhídrido a éster y de éster a amida"
+    },
+    {
+      "id": "asset-ecb3eea7c5b73c3a",
+      "path": "assets/ecb3eea7c5b73c3a7331.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "ecb3eea7c5b73c3a7331022722a8304b3e1656018336cb3a43bb86cd0e8406ca",
+      "alt": "IMG 23 — Hidrólisis ácida de un éster"
+    },
+    {
+      "id": "asset-b1dec103e85d18f5",
+      "path": "assets/b1dec103e85d18f56018.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "b1dec103e85d18f560189e5370d3727786dd68b4a1e186a73520117d840d0f53",
+      "alt": "IMG 24 — Hidrólisis básica o alcalina de un éster"
+    },
+    {
+      "id": "asset-1bfde6e3f4bb2551",
+      "path": "assets/1bfde6e3f4bb2551a35b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1bfde6e3f4bb2551a35ba757dd7e30d74eb4c354301d213f0f4d8ab00b4e9b09",
+      "alt": "IMG 46 — Saponificación: hidrólisis básica de grasas"
+    },
+    {
+      "id": "asset-cb3ebc1aec4e792d",
+      "path": "assets/cb3ebc1aec4e792d64dd.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "cb3ebc1aec4e792d64dda9a939779a53996424f6254c32c39df0feb319010560",
+      "alt": "IMG 45 — Hidrólisis ácida de proteínas y enlaces amida"
+    },
+    {
+      "id": "asset-b15abef59fd64086",
+      "path": "assets/b15abef59fd64086bcb0.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "b15abef59fd64086bcb0562816e3bf0ace28f960dd295f317127f4cc93dd873e",
+      "alt": "IMG 26 — Síntesis de cloruro de ácido"
+    },
+    {
+      "id": "asset-5807cf1876cba45c",
+      "path": "assets/5807cf1876cba45c5740.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "5807cf1876cba45c574082418e2e12ccef6721e4e6272110ad5128e472d85e05",
+      "alt": "IMG 27 — Mecanismo con cloruro de tionilo SOCl₂"
+    },
+    {
+      "id": "asset-716e7df7b22a230a",
+      "path": "assets/716e7df7b22a230af903.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "716e7df7b22a230af9039e0e09925e5ac809c7cc2734746d6f2a0a775ea86e80",
+      "alt": "IMG 28 — Derivados de cloruros de ácido"
+    },
+    {
+      "id": "asset-efbc2e37e47f0d53",
+      "path": "assets/efbc2e37e47f0d530402.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "efbc2e37e47f0d530402ba666aa7ee7409439343466ae78cc2c135f518b0b91d",
+      "alt": "IMG 29 — Resumen derivados R–COOH I"
+    },
+    {
+      "id": "asset-6561ec201e624622",
+      "path": "assets/6561ec201e62462200b4.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6561ec201e62462200b42d32434e1ef6bff716caf18b0938b6d01bb723d116b4",
+      "alt": "IMG 30 — Resumen derivados R–COOH II"
+    },
+    {
+      "id": "asset-e1fc9dea4f54f3a0",
+      "path": "assets/e1fc9dea4f54f3a021b3.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "e1fc9dea4f54f3a021b3ec9647f7c0a77a206faa69b3afcd7570b6666a603dfc",
+      "alt": "IMG 31 — Resumen derivados R–COOH III"
+    },
+    {
+      "id": "asset-7a7a6f515e82f79b",
+      "path": "assets/7a7a6f515e82f79bf4d5.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7a7a6f515e82f79bf4d581119083cab197f3d59447ea006f122a6975bf7bdae2",
+      "alt": "IMG 32 — Carbaniones y reactividad de los α-H"
+    },
+    {
+      "id": "asset-41536cc4b8b56776",
+      "path": "assets/41536cc4b8b56776e0c7.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "41536cc4b8b56776e0c72f8eb2ef3be671169859ae57041fc1dc4799c1fdfcbf",
+      "alt": "IMG 33 — Tautomería ceto-enol I"
+    },
+    {
+      "id": "asset-4891679e89b17c55",
+      "path": "assets/4891679e89b17c55d4d2.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4891679e89b17c55d4d2961fc8fd9f8c903ae875be231f12af37502a97b297d8",
+      "alt": "IMG 34 — Tautomería ceto-enol II"
+    },
+    {
+      "id": "asset-f573f3581c2cafed",
+      "path": "assets/f573f3581c2cafede37b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f573f3581c2cafede37bb3eb19d31a383efa47fcb130f9dc6c3f86fe721d8412",
+      "alt": "IMG 47 — Aldólica catalizada por base"
+    },
+    {
+      "id": "asset-8db5c157ac08f9d1",
+      "path": "assets/8db5c157ac08f9d1e674.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "8db5c157ac08f9d1e6748e0a3ce8728f44d4179c7d45840a80d73cd3c608d215",
+      "alt": "IMG 48 — Aldólica catalizada por ácido"
+    },
+    {
+      "id": "asset-7b76de1c5621d765",
+      "path": "assets/7b76de1c5621d765aacf.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7b76de1c5621d765aacfeb1999836212d8796f89c0dd65fa76f57e7b4ba07299",
+      "alt": "IMG 49 — Deshidratación de aldol"
+    },
+    {
+      "id": "asset-68aaf7d25e904937",
+      "path": "assets/68aaf7d25e90493774f2.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "68aaf7d25e90493774f2f4cc4dc8502ec9b49d20a1eb86aa684b58ac0c6746e7",
+      "alt": "IMG 50 — Aldólicas cruzadas"
+    },
+    {
+      "id": "asset-1216ddb4099cc2b7",
+      "path": "assets/1216ddb4099cc2b7dc8b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1216ddb4099cc2b7dc8bdd9fa72b4f4b184e00a0892c2a020dbdf373850b0809",
+      "alt": "IMG 51 — Ciclaciones aldólicas"
+    },
+    {
+      "id": "asset-4131d189246b07b4",
+      "path": "assets/4131d189246b07b4a6a9.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4131d189246b07b4a6a9ce127fbe0552f18888915d18da751774cbd30cd5773c",
+      "alt": "IMG 35 — Condensación de Claisen: esquema general"
+    },
+    {
+      "id": "asset-ab8c0f7a6716c631",
+      "path": "assets/ab8c0f7a6716c631161a.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "ab8c0f7a6716c631161ad37866009bd49e44479e7e7708d23b1f65b861033e48",
+      "alt": "IMG 52 — Condensación de Claisen: desarrollo del mecanismo"
+    },
+    {
+      "id": "asset-9fa2d3d2d6bb593d",
+      "path": "assets/9fa2d3d2d6bb593df41d.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "9fa2d3d2d6bb593df41dfd6a37469b688c917527dc6ff950d2bd2babd14e578f",
+      "alt": "IMG 36 — Condensación de Claisen: producto β-cetoéster"
+    },
+    {
+      "id": "asset-14d4d5794a77b372",
+      "path": "assets/14d4d5794a77b372130e.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "14d4d5794a77b372130e29e67b6797eabd87895ee6dd22ab34b6ec2d796e7392",
+      "alt": "IMG 37 — Condensación intramolecular de Dieckmann"
+    },
+    {
+      "id": "asset-0a076d3a4b4b90b6",
+      "path": "assets/0a076d3a4b4b90b61dc4.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "0a076d3a4b4b90b61dc4fce233b9400ae140d3dc5fd27c0d28f6e73f165fb036",
+      "alt": "IMG 38 — Condensaciones mixtas entre dos ésteres"
+    },
+    {
+      "id": "asset-82cc5ce8a8eb6914",
+      "path": "assets/82cc5ce8a8eb6914fc62.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "82cc5ce8a8eb6914fc62653f4d80af3bd8139c86e862830a70e94076dd590aa1",
+      "alt": "IMG 39 — Condensaciones mixtas entre ésteres y aldehídos/cetonas"
+    },
+    {
+      "id": "asset-bda8ef0b55f36a40",
+      "path": "assets/bda8ef0b55f36a400b95.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "bda8ef0b55f36a400b95f8594a5b7aa479d27fd49ec5913217fd189bf62d7928",
+      "alt": "IMG 40 — Descarboxilación de β-cetoácidos"
+    },
+    {
+      "id": "asset-6ab5b5f8587897c5",
+      "path": "assets/6ab5b5f8587897c5922c.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6ab5b5f8587897c5922c249c83502666d67917be8d799c17b022cfad0f7c3682",
+      "alt": "IMG 53 — Regla general de descarboxilación"
+    },
+    {
+      "id": "asset-6278913af07a98e6",
+      "path": "assets/6278913af07a98e6f6e6.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6278913af07a98e6f6e61ac059a5c928fcad161399d3de17213f9b4ba8f667b1",
+      "alt": "IMG 54 — Síntesis malónica: objetivo y esquema"
+    },
+    {
+      "id": "asset-0b2fe8adcd8d4265",
+      "path": "assets/0b2fe8adcd8d42654845.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "0b2fe8adcd8d4265484523df45dfca743672953b02d45442234b48514682a069",
+      "alt": "IMG 55 — Síntesis malónica: esqueleto del producto final"
+    },
+    {
+      "id": "asset-bf57d3d0cab8a004",
+      "path": "assets/bf57d3d0cab8a004c4d4.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "bf57d3d0cab8a004c4d467802859be64c80e571ce872d7f50e51732cabd58c7d",
+      "alt": "IMG 56 — Síntesis acetoacética: objetivo"
+    },
+    {
+      "id": "asset-6364f5cf30ebb8aa",
+      "path": "assets/6364f5cf30ebb8aa33f6.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6364f5cf30ebb8aa33f6991662da89af1b1309bfe601e5a6758142c5d059383e",
+      "alt": "IMG 57 — Síntesis acetoacética: desprotonación y alquilación"
+    },
+    {
+      "id": "asset-a83e3f50edc9f9fd",
+      "path": "assets/a83e3f50edc9f9fdabc5.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "a83e3f50edc9f9fdabc5124daa0b105b172bac7180380c8643ba0b12f008c130",
+      "alt": "IMG 58 — Síntesis acetoacética: hidrólisis, descarboxilación y producto final"
+    }
+  ]
+}

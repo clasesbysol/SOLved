@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-05-resumen",
+      "title": "Mecanismos clave",
+      "text": "Esta sección centraliza los mecanismos principales a los que hacen referencia los badges de las reacciones. Aquí se desarrollan o amplían a medida que se completa el material.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

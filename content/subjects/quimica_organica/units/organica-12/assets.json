@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-4f99d6afae1148b8",
+      "path": "assets/4f99d6afae1148b8be3b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4f99d6afae1148b8be3b32cb4b0b6272f017cbcd9dd3ea07311f8f3aaf493786",
+      "alt": "Resumen visual de activadores, desactivadores, orientadores orto/para, orientadores meta y caso especial de halógenos. — imagen webo2-25"
+    },
+    {
+      "id": "asset-f7de72a525df71eb",
+      "path": "assets/f7de72a525df71eb70c9.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f7de72a525df71eb70c97d91e55ccba1f0a29b049602a6b772c5121adb185f01",
+      "alt": "Resumen visual de activadores, desactivadores, orientadores orto/para, orientadores meta y caso especial de halógenos. — imagen webo2-27"
+    },
+    {
+      "id": "asset-1c79ac7f999bfe51",
+      "path": "assets/1c79ac7f999bfe51ff62.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1c79ac7f999bfe51ff62b18b0971cd94824953e0c67bc3802589abbfe7d1206b",
+      "alt": "Resumen visual de activadores, desactivadores, orientadores orto/para, orientadores meta y caso especial de halógenos. — imagen webo2-30"
+    }
+  ]
+}

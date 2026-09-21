@@ -1,0 +1,1126 @@
+{
+  "buscador-interno": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "studySearchInput": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "studySearchPrev": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "studySearchNext": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "studySearchClear": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "studySearchCount": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "indice-maestro-reacciones": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-alcanos": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-haluros-de-alquilo": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-alquenos": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-alquinos": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-alcoholes": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-eteres": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-epoxidos": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-aldehidos-y-cetonas": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-acidos-carboxilicos-y-derivados": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-aromaticos": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-nitrogenados": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-hidratos-de-carbono": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "atlas-espectroscopia": {
+    "unitId": "organica-01",
+    "sectionIndex": 0
+  },
+  "collapseAllBtn": {
+    "unitId": "organica-02",
+    "sectionIndex": 0
+  },
+  "expandAllBtn": {
+    "unitId": "organica-02",
+    "sectionIndex": 0
+  },
+  "intro": {
+    "unitId": "organica-02",
+    "sectionIndex": 0
+  },
+  "lewis": {
+    "unitId": "organica-02",
+    "sectionIndex": 1
+  },
+  "electronegatividad": {
+    "unitId": "organica-02",
+    "sectionIndex": 2
+  },
+  "acids-arrhenius": {
+    "unitId": "organica-02",
+    "sectionIndex": 3
+  },
+  "acids-bronsted": {
+    "unitId": "organica-02",
+    "sectionIndex": 4
+  },
+  "acids-lewis": {
+    "unitId": "organica-02",
+    "sectionIndex": 5
+  },
+  "estructura-molecular": {
+    "unitId": "organica-03",
+    "sectionIndex": 0
+  },
+  "hibridacion": {
+    "unitId": "organica-03",
+    "sectionIndex": 1
+  },
+  "3d-moleculas": {
+    "unitId": "organica-03",
+    "sectionIndex": 3
+  },
+  "polaridad-solubilidad": {
+    "unitId": "organica-03",
+    "sectionIndex": 4
+  },
+  "reacciones-quimicas": {
+    "unitId": "organica-04",
+    "sectionIndex": 0
+  },
+  "energia-activacion": {
+    "unitId": "organica-04",
+    "sectionIndex": 1
+  },
+  "estados-transicion": {
+    "unitId": "organica-04",
+    "sectionIndex": 3
+  },
+  "halogenacion-temp": {
+    "unitId": "organica-04",
+    "sectionIndex": 5
+  },
+  "hammond": {
+    "unitId": "organica-04",
+    "sectionIndex": 6
+  },
+  "inhibidores": {
+    "unitId": "organica-04",
+    "sectionIndex": 7
+  },
+  "intermediarios": {
+    "unitId": "organica-04",
+    "sectionIndex": 8
+  },
+  "mecanismos-clave": {
+    "unitId": "organica-05",
+    "sectionIndex": 0
+  },
+  "mecanismo-sn1": {
+    "unitId": "organica-05",
+    "sectionIndex": 1
+  },
+  "mecanismo-sn2": {
+    "unitId": "organica-05",
+    "sectionIndex": 4
+  },
+  "mecanismo-e1": {
+    "unitId": "organica-05",
+    "sectionIndex": 6
+  },
+  "mecanismo-e2": {
+    "unitId": "organica-05",
+    "sectionIndex": 8
+  },
+  "mecanismo-adicion-electrofilica": {
+    "unitId": "organica-05",
+    "sectionIndex": 11
+  },
+  "mecanismo-sea": {
+    "unitId": "organica-05",
+    "sectionIndex": 13
+  },
+  "mecanismo-snar": {
+    "unitId": "organica-05",
+    "sectionIndex": 16
+  },
+  "mecanismo-radicales": {
+    "unitId": "organica-05",
+    "sectionIndex": 20
+  },
+  "mecanismo-organometalicos": {
+    "unitId": "organica-05",
+    "sectionIndex": 22
+  },
+  "mecanismo-oxidaciones": {
+    "unitId": "organica-05",
+    "sectionIndex": 23
+  },
+  "reduccion-carbonilos-alcanos": {
+    "unitId": "organica-05",
+    "sectionIndex": 23
+  },
+  "cap-alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 0
+  },
+  "alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 1
+  },
+  "nomenclatura-alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 2
+  },
+  "propiedades-alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 3
+  },
+  "sintesis-alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 4
+  },
+  "reacciones-alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 5
+  },
+  "conformaciones-alcanos": {
+    "unitId": "organica-06",
+    "sectionIndex": 6
+  },
+  "cis-trans-ciclos": {
+    "unitId": "organica-06",
+    "sectionIndex": 8
+  },
+  "tension-anillos": {
+    "unitId": "organica-06",
+    "sectionIndex": 9
+  },
+  "ciclohexano": {
+    "unitId": "organica-06",
+    "sectionIndex": 11
+  },
+  "mono-ciclo": {
+    "unitId": "organica-06",
+    "sectionIndex": 12
+  },
+  "di-ciclo": {
+    "unitId": "organica-06",
+    "sectionIndex": 13
+  },
+  "cap-estereoquimica": {
+    "unitId": "organica-07",
+    "sectionIndex": 0
+  },
+  "quiralidad": {
+    "unitId": "organica-07",
+    "sectionIndex": 1
+  },
+  "rs": {
+    "unitId": "organica-07",
+    "sectionIndex": 2
+  },
+  "actividad-optica": {
+    "unitId": "organica-07",
+    "sectionIndex": 3
+  },
+  "mezclas-racemicas": {
+    "unitId": "organica-07",
+    "sectionIndex": 4
+  },
+  "fischer": {
+    "unitId": "organica-07",
+    "sectionIndex": 5
+  },
+  "diastereomeros": {
+    "unitId": "organica-07",
+    "sectionIndex": 6
+  },
+  "meso": {
+    "unitId": "organica-07",
+    "sectionIndex": 7
+  },
+  "config-abs-rel": {
+    "unitId": "organica-07",
+    "sectionIndex": 8
+  },
+  "propiedades-diast": {
+    "unitId": "organica-07",
+    "sectionIndex": 9
+  },
+  "cap-haluros": {
+    "unitId": "organica-08",
+    "sectionIndex": 0
+  },
+  "haluros-nomenclatura": {
+    "unitId": "organica-08",
+    "sectionIndex": 1
+  },
+  "haluros-propiedades": {
+    "unitId": "organica-08",
+    "sectionIndex": 2
+  },
+  "haluros-sintesis": {
+    "unitId": "organica-08",
+    "sectionIndex": 3
+  },
+  "haluros-reacciones": {
+    "unitId": "organica-08",
+    "sectionIndex": 6
+  },
+  "halogenuros-williamson": {
+    "unitId": "organica-08",
+    "sectionIndex": 6
+  },
+  "cap-alquenos": {
+    "unitId": "organica-09",
+    "sectionIndex": 0
+  },
+  "alquenos-nomenclatura": {
+    "unitId": "organica-09",
+    "sectionIndex": 1
+  },
+  "alquenos-ez": {
+    "unitId": "organica-09",
+    "sectionIndex": 2
+  },
+  "alquenos-estabilidad": {
+    "unitId": "organica-09",
+    "sectionIndex": 3
+  },
+  "alquenos-propiedades": {
+    "unitId": "organica-09",
+    "sectionIndex": 4
+  },
+  "alquenos-sintesis": {
+    "unitId": "organica-09",
+    "sectionIndex": 5
+  },
+  "alquenos-sintesis-deshalogenacion-dibromuros": {
+    "unitId": "organica-09",
+    "sectionIndex": 5
+  },
+  "alquenos-sintesis-deshidratacion-alcoholes": {
+    "unitId": "organica-09",
+    "sectionIndex": 5
+  },
+  "alquenos-sintesis-deshidrohalogenacion": {
+    "unitId": "organica-09",
+    "sectionIndex": 5
+  },
+  "alquinos-reduccion-cis": {
+    "unitId": "organica-09",
+    "sectionIndex": 5
+  },
+  "alquinos-reduccion-trans": {
+    "unitId": "organica-09",
+    "sectionIndex": 5
+  },
+  "cap-reacciones-alquenos": {
+    "unitId": "organica-10",
+    "sectionIndex": 0
+  },
+  "alquenos-reactividad": {
+    "unitId": "organica-10",
+    "sectionIndex": 1
+  },
+  "alquenos-adicion": {
+    "unitId": "organica-10",
+    "sectionIndex": 2
+  },
+  "alquenos-reacciones-esp": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-adicion-hx": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-hbr-peroxidos": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-hidratacion-acido": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-oximercuracion": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-alcoximercuracion": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-hidroboracion-oxidacion": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-adicion-halogenos": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-halohidrinas": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-hidrogenacion": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-carbenos": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-epoxidacion": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-apertura-epoxidos-acido": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-dihidroxilacion": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "alquenos-ruptura-oxidativa": {
+    "unitId": "organica-10",
+    "sectionIndex": 3
+  },
+  "cap-alquinos": {
+    "unitId": "organica-11",
+    "sectionIndex": 0
+  },
+  "alquinos": {
+    "unitId": "organica-11",
+    "sectionIndex": 1
+  },
+  "alquinos-estructura": {
+    "unitId": "organica-11",
+    "sectionIndex": 2
+  },
+  "alquinos-acidez": {
+    "unitId": "organica-11",
+    "sectionIndex": 3
+  },
+  "alquinos-reacciones": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-sintesis-acetiluros": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-sintesis-eliminacion": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-adiciones": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-reduccion-trans-detalle": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-hidratacion-hg": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-oxidacion": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "alquinos-resumen-reacciones": {
+    "unitId": "organica-11",
+    "sectionIndex": 5
+  },
+  "cap-aromaticos": {
+    "unitId": "organica-12",
+    "sectionIndex": 0
+  },
+  "benceno": {
+    "unitId": "organica-12",
+    "sectionIndex": 1
+  },
+  "benceno-om": {
+    "unitId": "organica-12",
+    "sectionIndex": 2
+  },
+  "aromaticidad": {
+    "unitId": "organica-12",
+    "sectionIndex": 3
+  },
+  "huckel": {
+    "unitId": "organica-12",
+    "sectionIndex": 4
+  },
+  "orientadores-aromaticos": {
+    "unitId": "organica-12",
+    "sectionIndex": 5
+  },
+  "benceno-propiedades": {
+    "unitId": "organica-12",
+    "sectionIndex": 7
+  },
+  "cap-reacciones-aromaticas": {
+    "unitId": "organica-13",
+    "sectionIndex": 0
+  },
+  "sea-general": {
+    "unitId": "organica-13",
+    "sectionIndex": 1
+  },
+  "halogenacion-benceno": {
+    "unitId": "organica-13",
+    "sectionIndex": 3
+  },
+  "nitracion": {
+    "unitId": "organica-13",
+    "sectionIndex": 5
+  },
+  "sulfonacion": {
+    "unitId": "organica-13",
+    "sectionIndex": 7
+  },
+  "sustituyentes-sea": {
+    "unitId": "organica-13",
+    "sectionIndex": 12
+  },
+  "friedel-crafts": {
+    "unitId": "organica-13",
+    "sectionIndex": 17
+  },
+  "friedel-crafts-acilacion-reduccion": {
+    "unitId": "organica-13",
+    "sectionIndex": 19
+  },
+  "snar": {
+    "unitId": "organica-13",
+    "sectionIndex": 23
+  },
+  "unidad-8-alcoholes-eteres-epoxidos": {
+    "unitId": "organica-14",
+    "sectionIndex": 0
+  },
+  "u8-alcoholes-intro": {
+    "unitId": "organica-14",
+    "sectionIndex": 1
+  },
+  "u8-propiedades": {
+    "unitId": "organica-14",
+    "sectionIndex": 1
+  },
+  "u8-solubilidad": {
+    "unitId": "organica-14",
+    "sectionIndex": 1
+  },
+  "u8-clasificacion": {
+    "unitId": "organica-14",
+    "sectionIndex": 1
+  },
+  "u8-nomenclatura-iupac": {
+    "unitId": "organica-14",
+    "sectionIndex": 2
+  },
+  "u8-alcoholes-insaturados": {
+    "unitId": "organica-14",
+    "sectionIndex": 2
+  },
+  "u8-mas-funciones": {
+    "unitId": "organica-14",
+    "sectionIndex": 2
+  },
+  "u8-nombres-comunes": {
+    "unitId": "organica-14",
+    "sectionIndex": 2
+  },
+  "u8-dioles": {
+    "unitId": "organica-14",
+    "sectionIndex": 2
+  },
+  "u8-acidez-oh": {
+    "unitId": "organica-14",
+    "sectionIndex": 3
+  },
+  "u8-comparacion-agua": {
+    "unitId": "organica-14",
+    "sectionIndex": 3
+  },
+  "u8-halogenos-acidez": {
+    "unitId": "organica-14",
+    "sectionIndex": 3
+  },
+  "u8-alcoxidos": {
+    "unitId": "organica-14",
+    "sectionIndex": 3
+  },
+  "u8-fenoles": {
+    "unitId": "organica-14",
+    "sectionIndex": 3
+  },
+  "u8-sintesis-previas": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-organometalicos": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-grignard": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-organolitio": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-carbonilos": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-reduccion": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-reductores": {
+    "unitId": "organica-14",
+    "sectionIndex": 4
+  },
+  "u8-panorama-alcoholes": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-oxidacion": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-dicromato": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-nuc-elec": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-tosilatos": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-haluros": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-lucas": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-px3": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-deshidratacion": {
+    "unitId": "organica-14",
+    "sectionIndex": 5
+  },
+  "u8-eteres-intro": {
+    "unitId": "organica-14",
+    "sectionIndex": 7
+  },
+  "u8-eteres-clasificacion": {
+    "unitId": "organica-14",
+    "sectionIndex": 7
+  },
+  "u8-eteres-nomenclatura": {
+    "unitId": "organica-14",
+    "sectionIndex": 7
+  },
+  "u8-eteres-ciclicos": {
+    "unitId": "organica-14",
+    "sectionIndex": 7
+  },
+  "u8-eteres-disolventes": {
+    "unitId": "organica-14",
+    "sectionIndex": 7
+  },
+  "u8-sintesis-eteres": {
+    "unitId": "organica-14",
+    "sectionIndex": 8
+  },
+  "u8-williamson": {
+    "unitId": "organica-14",
+    "sectionIndex": 8
+  },
+  "u8-williamson-fenoles": {
+    "unitId": "organica-14",
+    "sectionIndex": 8
+  },
+  "u8-alcoximercuracion": {
+    "unitId": "organica-14",
+    "sectionIndex": 8
+  },
+  "u8-deshidratacion-eteres": {
+    "unitId": "organica-14",
+    "sectionIndex": 8
+  },
+  "u8-resumen-eteres": {
+    "unitId": "organica-14",
+    "sectionIndex": 8
+  },
+  "u8-reacciones-eteres": {
+    "unitId": "organica-14",
+    "sectionIndex": 9
+  },
+  "u8-clivaje": {
+    "unitId": "organica-14",
+    "sectionIndex": 9
+  },
+  "u8-sn1-sn2-eteres": {
+    "unitId": "organica-14",
+    "sectionIndex": 9
+  },
+  "u8-hbr-eteres": {
+    "unitId": "organica-14",
+    "sectionIndex": 9
+  },
+  "u8-epoxidos-intro": {
+    "unitId": "organica-14",
+    "sectionIndex": 10
+  },
+  "u8-epoxidos-nomenclatura": {
+    "unitId": "organica-14",
+    "sectionIndex": 10
+  },
+  "u8-sintesis-epoxidos": {
+    "unitId": "organica-14",
+    "sectionIndex": 10
+  },
+  "u8-epoxidacion": {
+    "unitId": "organica-14",
+    "sectionIndex": 10
+  },
+  "u8-halohidrinas": {
+    "unitId": "organica-14",
+    "sectionIndex": 10
+  },
+  "u8-reacciones-epoxidos": {
+    "unitId": "organica-14",
+    "sectionIndex": 11
+  },
+  "u8-apertura-acida": {
+    "unitId": "organica-14",
+    "sectionIndex": 11
+  },
+  "u8-apertura-basica": {
+    "unitId": "organica-14",
+    "sectionIndex": 11
+  },
+  "u8-comparacion-epoxidos": {
+    "unitId": "organica-14",
+    "sectionIndex": 11
+  },
+  "u8-reglas-epoxidos": {
+    "unitId": "organica-14",
+    "sectionIndex": 11
+  },
+  "unidad-9-aldehidos-cetonas": {
+    "unitId": "organica-15",
+    "sectionIndex": 0
+  },
+  "u9-carbonilo": {
+    "unitId": "organica-15",
+    "sectionIndex": 1
+  },
+  "u9-nomenclatura": {
+    "unitId": "organica-15",
+    "sectionIndex": 4
+  },
+  "u9-sintesis": {
+    "unitId": "organica-15",
+    "sectionIndex": 6
+  },
+  "u9-adicion": {
+    "unitId": "organica-15",
+    "sectionIndex": 20
+  },
+  "u9-hemiacetales": {
+    "unitId": "organica-15",
+    "sectionIndex": 33
+  },
+  "u9-grignard": {
+    "unitId": "organica-15",
+    "sectionIndex": 39
+  },
+  "u9-enolatos": {
+    "unitId": "organica-15",
+    "sectionIndex": 45
+  },
+  "u9-aldolica": {
+    "unitId": "organica-15",
+    "sectionIndex": 48
+  },
+  "u9-redox": {
+    "unitId": "organica-15",
+    "sectionIndex": 56
+  },
+  "cap-acidos-carboxilicos": {
+    "unitId": "organica-16",
+    "sectionIndex": 0
+  },
+  "u10-eje-general": {
+    "unitId": "organica-16",
+    "sectionIndex": 1
+  },
+  "u10-acidos-carboxilicos": {
+    "unitId": "organica-16",
+    "sectionIndex": 2
+  },
+  "u10-estructura-carboxilo": {
+    "unitId": "organica-16",
+    "sectionIndex": 4
+  },
+  "u10-nomenclatura-acidos": {
+    "unitId": "organica-16",
+    "sectionIndex": 6
+  },
+  "u10-nomenclatura-ciclicos": {
+    "unitId": "organica-16",
+    "sectionIndex": 7
+  },
+  "u10-acidez": {
+    "unitId": "organica-16",
+    "sectionIndex": 8
+  },
+  "u10-sustituyentes-acidez": {
+    "unitId": "organica-16",
+    "sectionIndex": 10
+  },
+  "u10-sales": {
+    "unitId": "organica-16",
+    "sectionIndex": 12
+  },
+  "u10-sintesis-acidos": {
+    "unitId": "organica-16",
+    "sectionIndex": 13
+  },
+  "u10-oxidacion-alcoholes": {
+    "unitId": "organica-16",
+    "sectionIndex": 16
+  },
+  "u10-ruptura-alquenos": {
+    "unitId": "organica-16",
+    "sectionIndex": 18
+  },
+  "u10-oxidacion-alquilbencenos": {
+    "unitId": "organica-16",
+    "sectionIndex": 20
+  },
+  "u10-grignard-co2": {
+    "unitId": "organica-16",
+    "sectionIndex": 22
+  },
+  "u10-derivados": {
+    "unitId": "organica-16",
+    "sectionIndex": 24
+  },
+  "u10-nomenclatura-derivados": {
+    "unitId": "organica-16",
+    "sectionIndex": 25
+  },
+  "u10-sustitucion-acilica": {
+    "unitId": "organica-16",
+    "sectionIndex": 26
+  },
+  "u10-mecanismo-basico": {
+    "unitId": "organica-16",
+    "sectionIndex": 29
+  },
+  "u10-mecanismo-acido": {
+    "unitId": "organica-16",
+    "sectionIndex": 31
+  },
+  "u10-reactividad-derivados": {
+    "unitId": "organica-16",
+    "sectionIndex": 34
+  },
+  "u10-interconversion": {
+    "unitId": "organica-16",
+    "sectionIndex": 39
+  },
+  "u10-transformaciones-derivados": {
+    "unitId": "organica-16",
+    "sectionIndex": 43
+  },
+  "u10-hidrolisis": {
+    "unitId": "organica-16",
+    "sectionIndex": 49
+  },
+  "u10-hidrolisis-esteres": {
+    "unitId": "organica-16",
+    "sectionIndex": 50
+  },
+  "u10-saponificacion": {
+    "unitId": "organica-16",
+    "sectionIndex": 53
+  },
+  "u10-proteinas": {
+    "unitId": "organica-16",
+    "sectionIndex": 55
+  },
+  "u10-socl2": {
+    "unitId": "organica-16",
+    "sectionIndex": 57
+  },
+  "u10-derivados-cloruro": {
+    "unitId": "organica-16",
+    "sectionIndex": 60
+  },
+  "u10-resumen-derivados": {
+    "unitId": "organica-16",
+    "sectionIndex": 62
+  },
+  "u10-carbono-alfa": {
+    "unitId": "organica-16",
+    "sectionIndex": 66
+  },
+  "u10-tautomeria": {
+    "unitId": "organica-16",
+    "sectionIndex": 68
+  },
+  "u10-aldolicas-repaso": {
+    "unitId": "organica-16",
+    "sectionIndex": 71
+  },
+  "u10-claisen": {
+    "unitId": "organica-16",
+    "sectionIndex": 77
+  },
+  "u10-dieckmann": {
+    "unitId": "organica-16",
+    "sectionIndex": 81
+  },
+  "u10-condensaciones-mixtas": {
+    "unitId": "organica-16",
+    "sectionIndex": 83
+  },
+  "u10-descarboxilacion": {
+    "unitId": "organica-16",
+    "sectionIndex": 86
+  },
+  "u10-sintesis-malonica": {
+    "unitId": "organica-16",
+    "sectionIndex": 89
+  },
+  "u10-sintesis-acetoacetica": {
+    "unitId": "organica-16",
+    "sectionIndex": 92
+  },
+  "u10-conexiones": {
+    "unitId": "organica-16",
+    "sectionIndex": 96
+  },
+  "u10-parcial": {
+    "unitId": "organica-16",
+    "sectionIndex": 97
+  },
+  "unidad-11-aminas": {
+    "unitId": "organica-17",
+    "sectionIndex": 0
+  },
+  "u11-panorama": {
+    "unitId": "organica-17",
+    "sectionIndex": 1
+  },
+  "u11-estructura": {
+    "unitId": "organica-17",
+    "sectionIndex": 2
+  },
+  "u11-clasificacion": {
+    "unitId": "organica-17",
+    "sectionIndex": 3
+  },
+  "u11-nomenclatura": {
+    "unitId": "organica-17",
+    "sectionIndex": 4
+  },
+  "u11-nitrilos-alfa": {
+    "unitId": "organica-17",
+    "sectionIndex": 5
+  },
+  "u11-reacciones-sintesis": {
+    "unitId": "organica-17",
+    "sectionIndex": 6
+  },
+  "u11-alquilacion-sn2": {
+    "unitId": "organica-17",
+    "sectionIndex": 7
+  },
+  "u11-gabriel": {
+    "unitId": "organica-17",
+    "sectionIndex": 8
+  },
+  "u11-reduccion-nitrilos": {
+    "unitId": "organica-17",
+    "sectionIndex": 9
+  },
+  "u11-reduccion-amidas": {
+    "unitId": "organica-17",
+    "sectionIndex": 10
+  },
+  "u11-aminacion-reductiva": {
+    "unitId": "organica-17",
+    "sectionIndex": 11
+  },
+  "u11-nitracion-reduccion": {
+    "unitId": "organica-17",
+    "sectionIndex": 12
+  },
+  "u11-hofmann-amidas": {
+    "unitId": "organica-17",
+    "sectionIndex": 13
+  },
+  "u11-reacciones": {
+    "unitId": "organica-17",
+    "sectionIndex": 14
+  },
+  "u11-formacion-iminas": {
+    "unitId": "organica-17",
+    "sectionIndex": 16
+  },
+  "u11-enaminas": {
+    "unitId": "organica-17",
+    "sectionIndex": 17
+  },
+  "u11-acilacion-amidas": {
+    "unitId": "organica-17",
+    "sectionIndex": 18
+  },
+  "u11-metilacion-exhaustiva": {
+    "unitId": "organica-17",
+    "sectionIndex": 19
+  },
+  "u11-hofmann-eliminacion": {
+    "unitId": "organica-17",
+    "sectionIndex": 20
+  },
+  "u11-nitrosacion": {
+    "unitId": "organica-17",
+    "sectionIndex": 21
+  },
+  "u11-diazonio-sustituciones": {
+    "unitId": "organica-17",
+    "sectionIndex": 22
+  },
+  "u11-copulacion": {
+    "unitId": "organica-17",
+    "sectionIndex": 23
+  },
+  "u11-aminoacidos": {
+    "unitId": "organica-17",
+    "sectionIndex": 24
+  },
+  "unidad-12-hidratos": {
+    "unitId": "organica-18",
+    "sectionIndex": 0
+  },
+  "u12-mapa-nombres-carbohidratos": {
+    "unitId": "organica-18",
+    "sectionIndex": 1
+  },
+  "u12-panorama": {
+    "unitId": "organica-18",
+    "sectionIndex": 6
+  },
+  "u12-nomenclatura": {
+    "unitId": "organica-18",
+    "sectionIndex": 9
+  },
+  "u12-estereo": {
+    "unitId": "organica-18",
+    "sectionIndex": 10
+  },
+  "u12-ciclacion": {
+    "unitId": "organica-18",
+    "sectionIndex": 16
+  },
+  "u12-reacciones": {
+    "unitId": "organica-18",
+    "sectionIndex": 22
+  },
+  "u12-disacaridos-polisacaridos": {
+    "unitId": "organica-18",
+    "sectionIndex": 27
+  },
+  "unidad-13-espectroscopia": {
+    "unitId": "organica-19",
+    "sectionIndex": 0
+  },
+  "u13-general": {
+    "unitId": "organica-19",
+    "sectionIndex": 1
+  },
+  "u13-uv": {
+    "unitId": "organica-19",
+    "sectionIndex": 2
+  },
+  "u13-ir": {
+    "unitId": "organica-19",
+    "sectionIndex": 4
+  },
+  "u13-rmn": {
+    "unitId": "organica-19",
+    "sectionIndex": 5
+  },
+  "u13-masas": {
+    "unitId": "organica-19",
+    "sectionIndex": 6
+  },
+  "u13-mapa": {
+    "unitId": "organica-19",
+    "sectionIndex": 7
+  }
+}

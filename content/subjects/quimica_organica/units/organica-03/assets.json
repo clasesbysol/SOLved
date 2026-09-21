@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-f459950968e20bf1",
+      "path": "assets/f459950968e20bf18598.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f459950968e20bf185987de22ece913624b4ef9d77511a93b64559b374ce767a",
+      "alt": "Hibridación del carbono: orbitales sp³, sp² y sp, geometrías y ejemplos de enlace. — imagen 1"
+    },
+    {
+      "id": "asset-a0f7c171cb3bbb7e",
+      "path": "assets/a0f7c171cb3bbb7eb9d3.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "a0f7c171cb3bbb7eb9d3d09e750acc4974630a8578574e720cdbdca02267b023",
+      "alt": "Interacciones no covalentes, puentes de hidrógeno y relación entre polaridad y solubilidad. — imagen 2"
+    },
+    {
+      "id": "asset-4e67a29b14280806",
+      "path": "assets/4e67a29b14280806cec0.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4e67a29b14280806cec04202c73f973c1262893096537a1718d6ff0137f81206",
+      "alt": "Interacciones no covalentes, puentes de hidrógeno y relación entre polaridad y solubilidad. — imagen 5"
+    }
+  ]
+}

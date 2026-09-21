@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "id": "organica-11-glosario-2",
+      "term": "Nomenclatura y propiedades físicas de los alquinos Wade p. 389",
+      "definition": "Los alquinos son hidrocarburos que contienen un triple enlace carbono-carbono.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-11",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-11-glosario-3",
+      "term": "Estructura electrónica de los alquinos Wade p. 392",
+      "definition": "En los alquinos, los carbonos del triple enlace tienen hibridación sp. El triple enlace está formado por un enlace sigma y dos enlaces pi. La geometría alrededor del triple enlace es lineal, con ángulo ≈ 180°. Por eso los alquinos son más lineales y rígidos que alquenos y alcanos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-11",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-11-glosario-4",
+      "term": "Acidez de los alquinos y formación de iones acetiluro Wade p. 393",
+      "definition": "Los alquinos terminales son relativamente ácidos porque el hidrógeno está unido a un carbono sp (mayor carácter s → estabiliza mejor la carga negativa del ion acetiluro).",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-11",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-11-glosario-6",
+      "term": "Síntesis y reacciones de alquinos",
+      "definition": "La reducción con metal-amoníaco produce alquenos trans por adición anti.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-11",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

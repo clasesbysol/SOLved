@@ -1,0 +1,1243 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-f10164c277fc",
+      "summary": "ALDEHÍDOS Y CETONAS WADE VOL. 2 · CAP. 18",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-331fad34ea04",
+          "text": "ALDEHÍDOS Y CETONAS WADE VOL. 2 · CAP. 18"
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-4bb53412089f",
+          "text": "Unidad 9 — Compuestos carbonílicos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f75cd3dad60b",
+          "text": "Aldehídos y cetonas: estructura del carbonilo, nomenclatura, síntesis, adición nucleofílica, derivados, química alfa, aldólica, Cannizzaro, oxidación y reducción."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-209277580e80",
+      "summary": "1. GRUPO CARBONILOC=O",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-4df8bc865944",
+          "text": "1. GRUPO CARBONILO"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-7e28513299e8",
+          "text": "Estructura y polaridad"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8d78a8fe7ff8",
+          "text": "El grupo carbonilo está formado por un carbono unido por doble enlace a un oxígeno, C=O. Tanto el carbono como el oxígeno están hibridados sp², por eso el grupo es trigonal plano y presenta ángulos cercanos a 120°. El doble enlace tiene un enlace sigma y un enlace pi."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-55c18bb5b1de",
+          "text": "El enlace carbonilo se parece al doble enlace C=C de los alquenos, pero es más corto, más fuerte y mucho más polar. Valores comparativos: C=O ≈ 1,23 Å y 178 kcal/mol; C=C ≈ 1,34 Å y 146 kcal/mol."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6550bd283f88",
+          "text": "Como el oxígeno es más electronegativo, atrae los electrones del enlace y queda con carga parcial negativa. El carbono queda con carga parcial positiva y se comporta como centro electrofílico."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0d036b8af79a",
+          "text": "La forma principal es la estructura con C=O, pero la forma polar explica la gran reactividad del carbono carbonílico frente a nucleófilos y la tendencia del oxígeno a protonarse en medio ácido."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-c8e07768f06e",
+          "text": "Familias carbonílicas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-960b0aa928b1",
+          "text": "Los aldehídos y cetonas son dos familias de compuestos carbonílicos. Los aldehídos tienen al menos un hidrógeno unido al carbono carbonílico y responden a la fórmula R–CHO. Las cetonas tienen dos grupos carbonados unidos al carbonilo y responden a R–CO–R’."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-45faa0b37662",
+      "summary": "IMAGEN 01 — Estructura orbitalaria del grupo carbonilo: C y O sp², enlace sigma, enlace pi y geometría trigonal plana",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-46a346e929731b4c",
+          "alt": "IMAGEN 01 — Estructura orbitalaria del grupo carbonilo: C y O sp², enlace sigma, enlace pi y geometría trigonal plana",
+          "caption": "IMAGEN 01 — Estructura orbitalaria del grupo carbonilo: C y O sp², enlace sigma, enlace pi y geometría trigonal plana"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-9abbe2734927",
+      "summary": "IMAGEN 02 — Familias de compuestos carbonílicos: aldehídos, cetonas, ácidos carboxílicos, ésteres, cloruros de ácido y amidas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-dd06f27f11ab0d6d",
+          "alt": "IMAGEN 02 — Familias de compuestos carbonílicos: aldehídos, cetonas, ácidos carboxílicos, ésteres, cloruros de ácido y amidas",
+          "caption": "IMAGEN 02 — Familias de compuestos carbonílicos: aldehídos, cetonas, ácidos carboxílicos, ésteres, cloruros de ácido y amidas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-aeeed81529ab",
+      "summary": "2. NOMENCLATURA-al / -ona",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-a2687ad8bf6b",
+          "text": "2. NOMENCLATURA"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-9d44f75ff469",
+          "text": "Aldehídos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f329233983db",
+          "text": "En IUPAC, los aldehídos se nombran reemplazando la terminación -o del alcano por -al. La cadena principal debe contener el grupo aldehído y el carbono del –CHO siempre se numera como C1, porque está en un extremo."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-78a6564eabb1",
+          "text": "Ejemplos frecuentes: metanal, etanal, propanal, butanal, 4-bromo-3-metilheptanal y pent-2-enal. Cuando el grupo –CHO está unido a un anillo se usa el sufijo carbaldehído, como en ciclohexanocarbaldehído."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-92d463e6ba0d",
+          "text": "Si el aldehído no es la función principal, el grupo –CHO se nombra como sustituyente formil-. Por ejemplo: ácido 2-formilbenzoico."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e204cec4a863",
+          "text": "Muchos nombres comunes derivan de los ácidos carboxílicos: ácido fórmico → formaldehído; ácido acético → acetaldehído; ácido propiónico → propionaldehído; ácido butírico → butiraldehído; ácido benzoico → benzaldehído."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-981e74beabcf",
+          "text": "Cetonas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-45870c8f84a2",
+          "text": "Las cetonas se nombran reemplazando la terminación -o del alcano por -ona. Se elige la cadena más larga que contenga el carbonilo y se numera desde el extremo más cercano al C=O."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b092d4a0e73b",
+          "text": "Ejemplos: butan-2-ona, pentan-3-ona, 3-metilbutan-2-ona, hex-5-en-2-ona y pentan-2,4-diona. En cetonas cíclicas, el carbono del carbonilo se considera C1: ciclohexanona, 3-metilciclopentanona, ciclohex-2-en-1-ona."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3900f791033b",
+          "text": "Si la cetona no es el grupo principal, se nombra con el prefijo oxo-, por ejemplo 3-oxopentanal o ácido 3-oxobutanoico. Dato clave: los aldehídos tienen prioridad sobre las cetonas."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-24fd0eeb87e8",
+          "text": "Los nombres comunes de las cetonas se forman nombrando los dos grupos carbonados unidos al carbonilo y agregando “cetona”: metil etil cetona, metil isopropil cetona. Nombres muy usados: acetona, acetofenona, benzofenona y propiofenona."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-808fc35aa39f",
+      "summary": "3. PROPIEDADES FÍSICASdipolo-dipolo",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-0aa9a22af6e2",
+          "text": "3. PROPIEDADES FÍSICAS"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-21b53bb01137",
+          "text": "Polaridad, ebullición y solubilidad"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fce07951dc42",
+          "text": "La polarización del carbonilo genera atracciones dipolo-dipolo. Por eso, aldehídos y cetonas tienen puntos de ebullición mayores que hidrocarburos y éteres de masa molecular similar. Sin embargo, no poseen enlaces O–H ni N–H, de modo que no forman puentes de hidrógeno entre sí y hierven por debajo de los alcoholes comparables."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3492ae6d5ba3",
+          "text": "Ejemplo aproximado: butano p.e. 0 °C, metoxietano p.e. 8 °C, propanal p.e. 49 °C, acetona p.e. 56 °C y propan-1-ol p.e. 97 °C."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-26088a81090b",
+          "text": "Aunque no forman puentes de hidrógeno entre sí, el oxígeno carbonílico puede actuar como aceptor de puente de hidrógeno con agua o alcoholes. Por eso, aldehídos y cetonas pequeñas son bastante solubles en agua; acetaldehído y acetona son miscibles."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6f1543505800",
+          "text": "El formaldehído es gas a temperatura ambiente y suele usarse como solución acuosa al 40 %, llamada formalina. También puede generarse desde trioxano o paraformaldehído."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-ada29a58b2df",
+      "summary": "4. SÍNTESIS DE ALDEHÍDOS Y CETONASrutas generales",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-154464483b6e",
+          "text": "4. SÍNTESIS DE ALDEHÍDOS Y CETONAS"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-ba7d44df2f6b",
+          "text": "Oxidación de alcoholes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5912d28c51d7",
+          "text": "La oxidación de alcoholes es una ruta central. Un alcohol primario puede oxidarse a aldehído y luego a ácido carboxílico; por eso, para aislar aldehídos se requieren oxidantes controlados. Un alcohol secundario se oxida a cetona, mientras que un alcohol terciario no se oxida fácilmente porque no tiene H en el carbono que porta el OH."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-cb99832ada7e",
+          "text": "Ozonólisis reductiva de alquenos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f1bf0939e4b0",
+          "text": "La ozonólisis reductiva rompe el doble enlace C=C y transforma cada carbono del doble enlace en carbonilo. Con trabajo reductor, como Zn/ácido acético o dimetilsulfuro, los aldehídos formados no se oxidan posteriormente."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-614d99b3ed19",
+          "text": "Acilación de Friedel-Crafts"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a862c2628548",
+          "text": "La acilación de Friedel-Crafts permite obtener cetonas aromáticas. Es una sustitución electrofílica aromática donde el cloruro de ácido y AlCl₃ generan un catión acilio, que luego es atacado por el anillo aromático."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9d283841e4cb",
+          "text": "El grupo acilo puede reducirse completamente a alquilo por Clemmensen o Wolff-Kishner."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-255077d52d7c",
+          "text": "Cloruros de ácido y benzaldehído"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ed0d10593885",
+          "text": "Para obtener aldehídos desde ácidos carboxílicos, se suele convertir primero el ácido en cloruro de ácido con SOCl₂ y luego reducir selectivamente. La reducción de Rosenmund usa H₂/Pd–BaSO₄ envenenado."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-ab70712f8a00",
+          "text": "Cetonas desde cloruros de ácido"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7bfec53810c6",
+          "text": "Los Grignard comunes atacan dos veces a los cloruros de ácido: primero forman cetona y luego siguen hasta alcohol terciario. Para frenar en cetona se pueden usar reactivos menos reactivos, como dialquilcadmio."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-10da1f880ab7",
+      "summary": "IMAGEN 03 — Oxidación general de alcoholes primarios, secundarios y terciarios",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-05a57dd98ee45820",
+          "alt": "IMAGEN 03 — Oxidación general de alcoholes primarios, secundarios y terciarios",
+          "caption": "IMAGEN 03 — Oxidación general de alcoholes primarios, secundarios y terciarios"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-044423200e75",
+      "summary": "IMAGEN 04 — Oxidación controlada de alcohol primario a aldehído con PCC, Collins o CrO₃/HCl/piridina",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-6319e2f0f11969c0",
+          "alt": "IMAGEN 04 — Oxidación controlada de alcohol primario a aldehído con PCC, Collins o CrO₃/HCl/piridina",
+          "caption": "IMAGEN 04 — Oxidación controlada de alcohol primario a aldehído con PCC, Collins o CrO₃/HCl/piridina"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-050ddc45b9c0",
+      "summary": "IMAGEN 05 — Ozonólisis reductiva de alquenos: ruptura del doble enlace C=C",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-d8db54d02c378156",
+          "alt": "IMAGEN 05 — Ozonólisis reductiva de alquenos: ruptura del doble enlace C=C",
+          "caption": "IMAGEN 05 — Ozonólisis reductiva de alquenos: ruptura del doble enlace C=C"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3f57770ebafe",
+      "summary": "IMAGEN 06 — Ejemplos de ozonólisis que forman aldehídos, cetonas o mezcla",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-5a098348c1ded8b9",
+          "alt": "IMAGEN 06 — Ejemplos de ozonólisis que forman aldehídos, cetonas o mezcla",
+          "caption": "IMAGEN 06 — Ejemplos de ozonólisis que forman aldehídos, cetonas o mezcla"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-adcee03d46fb",
+      "summary": "IMAGEN 07 — Acilación de Friedel-Crafts: aromático + cloruro de ácido + AlCl₃ → arilcetona",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-3237ad3c8f816ace",
+          "alt": "IMAGEN 07 — Acilación de Friedel-Crafts: aromático + cloruro de ácido + AlCl₃ → arilcetona",
+          "caption": "IMAGEN 07 — Acilación de Friedel-Crafts: aromático + cloruro de ácido + AlCl₃ → arilcetona"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1ae26d878498",
+      "summary": "IMAGEN 08 — Reducción posterior de acilbencenos por Clemmensen o Wolff-Kishner",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-121bdad28747dbb8",
+          "alt": "IMAGEN 08 — Reducción posterior de acilbencenos por Clemmensen o Wolff-Kishner",
+          "caption": "IMAGEN 08 — Reducción posterior de acilbencenos por Clemmensen o Wolff-Kishner"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-971b1143f6b7",
+      "summary": "IMAGEN 09 — Conversión de ácido carboxílico a cloruro de ácido y reducción a aldehído",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-e0d5ead3b354c267",
+          "alt": "IMAGEN 09 — Conversión de ácido carboxílico a cloruro de ácido y reducción a aldehído",
+          "caption": "IMAGEN 09 — Conversión de ácido carboxílico a cloruro de ácido y reducción a aldehído"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8ffd3e8601b3",
+      "summary": "IMAGEN 10 — Síntesis de benzaldehído por oxidación controlada",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-b03244bb8055d2d2",
+          "alt": "IMAGEN 10 — Síntesis de benzaldehído por oxidación controlada",
+          "caption": "IMAGEN 10 — Síntesis de benzaldehído por oxidación controlada"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-f6f2540cc35c",
+      "summary": "IMAGEN 11 — Reducción selectiva de cloruros de ácido a aldehídos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-991357666ffa6a87",
+          "alt": "IMAGEN 11 — Reducción selectiva de cloruros de ácido a aldehídos",
+          "caption": "IMAGEN 11 — Reducción selectiva de cloruros de ácido a aldehídos"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-4f0753f8ddee",
+      "summary": "IMAGEN 12 — Síntesis de cetonas desde cloruros de ácido con dialquilcadmio",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-49c75c9de2864be5",
+          "alt": "IMAGEN 12 — Síntesis de cetonas desde cloruros de ácido con dialquilcadmio",
+          "caption": "IMAGEN 12 — Síntesis de cetonas desde cloruros de ácido con dialquilcadmio"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-eb438db64d38",
+      "summary": "IMAGEN 13 — Resumen general de síntesis de aldehídos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-81356dbe4b7d7aa3",
+          "alt": "IMAGEN 13 — Resumen general de síntesis de aldehídos",
+          "caption": "IMAGEN 13 — Resumen general de síntesis de aldehídos"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-fb44dbbe24ba",
+      "summary": "IMAGEN 14 — Resumen general de síntesis de cetonas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-e13562c54fa5f4c6",
+          "alt": "IMAGEN 14 — Resumen general de síntesis de cetonas",
+          "caption": "IMAGEN 14 — Resumen general de síntesis de cetonas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b3f3eab0ba2c",
+      "summary": "IMAGEN 15 — Mapa comparativo de rutas de síntesis de aldehídos y cetonas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-5f8fe68c0e978b5e",
+          "alt": "IMAGEN 15 — Mapa comparativo de rutas de síntesis de aldehídos y cetonas",
+          "caption": "IMAGEN 15 — Mapa comparativo de rutas de síntesis de aldehídos y cetonas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-dfb6cbb3b566",
+      "summary": "5. ADICIÓN NUCLEOFÍLICA AL CARBONILONu⁻ + C=O",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-16d9545f79d2",
+          "text": "5. ADICIÓN NUCLEOFÍLICA AL CARBONILO"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-ee9f181b28a3",
+          "text": "Idea general"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a3c6a92aea15",
+          "text": "La reacción característica de aldehídos y cetonas es la adición nucleofílica al C=O. El nucleófilo ataca al carbono carbonílico, el enlace pi se desplaza hacia el oxígeno y se forma un alcóxido que luego se protona."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c1ecb8ea7c4e",
+          "text": "Si el nucleófilo es fuerte, ataca directamente. Si es débil, el carbonilo suele activarse primero por protonación del oxígeno."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-8e17ed7fb561",
+          "text": "Hidratación"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f2ca5d688d35",
+          "text": "La hidratación es la adición de agua al carbonilo y forma un hidrato o diol geminal."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-1165dca39920",
+          "text": "El equilibrio favorece más al hidrato cuanto menos impedido y más electrofílico sea el carbonilo. Por eso el orden típico es formaldehído > aldehídos > cetonas. En acetona, por ejemplo, el equilibrio favorece claramente la forma cetona."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-d16794b77614",
+          "text": "Cianhidrinas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ae86f014cbb3",
+          "text": "La adición de HCN forma cianhidrinas, que tienen OH y CN unidos al mismo carbono."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-74f2f1e41e3e",
+          "text": "El CN⁻ ataca al carbonilo, se forma un alcóxido y luego se protona con HCN. Los aldehídos reaccionan mejor que las cetonas; las cetonas voluminosas son lentas y dan menor rendimiento por impedimento estérico."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-d750345b3fd0",
+          "text": "Iminas y derivados"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d177b9ec58be",
+          "text": "Las iminas se forman por reacción de aldehídos o cetonas con amoníaco o aminas primarias. Es una condensación porque se pierde agua."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4f3271c8f1cf",
+          "text": "El pH debe ser moderado: si el medio es demasiado ácido, la amina se protona y deja de ser nucleofílica."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6e66107ae0e4",
+          "text": "Reactivos H₂N–Z forman derivados análogos: hidroxilamina da oximas, hidrazina da hidrazonas, fenilhidrazina da fenilhidrazonas y semicarbazida da semicarbazonas."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-11398e1966f5",
+          "text": "Enaminas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ab026ead692a",
+          "text": "Las enaminas se forman con aminas secundarias. Como el nitrógeno no tiene un segundo H para formar una imina simple, se pierde un H alfa y aparece un doble enlace C=C unido al nitrógeno."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-618094144b78",
+      "summary": "IMAGEN 16 — Esquema general de adición nucleofílica al carbonilo",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-5c917224d61fe411",
+          "alt": "IMAGEN 16 — Esquema general de adición nucleofílica al carbonilo",
+          "caption": "IMAGEN 16 — Esquema general de adición nucleofílica al carbonilo"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-08915ff92922",
+      "summary": "IMAGEN 17 — Hidratación ácida de aldehídos y cetonas: reacción general",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-274bf537e98b3651",
+          "alt": "IMAGEN 17 — Hidratación ácida de aldehídos y cetonas: reacción general",
+          "caption": "IMAGEN 17 — Hidratación ácida de aldehídos y cetonas: reacción general"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-04ab9c16caff",
+      "summary": "IMAGEN 18 — Hidratación básica: ataque de OH⁻",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-c28b7d8a60fd168d",
+          "alt": "IMAGEN 18 — Hidratación básica: ataque de OH⁻",
+          "caption": "IMAGEN 18 — Hidratación básica: ataque de OH⁻"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-6551806887e0",
+      "summary": "IMAGEN 19 — Mecanismo de hidratación ácida",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-f1a21d24695a0bc4",
+          "alt": "IMAGEN 19 — Mecanismo de hidratación ácida",
+          "caption": "IMAGEN 19 — Mecanismo de hidratación ácida"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d67d404868c2",
+      "summary": "IMAGEN 20 — Equilibrio de hidratación: formaldehído, aldehídos y cetonas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-df3674eb5b91f58b",
+          "alt": "IMAGEN 20 — Equilibrio de hidratación: formaldehído, aldehídos y cetonas",
+          "caption": "IMAGEN 20 — Equilibrio de hidratación: formaldehído, aldehídos y cetonas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-227550bbd366",
+      "summary": "IMAGEN 21 — Ejemplos de hidratos y estabilidad relativa",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-3f114027889a4c90",
+          "alt": "IMAGEN 21 — Ejemplos de hidratos y estabilidad relativa",
+          "caption": "IMAGEN 21 — Ejemplos de hidratos y estabilidad relativa"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d336dca0b7b2",
+      "summary": "IMAGEN 22 — Adición de agua y relación con otras adiciones nucleofílicas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-cd62777f47bc268d",
+          "alt": "IMAGEN 22 — Adición de agua y relación con otras adiciones nucleofílicas",
+          "caption": "IMAGEN 22 — Adición de agua y relación con otras adiciones nucleofílicas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-375ca7ef8a5d",
+      "summary": "IMAGEN 23 — Formación general de cianhidrinas con HCN / CN⁻",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-8bc85b934562cdd0",
+          "alt": "IMAGEN 23 — Formación general de cianhidrinas con HCN / CN⁻",
+          "caption": "IMAGEN 23 — Formación general de cianhidrinas con HCN / CN⁻"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-7054aef54023",
+      "summary": "IMAGEN 24 — Ejemplos y comparación de reactividad en formación de cianhidrinas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-16040e6bfcb7d394",
+          "alt": "IMAGEN 24 — Ejemplos y comparación de reactividad en formación de cianhidrinas",
+          "caption": "IMAGEN 24 — Ejemplos y comparación de reactividad en formación de cianhidrinas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1e0fde124bfa",
+      "summary": "IMAGEN 25 — Mecanismo de formación de iminas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-532c04ae82fefd23",
+          "alt": "IMAGEN 25 — Mecanismo de formación de iminas",
+          "caption": "IMAGEN 25 — Mecanismo de formación de iminas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-aab45310eccb",
+      "summary": "IMAGEN 26 — Derivados tipo H₂N–Z: oximas, hidrazonas, fenilhidrazonas y semicarbazonas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-6e4815cdcfdff267",
+          "alt": "IMAGEN 26 — Derivados tipo H₂N–Z: oximas, hidrazonas, fenilhidrazonas y semicarbazonas",
+          "caption": "IMAGEN 26 — Derivados tipo H₂N–Z: oximas, hidrazonas, fenilhidrazonas y semicarbazonas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-51991a4f50c9",
+      "summary": "IMAGEN 27 — Formación de enaminas con aminas secundarias",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-8f38ca895beca928",
+          "alt": "IMAGEN 27 — Formación de enaminas con aminas secundarias",
+          "caption": "IMAGEN 27 — Formación de enaminas con aminas secundarias"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-222e24b68434",
+      "summary": "6. HEMIACETALES Y ACETALESROH / H⁺",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-cf3443cc8a6d",
+          "text": "6. HEMIACETALES Y ACETALES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-85561d93ff05",
+          "text": "Hemiacetales"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5979085aff70",
+          "text": "Los aldehídos y cetonas reaccionan con alcoholes para formar hemiacetales. Un hemiacetal tiene, en el mismo carbono, un grupo OH y un grupo OR."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5e14523f5e99",
+          "text": "Como ROH es un nucleófilo débil, normalmente se requiere medio ácido. También puede formarse en medio básico usando un alcóxido RO⁻ en el alcohol correspondiente."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-5dccb755a8b9",
+          "text": "Acetales"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e6459a6e0fb4",
+          "text": "Un acetal tiene dos grupos OR unidos al mismo carbono. Para pasar de hemiacetal a acetal hace falta ácido, porque el OH debe protonarse para salir como agua."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-cd7df1a3e14a",
+          "text": "Acetales cíclicos y protección"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e904077c3f9d",
+          "text": "Con dioles se forman acetales cíclicos, muy usados como grupos protectores. Se protege el carbonilo, se hacen reacciones en otra parte de la molécula y luego se recupera el carbonilo por hidrólisis ácida."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6b1c6a9cb5e6",
+          "text": "Los aldehídos forman acetales más rápido que las cetonas, por lo que puede protegerse selectivamente un aldehído en presencia de una cetona."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3d62601d1357",
+      "summary": "IMAGEN 28 — Reacción general de formación de hemiacetal",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-5e605190940df660",
+          "alt": "IMAGEN 28 — Reacción general de formación de hemiacetal",
+          "caption": "IMAGEN 28 — Reacción general de formación de hemiacetal"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-98e3f2f4276c",
+      "summary": "IMAGEN 29 — Mecanismo ácido de formación de hemiacetal",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-451fe584796aa32e",
+          "alt": "IMAGEN 29 — Mecanismo ácido de formación de hemiacetal",
+          "caption": "IMAGEN 29 — Mecanismo ácido de formación de hemiacetal"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-862c79bd3ce8",
+      "summary": "IMAGEN 30 — Pasaje de hemiacetal a acetal en medio ácido",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-4774e57be425e26d",
+          "alt": "IMAGEN 30 — Pasaje de hemiacetal a acetal en medio ácido",
+          "caption": "IMAGEN 30 — Pasaje de hemiacetal a acetal en medio ácido"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-24ea730e6776",
+      "summary": "IMAGEN 31 — Formación de acetales cíclicos con dioles",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-ca19974f174f3336",
+          "alt": "IMAGEN 31 — Formación de acetales cíclicos con dioles",
+          "caption": "IMAGEN 31 — Formación de acetales cíclicos con dioles"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-a77d8cd1b1b4",
+      "summary": "IMAGEN 32 — Acetales como grupos protectores y protección selectiva de aldehídos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-0b62b3d8aa047703",
+          "alt": "IMAGEN 32 — Acetales como grupos protectores y protección selectiva de aldehídos",
+          "caption": "IMAGEN 32 — Acetales como grupos protectores y protección selectiva de aldehídos"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-047b58196009",
+      "summary": "7. ACETILUROS, HIDRUROS Y GRIGNARDnucleófilos fuertes",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-d650e7118b46",
+          "text": "7. ACETILUROS, HIDRUROS Y GRIGNARD"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-07f7e9c404f3",
+          "text": "Acetiluros"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2a05d6885f89",
+          "text": "Un alquino terminal puede desprotonarse con NaNH₂/NH₃ para formar un ion acetiluro, que ataca aldehídos y cetonas y genera alcoholes con grupo alquino."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-25069fa274de",
+          "text": "Reducción con hidruros"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e92aa0635536",
+          "text": "NaBH₄ y LiAlH₄ reducen aldehídos y cetonas por transferencia de hidruro. Los aldehídos dan alcoholes primarios y las cetonas dan alcoholes secundarios."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e9c4c3b817cb",
+          "text": "Reactivos de Grignard"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3f3b60990b5c",
+          "text": "Los reactivos de Grignard, R–MgX, se comportan como nucleófilos carbonados fuertes. Atacan al carbonilo para formar un alcóxido de magnesio, que luego se protona en el trabajo ácido."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-eb32b96456aa",
+          "text": "El ácido se agrega al final; si se agrega al principio, destruye el Grignard formando R–H."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b3f6b6e3e561",
+          "text": "Productos: formaldehído + Grignard → alcohol primario; aldehído + Grignard → alcohol secundario; cetona + Grignard → alcohol terciario."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-f1564f44aac6",
+          "text": "Reducción total"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5fc7a7e06d97",
+          "text": "Clemmensen y Wolff-Kishner reducen el carbonilo hasta metileno."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1d2887ab99f1",
+      "summary": "IMAGEN 33 — Adición de acetiluros a aldehídos y cetonas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-cc265f9007e8449d",
+          "alt": "IMAGEN 33 — Adición de acetiluros a aldehídos y cetonas",
+          "caption": "IMAGEN 33 — Adición de acetiluros a aldehídos y cetonas"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-28643b327acd",
+      "summary": "IMAGEN 34 — Reducción con NaBH₄ y LiAlH₄",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-391cfb4988380f76",
+          "alt": "IMAGEN 34 — Reducción con NaBH₄ y LiAlH₄",
+          "caption": "IMAGEN 34 — Reducción con NaBH₄ y LiAlH₄"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-0a936372751b",
+      "summary": "IMAGEN 35 — Mecanismo de adición de reactivos de Grignard",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-e98b212d57580132",
+          "alt": "IMAGEN 35 — Mecanismo de adición de reactivos de Grignard",
+          "caption": "IMAGEN 35 — Mecanismo de adición de reactivos de Grignard"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8751c20809a2",
+      "summary": "IMAGEN 36 — Reducción de Clemmensen",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-8273f1f5ebf239b4",
+          "alt": "IMAGEN 36 — Reducción de Clemmensen",
+          "caption": "IMAGEN 36 — Reducción de Clemmensen"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-0c9007100f87",
+      "summary": "IMAGEN 37 — Reducción de Wolff-Kishner",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-25a7a0061b02c347",
+          "alt": "IMAGEN 37 — Reducción de Wolff-Kishner",
+          "caption": "IMAGEN 37 — Reducción de Wolff-Kishner"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-69a89e519cbd",
+      "summary": "8. CARBONO ALFA, ENOLATOS Y TAUTOMERÍAα-H",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-1a332604ec99",
+          "text": "8. CARBONO ALFA, ENOLATOS Y TAUTOMERÍA"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-a4d6537a4fd7",
+          "text": "Carbono alfa e hidrógenos alfa"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9af1eb86f3c4",
+          "text": "El carbono alfa es el carbono vecino al carbonilo. Los H unidos a ese carbono son hidrógenos alfa. Son relativamente ácidos porque, al perder H⁺, se forma un enolato estabilizado por resonancia."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e5bd9c3a4b1e",
+          "text": "El enolato puede reaccionar como base fuerte y también como nucleófilo fuerte. Su nucleofilicidad en carbono explica reacciones como la aldólica."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-f35bfb66957e",
+          "text": "Tautomería ceto-enólica"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e6c106b2ee3e",
+          "text": "La tautomería ceto-enólica es el equilibrio entre la forma carbonílica o ceto y la forma enol, que posee C=C y OH."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-65c315012de4",
+          "text": "En medio básico, se forma primero el enolato y luego se protona. En medio ácido, se protona primero el oxígeno del carbonilo y después se pierde un H alfa. En aldehídos y cetonas simples suele predominar la forma ceto, pero la forma enólica es clave para explicar muchas reacciones."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-f070197bf06e",
+      "summary": "IMAGEN 38 — Carbono alfa, hidrógenos alfa y resonancia del enolato",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-199fd9c65e937e1d",
+          "alt": "IMAGEN 38 — Carbono alfa, hidrógenos alfa y resonancia del enolato",
+          "caption": "IMAGEN 38 — Carbono alfa, hidrógenos alfa y resonancia del enolato"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-c94e4ad8c5db",
+      "summary": "IMAGEN 39 — Tautomería ceto-enólica en medio ácido y básico",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-30c21e889fc94708",
+          "alt": "IMAGEN 39 — Tautomería ceto-enólica en medio ácido y básico",
+          "caption": "IMAGEN 39 — Tautomería ceto-enólica en medio ácido y básico"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-51c8c4b0d252",
+      "summary": "9. ALDÓLICA Y CANNIZZAROC–C",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-b72a13bdbc1c",
+          "text": "9. ALDÓLICA Y CANNIZZARO"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-120c1b20c5c0",
+          "text": "Adición aldólica"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4f144108f3e6",
+          "text": "La reacción aldólica ocurre cuando un carbonilo con hidrógenos alfa forma un enolato, y ese enolato ataca a otra molécula carbonílica. El producto es un β-hidroxialdehído o una β-hidroxicetona."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-3c3abb50d7f0",
+          "text": "Aldólica mixta e intramolecular"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5f9f6925845b",
+          "text": "La aldólica mixta usa dos carbonilos diferentes. Si ambos tienen hidrógenos alfa, se pueden formar varios enolatos y muchos productos, por lo que la reacción puede ser poco selectiva. En moléculas dicarbonílicas puede ocurrir aldólica intramolecular, favoreciendo ciclos de 5 o 6 miembros."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-7cebb344b5e8",
+          "text": "Deshidratación de aldoles"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-1e4687a9c9a7",
+          "text": "Un aldol puede perder agua y formar un carbonilo α,β-insaturado. Lo importante no es aplicar Zaitsev u Hofmann, sino formar un sistema conjugado C=C–C=O estabilizado por resonancia."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-a9767609ad8f",
+          "text": "Cannizzaro"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-451c0287f37b",
+          "text": "La reacción de Cannizzaro ocurre con aldehídos sin hidrógenos alfa, en medio fuertemente básico y con calor. Dos moléculas de aldehído reaccionan: una se oxida a carboxilato y la otra se reduce a alcohol."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-c4e3c2cf9832",
+      "summary": "IMAGEN 40 — Mecanismo general de adición aldólica",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-0091fb6278d846f7",
+          "alt": "IMAGEN 40 — Mecanismo general de adición aldólica",
+          "caption": "IMAGEN 40 — Mecanismo general de adición aldólica"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-68e79717edb2",
+      "summary": "IMAGEN 41 — Ejemplo de aldólica con propanal",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-b810bd0ce5c93dd7",
+          "alt": "IMAGEN 41 — Ejemplo de aldólica con propanal",
+          "caption": "IMAGEN 41 — Ejemplo de aldólica con propanal"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-2ddc71aef982",
+      "summary": "IMAGEN 42 — Aldólica mixta",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-baa6ed778b796f29",
+          "alt": "IMAGEN 42 — Aldólica mixta",
+          "caption": "IMAGEN 42 — Aldólica mixta"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1906de61714d",
+      "summary": "IMAGEN 43 — Aldol intramolecular y formación de ciclos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-990c8ac04ab4803d",
+          "alt": "IMAGEN 43 — Aldol intramolecular y formación de ciclos",
+          "caption": "IMAGEN 43 — Aldol intramolecular y formación de ciclos"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-48d05e2e1499",
+      "summary": "IMAGEN 44 — Deshidratación de aldoles a carbonilos α,β-insaturados",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-054be50186e9244c",
+          "alt": "IMAGEN 44 — Deshidratación de aldoles a carbonilos α,β-insaturados",
+          "caption": "IMAGEN 44 — Deshidratación de aldoles a carbonilos α,β-insaturados"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-ffb6bb0cb30b",
+      "summary": "IMAGEN 45 — Reacción general de Cannizzaro",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-55898a93278239e4",
+          "alt": "IMAGEN 45 — Reacción general de Cannizzaro",
+          "caption": "IMAGEN 45 — Reacción general de Cannizzaro"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-06b74dbfab04",
+      "summary": "IMAGEN 46 — Mecanismo conceptual de Cannizzaro y transferencia de hidruro",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-c40d8f82782a765b",
+          "alt": "IMAGEN 46 — Mecanismo conceptual de Cannizzaro y transferencia de hidruro",
+          "caption": "IMAGEN 46 — Mecanismo conceptual de Cannizzaro y transferencia de hidruro"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d0c3c60c2b44",
+      "summary": "10. OXIDACIÓN Y REDUCCIÓNredox",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-8a8bd50c6ee7",
+          "text": "10. OXIDACIÓN Y REDUCCIÓN"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-2341a982c483",
+          "text": "Oxidación"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-61431a79b1ed",
+          "text": "Los aldehídos se oxidan fácilmente a ácidos carboxílicos. Las cetonas, en cambio, no se oxidan fácilmente en condiciones suaves; si se oxidan, suele haber ruptura de cadena."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-88881ca1022d",
+          "text": "El reactivo de Tollens oxida aldehídos a carboxilatos y reduce Ag(I) a plata metálica, formando el espejo de plata."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-4440f94a7341",
+          "text": "Reducción"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8cd12b615945",
+          "text": "Los aldehídos se reducen a alcoholes primarios y las cetonas a alcoholes secundarios. Pueden usarse NaBH₄, LiAlH₄ o hidrogenación catalítica."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-70a9d4438849",
+          "text": "Con H₂ y catalizadores como Pd, Pt o Ni, la selectividad depende de presión, temperatura y catalizador. En condiciones suaves puede reducirse preferentemente un C=C; en condiciones más fuertes también se reduce el C=O."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-53575fcba640",
+      "summary": "IMAGEN 47 — Hidrogenación catalítica de alquenos y carbonilos según condiciones",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-73fc4fb6fb7b7771",
+          "alt": "IMAGEN 47 — Hidrogenación catalítica de alquenos y carbonilos según condiciones",
+          "caption": "IMAGEN 47 — Hidrogenación catalítica de alquenos y carbonilos según condiciones"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-ce033c8e4324",
+      "summary": "IMAGEN 48 — Ejemplo de hidrogenación selectiva",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-b8d29ea58e89f197",
+          "alt": "IMAGEN 48 — Ejemplo de hidrogenación selectiva",
+          "caption": "IMAGEN 48 — Ejemplo de hidrogenación selectiva"
+        }
+      ]
+    }
+  ]
+}

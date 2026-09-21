@@ -1,0 +1,129 @@
+{
+  "exercises": [
+    {
+      "id": "ejercicio-org-sin-aci-01",
+      "origin": "source",
+      "prompt": "Convertí 1-bromopropano en ácido butanoico.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Mg, éter anhidro. 2) CO₂. 3) H₃O⁺."
+      ],
+      "result": "1) Mg, éter anhidro. 2) CO₂. 3) H₃O⁺.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aci-02",
+      "origin": "source",
+      "prompt": "Convertí ácido benzoico en benzoato de etilo utilizando un derivado activado.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) SOCl₂. 2) Etanol y base."
+      ],
+      "result": "1) SOCl₂. 2) Etanol y base.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aci-03",
+      "origin": "source",
+      "prompt": "Prepará acetamida a partir de ácido acético.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) SOCl₂ para formar cloruro de acetilo. 2) Exceso de NH₃."
+      ],
+      "result": "1) SOCl₂ para formar cloruro de acetilo. 2) Exceso de NH₃.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aci-04",
+      "origin": "source",
+      "prompt": "Prepará un ácido acético sustituido mediante síntesis malónica.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Desprotonar malonato de dietilo, alquilar con un halogenuro primario, hidrolizar y descarboxilar."
+      ],
+      "result": "Desprotonar malonato de dietilo, alquilar con un halogenuro primario, hidrolizar y descarboxilar.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aci-05",
+      "origin": "source",
+      "prompt": "Prepará una metilcetona sustituida mediante síntesis acetoacética.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Desprotonar acetoacetato de etilo, alquilar, hidrolizar y descarboxilar."
+      ],
+      "result": "Desprotonar acetoacetato de etilo, alquilar, hidrolizar y descarboxilar.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    }
+  ]
+}

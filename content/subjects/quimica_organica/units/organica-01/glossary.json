@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "id": "organica-01-glosario-1",
+      "term": "ÍNDICE MAESTRO DE SÍNTESIS Y REACCIONES MAPA DE ESTUDIO",
+      "definition": "Mapa rápido para repasar todo lo que hay que saber: cada tarjeta separa síntesis y reacciones. Los nombres están linkeados a la sección correspondiente del apunte para ir directo al desarrollo, mecanismo o imagen.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-01",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

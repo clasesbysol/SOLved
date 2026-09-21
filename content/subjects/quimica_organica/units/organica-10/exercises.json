@@ -1,0 +1,104 @@
+{
+  "exercises": [
+    {
+      "id": "ejercicio-org-sin-alq-01",
+      "origin": "source",
+      "prompt": "Convertí 2-butanol en el alqueno más estable.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "H₂SO₄, calor; producto mayoritario trans-2-buteno."
+      ],
+      "result": "H₂SO₄, calor; producto mayoritario trans-2-buteno.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-alq-02",
+      "origin": "source",
+      "prompt": "Convertí 2-butino en cis-2-buteno.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "H₂, catalizador de Lindlar."
+      ],
+      "result": "H₂, catalizador de Lindlar.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-alq-03",
+      "origin": "source",
+      "prompt": "Convertí 2-butino en trans-2-buteno.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Na, NH₃ líquido."
+      ],
+      "result": "Na, NH₃ líquido.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-alq-04",
+      "origin": "source",
+      "prompt": "Convertí 2-bromobutano mayoritariamente en 1-buteno.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Utilizar una base fuerte voluminosa, como terc-butóxido, favoreciendo el producto de Hofmann."
+      ],
+      "result": "Utilizar una base fuerte voluminosa, como terc-butóxido, favoreciendo el producto de Hofmann.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    }
+  ]
+}

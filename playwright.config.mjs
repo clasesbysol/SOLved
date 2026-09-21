@@ -9,6 +9,7 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4174",
     storageState: "tests/guest-storage-state.json",
     serviceWorkers: "block",
+    launchOptions: process.env.SOLVED_CHROME_PATH ? {executablePath: process.env.SOLVED_CHROME_PATH} : {},
     trace: "retain-on-failure"
   },
   webServer: {

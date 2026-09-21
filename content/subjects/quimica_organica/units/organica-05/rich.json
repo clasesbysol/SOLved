@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-839037aca2da",
+      "summary": "MECANISMOS CLAVE RESUMEN TRANSVERSAL",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-d23e143ecf33",
+          "text": "MECANISMOS CLAVE RESUMEN TRANSVERSAL"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0a303608c6fb",
+          "text": "Esta sección centraliza los mecanismos principales a los que hacen referencia los badges de las reacciones. Aquí se desarrollan o amplían a medida que se completa el material."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e8927e0f719a",
+      "summary": "SN1 — Sustitución nucleofílica unimolecular",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-30110888836c",
+          "text": "SN1 — Sustitución nucleofílica unimolecular"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-da78fbefa94a",
+          "text": "Velocidad: depende solo de la concentración del sustrato."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-31d886d6b982",
+          "text": "Mecanismo en dos etapas: primero se forma el carbocatión (etapa lenta, determinante), luego el nucleófilo ataca el carbocatión (etapa rápida)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b67eab896f27",
+          "text": "Favorecida por: sustratos con carbocationes estables (terciarios > secundarios), solventes polares próticos, nucleófilos débiles."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-dece9b4c3556",
+          "text": "Estereoquímica: racemización (mezcla de productos). El carbocatión es plano → ataque por ambas caras."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-09bfb1919e53",
+      "summary": "Imagen — mecanismo SN1",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-3e9d74104c18294b",
+          "alt": "Mecanismo SN1: formación del carbocatión, ataque nucleofílico y factores que favorecen la reacción. — imagen 12",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-9f4627d2f5ec",
+      "summary": "Imágenes — reordenamientos en SN1",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-aadcfb052645a7e0",
+          "alt": "Reordenamientos por desplazamiento de hidruro y de metilo en carbocationes durante reacciones SN1. — imagen 11",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-28954377dbb98b71",
+          "alt": "Reordenamientos por desplazamiento de hidruro y de metilo en carbocationes durante reacciones SN1. — imagen 16",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-43bc9770bcb3",
+      "summary": "SN2 — Sustitución nucleofílica bimolecular",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-49e2bc2f993a",
+          "text": "SN2 — Sustitución nucleofílica bimolecular"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fc203374171e",
+          "text": "Velocidad: depende de la concentración del sustrato y del nucleófilo."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-55d2aa20ac83",
+          "text": "Mecanismo en una etapa: el nucleófilo ataca por la cara opuesta al grupo saliente (ataque de inversión). Hay un estado de transición único."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-21eb6d07f5e2",
+          "text": "Favorecida por: sustratos primarios (menor impedimento estérico), nucleófilos fuertes, solventes polares apróticos (DMF, DMSO, acetona)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d81ccaa47877",
+          "text": "Estereoquímica: inversión de Walden. El producto tiene configuración opuesta al reactivo."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-f282b38c09b3",
+      "summary": "Imagen — mecanismo SN2",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-6aad2ab32c5ded6c",
+          "alt": "Mecanismo SN2 concertado, estado de transición e inversión de configuración. — imagen 10",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-4a296c6d85c7",
+      "summary": "E1 — Eliminación unimolecular",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e3e808cd076d",
+          "text": "E1 — Eliminación unimolecular"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6431097cafe3",
+          "text": "Velocidad: depende solo del sustrato."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-846d39eb8858",
+          "text": "Mecanismo en dos etapas: primero se forma el carbocatión, luego una base elimina un protón β para dar el alqueno."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4d94783a7f6d",
+          "text": "Favorecida por: sustratos terciarios, temperatura elevada, bases débiles, solventes polares próticos."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d1c5d403f45a",
+          "text": "Regla: suele seguir la regla de Zaitsev (alqueno más sustituido = más estable)."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-0ea3ecf5d145",
+      "summary": "Imágenes — mecanismo E1 y reordenamiento",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-4c96fd6e12a91a23",
+          "alt": "Mecanismo E1, competencia con SN1, reordenamiento de carbocationes y orientación de Zaitsev. — imagen 13",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-c8781ba077b50696",
+          "alt": "Mecanismo E1, competencia con SN1, reordenamiento de carbocationes y orientación de Zaitsev. — imagen 14",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b9e6bb19ecbb",
+      "summary": "E2 — Eliminación bimolecular",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-1579431db6bd",
+          "text": "E2 — Eliminación bimolecular"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9f875b77b8c2",
+          "text": "Velocidad: depende del sustrato y de la base."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-636223547495",
+          "text": "Mecanismo en una etapa: la base extrae el protón β al mismo tiempo que el grupo saliente parte. Requiere geometría anti-periplanar (diedro ≈ 180°)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a25793269380",
+          "text": "Favorecida por: sustratos secundarios y terciarios, bases fuertes y voluminosas, temperatura elevada."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ce2b265c9e49",
+          "text": "Regla de Zaitsev: con bases pequeñas → alqueno más sustituido. Regla de Hofmann: con bases voluminosas → alqueno menos sustituido."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-9d8fe7a98fc8",
+      "summary": "Imágenes — mecanismo E2",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-0b68352355f0c336",
+          "alt": "Mecanismo E2 concertado, geometría anti-periplanar y requisito trans-diaxial en ciclohexanos. — imagen 15",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-62ea01b95dae8194",
+          "alt": "Mecanismo E2 concertado, geometría anti-periplanar y requisito trans-diaxial en ciclohexanos. — imagen 21",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-4d15ca096ac49bdc",
+          "alt": "Mecanismo E2 concertado, geometría anti-periplanar y requisito trans-diaxial en ciclohexanos. — imagen 22",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-4cd4cfac6506",
+      "summary": "Imágenes — Zaitsev, Hofmann y bases voluminosas",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-6a264657b7958ffd",
+          "alt": "Selección de productos E2: base pequeña favorece Zaitsev; base voluminosa favorece Hofmann; conformación axial necesaria en ciclohexanos. — imagen 19",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-4bf6418c46d88391",
+          "alt": "Selección de productos E2: base pequeña favorece Zaitsev; base voluminosa favorece Hofmann; conformación axial necesaria en ciclohexanos. — imagen 20",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-288e1fb5bf63435e",
+          "alt": "Selección de productos E2: base pequeña favorece Zaitsev; base voluminosa favorece Hofmann; conformación axial necesaria en ciclohexanos. — imagen 17",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-f1d6fc56f175",
+      "summary": "Adición electrofílica a alquenos y alquinos",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-bc66513f4489",
+          "text": "Adición electrofílica a alquenos y alquinos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8c7fe1dc2b3a",
+          "text": "El enlace π actúa como nucleófilo y ataca al electrófilo. Se forma un carbocatión (o intermediario ciclopropánico / bromonium) que luego recibe al nucleófilo."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-1de3046f9be1",
+          "text": "Regla de Markovnikov: el electrófilo (H⁺) se agrega al carbono con más H; el nucleófilo va al carbono más sustituido (se forma el carbocatión más estable)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a1e3025db9d7",
+          "text": "anti-Markovnikov (hidroboración-oxidación): el boro actúa como electrófilo pero sin pasar por carbocatión → adición syn → OH al carbono menos sustituido."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-07555d3a73ec",
+      "summary": "Imagen — mecanismo general de adición electrofílica",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-9fc9a4fc2ada538c",
+          "alt": "Adición electrofílica a alquenos: ataque del enlace pi, formación de carbocatión y ataque nucleofílico. — imagen 24",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d5fc816c8ca8",
+      "summary": "SEA — Sustitución electrofílica aromática",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0d2fb4ea1b63",
+          "text": "SEA — Sustitución electrofílica aromática"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-69a58a90fedb",
+          "text": "El anillo aromático actúa como nucleófilo. El electrófilo se une y forma un intermediario arenio (carbocatión no aromático). Una base extrae un protón y restaura la aromaticidad."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-66d5a95512e2",
+          "text": "Clave: se conserva la aromaticidad al final. Por eso el producto es de sustitución, no de adición."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-92926e39a272",
+      "summary": "Imagen — mecanismo general SEA",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-6101e41581da2978",
+          "alt": "Mecanismo general de sustitución electrofílica aromática: formación del complejo sigma/intermediario arenio y recuperación de aromaticidad.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-6c1ec220b810",
+      "summary": "Imagen adicional — apunte SEA / SNAr",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-3f54016ef606e3c5",
+          "alt": "Apunte comparativo de sustitución electrofílica aromática y sustitución nucleofílica aromática.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3103598b9eb9",
+      "summary": "SNAr — Sustitución nucleofílica aromática",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-cb0566a973c6",
+          "text": "SNAr — Sustitución nucleofílica aromática"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-abcb4ac4b317",
+          "text": "El nucleófilo ataca el anillo aromático, formando un intermediario de Meisenheimer (anión). Luego el grupo saliente parte. Requiere grupos retiradores de electrones en posiciones orto/para para estabilizar el intermediario."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-136ef060dbd6",
+      "summary": "Imagen — SNAr por adición-eliminación",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-3c3da68632296169",
+          "alt": "SNAr por adición-eliminación: ataque nucleofílico, intermediario de Meisenheimer y salida del grupo saliente.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e44716977fdc",
+      "summary": "Imagen — mecanismo por bencino",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-6941abff6efc9487",
+          "alt": "SNAr por mecanismo de bencino: eliminación-adición bajo condiciones fuertes.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-7914c76fe86f",
+      "summary": "Imagen adicional — apunte SEA / SNAr",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-3f54016ef606e3c5",
+          "alt": "Apunte comparativo de sustitución electrofílica aromática y sustitución nucleofílica aromática.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b409cfc87f42",
+      "summary": "Reacciones radicalarias",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-af30b97783f5",
+          "text": "Reacciones radicalarias"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9d756d7e594e",
+          "text": "Iniciación: generación de radicales libres con luz (hν) o calor (Δ)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-92dc4ce3a860",
+          "text": "Propagación: el radical reacciona con una molécula, generando un nuevo radical que sigue la cadena."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5344ddb75fcf",
+          "text": "Terminación: dos radicales se combinan y se pierde la especie activa."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-80622bb18915",
+          "text": "La selectividad depende de la estabilidad del radical: 3° > 2° > 1°."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-33224bcd11e2",
+      "summary": "Imagen — adición radicalaria de HBr",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-9729c4a339707c46",
+          "alt": "Adición anti-Markovnikov de HBr a alquenos en presencia de peróxidos mediante radicales libres. — imagen 26",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8c2412cc22b8",
+      "summary": "Formación y reacción de organometálicos",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-82834255c376",
+          "text": "Formación y reacción de organometálicos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a3b0e5a9d6e7",
+          "text": "Los organometálicos se preparan a partir de haluros orgánicos y luego se usan como nucleófilos fuertes para formar enlaces C–C. No se desarrolla un mecanismo largo; lo importante es reconocer la secuencia: formar el reactivo → hacerlo reaccionar → hidrólisis/trabajo ácido."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-0d36d6141805",
+          "text": "Grignard"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-40915919a261",
+          "text": "Con formaldehído da alcohol 1°; con aldehídos, alcoholes 2°; con cetonas, alcoholes 3°; con ésteres, alcoholes 3° por doble adición; con CO₂, ácidos carboxílicos tras hidrólisis ácida."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-e070f7845593",
+          "text": "Gilman / organocupratos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9eeafc7d6223",
+          "text": "El reactivo de Gilman \\(R_2CuLi\\) es menos reactivo que Grignard/organolitio y sirve para acoplamientos C–C más selectivos."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ab723553256d",
+          "text": "Corey-House"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6d609bb33085",
+          "text": "Acoplamiento útil para formar alcanos no simétricos. Funciona mejor con haluros primarios."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ae4028e4f257",
+          "text": "Wurtz"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c64f5af43daf",
+          "text": "Acoplamiento de haluros de alquilo. Es más útil para alcanos simétricos; con haluros distintos puede dar mezcla de productos."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-fe083e470278",
+      "summary": "Oxidaciones y reducciones orgánicas",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-a44d9b1d2cc9",
+          "text": "Oxidaciones y reducciones orgánicas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-70c425b237e4",
+          "text": "Oxidación: pérdida de hidrógeno o ganancia de oxígeno. Aumento del número de oxidación del carbono."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e4a9c8cae9f0",
+          "text": "Reducción: ganancia de hidrógeno o pérdida de oxígeno. Disminución del número de oxidación del carbono."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-11c3101bb515",
+          "text": "Ejemplos de reactivos oxidantes: KMnO₄, OsO₄, mCPBA, O₃, H₂O₂."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f10ed73ea8b1",
+          "text": "Ejemplos de reactivos reductores: H₂/cat, LiAlH₄, NaBH₄, Na/NH₃(l)."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-21118f6f3708",
+          "text": "Reducción de aldehídos y cetonas a alcanos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5d7960b29c4d",
+          "text": "Clemmensen: Zn(Hg), HCl concentrado, calor. Medio ácido. Conviene cuando la molécula tolera ácido fuerte."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4be2ca082b81",
+          "text": "Wolff-Kishner: NH₂NH₂, KOH, calor, solvente de alto punto de ebullición. Medio básico. Conviene cuando la molécula no tolera condiciones ácidas."
+        }
+      ]
+    }
+  ]
+}

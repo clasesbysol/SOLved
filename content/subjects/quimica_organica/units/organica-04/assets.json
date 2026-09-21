@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-a70a0d2e5947d841",
+      "path": "assets/a70a0d2e5947d8414832.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "a70a0d2e5947d8414832e84e2280ba97e95768bf281c5426916fc4683fc9c912",
+      "alt": "Diagramas de energía, energía de activación y efecto de la temperatura sobre la fracción de moléculas reactivas. — imagen 3"
+    },
+    {
+      "id": "asset-346cd34a171cf255",
+      "path": "assets/346cd34a171cf25571d2.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "346cd34a171cf25571d2a0052d612a61e68455093f11a270e40bcf37840e0ad9",
+      "alt": "Diagramas de energía, energía de activación y efecto de la temperatura sobre la fracción de moléculas reactivas. — imagen 4"
+    },
+    {
+      "id": "asset-7310ddd1ac85cdd5",
+      "path": "assets/7310ddd1ac85cdd5b7f0.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7310ddd1ac85cdd5b7f0eecdfd3bdf56aa588a59d75f11c99fbbd69a023fa4ef",
+      "alt": "Comparación de perfiles de energía para reacciones exotérmicas y endotérmicas. — imagen 6"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "entries": [
+    {
+      "id": "organica-15-glosario-1",
+      "term": "ALDEHÍDOS Y CETONAS WADE VOL. 2 · CAP. 18",
+      "definition": "Aldehídos y cetonas: estructura del carbonilo, nomenclatura, síntesis, adición nucleofílica, derivados, química alfa, aldólica, Cannizzaro, oxidación y reducción.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-2",
+      "term": "1. GRUPO CARBONILOC=O",
+      "definition": "El grupo carbonilo está formado por un carbono unido por doble enlace a un oxígeno, C=O. Tanto el carbono como el oxígeno están hibridados sp², por eso el grupo es trigonal plano y presenta ángulos cercanos a 120°. El doble enlace tiene un enlace sigma y un enlace pi.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-5",
+      "term": "2. NOMENCLATURA-al / -ona",
+      "definition": "En IUPAC, los aldehídos se nombran reemplazando la terminación -o del alcano por -al. La cadena principal debe contener el grupo aldehído y el carbono del –CHO siempre se numera como C1, porque está en un extremo.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-6",
+      "term": "3. PROPIEDADES FÍSICASdipolo-dipolo",
+      "definition": "La polarización del carbonilo genera atracciones dipolo-dipolo. Por eso, aldehídos y cetonas tienen puntos de ebullición mayores que hidrocarburos y éteres de masa molecular similar. Sin embargo, no poseen enlaces O–H ni N–H, de modo que no forman puentes de hidrógeno entre sí y hierven por debajo de los alcoholes comparables.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-7",
+      "term": "4. SÍNTESIS DE ALDEHÍDOS Y CETONASrutas generales",
+      "definition": "La oxidación de alcoholes es una ruta central. Un alcohol primario puede oxidarse a aldehído y luego a ácido carboxílico; por eso, para aislar aldehídos se requieren oxidantes controlados. Un alcohol secundario se oxida a cetona, mientras que un alcohol terciario no se oxida fácilmente porque no tiene H en el carbono que porta el OH.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-21",
+      "term": "5. ADICIÓN NUCLEOFÍLICA AL CARBONILONu⁻ + C=O",
+      "definition": "La reacción característica de aldehídos y cetonas es la adición nucleofílica al C=O. El nucleófilo ataca al carbono carbonílico, el enlace pi se desplaza hacia el oxígeno y se forma un alcóxido que luego se protona.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-34",
+      "term": "6. HEMIACETALES Y ACETALESROH / H⁺",
+      "definition": "Los aldehídos y cetonas reaccionan con alcoholes para formar hemiacetales. Un hemiacetal tiene, en el mismo carbono, un grupo OH y un grupo OR.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-40",
+      "term": "7. ACETILUROS, HIDRUROS Y GRIGNARDnucleófilos fuertes",
+      "definition": "Un alquino terminal puede desprotonarse con NaNH₂/NH₃ para formar un ion acetiluro, que ataca aldehídos y cetonas y genera alcoholes con grupo alquino.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-46",
+      "term": "8. CARBONO ALFA, ENOLATOS Y TAUTOMERÍAα-H",
+      "definition": "El carbono alfa es el carbono vecino al carbonilo. Los H unidos a ese carbono son hidrógenos alfa. Son relativamente ácidos porque, al perder H⁺, se forma un enolato estabilizado por resonancia.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-49",
+      "term": "9. ALDÓLICA Y CANNIZZAROC–C",
+      "definition": "La reacción aldólica ocurre cuando un carbonilo con hidrógenos alfa forma un enolato, y ese enolato ataca a otra molécula carbonílica. El producto es un β-hidroxialdehído o una β-hidroxicetona.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-15-glosario-57",
+      "term": "10. OXIDACIÓN Y REDUCCIÓNredox",
+      "definition": "Los aldehídos se oxidan fácilmente a ácidos carboxílicos. Las cetonas, en cambio, no se oxidan fácilmente en condiciones suaves; si se oxidan, suele haber ruptura de cadena.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-15",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

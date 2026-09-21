@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-09-resumen",
+      "title": "Estructura y síntesis de los alquenos",
+      "text": "Los alquenos son hidrocarburos que contienen al menos un doble enlace carbono-carbono.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

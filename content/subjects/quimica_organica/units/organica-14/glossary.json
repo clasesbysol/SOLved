@@ -1,0 +1,144 @@
+{
+  "entries": [
+    {
+      "id": "organica-14-glosario-2",
+      "term": "1. ALCOHOLES: ESTRUCTURA, PROPIEDADES Y CLASIFICACIÓNR–OH",
+      "definition": "Los alcoholes son compuestos orgánicos que poseen al menos un grupo hidroxilo, –OH, unido a un carbono saturado. Su fórmula general puede representarse como:",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-3",
+      "term": "2. NOMENCLATURA DE ALCOHOLES-ol / hidroxi-",
+      "definition": "El grupo –OH tiene prioridad sobre alquilos y halógenos para la numeración.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-4",
+      "term": "3. ACIDEZ, ALCÓXIDOS Y FENOLESRO− / ArO−",
+      "definition": "Los alcoholes son ácidos débiles. Al igual que el agua, pueden perder el protón del grupo hidroxilo para formar un anión alcóxido.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-5",
+      "term": "4. SÍNTESIS DE ALCOHOLEScarbonilos / hidruros",
+      "definition": "Los reactivos organometálicos contienen un enlace carbono–metal. El carbono unido al metal se comporta como nucleófilo y puede formar nuevos enlaces carbono–carbono por adición a carbonilos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-6",
+      "term": "5. REACCIONES DE ALCOHOLESoxidación / sustitución",
+      "definition": "Alcohol → alqueno.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-8",
+      "term": "6. ÉTERES: ESTRUCTURA, NOMENCLATURA Y PROPIEDADESR–O–R’",
+      "definition": "Los éteres son compuestos orgánicos que tienen un átomo de oxígeno unido a dos grupos carbonados.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-9",
+      "term": "7. SÍNTESIS DE ÉTERESWilliamson / adición",
+      "definition": "Es una reacción SN2 entre un alcóxido y un haluro de alquilo.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-10",
+      "term": "8. REACCIONES DE ÉTERESclivaje",
+      "definition": "Los éteres son relativamente poco reactivos. No tienen un buen grupo saliente y, en condiciones neutras o básicas, suelen ser bastante estables.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-11",
+      "term": "9. EPÓXIDOS: ESTRUCTURA, NOMENCLATURA Y SÍNTESISoxirano",
+      "definition": "Los epóxidos son éteres cíclicos de tres miembros. También se llaman oxiranos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-14-glosario-12",
+      "term": "10. REACCIONES DE EPÓXIDOS: APERTURA DE ANILLOácido vs básico",
+      "definition": "Los epóxidos reaccionan por apertura de anillo. La fuerza impulsora es aliviar la tensión del anillo de tres miembros.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-14",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

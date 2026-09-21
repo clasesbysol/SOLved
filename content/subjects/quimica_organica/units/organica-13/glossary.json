@@ -1,0 +1,116 @@
+{
+  "entries": [
+    {
+      "id": "organica-13-glosario-2",
+      "term": "Sustitución electrofílica aromática (SEA) Wade p. 751 SEA Mecanismo clave",
+      "definition": "La sustitución electrofílica aromática permite reemplazar un hidrógeno del anillo aromático por un electrófilo, conservando la aromaticidad al final de la reacción.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-11",
+      "term": "Nitración del tolueno: efecto del grupo alquilo Wade p. 759 Activador Orto/para",
+      "definition": "Los grupos alquilo activan el anillo y orientan principalmente a orto y para.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-13",
+      "term": "Sustituyentes activadores y orientadores orto-para Wade p. 764 Activador Orto/para",
+      "definition": "Los activadores aumentan la reactividad del anillo y suelen orientar a orto/para porque estabilizan mejor los intermediarios correspondientes.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-15",
+      "term": "Sustituyentes desactivadores y orientadores meta Wade p. 765 Desactivador Meta",
+      "definition": "Los desactivadores retiran densidad electrónica del anillo. Muchos orientan a meta porque los intermediarios orto/para serían especialmente inestables.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-16",
+      "term": "Halógenos: desactivadores pero orientadores orto-para Wade p. 768 Desactivador Orto/para",
+      "definition": "Los halógenos desactivan el anillo por efecto inductivo, pero orientan a orto/para porque pueden donar densidad electrónica por resonancia.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-17",
+      "term": "Efectos de múltiples sustituyentes Wade p. 770 Orientación",
+      "definition": "Cuando hay más de un sustituyente, la orientación depende de la fuerza relativa de los grupos. En general, el grupo más activante domina la orientación.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-20",
+      "term": "Acilación de Friedel-Crafts Wade p. 777 SEA Formación C-C",
+      "definition": "Paso 1: acilación de Friedel-Crafts para formar una aril cetona.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-13-glosario-22",
+      "term": "Comparación entre alquilación y acilación de Friedel-Crafts Wade p. 780",
+      "definition": "La alquilación introduce un grupo alquilo y puede presentar polialquilación o rearreglos del carbocatión. La acilación introduce un grupo acilo y suele ser más controlada porque el producto queda desactivado frente a nuevas sustituciones.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-13",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}
