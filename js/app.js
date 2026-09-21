@@ -92,6 +92,7 @@
     const qbiIntegrated=page==="study"&&INTEGRATED_SUBJECT_IDS.has(currentSubject?.id);
     document.documentElement.classList.toggle("qbi-subject-mode",qbiIntegrated);
     document.documentElement.classList.toggle("organic-subject-mode",page==="study"&&currentSubject?.id==="quimica_organica");
+    document.documentElement.classList.toggle("study-subject-mode",page==="study"&&!!currentSubject);
     els.studyTabs.hidden=qbiIntegrated;els.studyToolbar.hidden=qbiIntegrated;
     document.querySelector(".study-head").hidden=qbiIntegrated;
     els.previewWarning.hidden=qbiIntegrated;

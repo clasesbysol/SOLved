@@ -1,11 +1,11 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v01125-organica-fullscreen";
+const CACHE_VERSION = "biblioteca-lbt-v01126-organica-dual-sidebar";
 const CORE = [
   "./","./index.html","./bienvenida.html",
-  "./styles.css?v=0.11.1","./styles-enhancements.css?v=0.11.17","./styles-personal.css?v=0.10.9",
+  "./styles.css?v=0.11.1","./styles-enhancements.css?v=0.11.18","./styles-personal.css?v=0.10.9",
   "./organic-cards.css?v=0.7.3","./organic-mind-map.css?v=0.7.4",
   "./js/supabase-config.js?v=0.8.0","./js/auth.js?v=0.8.1","./js/data.js?v=0.11.16","./js/db.js?v=0.10.9","./js/supabase-sync.js?v=0.10.9",
-  "./js/organic-cards.js?v=0.7.3","./js/qbi-mind-map-data.js?v=1.1.0","./js/qbi-mind-map-data.js?v=4.4.0","./js/organic-mind-map.js?v=0.11.1","./js/sync.js?v=0.11.0","./js/content.js?v=0.11.8","./js/study-workspace.js?v=0.11.16","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.11.0","./js/app.js?v=0.11.18",
+  "./js/organic-cards.js?v=0.7.3","./js/qbi-mind-map-data.js?v=1.1.0","./js/qbi-mind-map-data.js?v=4.4.0","./js/organic-mind-map.js?v=0.11.1","./js/sync.js?v=0.11.0","./js/content.js?v=0.11.9","./js/study-workspace.js?v=0.11.16","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.11.0","./js/app.js?v=0.11.19",
   "./js/subject-skeleton.js?v=0.1.0","./js/integral-frame-tools.js?v=1.0.0","./js/persistence-repair.js?v=1.0.0","./js/reading-mode-v2.js?v=1.1.0","./js/qbi-official-frame-fix.js?v=1.3.0","./js/qbi-glucidos-study-pack.js?v=1.0.0","./js/fisica-first-partial-guide.js?v=1.1.0","./js/fisica-topic-intros.js?v=1.2.0",
   "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.1.0","./js/study-chrome.js?v=0.11.17","./js/analysis2-integrated.js?v=1.0.0","./js/developer-comments-v101.js?v=1.0.1",
   "./content/catalog.json","./version.json",
