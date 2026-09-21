@@ -15,8 +15,6 @@ class Inventory(HTMLParser):
         self.details = []
         self.links = []
         self.images = []
-        self.detail_anchor_ids = {}
-        self._detail_stack = []
         self._heading = None
         self._summary = None
 
@@ -27,10 +25,6 @@ class Inventory(HTMLParser):
             self._heading = {"level": int(tag[1]), "id": attrs.get("id"), "text": ""}
         elif tag == "details":
             self.details.append({"ordinal": len(self.details) + 1, "id": attrs.get("id"), "summary": ""})
-            self._detail_stack.append(len(self.details))
-        if attrs.get("id"):
-            ordinal = self._detail_stack[-1] if self._detail_stack else len(self.details) + 1
-            self.detail_anchor_ids.setdefault(str(ordinal), []).append(attrs["id"])
         elif tag == "summary":
             self._summary = self.details[-1] if self.details else None
         elif tag == "a":
@@ -52,8 +46,6 @@ class Inventory(HTMLParser):
         if tag == "summary" and self._summary is not None:
             self._summary["summary"] = " ".join(self._summary["summary"].split())
             self._summary = None
-        if tag == "details" and self._detail_stack:
-            self._detail_stack.pop()
 
 
 def walk(blocks, tally, headings, details, figures):
@@ -92,7 +84,6 @@ def main():
         "assets": [{"id": a["id"], "path": a["path"], "alt": a["alt"], "exists": (unit / a["path"]).is_file()} for a in assets],
         "figureAssetIds": [b.get("assetId") for b in figures],
         "sourceLinks": source.links,
-        "detailAnchorIds": source.detail_anchor_ids,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

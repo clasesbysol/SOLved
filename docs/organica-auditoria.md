@@ -28,22 +28,9 @@ La coincidencia de títulos se comprobó por texto normalizado y posición, no p
 
 El contenedor de SOLved está en `index.html` (`#studyPage`, `#studyTabs`, `#studyToolbar`, `#studyBody`) y su estructura y espaciado base en `styles.css`. Estadística carga su lectura desde `content/subjects/estadistica/units/probabilidad-practica-1/estadistica-integral.html`; el archivo arma el documento visual a partir de los payloads `estadistica-v140-payload-*`. `js/estadistica-integral-bridge.js`, `js/estadistica-v120.js` y `js/organic-mind-map.js` añaden comportamiento. La nueva Orgánica debe usar el mismo contenedor de SOLved y un recorrido continuo, con los colores como acentos. El diseño viejo reside principalmente en `original.html` y en los estilos generales de `.rich-document-card`.
 
-## Resultado de la migración
+## Riesgos de paridad pendientes
 
-- El contenido quedó dividido en 19 unidades nativas (`organica-01` a `organica-19`) y el paquete anterior quedó como referencia interna, fuera del catálogo público.
-- La lectura nativa conserva 418 secciones académicas, 520 títulos, 260 figuras y 13 tablas. La sección restante del HTML fuente era una ayuda de interfaz del documento anterior y no forma parte del contenido académico.
-- El índice de anclas resuelve los destinos del mapa conceptual, las tarjetas y los enlaces directos sin depender del `iframe`.
-- El glosario contiene 186 entradas extraídas de las definiciones presentes en la fuente y el banco contiene 63 ejercicios de síntesis basados en el contenido existente.
-- Orgánica usa el contenedor, la barra lateral y la barra única de SOLved. Sólo mantiene los controles de Resaltar, Zoom y Pantalla completa durante la lectura.
-
-## Verificación
-
-- `tests/organic-native.test.mjs` comprueba conteos, assets, paquetes, destinos internos, glosario y ejercicios.
-- Las pruebas E2E cubren lectura, búsqueda, pestañas, tarjetas, mapa, enlaces profundos y la ausencia de una segunda barra de herramientas.
-- Las capturas en `docs/visual/` comparan Orgánica y Estadística en escritorio y móvil.
-- El build estático incluye los módulos y estilos nativos nuevos.
-
-## Riesgos que requieren revisión editorial
-
-- El esquema de `rich.json` guarda texto plano para listas y párrafos; parte del formato en línea, como superíndices y énfasis, puede requerir ajuste editorial.
-- La revisión académica de reacciones, condiciones y mecanismos todavía requiere comparación por unidad. Cualquier error químico sospechoso debe registrarse y revisarse antes de corregirlo.
+- Los enlaces internos del HTML no fueron preservados por el importador. Se requiere un índice y resolución de destinos nativos para mapa y tarjetas.
+- El esquema de `rich.json` guarda texto plano para listas y párrafos; parte del formato en línea, como superíndices y énfasis, requiere revisión visual.
+- El banco de ejercicios y el glosario específicos siguen vacíos. Antes de inventar contenido hay que identificar ejercicios y definiciones realmente presentes en la fuente.
+- La revisión académica de reacciones, condiciones y mecanismos aún requiere comparación por unidad. Cualquier error químico sospechoso debe registrarse, no corregirse silenciosamente.
