@@ -1,0 +1,1258 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-e923d8bbfc70",
+      "summary": "COMPUESTOS NITROGENADOS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-797aae35681b",
+          "text": "COMPUESTOS NITROGENADOS"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-81834e8cfd1f",
+      "summary": "PANORAMA GENERAL",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-59fc11fbb179",
+          "text": "PANORAMA GENERAL"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4d3c203861fa",
+          "text": "Esta unidad reúne la química de los compuestos orgánicos nitrogenados, especialmente las aminas. La idea que ordena casi todo el tema es que el nitrógeno posee un par electrónico libre. Ese par explica su basicidad, su nucleofilicidad, la formación de sales de amonio, las reacciones con carbonilos, la acilación para formar amidas, la eliminación de Hofmann y la formación de sales de diazonio."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-660f6266401b",
+          "text": "Ruta mental: nitrocompuestos → aminas → sales de amonio → síntesis de aminas → reacciones de aminas → sales de diazonio → aminoácidos y proteínas."
+        },
+        {
+          "type": "list",
+          "id": "list-cd32823e1387",
+          "ordered": false,
+          "items": [
+            "Nitrocompuestos: interesan como precursores de arilaminas.",
+            "Aminas: derivan del NH₃ y pueden ser 1°, 2°, 3° o sales de amonio cuaternarias.",
+            "Sales de diazonio: permiten transformar una arilamina en muchos bencenos sustituidos.",
+            "Aminoácidos y proteínas: conectan aminas, ácidos carboxílicos y amidas."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-81c782d67cc6",
+      "summary": "ESTRUCTURA, BASICIDAD Y PUENTES DE HIDRÓGENO",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-443ff151464f",
+          "text": "ESTRUCTURA, BASICIDAD Y PUENTES DE HIDRÓGENO"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-bfac13309cd0",
+          "text": "Las aminas son derivados del amoníaco, NH₃. Uno o más hidrógenos del amoníaco se reemplazan por grupos carbonados. El nitrógeno conserva un par electrónico libre, por eso las aminas son bases y nucleófilos."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-3a8f13efb3327978",
+          "alt": "Estructura de amoníaco, trimetilamina y mapa de potencial electrostático",
+          "caption": "Estructura de amoníaco, trimetilamina y mapa de potencial electrostático"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-ea19e71d0f0e7250",
+          "alt": "Equilibrios ácido-base de aminas y relación entre Ka, Kb, pKa y pKb",
+          "caption": "Equilibrios ácido-base de aminas y relación entre Ka, Kb, pKa y pKb"
+        },
+        {
+          "type": "list",
+          "id": "list-f9c22e9909b2",
+          "ordered": false,
+          "items": [
+            "Mayor Kb significa base más fuerte.",
+            "Menor pKb significa base más fuerte.",
+            "Ka · Kb = Kw = 1,0 × 10⁻¹⁴.",
+            "Al protonarse, la amina forma una sal de amonio y deja de ser nucleofílica."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e437048560db",
+          "text": "Aminas alifáticas vs aromáticas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e7303f4b77b7",
+          "text": "Las aminas aromáticas, como la anilina, suelen ser menos básicas que las alifáticas porque el par libre del nitrógeno puede deslocalizarse hacia el anillo. Si el par está menos disponible para captar H⁺, la basicidad baja."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-98ec983a7094d46d",
+          "alt": "Basicidad comparada de aminas alifáticas y aromáticas",
+          "caption": "Basicidad comparada de aminas alifáticas y aromáticas"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-48449f2db61f",
+          "text": "Puentes de hidrógeno"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-bb27b6f2b65e",
+          "text": "Amina 1° o 2°"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-35c5744fc414",
+          "text": "Tiene enlace N–H, entonces puede donar y aceptar puente de hidrógeno."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-0b9295cb53fb",
+          "text": "Amina 3°"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-68801510d255",
+          "text": "No tiene enlace N–H, entonces no dona puente de hidrógeno, pero sí puede aceptar."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-a0e14d8bfbfb",
+      "summary": "CLASIFICACIÓN DE AMINAS Y SALES DE AMONIO",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-78b56e736f14",
+          "text": "CLASIFICACIÓN DE AMINAS Y SALES DE AMONIO"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a060a56b5b1a",
+          "text": "La clasificación de las aminas se hace tomando como base al NH₃ y contando cuántos hidrógenos fueron reemplazados por grupos carbonados. No se clasifica mirando el carbono unido al nitrógeno, como pasaba con alcoholes."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-614752a13750",
+          "text": "Primaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9f993fcaa6f7",
+          "text": "RNH₂Un enlace C–N y dos H unidos al N."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-a57e0b50f69a",
+          "text": "Secundaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3f626932ea09",
+          "text": "R₂NHDos enlaces C–N y un H unido al N."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-41948a1edcb7",
+          "text": "Terciaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-98233de29175",
+          "text": "R₃NTres enlaces C–N y ningún H unido al N."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-491347cac235",
+          "text": "Amonio cuaternario"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7890b3113eb8",
+          "text": "R₄N⁺ X⁻Cuatro enlaces C–N y carga positiva en el N."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-1f87460b471d",
+          "text": "Ejemplo clave: la terbutilamina es una amina primaria aunque el grupo unido al nitrógeno sea terbutilo. En aminas, 1°, 2° y 3° se refiere al número de grupos carbonados unidos al nitrógeno."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-f66ab1e70f88",
+          "text": "Amina libre vs sal de amonio"
+        },
+        {
+          "type": "list",
+          "id": "list-17b67987786e",
+          "ordered": false,
+          "items": [
+            "La amina libre suele disolverse mejor en solventes orgánicos.",
+            "La sal de amonio es iónica y suele disolverse mejor en agua.",
+            "Esta diferencia sirve para separación por extracción ácido-base."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-5ec5226be643",
+      "summary": "NOMENCLATURA DE AMINAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-bab1525278e8",
+          "text": "NOMENCLATURA DE AMINAS"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-80b65aa42dd1",
+          "text": "Aminas primarias"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2cec178a2cba",
+          "text": "Pueden nombrarse como alquilaminas o como alcanaminas."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-6ec04ae5d158",
+          "text": "Alquilamina"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5f2e99da0afb",
+          "text": "Se nombra el grupo alquilo unido al N y se agrega “amina”. Ejemplo: etilamina."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-32388afce49f",
+          "text": "Alcanamina"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2a50af3895e1",
+          "text": "Se toma el alcano principal y se reemplaza -o por -amina. Ejemplo: etanamina."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0edffe13f403",
+          "text": "Aminas N-sustituidas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0ad7454a96c6",
+          "text": "Los sustituyentes unidos directamente al nitrógeno se indican con N-."
+        },
+        {
+          "type": "list",
+          "id": "list-4052c1437f3f",
+          "ordered": false,
+          "items": [
+            "N-metiletilamina.",
+            "N,N-dimetil-3-hexanamina.",
+            "N,N-dimetilcicloheptamina."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0c743c8c1d89",
+          "text": "Nombres comunes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-09e7ffc91dba",
+          "text": "Se nombran los grupos unidos al nitrógeno en orden alfabético y se agrega “amina”."
+        },
+        {
+          "type": "list",
+          "id": "list-3f69d33f76bb",
+          "ordered": false,
+          "items": [
+            "Dietilmetilamina.",
+            "Ciclopentilmetilamina.",
+            "Difenilamina."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-c1297b4a88cf",
+          "text": "Amina como sustituyente"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-af04f4ced695",
+          "text": "Si hay un grupo funcional de mayor prioridad, la amina se nombra como amino-."
+        },
+        {
+          "type": "list",
+          "id": "list-3f04a694a54d",
+          "ordered": false,
+          "items": [
+            "Ácido γ-aminobutírico.",
+            "Ácido 4-aminobutanoico.",
+            "2-metilaminofenol."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0e232f244982",
+          "text": "Aminas aromáticas y heterocíclicas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9e631ea4d13f",
+          "text": "Las aminas aromáticas se nombran como derivados de la anilina."
+        },
+        {
+          "type": "list",
+          "id": "list-8ba7bb0d6b9e",
+          "ordered": false,
+          "items": [
+            "Anilina.",
+            "N,N-dimetilanilina.",
+            "4-metilanilina o p-toluidina.",
+            "Aziridina, pirrol, pirrolidina, piridina y 2-metilpiridina."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8ef878e089ff",
+      "summary": "NITRILOS: ACIDEZ DE HIDRÓGENOS ALFA",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-00ceb6310280",
+          "text": "NITRILOS: ACIDEZ DE HIDRÓGENOS ALFA"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-1c98611283b9",
+          "text": "Este bloque no es la reducción de nitrilos. Es otra idea: un H unido al carbono α respecto de un nitrilo puede ser relativamente ácido porque, al sacarlo, el carbanión queda estabilizado por el grupo C≡N."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-c3ee26b5be12ad7e",
+          "alt": "Nitrilos: acidez de hidrógenos alfa y estabilización del carbanión",
+          "caption": "Nitrilos: acidez de hidrógenos alfa y estabilización del carbanión"
+        },
+        {
+          "type": "list",
+          "id": "list-f40534a99eab",
+          "ordered": false,
+          "items": [
+            "El grupo nitrilo retira densidad electrónica.",
+            "El carbanión alfa queda estabilizado.",
+            "Esta idea se relaciona con carbaniones, no con la reducción de nitrilos a aminas."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3445c75a4009",
+      "summary": "REACCIONES DE SÍNTESIS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-f1e40d600876",
+          "text": "REACCIONES DE SÍNTESIS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-df8eb3f05f7e",
+          "text": "Este bloque reúne las formas de preparar aminas. Primero aparece el mapa general de síntesis y debajo quedan las reacciones desplegables una por una."
+        },
+        {
+          "type": "table",
+          "id": "table-6331bcc27e43",
+          "rows": [
+            [
+              "Reacción",
+              "Transformación",
+              "Idea clave"
+            ],
+            [
+              "Alquilación directa",
+              "NH₃/RNH₂ + R–X → aminas",
+              "SN2, pero da mezcla por sobrealquilación."
+            ],
+            [
+              "Gabriel",
+              "ftalimida potásica + R–X → amina 1°",
+              "Permite obtener aminas primarias sin sobrealquilación."
+            ],
+            [
+              "Reducción de nitrilos",
+              "R–X + CN⁻ → R–CN → R–CH₂NH₂",
+              "Agrega un carbono a la cadena y da amina primaria."
+            ],
+            [
+              "Reducción de amidas",
+              "R–CONH₂ → R–CH₂NH₂",
+              "LiAlH₄ reduce el carbonilo de la amida a CH₂."
+            ],
+            [
+              "Aminación reductiva",
+              "C=O → imina → amina",
+              "Forma C–N desde aldehídos o cetonas."
+            ],
+            [
+              "Nitrobenceno a anilina",
+              "benceno → nitrobenceno → anilina",
+              "Nitración aromática y reducción de –NO₂ a –NH₂."
+            ],
+            [
+              "Hofmann de amidas",
+              "R–CONH₂ → R–NH₂",
+              "Da amina primaria con un carbono menos."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-be10d241bac6",
+          "text": "Ruta más directa"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e02b79f654b1",
+          "text": "SN2 con NH₃ o aminas, pero el problema es la sobrealquilación."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1a1db5cf3aeb",
+          "text": "Ruta selectiva"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-94b9792d2176",
+          "text": "Gabriel es útil cuando se busca una amina primaria."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-8ea4de9846a2",
+          "text": "Ruta que alarga cadena"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-15d037521c6c",
+          "text": "CN⁻ agrega un carbono; luego LiAlH₄ reduce el nitrilo."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ac33ca9f6b7b",
+          "text": "Ruta aromática"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-634964853e08",
+          "text": "Nitración del benceno y reducción del grupo nitro para obtener anilina."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-9bf07ae4fb3f",
+      "summary": "ALQUILACIÓN DIRECTA POR SN2",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-57f09f606d42",
+          "text": "ALQUILACIÓN DIRECTA POR SN2"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-33e6ce8e064b",
+          "text": "El amoníaco o una amina pueden actuar como nucleófilos y atacar a un halogenuro de alquilo por mecanismo SN2. El producto formado también es nucleofílico, entonces puede seguir alquilándose."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-1a15519b94aabb4f",
+          "alt": "Alquilación directa de amoníaco y aminas por SN2",
+          "caption": "Alquilación directa de amoníaco y aminas por SN2"
+        },
+        {
+          "type": "list",
+          "id": "list-166c96b749c6",
+          "ordered": false,
+          "items": [
+            "Mucho NH₃ y poco R–X favorece amina primaria.",
+            "Poco NH₃ y mucho R–X favorece sal de amonio cuaternario.",
+            "No es una técnica ideal para una única amina porque puede dar mezcla por sobrealquilación."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3ee23f8c4e82",
+      "summary": "SÍNTESIS DE GABRIEL",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-d46ad8eba325",
+          "text": "SÍNTESIS DE GABRIEL"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5dcced49cb80",
+          "text": "La síntesis de Gabriel permite obtener aminas primarias evitando la sobrealquilación. Usa ftalimida como fuente de nitrógeno."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-79c8ba6eecd47b34",
+          "alt": "Síntesis de Gabriel para obtener aminas primarias",
+          "caption": "Síntesis de Gabriel para obtener aminas primarias"
+        },
+        {
+          "type": "list",
+          "id": "list-ea5c7d9ce33a",
+          "ordered": false,
+          "items": [
+            "Anhídrido ftálico + NH₃ → ftalimida.",
+            "Ftalimida + KOH/etanol → ftalimida potásica.",
+            "Ftalimida potásica + R–X → N-alquilftalimida por SN2.",
+            "Hidrólisis ácida → ácido o-ftálico + amina primaria."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-81436ea2f43c",
+          "text": "Conexión con derivados de ácido: aparece formación e hidrólisis de una amida doble, mecanismo relacionado con derivados de ácidos carboxílicos."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d3b624600a26",
+      "summary": "REDUCCIÓN DE NITRILOS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-7f9b621c144f",
+          "text": "REDUCCIÓN DE NITRILOS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8d625d989aac",
+          "text": "Esta reacción sirve para preparar aminas primarias. Primero se forma un nitrilo por SN2 y luego el nitrilo se reduce con LiAlH₄."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-5ea9cc086c766b0a",
+          "alt": "Síntesis por reducción: nitrilos y amidas",
+          "caption": "Síntesis por reducción: nitrilos y amidas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-195750a79b6a",
+          "text": "Idea clave: el carbono del grupo CN queda incorporado a la cadena. Por eso la amina final tiene un carbono más que el halogenuro inicial."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e401d7187f06",
+      "summary": "REDUCCIÓN DE AMIDAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-c7d63f55c34a",
+          "text": "REDUCCIÓN DE AMIDAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8dabac593b53",
+          "text": "Las amidas pueden reducirse con LiAlH₄ para formar aminas. En este caso el carbonilo de la amida se transforma en CH₂ y se conserva el nitrógeno."
+        },
+        {
+          "type": "list",
+          "id": "list-5478b3a79111",
+          "ordered": false,
+          "items": [
+            "Producto: amina primaria si la amida era primaria.",
+            "El C=O desaparece como carbonilo y queda como CH₂.",
+            "Conecta directamente con derivados de ácidos carboxílicos."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-ac9b171336ff",
+      "summary": "AMINACIÓN REDUCTIVA",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0ff821cd809f",
+          "text": "AMINACIÓN REDUCTIVA"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d4fd1811066a",
+          "text": "La aminación reductiva transforma un aldehído o una cetona en una amina. Primero se forma una imina y luego esa imina se reduce."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-c6695dc02763e974",
+          "alt": "Aminación reductiva: carbonilo → imina → amina",
+          "caption": "Aminación reductiva: carbonilo → imina → amina"
+        },
+        {
+          "type": "list",
+          "id": "list-1bc6a1013bfb",
+          "ordered": false,
+          "items": [
+            "Con NH₃ puede obtenerse una amina primaria.",
+            "Con una amina primaria puede obtenerse una amina secundaria.",
+            "Es una forma útil de formar enlaces C–N desde carbonilos."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-82bbab2e3799",
+      "summary": "NITRACIÓN DE BENCENO Y REDUCCIÓN A ARILAMINAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-459e3b5c3743",
+          "text": "NITRACIÓN DE BENCENO Y REDUCCIÓN A ARILAMINAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c2f6242901fd",
+          "text": "Para obtener una arilamina, muchas veces primero se introduce un grupo nitro en el anillo por nitración aromática, y después se reduce ese grupo nitro a amino."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-7dc5405376ad9eba",
+          "alt": "Reducción de nitrocompuestos a arilaminas",
+          "caption": "Reducción de nitrocompuestos a arilaminas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2e15901acd2a",
+          "text": "Idea clave: la nitración introduce –NO₂ en el anillo. La reducción transforma –NO₂ en –NH₂. Así se obtiene anilina o una arilamina sustituida."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-074af38ea395",
+      "summary": "DEGRADACIÓN DE HOFMANN DE AMIDAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e57b3a827353",
+          "text": "DEGRADACIÓN DE HOFMANN DE AMIDAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5108cb76ead5",
+          "text": "En presencia de base fuerte y bromo o cloro, las amidas se degradan a aminas primarias con un carbono menos. El carbonilo desaparece."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-383eb12289414ab7",
+          "alt": "Reagrupamiento de Hofmann de amidas: etapa inicial",
+          "caption": "Reagrupamiento de Hofmann de amidas: etapa inicial"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-375be7489adcad7d",
+          "alt": "Reagrupamiento de Hofmann de amidas: isocianato, hidrólisis y CO₂",
+          "caption": "Reagrupamiento de Hofmann de amidas: isocianato, hidrólisis y CO₂"
+        },
+        {
+          "type": "list",
+          "id": "list-99c8b8a05738",
+          "ordered": false,
+          "items": [
+            "La base arranca H de la amida.",
+            "El nitrógeno se broma.",
+            "Sale Br⁻.",
+            "El grupo R migra hacia el nitrógeno.",
+            "Se forma un isocianato.",
+            "El isocianato se hidroliza y libera CO₂."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8fa5a2417120",
+          "text": "Fuerza impulsora: se forma CO₂, gas muy estable, lo que desplaza la reacción hacia productos."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e893016544d5",
+      "summary": "REACCIONES",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-c8ee512ee994",
+          "text": "REACCIONES"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-bb178a8d7929",
+          "text": "Este bloque reúne las reacciones químicas de las aminas y sales de diazonio. Primero aparece el mapa general y luego cada reacción queda en su propia sección desplegable."
+        },
+        {
+          "type": "table",
+          "id": "table-fcdf30705dc4",
+          "rows": [
+            [
+              "Reacción",
+              "Transformación",
+              "Idea clave"
+            ],
+            [
+              "Base ácido-base",
+              "amina + ácido → sal de amonio",
+              "La protonación aumenta solubilidad y reduce nucleofilicidad."
+            ],
+            [
+              "Iminas",
+              "amina 1°/NH₃ + aldehído/cetona → C=N",
+              "Adición nucleofílica y pérdida de agua."
+            ],
+            [
+              "Enaminas",
+              "amina 2° + carbonilo → enamina",
+              "El H que se pierde es del carbono α."
+            ],
+            [
+              "Acilación",
+              "amina + derivado de ácido → amida",
+              "Sustitución nucleofílica acílica."
+            ],
+            [
+              "Metilación exhaustiva",
+              "amina + exceso CH₃I → amonio cuaternario",
+              "Prepara el sustrato para eliminación de Hofmann."
+            ],
+            [
+              "Eliminación de Hofmann",
+              "amonio cuaternario + OH⁻/calor → alqueno",
+              "Favorece el alqueno menos sustituido."
+            ],
+            [
+              "Nitrosación",
+              "amina 1° + HNO₂ → diazonio",
+              "HNO₂ se genera in situ; requiere baja temperatura."
+            ],
+            [
+              "Sales de diazonio",
+              "Ar–N₂⁺ → Ar–Nu",
+              "N₂ es excelente grupo saliente."
+            ],
+            [
+              "Copulación azoica",
+              "Ar–N₂⁺ + anillo activado → Ar–N=N–Ar",
+              "Forma azocompuestos/colorantes."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-fae307e95b82",
+          "text": "Par libre del N"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ea1f8443858b",
+          "text": "Explica basicidad y nucleofilicidad."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-48fe2bc66a84",
+          "text": "Carbonilos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3f414bfa291d",
+          "text": "Aminas primarias dan iminas; secundarias dan enaminas."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-b12156e656d3",
+          "text": "Diazonio"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-dfa4610bde2d",
+          "text": "Permite transformar anilinas en muchos aromáticos sustituidos."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-fd72896ae837",
+          "text": "Colorantes azoicos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5f723e675645",
+          "text": "La copulación forma enlaces Ar–N=N–Ar."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-62bd5993cfa2",
+      "summary": "REACCIONES COMO BASE: FORMACIÓN DE SALES DE AMONIO",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e0f3cd739405",
+          "text": "REACCIONES COMO BASE: FORMACIÓN DE SALES DE AMONIO"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f5711c944bd3",
+          "text": "Las aminas actúan como bases de Lewis por el par electrónico libre del nitrógeno. Frente a un ácido, aceptan H⁺ y forman sales de amonio."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-65f0fe897e89",
+          "text": "Idea clave: al protonarse, la amina se vuelve iónica, aumenta su solubilidad en agua y deja de comportarse como nucleófilo neutro."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-972f01449712",
+      "summary": "FORMACIÓN DE IMINAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-82ead97f33f0",
+          "text": "FORMACIÓN DE IMINAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7473e649b2be",
+          "text": "El amoníaco o una amina primaria reaccionan con aldehídos o cetonas para formar una imina, también llamada base de Schiff."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-e85e0eae4d8c72b6",
+          "alt": "Mecanismo de formación de iminas desde carbonilos",
+          "caption": "Mecanismo de formación de iminas desde carbonilos"
+        },
+        {
+          "type": "list",
+          "id": "list-8c088fbe38d0",
+          "ordered": false,
+          "items": [
+            "La amina ataca al carbono carbonílico.",
+            "Se forma un intermedio tipo carbinolamina.",
+            "Hay transferencias ácido-base.",
+            "Se elimina agua.",
+            "El C=O se transforma en C=N–R."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ca948f3afd57",
+          "text": "El pH no debe ser muy ácido. Si pH < 4,5, la amina se protona y pierde nucleofilicidad."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-300d3945a823",
+      "summary": "FORMACIÓN DE ENAMINAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-9ba3060e9758",
+          "text": "FORMACIÓN DE ENAMINAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-11d9beda0234",
+          "text": "Las aminas secundarias reaccionan con aldehídos o cetonas para formar enaminas. El mecanismo se parece al de iminas, pero como el nitrógeno no tiene otro H para perder al final, se pierde un H del carbono α."
+        },
+        {
+          "type": "list",
+          "id": "list-e72a302deaff",
+          "ordered": false,
+          "items": [
+            "La amina secundaria ataca al carbonilo.",
+            "Se forma un intermedio Nuc–C–OH.",
+            "Se elimina agua.",
+            "Se pierde Hα.",
+            "Se forma un sistema C=C–N.",
+            "Las aminas terciarias no reaccionan por este mecanismo."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-15881731c79d",
+      "summary": "ACILACIÓN DE AMINAS PARA FORMAR AMIDAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-143a93380490",
+          "text": "ACILACIÓN DE AMINAS PARA FORMAR AMIDAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fffd1e0fbfe3",
+          "text": "Las aminas pueden actuar como nucleófilos frente a derivados de ácidos carboxílicos, especialmente cloruros de ácido. El producto es una amida."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-e3809dcf2ca055c0",
+          "alt": "Acilación de aminas: formación de amidas",
+          "caption": "Acilación de aminas: formación de amidas"
+        },
+        {
+          "type": "list",
+          "id": "list-284ca268e69c",
+          "ordered": false,
+          "items": [
+            "La amina ataca al carbono acílico.",
+            "Se forma un intermedio tetraédrico.",
+            "Sale el grupo saliente.",
+            "Se desprotona el nitrógeno.",
+            "Conecta con sustitución nucleofílica acílica de derivados de ácido."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d3e8b4b4437b",
+      "summary": "METILACIÓN EXHAUSTIVA",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-2faa10dc26ac",
+          "text": "METILACIÓN EXHAUSTIVA"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3fe432230a3c",
+          "text": "La metilación exhaustiva consiste en tratar una amina con exceso de yoduro de metilo, CH₃I. El exceso asegura que el producto sea una sal de amonio cuaternario."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-6abb8829e9ba8153",
+          "alt": "Metilación exhaustiva y conversión a hidróxido de amonio cuaternario",
+          "caption": "Metilación exhaustiva y conversión a hidróxido de amonio cuaternario"
+        },
+        {
+          "type": "list",
+          "id": "list-5c55ba16ffa0",
+          "ordered": false,
+          "items": [
+            "Se usa yoduro porque I⁻ es buen grupo saliente.",
+            "Ag₂O/H₂O cambia I⁻ por OH⁻.",
+            "La formación de AgI precipitado ayuda a desplazar la reacción."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-40cfbb70fbf8",
+      "summary": "ELIMINACIÓN DE HOFMANN",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-1dbe0e655ebf",
+          "text": "ELIMINACIÓN DE HOFMANN"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-bcb828846254",
+          "text": "Al calentar el hidróxido de amonio cuaternario, ocurre una eliminación E2 y se forma un alqueno. A diferencia de Zaitsev, en Hofmann suele predominar el alqueno menos sustituido."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-56095f1c45ffc139",
+          "alt": "Eliminación de Hofmann: E2 y alqueno menos sustituido",
+          "caption": "Eliminación de Hofmann: E2 y alqueno menos sustituido"
+        },
+        {
+          "type": "list",
+          "id": "list-908ed882df0e",
+          "ordered": false,
+          "items": [
+            "El grupo saliente amonio cuaternario es voluminoso.",
+            "La base ataca el H más accesible.",
+            "Predomina el alqueno menos sustituido.",
+            "Producto Hofmann = alqueno menos sustituido."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-c481964f9b1b",
+      "summary": "NITROSACIÓN DE AMINAS PRIMARIAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e76d36c5db9a",
+          "text": "NITROSACIÓN DE AMINAS PRIMARIAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fb24ec847b4d",
+          "text": "La nitrosación usa ácido nitroso, HNO₂. Como HNO₂ es inestable, se genera in situ a partir de nitrito de sodio y ácido."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-ce245c382b7126ad",
+          "alt": "Diazotación de aminas primarias: formación de ion nitrosonio y sal de diazonio",
+          "caption": "Diazotación de aminas primarias: formación de ion nitrosonio y sal de diazonio"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-bbdeec92940eb60a",
+          "alt": "Diazotación de aminas primarias: etapas finales del mecanismo",
+          "caption": "Diazotación de aminas primarias: etapas finales del mecanismo"
+        },
+        {
+          "type": "list",
+          "id": "list-ed560228405b",
+          "ordered": false,
+          "items": [
+            "El catión nitrosonio, NO⁺, es electrófilo.",
+            "La reacción se mantiene por debajo de 5 °C porque HNO₂ se descompone a mayor temperatura.",
+            "En arilaminas primarias, como anilina, se forman sales de diazonio aromáticas."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-76bba5ae98f9",
+      "summary": "REACCIONES DE SALES DE DIAZONIO: SUSTITUCIONES",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-9bd8d568ba2e",
+          "text": "REACCIONES DE SALES DE DIAZONIO: SUSTITUCIONES"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7c96c98141c7",
+          "text": "Las sales de diazonio aromáticas permiten reemplazar el grupo diazonio por distintos nucleófilos o grupos funcionales. La clave es que se libera N₂, gas muy estable y excelente grupo saliente."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-d58b446ea07c88ab",
+          "alt": "Reacciones de sales de diazonio con nucleófilos",
+          "caption": "Reacciones de sales de diazonio con nucleófilos"
+        },
+        {
+          "type": "list",
+          "id": "list-823e34293fdd",
+          "ordered": false,
+          "items": [
+            "Permiten obtener bencenos sustituidos desde anilina.",
+            "Ejemplos del PDF: ROH puede dar Ar–OR y HS⁻ puede dar Ar–SH.",
+            "La salida de N₂ impulsa la reacción."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-22a3b9bf7a34",
+      "summary": "COPULACIÓN AZOICA / ACOPLAMIENTO DE SALES DE DIAZONIO",
+      "children": [
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-793f647ef5bf",
+          "text": "COPULACIÓN AZOICA / ACOPLAMIENTO DE SALES DE DIAZONIO"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7f9810c0f2ca",
+          "text": "Este bloque es distinto de las sustituciones del diazonio. En la copulación azoica, el catión bencenodiazonio actúa como electrófilo y ataca a un anillo aromático fuertemente activado."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-0e25fd438c134eb7",
+          "alt": "Catión bencenodiazonio como electrófilo en copulación azoica",
+          "caption": "Catión bencenodiazonio como electrófilo en copulación azoica"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-478c1c614d6e4562",
+          "alt": "Copulación azoica: formación de azocompuestos y colorantes",
+          "caption": "Copulación azoica: formación de azocompuestos y colorantes"
+        },
+        {
+          "type": "list",
+          "id": "list-bfb737331d24",
+          "ordered": false,
+          "items": [
+            "El anillo atacado debe estar fuertemente activado.",
+            "El ataque suele ocurrir en posición para respecto del grupo activante.",
+            "El producto contiene el enlace azo: Ar–N=N–Ar′.",
+            "Los productos se llaman azobencenos y suelen usarse como colorantes."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e75d970f5074",
+      "summary": "AMINOÁCIDOS Y PROTEÍNAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-be0704cdb0b6",
+          "text": "AMINOÁCIDOS Y PROTEÍNAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-69e5696e6661",
+          "text": "El eje de la unidad también menciona aminoácidos y proteínas. Este bloque conecta aminas, ácidos carboxílicos y amidas."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-eea1d9d9dc06",
+          "text": "Aminoácidos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3e72160f1424",
+          "text": "Un aminoácido posee un grupo amino, un grupo carboxilo y una cadena lateral R. En los α-aminoácidos, el grupo amino está en el carbono α respecto del carboxilo."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2d84210b8a8a",
+          "text": "En solución pueden aparecer como zwitteriones."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-c41ab1eb5eee",
+          "text": "Proteínas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-816564e6135d",
+          "text": "Las proteínas son polímeros de aminoácidos unidos mediante enlaces peptídicos. El enlace peptídico es una amida."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-a470c4fa2679",
+          "text": "Primaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-aa679c6f8d45",
+          "text": "Secuencia de aminoácidos."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-78a8d90999d7",
+          "text": "Secundaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f9c4db8ceed8",
+          "text": "Hélice α y lámina β."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-6e6dd4c03bca",
+          "text": "Terciaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a112a27104c6",
+          "text": "Plegamiento tridimensional de una cadena."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-4346c78bd1ac",
+          "text": "Cuaternaria"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e41203ca95e9",
+          "text": "Asociación de varias cadenas."
+        }
+      ]
+    }
+  ]
+}

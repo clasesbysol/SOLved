@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-66222c541857",
+      "summary": "ALQUINOS WADE VOL. 1 · CAP. 9",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-9f1207d8c9e9",
+          "text": "ALQUINOS WADE VOL. 1 · CAP. 9"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e53802ff71ed",
+      "summary": "Nomenclatura y propiedades físicas de los alquinos Wade p. 389",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-4bc85a5d351a",
+          "text": "Nomenclatura y propiedades físicas de los alquinos Wade p. 389"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5ab566113200",
+          "text": "Los alquinos son hidrocarburos que contienen un triple enlace carbono-carbono."
+        },
+        {
+          "type": "list",
+          "id": "list-45e48f42f2fb",
+          "ordered": true,
+          "items": [
+            "Elegir la cadena más larga que contenga el triple enlace.",
+            "Numerar desde el extremo más cercano al triple enlace.",
+            "Cambiar la terminación -ano por -ino.",
+            "Indicar la posición del triple enlace.",
+            "Nombrar sustituyentes."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-64a54d5b40c6",
+          "text": "Propiedades físicas: son poco polares, insolubles en agua, solubles en solventes orgánicos. Sus puntos de ebullición aumentan con la masa molecular."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-98104c24b49f",
+      "summary": "Estructura electrónica de los alquinos Wade p. 392",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-6c92fb092071",
+          "text": "Estructura electrónica de los alquinos Wade p. 392"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fed5995914d5",
+          "text": "En los alquinos, los carbonos del triple enlace tienen hibridación sp. El triple enlace está formado por un enlace sigma y dos enlaces pi. La geometría alrededor del triple enlace es lineal, con ángulo ≈ 180°. Por eso los alquinos son más lineales y rígidos que alquenos y alcanos."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-64fac49a20d0",
+      "summary": "Acidez de los alquinos y formación de iones acetiluro Wade p. 393",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-47f49ff0ad7c",
+          "text": "Acidez de los alquinos y formación de iones acetiluro Wade p. 393"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fed1169b6c14",
+          "text": "Los alquinos terminales son relativamente ácidos porque el hidrógeno está unido a un carbono sp (mayor carácter s → estabiliza mejor la carga negativa del ion acetiluro)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-16f33905f495",
+          "text": "El ion acetiluro es un nucleófilo fuerte y se usa para formar nuevos enlaces carbono-carbono."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-5c75479749a8",
+      "summary": "Imágenes — acidez de alquinos y acetiluros",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-dc1cd48d25206250",
+          "alt": "Alquinos terminales: acidez, formación de acetiluros y uso como nucleófilos para formar enlaces C–C. — imagen webo2-15",
+          "caption": ""
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-f896359f1b5de282",
+          "alt": "Alquinos terminales: acidez, formación de acetiluros y uso como nucleófilos para formar enlaces C–C. — imagen webo2-7",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b5d7afc11513",
+      "summary": "Síntesis y reacciones de alquinos",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-e55d287c1d5e",
+          "text": "Síntesis y reacciones de alquinos"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-52a3c19e5300",
+          "text": "Síntesis de alquinos a partir de acetiluros Wade p. 395"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-db533d623ad4",
+          "text": "Síntesis de alquinos por reacciones de eliminación Wade p. 399"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-e00721c67f83",
+          "text": "Resumen de síntesis de alquinos Wade p. 400"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-a77d4b895829",
+          "text": "Reacciones de adición de alquinos Wade p. 401"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-e18c68135160",
+          "text": "Reducción de alquinos a alqueno trans Wade p. 405"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fc81379f9a06",
+          "text": "La reducción con metal-amoníaco produce alquenos trans por adición anti."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-5a0b7c2d2969",
+          "text": "Hidratación de alquinos con HgSO₄ / H₂SO₄ Wade p. 403"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c2eecfb1d5d7",
+          "text": "La hidratación forma primero un enol, que tautomeriza al compuesto carbonílico más estable."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1db6caac22f2",
+          "text": "Oxidación de alquinos Wade p. 411"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-5c2f1e58e4f8",
+          "text": "Resumen de reacciones de alquinos Wade p. 414"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1848db1e0f23",
+      "summary": "Imagen — alquilación de acetiluros",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-173de093468e5356",
+          "alt": "Alquilación de iones acetiluro para formar enlaces C–C.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b32e61585b83",
+      "summary": "Imagen — síntesis de alquinos por eliminación",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-15c01b931a38f84c",
+          "alt": "Doble deshidrohalogenación de dihaluros para formar alquinos.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-46acac1e2553",
+      "summary": "Tip visual — elección de condiciones de eliminación",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-7976a38bf7e74545",
+          "alt": "Consejo visual para elegir condiciones de eliminación hacia alquinos internos o terminales.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-d3cbbc84cf28",
+      "summary": "Imagen — resumen de síntesis de alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-d92e866a4fb17f0b",
+          "alt": "Resumen de métodos de síntesis de alquinos.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8e1e5b7a4dbf",
+      "summary": "Imagen — adiciones a alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-676c44913e574576",
+          "alt": "Adición de HX y X₂ a alquinos.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-c328bbfee413",
+      "summary": "Imagen — hidratación de alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-99d29c815c09688a",
+          "alt": "Hidratación de alquinos y tautomería enol-cetona.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1d0593ae4d6d",
+      "summary": "Imagen — hidroboración-oxidación de alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-ca500beca6d4c585",
+          "alt": "Hidroboración-oxidación de alquinos: formación de aldehídos o cetonas según el sustrato.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-4d43613a6b06",
+      "summary": "Imagen — reducción de alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-84833d30b5593e89",
+          "alt": "Reducción parcial de alquinos a alquenos cis con catalizador de Lindlar.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e9458c888ef7",
+      "summary": "Imagen — hidrogenación completa de alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-317bbe83258cfbcd",
+          "alt": "Hidrogenación catalítica completa de alquinos a alcanos.",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-bb3d1ee3568f",
+      "summary": "IMG 10 — Reducción de alquinos con metal-amoníaco (trans)",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-804cb8cb97d15f01",
+          "alt": "IMG 10: Reducción de alquinos con metal-amoníaco (trans)",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8877c56de0e6",
+      "summary": "IMG 11 — Hidratación de alquinos para formar cetonas y aldehídos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-16321826fb743192",
+          "alt": "IMG 11: Hidratación de alquinos para formar cetonas y aldehídos",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-6d499e6b21a9",
+      "summary": "IMG 12 — Ruptura oxidativa de alquinos con permanganato",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-d5bba07707950cb2",
+          "alt": "IMG 12: Ruptura oxidativa de alquinos con permanganato",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-803cb9c6d058",
+      "summary": "IMG 13 — Ozonólisis de alquinos",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-1472f055654b77d4",
+          "alt": "IMG 13: Ozonólisis de alquinos",
+          "caption": ""
+        }
+      ]
+    }
+  ]
+}

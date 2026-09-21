@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-06-resumen",
+      "title": "Estructura y estereoquímica de los alcanos",
+      "text": "Los alcanos son hidrocarburos saturados, formados solo por carbono e hidrógeno, con enlaces simples C-C y C-H.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "entries": [
+    {
+      "id": "organica-19-glosario-2",
+      "term": "PANORAMA GENERAL",
+      "definition": "La espectroscopía estudia la interacción entre la radiación electromagnética y la materia. Sirve para identificar compuestos, analizar grupos funcionales, estudiar estructuras moleculares y cuantificar sustancias.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-19",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-19-glosario-3",
+      "term": "ESPECTROSCOPÍA UV-VISIBLE",
+      "definition": "UV-Visible mide transiciones electrónicas. Es útil para detectar cromóforos, conjugación y para cuantificar sustancias en solución.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-19",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-19-glosario-4",
+      "term": "Ley de Lambert-Beer",
+      "definition": "Si ε y b se mantienen constantes, la absorbancia es proporcional a la concentración. La ley funciona mejor en soluciones diluidas.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-19",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-19-glosario-5",
+      "term": "ESPECTROSCOPÍA INFRARROJA IR",
+      "definition": "IR identifica grupos funcionales por vibraciones de enlaces. Las vibraciones pueden ser de tensión, cuando cambia la longitud del enlace, o de flexión, cuando cambia el ángulo.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-19",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-19-glosario-6",
+      "term": "RESONANCIA MAGNÉTICA NUCLEAR — RMN",
+      "definition": "RMN permite conocer el entorno químico de núcleos con spin, especialmente ¹H y ¹³C. En ¹H-RMN, cada señal corresponde a un tipo de hidrógeno químicamente equivalente.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-19",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-19-glosario-7",
+      "term": "ESPECTROMETRÍA DE MASAS",
+      "definition": "La espectrometría de masas no mide absorción de luz. La molécula se ioniza, se forman iones positivos y se separan según su relación masa/carga.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-19",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

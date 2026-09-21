@@ -1,0 +1,354 @@
+{
+  "exercises": [
+    {
+      "id": "ejercicio-org-sin-aro-01",
+      "origin": "source",
+      "prompt": "Prepará propilbenceno a partir de benceno evitando reordenamientos.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Acilación con CH₃CH₂COCl y AlCl₃. 2) Reducción del carbonilo por Clemmensen o Wolff-Kishner."
+      ],
+      "result": "1) Acilación con CH₃CH₂COCl y AlCl₃. 2) Reducción del carbonilo por Clemmensen o Wolff-Kishner.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aro-02",
+      "origin": "source",
+      "prompt": "Prepará p-bromoanilina desde anilina controlando la reactividad del amino.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Proteger como acetanilida. 2) Bromar. 3) Hidrolizar la amida."
+      ],
+      "result": "1) Proteger como acetanilida. 2) Bromar. 3) Hidrolizar la amida.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aro-03",
+      "origin": "source",
+      "prompt": "Introducí temporalmente SO₃H como grupo bloqueante y luego retiralo.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Sulfonación con SO₃/H₂SO₄; realizar la sustitución deseada; desulfonar con ácido acuoso caliente o vapor."
+      ],
+      "result": "Sulfonación con SO₃/H₂SO₄; realizar la sustitución deseada; desulfonar con ácido acuoso caliente o vapor.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-aro-04",
+      "origin": "source",
+      "prompt": "Prepará acetofenona desde benceno y luego convertí el carbonilo en un grupo etilo.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) CH₃COCl, AlCl₃. 2) Clemmensen o Wolff-Kishner para obtener etilbenceno."
+      ],
+      "result": "1) CH₃COCl, AlCl₃. 2) Clemmensen o Wolff-Kishner para obtener etilbenceno.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-01",
+      "origin": "source",
+      "prompt": "Convertí benceno en m-bromoácido benzoico indicando el orden de sustitución.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Acilación o alquilación que permita llegar a COOH. 2) Oxidación de la cadena lateral a COOH. 3) Bromación; COOH dirige meta."
+      ],
+      "result": "1) Acilación o alquilación que permita llegar a COOH. 2) Oxidación de la cadena lateral a COOH. 3) Bromación; COOH dirige meta.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-02",
+      "origin": "source",
+      "prompt": "Diseñá una ruta de benceno a p-bromoanilina evitando la polisustitución del amino.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Nitración. 2) Reducción a anilina. 3) Protección como acetanilida. 4) Bromación para mayor proporción para. 5) Hidrólisis de la amida."
+      ],
+      "result": "1) Nitración. 2) Reducción a anilina. 3) Protección como acetanilida. 4) Bromación para mayor proporción para. 5) Hidrólisis de la amida.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-03",
+      "origin": "source",
+      "prompt": "¿Cómo obtendrías m-nitroacetofenona desde benceno?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Acilación de Friedel–Crafts con CH₃COCl/AlCl₃. 2) Nitración; el acilo dirige meta."
+      ],
+      "result": "1) Acilación de Friedel–Crafts con CH₃COCl/AlCl₃. 2) Nitración; el acilo dirige meta.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-04",
+      "origin": "source",
+      "prompt": "Se necesita propilbenceno sin reordenamiento. Proponé una ruta desde benceno.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Acilación con CH₃CH₂COCl/AlCl₃. 2) Reducción del carbonilo a metileno, por Clemmensen o Wolff–Kishner."
+      ],
+      "result": "1) Acilación con CH₃CH₂COCl/AlCl₃. 2) Reducción del carbonilo a metileno, por Clemmensen o Wolff–Kishner.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-05",
+      "origin": "source",
+      "prompt": "Convertí benceno en p-etilnitrobenceno controlando la orientación.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) Introducir etilo por acilación y reducción. 2) Nitrar; el etilo dirige orto/para y predomina para por menor impedimento."
+      ],
+      "result": "1) Introducir etilo por acilación y reducción. 2) Nitrar; el etilo dirige orto/para y predomina para por menor impedimento.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-06",
+      "origin": "source",
+      "prompt": "¿Cómo convertirías anilina en p-yodoanilina minimizando la polisustitución?",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Proteger como acetanilida, yodar en condiciones electrofílicas y luego hidrolizar la protección."
+      ],
+      "result": "Proteger como acetanilida, yodar en condiciones electrofílicas y luego hidrolizar la protección.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-07",
+      "origin": "source",
+      "prompt": "Diseñá una ruta de tolueno a ácido 3-nitrobenzoico.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Oxidar primero CH₃ a COOH y luego nitrar; COOH dirige meta."
+      ],
+      "result": "Oxidar primero CH₃ a COOH y luego nitrar; COOH dirige meta.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-08",
+      "origin": "source",
+      "prompt": "¿Por qué no conviene intentar una alquilación de Friedel–Crafts directa sobre nitrobenceno? Proponé una alternativa conceptual.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "El anillo está fuertemente desactivado y el nitro coordina con el ácido de Lewis. Hay que cambiar el orden: introducir el grupo carbonado antes de nitrar."
+      ],
+      "result": "El anillo está fuertemente desactivado y el nitro coordina con el ácido de Lewis. Hay que cambiar el orden: introducir el grupo carbonado antes de nitrar.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-09",
+      "origin": "source",
+      "prompt": "Convertí benceno en p-aminoácido benzoico indicando una estrategia de orden y protección.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Introducir primero una cadena oxidizable, oxidarla a COOH, nitrar según la orientación buscada y reducir NO₂ a NH₂; puede requerirse una estrategia de bloqueo para el isómero para."
+      ],
+      "result": "Introducir primero una cadena oxidizable, oxidarla a COOH, nitrar según la orientación buscada y reducir NO₂ a NH₂; puede requerirse una estrategia de bloqueo para el isómero para.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-extra-aromaticos-estrategias-de-sintesis-aromatica-10",
+      "origin": "source",
+      "prompt": "Desde benceno, obtené un haluro aromático pasando por una amina y sin usar halogenación electrofílica directa.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Nitración, reducción a anilina, diazotación con NaNO₂/HCl a 0–5 °C y sustitución de la sal de diazonio con el reactivo apropiado."
+      ],
+      "result": "Nitración, reducción a anilina, diazotación con NaNO₂/HCl a 0–5 °C y sustitución de la sal de diazonio con el reactivo apropiado.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    }
+  ]
+}

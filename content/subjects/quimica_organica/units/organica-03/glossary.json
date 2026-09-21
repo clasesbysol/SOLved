@@ -1,0 +1,46 @@
+{
+  "entries": [
+    {
+      "id": "organica-03-glosario-2",
+      "term": "Hibridaciones y formas moleculares Wade p. 46",
+      "definition": "La hibridación explica cómo se combinan orbitales atómicos para formar orbitales híbridos que determinan la geometría de los enlaces.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-03",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-03-glosario-4",
+      "term": "Cómo dibujar moléculas tridimensionales Wade p. 50",
+      "definition": "Las moléculas orgánicas no siempre son planas. Para representar la geometría tridimensional se usan líneas, cuñas y trazos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-03",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-03-glosario-5",
+      "term": "Efecto de la polaridad sobre la solubilidad Wade p. 66",
+      "definition": "La solubilidad depende de la afinidad entre el soluto y el solvente. La regla general es:",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-03",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

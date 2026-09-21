@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-6101e41581da2978",
+      "path": "assets/6101e41581da2978d216.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6101e41581da2978d2166a8df27aeb325347c6af141c82dd4286963645012186",
+      "alt": "Mecanismo general de sustitución electrofílica aromática: formación del complejo sigma/intermediario arenio y recuperación de aromaticidad."
+    },
+    {
+      "id": "asset-3c3da68632296169",
+      "path": "assets/3c3da686322961694d21.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "3c3da686322961694d215ad0df327a47ad58f7cb3d83f48473d417d03ceba311",
+      "alt": "SNAr por adición-eliminación: ataque nucleofílico, intermediario de Meisenheimer y salida del grupo saliente."
+    },
+    {
+      "id": "asset-6941abff6efc9487",
+      "path": "assets/6941abff6efc948752e0.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "6941abff6efc948752e03f1def25b5b7e1013a20c84ec5b56fabf8d4df575ac3",
+      "alt": "SNAr por mecanismo de bencino: eliminación-adición bajo condiciones fuertes."
+    },
+    {
+      "id": "asset-4f99d6afae1148b8",
+      "path": "assets/4f99d6afae1148b8be3b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4f99d6afae1148b8be3b32cb4b0b6272f017cbcd9dd3ea07311f8f3aaf493786",
+      "alt": "Resumen visual de activadores, desactivadores, orientadores orto/para, orientadores meta y caso especial de halógenos. — imagen webo2-25"
+    },
+    {
+      "id": "asset-f7de72a525df71eb",
+      "path": "assets/f7de72a525df71eb70c9.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "f7de72a525df71eb70c97d91e55ccba1f0a29b049602a6b772c5121adb185f01",
+      "alt": "Resumen visual de activadores, desactivadores, orientadores orto/para, orientadores meta y caso especial de halógenos. — imagen webo2-27"
+    },
+    {
+      "id": "asset-1c79ac7f999bfe51",
+      "path": "assets/1c79ac7f999bfe51ff62.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "1c79ac7f999bfe51ff62b18b0971cd94824953e0c67bc3802589abbfe7d1206b",
+      "alt": "Resumen visual de activadores, desactivadores, orientadores orto/para, orientadores meta y caso especial de halógenos. — imagen webo2-30"
+    },
+    {
+      "id": "asset-dca78d410730e03e",
+      "path": "assets/dca78d410730e03e095a.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "dca78d410730e03e095a7cea151a1b50c4f34a25a79cba88225e7e0d19807f96",
+      "alt": "Bromación del benceno: activación de Br₂ con ácido de Lewis, ataque del anillo y regeneración de aromaticidad."
+    },
+    {
+      "id": "asset-e285955a963c5986",
+      "path": "assets/e285955a963c5986f58e.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "e285955a963c5986f58e19d5917d1641ab79aadc448367fcc62c68dd09bf9815",
+      "alt": "Nitración del benceno: generación del ion nitronio y sustitución electrofílica aromática."
+    },
+    {
+      "id": "asset-c3aab392d0392053",
+      "path": "assets/c3aab392d0392053f22b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "c3aab392d0392053f22b4ee7291fe0f50dff5bf8d63bae11dd3662ae078239b3",
+      "alt": "Sulfonación del benceno: ataque al SO₃, formación del complejo sigma y ácido bencensulfónico."
+    },
+    {
+      "id": "asset-21c5359626b62e0f",
+      "path": "assets/21c5359626b62e0fe25f.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "21c5359626b62e0fe25f0cf80d4384f6cc9fb1530775c7df87d46c4b50b9db95",
+      "alt": "Desulfonación del benceno: reversibilidad de la sulfonación bajo condiciones ácidas y calor."
+    },
+    {
+      "id": "asset-2f1847fe56e5e4e4",
+      "path": "assets/2f1847fe56e5e4e4c7c9.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "2f1847fe56e5e4e4c7c96e1fcfc81cd6b21f2cadc0d146c525525546b8ce3c99",
+      "alt": "Nitración del tolueno: el grupo metilo activa el anillo y orienta mayoritariamente a orto y para."
+    },
+    {
+      "id": "asset-7fcea3d645fd168d",
+      "path": "assets/7fcea3d645fd168d03f5.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "7fcea3d645fd168d03f5a431e9e56cf0282aa8f37f6c9c9d9c6249e7026ce244",
+      "alt": "Alquilación de Friedel-Crafts: formación del electrófilo alquilo, ataque del anillo y limitaciones."
+    },
+    {
+      "id": "asset-c682823c06323693",
+      "path": "assets/c682823c06323693af88.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "c682823c06323693af88a1f00007fe8b15d153c87ad91ef181837ffc4367940b",
+      "alt": "Acilación de Friedel-Crafts: formación del ion acilio, ataque aromático y producto aril cetona."
+    },
+    {
+      "id": "asset-23da7f67f3badf67",
+      "path": "assets/23da7f67f3badf67d25b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "23da7f67f3badf67d25b0dd32bd23ccd6136cf22fac9eef47fe6abb46d6df294",
+      "alt": "Comparación entre alquilación y acilación de Friedel-Crafts, incluyendo limitaciones y reducción posterior del carbonilo."
+    }
+  ]
+}

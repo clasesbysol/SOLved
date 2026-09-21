@@ -1,0 +1,129 @@
+{
+  "exercises": [
+    {
+      "id": "ejercicio-org-sin-nit-01",
+      "origin": "source",
+      "prompt": "Prepará propilamina exclusivamente a partir de 1-bromopropano evitando polialquilación.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "Síntesis de Gabriel y posterior liberación de la amina."
+      ],
+      "result": "Síntesis de Gabriel y posterior liberación de la amina.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-nit-02",
+      "origin": "source",
+      "prompt": "Convertí butanonitrilo en 1-butanamina.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "LiAlH₄ y luego H₂O."
+      ],
+      "result": "LiAlH₄ y luego H₂O.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-nit-03",
+      "origin": "source",
+      "prompt": "Prepará anilina a partir de benceno.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) HNO₃/H₂SO₄. 2) Reducción de NO₂ con Fe/HCl, Sn/HCl o H₂/catalizador."
+      ],
+      "result": "1) HNO₃/H₂SO₄. 2) Reducción de NO₂ con Fe/HCl, Sn/HCl o H₂/catalizador.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-nit-04",
+      "origin": "source",
+      "prompt": "Convertí anilina en fenol mediante una sal de diazonio.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) NaNO₂, HCl, 0–5 °C. 2) H₂O y calor."
+      ],
+      "result": "1) NaNO₂, HCl, 0–5 °C. 2) H₂O y calor.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    },
+    {
+      "id": "ejercicio-org-sin-nit-05",
+      "origin": "source",
+      "prompt": "Convertí anilina en bromobenceno mediante diazonio.",
+      "basedOn": [],
+      "breakdown": [],
+      "data": [],
+      "unknowns": [],
+      "theory": [],
+      "formulas": [],
+      "strategy": "",
+      "hints": [],
+      "solution": [
+        "1) NaNO₂, HBr o HCl, baja temperatura. 2) CuBr."
+      ],
+      "result": "1) NaNO₂, HBr o HCl, baja temperatura. 2) CuBr.",
+      "check": "",
+      "commonErrors": [],
+      "related": [],
+      "references": [
+        {
+          "sourceId": "organica-cards-v2"
+        }
+      ]
+    }
+  ]
+}

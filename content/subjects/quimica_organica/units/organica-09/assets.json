@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-29caedfc091c88f3",
+      "path": "assets/29caedfc091c88f3687a.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "29caedfc091c88f3687afb8ca01288d997e314fa4d7d1bb5f084eaaada757c2d",
+      "alt": "IMG 04: Deshidrohalogenación mediante mecanismo E2"
+    },
+    {
+      "id": "asset-94c64d4908d3e15d",
+      "path": "assets/94c64d4908d3e15d3383.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "94c64d4908d3e15d3383a28404e0f52016cb3ee074604b96c81eaee9445604a3",
+      "alt": "IMG 03: Desbromación de un dibromuro vecinal"
+    },
+    {
+      "id": "asset-bc24d74588ab39a2",
+      "path": "assets/bc24d74588ab39a27bc2.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "bc24d74588ab39a27bc2837bd21454c738591f7dcfe5cea31d22cdfca9f682ab",
+      "alt": "Síntesis de alquenos por deshidratación ácido-catalizada de alcoholes mediante mecanismo E1. — imagen 23"
+    },
+    {
+      "id": "asset-804cb8cb97d15f01",
+      "path": "assets/804cb8cb97d15f01252b.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "804cb8cb97d15f01252bdeffc6d5b5bfeb1ae2f28c53f36ef5ad057f59367461",
+      "alt": "IMG 10: Reducción de alquinos con metal-amoníaco (trans)"
+    }
+  ]
+}

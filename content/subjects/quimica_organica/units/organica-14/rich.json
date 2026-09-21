@@ -1,0 +1,1814 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-b834929dc313",
+      "summary": "ALCOHOLES, ÉTERES Y EPÓXIDOS WADE VOL. 1 · CAP. 10–11 / VOL. 2 · CAP. 14",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-c3e865a87282",
+          "text": "ALCOHOLES, ÉTERES Y EPÓXIDOS WADE VOL. 1 · CAP. 10–11 / VOL. 2 · CAP. 14"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-c65c60311dcc",
+      "summary": "1. ALCOHOLES: ESTRUCTURA, PROPIEDADES Y CLASIFICACIÓNR–OH",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-463987303e7f",
+          "text": "1. ALCOHOLES: ESTRUCTURA, PROPIEDADES Y CLASIFICACIÓN"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-3c3ec9bddf64",
+          "text": "1.1 Introducción"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a80a2e205f49",
+          "text": "Los alcoholes son compuestos orgánicos que poseen al menos un grupo hidroxilo, –OH, unido a un carbono saturado. Su fórmula general puede representarse como:"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3ec71b095bee",
+          "text": "El grupo –OH determina gran parte de sus propiedades físicas, su polaridad, su capacidad de formar puentes de hidrógeno, su acidez y muchas de sus reacciones."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-dc42a7182aea",
+          "text": "Un alcohol puede imaginarse como una molécula parecida al agua, pero con uno de los hidrógenos reemplazado por un grupo alquilo:"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-eea14378072aa5df",
+          "alt": "Imagen 01: Comparación estructural entre agua y alcohol",
+          "caption": "IMAGEN 01 — Comparación estructural entre agua y alcohol"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-8450052b112f",
+          "text": "1.2 Propiedades físicas"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-9851bf264ca3",
+          "text": "Comparación con agua"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3fea47c43139",
+          "text": "El oxígeno del grupo hidroxilo tiene dos pares libres y dos enlaces sigma. Por eso, tanto en agua como en alcoholes, la geometría alrededor del oxígeno es angular."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4052c9f8da15",
+          "text": "En el agua, el ángulo H–O–H es aproximadamente 104,5°. En los alcoholes, el ángulo C–O–H es parecido, aunque puede variar por el tamaño del grupo alquilo."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-726cd19a8f13",
+          "text": "Enlace C–O"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-080e3a053b06",
+          "text": "El enlace C–O es más largo que el enlace O–H, porque el carbono tiene mayor radio covalente que el hidrógeno. La molécula se parece al agua, pero no es idéntica."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-bf48e89f92c0",
+          "text": "Polaridad y momento dipolar"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0401295be379",
+          "text": "Los alcoholes son polares porque el oxígeno es más electronegativo que el carbono y que el hidrógeno. Entonces, los enlaces C–O y O–H están polarizados:"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-84b453a5e8b7",
+          "text": "Los pares libres del oxígeno y los enlaces polarizados generan un momento dipolar molecular. Por eso, un alcohol como el etanol tiene un momento dipolar mucho mayor que un alcano de tamaño comparable."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-2c9903f06aaf",
+          "text": "Puentes de hidrógeno"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-67072ca7bbc4",
+          "text": "Los alcoholes pueden formar puentes de hidrógeno entre sí. El hidrógeno unido al oxígeno queda polarizado positivamente y puede interactuar con un par libre del oxígeno de otra molécula."
+        },
+        {
+          "type": "list",
+          "id": "list-a48a25f8208e",
+          "ordered": false,
+          "items": [
+            "Fuerzas de London por la cadena carbonada.",
+            "Interacciones dipolo–dipolo por los enlaces C–O y O–H.",
+            "Puentes de hidrógeno por el grupo –OH."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-07aa6c2198e3",
+          "text": "1.3 Solubilidad"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6e51095379c4",
+          "text": "La solubilidad de los alcoholes en agua depende del equilibrio entre una parte hidrofílica y una parte hidrofóbica."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-0a21e9172385",
+          "text": "Región hidrofílica"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5edf2d428829",
+          "text": "El grupo –OH es polar y puede formar puentes de hidrógeno con el agua."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-9d53fe8226e1",
+          "text": "Región hidrofóbica"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2d6cea220de9",
+          "text": "La cadena carbonada R es apolar y no interactúa favorablemente con el agua."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c75fdc2446a6",
+          "text": "Los alcoholes pequeños, como metanol, etanol y propanol, son muy solubles o miscibles en agua. A medida que aumenta la longitud de la cadena carbonada, crece la parte hidrofóbica y la solubilidad disminuye."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-427a93c461e4",
+          "text": "1.4 Clasificación"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ac090f97533e",
+          "text": "Según el carbono que porta el –OH"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-39941f7ef0ae",
+          "text": "Alcohol primario"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9d20d5a421a9",
+          "text": "El –OH está unido a un carbono enlazado a un solo carbono más."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1528c61516d5",
+          "text": "Alcohol secundario"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3825bec85ff9",
+          "text": "El –OH está unido a un carbono enlazado a dos carbonos."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-6ae0f1f969d7",
+          "text": "Alcohol terciario"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a5c5c315b904",
+          "text": "El –OH está unido a un carbono enlazado a tres carbonos."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-d9d17b53476d",
+          "text": "Fenoles y alcoholes aromáticos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a56afd00249c",
+          "text": "Un fenol tiene el grupo –OH unido directamente a un anillo aromático. No se comporta exactamente igual que un alcohol alifático, porque el anión fenóxido se estabiliza por resonancia."
+        },
+        {
+          "type": "list",
+          "id": "list-785f11918bd4",
+          "ordered": false,
+          "items": [
+            "C6H5OH → fenol.",
+            "C6H5CH2OH → alcohol bencílico, no fenol."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-eeb5d18758ce",
+      "summary": "2. NOMENCLATURA DE ALCOHOLES-ol / hidroxi-",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-1aa95fc17a7a",
+          "text": "2. NOMENCLATURA DE ALCOHOLES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-20cb3aa57279",
+          "text": "2.1 Nomenclatura IUPAC"
+        },
+        {
+          "type": "list",
+          "id": "list-92876ee1dac8",
+          "ordered": true,
+          "items": [
+            "Elegir como cadena principal la cadena más larga que contiene el carbono unido al –OH.",
+            "Numerar la cadena para que el –OH tenga el localizador más bajo posible.",
+            "Reemplazar la terminación -o del alcano por -ol.",
+            "Agregar sustituyentes con sus localizadores."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-de37fa8e84b2",
+          "text": "El grupo –OH tiene prioridad sobre alquilos y halógenos para la numeración."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-2c19212c6c94",
+          "text": "2.2 Alcoholes insaturados"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3c2bb64a4b30",
+          "text": "Si la molécula tiene un grupo –OH y una insaturación, la cadena principal debe contener ambos cuando sea posible. En la numeración, el –OH tiene prioridad sobre el doble o triple enlace."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-38d9df54f032",
+          "text": "2.3 Más de un grupo funcional"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d467f1d1a057",
+          "text": "Si el alcohol es el grupo principal, se usa la terminación -ol. Si hay otro grupo funcional de mayor prioridad, el –OH se nombra como sustituyente usando el prefijo hidroxi-."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-62ce262dccdc",
+          "text": "2.4 Nombres comunes"
+        },
+        {
+          "type": "list",
+          "id": "list-a59b115d13cf",
+          "ordered": false,
+          "items": [
+            "CH3OH → alcohol metílico.",
+            "CH3CH2OH → alcohol etílico.",
+            "CH3CH2CH2OH → alcohol propílico.",
+            "(CH3)2CHOH → alcohol isopropílico.",
+            "(CH3)3COH → alcohol tert-butílico."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-cd9a5897f6df",
+          "text": "2.5 Dioles y glicoles"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-124700819129",
+          "text": "Los dioles son compuestos con dos grupos –OH. Si están en carbonos vecinos, se llaman dioles vecinales."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d068e47e8a5f",
+          "text": "Los glicoles son importantes porque pueden formarse por dihidroxilación de alquenos."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-67d968c1e045",
+      "summary": "3. ACIDEZ, ALCÓXIDOS Y FENOLESRO− / ArO−",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-9439957fabaf",
+          "text": "3. ACIDEZ, ALCÓXIDOS Y FENOLES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-98a62cff99dd",
+          "text": "3.1 Acidez del grupo –OH"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c8b772ed0d54",
+          "text": "Los alcoholes son ácidos débiles. Al igual que el agua, pueden perder el protón del grupo hidroxilo para formar un anión alcóxido."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-dad91d3cd77d",
+          "text": "Los alcoholes no se desprotonan de manera importante con bases débiles, pero sí con bases fuertes o con metales alcalinos como sodio."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-9979d66e39cc",
+          "text": "3.2 Comparación con el agua"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a9341167141f",
+          "text": "Los alcoholes tienen acidez comparable o menor que la del agua. El grupo alquilo dona densidad electrónica hacia el oxígeno por efecto inductivo, lo que desestabiliza parcialmente la carga negativa del alcóxido."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-30ac9249a6af",
+          "text": "3.3 Halógenos y acidez"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-080b70ca736c",
+          "text": "La presencia de halógenos cerca del grupo –OH aumenta la acidez por efecto inductivo atractor de electrones. Los halógenos retiran densidad electrónica y estabilizan la carga negativa del alcóxido."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-be1bf8fac995",
+          "text": "3.4 Formación de alcóxidos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b8df6fa2ded1",
+          "text": "Los alcóxidos tienen fórmula general RO−. Son nucleófilos fuertes y bases fuertes."
+        },
+        {
+          "type": "list",
+          "id": "list-aee2af111ebf",
+          "ordered": false,
+          "items": [
+            "Participan en síntesis de éteres.",
+            "Actúan en SN2.",
+            "Pueden actuar como bases en E2."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-26f3268030dc",
+          "text": "3.5 Fenoles"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5b9b89232499",
+          "text": "Los fenoles son mucho más ácidos que los alcoholes alifáticos porque el ion fenóxido está estabilizado por resonancia."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3d9f7a25a930",
+          "text": "La carga negativa no queda localizada solamente en el oxígeno, sino que se deslocaliza sobre el oxígeno y sobre posiciones del anillo aromático."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-51c0d41e7d6a7034",
+          "alt": "Imagen 03: Resonancia del ion fenóxido",
+          "caption": "IMAGEN 03 — Resonancia del ion fenóxido"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-dee550b4332f",
+      "summary": "4. SÍNTESIS DE ALCOHOLEScarbonilos / hidruros",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-1ef944870b39",
+          "text": "4. SÍNTESIS DE ALCOHOLES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-00988efda6ec",
+          "text": "4.1 Panorama: rutas previas"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-a741afc979650473",
+          "alt": "Imagen 04: Síntesis de alcoholes previas",
+          "caption": "IMAGEN 04 — Síntesis de alcoholes previas"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-f162859370de",
+          "text": "Desde halogenuros de alquilo"
+        },
+        {
+          "type": "list",
+          "id": "list-c33fbb260829",
+          "ordered": false,
+          "items": [
+            "Sustitución nucleofílica SN2.",
+            "Inversión de configuración.",
+            "Competencia con eliminación.",
+            "Sustitución con agua por SN1 si el carbocatión es estable."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-8ae3a89f3d21",
+          "text": "Desde alquenos"
+        },
+        {
+          "type": "list",
+          "id": "list-f0150797b0ed",
+          "ordered": false,
+          "items": [
+            "Hidratación ácido-catalizada: Markovnikov, con posible transposición.",
+            "Oximercuración-desmercuración: Markovnikov, sin transposición.",
+            "Hidroboración-oxidación: anti-Markovnikov, adición sin, sin transposición.",
+            "Dihidroxilación: formación de 1,2-dioles."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-82a24ae16081",
+          "text": "4.2 Nuevas rutas: organometálicos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-575de60303e1",
+          "text": "Los reactivos organometálicos contienen un enlace carbono–metal. El carbono unido al metal se comporta como nucleófilo y puede formar nuevos enlaces carbono–carbono por adición a carbonilos."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-c8a48be314a48a2b",
+          "alt": "Imagen 05: Reactivos de Grignard y reactividad de halogenuros de alquilo",
+          "caption": "IMAGEN 05 — Reactivos de Grignard y reactividad de halogenuros de alquilo"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-101d9cb4c668e459",
+          "alt": "Imagen 05 bis: Reactivos de Grignard / halogenuros de alquilo — complemento",
+          "caption": "IMAGEN 05 bis — Reactivos de Grignard / halogenuros de alquilo — complemento"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-ca8fff658a21",
+          "text": "4.3 Reactivos de Grignard"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d8ea65375531",
+          "text": "Los reactivos de Grignard tienen fórmula general R–MgX. El carbono unido al magnesio tiene carácter nucleofílico."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-567004adb45e",
+          "text": "4.4 Reactivos organolitio"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3d85eed4a6ac",
+          "text": "Los organolitio son nucleófilos y bases fuertes. Al igual que los Grignard, reaccionan con carbonilos."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0c0eee73003a",
+          "text": "4.5 Adición de organometálicos a carbonilos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c4ef0d56abed",
+          "text": "Los aldehídos y cetonas tienen un grupo carbonilo polarizado. El carbono carbonílico es electrofílico y recibe el ataque del nucleófilo carbonado."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-b5034943ea11",
+          "text": "Grignard + formaldehído → alcohol primario"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1823b9ee05b8",
+          "text": "Grignard + aldehído → alcohol secundario"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-b668833566d6",
+          "text": "Grignard + cetona → alcohol terciario"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-694cbea1523a",
+          "text": "4.6 Reducción de grupos carbonilo"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-34422f6ac6b7",
+          "text": "Otra forma de sintetizar alcoholes es reducir grupos carbonilo. En una reducción no se agrega una cadena carbonada nueva: se adiciona hidruro al carbono carbonílico y luego se protona el alcóxido."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-1af3cd073235c4be",
+          "alt": "Imagen 06: Mecanismo 10-2: reducción de carbonilo por hidruro",
+          "caption": "IMAGEN 06 — Mecanismo 10-2: reducción de carbonilo por hidruro"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-1627a3b6077c",
+          "text": "4.7 NaBH4 vs LiAlH4"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-28b0531fa807",
+          "text": "El NaBH4 es más suave y selectivo; suele reducir aldehídos y cetonas. El LiAlH4 es mucho más fuerte y puede reducir aldehídos, cetonas, ácidos carboxílicos y ésteres."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-88b645021b08e077",
+          "alt": "Imagen 07: Reactividad comparativa de NaBH4 y LiAlH4",
+          "caption": "IMAGEN 07 — Reactividad comparativa de NaBH4 y LiAlH4"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-fc200a0fcd3e9d3a",
+          "alt": "Imagen 08: Borohidruro de sodio selectivo",
+          "caption": "IMAGEN 08 — Borohidruro de sodio selectivo"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-34c1a0d1d9ff",
+          "text": "Reducción de aldehídos y cetonas"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ba3f26611b79",
+          "text": "Reducción de ácidos carboxílicos"
+        },
+        {
+          "type": "table",
+          "id": "table-349af7a09da2",
+          "rows": [
+            [
+              "Grupo funcional",
+              "NaBH4",
+              "LiAlH4",
+              "Producto"
+            ],
+            [
+              "Aldehído",
+              "Sí",
+              "Sí",
+              "Alcohol primario"
+            ],
+            [
+              "Cetona",
+              "Sí",
+              "Sí",
+              "Alcohol secundario"
+            ],
+            [
+              "Ácido carboxílico",
+              "No en condiciones comunes",
+              "Sí",
+              "Alcohol primario"
+            ],
+            [
+              "Éster",
+              "No en condiciones comunes",
+              "Sí",
+              "Alcohol primario"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3b0bc715506a",
+      "summary": "5. REACCIONES DE ALCOHOLESoxidación / sustitución",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-52bdd5057baa",
+          "text": "5. REACCIONES DE ALCOHOLES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-70822d806c92",
+          "text": "5.1 Panorama general"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-7625794912885021",
+          "alt": "Imagen 11: Tabla 11-1: clases de reacciones de alcoholes",
+          "caption": "IMAGEN 11 — Tabla 11-1: clases de reacciones de alcoholes"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-812418fa4805",
+          "text": "Eliminación"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f76137b63f52",
+          "text": "Alcohol → alqueno."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-838cec1befdd",
+          "text": "Oxidación"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c352c6918df9",
+          "text": "Alcohol primario/secundario → aldehído, cetona o ácido."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-b6bb9aa18176",
+          "text": "Sustitución"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b4e7d1f838bb",
+          "text": "Alcohol → haluro de alquilo."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-4f0c84a0c405",
+          "text": "Otras"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c818f225f381",
+          "text": "Esterificación, tosilación, formación de alcóxidos y síntesis de éteres."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9e667afae09a",
+          "text": "Link interno: volver a acidez de alcoholes y fenoles."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-33cfb63201d3",
+          "text": "5.2 Oxidación de alcoholes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c284db611bb2",
+          "text": "En química orgánica, oxidación suele significar aumento de enlaces del carbono con oxígeno o disminución de enlaces del carbono con hidrógeno."
+        },
+        {
+          "type": "list",
+          "id": "list-97ca782cd538",
+          "ordered": false,
+          "items": [
+            "Aumento de enlaces a O = oxidación.",
+            "Disminución de enlaces a H = oxidación."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-6fcb2f0767219a80",
+          "alt": "Imagen 12: Regla general de oxidación de alcoholes",
+          "caption": "IMAGEN 12 — Regla general de oxidación de alcoholes"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ba60f28a9f25",
+          "text": "Alcoholes primarios"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-4d7d37f45eab",
+          "text": "Con oxidantes fuertes, el alcohol primario suele llegar hasta ácido carboxílico. Para detener en aldehído se usan oxidantes más suaves."
+        },
+        {
+          "type": "list",
+          "id": "list-11f272b18f27",
+          "ordered": false,
+          "items": [
+            "KMnO4 en medio ácido → Mn2+.",
+            "KMnO4 en medio básico → MnO2.",
+            "Dicromato en medio ácido: Cr(VI) anaranjado → Cr(III) verde."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-10186f6276b3",
+          "text": "Alcoholes secundarios"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-33e27191c1ae",
+          "text": "Los alcoholes secundarios se oxidan a cetonas."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1034699219d7",
+          "text": "Alcoholes terciarios"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-864f7b041200",
+          "text": "No se oxidan fácilmente en condiciones normales porque el carbono que porta el –OH no tiene hidrógenos oxidables."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-7f5849aae4d6",
+          "text": "5.3 Test del dicromato"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3d6e22ac1569",
+          "text": "El dicromato en medio ácido es anaranjado. Si oxida al alcohol, se reduce a Cr(III), verde."
+        },
+        {
+          "type": "table",
+          "id": "table-eff6ba54bd14",
+          "rows": [
+            [
+              "Tipo de alcohol",
+              "Producto esperado",
+              "Resultado",
+              "Color observado"
+            ],
+            [
+              "Primario",
+              "Ácido carboxílico",
+              "Positivo",
+              "Verde"
+            ],
+            [
+              "Secundario",
+              "Cetona",
+              "Positivo",
+              "Verde"
+            ],
+            [
+              "Terciario",
+              "No reacciona",
+              "Negativo",
+              "Permanece naranja"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-3635a36838f0",
+          "text": "5.4 Alcohol como nucleófilo y electrófilo"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f5f7082f3a81",
+          "text": "Los alcoholes pueden comportarse como nucleófilos o electrófilos según el medio. Como nucleófilos, el oxígeno dona pares libres. Como electrófilos, el problema es que el –OH debe activarse porque es mal grupo saliente."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-c80ac198991a",
+          "text": "Alcohol como nucleófilo"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-b0af91a831950a22",
+          "alt": "Imagen 14: Alcohol como nucleófilo",
+          "caption": "IMAGEN 14 — Alcohol como nucleófilo"
+        },
+        {
+          "type": "list",
+          "id": "list-2c3fbf4ab254",
+          "ordered": false,
+          "items": [
+            "Oxígeno con pares libres.",
+            "Alcohol neutro = nucleófilo débil.",
+            "Alcóxido RO− = nucleófilo fuerte.",
+            "Ruptura O–H por desprotonación.",
+            "Formación de enlace O–C con el electrófilo."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-366fbdc590da",
+          "text": "Alcohol como electrófilo"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-99496b71c69fb6f6",
+          "alt": "Imagen 15: Alcohol como electrófilo",
+          "caption": "IMAGEN 15 — Alcohol como electrófilo"
+        },
+        {
+          "type": "list",
+          "id": "list-3c4c38756697",
+          "ordered": false,
+          "items": [
+            "El –OH es mal grupo saliente.",
+            "Requiere protonación o conversión a tosilato.",
+            "Se rompe el enlace C–O.",
+            "Se forma un enlace Nuc–C."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-d7b0760b87b3",
+          "text": "5.5 Tosilatos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7054d82ffc81",
+          "text": "Para evitar condiciones ácidas incompatibles con nucleófilos fuertes, el alcohol puede transformarse en un tosilato."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-596f1279457f",
+          "text": "El grupo –OTs es un excelente grupo saliente. La formación del tosilato no rompe el enlace C–O, por lo que conserva la configuración del carbono unido al oxígeno."
+        },
+        {
+          "type": "list",
+          "id": "list-4c92a297f03c",
+          "ordered": false,
+          "items": [
+            "Se comporta de forma similar a un haluro de alquilo.",
+            "Puede sufrir SN1, SN2 o eliminación.",
+            "Permite trabajar en condiciones no ácidas."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-f437d9d422517152",
+          "alt": "Imagen 16: Tosilación 1",
+          "caption": "IMAGEN 16 — Tosilación 1"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-680107ebb3bffad3",
+          "alt": "Imagen 17: Tosilación 2",
+          "caption": "IMAGEN 17 — Tosilación 2"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-3b1c3c7a0660",
+          "text": "5.6 Formación de haluros de alquilo desde alcoholes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6ec213189501",
+          "text": "La reacción puede ir por SN1 o SN2 según el tipo de alcohol."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-5379698fe257",
+          "text": "Reacción con HBr"
+        },
+        {
+          "type": "list",
+          "id": "list-35c969d11098",
+          "ordered": false,
+          "items": [
+            "Alcohol terciario → SN1.",
+            "Alcohol secundario → generalmente SN1 o mezcla según condiciones.",
+            "Alcohol primario → SN2."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-39f5f6bd41571419",
+          "alt": "Imagen 18: Mecanismo 11-1: alcohol terciario + HBr por SN1",
+          "caption": "IMAGEN 18 — Mecanismo 11-1: alcohol terciario + HBr por SN1"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-3c87a339db3ea965",
+          "alt": "Imagen 19: Mecanismo 11-2: alcohol primario + HBr por SN2",
+          "caption": "IMAGEN 19 — Mecanismo 11-2: alcohol primario + HBr por SN2"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-1781f5e8af32",
+          "text": "Reacción con HCl"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b074f24c3634",
+          "text": "Como Cl− es peor nucleófilo que Br−, suele requerirse activación adicional."
+        },
+        {
+          "type": "list",
+          "id": "list-41ac4da40732",
+          "ordered": false,
+          "items": [
+            "Alcohol terciario → reacción rápida, SN1.",
+            "Alcohol secundario → reacción intermedia, SN1.",
+            "Alcohol primario → reacción lenta o no reacciona según el PowerPoint."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e76b45717bc4",
+          "text": "5.7 Reactivo de Lucas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b43b6f1fa1d0",
+          "text": "El reactivo de Lucas es una mezcla de HCl concentrado + ZnCl2. El ZnCl2 actúa como ácido de Lewis y facilita la salida del –OH."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-30e62a8e4571",
+          "text": "La reacción se detecta por turbidez o separación de fases, porque el cloruro de alquilo formado suele ser insoluble en el medio acuoso."
+        },
+        {
+          "type": "table",
+          "id": "table-0a68a5080fcd",
+          "rows": [
+            [
+              "Tipo de alcohol",
+              "Velocidad",
+              "Mecanismo",
+              "Observación"
+            ],
+            [
+              "Terciario",
+              "Inmediata",
+              "SN1",
+              "Turbidez rápida / dos fases"
+            ],
+            [
+              "Secundario",
+              "Intermedia",
+              "SN1",
+              "Turbidez luego de un tiempo"
+            ],
+            [
+              "Primario",
+              "Lenta",
+              "SN2 o casi no reacciona en frío",
+              "Poca o nula turbidez"
+            ]
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-bd34a1b8d273c92f",
+          "alt": "Imagen 20: Reactivo de Lucas: reacción SN1 rápida",
+          "caption": "IMAGEN 20 — Reactivo de Lucas: reacción SN1 rápida"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-cd7503d773a98d09",
+          "alt": "Imagen 21: Reactivo de Lucas: reacción SN2 lenta",
+          "caption": "IMAGEN 21 — Reactivo de Lucas: reacción SN2 lenta"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e58bd3fa19bd",
+          "text": "5.8 Reacción con PX3"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-bd2c54224ad8",
+          "text": "Los alcoholes primarios y secundarios pueden transformarse en haluros de alquilo usando trihaluros de fósforo."
+        },
+        {
+          "type": "list",
+          "id": "list-41a6ab30e8e6",
+          "ordered": false,
+          "items": [
+            "PCl3 → cloruros de alquilo.",
+            "PBr3 → bromuros de alquilo.",
+            "PI3 → yoduros de alquilo; suele generarse in situ porque es inestable."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-97299149449c08c7",
+          "alt": "Imagen 22: Mecanismo 11-3: reacción de alcoholes con PBr3",
+          "caption": "IMAGEN 22 — Mecanismo 11-3: reacción de alcoholes con PBr3"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-4f15e3bc5864",
+          "text": "5.9 Deshidratación de alcoholes catalizada por ácido"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-7162dddb06fa",
+          "text": "Condiciones típicas: H2SO4 / calor. Puede ocurrir por mecanismos relacionados con E1 o E2 según el tipo de alcohol."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-e8cdd22245b9d0c6",
+          "alt": "Imagen 23: Mecanismo 11-14: deshidratación catalizada por ácido",
+          "caption": "IMAGEN 23 — Mecanismo 11-14: deshidratación catalizada por ácido"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-20d6898f01aa",
+      "summary": "IMG 15 — Reacciones de alcoholes con cloruro de tionilo (SOCl₂)",
+      "children": [
+        {
+          "type": "figure",
+          "assetId": "asset-1398805e73737945",
+          "alt": "IMG 15: Reacciones de alcoholes con cloruro de tionilo (SOCl₂)",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b48d368f1e73",
+      "summary": "6. ÉTERES: ESTRUCTURA, NOMENCLATURA Y PROPIEDADESR–O–R’",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-62bb98e09ed0",
+          "text": "6. ÉTERES: ESTRUCTURA, NOMENCLATURA Y PROPIEDADES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-eb3b0e1f04d1",
+          "text": "6.1 Introducción"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8bad5258b239",
+          "text": "Los éteres son compuestos orgánicos que tienen un átomo de oxígeno unido a dos grupos carbonados."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0a037b3e23cd",
+          "text": "El oxígeno puede estar unido a dos grupos alquilo, a un grupo alquilo y uno arilo, o formar parte de un anillo."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-63126e1cc35c",
+          "text": "6.2 Clasificación"
+        },
+        {
+          "type": "list",
+          "id": "list-3d3e1f721dde",
+          "ordered": false,
+          "items": [
+            "Éteres simétricos: dos grupos iguales.",
+            "Éteres asimétricos: dos grupos diferentes.",
+            "Éteres alquil–alquil.",
+            "Éteres alquil–aril.",
+            "Éteres cíclicos."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-edd6fab8ad4a",
+          "text": "6.3 Nomenclatura"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-ddcc97ae17c1",
+          "text": "IUPAC"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-d3ecb899f77c",
+          "text": "Se nombran como alcoxi-alcanos. La cadena más larga se toma como principal y el grupo unido al oxígeno se nombra como sustituyente alcoxi."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-c9d9e15ea0a4",
+          "text": "Nombres comunes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fda6dbd5737b",
+          "text": "Se nombran los dos grupos unidos al oxígeno y luego la palabra éter."
+        },
+        {
+          "type": "list",
+          "id": "list-bdb7263af7df",
+          "ordered": false,
+          "items": [
+            "CH3–O–CH3 → dimetil éter.",
+            "CH3–O–CH2CH3 → etil metil éter.",
+            "CH3CH2–O–CH2CH3 → dietil éter."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e4ada02872b2",
+          "text": "6.4 Éteres cíclicos"
+        },
+        {
+          "type": "list",
+          "id": "list-f70d336fcf67",
+          "ordered": false,
+          "items": [
+            "Epóxidos u oxiranos: éteres cíclicos de tres miembros.",
+            "Oxetanos: anillos de cuatro miembros con oxígeno.",
+            "Tetrahidrofurano, THF: éter cíclico de cinco miembros.",
+            "Oxano / tetrahidropirano: éter cíclico de seis miembros.",
+            "Dioxanos: anillos con dos oxígenos."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-c2de3123e321652b",
+          "alt": "Imagen 24: Éteres cíclicos / heterociclos",
+          "caption": "IMAGEN 24 — Éteres cíclicos / heterociclos"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-2602affb48d5",
+          "text": "6.5 Éteres como disolventes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-24db417298b9",
+          "text": "Los éteres son usados como disolventes porque tienen polaridad moderada y pueden estabilizar cationes mediante los pares libres del oxígeno."
+        },
+        {
+          "type": "list",
+          "id": "list-d200e86a947c",
+          "ordered": false,
+          "items": [
+            "Alcoholes: pueden donar y aceptar puentes de hidrógeno.",
+            "Éteres: pueden aceptar puentes de hidrógeno, pero no donarlos.",
+            "Éteres: solvatan cationes de manera efectiva, pero no estabilizan aniones con igual fuerza."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-4f067ce0e87e",
+      "summary": "7. SÍNTESIS DE ÉTERESWilliamson / adición",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-b82dea1a432a",
+          "text": "7. SÍNTESIS DE ÉTERES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-bd084267c1ef",
+          "text": "7.1 Panorama"
+        },
+        {
+          "type": "list",
+          "id": "list-7a03eaddff71",
+          "ordered": false,
+          "items": [
+            "Síntesis de Williamson.",
+            "Williamson con fenoles.",
+            "Alcoximercuración-desmercuración.",
+            "Deshidratación bimolecular de alcoholes."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-d0d5bc9174fc",
+          "text": "7.2 Síntesis de Williamson"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e1a2dc719de3",
+          "text": "Es una reacción SN2 entre un alcóxido y un haluro de alquilo."
+        },
+        {
+          "type": "list",
+          "id": "list-18e88304d1c6",
+          "ordered": false,
+          "items": [
+            "SN2.",
+            "Inversión de configuración si el carbono atacado es quiral.",
+            "Funciona mejor con haluros primarios.",
+            "Puede competir con E2."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-ee0e85a1001c64c2",
+          "alt": "Imagen 25: Mecanismo clave 11.6: síntesis de Williamson",
+          "caption": "IMAGEN 25 — Mecanismo clave 11.6: síntesis de Williamson"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-bf18f2d8d9c1",
+          "text": "7.3 Williamson con fenoles"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ef9cfa3d9481",
+          "text": "Los fenoles se transforman en fenóxidos, que atacan por SN2 a haluros de alquilo para formar éteres arílicos."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-944a0ca5ce6fa8f6",
+          "alt": "Imagen 26: Síntesis de Williamson con fenoles",
+          "caption": "IMAGEN 26 — Síntesis de Williamson con fenoles"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-baec1e9b24e6",
+          "text": "7.4 Alcoximercuración-desmercuración"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b34bc925fa60",
+          "text": "Permite formar éteres a partir de alquenos usando un alcohol como nucleófilo en lugar de agua."
+        },
+        {
+          "type": "list",
+          "id": "list-c51ea092abce",
+          "ordered": false,
+          "items": [
+            "Agrega RO– y H al doble enlace.",
+            "Orientación Markovnikov.",
+            "Sin transposición."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fb13d21de543",
+          "text": "Ver reacción relacionada en Alquenos → Alcoximercuración-desmercuración"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-2abfe1ba2501ee00",
+          "alt": "Imagen 27: Alcoximercuración-desmercuración",
+          "caption": "IMAGEN 27 — Alcoximercuración-desmercuración"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-e8980031412f",
+          "text": "7.5 Deshidratación bimolecular de alcoholes"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-84eb5e396d0a",
+          "text": "Es útil principalmente para alcoholes primarios y para formar éteres simétricos. A temperaturas más altas, puede competir la eliminación y formarse alquenos."
+        },
+        {
+          "type": "list",
+          "id": "list-2bba931427a0",
+          "ordered": false,
+          "items": [
+            "Método industrial.",
+            "Sustitución nucleofílica.",
+            "Competencia con eliminación."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-f61fa2588429bc7e",
+          "alt": "Imagen 28: Deshidratación de alcoholes para formar éteres",
+          "caption": "IMAGEN 28 — Deshidratación de alcoholes para formar éteres"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-9b5a32d7a7a8",
+          "text": "7.6 Síntesis de éteres: resumen"
+        },
+        {
+          "type": "table",
+          "id": "table-833ab1f51e03",
+          "rows": [
+            [
+              "Método",
+              "Reactivos",
+              "Tipo de reacción",
+              "Producto"
+            ],
+            [
+              "Williamson",
+              "Alcóxido + haluro primario",
+              "SN2",
+              "Éter"
+            ],
+            [
+              "Williamson con fenoles",
+              "Fenóxido + haluro primario",
+              "SN2",
+              "Éter arílico"
+            ],
+            [
+              "Alcoximercuración-desmercuración",
+              "Alqueno + alcohol",
+              "Adición Markovnikov",
+              "Éter"
+            ],
+            [
+              "Deshidratación bimolecular",
+              "Alcohol + alcohol",
+              "Sustitución / condensación",
+              "Éter simétrico"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-e4f1b27c6d83",
+      "summary": "8. REACCIONES DE ÉTERESclivaje",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-9bfa33de50b8",
+          "text": "8. REACCIONES DE ÉTERES"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-ba0a8459842f",
+          "text": "8.1 Panorama"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-582ab9e5b156",
+          "text": "Los éteres son relativamente poco reactivos. No tienen un buen grupo saliente y, en condiciones neutras o básicas, suelen ser bastante estables."
+        },
+        {
+          "type": "list",
+          "id": "list-ec7015a9c6d4",
+          "ordered": false,
+          "items": [
+            "Clivaje o escisión por ácidos halogenhídricos.",
+            "Combustión."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-92b9ec2ee468",
+          "text": "La reacción más importante para estudiar es la ruptura por HBr o HI."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-028ff0d2d284",
+          "text": "8.2 Clivaje por ácidos halogenhídricos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c010d3f6a53f",
+          "text": "Con exceso de HX, el alcohol formado puede transformarse también en haluro."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-4f5b47c8134f5385",
+          "alt": "Imagen 29: Clivaje de éteres por ácidos halogenhídricos",
+          "caption": "IMAGEN 29 — Clivaje de éteres por ácidos halogenhídricos"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-efe62f6a84ff",
+          "text": "8.3 SN1 vs SN2 en ruptura de éteres"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-51acc050fec4",
+          "text": "Si forma carbocatión estable: SN1"
+        },
+        {
+          "type": "list",
+          "id": "list-3a1a59c944cf",
+          "ordered": false,
+          "items": [
+            "Carbono terciario.",
+            "Carbono bencílico.",
+            "Carbono alílico."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-246eb527657d",
+          "text": "Si no forma carbocatión estable: SN2"
+        },
+        {
+          "type": "list",
+          "id": "list-003ce66bc30e",
+          "ordered": false,
+          "items": [
+            "Ataca el haluro.",
+            "Se ataca el carbono menos impedido.",
+            "Manda el criterio estérico."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-272c2b09f700",
+          "text": "8.4 Mecanismo con HBr"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-4cd9349b81a9ca39",
+          "alt": "Imagen 30: Mecanismo 14-11: ruptura de éter por HBr",
+          "caption": "IMAGEN 30 — Mecanismo 14-11: ruptura de éter por HBr"
+        },
+        {
+          "type": "list",
+          "id": "list-c53158901cc2",
+          "ordered": true,
+          "items": [
+            "Protonación del oxígeno del éter.",
+            "Formación de ion oxonio.",
+            "Ataque del haluro o formación de carbocatión.",
+            "Formación de haluro de alquilo y alcohol.",
+            "Con exceso de ácido, el alcohol puede seguir reaccionando."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-25ad5d312181",
+      "summary": "9. EPÓXIDOS: ESTRUCTURA, NOMENCLATURA Y SÍNTESISoxirano",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-0a68ca96d291",
+          "text": "9. EPÓXIDOS: ESTRUCTURA, NOMENCLATURA Y SÍNTESIS"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-8499e26b5c71",
+          "text": "9.1 Introducción"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-abdb12dfc3dd",
+          "text": "Los epóxidos son éteres cíclicos de tres miembros. También se llaman oxiranos."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-abe5f5bc097f",
+          "text": "La característica más importante es que el anillo está muy tensionado. Esa tensión hace que sean mucho más reactivos que otros éteres."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-df88f540e3ff",
+          "text": "9.2 Nomenclatura"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-386f9e4046ac",
+          "text": "Se puede nombrar indicando los carbonos unidos al oxígeno con el prefijo epoxi-."
+        },
+        {
+          "type": "list",
+          "id": "list-9d5634cf20a7",
+          "ordered": false,
+          "items": [
+            "1,2-epoxietano = oxirano = óxido de etileno.",
+            "2,3-epoxibutano indica puente de oxígeno entre carbonos 2 y 3."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a37ec659fbcb",
+          "text": "También se nombran como óxidos de alqueno:"
+        },
+        {
+          "type": "list",
+          "id": "list-8e8c79037b31",
+          "ordered": false,
+          "items": [
+            "Epóxido del eteno → óxido de etileno.",
+            "Epóxido del propeno → óxido de propileno.",
+            "Epóxido del ciclohexeno → óxido de ciclohexeno."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0a13b49048c1",
+          "text": "9.3 Panorama de síntesis"
+        },
+        {
+          "type": "list",
+          "id": "list-bde334d521f5",
+          "ordered": false,
+          "items": [
+            "Epoxidación de alquenos.",
+            "Ciclación de halohidrinas."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-af60830349ef",
+          "text": "9.4 Epoxidación de alquenos"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-9ca87b47bd48",
+          "text": "La epoxidación convierte un alqueno en epóxido mediante oxidación. Generalmente se usan perácidos, como mCPBA."
+        },
+        {
+          "type": "list",
+          "id": "list-8de62db15bbc",
+          "ordered": false,
+          "items": [
+            "Oxidación.",
+            "Adición concertada.",
+            "Adición sin.",
+            "Conservación estereoquímica."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-40b6181fba697c67",
+          "alt": "Imagen 31: Epoxidación de alquenos",
+          "caption": "IMAGEN 31 — Epoxidación de alquenos"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-76fb81d81a30",
+          "text": "9.5 Ciclación de halohidrinas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-79d81eeafa29",
+          "text": "Una halohidrina tiene un halógeno y un grupo –OH en carbonos vecinos. En presencia de base, el alcohol se desprotona y forma un alcóxido que ataca intramolecularmente al carbono unido al halógeno."
+        },
+        {
+          "type": "list",
+          "id": "list-27fc007b5934",
+          "ordered": false,
+          "items": [
+            "SN2 intramolecular.",
+            "Ciclación interna.",
+            "Cierre de anillo.",
+            "Inversión en el carbono atacado.",
+            "Relación anti entre nucleófilo interno y grupo saliente."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-9cd91b09e11b33c5",
+          "alt": "Imagen 32: Ciclación de halohidrinas promovida por base, 14-11b",
+          "caption": "IMAGEN 32 — Ciclación de halohidrinas promovida por base, 14-11b"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-724fb49d8a06",
+      "summary": "10. REACCIONES DE EPÓXIDOS: APERTURA DE ANILLOácido vs básico",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-1b99a3d82c72",
+          "text": "10. REACCIONES DE EPÓXIDOS: APERTURA DE ANILLO"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-0210826da8aa",
+          "text": "10.1 Idea general"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2e849f8c4ae5",
+          "text": "Los epóxidos reaccionan por apertura de anillo. La fuerza impulsora es aliviar la tensión del anillo de tres miembros."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0b261a9f07b8",
+          "text": "Las reacciones de epóxidos dependen del medio y del nucleófilo. Los nucleófilos débiles necesitan activación ácida; los nucleófilos fuertes atacan directamente en medio básico o neutro."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-5c9e5de045dea2a5",
+          "alt": "Imagen 33: Comparación de apertura ácido/base de epóxidos",
+          "caption": "IMAGEN 33 — Comparación de apertura ácido/base de epóxidos"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-97c12d21b46d",
+          "text": "10.2 Apertura en medio ácido"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ca1f9890726b",
+          "text": "En medio ácido, el oxígeno del epóxido se protona primero. Esto activa el anillo y permite el ataque de nucleófilos débiles, como agua o alcohol."
+        },
+        {
+          "type": "list",
+          "id": "list-e1090f1fd8bc",
+          "ordered": false,
+          "items": [
+            "Mecanismo pseudo-SN1.",
+            "Protonación previa.",
+            "Ataque al carbono más sustituido.",
+            "Ataque anti.",
+            "Apertura anti.",
+            "Nucleófilos débiles."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-9c056a38d685704f",
+          "alt": "Imagen 34: Mecanismo 14-2: apertura ácida de epóxidos en agua",
+          "caption": "IMAGEN 34 — Mecanismo 14-2: apertura ácida de epóxidos en agua"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-8c6aeb9b32a4",
+          "text": "10.3 Apertura en medio básico"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-0107e05a1762",
+          "text": "En medio básico o neutro con nucleófilos fuertes, el epóxido no necesita protonarse. El nucleófilo ataca directamente por SN2."
+        },
+        {
+          "type": "list",
+          "id": "list-3feee96e62d7",
+          "ordered": false,
+          "items": [
+            "Mecanismo SN2.",
+            "Ataque directo.",
+            "Ataque al carbono menos sustituido.",
+            "Inversión en el carbono atacado.",
+            "Ataque anti.",
+            "Apertura anti.",
+            "Nucleófilos fuertes."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-f68ec39ae7876d3c",
+          "alt": "Imagen 35: Mecanismo 14-4: apertura básica de epóxidos",
+          "caption": "IMAGEN 35 — Mecanismo 14-4: apertura básica de epóxidos"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-89ac84701afe",
+          "text": "10.4 Comparación global"
+        },
+        {
+          "type": "table",
+          "id": "table-12f08273ddb9",
+          "rows": [
+            [
+              "Condición",
+              "Medio ácido",
+              "Medio básico"
+            ],
+            [
+              "Activación",
+              "Protonación previa",
+              "No requiere protonación"
+            ],
+            [
+              "Nucleófilo",
+              "Débil",
+              "Fuerte"
+            ],
+            [
+              "Mecanismo",
+              "Pseudo-SN1",
+              "SN2"
+            ],
+            [
+              "Carbono atacado",
+              "Más sustituido",
+              "Menos sustituido"
+            ],
+            [
+              "Estereoquímica",
+              "Anti",
+              "Anti"
+            ],
+            [
+              "Motivo principal",
+              "Mayor carácter carbocatiónico",
+              "Menor impedimento estérico"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "id": "heading-24154d3de735",
+          "text": "10.5 Reglas generales"
+        },
+        {
+          "type": "list",
+          "id": "list-79a466c64a70",
+          "ordered": false,
+          "items": [
+            "El oxígeno del epóxido termina como –OH.",
+            "Se incorpora un nucleófilo en uno de los carbonos del anillo.",
+            "La relación entre nucleófilo entrante y oxígeno suele ser anti.",
+            "En medio ácido, el ataque ocurre al carbono más sustituido.",
+            "En medio básico, el ataque ocurre al carbono menos sustituido.",
+            "Si el nucleófilo es débil, se necesita ácido.",
+            "Si el nucleófilo es fuerte, puede atacar directamente."
+          ]
+        }
+      ]
+    }
+  ]
+}

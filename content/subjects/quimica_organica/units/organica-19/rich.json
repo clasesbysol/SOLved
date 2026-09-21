@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-11b9ef47d623",
+      "summary": "ESPECTROSCOPÍA Y ESTRUCTURA UNIDAD 13",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-dd8a0026ebed",
+          "text": "ESPECTROSCOPÍA Y ESTRUCTURA UNIDAD 13"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-5f89ee7588a9",
+      "summary": "PANORAMA GENERAL",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-0d324690e492",
+          "text": "PANORAMA GENERAL"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6eb34e319835",
+          "text": "La espectroscopía estudia la interacción entre la radiación electromagnética y la materia. Sirve para identificar compuestos, analizar grupos funcionales, estudiar estructuras moleculares y cuantificar sustancias."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-81563c27f490",
+          "text": "La radiación electromagnética puede describirse como onda y como fotones. La energía depende de la frecuencia y de la longitud de onda."
+        },
+        {
+          "type": "list",
+          "id": "list-bf42b6c52476",
+          "ordered": false,
+          "items": [
+            "Mayor frecuencia → mayor energía.",
+            "Mayor longitud de onda → menor energía.",
+            "Una molécula absorbe sólo si el fotón tiene la energía exacta para una transición posible."
+          ]
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-aef821da55fb35e8",
+          "alt": "Radiación electromagnética: onda, campo eléctrico y campo magnético",
+          "caption": "Radiación electromagnética: onda, campo eléctrico y campo magnético"
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-db7424b457287bb0",
+          "alt": "Espectro electromagnético y tipos de transiciones",
+          "caption": "Espectro electromagnético y tipos de transiciones"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-718a90657188",
+      "summary": "ESPECTROSCOPÍA UV-VISIBLE",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-a718c4e509c9",
+          "text": "ESPECTROSCOPÍA UV-VISIBLE"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ebb55dd9f3d0",
+          "text": "UV-Visible mide transiciones electrónicas. Es útil para detectar cromóforos, conjugación y para cuantificar sustancias en solución."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-de29c8b202c2",
+          "text": "π → π*"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-a63dc1816047",
+          "text": "Transición típica de sistemas con enlaces π, como alquenos, aromáticos y moléculas conjugadas."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-8f2f1bd16f80",
+          "text": "n → π*"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-949822a985c1",
+          "text": "Transición asociada a pares libres y orbitales π*, por ejemplo en carbonilos."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fdeb26cb9f09",
+          "text": "Al aumentar la conjugación disminuye ΔE, entonces aumenta λmax. Por eso algunos compuestos conjugados absorben en visible y se ven coloreados."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-a1333cc94663b741",
+          "alt": "UV-Visible: absorción, cromóforos y ley de Lambert-Beer",
+          "caption": "UV-Visible: absorción, cromóforos y ley de Lambert-Beer"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-9aa7911aa105",
+      "summary": "Ley de Lambert-Beer",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-abf1985afef2",
+          "ordered": false,
+          "items": [
+            "A: absorbancia.",
+            "ε: absortividad molar.",
+            "b: camino óptico.",
+            "C: concentración."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5d0d5736b89b",
+          "text": "Si ε y b se mantienen constantes, la absorbancia es proporcional a la concentración. La ley funciona mejor en soluciones diluidas."
+        },
+        {
+          "type": "figure",
+          "assetId": "asset-bee2cf72ff1414a3",
+          "alt": "Curva de calibración y rango dinámico lineal",
+          "caption": "Curva de calibración y rango dinámico lineal"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-cbb16e4bdfaf",
+      "summary": "ESPECTROSCOPÍA INFRARROJA IR",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-d10eda3cd26e",
+          "text": "ESPECTROSCOPÍA INFRARROJA IR"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-55d49c74a661",
+          "text": "IR identifica grupos funcionales por vibraciones de enlaces. Las vibraciones pueden ser de tensión, cuando cambia la longitud del enlace, o de flexión, cuando cambia el ángulo."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-8727d7935e87",
+          "text": "Región de grupos funcionales"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-88ede468ec1b",
+          "text": "4000–1400 cm⁻¹. Sirve para reconocer bandas características."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-b0b6206ae28e",
+          "text": "Huella dactilar"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-da201da3e11b",
+          "text": "1400–400 cm⁻¹. Es más compleja y depende de toda la estructura."
+        },
+        {
+          "type": "list",
+          "id": "list-7070892ab6ae",
+          "ordered": false,
+          "items": [
+            "O–H alcohol: 3200–3600 cm⁻¹, banda ancha si hay puentes de hidrógeno.",
+            "O–H ácido: 2500–3300 cm⁻¹, muy ancho.",
+            "N–H aminas: 3300–3500 cm⁻¹.",
+            "C–H sp³: 2850–2960 cm⁻¹.",
+            "C–H sp²: mayor a 3000 cm⁻¹.",
+            "C≡N: 2200–2300 cm⁻¹.",
+            "C=O: 1640–1820 cm⁻¹, intenso y diagnóstico."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-61eef4dd086a",
+      "summary": "RESONANCIA MAGNÉTICA NUCLEAR — RMN",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-3f2fd73e906e",
+          "text": "RESONANCIA MAGNÉTICA NUCLEAR — RMN"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-2c3617977605",
+          "text": "RMN permite conocer el entorno químico de núcleos con spin, especialmente ¹H y ¹³C. En ¹H-RMN, cada señal corresponde a un tipo de hidrógeno químicamente equivalente."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-2cb762704007",
+          "text": "Protegido"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ebfdfdb3c90b",
+          "text": "Menor δ, campo alto, más a la derecha."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-d5ce9e49272c",
+          "text": "Desprotegido"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-b686413961ab",
+          "text": "Mayor δ, campo bajo, más a la izquierda."
+        },
+        {
+          "type": "list",
+          "id": "list-1bc68babf64f",
+          "ordered": false,
+          "items": [
+            "Cantidad de señales: tipos de H distintos.",
+            "Desplazamiento químico: entorno electrónico.",
+            "Integral: cantidad relativa de H.",
+            "Desdoblamiento: H vecinos equivalentes."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-847fedad2dd8",
+      "summary": "ESPECTROMETRÍA DE MASAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-9ed6365eb20a",
+          "text": "ESPECTROMETRÍA DE MASAS"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-095c85efb03d",
+          "text": "La espectrometría de masas no mide absorción de luz. La molécula se ioniza, se forman iones positivos y se separan según su relación masa/carga."
+        },
+        {
+          "type": "list",
+          "id": "list-2f83ed942144",
+          "ordered": false,
+          "items": [
+            "Ion molecular M⁺·: permite estimar la masa molecular.",
+            "Pico base: pico más intenso del espectro, tomado como 100%.",
+            "Fragmentación: aporta información estructural.",
+            "m/z: relación masa/carga."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-fee191c02a11",
+          "text": "Fuentes duras"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-87b423f131b4",
+          "text": "Alta energía, mucha fragmentación. Ejemplo: impacto electrónico."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "id": "heading-39cec5338420",
+          "text": "Fuentes blandas"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-e8a767654e13",
+          "text": "Baja energía, poca fragmentación. Útiles para moléculas grandes o sensibles."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-9298ef9ad5a4",
+      "summary": "MAPA FINAL DE TÉCNICAS",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-ac236fb46917",
+          "text": "MAPA FINAL DE TÉCNICAS"
+        },
+        {
+          "type": "table",
+          "id": "table-ecdad5e5cd57",
+          "rows": [
+            [
+              "Técnica",
+              "Pregunta principal",
+              "Dato clave"
+            ],
+            [
+              "UV-Visible",
+              "¿Hay conjugación o cromóforos? ¿Cuánto compuesto hay?",
+              "λmax, absorbancia, Lambert-Beer."
+            ],
+            [
+              "IR",
+              "¿Qué grupos funcionales hay?",
+              "Bandas en cm⁻¹."
+            ],
+            [
+              "RMN",
+              "¿Qué tipos de H/C hay y cómo se conectan?",
+              "δ, integral, multiplicidad."
+            ],
+            [
+              "Masas",
+              "¿Cuál es la masa molecular y cómo fragmenta?",
+              "Ion molecular, pico base, m/z."
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

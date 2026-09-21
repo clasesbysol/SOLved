@@ -1,0 +1,158 @@
+{
+  "entries": [
+    {
+      "id": "organica-06-glosario-2",
+      "term": "Estructura y estereoquímica de los alcanos Wade p. 83",
+      "definition": "Los alcanos son hidrocarburos saturados, formados solo por carbono e hidrógeno, con enlaces simples C-C y C-H.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-3",
+      "term": "Nomenclatura de los alcanos Wade p. 85",
+      "definition": "Sustituyentes comunes:",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-4",
+      "term": "Propiedades físicas de los alcanos Wade p. 91",
+      "definition": "Los alcanos son moléculas apolares. Sus fuerzas intermoleculares principales son fuerzas de London o dispersión.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-5",
+      "term": "Síntesis de alcanos Wade p. 95",
+      "definition": "Los alcanos pueden obtenerse por reducción de otros grupos funcionales o por acoplamiento de fragmentos carbonados.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-6",
+      "term": "Reacciones de alcanos Wade p. 95",
+      "definition": "La combustión es la oxidación completa de un alcano con oxígeno para dar dióxido de carbono, agua y energía.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-7",
+      "term": "Estructura y conformaciones de los alcanos Wade p. 96",
+      "definition": "Las conformaciones son diferentes disposiciones espaciales que se interconvierten por rotación alrededor de enlaces simples sigma. No son compuestos distintos, sino formas diferentes de la misma molécula.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-9",
+      "term": "Isomería cis-trans en cicloalcanos Wade p. 105",
+      "definition": "En los cicloalcanos la rotación está restringida, por eso pueden aparecer isómeros cis/trans.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-10",
+      "term": "Estabilidad de cicloalcanos: tensión de anillos Wade p. 105",
+      "definition": "La estabilidad de los cicloalcanos depende de la tensión del anillo.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-12",
+      "term": "Conformaciones del ciclohexano Wade p. 109",
+      "definition": "El ciclohexano no es plano. Su conformación más estable es la silla porque permite ángulos cercanos a 109,5° y enlaces mayormente alternados.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-13",
+      "term": "Conformaciones de ciclohexanos monosustituidos Wade p. 113",
+      "definition": "En ciclohexanos monosustituidos, el sustituyente prefiere estar en posición ecuatorial.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-06-glosario-14",
+      "term": "Conformaciones de ciclohexanos disustituidos Wade p. 116",
+      "definition": "En ciclohexanos disustituidos hay que mirar dos cosas: la relación cis/trans y las posiciones axial/ecuatorial. La conformación más estable es la que coloca la mayor cantidad de sustituyentes (especialmente los más voluminosos) en posición ecuatorial.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-06",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

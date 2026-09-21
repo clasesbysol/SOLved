@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-e5767367bf93",
+      "summary": "ÍNDICE MAESTRO DE SÍNTESIS Y REACCIONES MAPA DE ESTUDIO",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-1d9d0a097056",
+          "text": "ÍNDICE MAESTRO DE SÍNTESIS Y REACCIONES MAPA DE ESTUDIO"
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-57557e3a31d2",
+          "text": "Síntesis y reacciones por familia funcional"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-fe6636e7be25",
+          "text": "Mapa rápido para repasar todo lo que hay que saber: cada tarjeta separa síntesis y reacciones. Los nombres están linkeados a la sección correspondiente del apunte para ir directo al desarrollo, mecanismo o imagen."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-69d50816fae8",
+          "text": "Alcanoscap. 3"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-f18387542355",
+          "text": "Haluros de alquilocap. 6"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-6c2178a9ac68",
+          "text": "Alquenoscap. 7–8"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-b2eba03881c9",
+          "text": "Alquinoscap. 9"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-2e70595f7d33",
+          "text": "Alcoholesunidad 8"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-a91e44480e96",
+          "text": "Éteresunidad 8"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-5f17c6a82c78",
+          "text": "Epóxidosunidad 8"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-58e00c9beffc",
+          "text": "Aldehídos y cetonasunidad 9"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-fcd87c3f26a7",
+          "text": "Ácidos carboxílicos y derivadosunidad 10"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-7a5571011dbc",
+          "text": "Aromáticosvol. 2"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-8a2e7ae5910e",
+          "text": "Compuestos nitrogenadosunidad 11"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-4fd2c7718701",
+          "text": "Hidratos de carbonounidad 12"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-4d5a439b0929",
+          "text": "Espectroscopíaunidad 13"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8540be963234",
+          "text": "Nota: este índice no reemplaza el menú lateral; está pensado como mapa de reacciones para estudiar y saltar rápido a cada tema."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3ff347c952e5",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-6147d773c0c4",
+          "ordered": false,
+          "items": [
+            "Hidrogenación de alquenos/alquinos a alcanos",
+            "Reducción de halogenuros de alquilo a alcanos",
+            "Acoplamientos organometálicos hacia cadenas carbonadas"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-2bf909d55b11",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-2391a8d924dc",
+          "ordered": false,
+          "items": [
+            "Combustión de alcanos",
+            "Halogenación radicalaria de alcanos",
+            "Cloración / bromación radicalaria: selectividad y estabilidad radicalaria"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-769a067c05e8",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-12efadb9195d",
+          "ordered": false,
+          "items": [
+            "Desde alcanos: halogenación radicalaria",
+            "Desde alcanos: bromación alílica",
+            "Desde alquenos: adición de HX, Markovnikov",
+            "Desde alquenos: HBr con peróxidos, anti-Markovnikov",
+            "Desde alquenos: adición de X₂ vía ion halonio",
+            "Desde alquinos: adición de 2 HX",
+            "Desde alquinos: adición de 2 X₂",
+            "Desde alcoholes: ROH + HX",
+            "Desde alcoholes: ROH + PBr₃",
+            "Desde alcoholes: ROH + SOCl₂",
+            "Intercambio de haluros / Finkelstein"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-baadb8d9b3ca",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-8db372af9561",
+          "ordered": false,
+          "items": [
+            "Formación de alcoholes por SN1/SN2",
+            "Intercambio de haluros por SN2",
+            "Síntesis de éteres de Williamson",
+            "Síntesis de aminas desde halogenuros",
+            "Síntesis de nitrilos por SN2",
+            "Síntesis de alquinos con acetiluros",
+            "Deshidrohalogenación E2/E1",
+            "Deshalogenación de dihaluros",
+            "Formación de reactivos de Grignard",
+            "Formación de organolitios",
+            "Formación de Gilman / organocupratos",
+            "Reducción de halogenuros a alcanos"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-f97094bd1603",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-7f574d15ba46",
+          "ordered": false,
+          "items": [
+            "Deshidrogenación de alcanos",
+            "Deshalogenación de dibromuros vecinales",
+            "Deshidratación de alcoholes",
+            "Deshidrohalogenación de halogenuros de alquilo",
+            "Eliminación de Hofmann",
+            "Eliminación de Cope",
+            "Reducción de alquinos a alquenos cis / Lindlar",
+            "Reducción de alquinos a alquenos trans / Na-NH₃"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-414b5f1e54d6",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-27c80623b321",
+          "ordered": false,
+          "items": [
+            "Adición iónica de HX a alquenos",
+            "Adición radicalaria de HBr con peróxidos",
+            "Adición de halógenos X₂ vía ion halonio",
+            "Formación de halohidrinas",
+            "Hidratación ácido-catalizada",
+            "Oximercuración-desmercuración",
+            "Alcoximercuración-desmercuración",
+            "Hidroboración-oxidación",
+            "Hidrogenación catalítica",
+            "Ciclopropanación / adición de carbenos",
+            "Epoxidación de alquenos",
+            "Apertura de epóxidos catalizada por ácido",
+            "Hidroxilación syn / dihidroxilación con OsO₄",
+            "Ruptura oxidativa / ozonólisis de alquenos"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3afa52f3452d",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-873ce5964a6d",
+          "ordered": false,
+          "items": [
+            "Formación de acetiluros por desprotonación",
+            "Alquilación de acetiluros por SN2",
+            "Dihaluros vicinales + 2 base fuerte → alquino",
+            "Dihaluros geminales + 2 base fuerte → alquino",
+            "Condiciones de doble eliminación con base fuerte / NH₂⁻"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-98cba9982296",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-436c3f30d194",
+          "ordered": false,
+          "items": [
+            "Adición de HX a alquinos",
+            "Adición de 2 HX → dihaluro geminal",
+            "Adición de X₂ a alquinos",
+            "Adición de 2 X₂ → tetrahaluro",
+            "Hidratación HgSO₄ / H₂SO₄: enol → cetona",
+            "Hidroboración-oxidación: enol → aldehído/cetona",
+            "Reducción a alqueno cis con Lindlar",
+            "Reducción a alqueno trans con Na/NH₃",
+            "Hidrogenación completa a alcano",
+            "Oxidación con KMnO₄",
+            "Ozonólisis de alquinos"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-444a01ad9878",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-3459ee325818",
+          "ordered": false,
+          "items": [
+            "Desde halogenuros: sustitución nucleofílica SN2",
+            "Desde halogenuros: sustitución con agua por SN1",
+            "Desde alquenos: hidratación ácido-catalizada",
+            "Desde alquenos: oximercuración-desmercuración",
+            "Desde alquenos: hidroboración-oxidación",
+            "Desde alquenos: dihidroxilación",
+            "Desde organometálicos: Grignard + carbonilo",
+            "Por reducción de aldehídos/cetonas/carboxílicos derivados"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-516ccf9e0a5c",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-30a77411967c",
+          "ordered": false,
+          "items": [
+            "ROH + HBr / HCl → halogenuros de alquilo",
+            "Reactivo de Lucas: diagnóstico SN1/SN2",
+            "ROH + PX₃ → halogenuros por SN2",
+            "ROH + SOCl₂ → cloruros de alquilo",
+            "Deshidratación ácido-catalizada E1/E2",
+            "Oxidación de alcoholes",
+            "Formación de tosilatos",
+            "Alcohol como nucleófilo y electrófilo"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-aeb4bf0c3e88",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-d7e82e78ef89",
+          "ordered": false,
+          "items": [
+            "Síntesis de Williamson",
+            "Williamson con fenoles",
+            "Alcoximercuración-desmercuración de alquenos",
+            "Deshidratación bimolecular de alcoholes"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-27f4ea7d5db3",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-ba5dce8bb82b",
+          "ordered": false,
+          "items": [
+            "Clivaje ácido de éteres con HX",
+            "Ruptura con HBr / HI",
+            "SN1 vs SN2 en ruptura de éteres"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-1289ac20ee8f",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-bb47a0510ba0",
+          "ordered": false,
+          "items": [
+            "Epoxidación de alquenos",
+            "Ciclación de halohidrinas"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-7a44af4c9ff3",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-7be42d227feb",
+          "ordered": false,
+          "items": [
+            "Apertura en medio básico: ataque al carbono menos sustituido",
+            "Apertura en medio ácido: ataque al carbono más sustituido",
+            "Regla general de regioselectividad en apertura"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-080269bfee0e",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-c21550cd9c3a",
+          "ordered": false,
+          "items": [
+            "Oxidación de alcoholes",
+            "Ozonólisis reductiva de alquenos",
+            "Acilación de Friedel-Crafts hacia arilcetonas",
+            "Reducción de cloruros de ácido a aldehídos",
+            "Síntesis de benzaldehído",
+            "Cetonas desde cloruros de ácido"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-6a6e99414f18",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-9dcf15c2ce95",
+          "ordered": false,
+          "items": [
+            "Adición nucleofílica al carbonilo",
+            "Hidratación → hidratos / dioles geminales",
+            "Adición de HCN → cianhidrinas",
+            "Formación de iminas y derivados",
+            "Formación de enaminas",
+            "Formación de hemiacetales",
+            "Formación de acetales y grupos protectores",
+            "Adición de acetiluros",
+            "Reducción con NaBH₄ / LiAlH₄",
+            "Adición de reactivos de Grignard",
+            "Reducción total: Clemmensen / Wolff-Kishner",
+            "Tautomería ceto-enólica y enolatos",
+            "Adición / condensación aldólica",
+            "Aldólica mixta e intramolecular",
+            "Deshidratación de aldoles",
+            "Cannizzaro",
+            "Oxidación de aldehídos / Tollens",
+            "Reducción de aldehídos y cetonas"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-3d62878dc844",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-57ef649fcbea",
+          "ordered": false,
+          "items": [
+            "Oxidación de alcoholes primarios a ácidos",
+            "Ruptura oxidativa de alquenos",
+            "Oxidación fuerte de alquilbencenos",
+            "Grignard + CO₂ → ácido carboxílico",
+            "Ácido carboxílico + SOCl₂ → cloruro de ácido",
+            "Cloruro de ácido → anhídrido",
+            "Cloruro de ácido → éster",
+            "Cloruro de ácido → amida",
+            "Anhídrido → éster",
+            "Éster → amida"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-09942d5557cf",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-2ad744c85ed2",
+          "ordered": false,
+          "items": [
+            "Sustitución nucleofílica acílica",
+            "Interconversión de derivados",
+            "Hidrólisis ácida de derivados",
+            "Hidrólisis básica de derivados",
+            "Hidrólisis ácida de ésteres",
+            "Hidrólisis básica de ésteres",
+            "Saponificación",
+            "Hidrólisis ácida de proteínas / amidas",
+            "Reactividad de α-H y enolatos",
+            "Tautomería ceto-enol",
+            "Condensación de Claisen",
+            "Condensación intramolecular de Dieckmann",
+            "Condensaciones mixtas",
+            "Descarboxilación",
+            "Síntesis malónica",
+            "Síntesis acetoacética"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-63415e848b8c",
+      "summary": "Orientación y preparación conceptual",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-2283ecf9fd29",
+          "ordered": false,
+          "items": [
+            "Sustituyentes activadores orto/para",
+            "Sustituyentes desactivadores meta",
+            "Halógenos: desactivadores pero orto/para",
+            "Efectos de múltiples sustituyentes"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-b798a10b1357",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-e375d0f3f7ca",
+          "ordered": false,
+          "items": [
+            "Sustitución electrofílica aromática general",
+            "Halogenación aromática",
+            "Nitración aromática",
+            "Sulfonación y desulfonación",
+            "Nitración del tolueno",
+            "Alquilación de Friedel-Crafts",
+            "Acilación de Friedel-Crafts",
+            "Comparación alquilación vs acilación",
+            "Sustitución nucleofílica aromática SNAr"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-dc0691d617b5",
+      "summary": "Síntesis",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-512315f69faa",
+          "ordered": false,
+          "items": [
+            "Alquilación directa por SN2",
+            "Síntesis de Gabriel",
+            "Reducción de nitrilos",
+            "Reducción de amidas",
+            "Aminación reductiva",
+            "Nitración de benceno + reducción a arilaminas",
+            "Degradación de Hofmann de amidas"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-307281f4f21a",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-0bb8a9d9e701",
+          "ordered": false,
+          "items": [
+            "Formación de iminas",
+            "Formación de enaminas",
+            "Acilación para formar amidas",
+            "Metilación exhaustiva",
+            "Eliminación de Hofmann",
+            "Nitrosación de aminas",
+            "Reacciones de sales de diazonio",
+            "Copulación azoica",
+            "Aminoácidos y proteínas"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-6c2ee92f0de5",
+      "summary": "Conceptos clave",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-0150c903c1b8",
+          "ordered": false,
+          "items": [
+            "Mapa de nombres de carbohidratos",
+            "Clasificación: mono, di y polisacáridos",
+            "Sistema D/L y proyecciones de Fischer",
+            "Estereoisómeros, epímeros y familias de aldosas",
+            "Ciclación: hemiacetales, carbono anomérico, furanosas/piranosas y Haworth",
+            "Disacáridos y polisacáridos"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-6eb614c32472",
+      "summary": "Reacciones",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-aaef43790a98",
+          "ordered": false,
+          "items": [
+            "Formación de glicósidos",
+            "Azúcares reductores, Tollens, Fehling y Benedict",
+            "Oxidación a ácidos aldónicos y aldáricos",
+            "Reducción a alditoles",
+            "Kiliani-Fischer, Ruff, Wohl y osazonas"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-8ab07d70954d",
+      "summary": "Técnicas",
+      "children": [
+        {
+          "type": "list",
+          "id": "list-ee3131fdfc83",
+          "ordered": false,
+          "items": [
+            "Radiación electromagnética, fotones y niveles de energía",
+            "UV-Visible: cromóforos, conjugación y Lambert-Beer",
+            "IR: vibraciones y grupos funcionales",
+            "RMN: desplazamiento químico, integral y regla N+1",
+            "Espectrometría de masas: ion molecular, pico base y fragmentación",
+            "Mapa final de técnicas"
+          ]
+        }
+      ]
+    }
+  ]
+}

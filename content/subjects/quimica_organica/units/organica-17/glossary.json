@@ -1,0 +1,340 @@
+{
+  "entries": [
+    {
+      "id": "organica-17-glosario-2",
+      "term": "PANORAMA GENERAL",
+      "definition": "Esta unidad reúne la química de los compuestos orgánicos nitrogenados, especialmente las aminas. La idea que ordena casi todo el tema es que el nitrógeno posee un par electrónico libre. Ese par explica su basicidad, su nucleofilicidad, la formación de sales de amonio, las reacciones con carbonilos, la acilación para formar amidas, la eliminación de Hofmann y la formación de sales de diazonio.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-3",
+      "term": "ESTRUCTURA, BASICIDAD Y PUENTES DE HIDRÓGENO",
+      "definition": "Las aminas son derivados del amoníaco, NH₃. Uno o más hidrógenos del amoníaco se reemplazan por grupos carbonados. El nitrógeno conserva un par electrónico libre, por eso las aminas son bases y nucleófilos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-4",
+      "term": "CLASIFICACIÓN DE AMINAS Y SALES DE AMONIO",
+      "definition": "La clasificación de las aminas se hace tomando como base al NH₃ y contando cuántos hidrógenos fueron reemplazados por grupos carbonados. No se clasifica mirando el carbono unido al nitrógeno, como pasaba con alcoholes.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-5",
+      "term": "NOMENCLATURA DE AMINAS",
+      "definition": "Pueden nombrarse como alquilaminas o como alcanaminas.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-6",
+      "term": "NITRILOS: ACIDEZ DE HIDRÓGENOS ALFA",
+      "definition": "Este bloque no es la reducción de nitrilos. Es otra idea: un H unido al carbono α respecto de un nitrilo puede ser relativamente ácido porque, al sacarlo, el carbanión queda estabilizado por el grupo C≡N.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-7",
+      "term": "REACCIONES DE SÍNTESIS",
+      "definition": "Este bloque reúne las formas de preparar aminas. Primero aparece el mapa general de síntesis y debajo quedan las reacciones desplegables una por una.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-8",
+      "term": "ALQUILACIÓN DIRECTA POR SN2",
+      "definition": "El amoníaco o una amina pueden actuar como nucleófilos y atacar a un halogenuro de alquilo por mecanismo SN2. El producto formado también es nucleofílico, entonces puede seguir alquilándose.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-9",
+      "term": "SÍNTESIS DE GABRIEL",
+      "definition": "La síntesis de Gabriel permite obtener aminas primarias evitando la sobrealquilación. Usa ftalimida como fuente de nitrógeno.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-10",
+      "term": "REDUCCIÓN DE NITRILOS",
+      "definition": "Esta reacción sirve para preparar aminas primarias. Primero se forma un nitrilo por SN2 y luego el nitrilo se reduce con LiAlH₄.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-11",
+      "term": "REDUCCIÓN DE AMIDAS",
+      "definition": "Las amidas pueden reducirse con LiAlH₄ para formar aminas. En este caso el carbonilo de la amida se transforma en CH₂ y se conserva el nitrógeno.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-12",
+      "term": "AMINACIÓN REDUCTIVA",
+      "definition": "La aminación reductiva transforma un aldehído o una cetona en una amina. Primero se forma una imina y luego esa imina se reduce.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-13",
+      "term": "NITRACIÓN DE BENCENO Y REDUCCIÓN A ARILAMINAS",
+      "definition": "Para obtener una arilamina, muchas veces primero se introduce un grupo nitro en el anillo por nitración aromática, y después se reduce ese grupo nitro a amino.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-14",
+      "term": "DEGRADACIÓN DE HOFMANN DE AMIDAS",
+      "definition": "En presencia de base fuerte y bromo o cloro, las amidas se degradan a aminas primarias con un carbono menos. El carbonilo desaparece.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-15",
+      "term": "REACCIONES",
+      "definition": "Este bloque reúne las reacciones químicas de las aminas y sales de diazonio. Primero aparece el mapa general y luego cada reacción queda en su propia sección desplegable.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-16",
+      "term": "REACCIONES COMO BASE: FORMACIÓN DE SALES DE AMONIO",
+      "definition": "Las aminas actúan como bases de Lewis por el par electrónico libre del nitrógeno. Frente a un ácido, aceptan H⁺ y forman sales de amonio.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-17",
+      "term": "FORMACIÓN DE IMINAS",
+      "definition": "El amoníaco o una amina primaria reaccionan con aldehídos o cetonas para formar una imina, también llamada base de Schiff.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-18",
+      "term": "FORMACIÓN DE ENAMINAS",
+      "definition": "Las aminas secundarias reaccionan con aldehídos o cetonas para formar enaminas. El mecanismo se parece al de iminas, pero como el nitrógeno no tiene otro H para perder al final, se pierde un H del carbono α.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-19",
+      "term": "ACILACIÓN DE AMINAS PARA FORMAR AMIDAS",
+      "definition": "Las aminas pueden actuar como nucleófilos frente a derivados de ácidos carboxílicos, especialmente cloruros de ácido. El producto es una amida.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-20",
+      "term": "METILACIÓN EXHAUSTIVA",
+      "definition": "La metilación exhaustiva consiste en tratar una amina con exceso de yoduro de metilo, CH₃I. El exceso asegura que el producto sea una sal de amonio cuaternario.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-21",
+      "term": "ELIMINACIÓN DE HOFMANN",
+      "definition": "Al calentar el hidróxido de amonio cuaternario, ocurre una eliminación E2 y se forma un alqueno. A diferencia de Zaitsev, en Hofmann suele predominar el alqueno menos sustituido.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-22",
+      "term": "NITROSACIÓN DE AMINAS PRIMARIAS",
+      "definition": "La nitrosación usa ácido nitroso, HNO₂. Como HNO₂ es inestable, se genera in situ a partir de nitrito de sodio y ácido.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-23",
+      "term": "REACCIONES DE SALES DE DIAZONIO: SUSTITUCIONES",
+      "definition": "Las sales de diazonio aromáticas permiten reemplazar el grupo diazonio por distintos nucleófilos o grupos funcionales. La clave es que se libera N₂, gas muy estable y excelente grupo saliente.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-24",
+      "term": "COPULACIÓN AZOICA / ACOPLAMIENTO DE SALES DE DIAZONIO",
+      "definition": "Este bloque es distinto de las sustituciones del diazonio. En la copulación azoica, el catión bencenodiazonio actúa como electrófilo y ataca a un anillo aromático fuertemente activado.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-17-glosario-25",
+      "term": "AMINOÁCIDOS Y PROTEÍNAS",
+      "definition": "El eje de la unidad también menciona aminoácidos y proteínas. Este bloque conecta aminas, ácidos carboxílicos y amidas.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-17",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

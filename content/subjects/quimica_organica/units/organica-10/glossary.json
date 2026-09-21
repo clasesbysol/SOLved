@@ -1,0 +1,46 @@
+{
+  "entries": [
+    {
+      "id": "organica-10-glosario-2",
+      "term": "Reactividad del enlace doble carbono-carbono Wade p. 326",
+      "definition": "El doble enlace C=C está formado por un enlace sigma y un enlace pi. El enlace pi es más débil y tiene electrones más expuestos, por eso el doble enlace actúa como zona rica en electrones.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-10",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-10-glosario-3",
+      "term": "Adición electrofílica a alquenos Wade p. 326 Adición electrofílica Mecanismo clave",
+      "definition": "La adición electrofílica es el mecanismo típico de muchas reacciones de alquenos.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-10",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "organica-10-glosario-4",
+      "term": "Reacciones específicas de alquenos Wade p. 326",
+      "definition": "Con peróxidos, la adición de HBr ocurre por cadena radicalaria y orienta el Br hacia el carbono menos sustituido.",
+      "explanation": "",
+      "example": "",
+      "unit": "organica-10",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ],
+      "related": []
+    }
+  ]
+}

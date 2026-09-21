@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "blocks": [
+    {
+      "type": "details",
+      "id": "details-c9ccd86b993e",
+      "summary": "INTRODUCCIÓN Y REPASO A LA QUÍMICA ORGÁNICA WADE VOL. 1 · CAP. 1",
+      "children": [
+        {
+          "type": "heading",
+          "level": 1,
+          "id": "heading-2797c8dfda5f",
+          "text": "INTRODUCCIÓN Y REPASO A LA QUÍMICA ORGÁNICA WADE VOL. 1 · CAP. 1"
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-ab006ef63b98",
+      "summary": "Estructuras de Lewis Wade p. 7",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-adbc13e75c50",
+          "text": "Estructuras de Lewis Wade p. 7"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-3f2efdb628b6",
+          "text": "Las estructuras de Lewis representan la distribución de los electrones de valencia en una molécula o ion. Permiten visualizar enlaces, pares libres, cargas formales y posibles estructuras resonantes."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-49ceef2a189d",
+          "text": "Pasos para construir una estructura de Lewis:"
+        },
+        {
+          "type": "list",
+          "id": "list-81b5f7b2c8f8",
+          "ordered": true,
+          "items": [
+            "Contar los electrones de valencia totales.",
+            "Elegir el átomo central; generalmente el menos electronegativo. El hidrógeno nunca va al centro.",
+            "Unir los átomos con enlaces simples.",
+            "Completar primero el dueto del hidrógeno y luego el octeto de los átomos periféricos.",
+            "Colocar los electrones sobrantes sobre el átomo central.",
+            "Si el átomo central no completa octeto, formar enlaces dobles o triples moviendo pares libres desde átomos vecinos.",
+            "Verificar cargas formales."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-8c095165c30f",
+          "text": "Carga formal:"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-f0ea2f9ad82e",
+          "text": "Criterios de estabilidad:"
+        },
+        {
+          "type": "list",
+          "id": "list-26bb31e67b6e",
+          "ordered": false,
+          "items": [
+            "La mejor estructura suele tener las menores cargas formales posibles.",
+            "La suma de cargas formales debe coincidir con la carga total.",
+            "Las cargas negativas conviene que estén en átomos más electronegativos.",
+            "Las cargas positivas conviene que estén en átomos menos electronegativos.",
+            "C, N, O y F no expanden el octeto porque son elementos de la segunda fila.",
+            "Si solo cambia la ubicación de electrones y no la posición de los átomos, se trata de resonancia."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-68a2d400a158",
+      "summary": "Electronegatividad y polaridad de enlace Wade p. 9",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-91b17c5055e8",
+          "text": "Electronegatividad y polaridad de enlace Wade p. 9"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ee25ddc8992d",
+          "text": "La electronegatividad es la capacidad de un átomo para atraer hacia sí los electrones compartidos en un enlace. Cuando dos átomos tienen diferente electronegatividad, el enlace se polariza."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-42d10e8a37ec",
+          "text": "El átomo más electronegativo queda con carga parcial negativa, δ⁻. El átomo menos electronegativo queda con carga parcial positiva, δ⁺."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-538ae973105d",
+          "text": "Tipos de enlace:"
+        },
+        {
+          "type": "list",
+          "id": "list-25b4b8d2f2e1",
+          "ordered": false,
+          "items": [
+            "Si la diferencia de electronegatividad es muy baja → enlace covalente no polar.",
+            "Si la diferencia es intermedia → enlace covalente polar.",
+            "Si la diferencia es muy alta → el enlace tiene mucho carácter iónico."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-52b8b396c4de",
+          "text": "La polaridad de un enlace no siempre implica que toda la molécula sea polar. Para decidir si una molécula es polar hay que considerar la polaridad de cada enlace, la geometría molecular y la suma vectorial de los dipolos."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-bc1493678913",
+          "text": "El CO₂ tiene enlaces C=O polares, pero como la molécula es lineal, los dipolos se cancelan y la molécula globalmente es apolar."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-cb8d7f4a1f74",
+      "summary": "Ácidos y bases de Arrhenius Wade p. 21",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-e69f80baeca2",
+          "text": "Ácidos y bases de Arrhenius Wade p. 21"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-58f3dd8bb3aa",
+          "text": "Según Arrhenius, un ácido es una sustancia que en agua aumenta la concentración de H⁺. Una base es una sustancia que en agua aumenta la concentración de OH⁻."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-fa6615891f37",
+      "summary": "Ácidos y bases de Brønsted-Lowry Wade p. 22",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-b13ed861f6e0",
+          "text": "Ácidos y bases de Brønsted-Lowry Wade p. 22"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-ccdc7503f821",
+          "text": "Según Brønsted-Lowry:"
+        },
+        {
+          "type": "list",
+          "id": "list-95d41cb2f8d4",
+          "ordered": false,
+          "items": [
+            "Ácido: dona un protón H⁺.",
+            "Base: acepta un protón H⁺."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-6dbe5dcdd6ba",
+          "text": "El HCl dona un protón → actúa como ácido. El agua acepta ese protón → actúa como base."
+        },
+        {
+          "type": "list",
+          "id": "list-4d09e006d1d3",
+          "ordered": false,
+          "items": [
+            "Un ácido al perder H⁺ forma su base conjugada.",
+            "Una base al ganar H⁺ forma su ácido conjugado.",
+            "Cuanto más estable sea la base conjugada, más fuerte será el ácido original."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "id": "details-714fec9d598e",
+      "summary": "Ácidos y bases de Lewis Wade p. 29",
+      "children": [
+        {
+          "type": "heading",
+          "level": 2,
+          "id": "heading-2b774696aa87",
+          "text": "Ácidos y bases de Lewis Wade p. 29"
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-c9403ad921b2",
+          "text": "Según Lewis:"
+        },
+        {
+          "type": "list",
+          "id": "list-0b00ba70d7e3",
+          "ordered": false,
+          "items": [
+            "Ácido de Lewis: acepta un par de electrones.",
+            "Base de Lewis: dona un par de electrones."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-40b060dd7b69",
+          "text": "Esta definición es clave en química orgánica porque muchos mecanismos se explican como movimiento de pares electrónicos."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-5b57e647066d",
+          "text": "Los nucleófilos suelen comportarse como bases de Lewis (donan electrones)."
+        },
+        {
+          "type": "paragraph",
+          "id": "paragraph-88ea2466d08d",
+          "text": "Los electrófilos suelen comportarse como ácidos de Lewis (aceptan electrones)."
+        }
+      ]
+    }
+  ]
+}

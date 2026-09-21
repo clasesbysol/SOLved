@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-9894722961f62037",
+      "path": "assets/9894722961f62037246f.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "9894722961f62037246f4058e172d4772175533b3c326d152f8655bdb61ab098",
+      "alt": "Proyecciones de Newman, conformaciones del butano y estabilidad conformacional. — imagen 9"
+    },
+    {
+      "id": "asset-3caa48644bde8caf",
+      "path": "assets/3caa48644bde8caf6959.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "3caa48644bde8caf695936005e3a2826c1ad5d56bf07fb86b3c2a7cacb10c375",
+      "alt": "Tensión en cicloalquenos pequeños, ciclos trans y regla de Bredt en sistemas bicíclicos. — imagen 18"
+    }
+  ]
+}

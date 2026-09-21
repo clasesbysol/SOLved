@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    {
+      "id": "organica-10-resumen",
+      "title": "Reacciones de alquenos",
+      "text": "El doble enlace C=C está formado por un enlace sigma y un enlace pi. El enlace pi es más débil y tiene electrones más expuestos, por eso el doble enlace actúa como zona rica en electrones.",
+      "kind": "theory",
+      "references": [
+        {
+          "sourceId": "organica-html"
+        }
+      ]
+    }
+  ]
+}
