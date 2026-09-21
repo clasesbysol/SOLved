@@ -5,8 +5,8 @@ import path from "node:path";
 const root = process.cwd();
 const dist = path.join(root, "dist");
 const entries = [
-  "index.html", "bienvenida.html", "quimica-general.html", "styles.css", "styles-enhancements.css", "styles-personal.css", "organic-cards.css", "organic-mind-map.css", "organic-native.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
-  "js", "icons", "assets", "docs", "content"
+  "index.html", "styles.css", "manifest.webmanifest", "sw.js", "privacy.html", "terms.html", "version.json",
+  "js", "icons", "docs", "content"
 ];
 
 await rm(dist, { recursive: true, force: true });
