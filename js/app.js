@@ -20,7 +20,7 @@
   let currentSubject=null,currentTab="summary",draggedId=null,activeHighlightId=null,pendingSelection=null,restoreMode="merge",deferredInstallPrompt=null,waitingWorker=null,savedSettingsSnapshot={};
   let driveSync=null;
   const ZOOMS=[.9,1,1.1,1.25,1.4];
-  const INTEGRATED_SUBJECT_IDS=new Set(["quimica_biologica1","fisica1","estadistica","fisica2","analisis1"]);
+  const INTEGRATED_SUBJECT_IDS=new Set(["quimica_biologica1","quimica_organica","fisica1","estadistica","fisica2","analisis1"]);
 
   function subject(id){return SUBJECTS.find(s=>s.id===id)}
   function icon(id){return `<svg class="icon"><use href="#${id}"/></svg>`}
@@ -91,6 +91,7 @@
     if(!["dashboard","subjects","calendar","settings","study"].includes(page))page="dashboard";["dashboard","subjects","calendar","settings","study"].forEach(p=>{const el=$(p+"Page");if(el)el.hidden=p!==page});
     const qbiIntegrated=page==="study"&&INTEGRATED_SUBJECT_IDS.has(currentSubject?.id);
     document.documentElement.classList.toggle("qbi-subject-mode",qbiIntegrated);
+    document.documentElement.classList.toggle("organic-subject-mode",page==="study"&&currentSubject?.id==="quimica_organica");
     els.studyTabs.hidden=qbiIntegrated;els.studyToolbar.hidden=qbiIntegrated;
     document.querySelector(".study-head").hidden=qbiIntegrated;
     els.previewWarning.hidden=qbiIntegrated;
