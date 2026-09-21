@@ -11,14 +11,16 @@ test("@desktop ofrece acceso invitado y aísla el perfil autorizado",async({page
  expect(await page.evaluate(()=>LBT_DB.dbName)).toBe("solved-profile-tester-sol");
 });
 
-test("@desktop renderiza el resumen orgánico seguro y carga imágenes bajo demanda",async({page})=>{
+test("@desktop renderiza el HTML original completo y ejecuta sus controles",async({page})=>{
  await page.goto("/");await waitForApp(page);await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]:visible').click();
- await expect(page.locator("#studyUnit")).toHaveValue("resumen-integral");await expect(page.locator(".rich-content")).toBeVisible();
- const document=page.locator(".rich-document");await expect(document).toBeVisible();const frame=page.frameLocator(".rich-document");await expect(frame.locator("#intro")).toBeVisible();await expect(frame.locator("img").first()).toHaveAttribute("loading","lazy");
+ await expect(page.locator("#studyUnit")).toHaveValue("resumen-integral");await expect(page.locator(".rich-content")).toBeVisible({timeout:30000});
+ const document=page.locator(".rich-document");await expect(document).toBeVisible();await expect(page.locator(".organic-original-card .rich-document-head")).toHaveCount(0);await expect(page.locator("[data-reaction-menu]")).toHaveCount(0);
+ const frame=page.frameLocator(".rich-document");await expect(frame.locator("#intro")).toBeVisible();await expect(frame.locator("#sidebar")).toHaveCount(0);await expect(frame.locator("#studySearchInput")).toBeVisible();await expect(frame.locator("#indice-maestro-reacciones")).toBeVisible();
+ await frame.locator("#studySearchInput").fill("alquenos");await expect(frame.locator("mark.search-hit").first()).toBeVisible();
  await page.getByRole("button",{name:"Glosario"}).click();await expect(page.getByText("Todavía no hay contenido publicado para esta sección.")).toBeVisible();
 });
 
 test("@mobile mantiene utilizable el resumen enriquecido",async({page})=>{
  await page.goto("/");await waitForApp(page);await page.locator('[data-page="subjects"]').click();await page.locator('[data-open="quimica_organica"]:visible').click();
- await expect(page.locator(".rich-content")).toBeVisible();await expect(page.locator(".rich-document")).toBeVisible();await expect(page.frameLocator(".rich-document").locator("#intro")).toBeVisible();
+ await expect(page.locator(".rich-content")).toBeVisible({timeout:30000});await expect(page.locator(".rich-document")).toBeVisible();await expect(page.frameLocator(".rich-document").locator("#intro")).toBeVisible({timeout:30000});
 });

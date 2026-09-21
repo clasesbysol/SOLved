@@ -9,7 +9,8 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4174",
     storageState: "tests/guest-storage-state.json",
     serviceWorkers: "block",
-    trace: "retain-on-failure"
+    trace: "retain-on-failure",
+    launchOptions: process.env.SOLVED_CHROME_PATH ? { executablePath: process.env.SOLVED_CHROME_PATH } : {}
   },
   webServer: {
     command: "pnpm exec http-server . -p 4174 -c-1",
