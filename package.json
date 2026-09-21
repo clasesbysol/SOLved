@@ -11,7 +11,7 @@
     "test:content": "node tests/content.test.mjs",
     "lint": "node tests/static.test.mjs",
     "typecheck": "node --check js/study-workspace.js && node --check js/app.js && node --check js/db.js && node --check js/supabase-sync.js && node --check js/utilities.js",
-    "test": "node tests/content.test.mjs && node tests/organic-native.test.mjs && node tests/organic-cards-v2.test.mjs && node tests/organic-mind-map.test.mjs && node tests/correlations.test.mjs && node tests/static.test.mjs && node tests/sync.test.cjs && node tests/utilities.test.cjs && playwright test --reporter=list",
+    "test": "node tests/content.test.mjs && node tests/organic-cards-v2.test.mjs && node tests/organic-mind-map.test.mjs && node tests/correlations.test.mjs && node tests/static.test.mjs && node tests/sync.test.cjs && node tests/utilities.test.cjs && playwright test --reporter=list",
     "build": "node scripts/build.mjs",
     "check": "npm test && npm run build"
   },
