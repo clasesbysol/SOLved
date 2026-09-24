@@ -150,6 +150,29 @@
       ])
     ]}
   ];
+  window.QBI_MIND_MAP_DATA.push({id:"lipidos",label:"Lípidos I–II · estructura, membranas y homeostasis",description:"De ácidos grasos y reservas a composición de membranas, curvatura, remodelado y adaptación homeoviscosa.",chapters:[
+    chapter("19. Lípidos I · diversidad, ácidos grasos y reserva","cap42","Primero se aprende a leer la estructura de un lípido y a predecir propiedades a partir de longitud, insaturación y geometría.",[
+      topic("Mapa de familias","TAG y ceras son principalmente reserva/protección; GPL, esfingolípidos y esteroles dominan la arquitectura de membranas; varios derivados actúan como señales."),
+      topic("Nomenclatura de ácidos grasos","C:D resume carbonos y dobles enlaces. Δ cuenta desde el carboxilo; ω/n cuenta desde el extremo metilo.",["oleato = 18:1 Δ9 = 18:1 n-9","ALA = 18:3 Δ9,12,15 = 18:3 n-3"]),
+      topic("Estructura → propiedad","Más longitud favorece contactos y eleva Tm. Más dobles enlaces cis rompen el empaquetamiento y reducen Tm."),
+      topic("Reserva","TAG almacenan energía en gotas lipídicas; las ceras funcionan como barreras hidrofóbicas.")
+    ]),
+    chapter("20. Lípidos I · ω-3/ω-6 y mediadores","cap45","La familia omega identifica la posición del primer doble enlace y conecta precursores esenciales con mediadores lipídicos.",[
+      topic("Esencialidad","Linoleato y α-linolenato deben incorporarse desde la dieta porque los mamíferos no introducen de novo ciertos dobles enlaces distales."),
+      topic("Derivados","Araquidonato, EPA y DHA alimentan rutas de eicosanoides y mediadores pro-resolutivos; el efecto depende de la molécula y del contexto.")
+    ]),
+    chapter("21. Lípidos II · autoensamblaje y familias de membrana","cap48","La anfipaticidad explica micelas, bicapas y vesículas; la cabeza polar, el esqueleto y las cadenas determinan el comportamiento de cada especie.",[
+      topic("Efecto hidrofóbico","Agrupar superficies apolares libera agua ordenada y favorece el autoensamblaje."),
+      topic("GPL y esfingolípidos","Una misma cabeza polar puede coexistir con muchas combinaciones de cadenas; la ceramida es el núcleo de los esfingolípidos."),
+      topic("Colesterol","Amortigua cambios de orden de la membrana: restringe movimiento a T alta e interfiere con cristalización a T baja.")
+    ]),
+    chapter("22. Lípidos II · composición, remodelado y homeoviscosidad","cap53","No existe una composición universal: tejido, organela, monocapa y estado fisiológico seleccionan especies distintas.",[
+      topic("Ciclo de Lands","Fosfolipasas y aciltransferasas remodelan cadenas acilo después de la síntesis de novo."),
+      topic("Curvatura","Geometrías cilíndricas favorecen bicapas planas; conos y conos invertidos favorecen curvaturas opuestas."),
+      topic("Adaptación homeoviscosa","Frío, calor, presión o solventes activan cambios de longitud, saturación o ramificación para mantener propiedades físicas compatibles con función."),
+      topic("Sensores","DesK/DesR, Mga2, ALPS y otros sistemas convierten propiedades de la bicapa en respuestas enzimáticas o transcripcionales.")
+    ])
+  ]});
   const deep={
     "Salting out con sulfato de amonio":["Imaginá que la proteína necesita una capa de agua ordenada alrededor para mantenerse separada de las demás.","Al agregar poca sal puede mejorar la solubilidad porque los iones apantallan cargas superficiales. Esto es salting in y no debe confundirse con el paso siguiente.","Al agregar mucha sal, los iones muy hidratados retienen una gran proporción del agua. La superficie de la proteína queda peor hidratada.","Al disminuir la hidratación se vuelven relativamente más favorables los contactos entre zonas proteicas; las moléculas se agrupan y precipitan.","Cada proteína precipita a un porcentaje de saturación distinto. Se agrega sal por intervalos, se centrifuga y se ensayan sobrenadante y precipitado para saber dónde quedó la actividad."],
     "Precipitación cerca del pI":["Lejos del pI, muchas moléculas tienen el mismo signo y se repelen, como objetos con cargas iguales.","En el pI la suma promedio de cargas se aproxima a cero. Siguen existiendo grupos positivos y negativos, pero la repulsión neta entre moléculas disminuye.","Al faltar esa barrera repulsiva, las proteínas pueden acercarse lo suficiente para que actúen contactos hidrofóbicos y otras atracciones de corto alcance.","Por eso la solubilidad suele ser mínima cerca del pI; no porque la proteína quede químicamente sin cargas, sino porque pierde protección electrostática frente a la agregación."],
