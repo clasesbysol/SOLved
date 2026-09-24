@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const VERSION='1.1.0';
+const VERSION='1.2.0';
 const FIRST=42;
 const LAST=57;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -265,46 +265,103 @@ function sectionHtml(ch){
 }
 function tp4Html(){
  const sampleRows=[
-  ['Mejillón','0,5 g','Cloroformo : Metanol (2:1)','7 mL'],
-  ['Hojas','1,0 g','Cloroformo : Metanol (1:1)','5 mL'],
-  ['Avena','0,5 g','Cloroformo : Metanol (2:1)','5 mL']
+  ['Mejillón','0,5 g','Folch','Cloroformo : Metanol (2:1)','7 mL'],
+  ['Hojas','1,0 g','Bligh-Dyer adaptado','Cloroformo : Metanol (1:1)','5 mL'],
+  ['Avena','0,5 g','Folch','Cloroformo : Metanol (2:1)','5 mL']
  ];
- const steps1=[
-  ['1. Adición de solvente','Agregar a cada muestra el volumen y la mezcla indicados en la tabla.'],
-  ['2. Homogeneización','Mezclar vigorosamente en vórtex durante 3 minutos.'],
-  ['3. Centrifugación inicial','Centrifugar 5 minutos a 5000 rpm. La fase clorofórmica orgánica queda como sobrenadante sobre el sólido insoluble. Si no se separa correctamente, agregar metanol, agitar y centrifugar de nuevo.'],
-  ['4. Recuperación de fase orgánica','Trasvasar la fase orgánica superior a un Falcon limpio con pipeta Pasteur plástica. Si se agregó metanol extra, agregar el mismo volumen de cloroformo para restablecer la proporción inicial.'],
-  ['5. Lavado I × 2','Agregar 0,2 volúmenes de KCl 0,88 % p/v, centrifugar 5 minutos a 5000 rpm y descartar la fase acuosa superior. Repetir una segunda vez.'],
-  ['6. Lavado II × 2','Agregar 0,2 volúmenes de FST (Cloroformo : Metanol : KCl 0,88 % = 3:48:47 v/v/v), centrifugar 5 minutos a 5000 rpm y descartar la fase acuosa superior. Repetir una segunda vez.'],
-  ['7. Concentración','Evaporar completamente el solvente bajo corriente de N₂ en baño a 40 °C hasta observar un residuo oleoso.'],
-  ['8. Resuspensión','Resuspender inmediatamente el residuo en 50 µL de Cloroformo : Metanol (2:1).']
+ const extractionSteps=[
+  ['1. Preparar la muestra','Homogeneizar o morterear la muestra sólida antes de agregar los solventes.'],
+  ['2. Agregar la mezcla correspondiente','Usar el método asignado según la muestra: C:M 2:1 para Folch o C:M 1:1 para Bligh-Dyer adaptado, con el volumen indicado en la tabla.'],
+  ['3. Homogeneizar','Mezclar vigorosamente durante 3 minutos en vórtex. El objetivo es poner en contacto íntimo la matriz biológica con los solventes orgánicos para solubilizar los lípidos.'],
+  ['4. Centrifugar','Centrifugar 5 minutos a 5000 rpm. En esta etapa el material sólido insoluble forma un pellet y el extracto con solventes queda por encima del pellet. Si persiste material sin precipitar o la separación no es adecuada, agregar metanol, agitar y centrifugar nuevamente.'],
+  ['5. Recuperar el extracto orgánico','Tomar el sobrenadante/extracto orgánico con pipeta Pasteur de plástico y transferirlo a un Falcon limpio. Si se agregó metanol extra, agregar cloroformo suficiente para recuperar la proporción inicial del método.']
  ];
- const steps2=[
-  ['1. Preparar fase móvil','Hexano : Éter etílico : Ácido acético concentrado = 60:40:2,5 v/v/v. Colocar aproximadamente 1 cm de altura en la cuba.'],
-  ['2. Saturar la cámara','Cerrar la cuba y dejarla reposar para saturar el ambiente interno con vapores del solvente.'],
-  ['3. Sembrar','Sembrar 20 µL de cada extracto resuspendido y 20 µL del estándar sobre la línea de origen.'],
-  ['4. Desarrollar','Con las siembras secas, colocar la placa en la cuba y dejar ascender la fase móvil por capilaridad.'],
-  ['5. Marcar el frente','Retirar cuando el frente esté a pocos centímetros del borde superior y marcar de inmediato el frente del solvente.'],
-  ['6. Secar','Secar la placa con aire bajo campana de extracción.'],
-  ['7. Revelar','Visualizar las bandas de la placa seca bajo luz UV.']
+ const washSteps=[
+  ['Lavado con KCl 0,88 % · repetir 2 veces','Agregar 0,2 volúmenes de KCl 0,88 % p/v. Centrifugar 5 minutos a 5000 rpm. Luego de la partición líquido-líquido, descartar la fase acuosa superior y conservar la fase orgánica clorofórmica inferior.'],
+  ['Lavado con FST · repetir 2 veces','Agregar 0,2 volúmenes de Fase Superior Teórica (FST): Cloroformo : Metanol : KCl 0,88 % = 3:48:47 v/v/v. Centrifugar 5 minutos a 5000 rpm. Descartar nuevamente la fase acuosa superior y conservar la fase orgánica inferior.'],
+  ['Concentrar','Evaporar el solvente bajo corriente de N₂ en baño termostatizado a 40 °C hasta que quede un residuo oleoso.'],
+  ['Resuspender','Resuspender el residuo en 50 µL de Cloroformo : Metanol (2:1). Ese extracto concentrado se usa para la TLC.']
  ];
- const stepCards=items=>'<div class="qbi-tp4-steps">'+items.map(([t,d])=>'<article><h4>'+esc(t)+'</h4><p>'+esc(d)+'</p></article>').join('')+'</div>';
+ const tlcSteps=[
+  ['1. Preparar la fase móvil','Mezclar Hexano : Éter etílico : Ácido acético concentrado = 60:40:2,5 v/v/v. Colocar en la cuba cantidad suficiente para formar una columna de aproximadamente 1 cm.'],
+  ['2. Saturar la cuba','Tapar la cuba y dejarla reposar para que la atmósfera interna se sature con vapores de la fase móvil.'],
+  ['3. Sembrar','Sembrar 20 µL de cada muestra sobre la línea de origen. La guía incluye una solución estándar de glicéridos entre los materiales; su siembra se usa como referencia según la indicación de la práctica.'],
+  ['4. Secar la siembra','Esperar a que las manchas sembradas estén bien secas antes de colocar la placa en la cuba.'],
+  ['5. Desarrollar la cromatografía','Colocar la placa de sílica gel 60 en la cuba. El solvente asciende por capilaridad y los componentes migran a distinta velocidad según su afinidad relativa por la fase estacionaria y la fase móvil.'],
+  ['6. Marcar el frente','Retirar la placa cuando el frente del solvente llegue a pocos centímetros del borde superior y marcar inmediatamente la posición alcanzada.'],
+  ['7. Secar y revelar','Secar la placa con secador bajo campana y revelar las bandas bajo luz UV.']
+ ];
+ const cards=items=>'<div class="qbi-tp4-steps">'+items.map(([t,d])=>'<article><h4>'+esc(t)+'</h4><p>'+esc(d)+'</p></article>').join('')+'</div>';
  return '<section id="tp4" class="qb-chapter qbi-lip-tp4">'+
-   '<div class="qbi-lip-kicker">Trabajo práctico Nº 4</div>'+
-   '<h2 class="qbi-lip-tp4-title">Extracción y separación de lípidos presentes en alimentos y muestras ambientales</h2>'+
-   '<p class="qbi-lip-lead">Objetivo general: extraer y separar lípidos presentes en diferentes materiales biológicos mediante extracción con solventes orgánicos y cromatografía en capa delgada (TLC).</p>'+
-   '<aside class="qbi-lip-callout"><h3>Fundamento de extracción</h3><p>Los lípidos se aíslan de matrices biológicas aprovechando su elevada solubilidad en solventes orgánicos y su baja solubilidad en agua. La guía trabaja con mezclas Cloroformo : Metanol 2:1 (Folch) y 1:1 (Bligh-Dyer adaptado), seguidas de lavados, concentración y resuspensión.</p></aside>'+
-   '<div class="qbi-lip-cols"><section><h3>Marco teórico mínimo</h3><ul><li>Lípidos simples: glicéridos, ceras y ésteres de esteroides.</li><li>Lípidos complejos: glicerofosfolípidos, gliceroglicolípidos y esfingolípidos.</li><li>Derivados: ácidos grasos libres, alcoholes grasos, vitaminas liposolubles, esteroides e hidrocarburos.</li></ul></section><section><h3>Funciones destacadas en la guía</h3><ul><li>Estructura de membranas.</li><li>Fuente de vitaminas liposolubles y ácidos grasos esenciales.</li><li>Reserva energética y β-oxidación.</li><li>Aislamiento térmico y mecánico.</li></ul></section></div>'+
-   '<h3>Parte 1 · Preparación de extractos lipídicos</h3>'+
-   '<div class="qbi-study-table qbi-lip-table"><table><thead><tr><th>Muestra</th><th>Masa</th><th>Mezcla de solvente</th><th>Volumen</th></tr></thead><tbody>'+sampleRows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+
-   '<div class="qbi-lip-callout"><h3>Reactivos clave</h3><p>KCl 0,88 % p/v. FST = Cloroformo : Metanol : KCl 0,88 % en proporción 3:48:47 v/v/v. Concentración bajo N₂ a 40 °C. Resuspensión final: 50 µL de Cloroformo : Metanol (2:1).</p></div>'+
-   stepCards(steps1)+
-   '<details class="qbi-lip-deep"><summary>¿Qué se está separando en los lavados?</summary><div><p>La extracción orgánica retiene el material lipídico mientras los lavados permiten retirar agua e impurezas hidrosolubles. La guía indica descartar la fase acuosa superior tras cada lavado y conservar la fase orgánica para continuar el procesamiento.</p></div></details>'+
-   '<h3>Parte 2 · Cromatografía en capa delgada (TLC)</h3>'+
-   '<div class="qbi-lip-cols"><section><h3>Fase estacionaria</h3><ul><li>Sílica gel 60 sobre placa de vidrio de 20 × 20 cm.</li><li>La separación depende de la afinidad diferencial de cada compuesto con la superficie adsorbente.</li></ul></section><section><h3>Fase móvil</h3><ul><li>Hexano : Éter etílico : Ácido acético concentrado.</li><li>Proporción 60 : 40 : 2,5 v/v/v.</li><li>Asciende por capilaridad y arrastra los compuestos a distinta velocidad.</li></ul></section></div>'+
-   stepCards(steps2)+
-   '<aside class="qbi-lip-callout"><h3>Antes de entrar al laboratorio</h3><p>Hay que poder explicar por qué se usan solventes orgánicos para extraer lípidos, por qué se hacen lavados acuosos, por qué se evapora bajo N₂ y qué función cumplen la fase estacionaria y la fase móvil en una TLC.</p></aside>'+
-   '</section>';
+  '<div class="qbi-lip-kicker">Trabajo práctico Nº 4</div>'+
+  '<h2 class="qbi-lip-tp4-title">Extracción y separación de lípidos presentes en alimentos y muestras ambientales</h2>'+
+  '<p class="qbi-lip-lead"><strong>Objetivo:</strong> extraer lípidos de diferentes materiales biológicos con solventes orgánicos y luego separar las fracciones del extracto mediante cromatografía en capa delgada (TLC).</p>'+
+
+  '<h3>1. Teoría del TP · ¿qué son los lípidos y por qué se pueden extraer?</h3>'+
+  '<p>La palabra <em>lípido</em> proviene del griego <em>lipos</em>, “grasa”. No define una única familia química: reúne sustancias estructuralmente diferentes que comparten un comportamiento físico-químico dominado por regiones hidrocarbonadas hidrofóbicas. Por eso presentan <strong>muy baja solubilidad en agua</strong> y <strong>alta solubilidad en solventes orgánicos</strong>.</p>'+
+  '<aside class="qbi-lip-callout"><h3>Idea central del práctico</h3><p>Primero se aprovecha la solubilidad de los lípidos en mezclas orgánicas para <strong>extraerlos</strong> de la muestra. Después se elimina agua e impurezas mediante <strong>lavados y partición de fases</strong>. Finalmente, los distintos lípidos del extracto se <strong>separan por TLC</strong>. Extracción y separación son etapas diferentes.</p></aside>'+
+  '<div class="qbi-lip-cols"><section><h3>Propiedades comunes</h3><ul><li>Muy baja solubilidad en agua.</li><li>Muy elevada solubilidad en solventes orgánicos.</li><li>Presencia importante de regiones hidrocarbonadas largas e hidrofóbicas.</li><li>Algunos son completamente apolares y otros son anfipáticos, con una cabeza polar y una región hidrofóbica.</li></ul></section><section><h3>Ejemplos incluidos en el grupo</h3><ul><li>Triglicéridos, diglicéridos y monoglicéridos.</li><li>Ceras y fosfoglicéridos.</li><li>Esfingolípidos y esteroides.</li><li>Tocoferoles, carotenoides y terpenos.</li><li>Hidrocarburos policíclicos y otros compuestos liposolubles.</li></ul></section></div>'+
+
+  '<h3>2. Importancia fisiológica</h3>'+
+  '<div class="qbi-lip-cols"><section><h3>Estructura y transporte</h3><ul><li>Junto con las proteínas, son componentes estructurales importantes de las membranas celulares.</li><li>Participan en sistemas asociados al transporte de electrones de membranas, como la membrana mitocondrial interna.</li><li>Algunos actúan como aislantes térmicos y forman barreras protectoras.</li></ul></section><section><h3>Nutrición y metabolismo</h3><ul><li>Son fuente de vitaminas liposolubles A, D, E y K.</li><li>Aportan ácidos grasos esenciales.</li><li>Constituyen una reserva y fuente de energía a través de la β-oxidación.</li><li>Grasas y aceites aportan aproximadamente 9 kcal/g, frente a unas 4 kcal/g de proteínas y carbohidratos.</li></ul></section></div>'+
+
+  '<h3>3. Clasificación química usada en la guía</h3>'+
+  '<div class="qbi-study-table qbi-lip-table"><table><thead><tr><th>Grupo</th><th>Qué caracteriza al grupo</th><th>Ejemplos</th></tr></thead><tbody>'+
+  '<tr><td><strong>Lípidos simples</strong></td><td>Poseen ácidos grasos y alcoholes en su estructura, separables por hidrólisis.</td><td>Mono-, di- y triglicéridos; ceras; ésteres de esteroides.</td></tr>'+
+  '<tr><td><strong>Lípidos complejos</strong></td><td>Al hidrolizarse generan, además de alcoholes y ácidos grasos, otros componentes.</td><td>Glicerofosfolípidos, gliceroglicolípidos y esfingolípidos.</td></tr>'+
+  '<tr><td><strong>Compuestos y derivados</strong></td><td>Productos de hidrólisis y otros compuestos lipídicos de estructura variada.</td><td>Ácidos grasos, alcoholes grasos, vitaminas liposolubles, esteroides e hidrocarburos.</td></tr>'+
+  '</tbody></table></div>'+
+
+  '<h3>4. Los dos métodos de extracción que aparecen en este TP</h3>'+
+  '<p>Los métodos de aislamiento se basan en homogeneizar la muestra con mezclas de solventes orgánicos capaces de extraer fosfolípidos, acilgliceroles, colesterol y otros lípidos. En esta guía aparecen <strong>dos mezclas de extracción distintas</strong>:</p>'+
+  '<div class="qbi-tp4-methods">'+
+   '<article><div class="qbi-tp4-method-tag">MÉTODO DE FOLCH</div><h3>Cloroformo : Metanol = 2:1</h3><p>La mezcla contiene proporcionalmente más cloroformo. En este TP se utiliza para <strong>mejillón</strong> y <strong>avena</strong>.</p><p><strong>Función:</strong> extraer los lípidos de la matriz biológica antes de los lavados.</p></article>'+
+   '<article><div class="qbi-tp4-method-tag">BLIGH-DYER ADAPTADO</div><h3>Cloroformo : Metanol = 1:1</h3><p>En esta práctica se emplea una adaptación con partes iguales de ambos solventes. Se utiliza para la muestra de <strong>hojas</strong>.</p><p><strong>Función:</strong> también es un método de extracción; no es la cromatografía ni un lavado.</p></article>'+
+  '</div>'+
+  '<aside class="qbi-lip-callout"><h3>No confundir</h3><p><strong>Folch / Bligh-Dyer adaptado = extracción.</strong> <strong>KCl y FST = lavados/partición del extracto.</strong> <strong>N₂ a 40 °C = concentración.</strong> <strong>TLC = separación cromatográfica de los lípidos ya extraídos.</strong></p></aside>'+
+
+  '<h3>5. ¿Qué muestra usa cada método?</h3>'+
+  '<div class="qbi-study-table qbi-lip-table"><table><thead><tr><th>Muestra</th><th>Masa</th><th>Método</th><th>Mezcla de extracción</th><th>Volumen</th></tr></thead><tbody>'+sampleRows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+
+
+  '<h3>6. Parte 1 · Extracción de los lípidos</h3>'+
+  '<div class="qbi-lip-flow"><span>Muestra biológica</span><b>→</b><span>Folch o Bligh-Dyer adaptado</span><b>→</b><span>Homogeneización</span><b>→</b><span>Centrifugación</span><b>→</b><span>Extracto orgánico</span></div>'+
+  cards(extractionSteps)+
+  '<details class="qbi-lip-deep" open><summary>Atención con “fase superior” y “fase inferior”</summary><div><p>En la <strong>primera centrifugación</strong> la guía describe al extracto clorofórmico como sobrenadante porque está por encima del <strong>pellet sólido</strong>. Después, cuando se agregan soluciones acuosas y se forman <strong>dos fases líquidas</strong>, el cloroformo —más denso— queda en la <strong>fase orgánica inferior</strong>, mientras que la fase acuosa que se descarta queda arriba. Son dos comparaciones diferentes.</p></div></details>'+
+
+  '<h3>7. Lavados del extracto · KCl y FST</h3>'+
+  '<p>El extracto obtenido todavía contiene agua y sustancias hidrosolubles. Los lavados generan una partición entre una fase acuosa y una fase orgánica: los lípidos permanecen preferentemente en la fase orgánica mientras se eliminan contaminantes polares.</p>'+
+  '<div class="qbi-tp4-methods">'+
+   '<article><div class="qbi-tp4-method-tag">LAVADO 1</div><h3>KCl 0,88 %</h3><p>Se agregan <strong>0,2 volúmenes</strong>, se centrifuga y se descarta la fase acuosa superior. Se realiza <strong>dos veces</strong>.</p></article>'+
+   '<article><div class="qbi-tp4-method-tag">LAVADO 2</div><h3>Fase Superior Teórica (FST)</h3><p><strong>Cloroformo : Metanol : KCl 0,88 % = 3:48:47 v/v/v.</strong> También se usan 0,2 volúmenes y se repite <strong>dos veces</strong>.</p></article>'+
+  '</div>'+
+  cards(washSteps)+
+  '<aside class="qbi-lip-callout"><h3>¿Por qué N₂ y 40 °C?</h3><p>La evaporación elimina los solventes y concentra el extracto. La corriente de N₂ ayuda a desplazar el solvente y reduce la exposición al oxígeno; una temperatura moderada de 40 °C acelera la evaporación sin recurrir a calentamientos intensos. El residuo oleoso final concentra los lípidos recuperados.</p></aside>'+
+
+  '<h3>8. Parte 2 · Separación por cromatografía en capa delgada (TLC)</h3>'+
+  '<p>La TLC ya no busca sacar lípidos de la muestra original: busca <strong>separar entre sí los distintos componentes del extracto</strong>. La separación depende de la competencia entre la afinidad del compuesto por la fase estacionaria y su solubilidad en la fase móvil.</p>'+
+  '<div class="qbi-lip-cols"><section><h3>Fase estacionaria</h3><ul><li>Placa de sílica gel 60 sobre soporte de vidrio de 20 × 20 cm.</li><li>La sílica es polar y adsorbe los compuestos con distinta intensidad.</li><li>Cuanto mayor sea la interacción con la sílica, menor será la migración.</li></ul></section><section><h3>Fase móvil</h3><ul><li>Hexano : Éter etílico : Ácido acético concentrado = 60:40:2,5.</li><li>Asciende por capilaridad.</li><li>Cuanto mejor se solubilice un compuesto en la fase móvil y menor sea su retención en sílica, más avanzará.</li></ul></section></div>'+
+  '<div class="qbi-lip-flow"><span>Extracto concentrado</span><b>→</b><span>Siembra en sílica</span><b>→</b><span>Corrida con fase móvil</span><b>→</b><span>Separación en bandas</span><b>→</b><span>Revelado UV</span></div>'+
+  cards(tlcSteps)+
+
+  '<h3>9. Cómo interpretar conceptualmente la TLC</h3>'+
+  '<div class="qbi-tp4-methods">'+
+   '<article><div class="qbi-tp4-method-tag">MÁS RETENIDO</div><h3>Mayor afinidad por la sílica</h3><p>Un compuesto que interactúa más fuertemente con la fase estacionaria polar avanza menos y queda más cerca del origen.</p></article>'+
+   '<article><div class="qbi-tp4-method-tag">MÁS MÓVIL</div><h3>Mayor afinidad por la fase móvil</h3><p>Un compuesto menos retenido por la sílica y más compatible con la mezcla de corrida avanza más hacia el frente del solvente.</p></article>'+
+  '</div>'+
+  '<div class="formula-box qbi-lip-formula"><b>Factor de retención (Rf)</b><div>Rf = distancia recorrida por el compuesto / distancia recorrida por el frente del solvente</div></div>'+
+  '<p>El valor de Rf sirve para comparar la migración de una banda bajo las mismas condiciones cromatográficas. Nunca puede ser mayor que 1.</p>'+
+
+  '<h3>10. Mapa completo del TP4</h3>'+
+  '<div class="qbi-tp4-roadmap">'+
+   '<article><b>1</b><div><strong>Elegir mezcla de extracción</strong><span>Folch 2:1 o Bligh-Dyer adaptado 1:1 según la muestra.</span></div></article>'+
+   '<article><b>2</b><div><strong>Extraer</strong><span>Homogeneizar, centrifugar y recuperar el extracto orgánico.</span></div></article>'+
+   '<article><b>3</b><div><strong>Lavar</strong><span>2× KCl 0,88 % y 2× FST; retirar contaminantes hidrosolubles.</span></div></article>'+
+   '<article><b>4</b><div><strong>Concentrar</strong><span>Evaporar bajo N₂ a 40 °C y resuspender en 50 µL de C:M 2:1.</span></div></article>'+
+   '<article><b>5</b><div><strong>Separar</strong><span>TLC en sílica con Hexano : Éter : Ácido acético 60:40:2,5.</span></div></article>'+
+   '<article><b>6</b><div><strong>Visualizar e interpretar</strong><span>Marcar frente, secar, revelar bajo UV y comparar migraciones/bandas.</span></div></article>'+
+  '</div>'+
+  '<aside class="qbi-lip-callout"><h3>Qué deberías poder explicar antes del laboratorio</h3><p>Por qué los lípidos se extraen con solventes orgánicos; diferencia entre Folch y Bligh-Dyer adaptado en esta guía; qué hacen KCl y FST; por qué después de los lavados se conserva la fase orgánica inferior; para qué se evapora bajo N₂; diferencia entre extracción y TLC; qué son fase estacionaria y fase móvil; y por qué distintas moléculas recorren distancias diferentes.</p></aside>'+
+ '</section>';
 }
 function ensureStyle(){
  if(document.getElementById('qbi-lipidos-style'))return;
@@ -317,7 +374,7 @@ function ensureStyle(){
  .qbi-lip-deep{margin:14px 0;border:1px solid rgba(113,78,99,.16);border-radius:12px;background:#fff;overflow:hidden}.qbi-lip-deep summary{padding:12px 14px;cursor:pointer;font-weight:850;color:var(--qb-accent-strong,#8d2452)}.qbi-lip-deep div{padding:0 14px 14px}.qbi-lip-deep p{margin:0;line-height:1.62}
  .qbi-lip-formula{margin:15px 0;padding:13px 15px;border-left:4px solid var(--qb-accent,#e74888);border-radius:11px;background:var(--qb-accent-soft,#fff0f6)} .qbi-tp4-steps{display:grid;gap:10px;margin:14px 0 22px}.qbi-tp4-steps article{padding:13px 15px;border:1px solid rgba(113,78,99,.15);border-radius:12px;background:#fff}.qbi-tp4-steps h4{margin:0 0 6px;color:var(--qb-accent-strong,#8d2452)}.qbi-tp4-steps p{margin:0;line-height:1.58}
  .qbi-lip-index-group{display:block!important;margin-top:10px!important;padding-top:9px!important;border-top:1px solid rgba(113,78,99,.15)!important;color:var(--qb-accent-strong,#8d2452)!important;font-weight:900!important}.qbi-lip-index-group[data-empty="1"]{opacity:.78}
- #tp4{min-height:72px}.qbi-lip-tp4-title{margin:28px 0 4px}
+ .qbi-tp4-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:16px 0 22px}.qbi-tp4-methods article{padding:16px;border:1px solid rgba(113,78,99,.16);border-radius:14px;background:#fff}.qbi-tp4-methods h3{margin:7px 0 8px;color:var(--qb-accent-strong,#8d2452)}.qbi-tp4-methods p{margin:7px 0;line-height:1.58}.qbi-tp4-method-tag{display:inline-block;padding:5px 8px;border-radius:999px;background:var(--qb-accent-soft,#fff0f6);color:var(--qb-accent-strong,#8d2452);font-size:.72rem;font-weight:900;letter-spacing:.06em}.qbi-tp4-roadmap{display:grid;gap:9px;margin:16px 0 24px}.qbi-tp4-roadmap article{display:grid;grid-template-columns:36px 1fr;gap:11px;align-items:start;padding:12px 14px;border:1px solid rgba(113,78,99,.14);border-radius:12px;background:#fff}.qbi-tp4-roadmap article>b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--qb-accent,#e74888);color:#fff}.qbi-tp4-roadmap strong,.qbi-tp4-roadmap span{display:block}.qbi-tp4-roadmap span{margin-top:3px;line-height:1.5;color:var(--qb-muted,#75596a)}#tp4{min-height:72px}.qbi-lip-tp4-title{margin:28px 0 4px}
  @media(max-width:680px){.qbi-lip-cols{grid-template-columns:1fr}.qbi-lip-flow{align-items:stretch}.qbi-lip-flow span{flex:1 1 100%}.qbi-lip-flow b{display:none}}
  `;document.head.append(s);
 }
