@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const VERSION='1.0.0';
+const VERSION='1.1.0';
 const FIRST=42;
 const LAST=57;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
