@@ -1,7 +1,7 @@
 (()=>{
   'use strict';
-  const VERSION='1.3.0';
-  const QBI_STATIC='content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html?v=4.7.0';
+  const VERSION='1.4.0';
+  const QBI_STATIC='content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html?v=4.8.1';
   const SANDBOX='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox';
   const FRAME_STYLE_ID='solved-qbi-split-repair-v130';
   const boundFrames=new WeakSet();
@@ -290,6 +290,16 @@
     setTimeout(schedule,400);setTimeout(schedule,1200);
   }
 
+  function injectLipids(doc){
+    if(doc.getElementById('cap42'))return;
+    if(doc.querySelector('script[data-solved-qbi-lipids]'))return;
+    const script=doc.createElement('script');
+    script.src=new URL('qbi-lipidos-extension.js?v=1.1.0',doc.location.href).href;
+    script.defer=true;
+    script.dataset.solvedQbiLipids='1';
+    doc.body.append(script);
+  }
+
   function repairFrame(frame){
     fitParent(frame);
     let doc;
@@ -299,6 +309,7 @@
     bindBulkControls(doc);
     bindSearchStepper(doc);
     bindFormulaRepair(doc);
+    injectLipids(doc);
   }
 
   function fix(frame){
