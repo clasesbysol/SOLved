@@ -263,6 +263,49 @@ function blockHtml(block){
 function sectionHtml(ch){
  return '<section id="cap'+ch.n+'" class="qb-chapter qbi-lip-chapter" data-qbi-lipidos="'+esc(ch.group)+'"><div class="qb-chapter-number">'+ch.n+'</div><div class="qbi-lip-kicker">'+esc(ch.group)+'</div><h2>'+esc(ch.title)+'</h2><p class="qbi-lip-lead">'+esc(ch.lead)+'</p>'+ch.blocks.map(blockHtml).join('')+'</section>';
 }
+function tp4Html(){
+ const sampleRows=[
+  ['Mejillón','0,5 g','Cloroformo : Metanol (2:1)','7 mL'],
+  ['Hojas','1,0 g','Cloroformo : Metanol (1:1)','5 mL'],
+  ['Avena','0,5 g','Cloroformo : Metanol (2:1)','5 mL']
+ ];
+ const steps1=[
+  ['1. Adición de solvente','Agregar a cada muestra el volumen y la mezcla indicados en la tabla.'],
+  ['2. Homogeneización','Mezclar vigorosamente en vórtex durante 3 minutos.'],
+  ['3. Centrifugación inicial','Centrifugar 5 minutos a 5000 rpm. La fase clorofórmica orgánica queda como sobrenadante sobre el sólido insoluble. Si no se separa correctamente, agregar metanol, agitar y centrifugar de nuevo.'],
+  ['4. Recuperación de fase orgánica','Trasvasar la fase orgánica superior a un Falcon limpio con pipeta Pasteur plástica. Si se agregó metanol extra, agregar el mismo volumen de cloroformo para restablecer la proporción inicial.'],
+  ['5. Lavado I × 2','Agregar 0,2 volúmenes de KCl 0,88 % p/v, centrifugar 5 minutos a 5000 rpm y descartar la fase acuosa superior. Repetir una segunda vez.'],
+  ['6. Lavado II × 2','Agregar 0,2 volúmenes de FST (Cloroformo : Metanol : KCl 0,88 % = 3:48:47 v/v/v), centrifugar 5 minutos a 5000 rpm y descartar la fase acuosa superior. Repetir una segunda vez.'],
+  ['7. Concentración','Evaporar completamente el solvente bajo corriente de N₂ en baño a 40 °C hasta observar un residuo oleoso.'],
+  ['8. Resuspensión','Resuspender inmediatamente el residuo en 50 µL de Cloroformo : Metanol (2:1).']
+ ];
+ const steps2=[
+  ['1. Preparar fase móvil','Hexano : Éter etílico : Ácido acético concentrado = 60:40:2,5 v/v/v. Colocar aproximadamente 1 cm de altura en la cuba.'],
+  ['2. Saturar la cámara','Cerrar la cuba y dejarla reposar para saturar el ambiente interno con vapores del solvente.'],
+  ['3. Sembrar','Sembrar 20 µL de cada extracto resuspendido y 20 µL del estándar sobre la línea de origen.'],
+  ['4. Desarrollar','Con las siembras secas, colocar la placa en la cuba y dejar ascender la fase móvil por capilaridad.'],
+  ['5. Marcar el frente','Retirar cuando el frente esté a pocos centímetros del borde superior y marcar de inmediato el frente del solvente.'],
+  ['6. Secar','Secar la placa con aire bajo campana de extracción.'],
+  ['7. Revelar','Visualizar las bandas de la placa seca bajo luz UV.']
+ ];
+ const stepCards=items=>'<div class="qbi-tp4-steps">'+items.map(([t,d])=>'<article><h4>'+esc(t)+'</h4><p>'+esc(d)+'</p></article>').join('')+'</div>';
+ return '<section id="tp4" class="qb-chapter qbi-lip-tp4">'+
+   '<div class="qbi-lip-kicker">Trabajo práctico Nº 4</div>'+
+   '<h2 class="qbi-lip-tp4-title">Extracción y separación de lípidos presentes en alimentos y muestras ambientales</h2>'+
+   '<p class="qbi-lip-lead">Objetivo general: extraer y separar lípidos presentes en diferentes materiales biológicos mediante extracción con solventes orgánicos y cromatografía en capa delgada (TLC).</p>'+
+   '<aside class="qbi-lip-callout"><h3>Fundamento de extracción</h3><p>Los lípidos se aíslan de matrices biológicas aprovechando su elevada solubilidad en solventes orgánicos y su baja solubilidad en agua. La guía trabaja con mezclas Cloroformo : Metanol 2:1 (Folch) y 1:1 (Bligh-Dyer adaptado), seguidas de lavados, concentración y resuspensión.</p></aside>'+
+   '<div class="qbi-lip-cols"><section><h3>Marco teórico mínimo</h3><ul><li>Lípidos simples: glicéridos, ceras y ésteres de esteroides.</li><li>Lípidos complejos: glicerofosfolípidos, gliceroglicolípidos y esfingolípidos.</li><li>Derivados: ácidos grasos libres, alcoholes grasos, vitaminas liposolubles, esteroides e hidrocarburos.</li></ul></section><section><h3>Funciones destacadas en la guía</h3><ul><li>Estructura de membranas.</li><li>Fuente de vitaminas liposolubles y ácidos grasos esenciales.</li><li>Reserva energética y β-oxidación.</li><li>Aislamiento térmico y mecánico.</li></ul></section></div>'+
+   '<h3>Parte 1 · Preparación de extractos lipídicos</h3>'+
+   '<div class="qbi-study-table qbi-lip-table"><table><thead><tr><th>Muestra</th><th>Masa</th><th>Mezcla de solvente</th><th>Volumen</th></tr></thead><tbody>'+sampleRows.map(r=>'<tr>'+r.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+
+   '<div class="qbi-lip-callout"><h3>Reactivos clave</h3><p>KCl 0,88 % p/v. FST = Cloroformo : Metanol : KCl 0,88 % en proporción 3:48:47 v/v/v. Concentración bajo N₂ a 40 °C. Resuspensión final: 50 µL de Cloroformo : Metanol (2:1).</p></div>'+
+   stepCards(steps1)+
+   '<details class="qbi-lip-deep"><summary>¿Qué se está separando en los lavados?</summary><div><p>La extracción orgánica retiene el material lipídico mientras los lavados permiten retirar agua e impurezas hidrosolubles. La guía indica descartar la fase acuosa superior tras cada lavado y conservar la fase orgánica para continuar el procesamiento.</p></div></details>'+
+   '<h3>Parte 2 · Cromatografía en capa delgada (TLC)</h3>'+
+   '<div class="qbi-lip-cols"><section><h3>Fase estacionaria</h3><ul><li>Sílica gel 60 sobre placa de vidrio de 20 × 20 cm.</li><li>La separación depende de la afinidad diferencial de cada compuesto con la superficie adsorbente.</li></ul></section><section><h3>Fase móvil</h3><ul><li>Hexano : Éter etílico : Ácido acético concentrado.</li><li>Proporción 60 : 40 : 2,5 v/v/v.</li><li>Asciende por capilaridad y arrastra los compuestos a distinta velocidad.</li></ul></section></div>'+
+   stepCards(steps2)+
+   '<aside class="qbi-lip-callout"><h3>Antes de entrar al laboratorio</h3><p>Hay que poder explicar por qué se usan solventes orgánicos para extraer lípidos, por qué se hacen lavados acuosos, por qué se evapora bajo N₂ y qué función cumplen la fase estacionaria y la fase móvil en una TLC.</p></aside>'+
+   '</section>';
+}
 function ensureStyle(){
  if(document.getElementById('qbi-lipidos-style'))return;
  const s=document.createElement('style');s.id='qbi-lipidos-style';s.textContent=`
@@ -272,7 +315,7 @@ function ensureStyle(){
  .qbi-lip-table{margin:18px 0;overflow:auto;border:1px solid rgba(113,78,99,.15);border-radius:13px;background:#fff}.qbi-lip-table table{width:100%;border-collapse:collapse}.qbi-lip-table th,.qbi-lip-table td{padding:10px 12px;border-bottom:1px solid rgba(113,78,99,.12);text-align:left;vertical-align:top;line-height:1.45}.qbi-lip-table th{background:var(--qb-accent-soft,#fff0f6);color:var(--qb-accent-strong,#8d2452)}
  .qbi-lip-flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:16px 0;padding:13px;border:1px solid rgba(113,78,99,.14);border-radius:13px;background:#fff}.qbi-lip-flow span{padding:8px 10px;border-radius:10px;background:var(--qb-accent-soft,#fff0f6);font-weight:750}.qbi-lip-flow b{color:var(--qb-accent-strong,#8d2452)}
  .qbi-lip-deep{margin:14px 0;border:1px solid rgba(113,78,99,.16);border-radius:12px;background:#fff;overflow:hidden}.qbi-lip-deep summary{padding:12px 14px;cursor:pointer;font-weight:850;color:var(--qb-accent-strong,#8d2452)}.qbi-lip-deep div{padding:0 14px 14px}.qbi-lip-deep p{margin:0;line-height:1.62}
- .qbi-lip-formula{margin:15px 0;padding:13px 15px;border-left:4px solid var(--qb-accent,#e74888);border-radius:11px;background:var(--qb-accent-soft,#fff0f6)}
+ .qbi-lip-formula{margin:15px 0;padding:13px 15px;border-left:4px solid var(--qb-accent,#e74888);border-radius:11px;background:var(--qb-accent-soft,#fff0f6)} .qbi-tp4-steps{display:grid;gap:10px;margin:14px 0 22px}.qbi-tp4-steps article{padding:13px 15px;border:1px solid rgba(113,78,99,.15);border-radius:12px;background:#fff}.qbi-tp4-steps h4{margin:0 0 6px;color:var(--qb-accent-strong,#8d2452)}.qbi-tp4-steps p{margin:0;line-height:1.58}
  .qbi-lip-index-group{display:block!important;margin-top:10px!important;padding-top:9px!important;border-top:1px solid rgba(113,78,99,.15)!important;color:var(--qb-accent-strong,#8d2452)!important;font-weight:900!important}.qbi-lip-index-group[data-empty="1"]{opacity:.78}
  #tp4{min-height:72px}.qbi-lip-tp4-title{margin:28px 0 4px}
  @media(max-width:680px){.qbi-lip-cols{grid-template-columns:1fr}.qbi-lip-flow{align-items:stretch}.qbi-lip-flow span{flex:1 1 100%}.qbi-lip-flow b{display:none}}
@@ -292,7 +335,7 @@ function addIndex(){
  chapters.filter(x=>x.group==='Lípidos I').forEach(ch=>add('#cap'+ch.n,ch.n+'. '+ch.title));
  add('#lipidos-ii','Lípidos II','qbi-lip-index-group');
  chapters.filter(x=>x.group==='Lípidos II').forEach(ch=>add('#cap'+ch.n,ch.n+'. '+ch.title));
- add('#tp4','TP4','qbi-lip-index-group','1');
+ add('#tp4','TP4 · Extracción y separación de lípidos','qbi-lip-index-group');
  return true;
 }
 function build(){
@@ -305,7 +348,7 @@ function build(){
  chapters.filter(x=>x.group==='Lípidos I').forEach(ch=>{const wrap=document.createElement('div');wrap.innerHTML=sectionHtml(ch);const s=wrap.firstElementChild;cursor.insertAdjacentElement('afterend',s);cursor=s});
  const group2=document.createElement('div');group2.id='lipidos-ii';group2.className='qbi-lip-anchor';cursor.insertAdjacentElement('afterend',group2);cursor=group2;
  chapters.filter(x=>x.group==='Lípidos II').forEach(ch=>{const wrap=document.createElement('div');wrap.innerHTML=sectionHtml(ch);const s=wrap.firstElementChild;cursor.insertAdjacentElement('afterend',s);cursor=s});
- const tp=document.createElement('section');tp.id='tp4';tp.className='qb-chapter qbi-lip-tp4';tp.innerHTML='<h2 class="qbi-lip-tp4-title">TP4</h2>';cursor.insertAdjacentElement('afterend',tp);
+ const tpWrap=document.createElement('div');tpWrap.innerHTML=tp4Html();const tp=tpWrap.firstElementChild;cursor.insertAdjacentElement('afterend',tp);
  return true;
 }
 function updateMeta(){
