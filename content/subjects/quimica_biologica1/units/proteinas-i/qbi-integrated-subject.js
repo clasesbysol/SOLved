@@ -103,5 +103,13 @@
     parent.postMessage({type:'qbi-integrated-ready'},'*');
     return true;
   }
-  let attempts=0;const timer=setInterval(()=>{if(install()||attempts++>240){clearInterval(timer);removeObsoleteFullscreen()}},100);
+  function loadLipids(){
+    if(document.querySelector('script[data-qbi-lipidos-loader]'))return;
+    const script=document.createElement('script');
+    script.src=new URL('qbi-lipidos-extension.js?v=1.0.0',location.href).href;
+    script.defer=true;
+    script.dataset.qbiLipidosLoader='1';
+    document.body.append(script);
+  }
+  let attempts=0;const timer=setInterval(()=>{if(install()||attempts++>240){clearInterval(timer);removeObsoleteFullscreen();loadLipids()}},100);
 })();
