@@ -171,6 +171,12 @@
       topic("Curvatura","Geometrías cilíndricas favorecen bicapas planas; conos y conos invertidos favorecen curvaturas opuestas."),
       topic("Adaptación homeoviscosa","Frío, calor, presión o solventes activan cambios de longitud, saturación o ramificación para mantener propiedades físicas compatibles con función."),
       topic("Sensores","DesK/DesR, Mga2, ALPS y otros sistemas convierten propiedades de la bicapa en respuestas enzimáticas o transcripcionales.")
+    ]),
+    chapter("23. TP4 · extracción y TLC de lípidos","tp4","El práctico conecta solubilidad, partición y cromatografía: primero se extraen los lípidos con solventes orgánicos y luego se separan por TLC.",[
+      topic("Extracción","Mejillón y avena se extraen con Cloroformo:Metanol 2:1; hojas con 1:1. Después se centrifuga, lava y concentra."),
+      topic("Lavados","Se realizan dos lavados con 0,2 volúmenes de KCl 0,88 % y dos con FST 3:48:47; se descarta la fase acuosa superior."),
+      topic("Concentración","El solvente se evapora bajo N₂ a 40 °C y el residuo se resuspende en 50 µL de Cloroformo:Metanol 2:1."),
+      topic("TLC","Se siembran 20 µL y se desarrolla en Sílica gel 60 con Hexano:Éter etílico:Ácido acético 60:40:2,5; las bandas se visualizan bajo UV.")
     ])
   ]});
   const deep={
