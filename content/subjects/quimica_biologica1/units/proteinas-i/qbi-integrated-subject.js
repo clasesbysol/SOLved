@@ -106,7 +106,7 @@
   function loadLipids(){
     if(document.querySelector('script[data-qbi-lipidos-loader]'))return;
     const script=document.createElement('script');
-    script.src=new URL('qbi-lipidos-extension.js?v=1.0.0',location.href).href;
+    script.src=new URL('qbi-lipidos-extension.js?v=1.1.0',location.href).href;
     script.defer=true;
     script.dataset.qbiLipidosLoader='1';
     document.body.append(script);
