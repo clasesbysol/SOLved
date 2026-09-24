@@ -29,8 +29,8 @@
     {
       "subjectId": "quimica_biologica1",
       "unitId": "proteinas-i",
-      "title": "Resumen integral · Proteínas, métodos, TP1, enzimas I–III, TP2, Glúcidos I y Lípidos I–II",
-      "contentVersion": "4.8.0",
+      "title": "Resumen integral · Proteínas, métodos, TP1, enzimas I–III, TP2, Glúcidos I, Lípidos I–II y TP4",
+      "contentVersion": "4.8.1",
       "status": "published",
       "path": "content/subjects/quimica_biologica1/units/proteinas-i/"
     },
@@ -51,4 +51,4 @@
       "path": "content/subjects/quimica_organica/units/resumen-integral/"
     }
   ]
-}\n
+}
