@@ -12,10 +12,13 @@
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.4">
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
+  <style id="solvedBootSplashStyle">.solved-boot-splash{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;align-content:center;gap:18px;background:var(--bg,#fff8fc);color:var(--muted,#75596a);font:600 15px/1.4 Inter,"Segoe UI",Arial,sans-serif;transition:opacity .3s ease}.solved-boot-splash img{width:112px;height:112px;animation:solvedBootSpin 2.4s linear infinite}.solved-boot-splash.is-leaving{opacity:0;pointer-events:none}@keyframes solvedBootSpin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.solved-boot-splash img{animation-duration:6s}}</style>
+  <script src="js/boot-update-gate.js?v=1.0.0"></script>
 </head>
 <body>
 <section class="solved-reception" id="solvedReception" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h1>SOLved</h1><h2>Tu espacio de estudio</h2><button type="button" class="primary-btn" data-open-auth>Registrarme o iniciar sesión</button><button type="button" class="soft-btn" data-continue-guest>Continuar como invitado</button><p>La biblioteca oficial es pública. Con una cuenta, tu contenido y progreso se sincronizan de forma privada.</p></div></section>
 <section class="solved-reception" id="unauthorizedAccount" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h2>Esta cuenta todavía no está habilitada.</h2><p data-unauthorized-email></p><p>Podés continuar como invitado y utilizar los contenidos públicos de SOLved.</p><button type="button" class="primary-btn" data-continue-guest>Continuar como invitado</button></div></section>
+<div class="solved-boot-splash" id="solvedBootSplash" role="status" aria-live="polite"><img src="assets/brand/solved-icon-192.png" alt="SOLved"><span data-boot-text>Buscando actualizaciones…</span></div>
 <svg width="0" height="0" style="position:absolute">
   <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></symbol>
   <symbol id="i-books" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v18H6.5A2.5 2.5 0 0 1 4 17.5v-13A2.5 2.5 0 0 1 6.5 2Z"/></symbol>
@@ -315,6 +318,6 @@
 <script src="js/study-workspace.js?v=0.11.16"></script>
 <script src="js/notes.js?v=0.7.3"></script>
 <script src="js/utilities.js?v=0.11.0"></script>
-<script src="js/app.js?v=0.11.19"></script>
+<script src="js/app.js?v=0.11.20"></script>
 </body>
 </html>

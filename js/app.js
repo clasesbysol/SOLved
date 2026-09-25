@@ -56,7 +56,7 @@
     if(location.protocol==="file:")els.previewWarning.style.display="block";
     setPage(settings.lastPage==="study"?"dashboard":settings.lastPage||"dashboard");
     await new Promise(resolve=>requestAnimationFrame(resolve));
-    queueMicrotask(()=>driveSync.tryAutoReconnect().catch(()=>{}));
+    (window.SOLVED_BOOT_GATE||Promise.resolve()).then(()=>driveSync.tryAutoReconnect()).catch(()=>{});
     document.documentElement.dataset.appReady="true";
     window.dispatchEvent(new CustomEvent("lbt-app-ready"));
     registerPWA();auditButtons();
