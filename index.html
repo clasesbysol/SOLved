@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f7fb">
   <title>SOLved — Tu espacio de estudio</title>
   <link rel="icon" type="image/png" href="assets/brand/solved-favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
@@ -12,8 +13,8 @@
   <link rel="stylesheet" href="organic-cards.css?v=0.7.3">
   <link rel="stylesheet" href="organic-mind-map.css?v=0.7.4">
   <script>try{const p=JSON.parse(localStorage.getItem("solved-access-profile-v1"));document.documentElement.dataset.accessMode=p?.mode||"no-profile"}catch(_){document.documentElement.dataset.accessMode="no-profile"}</script>
-  <style id="solvedBootSplashStyle">.solved-boot-splash{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;align-content:center;gap:18px;background:var(--bg,#fff8fc);color:var(--muted,#75596a);font:600 15px/1.4 Inter,"Segoe UI",Arial,sans-serif;transition:opacity .3s ease}.solved-boot-splash img{width:112px;height:112px;animation:solvedBootSpin 2.4s linear infinite}.solved-boot-splash.is-leaving{opacity:0;pointer-events:none}@keyframes solvedBootSpin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.solved-boot-splash img{animation-duration:6s}}</style>
-  <script src="js/boot-update-gate.js?v=1.0.0"></script>
+  <style id="solvedBootSplashStyle">html{background:#f5f7fb}.solved-boot-splash{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;align-content:center;gap:18px;background:#f5f7fb;color:#5f6b7a;font:600 15px/1.4 Inter,"Segoe UI",Arial,sans-serif;transition:opacity .3s ease}.solved-boot-splash img{width:112px;height:112px;animation:solvedBootSpin 2.4s linear infinite}.solved-boot-splash.is-leaving{opacity:0;pointer-events:none}@keyframes solvedBootSpin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.solved-boot-splash img{animation-duration:6s}}</style>
+  <script src="js/boot-update-gate.js?v=1.1.0"></script>
 </head>
 <body>
 <section class="solved-reception" id="solvedReception" hidden><div class="reception-card"><img src="assets/brand/solved-logo.png" alt="SOLved"><h1>SOLved</h1><h2>Tu espacio de estudio</h2><button type="button" class="primary-btn" data-open-auth>Registrarme o iniciar sesión</button><button type="button" class="soft-btn" data-continue-guest>Continuar como invitado</button><p>La biblioteca oficial es pública. Con una cuenta, tu contenido y progreso se sincronizan de forma privada.</p></div></section>

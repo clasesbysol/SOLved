@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v01131-boot-update-gate";
+const CACHE_VERSION = "biblioteca-lbt-v01132-boot-splash-2s";
 const CORE = [
   "./","./index.html","./bienvenida.html",
   "./styles.css?v=0.11.1","./styles-enhancements.css?v=0.11.18","./styles-personal.css?v=0.10.9",
@@ -7,7 +7,7 @@ const CORE = [
   "./js/supabase-config.js?v=0.8.0","./js/auth.js?v=0.8.1","./js/data.js?v=0.11.16","./js/db.js?v=0.10.9","./js/supabase-sync.js?v=0.10.9",
   "./js/organic-cards.js?v=0.7.3","./js/qbi-mind-map-data.js?v=1.3.0","./js/qbi-mind-map-data.js?v=4.8.1","./js/organic-mind-map.js?v=0.11.1","./js/sync.js?v=0.11.0","./js/content.js?v=0.11.9","./js/study-workspace.js?v=0.11.16","./js/notes.js?v=0.7.3","./js/utilities.js?v=0.11.0","./js/app.js?v=0.11.20",
   "./js/subject-skeleton.js?v=0.1.0","./js/integral-frame-tools.js?v=1.0.0","./js/persistence-repair.js?v=1.0.0","./js/reading-mode-v2.js?v=1.1.0","./js/qbi-official-frame-fix.js?v=1.5.0","./js/qbi-glucidos-study-pack.js?v=1.0.0","./js/fisica-first-partial-guide.js?v=1.1.0","./js/fisica-topic-intros.js?v=1.2.0",
-  "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.1.0","./js/boot-update-gate.js?v=1.0.0","./js/study-chrome.js?v=0.11.17","./js/analysis2-integrated.js?v=1.0.0","./js/developer-comments-v101.js?v=1.0.1",
+  "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.1.0","./js/boot-update-gate.js?v=1.1.0","./js/study-chrome.js?v=0.11.17","./js/analysis2-integrated.js?v=1.0.0","./js/developer-comments-v101.js?v=1.0.1",
   "./content/catalog.json","./version.json",
   "./content/subjects/analisis1/units/interfaz-base/summary.html?v=1.0.0",
   "./content/subjects/fisica1/units/resumen-integral/summary.html?v=1.8.0",
