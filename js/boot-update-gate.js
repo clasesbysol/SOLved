@@ -7,7 +7,7 @@
  */
 (()=>{
   "use strict";
-  const MIN_VISIBLE_MS=500;     // evita un parpadeo si todo responde al instante
+  const MIN_VISIBLE_MS=2000;    // el solcito se ve siempre al menos 2 segundos
   const CHECK_TIMEOUT_MS=5000;  // tiempo máximo para preguntar si hay versión nueva
   const INSTALL_TIMEOUT_MS=25000; // tiempo máximo para descargar la versión nueva
   const RELOAD_GUARD_KEY="solved-boot-update-reloads";
@@ -65,7 +65,7 @@
     const wait=MIN_VISIBLE_MS-(Date.now()-started);
     if(wait>0)await sleep(wait);
     document.documentElement.dataset.bootUpdate=result;
-    if(document.readyState==="loading")await new Promise(resolve=>document.addEventListener("DOMContentLoaded",resolve,{once:true}));
+    if(!document.getElementById("solvedBootSplash")&&document.readyState==="loading")await new Promise(resolve=>document.addEventListener("DOMContentLoaded",resolve,{once:true}));
     hideSplash();
     return result;
   })();
