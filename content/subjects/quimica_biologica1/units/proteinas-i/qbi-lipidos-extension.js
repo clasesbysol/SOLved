@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const VERSION='1.2.0';
+const VERSION='1.3.0';
 const FIRST=42;
 const LAST=57;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -381,19 +381,77 @@ function ensureStyle(){
 function nav(){
  return document.querySelector('.qb-summary .qb-sidebar #summaryIndex')||document.querySelector('.qb-sidebar #summaryIndex')||document.querySelector('#summaryIndex');
 }
+// Grupos del índice lateral: todos los temas usan el mismo encabezado que Lípidos I/II.
+const INDEX_GROUPS=[
+ {before:'#cap1',href:'#cap1',text:'Proteínas'},
+ {link:'#cap-tp1',text:'TP1 · Determinación de proteínas'},
+ {before:'#cap14',href:'#cap14',text:'Enzimas I'},
+ {before:'#cap16',href:'#cap16',text:'Enzimas II'},
+ {link:'#cap19',text:'TP2 · Cinética enzimática con G6PD'},
+ {before:'#cap20',href:'#cap20',text:'Enzimas III'},
+ {before:'#cap29',href:'#cap29',text:'Glúcidos I'}
+];
+// Títulos sin el prefijo del grupo, porque el grupo ya aparece como encabezado.
+const INDEX_TITLES={'#cap14':'14. Catálisis y sitio activo','#cap16':'16. Michaelis–Menten','#cap20':'20. Inhibición enzimática e inhibidores irreversibles'};
+function formatBaseIndex(index){
+ index.querySelectorAll('[data-qbi-index-group-added]').forEach(x=>x.remove());
+ for(const g of INDEX_GROUPS){
+  if(g.link){
+   const a=index.querySelector('a[href="'+g.link+'"]');if(!a)continue;
+   a.textContent=g.text;a.classList.add('qbi-lip-index-group');a.dataset.qbiIndexGroup='1';
+   continue;
+  }
+  const next=index.querySelector('a[href="'+g.before+'"]');if(!next)continue;
+  const a=document.createElement('a');a.href=g.href;a.textContent=g.text;a.className='qbi-lip-index-group';
+  a.dataset.qbiIndexGroup='1';a.dataset.qbiIndexGroupAdded='1';
+  next.insertAdjacentElement('beforebegin',a);
+ }
+ for(const [href,text] of Object.entries(INDEX_TITLES)){const a=index.querySelector('a[href="'+href+'"]:not([data-qbi-index-group])');if(a)a.textContent=text}
+}
 function addIndex(){
  const index=nav(); if(!index)return false;
  index.querySelectorAll('[data-qbi-lip-index]').forEach(x=>x.remove());
  const anchor=index.querySelector('a[href="#cap41"]')||[...index.querySelectorAll('a[href^="#cap"]')].pop();
  if(!anchor)return false;
+ formatBaseIndex(index);
  let cursor=anchor;
- const add=(href,text,cls='',empty='')=>{const a=anchor.cloneNode(false);a.removeAttribute('id');a.classList.remove('active');a.removeAttribute('style');a.href=href;a.textContent=text;a.dataset.qbiLipIndex='1';if(cls)a.classList.add(cls);if(empty)a.dataset.empty=empty;cursor.insertAdjacentElement('afterend',a);cursor=a;return a};
+ const add=(href,text,cls='')=>{const a=document.createElement('a');a.href=href;a.textContent=text;a.dataset.qbiLipIndex='1';if(cls){a.className=cls;a.dataset.qbiIndexGroup='1'}cursor.insertAdjacentElement('afterend',a);cursor=a;return a};
  add('#lipidos-i','Lípidos I','qbi-lip-index-group');
  chapters.filter(x=>x.group==='Lípidos I').forEach(ch=>add('#cap'+ch.n,ch.n+'. '+ch.title));
  add('#lipidos-ii','Lípidos II','qbi-lip-index-group');
  chapters.filter(x=>x.group==='Lípidos II').forEach(ch=>add('#cap'+ch.n,ch.n+'. '+ch.title));
  add('#tp4','TP4 · Extracción y separación de lípidos','qbi-lip-index-group');
+ observeIndex(index);
  return true;
+}
+// El documento tiene <base href="./">: un link "#cap42" sin manejador navega a la carpeta y da 404.
+// Los links originales tienen onclick propio; este manejador cubre los que se agregan después.
+function bindIndexClicks(){
+ if(document.documentElement.dataset.qbiIndexClicks)return;
+ document.documentElement.dataset.qbiIndexClicks='1';
+ document.addEventListener('click',e=>{
+  const a=e.target.closest&&e.target.closest('a[href^="#"]');
+  if(!a||a.onclick||!a.closest('#summaryIndex'))return;
+  const id=decodeURIComponent(a.getAttribute('href').slice(1));const t=id&&document.getElementById(id);
+  if(!t)return;
+  e.preventDefault();
+  t.scrollIntoView({behavior:'smooth',block:'start'});
+  // Si el contenido de arriba cambia de alto durante el salto, se corrige la posición final.
+  [1200,2400].forEach(ms=>setTimeout(()=>{if(Math.abs(t.getBoundingClientRect().top)>120)t.scrollIntoView({block:'start'})},ms));
+  setTimeout(()=>{t.classList.add('qb-jump-hit');setTimeout(()=>t.classList.remove('qb-jump-hit'),1200)},350);
+  document.getElementById('qbSidebar')?.classList.remove('open');
+  document.getElementById('qbSidebarScrim')?.classList.remove('show');
+ },true);
+}
+// Resalta en el índice el capítulo visible también para los links agregados.
+let indexObserver=null;
+function observeIndex(index){
+ if(!('IntersectionObserver' in window))return;
+ indexObserver?.disconnect();
+ const links=[...index.querySelectorAll('a[href^="#"]')].filter(a=>!a.dataset.qbiIndexGroup);
+ const targets=[...new Set(links.map(a=>document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean))];
+ indexObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)[0];if(!visible)return;const href='#'+visible.target.id;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===href))},{root:null,rootMargin:'-18% 0px -68% 0px',threshold:0});
+ targets.forEach(t=>indexObserver.observe(t));
 }
 function build(){
  if(chapters.every(ch=>document.getElementById('cap'+ch.n))&&document.getElementById('tp4'))return true;
@@ -415,13 +473,14 @@ function updateMeta(){
 }
 function ensure(){
  ensureStyle();
+ bindIndexClicks();
  if(!build())return false;
  if(!addIndex())return false;
  updateMeta();
  return true;
 }
 let tries=0;function boot(){if(ensure())return;if(++tries<200)setTimeout(boot,150)}
-function maintain(){if(!document.getElementById('cap57')||!document.getElementById('tp4')||!nav()?.querySelector('[data-qbi-lip-index]'))ensure()}
+function maintain(){if(!document.getElementById('cap57')||!document.getElementById('tp4')||!nav()?.querySelector('[data-qbi-lip-index]')||!nav()?.querySelector('[data-qbi-index-group-added]'))ensure()}
 const observer=new MutationObserver(()=>{clearTimeout(observer.timer);observer.timer=setTimeout(maintain,100)});
 function start(){observer.observe(document.documentElement,{subtree:true,childList:true});boot();setTimeout(maintain,1000);setInterval(maintain,3000)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
