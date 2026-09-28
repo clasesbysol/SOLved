@@ -1,7 +1,7 @@
 (()=>{
   'use strict';
-  const VERSION='1.5.0';
-  const QBI_STATIC='content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html?v=4.8.1';
+  const VERSION='1.5.1';
+  const QBI_STATIC='content/subjects/quimica_biologica1/units/proteinas-i/qbi-static.html?v=4.8.2';
   const SANDBOX='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox';
   const FRAME_STYLE_ID='solved-qbi-split-repair-v130';
   const boundFrames=new WeakSet();
