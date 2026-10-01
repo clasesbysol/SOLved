@@ -23,3 +23,20 @@ html[data-theme=dark] .statistics-map{--stat-soft:hsl(var(--subject-hue,38) 42% 
 
 /* Glosarios: término corto + definición, con aire entre entradas */
 .content-card>.content-item:has(>h3){margin:0 0 18px;padding:0 0 16px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}.content-card>.content-item:has(>h3):last-child{margin-bottom:0;border-bottom:0}.content-card>.content-item:has(>h3)>h3{margin:0 0 7px;color:hsl(var(--subject-hue,38) 72% 44%);font-size:1rem;line-height:1.3}.content-card>.content-item:has(>h3)>p{max-width:76ch;margin:0;color:var(--text);line-height:1.65}.content-card>h2+.content-item:has(>h3){margin-top:18px}html[data-theme=dark] .content-card>.content-item:has(>h3)>h3{color:hsl(var(--subject-hue,38) 86% 66%)}
+
+/* Química Biológica: dos grandes partes desplegables (Proteínas + Enzimas / Glúcidos + Lípidos) */
+.qbi-map-sections{display:grid;gap:14px;margin-top:16px}
+.qbi-map-section{border:1px solid color-mix(in srgb,var(--stat) 42%,var(--line));border-radius:18px;background:var(--panel);overflow:hidden}
+.qbi-map-section>summary{display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;list-style:none;background:color-mix(in srgb,var(--stat-soft) 60%,var(--panel))}
+.qbi-map-section>summary::-webkit-details-marker{display:none}
+.qbi-map-section>summary:after{content:"+";flex:0 0 auto;width:28px;text-align:center;font-size:1.7rem;font-weight:700;line-height:1;color:var(--stat-strong)}
+.qbi-map-section[open]>summary:after{content:"−"}
+.qbi-map-section[open]>summary{border-bottom:1px solid color-mix(in srgb,var(--stat) 30%,var(--line))}
+.qbi-map-section-mark{display:grid;place-items:center;flex:0 0 46px;height:46px;border-radius:50%;background:var(--stat-strong);color:#fff;font-weight:900;font-size:1.15rem}
+.qbi-map-section-text{display:grid;gap:4px;flex:1;min-width:0}
+.qbi-map-section-text b{font-size:clamp(1.25rem,2.6vw,1.65rem);line-height:1.15;color:var(--stat-strong)}
+.qbi-map-section-text small{color:var(--muted);line-height:1.4}
+.qbi-map-section-count{flex:0 0 auto;font-size:.82rem;font-weight:800;color:var(--muted);white-space:nowrap}
+.qbi-map-section-body{padding:14px 16px 18px}
+.qbi-map-section-body>.statistics-map-groups{margin-top:14px}
+@media(max-width:640px){.qbi-map-section>summary{padding:14px;gap:11px}.qbi-map-section-mark{flex-basis:38px;height:38px}.qbi-map-section-count{display:none}.qbi-map-section-body{padding:12px 10px 14px}}
