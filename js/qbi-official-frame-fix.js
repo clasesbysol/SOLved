@@ -294,7 +294,7 @@
     if(doc.getElementById('cap42'))return;
     if(doc.querySelector('script[data-solved-qbi-lipids]'))return;
     const script=doc.createElement('script');
-    script.src=new URL('qbi-lipidos-extension.js?v=1.3.0',doc.location.href).href;
+    script.src=new URL('qbi-lipidos-extension.js?v=1.4.0',doc.location.href).href;
     script.defer=true;
     script.dataset.solvedQbiLipids='1';
     doc.body.append(script);
