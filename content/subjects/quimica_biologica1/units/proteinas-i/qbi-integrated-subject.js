@@ -1,6 +1,6 @@
 (()=>{
   'use strict';
-  const VERSION='1.0.0',MAP_ID='qbi-mapa-integral',NOTES_KEY='qbi-integrated-notes-v1',MAP_STATE_KEY='qbi-integrated-map-open-v1';
+  const VERSION='1.1.0',MAP_ID='qbi-mapa-integral',NOTES_KEY='qbi-integrated-notes-v1',MAP_STATE_KEY='qbi-integrated-map-open-v2';
   const safe=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const css=`
@@ -13,6 +13,8 @@
   .qbi-note-marker{display:inline-grid;place-items:center;width:26px;height:26px;margin:0 4px;border:2px solid #d8aa28;border-radius:50%;background:#fff2a8;box-shadow:0 3px 10px #735d1830;vertical-align:middle;cursor:pointer;font-size:.76rem}.qbi-note-placement .qb-document{cursor:crosshair}.qbi-note-placement .qb-chapter:hover,.qbi-note-placement #${MAP_ID}:hover{outline:2px dashed color-mix(in srgb,var(--qb-accent,#e74888) 58%,transparent);outline-offset:3px}
   .qbi-note-editor{position:fixed;z-index:10000;right:20px;bottom:20px;width:min(360px,calc(100vw - 28px));overflow:hidden;border:1px solid #e2ca79;border-radius:16px;background:#fffdf2;box-shadow:0 18px 55px rgba(67,49,10,.22)}.qbi-note-editor[hidden]{display:none}.qbi-note-editor header{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;background:#fff0a9}.qbi-note-editor header div{display:flex;gap:5px}.qbi-note-editor button{border:0;border-radius:8px;padding:6px 9px;cursor:pointer}.qbi-note-editor textarea{display:block;width:100%;height:170px;padding:13px;border:0;outline:0;resize:vertical;background:#fffdf2;box-sizing:border-box;font:inherit}.qbi-note-editor small{display:block;padding:0 13px 10px;color:#776b46}
   .qbi-search-stepper{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:7px}.qbi-search-stepper button{min-height:32px;border:1px solid rgba(113,78,99,.18);border-radius:8px;background:#fff;color:inherit;cursor:pointer}.qbi-sidebar-note-help{display:block;margin-top:7px;font-size:.78rem;line-height:1.35;opacity:.7}
+  .qbi-integrated-section{margin:14px 0;border:1px solid color-mix(in srgb,var(--qb-accent,#e74888) 32%,#ddd);border-radius:18px;background:rgba(255,255,255,.9);overflow:hidden}.qbi-integrated-section>summary{display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;list-style:none;background:var(--qb-accent-soft,#fff0f6)}.qbi-integrated-section>summary::-webkit-details-marker{display:none}.qbi-integrated-section>summary:after{content:"+";flex:0 0 auto;width:28px;text-align:center;font-size:1.7rem;font-weight:700;line-height:1;color:var(--qb-accent-strong,#8d2452)}.qbi-integrated-section[open]>summary:after{content:"−"}.qbi-integrated-section-mark{display:grid;place-items:center;flex:0 0 46px;height:46px;border-radius:50%;background:var(--qb-accent,#e74888);color:#fff;font-weight:900;font-size:1.15rem}.qbi-integrated-section-text{display:grid;gap:4px;flex:1;min-width:0}.qbi-integrated-section-text b{font-size:clamp(1.3rem,3vw,1.8rem);line-height:1.12;letter-spacing:-.02em;color:var(--qb-accent-strong,#8d2452)}.qbi-integrated-section-text small{color:var(--qb-muted,#75596a);line-height:1.4}.qbi-integrated-section-count{flex:0 0 auto;font-size:.82rem;font-weight:800;color:var(--qb-muted,#75596a);white-space:nowrap}.qbi-integrated-section-body{padding:4px 18px 16px}
+  @media(max-width:650px){.qbi-integrated-section>summary{padding:14px;gap:11px}.qbi-integrated-section-mark{flex-basis:38px;height:38px}.qbi-integrated-section-count{display:none}.qbi-integrated-section-body{padding:2px 10px 12px}}
   @media(max-width:650px){#${MAP_ID}{padding:14px}.qbi-integrated-topics{grid-template-columns:1fr}.qbi-note-editor{right:14px;bottom:14px}}
   `;
 
@@ -25,10 +27,13 @@
       inhibition:'<path class="qbi-v-main" d="M50 220 C115 110 225 66 560 50"/><path class="qbi-v-alt" d="M50 220 C170 150 285 70 560 53"/><path class="qbi-v-low" d="M50 220 C120 150 245 112 560 103"/><text x="404" y="43">sin I</text><text x="390" y="76">competitiva</text><text x="390" y="122">Vmax menor</text>',
       ph:'<path class="qbi-v-main" d="M52 215 C150 210 205 54 310 48 C417 52 462 210 558 216"/><line class="qbi-v-guide" x1="310" y1="48" x2="310" y2="222"/><text x="275" y="244">pH óptimo</text>',
       temperature:'<path class="qbi-v-main" d="M52 216 C165 205 260 135 346 50 C400 72 435 190 558 217"/><line class="qbi-v-guide" x1="346" y1="50" x2="346" y2="222"/><text x="312" y="244">T óptima</text><text x="105" y="190">más choques</text><text x="430" y="174">inactivación</text>',
+      'glu-alpha-beta':'<path class="qbi-v-main" d="M40 150 C60 90 90 90 110 150 C130 210 160 210 180 150 C200 90 230 90 250 150 C270 210 290 200 300 170"/><line class="qbi-v-alt" x1="350" y1="110" x2="590" y2="110"/><line class="qbi-v-alt" x1="350" y1="170" x2="590" y2="170"/><line class="qbi-v-guide" x1="380" y1="112" x2="380" y2="168"/><line class="qbi-v-guide" x1="430" y1="112" x2="430" y2="168"/><line class="qbi-v-guide" x1="480" y1="112" x2="480" y2="168"/><line class="qbi-v-guide" x1="530" y1="112" x2="530" y2="168"/><line class="qbi-v-guide" x1="580" y1="112" x2="580" y2="168"/><text x="40" y="44">α(1→4): hélice</text><text x="40" y="244">almidón · reserva</text><text x="350" y="44">β(1→4): cadena recta</text><text x="350" y="208">puentes de H entre cadenas</text><text x="350" y="244">celulosa · fibras</text>',
+      'lipid-shapes':'<polygon class="qbi-v-pore" points="60,50 180,50 140,190 100,190"/><polygon class="qbi-v-pore" points="250,50 370,50 370,190 250,190"/><polygon class="qbi-v-pore" points="480,50 520,50 580,190 420,190"/><text x="120" y="220" text-anchor="middle">cono invertido</text><text x="120" y="246" text-anchor="middle">micela · curv. +</text><text x="310" y="220" text-anchor="middle">cilindro</text><text x="310" y="246" text-anchor="middle">bicapa plana</text><text x="500" y="220" text-anchor="middle">cono</text><text x="500" y="246" text-anchor="middle">curv. −</text><text x="120" y="36" text-anchor="middle">cabeza grande</text><text x="500" y="36" text-anchor="middle">cabeza chica</text>',
+      'tlc':'<rect x="210" y="20" width="200" height="220" rx="6" style="fill:none;stroke:#9a8691;stroke-width:2"/><line class="qbi-v-guide" x1="210" y1="44" x2="410" y2="44"/><line class="qbi-v-guide" x1="210" y1="212" x2="410" y2="212"/><circle class="qbi-v-small" cx="260" cy="198" r="9"/><circle class="qbi-v-alt" cx="310" cy="130" r="9" style="fill:#7957c8"/><circle class="qbi-v-big" cx="360" cy="62" r="10"/><text x="420" y="50">frente</text><text x="420" y="218">origen</text><text x="20" y="66">apolar: sube más</text><text x="20" y="204">polar: queda cerca</text><text x="420" y="134">Rf = d mancha / d frente</text>',
       'gel-filtration':'<circle class="qbi-v-pore" cx="150" cy="80" r="25"/><circle class="qbi-v-pore" cx="240" cy="145" r="25"/><circle class="qbi-v-pore" cx="350" cy="75" r="25"/><circle class="qbi-v-big" cx="95" cy="55" r="18"/><circle class="qbi-v-small" cx="145" cy="80" r="6"/><path class="qbi-v-main" d="M95 74 C110 125 130 165 500 175"/><path class="qbi-v-alt" d="M145 87 C200 105 200 145 240 145 C290 145 295 80 350 75 C410 72 430 125 500 145"/><text x="385" y="196">grande: camino corto</text><text x="385" y="137">pequeña: entra en poros</text>'
     };
     if(!visuals[kind])return '';
-    return '<figure class="qbi-integrated-visual"><svg viewBox="0 0 620 260" role="img" aria-label="Gráfico explicativo">'+(kind==='gel-filtration'?'':axes)+visuals[kind]+'</svg></figure>';
+    return '<figure class="qbi-integrated-visual"><svg viewBox="0 0 620 260" role="img" aria-label="Gráfico explicativo">'+(['gel-filtration','glu-alpha-beta','lipid-shapes','tlc'].includes(kind)?'':axes)+visuals[kind]+'</svg></figure>';
   }
   function topicHtml(topic){
     if(typeof topic==='string')return `<div class="qbi-integrated-topic"><div class="qbi-integrated-topic-body">${safe(topic)}</div></div>`;
@@ -39,17 +44,39 @@
     const searchable=normalize([chapter.label,chapter.intro,...chapter.topics.map(topic=>typeof topic==='string'?topic:topic.label+' '+topic.explanation)].join(' '));
     return `<details class="qbi-integrated-chapter" data-map-search="${safe(searchable)}"><summary>${safe(chapter.label)}</summary><div class="qbi-integrated-chapter-body"><p class="qbi-integrated-intro">${safe(chapter.intro)}</p><div class="qbi-integrated-topics">${chapter.topics.map(topicHtml).join('')}</div><button class="qbi-map-go" type="button" data-map-target="${safe(chapter.target)}">Ir a esta parte del resumen →</button></div></details>`;
   }
+  function sectionsData(data){
+    const meta=window.QBI_MIND_MAP_SECTIONS||[{id:'todo',label:'Química Biológica',description:''}];
+    return meta.map(section=>({...section,groups:data.filter(group=>(group.section||meta[0].id)===section.id)})).filter(section=>section.groups.length);
+  }
+  function groupHtml(group,index){
+    return `<section class="qbi-integrated-group"><header><b>${index+1}</b><div><h3>${safe(group.label)}</h3><p>${safe(group.description)}</p></div></header>${group.chapters.map(chapterHtml).join('')}</section>`;
+  }
+  function sectionHtml(section,index){
+    const chapters=section.groups.reduce((sum,group)=>sum+group.chapters.length,0);
+    return `<details class="qbi-integrated-section" data-map-section="${safe(section.id)}"><summary data-solved-no-concepts><span class="qbi-integrated-section-mark">${index+1}</span><span class="qbi-integrated-section-text"><b>${safe(section.label)}</b><small>${safe(section.description||'')}</small></span><span class="qbi-integrated-section-count">${section.groups.length} bloques · ${chapters} capítulos</span></summary><div class="qbi-integrated-section-body">${section.groups.map(groupHtml).join('')}</div></details>`;
+  }
+  function mapInnerHtml(data){
+    const total=data.reduce((sum,group)=>sum+group.chapters.length,0);
+    return `<header class="qbi-integrated-map-head"><h1>QUÍMICA BIOLÓGICA</h1></header><div class="qbi-integrated-map-tools"><input type="search" data-map-filter placeholder="Buscar dentro del mapa…"><button type="button" data-map-expand>Abrir todo</button><button type="button" data-map-collapse>Cerrar todo</button><output data-map-count>${total} capítulos</output></div>${sectionsData(data).map(sectionHtml).join('')}`;
+  }
+  function filterMap(section,value){
+    const term=normalize(String(value||'').trim());let visible=0;
+    const chapters=[...section.querySelectorAll('.qbi-integrated-chapter')];
+    chapters.forEach(chapter=>{const match=!term||chapter.dataset.mapSearch.includes(term)||[...chapter.querySelectorAll('[data-map-search]')].some(topic=>topic.dataset.mapSearch.includes(term));chapter.hidden=!match;if(match){visible++;if(term)chapter.open=true}});
+    section.querySelectorAll('.qbi-integrated-group').forEach(group=>group.hidden=![...group.querySelectorAll('.qbi-integrated-chapter')].some(chapter=>!chapter.hidden));
+    section.querySelectorAll('.qbi-integrated-section').forEach(part=>{const any=[...part.querySelectorAll('.qbi-integrated-group')].some(group=>!group.hidden);part.hidden=!any;if(term&&any)part.open=true});
+    const output=section.querySelector('[data-map-count]');if(output)output.textContent=visible+' capítulos';
+  }
   function renderMap(){
     const data=window.QBI_MIND_MAP_DATA||[],section=document.createElement('section');section.id=MAP_ID;
-    section.innerHTML=`<header class="qbi-integrated-map-head"><h1>QUÍMICA BIOLÓGICA</h1></header><div class="qbi-integrated-map-tools"><input type="search" data-map-filter placeholder="Buscar dentro del mapa…"><button type="button" data-map-expand>Abrir todo</button><button type="button" data-map-collapse>Cerrar todo</button><output data-map-count></output></div>${data.map((group,index)=>`<section class="qbi-integrated-group"><header><b>${index+1}</b><div><h3>${safe(group.label)}</h3><p>${safe(group.description)}</p></div></header>${group.chapters.map(chapterHtml).join('')}</section>`).join('')}`;
+    section.innerHTML=mapInnerHtml(data);
     let openState={};try{openState=JSON.parse(localStorage.getItem(MAP_STATE_KEY)||'{}')}catch{}
     const mapDetails=[...section.querySelectorAll('details')];mapDetails.forEach((item,index)=>{item.dataset.mapStateKey=String(index);if(Object.hasOwn(openState,index))item.open=!!openState[index]});
-    const saveOpen=()=>{const state={};mapDetails.forEach((item,index)=>state[index]=item.open);localStorage.setItem(MAP_STATE_KEY,JSON.stringify(state))};
+    const saveOpen=()=>{const state={};mapDetails.forEach((item,index)=>state[index]=item.open);try{localStorage.setItem(MAP_STATE_KEY,JSON.stringify(state))}catch{}};
     section.addEventListener('toggle',event=>{if(event.target.matches('details[data-map-state-key]'))saveOpen()},true);
     section.querySelector('[data-map-expand]').onclick=()=>{section.querySelectorAll('details:not([hidden])').forEach(item=>item.open=true);saveOpen()};
     section.querySelector('[data-map-collapse]').onclick=()=>{section.querySelectorAll('details').forEach(item=>item.open=false);saveOpen()};
-    const output=section.querySelector('[data-map-count]'),chapters=[...section.querySelectorAll('.qbi-integrated-chapter')];output.textContent=chapters.length+' capítulos';
-    section.querySelector('[data-map-filter]').oninput=event=>{const term=normalize(event.target.value.trim());let visible=0;chapters.forEach(chapter=>{const match=!term||chapter.dataset.mapSearch.includes(term)||[...chapter.querySelectorAll('[data-map-search]')].some(topic=>topic.dataset.mapSearch.includes(term));chapter.hidden=!match;if(match){visible++;if(term)chapter.open=true}});section.querySelectorAll('.qbi-integrated-group').forEach(group=>group.hidden=![...group.querySelectorAll('.qbi-integrated-chapter')].some(chapter=>!chapter.hidden));output.textContent=visible+' capítulos'};
+    section.querySelector('[data-map-filter]').oninput=event=>filterMap(section,event.target.value);
     section.addEventListener('click',event=>{const button=event.target.closest('[data-map-target]');if(button)document.getElementById(button.dataset.mapTarget)?.scrollIntoView({behavior:'smooth',block:'start'})});
     return section;
   }
