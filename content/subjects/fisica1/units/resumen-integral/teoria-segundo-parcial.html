@@ -1,0 +1,1411 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Física I · Teoría del segundo parcial</title>
+<!--
+  SOLved · Física I · Teoría del segundo parcial (C1–C14).
+  Página autocontenida: se abre dentro de summary.html (sección "Teoría · 2.º parcial").
+  Estructura del archivo:
+    1) estilos  2) kit de componentes (fórmulas, cajas, ejemplos, calculadoras)
+    3) esquemas SVG  4) contenido de cada tema (TOPICS)  5) navegación e interactivos.
+  Fórmulas en LaTeX con MathJax: \( ... \) en el texto, \[ ... \] en bloque.
+-->
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{typeset:false}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{
+  --bg:#07131f;--bg2:#0a1a2a;--surface:#0d2033;--surface2:#11283e;--line:#24425e;--line2:#2f5576;
+  --text:#e9f4ff;--muted:#9db7cc;--accent:#38bdf8;--accent-ink:#04121d;
+  --ok:#77dfa2;--warn:#ffd071;--bad:#ff9a8a;--violet:#a78bfa;
+  --svg-stroke:#cfe6f7;--svg-soft:#163550;--svg-soft2:#1d4466;--svg-water:#1e5b86;--svg-water2:#2b74a6;--svg-oil:#8a6a1e;--svg-hg:#9aa7b4;--svg-wood:#a8763e;
+  --radius:16px;--scale:1;
+}
+body.light{
+  --bg:#f3f8fd;--bg2:#eaf2fa;--surface:#ffffff;--surface2:#eef5fc;--line:#c9dbec;--line2:#a9c4dd;
+  --text:#132a40;--muted:#4c6780;--accent-ink:#ffffff;
+  --ok:#14804a;--warn:#9a6400;--bad:#b4402c;--violet:#6d4fd6;
+  --svg-stroke:#1d3a55;--svg-soft:#dcebf8;--svg-soft2:#c3dcf2;--svg-water:#8ec5ec;--svg-water2:#5aa7dc;--svg-oil:#e6c46a;--svg-hg:#b9c3cc;--svg-wood:#d9a66b;
+}
+body.light{--accent:var(--accent-light,#0b78b4)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:calc(16px*var(--scale))/1.62 Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--accent)}
+p{margin:.55em 0}
+h2,h3,h4{line-height:1.25}
+mjx-container{color:inherit}
+mjx-container[display="true"]{margin:.2em 0!important;overflow-x:auto;overflow-y:hidden;max-width:100%}
+
+/* ---------- Barra superior ---------- */
+.topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar-row{display:flex;align-items:center;gap:8px;max-width:920px;margin:0 auto;padding:9px 14px}
+.brand{display:flex;flex-direction:column;min-width:0;flex:1}
+.brand small{font-size:.66rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.brand b{font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{flex:0 0 auto;display:inline-grid;place-items:center;min-width:38px;height:38px;padding:0 10px;border-radius:11px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:800;font-size:.85rem}
+.iconbtn:hover{border-color:var(--accent)}
+.chips{display:flex;gap:6px;overflow-x:auto;max-width:920px;margin:0 auto;padding:0 14px 10px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:.8rem;font-weight:750;white-space:nowrap}
+.chip span{font-size:.68rem;font-weight:900;color:var(--muted)}
+.chip.active{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip.active span{color:inherit;opacity:.8}
+.chip.done:not(.active) span:after{content:" ✓";color:var(--ok)}
+.progressbar{height:3px;background:var(--line)}
+.progressbar i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+
+main{max-width:920px;margin:0 auto;padding:18px 14px 90px}
+
+/* ---------- Inicio ---------- */
+.hero{position:relative;overflow:hidden;padding:24px 22px;border-radius:22px;border:1px solid var(--line);background:radial-gradient(circle at 92% 0,color-mix(in srgb,var(--violet) 32%,transparent),transparent 55%),linear-gradient(135deg,var(--surface2),var(--surface))}
+.hero small{font-size:.7rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin:6px 0 8px;font-size:clamp(1.55rem,5vw,2.3rem);line-height:1.12}
+.hero p{color:var(--muted);max-width:620px;margin:0}
+.hero .stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero .stats span{padding:5px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);font-size:.78rem;font-weight:750}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0 4px}
+.howto div{padding:12px 13px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-size:.86rem;color:var(--muted)}
+.howto b{display:block;color:var(--text);font-size:.92rem;margin-bottom:2px}
+.group{margin-top:26px}
+.group>header{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.group>header h2{margin:0;font-size:1.15rem}
+.group>header span{color:var(--muted);font-size:.85rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.tile{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;align-items:center;text-align:left;padding:13px;border-radius:16px;border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--accent);transform:translateY(-1px)}
+.tile .ic{grid-row:1/3;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:var(--surface2);border:1px solid var(--line);font-size:.78rem;font-weight:900;color:var(--accent)}
+.tile.done .ic{background:color-mix(in srgb,var(--ok) 18%,var(--surface2));color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.tile b{font-size:.98rem;line-height:1.25}
+.tile small{color:var(--muted);font-size:.8rem;line-height:1.35}
+
+/* ---------- Tema ---------- */
+.topicHero{padding:20px 20px 16px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(135deg,var(--surface2),var(--surface))}
+.topicHero small{font-size:.7rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.topicHero h1{margin:4px 0 6px;font-size:clamp(1.4rem,4.6vw,2rem);line-height:1.15}
+.topicHero p.lead{margin:0;color:var(--muted)}
+.inTopic{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.inTopic a{padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);font-size:.76rem;font-weight:750;color:var(--text);text-decoration:none}
+.inTopic a:hover{border-color:var(--accent)}
+.sec{scroll-margin-top:118px;margin-top:30px}
+.sec>h2{display:flex;align-items:baseline;gap:10px;margin:0 0 8px;font-size:1.28rem}
+.sec>h2 span{font-size:.7rem;font-weight:900;letter-spacing:.12em;color:var(--accent)}
+.sec h3{margin:1.6em 0 .3em;font-size:1.06rem}
+.sec ul,.sec ol{padding-left:1.25em;margin:.5em 0}
+.sec li{margin:.3em 0}
+
+/* Fórmulas: una por renglón, con nota al costado */
+.eqChain{display:grid;gap:4px;margin:14px 0 18px;padding:10px 14px;border-left:4px solid var(--accent);border-radius:0 14px 14px 0;background:var(--surface2)}
+.eqRow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);align-items:center;gap:2px 16px;min-width:0}
+.eq{min-width:0;overflow-x:auto;overflow-y:hidden}
+.eq mjx-container[display="true"]{text-align:left!important}
+.eqNote{color:var(--muted);font-size:.8rem;line-height:1.35;max-width:250px;text-align:right}
+.eqNote:before{content:"← "}
+.keyF{margin:16px 0;padding:12px 16px;border:1.5px solid color-mix(in srgb,var(--accent) 60%,var(--line));border-radius:16px;background:color-mix(in srgb,var(--accent) 9%,var(--surface));overflow-x:auto}
+.keyF>span{display:block;font-size:.66rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.keyF mjx-container{font-size:118%!important}
+.keyGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:14px 0}
+.keyGrid .keyF{margin:0}
+.simple{color:color-mix(in srgb,var(--accent) 72%,var(--text));font-style:italic}
+.sym{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin:14px 0 18px}
+.sym>div{display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:center;padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.sym b{grid-row:1/3;min-width:38px;text-align:center}
+.sym span{font-size:.88rem;line-height:1.35}
+.sym em{font-style:normal;font-size:.75rem;color:var(--muted)}
+
+/* Cajas */
+.box{margin:16px 0;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.box>b{display:block;margin-bottom:2px}
+.box.idea{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
+.box.warn{border-color:color-mix(in srgb,var(--warn) 55%,var(--line));background:color-mix(in srgb,var(--warn) 9%,var(--surface))}
+.box.err{border-color:color-mix(in srgb,var(--bad) 55%,var(--line));background:color-mix(in srgb,var(--bad) 8%,var(--surface))}
+.box.ok{border-color:color-mix(in srgb,var(--ok) 50%,var(--line));background:color-mix(in srgb,var(--ok) 8%,var(--surface))}
+.box.method ol{counter-reset:none}
+.twoCol{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin:14px 0}
+.twoCol>.box{margin:0}
+
+/* Desplegables */
+details.fold{margin:16px 0;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+details.fold>summary{display:grid;gap:1px;padding:12px 46px 12px 15px;cursor:pointer;list-style:none;position:relative}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary:after{content:"+";position:absolute;right:13px;top:50%;transform:translateY(-50%);width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--surface2);color:var(--accent);font-weight:900}
+details.fold[open]>summary:after{content:"–"}
+details.fold>summary span{font-size:.64rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+details.fold>summary b{font-size:1rem}
+details.fold .foldBody{padding:4px 15px 14px;border-top:1px solid var(--line)}
+details.fold.example{border-left:4px solid var(--accent)}
+details.fold.deep>summary span{color:var(--violet)}
+details.fold.deep{border-left:4px solid var(--violet)}
+.statement{margin:12px 0;padding:11px 13px;border-radius:12px;background:var(--surface2)}
+.step{margin:12px 0}
+.step h4{margin:0 0 2px;font-size:.92rem;color:var(--accent)}
+.answer{margin-top:12px;padding:10px 13px;border-left:4px solid var(--ok);border-radius:0 12px 12px 0;background:color-mix(in srgb,var(--ok) 10%,var(--surface))}
+.answer b{color:var(--ok);margin-right:6px}
+.eqChain .eqChain{margin:6px 0}
+
+/* Tablas */
+.tableWrap{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.88rem}
+th,td{padding:8px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{background:var(--surface2);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+
+/* Figuras SVG */
+figure.fig{margin:16px 0;padding:12px;border:1px solid var(--line);border-radius:16px;background:var(--bg2)}
+figure.fig svg{display:block;width:100%;height:auto;max-height:340px}
+figure.fig figcaption{margin-top:6px;color:var(--muted);font-size:.8rem;text-align:center}
+.s-line{stroke:var(--svg-stroke);stroke-width:2;fill:none}
+.s-thin{stroke:var(--svg-stroke);stroke-width:1.2;fill:none;opacity:.6}
+.s-dash{stroke:var(--svg-stroke);stroke-width:1.5;fill:none;stroke-dasharray:6 5;opacity:.75}
+.s-soft{fill:var(--svg-soft);stroke:var(--svg-stroke);stroke-width:1.5}
+.s-soft2{fill:var(--svg-soft2);stroke:var(--svg-stroke);stroke-width:1.5}
+.s-water{fill:var(--svg-water);opacity:.85}
+.s-water2{fill:var(--svg-water2);opacity:.9}
+.s-oil{fill:var(--svg-oil);opacity:.85}
+.s-hg{fill:var(--svg-hg)}
+.s-wood{fill:var(--svg-wood);stroke:var(--svg-stroke);stroke-width:1.5}
+.s-ground{fill:none;stroke:var(--svg-stroke);stroke-width:2}
+.s-hatch{stroke:var(--svg-stroke);stroke-width:1.2;opacity:.55}
+.s-acc{stroke:var(--accent);stroke-width:3;fill:none}
+.s-accf{fill:var(--accent)}
+.s-ok{stroke:var(--ok);stroke-width:3;fill:none}
+.s-okf{fill:var(--ok)}
+.s-warn{stroke:var(--warn);stroke-width:3;fill:none}
+.s-warnf{fill:var(--warn)}
+.s-bad{stroke:var(--bad);stroke-width:3;fill:none}
+.s-badf{fill:var(--bad)}
+.s-vio{stroke:var(--violet);stroke-width:3;fill:none}
+.s-viof{fill:var(--violet)}
+.s-dot{fill:var(--svg-stroke)}
+.s-t{fill:var(--text);font:600 15px Inter,"Segoe UI",system-ui,sans-serif}
+.s-ts{fill:var(--muted);font:600 13px Inter,"Segoe UI",system-ui,sans-serif}
+.s-tb{fill:var(--text);font:800 16px Inter,"Segoe UI",system-ui,sans-serif}
+.s-ta{fill:var(--accent);font:800 15px Inter,"Segoe UI",system-ui,sans-serif}
+.s-tok{fill:var(--ok);font:800 15px Inter,"Segoe UI",system-ui,sans-serif}
+.s-twarn{fill:var(--warn);font:800 15px Inter,"Segoe UI",system-ui,sans-serif}
+.s-tbad{fill:var(--bad);font:800 15px Inter,"Segoe UI",system-ui,sans-serif}
+.s-tvio{fill:var(--violet);font:800 15px Inter,"Segoe UI",system-ui,sans-serif}
+
+/* Interactivos */
+.lab{margin:18px 0;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:18px;background:var(--surface);overflow:hidden}
+.labHead{padding:12px 15px 4px}
+.labHead span{font-size:.64rem;font-weight:900;letter-spacing:.13em;color:var(--accent)}
+.labHead b{display:block;font-size:1rem}
+.labHead p{margin:2px 0 0;color:var(--muted);font-size:.85rem}
+.labBody{padding:8px 15px 15px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:6px 0 10px}
+.fields label{display:grid;gap:3px;font-size:.76rem;font-weight:750;color:var(--muted)}
+.fields input,.fields select{width:100%;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--text)}
+.fields input:focus,.fields select:focus{outline:2px solid color-mix(in srgb,var(--accent) 55%,transparent);border-color:var(--accent)}
+.out{display:block;padding:10px 13px;border-radius:12px;background:var(--surface2);font-size:.92rem;line-height:1.55}
+.out b{color:var(--accent)}
+.out small{color:var(--muted)}
+.slider{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;margin:6px 0;font-size:.82rem;font-weight:750}
+.slider input{width:100%;accent-color:var(--accent)}
+.slider output{min-width:76px;text-align:right;font-variant-numeric:tabular-nums;color:var(--accent)}
+.stage{display:block;width:100%;height:auto;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
+.btnRow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.btn{padding:8px 13px;border-radius:11px;border:1px solid var(--line);background:var(--surface2);cursor:pointer;font-weight:800;font-size:.85rem}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.on{border-color:var(--accent);color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.bars{display:grid;gap:6px;margin-top:8px}
+.bar{display:grid;grid-template-columns:70px 1fr 62px;gap:8px;align-items:center;font-size:.8rem;font-weight:750}
+.bar div{height:14px;border-radius:7px;background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+.bar div i{display:block;height:100%;width:0}
+.bar em{font-style:normal;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+
+/* Tarjetas de repaso */
+.flipGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:14px 0}
+.flip{position:relative;min-height:150px;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--surface);text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px}
+.flip .tag{font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.flip .q{font-weight:800;line-height:1.35}
+.flip .a{display:none;line-height:1.45;font-size:.92rem}
+.flip small{margin-top:auto;color:var(--muted);font-size:.72rem}
+.flip.on{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 7%,var(--surface))}
+.flip.on .q{display:none}.flip.on .a{display:block}
+.flip.on .tag{color:var(--ok)}
+
+/* Mapa de decisión */
+.decide{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:14px 0}
+.decide>div{display:grid;gap:3px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.decide small{font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.decide b{line-height:1.35}
+.decide span{color:var(--accent);font-weight:800;font-size:.88rem}
+.decideF{overflow-x:auto;font-size:.95rem}
+/* Quiz para elegir fórmula */
+.quiz{display:grid;gap:10px}
+.qcard{padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
+.qcard p{margin:0 0 8px;font-weight:700}
+.qopts{display:flex;flex-wrap:wrap;gap:6px}
+.qopts button{padding:7px 11px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);cursor:pointer;font-size:.84rem;font-weight:750}
+.qopts button.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--surface2))}
+.qopts button.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,var(--surface2));opacity:.85}
+.qfb{display:none;margin-top:8px;font-size:.88rem;color:var(--muted)}
+.qcard.answered .qfb{display:block}
+.score{font-weight:800;color:var(--accent)}
+
+/* Pie del tema */
+.topicNav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:34px}
+.topicNav button{display:grid;gap:2px;padding:13px 15px;border-radius:16px;border:1px solid var(--line);background:var(--surface);cursor:pointer;text-align:left}
+.topicNav button:last-child{text-align:right}
+.topicNav button small{font-size:.66rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.topicNav button b{font-size:.95rem}
+.topicNav button:hover{border-color:var(--accent)}
+.topicNav button[disabled]{visibility:hidden}
+.doneBtn{display:flex;justify-content:center;margin-top:22px}
+.doneBtn button{padding:11px 18px;border-radius:999px;border:1px solid var(--ok);background:transparent;color:var(--ok);font-weight:850;cursor:pointer}
+.doneBtn button.is-done{background:var(--ok);color:var(--accent-ink)}
+.toTop{position:fixed;right:14px;bottom:14px;z-index:40;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer;font-weight:900;opacity:0;pointer-events:none;transition:opacity .2s}
+.toTop.show{opacity:1;pointer-events:auto}
+
+/* Panel de apariencia */
+.prefs{position:absolute;right:14px;top:56px;z-index:50;width:min(280px,calc(100vw - 28px));padding:12px;border-radius:16px;border:1px solid var(--line);background:var(--surface);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.prefs[hidden]{display:none}
+.prefs strong{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:6px 0 6px}
+.prefs .row{display:flex;gap:6px;flex-wrap:wrap}
+
+@media (max-width:620px){
+  main{padding:14px 12px 90px}
+  .eqRow{grid-template-columns:1fr}
+  .eqNote{text-align:left;max-width:none}
+  .eqNote:before{content:"↑ "}
+  .eqChain{padding:9px 10px;margin-inline:-2px}
+  .hero,.topicHero{padding:18px 15px}
+  .topicNav{grid-template-columns:1fr}
+  .topicNav button:last-child{text-align:left}
+  .sec>h2{font-size:1.16rem}
+  .bar{grid-template-columns:58px 1fr 54px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-row">
+    <button class="iconbtn" id="homeBtn" type="button" aria-label="Volver al mapa de temas">☰</button>
+    <div class="brand"><small>Física I · 2.º parcial</small><b id="topTitle">Teoría explicada</b></div>
+    <button class="iconbtn" id="prevBtn" type="button" aria-label="Tema anterior">‹</button>
+    <button class="iconbtn" id="nextBtn" type="button" aria-label="Tema siguiente">›</button>
+    <button class="iconbtn" id="prefsBtn" type="button" aria-label="Apariencia" aria-expanded="false">Aa</button>
+  </div>
+  <nav class="chips" id="chips" aria-label="Temas del segundo parcial"></nav>
+  <div class="progressbar" aria-hidden="true"><i id="progress"></i></div>
+  <div class="prefs" id="prefs" hidden>
+    <strong>Tema</strong><div class="row"><button class="btn" data-theme="dark" type="button">Oscuro</button><button class="btn" data-theme="light" type="button">Claro</button></div>
+    <strong>Tamaño de letra</strong><div class="row"><button class="btn" data-scale="0.92" type="button">A−</button><button class="btn" data-scale="1" type="button">A</button><button class="btn" data-scale="1.1" type="button">A+</button><button class="btn" data-scale="1.2" type="button">A++</button></div>
+  </div>
+</header>
+<main id="app" tabindex="-1"></main>
+<button class="toTop" id="toTop" type="button" aria-label="Volver arriba">↑</button>
+<script>
+/* ================= 2) Kit de componentes ================= */
+(function(){
+  'use strict';
+  const esc=v=>String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const tex=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'\\lt ').replace(/>/g,'\\gt ');
+  // Fórmula en bloque, en su propio renglón, con nota corta opcional al costado.
+  const M=(t,note)=>`<div class="eqRow"><div class="eq">\\[${tex(t)}\\]</div>${note?`<small class="eqNote">${note}</small>`:''}</div>`;
+  // Fórmula dentro del texto.
+  const m=t=>`\\(${tex(t)}\\)`;
+  // Cadena de pasos: cada paso es un latex o [latex, comentario].
+  const chain=(...s)=>`<div class="eqChain">${s.map(x=>Array.isArray(x)?M(x[0],x[1]):M(x)).join('')}</div>`;
+  // Fórmula clave (la que hay que recordar).
+  const key=(t,label)=>`<div class="keyF">${label?`<span>${label}</span>`:''}\\[${tex(t)}\\]</div>`;
+  const keys=list=>`<div class="keyGrid">${list.map(([t,l])=>key(t,l)).join('')}</div>`;
+  // Tabla de símbolos: [latex, significado, unidad].
+  const sym=rows=>`<div class="sym">${rows.map(([s,t,u])=>`<div><b>${m(s)}</b><span>${t}</span>${u?`<em>${u}</em>`:''}</div>`).join('')}</div>`;
+  // Explicación simple, entre paréntesis y en cursiva.
+  const simple=t=>`<span class="simple">(${t})</span>`;
+  const box=(kind,title,html)=>`<div class="box ${kind}"><b>${title}</b>${html}</div>`;
+  const idea=(t,h)=>box('idea','💡 '+t,h), warn=(t,h)=>box('warn','⚠ '+t,h), err=(t,h)=>box('err','✗ '+t,h), ok=(t,h)=>box('ok','✓ '+t,h);
+  const two=(...b)=>`<div class="twoCol">${b.join('')}</div>`;
+  const ul=items=>`<ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+  const ol=items=>`<ol>${items.map(i=>`<li>${i}</li>`).join('')}</ol>`;
+  // Teoría más larga, desplegable.
+  const deep=(title,html)=>`<details class="fold deep"><summary><span>📖 Para leer con calma</span><b>${title}</b></summary><div class="foldBody">${html}</div></details>`;
+  // Ejemplo resuelto desplegable.
+  const example=(title,statement,body,answer)=>`<details class="fold example"><summary><span>Ejemplo resuelto</span><b>${title}</b></summary><div class="foldBody">${statement?`<div class="statement">${statement}</div>`:''}${body}${answer?`<div class="answer"><b>Resultado</b>${answer}</div>`:''}</div></details>`;
+  const step=(title,html)=>`<div class="step"><h4>${title}</h4>${html}</div>`;
+  const table=(head,rows)=>`<div class="tableWrap"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  const fig=(svg,caption)=>`<figure class="fig">${svg}${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`;
+  // Tarjetas de repaso: [etiqueta, pregunta, respuesta].
+  const cards=list=>`<div class="flipGrid">${list.map(([t,q,a])=>`<button type="button" class="flip" aria-pressed="false"><span class="tag">${t}</span><span class="q">${q}</span><span class="a">${a}</span><small>Tocá para dar vuelta ↻</small></button>`).join('')}</div>`;
+  // Bloque interactivo: el comportamiento se conecta por data-lab (ver LABS más abajo).
+  const lab=(id,title,lead,inner='')=>`<div class="lab" data-lab="${id}"><div class="labHead"><span>PROBALO</span><b>${title}</b>${lead?`<p>${lead}</p>`:''}</div><div class="labBody">${inner}</div></div>`;
+  const field=(name,label,value,extra='')=>`<label><span>${label}</span><input name="${name}" type="number" inputmode="decimal" step="any" value="${value}" ${extra}></label>`;
+  const select=(name,label,opts)=>`<label><span>${label}</span><select name="${name}">${opts.map(([v,t])=>`<option value="${v}">${t}</option>`).join('')}</select></label>`;
+  const fields=(...f)=>`<div class="fields">${f.join('')}</div>`;
+  const slider=(name,label,min,max,st,val)=>`<label class="slider"><span>${label}</span><input type="range" name="${name}" min="${min}" max="${max}" step="${st}" value="${val}"><output data-for="${name}"></output></label>`;
+  const out=`<output class="out" aria-live="polite"></output>`;
+  const fmt=(x,d=3)=>{
+    if(!Number.isFinite(x))return '—';
+    const a=Math.abs(x);
+    if(a!==0&&(a<1e-3||a>=1e6))return x.toExponential(2).replace('.',',');
+    return x.toLocaleString('es-AR',{maximumFractionDigits:d,useGrouping:false});
+  };
+  window.Kit={esc,M,m,chain,key,keys,sym,simple,box,idea,warn,err,ok,two,ul,ol,deep,example,step,table,fig,cards,lab,field,select,fields,slider,out,fmt};
+})();
+</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="aAcc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="s-accf"/></marker>
+    <marker id="aOk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="s-okf"/></marker>
+    <marker id="aWarn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="s-warnf"/></marker>
+    <marker id="aBad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="s-badf"/></marker>
+    <marker id="aVio" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="s-viof"/></marker>
+    <marker id="aInk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="s-dot"/></marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" class="s-hatch"/></pattern>
+  </defs>
+</svg>
+<script>
+/* ================= 3) Esquemas SVG ================= */
+(function(){
+  'use strict';
+  const A='marker-end="url(#aAcc)"',O='marker-end="url(#aOk)"',W='marker-end="url(#aWarn)"',B='marker-end="url(#aBad)"',V='marker-end="url(#aVio)"',I='marker-end="url(#aInk)"';
+  const svg=(w,h,label,body)=>`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}">${body}</svg>`;
+  const ceil=(x1,x2,y)=>`<rect x="${x1}" y="${y-12}" width="${x2-x1}" height="12" fill="url(#hatch)"/><line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" class="s-ground"/>`;
+  const floor=(x1,x2,y)=>`<rect x="${x1}" y="${y}" width="${x2-x1}" height="12" fill="url(#hatch)"/><line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" class="s-ground"/>`;
+  const S={};
+
+  // C1 · brazo de palanca del momento angular
+  S.arm=svg(480,250,'Partícula que se mueve en línea recta; su momento angular respecto de O vale d por m por v, con d la distancia perpendicular',`
+    <line x1="30" y1="70" x2="450" y2="70" class="s-dash"/>
+    <circle cx="300" cy="70" r="11" class="s-soft2"/><text x="300" y="50" text-anchor="middle" class="s-tb">m</text>
+    <line x1="314" y1="70" x2="400" y2="70" class="s-acc" ${A}/><text x="410" y="56" class="s-ta">p = m·v</text>
+    <circle cx="140" cy="200" r="6" class="s-dot"/><text x="122" y="226" class="s-tb">O</text>
+    <line x1="140" y1="200" x2="140" y2="74" class="s-ok" ${O}/><text x="40" y="142" class="s-tok">d (brazo)</text>
+    <path d="M140 84 h12 v-12" class="s-thin"/>
+    <line x1="140" y1="200" x2="292" y2="77" class="s-vio" ${V}/><text x="226" y="160" class="s-tvio">r</text>
+    <text x="250" y="236" class="s-ts">|L| = r·p·sen θ = d·m·v</text>`);
+
+  // C1 · bala que se incrusta en una varilla con pivote
+  S.bullet=svg(480,290,'Varilla colgada de un pivote; una bala horizontal impacta a distancia d del pivote',`
+    ${ceil(160,320,30)}
+    <circle cx="240" cy="40" r="7" class="s-dot"/><text x="120" y="62" class="s-tb">pivote O</text>
+    <rect x="232" y="40" width="16" height="220" rx="5" class="s-wood"/>
+    <line x1="60" y1="230" x2="196" y2="230" class="s-acc" ${A}/><circle cx="50" cy="230" r="8" class="s-badf"/><text x="40" y="214" class="s-ta">m, v</text>
+    <line x1="290" y1="44" x2="290" y2="228" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="298" y="140" class="s-tok">d</text>
+    <path d="M330 190 A 90 90 0 0 1 300 252" class="s-vio" ${V}/><text x="340" y="228" class="s-tvio">ω después</text>
+    <text x="40" y="282" class="s-ts">Momentos respecto de O: la reacción del pivote tiene brazo 0</text>`);
+
+  // C2 · cuerpo rígido girando: misma ω, distinta v
+  S.rigid=svg(480,260,'Disco que gira con velocidad angular omega: los puntos más alejados del eje tienen más velocidad lineal',`
+    <circle cx="170" cy="130" r="105" class="s-soft"/>
+    <circle cx="170" cy="130" r="6" class="s-dot"/><text x="150" y="160" class="s-ts">eje</text>
+    <line x1="170" y1="130" x2="225" y2="130" class="s-thin"/><circle cx="225" cy="130" r="5" class="s-dot"/>
+    <line x1="225" y1="130" x2="225" y2="88" class="s-acc" ${A}/>
+    <line x1="170" y1="130" x2="275" y2="130" class="s-thin"/><circle cx="275" cy="130" r="5" class="s-dot"/>
+    <line x1="275" y1="130" x2="275" y2="46" class="s-acc" ${A}/>
+    <text x="196" y="122" class="s-ts">r₁</text><text x="248" y="148" class="s-ts">r₂</text>
+    <text x="232" y="86" class="s-ta">v₁</text><text x="284" y="52" class="s-ta">v₂ = r₂ω</text>
+    <path d="M110 48 A 100 100 0 0 0 76 90" class="s-vio" ${V}/><text x="60" y="44" class="s-tvio">ω</text>
+    <text x="320" y="110" class="s-t">misma ω y α</text><text x="320" y="134" class="s-t">para todos</text><text x="320" y="170" class="s-ta">v = r·ω</text><text x="320" y="194" class="s-ta">aₜ = r·α</text>`);
+
+  // C2 · polea con masa y bloque colgante
+  S.pulley=svg(480,300,'Polea fija con masa, de radio R, y un bloque colgando de una cuerda enrollada',`
+    ${ceil(150,330,26)}
+    <line x1="240" y1="26" x2="240" y2="70" class="s-line"/>
+    <circle cx="240" cy="110" r="44" class="s-soft2"/><circle cx="240" cy="110" r="5" class="s-dot"/>
+    <line x1="240" y1="110" x2="284" y2="110" class="s-thin"/><text x="252" y="104" class="s-ts">R</text>
+    <line x1="284" y1="110" x2="284" y2="210" class="s-line"/>
+    <rect x="258" y="210" width="52" height="46" rx="6" class="s-soft"/><text x="284" y="239" text-anchor="middle" class="s-tb">m</text>
+    <line x1="296" y1="200" x2="296" y2="150" class="s-ok" ${O}/><text x="304" y="170" class="s-tok">T</text>
+    <line x1="284" y1="258" x2="284" y2="292" class="s-bad" ${B}/><text x="294" y="288" class="s-tbad">mg</text>
+    <path d="M196 76 A 52 52 0 0 1 222 60" class="s-vio" ${V}/><text x="160" y="70" class="s-tvio">α</text>
+    <line x1="340" y1="215" x2="340" y2="255" class="s-acc" ${A}/><text x="350" y="240" class="s-ta">a = Rα</text>
+    <text x="60" y="160" class="s-t">torque de T</text><text x="60" y="182" class="s-ta">τ = T·R</text>`);
+
+  // C3 · Steiner: dos ejes paralelos
+  S.steiner=svg(480,230,'Varilla con un eje que pasa por el centro de masa y otro eje paralelo desplazado una distancia d',`
+    <rect x="60" y="104" width="360" height="22" rx="8" class="s-wood"/>
+    <line x1="240" y1="40" x2="240" y2="190" class="s-dash"/><circle cx="240" cy="115" r="6" class="s-dot"/>
+    <text x="246" y="34" class="s-tb">eje por CM</text><text x="248" y="210" class="s-ts">I_CM</text>
+    <line x1="120" y1="40" x2="120" y2="190" class="s-acc"/><circle cx="120" cy="115" r="6" class="s-accf"/>
+    <text x="70" y="34" class="s-ta">eje nuevo P</text><text x="92" y="210" class="s-ta">I_P</text>
+    <line x1="124" y1="160" x2="236" y2="160" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="172" y="182" class="s-tok">d</text>
+    <text x="300" y="168" class="s-ta">I_P = I_CM + M·d²</text>`);
+
+  // C4 · rodadura: velocidades de tres puntos
+  S.roll=svg(480,270,'Rueda que rueda sin deslizar: el punto de contacto está quieto, el centro va a v y el punto de arriba a 2v',`
+    ${floor(20,460,236)}
+    <circle cx="200" cy="146" r="90" class="s-soft"/>
+    <circle cx="200" cy="146" r="6" class="s-dot"/><circle cx="200" cy="56" r="6" class="s-dot"/><circle cx="200" cy="236" r="6" class="s-badf"/>
+    <line x1="206" y1="146" x2="290" y2="146" class="s-acc" ${A}/><text x="296" y="152" class="s-ta">v_CM</text>
+    <line x1="206" y1="56" x2="374" y2="56" class="s-ok" ${O}/><text x="380" y="62" class="s-tok">2·v_CM</text>
+    <text x="214" y="228" class="s-tbad">v = 0 (contacto)</text>
+    <line x1="200" y1="236" x2="374" y2="56" class="s-dash"/>
+    <path d="M128 92 A 90 90 0 0 1 162 66" class="s-vio" ${V}/><text x="104" y="76" class="s-tvio">ω</text>
+    <text x="20" y="30" class="s-ts">Las velocidades crecen linealmente desde el punto de contacto</text>`);
+
+  // C4 · cilindro en plano inclinado
+  S.incline=svg(480,280,'Cilindro rodando por un plano inclinado con peso, normal y rozamiento estático hacia arriba del plano',`
+    <path d="M30 250 L450 250 L30 60 Z" class="s-soft"/>
+    <text x="400" y="240" class="s-ts">θ</text><path d="M392 250 A 50 50 0 0 0 396 233" class="s-thin"/>
+    <g transform="translate(170 123) rotate(24.3)">
+      <circle cx="0" cy="-46" r="46" class="s-soft2"/><circle cx="0" cy="-46" r="5" class="s-dot"/>
+      <line x1="0" y1="-46" x2="0" y2="-120" class="s-ok" ${O}/><text x="8" y="-112" class="s-tok">N</text>
+      <line x1="0" y1="0" x2="-64" y2="0" class="s-warn" ${W}/><text x="-90" y="22" class="s-twarn">f_e</text>
+      <line x1="10" y1="-46" x2="70" y2="-46" class="s-acc" ${A}/><text x="74" y="-50" class="s-ta">a_CM</text>
+    </g>
+    <line x1="189" y1="81" x2="189" y2="165" class="s-bad" ${B}/><text x="196" y="162" class="s-tbad">Mg</text>
+    <text x="250" y="40" class="s-ts">f_e apunta hacia arriba del plano:</text><text x="250" y="60" class="s-ts">es la que hace girar al cilindro</text>`);
+
+  // C4 · carrete
+  S.spool=svg(480,250,'Carrete con radio grande R y radio chico r; la cuerda sale del radio chico',`
+    ${floor(20,460,220)}
+    <circle cx="200" cy="130" r="90" class="s-soft"/><circle cx="200" cy="130" r="40" class="s-soft2"/><circle cx="200" cy="130" r="5" class="s-dot"/>
+    <line x1="200" y1="130" x2="200" y2="40" class="s-thin"/><text x="206" y="70" class="s-ts">R</text>
+    <line x1="200" y1="130" x2="240" y2="130" class="s-thin"/><text x="214" y="124" class="s-ts">r</text>
+    <line x1="200" y1="90" x2="400" y2="90" class="s-acc" ${A}/><text x="330" y="80" class="s-ta">F (cuerda)</text>
+    <text x="20" y="246" class="s-ts">punto de cuerda: a = α(R − r) si sale por abajo del eje · α(R + r) si sale por arriba</text>`);
+
+  // C5 · viga apoyada
+  S.beam=svg(480,250,'Viga apoyada en sus extremos A y B con su peso en el centro y una carga P a una distancia x de A',`
+    <rect x="40" y="96" width="400" height="20" rx="4" class="s-wood"/>
+    <path d="M50 116 l-16 30 h32 z" class="s-soft2"/><path d="M430 116 l-16 30 h32 z" class="s-soft2"/>
+    <text x="14" y="140" class="s-tb">A</text><text x="452" y="140" class="s-tb">B</text>
+    <line x1="50" y1="186" x2="50" y2="124" class="s-ok" ${O}/><text x="58" y="200" class="s-tok">N_A</text>
+    <line x1="430" y1="186" x2="430" y2="124" class="s-ok" ${O}/><text x="384" y="200" class="s-tok">N_B</text>
+    <line x1="240" y1="106" x2="240" y2="160" class="s-bad" ${B}/><text x="248" y="156" class="s-tbad">W (centro)</text>
+    <line x1="150" y1="40" x2="150" y2="92" class="s-warn" ${W}/><text x="158" y="54" class="s-twarn">P</text>
+    <line x1="50" y1="76" x2="146" y2="76" class="s-dash"/><text x="86" y="70" class="s-ts">x</text>
+    <line x1="50" y1="226" x2="430" y2="226" class="s-thin" marker-start="url(#aInk)" ${I}/><text x="228" y="246" class="s-ts">L</text>`);
+
+  // C5 · escalera
+  S.ladder=svg(480,290,'Escalera apoyada en una pared lisa y un piso con rozamiento',`
+    <rect x="390" y="20" width="14" height="240" fill="url(#hatch)"/><line x1="390" y1="20" x2="390" y2="260" class="s-ground"/>
+    ${floor(40,404,260)}
+    <line x1="150" y1="260" x2="390" y2="50" class="s-wood" style="stroke-width:12;stroke:var(--svg-wood)"/>
+    <line x1="390" y1="50" x2="330" y2="50" class="s-ok" ${O}/><text x="300" y="42" class="s-tok">N_p</text>
+    <line x1="150" y1="260" x2="150" y2="196" class="s-ok" ${O}/><text x="158" y="200" class="s-tok">N</text>
+    <line x1="150" y1="260" x2="214" y2="260" class="s-warn" ${W}/><text x="198" y="282" class="s-twarn">f_e</text>
+    <line x1="270" y1="155" x2="270" y2="225" class="s-bad" ${B}/><text x="278" y="214" class="s-tbad">W</text>
+    <path d="M196 260 A 46 46 0 0 0 184 230" class="s-thin"/><text x="198" y="246" class="s-ts">θ</text>
+    <text x="30" y="40" class="s-ts">pared lisa: sólo normal</text><text x="30" y="60" class="s-ts">piso: normal + rozamiento</text>`);
+
+  // C6 · resorte vertical
+  S.vspring=svg(480,300,'Resorte vertical: longitud natural, posición de equilibrio estirada mg/k y apartamiento delta y',`
+    ${ceil(60,420,24)}
+    <path d="M110 24 v16 l-14 8 28 10 -28 10 28 10 -28 10 14 8 v10" class="s-line"/>
+    <text x="70" y="140" class="s-ts">natural</text><line x1="80" y1="114" x2="140" y2="114" class="s-dash"/><text x="30" y="118" class="s-ts">l₀</text>
+    <path d="M240 24 v16 l-14 9 28 12 -28 12 28 12 -28 12 14 9 v12" class="s-line"/>
+    <rect x="216" y="138" width="48" height="36" rx="5" class="s-soft2"/><text x="240" y="162" text-anchor="middle" class="s-tb">m</text>
+    <line x1="200" y1="138" x2="460" y2="138" class="s-dash"/><text x="386" y="132" class="s-ta">equilibrio yₑ</text>
+    <line x1="150" y1="114" x2="150" y2="138" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="156" y="132" class="s-tok">mg/k</text>
+    <path d="M370 24 v16 l-14 11 28 15 -28 15 28 15 -28 15 14 11 v14" class="s-line"/>
+    <rect x="346" y="184" width="48" height="36" rx="5" class="s-soft2"/><text x="370" y="208" text-anchor="middle" class="s-tb">m</text>
+    <line x1="420" y1="140" x2="420" y2="182" class="s-acc" ${A}/><text x="428" y="168" class="s-ta">δy</text>
+    <line x1="370" y1="222" x2="370" y2="270" class="s-vio" ${V}/><text x="378" y="262" class="s-tvio">F = −k·δy</text>
+    <text x="30" y="292" class="s-ts">Medido desde el equilibrio, el peso ya no aparece en la ecuación</text>`);
+
+  // C8 · péndulo simple y físico
+  S.pendulums=svg(480,290,'Péndulo simple con hilo de longitud L y péndulo físico: cuerpo rígido con pivote a distancia d del centro de masa',`
+    ${ceil(40,200,30)}${ceil(270,450,30)}
+    <line x1="120" y1="30" x2="120" y2="250" class="s-dash"/>
+    <line x1="120" y1="30" x2="180" y2="220" class="s-line"/><circle cx="183" cy="230" r="14" class="s-soft2"/>
+    <text x="160" y="120" class="s-ts">L</text><path d="M120 90 A 60 60 0 0 0 138 87" class="s-thin"/><text x="124" y="110" class="s-ts">θ</text>
+    <text x="70" y="280" class="s-tb">Péndulo simple</text>
+    <g transform="rotate(-16 360 44)"><rect x="344" y="36" width="32" height="210" rx="10" class="s-wood"/><circle cx="360" cy="140" r="6" class="s-dot"/><line x1="360" y1="44" x2="360" y2="140" class="s-ok" marker-start="url(#aOk)" ${O}/></g>
+    <circle cx="360" cy="44" r="7" class="s-accf"/><text x="378" y="54" class="s-ta">pivote P</text>
+    <text x="400" y="110" class="s-tok">d</text><text x="404" y="150" class="s-ts">CM</text>
+    <line x1="389" y1="136" x2="389" y2="210" class="s-bad" ${B}/><text x="396" y="206" class="s-tbad">Mg</text>
+    <text x="300" y="280" class="s-tb">Péndulo físico</text>`);
+
+  // C9 · presión con la profundidad, varias capas
+  S.layers=svg(480,280,'Recipiente abierto con una capa de aceite sobre agua: la presión crece al bajar, sumando rho g h de cada capa',`
+    <path d="M80 30 V250 H320 V30" class="s-line"/>
+    <rect x="82" y="60" width="236" height="60" class="s-oil"/><rect x="82" y="120" width="236" height="128" class="s-water"/>
+    <text x="96" y="94" class="s-tb">aceite ρ₁</text><text x="96" y="190" class="s-tb">agua ρ₂</text>
+    <line x1="64" y1="60" x2="336" y2="60" class="s-dash"/><text x="340" y="64" class="s-ts">p₀ = p_atm</text>
+    <line x1="334" y1="60" x2="334" y2="120" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="340" y="96" class="s-tok">h₁</text>
+    <line x1="334" y1="120" x2="334" y2="248" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="340" y="190" class="s-tok">h₂</text>
+    <circle cx="200" cy="244" r="6" class="s-badf"/><text x="210" y="272" class="s-tbad">p = p₀ + ρ₁g h₁ + ρ₂g h₂</text>
+    <line x1="420" y1="70" x2="420" y2="240" class="s-acc" ${A}/><text x="398" y="60" class="s-ta">p ↑</text>`);
+
+  // C10 · prensa hidráulica
+  S.press=svg(480,240,'Prensa hidráulica: una fuerza chica sobre un pistón chico produce una fuerza grande sobre un pistón grande',`
+    <path d="M40 80 V200 H440 V60 M320 60 V170 H110 V80" class="s-line"/>
+    <rect x="42" y="104" width="66" height="94" class="s-water"/><rect x="112" y="172" width="206" height="26" class="s-water"/><rect x="322" y="84" width="116" height="114" class="s-water"/>
+    <rect x="42" y="96" width="66" height="10" class="s-soft2"/><rect x="322" y="76" width="116" height="10" class="s-soft2"/>
+    <line x1="75" y1="40" x2="75" y2="92" class="s-bad" ${B}/><text x="84" y="52" class="s-tbad">F₁</text>
+    <line x1="380" y1="72" x2="380" y2="20" class="s-ok" ${O}/><text x="390" y="34" class="s-tok">F₂ = F₁·A₂/A₁</text>
+    <text x="50" y="228" class="s-ts">A₁ chica</text><text x="350" y="228" class="s-ts">A₂ grande</text>
+    <text x="150" y="150" class="s-ta">misma presión p</text>`);
+
+  // C10 · manómetro en U
+  S.utube=svg(480,280,'Manómetro en U con mercurio conectado a un gas; la diferencia de altura h mide la presión manométrica',`
+    <rect x="30" y="40" width="110" height="90" rx="12" class="s-soft2"/><text x="56" y="92" class="s-tb">gas p</text>
+    <path d="M140 84 H200 V250 Q200 266 216 266 H284 Q300 266 300 250 V40" class="s-line"/>
+    <path d="M226 84 V242 Q226 246 230 246 H270 Q274 246 274 242 V40" class="s-line"/>
+    <rect x="202" y="160" width="22" height="104" class="s-hg"/><rect x="224" y="246" width="52" height="18" class="s-hg"/><rect x="276" y="100" width="22" height="164" class="s-hg"/>
+    <line x1="180" y1="160" x2="330" y2="160" class="s-dash"/><line x1="260" y1="100" x2="330" y2="100" class="s-dash"/>
+    <line x1="326" y1="160" x2="326" y2="102" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="334" y="136" class="s-tok">h</text>
+    <text x="300" y="30" class="s-ts">abierto: p_atm</text><text x="172" y="182" class="s-ts">1</text><text x="282" y="182" class="s-ts">2</text>
+    <text x="330" y="200" class="s-ta">p₁ = p₂ (misma cota)</text><text x="330" y="224" class="s-ta">p − p_atm = ρ_Hg g h</text>`);
+
+  // C11 · cuerpo flotando
+  S.float=svg(480,260,'Bloque que flota: parte sumergida, empuje hacia arriba igual al peso',`
+    <path d="M40 30 V240 H440 V30" class="s-line"/><rect x="42" y="110" width="396" height="128" class="s-water"/>
+    <line x1="40" y1="110" x2="440" y2="110" class="s-thin"/>
+    <rect x="180" y="70" width="120" height="100" rx="4" class="s-wood"/>
+    <rect x="180" y="110" width="120" height="60" fill="url(#hatch)"/>
+    <line x1="240" y1="120" x2="240" y2="200" class="s-bad" ${B}/><text x="248" y="198" class="s-tbad">P</text>
+    <line x1="226" y1="200" x2="226" y2="56" class="s-ok" ${O}/><text x="170" y="56" class="s-tok">E</text>
+    <text x="310" y="150" class="s-ts">V sumergido</text><text x="310" y="96" class="s-ts">fuera del agua</text>
+    <text x="60" y="226" class="s-ta">E = ρ_fluido · g · V_sum</text>`);
+
+  // C12 · continuidad y Bernoulli horizontal
+  S.pipe=svg(480,250,'Caño horizontal que se angosta: en la parte angosta la velocidad es mayor y la presión menor (tubitos más bajos)',`
+    <path d="M20 120 H170 L250 150 H460 M20 220 H170 L250 190 H460" class="s-line"/>
+    <path d="M20 122 H170 L250 152 H460 V188 H250 L170 218 H20 Z" class="s-water"/>
+    <path d="M90 120 V40 M110 120 V40" class="s-line"/><rect x="92" y="56" width="16" height="64" class="s-water2"/>
+    <path d="M350 150 V40 M370 150 V40" class="s-line"/><rect x="352" y="106" width="16" height="44" class="s-water2"/>
+    <line x1="40" y1="170" x2="110" y2="170" class="s-acc" ${A}/><text x="40" y="196" class="s-ta">v₁ lenta</text>
+    <line x1="290" y1="170" x2="420" y2="170" class="s-acc" ${A}/><text x="300" y="164" class="s-ta">v₂ rápida</text>
+    <text x="116" y="66" class="s-tok">p₁ alta</text><text x="376" y="114" class="s-tbad">p₂ baja</text>
+    <text x="20" y="244" class="s-ts">A₁v₁ = A₂v₂ · donde aumenta v, baja p</text>`);
+
+  // C13 · Venturi con manómetro diferencial
+  S.venturi=svg(480,280,'Tubo de Venturi con un manómetro diferencial de mercurio entre la sección ancha y la garganta',`
+    <path d="M20 40 H150 L230 70 H300 L380 40 H460 M20 130 H150 L230 100 H300 L380 130 H460" class="s-line"/>
+    <path d="M20 42 H150 L230 72 H300 L380 42 H460 V128 H380 L300 98 H230 L150 128 H20 Z" class="s-water"/>
+    <path d="M80 130 V246 Q80 262 96 262 H246 Q262 262 262 246 V100" class="s-line"/>
+    <path d="M96 130 V240 Q96 244 100 244 H242 Q246 244 246 240 V100" class="s-line"/>
+    <rect x="82" y="220" width="12" height="40" class="s-hg"/><rect x="94" y="246" width="154" height="14" class="s-hg"/><rect x="248" y="150" width="12" height="110" class="s-hg"/>
+    <line x1="60" y1="220" x2="310" y2="220" class="s-dash"/><line x1="240" y1="150" x2="310" y2="150" class="s-dash"/>
+    <line x1="300" y1="218" x2="300" y2="152" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="308" y="190" class="s-tok">h</text>
+    <text x="30" y="30" class="s-ta">1 (A₁, v₁)</text><text x="216" y="30" class="s-ta">2 (A₂, v₂)</text>
+    <text x="290" y="250" class="s-ts">Δp = (ρ_Hg − ρ_agua)·g·h</text>`);
+
+  // C13 · tanque con orificio (Torricelli)
+  S.tank=svg(480,280,'Tanque grande abierto con un orificio a una profundidad h bajo la superficie; el chorro sale a velocidad raíz de 2gh',`
+    <path d="M60 30 V250 H260 V30" class="s-line"/><rect x="62" y="70" width="196" height="178" class="s-water"/>
+    <line x1="60" y1="70" x2="260" y2="70" class="s-thin"/><text x="80" y="62" class="s-ts">1: superficie, v₁ ≈ 0, p_atm</text>
+    <path d="M260 214 Q340 214 400 268" class="s-acc" ${A}/><text x="300" y="206" class="s-ta">v = √(2gh)</text>
+    <line x1="282" y1="70" x2="282" y2="212" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="290" y="150" class="s-tok">h</text>
+    <text x="268" y="236" class="s-ts">2: orificio, p_atm</text>`);
+
+  // C13 · Pitot
+  S.pitot=svg(480,220,'Tubo de Pitot: en la boca del tubo el fluido se frena y la presión sube',`
+    <rect x="20" y="130" width="440" height="70" class="s-water"/>
+    <path d="M120 160 H240 V30 M120 176 H256 V30" class="s-line"/><rect x="242" y="70" width="12" height="90" class="s-water2"/>
+    <path d="M360 130 V30 M376 130 V30" class="s-line"/><rect x="362" y="104" width="12" height="26" class="s-water2"/>
+    <line x1="24" y1="168" x2="100" y2="168" class="s-acc" ${A}/><text x="30" y="160" class="s-ta">v</text>
+    <circle cx="120" cy="168" r="5" class="s-badf"/><text x="40" y="216" class="s-tbad">boca: estancamiento, v = 0</text>
+    <line x1="230" y1="70" x2="440" y2="70" class="s-dash"/><line x1="340" y1="104" x2="440" y2="104" class="s-dash"/>
+    <line x1="430" y1="104" x2="430" y2="72" class="s-ok" marker-start="url(#aOk)" ${O}/><text x="438" y="94" class="s-tok">h</text>
+    <text x="150" y="40" class="s-ts">Pitot</text><text x="388" y="30" class="s-ts">estática</text>`);
+
+  window.FIG=S;
+})();
+</script>
+<script>
+/* ================= 4a) Contenido · Rotación y equilibrio (C1–C5) ================= */
+(function(){
+  'use strict';
+  const K=window.Kit,F=window.FIG,R=String.raw;
+  const {M,m,chain,key,keys,sym,simple,idea,warn,err,ok,two,ul,ol,deep,example,step,table,fig,cards,lab,field,select,fields,slider,out}=K;
+  const T=window.TOPICS=window.TOPICS||[];
+
+  /* ---------------- C1 ---------------- */
+  T.push({id:'C1',group:'rot',title:'Momento angular y choques',short:'Bala contra varilla, discos que se acoplan, choques con pivote.',
+  lead:'El momento angular es “la cantidad de giro” de algo respecto de un punto. Lo cambia el torque externo; si el torque externo es cero, se conserva. Esa es la llave de todos los choques con pivote.',
+  sections:[
+  {id:'idea',label:'La idea',html:`
+<p>Una partícula que se mueve en línea recta también puede tener momento angular respecto de un punto O. ${simple('No hace falta que gire: alcanza con que su recta de movimiento no pase por O')}</p>
+${fig(F.arm,'Lo que importa es el brazo d: la distancia perpendicular desde O hasta la recta por donde va la partícula.')}
+${sym([[R`\vec L`,'momento angular respecto de O','kg·m²/s'],[R`\vec r`,'posición desde O hasta la partícula','m'],[R`\vec p=m\vec v`,'cantidad de movimiento','kg·m/s'],['d','brazo: distancia perpendicular de O a la recta de movimiento','m'],[R`\theta`,'ángulo entre r y p',''],[R`I\,,\ \omega`,'momento de inercia y velocidad angular (cuerpo rígido)','kg·m² · rad/s']])}
+${key(R`\vec L=\vec r\times\vec p`,'Definición')}
+<p>El módulo sale del producto vectorial. Como ${m(R`r\sin\theta`)} es justamente el brazo d, queda la forma que más se usa en los ejercicios:</p>
+${chain([R`|\vec L|=r\,p\,\sin\theta`,'módulo del producto vectorial'],[R`r\sin\theta=d`,'la proyección perpendicular es el brazo'],[R`|\vec L|=d\,m\,v`,'forma práctica para partículas'])}
+<p>Para un cuerpo rígido que gira alrededor de un eje fijo, todas sus partículas suman y aparece el momento de inercia:</p>
+${key(R`L=I\,\omega`,'Cuerpo rígido con eje fijo')}
+${idea('Signo del giro',`<p>Elegí un sentido positivo (por ejemplo antihorario) <b>antes</b> de escribir nada y respetalo en todos los términos. Un objeto que pasa “del otro lado” de O aporta con el signo contrario.</p>`)}
+`},
+  {id:'torque',label:'Torque y conservación',html:`
+<p>El torque es a la rotación lo que la fuerza es a la traslación: es <b>la causa</b> que cambia el momento angular.</p>
+${chain([R`\vec\tau=\vec r\times\vec F`,'definición'],[R`|\vec\tau|=rF\sin\varphi=d\,F`,'brazo por fuerza'],[R`\frac{d\vec L}{dt}=\vec\tau_{ext}`,'“Newton” para la rotación'])}
+<p>De la última ecuación sale la ley que se usa en los choques:</p>
+${key(R`\vec\tau_{ext}=0\ \Rightarrow\ \vec L=\text{cte.}\qquad L_i=L_f`,'Conservación del momento angular')}
+${two(idea('Fuerzas internas no cuentan',`<p>En un choque, la bala y la varilla se empujan con fuerzas enormes, pero son internas al sistema: se cancelan de a pares y no cambian el L total.</p>`),
+     idea('Truco del pivote',`<p>El pivote hace una fuerza externa desconocida. Si tomás momentos <b>respecto del pivote</b>, esa fuerza tiene brazo 0 y no hace torque. ${simple('Por eso L se conserva respecto del pivote, aunque p lineal no')}</p>`))}
+<h3>Impulso angular</h3>
+<p>Si sí hay torque externo, el cambio de L es el impulso angular:</p>
+${chain([R`\vec J=\int\vec\tau\,dt`,'impulso angular'],[R`\vec L_f-\vec L_i=\vec J=\vec\tau_m\,\Delta t`,'con el torque medio'])}
+${deep('L de un sistema y el centro de masa',`
+<p>Para muchas partículas se suman los momentos angulares de cada una:</p>
+${M(R`\vec L=\sum_i\vec r_i\times\vec p_i`)}
+<p>Se puede separar en dos partes: el giro “alrededor del propio centro de masa” (${m(R`\vec L\,'`)}) más el momento angular del CM moviéndose como si fuera una partícula con toda la masa:</p>
+${M(R`\vec L=\vec L\,'+\vec r_{CM}\times\vec P`,'giro propio + movimiento del CM')}
+<p>Esto explica, por ejemplo, por qué una rueda que rueda tiene L aunque su centro vaya en línea recta.</p>
+${M(R`L_x=y\,p_z-z\,p_y\qquad L_y=z\,p_x-x\,p_z\qquad L_z=x\,p_y-y\,p_x`,'componentes, si te dan vectores')}`)}
+`},
+  {id:'choques',label:'Choques con pivote',html:`
+${fig(F.bullet,'Bala que se incrusta en una varilla colgada. Antes: sólo la bala tiene L. Después: gira todo junto.')}
+${ol(['Elegí el pivote como punto de referencia y un sentido positivo.','Escribí L inicial: cada partícula aporta '+m('d\\,m\\,v')+'; cada cuerpo que ya gira aporta '+m('I\\omega')+'.','Escribí L final con el momento de inercia del conjunto. Si algo queda pegado a distancia d, sumá '+m('m\\,d^2')+'.','Igualá '+m('L_i=L_f')+' y despejá.','Si después hay una subida (la varilla se eleva), eso ya es otra etapa: ahí sí usás energía.'])}
+${key(R`I_{total}=I_{cuerpo}+m\,d^2`,'Masa que queda pegada')}
+${keys([[R`m\,v_i\,d=I\,\omega+m\,v_f\,d`,'Si la bala atraviesa y sale'],[R`I_1\omega_1+I_2\omega_2=(I_1+I_2)\,\omega`,'Dos discos que se acoplan']])}
+${warn('Energía en el choque',`<p>Si el choque es inelástico (se pega, se clava, se acopla) <b>no</b> se conserva la energía cinética: parte se va en deformación y calor. Sólo vale ${m('L_i=L_f')}.</p>`)}
+${example('Bala que se clava en una varilla',
+  `Una varilla de ${m('M=2\\ \\mathrm{kg}')} y ${m('L=1\\ \\mathrm{m}')} cuelga de un pivote en su extremo superior. Una bala de ${m('m=20\\ \\mathrm g')} viaja horizontal a ${m('300\\ \\mathrm{m/s}')}, impacta en el extremo inferior y queda incrustada. ¿Con qué ω arranca a girar? ¿Qué fracción de energía se pierde?`,
+  step('1 · Momento de inercia final respecto del pivote',chain([R`I=\tfrac13ML^2+m\,L^2`,'varilla por extremo + bala pegada'],[R`I=\tfrac13(2)(1)^2+0{,}02\,(1)^2=0{,}687\ \mathrm{kg\,m^2}`]))+
+  step('2 · Conservación de L respecto del pivote',chain([R`L_i=m\,v\,d=0{,}02\cdot300\cdot1=6\ \mathrm{kg\,m^2/s}`,'sólo la bala tiene L'],[R`L_f=I\,\omega`],[R`\omega=\frac{6}{0{,}687}\approx8{,}74\ \mathrm{rad/s}`,'despejo']))+
+  step('3 · Energía antes y después',chain([R`K_i=\tfrac12(0{,}02)(300)^2=900\ \mathrm J`],[R`K_f=\tfrac12(0{,}687)(8{,}74)^2\approx26{,}2\ \mathrm J`],[R`\frac{K_i-K_f}{K_i}\approx0{,}97`,'se pierde ≈ 97 %'])),
+  `${m('\\omega\\approx8{,}74\\ \\mathrm{rad/s}')} y se disipa cerca del 97 % de la energía: por eso no se puede usar energía en el choque.`)}
+${example('Patinadora que cierra los brazos',
+  `Una patinadora gira a 1 vuelta por segundo con ${m('I_1=3\\ \\mathrm{kg\\,m^2}')}. Cierra los brazos y su momento de inercia baja a ${m('I_2=1{,}2\\ \\mathrm{kg\\,m^2}')}. ¿A qué velocidad gira ahora?`,
+  chain([R`I_1\omega_1=I_2\omega_2`,'no hay torque externo sobre el eje'],[R`\omega_2=\frac{I_1}{I_2}\,\omega_1=\frac{3}{1{,}2}\cdot1=2{,}5\ \text{vueltas/s}`]),
+  `Gira 2,5 veces más rápido. ${simple('Concentrar la masa cerca del eje baja I y, para conservar L, sube ω')}`)}
+${lab('bullet','Bala contra varilla con pivote','Cambiá los datos y mirá cuánta energía se pierde. La varilla cuelga de un extremo; la bala impacta a una distancia d del pivote y queda incrustada.',fields(field('M','Masa varilla M (kg)',2),field('L','Largo L (m)',1),field('m','Masa bala m (g)',20),field('v','Velocidad v (m/s)',300),field('d','Distancia d (m)',1))+out)}
+`},
+  {id:'errores',label:'Errores y repaso',html:`
+${err('No conserves p lineal si hay pivote',`<p>El pivote hace fuerza externa durante el choque. Lo que se conserva es L respecto del pivote.</p>`)}
+${err('No olvides la masa que queda pegada',`<p>El I final es el de la varilla <b>más</b> ${m('m d^2')} de lo que se incrustó.</p>`)}
+${err('No uses energía durante el choque inelástico',`<p>Energía sólo en las etapas sin choque (por ejemplo, la subida posterior).</p>`)}
+${cards([['Concepto','¿Qué tiene que pasar para que se conserve L?','Que el torque externo neto respecto del punto elegido sea cero (o despreciable durante el choque).'],
+['Fórmula','Momento angular de una partícula que pasa a distancia d de O','L = d·m·v, con d la distancia perpendicular de O a la recta de movimiento.'],
+['Truco','¿Respecto de qué punto conviene tomar momentos en un choque con pivote?','Respecto del pivote: su reacción tiene brazo cero y no hace torque.'],
+['Trampa','Choque inelástico: ¿se conserva la energía cinética?','No. Se conserva L; la energía cinética disminuye.'],
+['Fórmula','Bala que atraviesa y sale','m·vᵢ·d = I·ω + m·v_f·d (con signos según el sentido).']])}
+`}]});
+
+  /* ---------------- C2 ---------------- */
+  T.push({id:'C2',group:'rot',title:'Cuerpo rígido y rotación',short:'Στ = Iα, energía de rotación, poleas con masa.',
+  lead:'Un cuerpo rígido que gira se describe con las mismas ideas que una partícula, cambiando cada magnitud lineal por su “versión angular”: x → θ, v → ω, a → α, m → I y F → τ.',
+  sections:[
+  {id:'cinematica',label:'Cinemática angular',html:`
+<p>En un cuerpo rígido las distancias entre sus puntos no cambian. Si gira alrededor de un eje fijo, <b>todos sus puntos barren el mismo ángulo</b> en el mismo tiempo.</p>
+${fig(F.rigid,'Todos los puntos comparten ω y α; la velocidad lineal crece con la distancia al eje.')}
+${sym([[R`\theta`,'posición angular','rad'],[R`\omega`,'velocidad angular','rad/s'],[R`\alpha`,'aceleración angular','rad/s²'],['r','distancia del punto al eje','m'],['v','velocidad lineal del punto','m/s'],[R`a_t,\ a_c`,'aceleración tangencial y centrípeta','m/s²']])}
+${chain([R`\omega=\frac{d\theta}{dt}\qquad\alpha=\frac{d\omega}{dt}`,'definiciones'],[R`v=r\,\omega`,'velocidad del punto'],[R`a_t=r\,\alpha`,'cambia el módulo de v'],[R`a_c=\frac{v^2}{r}=r\,\omega^2`,'cambia la dirección de v'])}
+${idea('Una tabla para traducir',table(['Traslación','Rotación','Relación'],[[m('x'),m('\\theta'),m('s=r\\theta')],[m('v'),m('\\omega'),m('v=r\\omega')],[m('a'),m('\\alpha'),m('a_t=r\\alpha')],[m('m'),m('I'),m('I=\\sum m_ir_i^2')],[m('F'),m('\\tau'),m('\\tau=dF')],[m('\\sum F=ma'),m('\\sum\\tau=I\\alpha'),'2.ª ley'],[m('\\tfrac12mv^2'),m('\\tfrac12I\\omega^2'),'energía'],[m('p=mv'),m('L=I\\omega'),'“cantidad de movimiento”']]))}
+`},
+  {id:'inercia',label:'Momento de inercia',html:`
+<p>El momento de inercia es la <b>“masa rotacional”</b>: mide cuánto cuesta cambiar la velocidad angular. ${simple('Cuanto más lejos del eje está la masa, más cuesta hacerlo girar o frenarlo')}</p>
+${keys([[R`I=\sum_i m_i\,r_i^2`,'Partículas'],[R`I=\int r^2\,dm`,'Cuerpo continuo']])}
+<p>Para integrar se reemplaza ${m('dm')} según la forma del cuerpo:</p>
+${chain([R`dm=\lambda\,dx`,'hilo o varilla (λ = masa/longitud)'],[R`dm=\sigma\,dA`,'placa o disco (σ = masa/área)'],[R`dm=\rho\,dV`,'volumen (ρ = masa/volumen)'])}
+${warn('I depende del eje',`<p>No existe “el” momento de inercia de un cuerpo: una misma varilla tiene ${m('\\tfrac1{12}ML^2')} si gira por el centro y ${m('\\tfrac13ML^2')} si gira por un extremo. Los valores de tabla y Steiner están en el tema C3.</p>`)}
+`},
+  {id:'dinamica',label:'Στ = Iα y energía',html:`
+${key(R`\sum\tau=I\,\alpha`,'Segunda ley para la rotación')}
+<p>Es la versión rotacional de ${m('\\sum F=ma')}: el torque neto respecto del eje produce aceleración angular. ${simple('Mismo torque sobre algo con más I → gira acelerando menos')}</p>
+<h3>Trabajo, energía y potencia</h3>
+${chain([R`dW=\tau\,d\theta`,'trabajo de un torque'],[R`W=\int_{\theta_i}^{\theta_f}\tau\,d\theta`],[R`W_{total}=\tfrac12I\omega_f^2-\tfrac12I\omega_i^2`,'teorema trabajo–energía'],[R`P=\tau\,\omega`,'potencia (como P = F·v)'])}
+${key(R`E_{c,rot}=\tfrac12\,I\,\omega^2`,'Energía cinética de rotación')}
+${example('Torque sobre un disco',
+  `Un cuerpo con ${m('I=0{,}50\\ \\mathrm{kg\\,m^2}')} recibe un torque neto de ${m('2\\ \\mathrm{N\\,m}')}. ¿Qué aceleración angular tiene?`,
+  chain([R`\alpha=\frac{\tau}{I}=\frac{2}{0{,}50}=4\ \mathrm{rad/s^2}`]),`${m('\\alpha=4\\ \\mathrm{rad/s^2}')}`)}
+`},
+  {id:'polea',label:'Poleas con masa',html:`
+${fig(F.pulley,'Si la cuerda no desliza, el borde de la polea y la cuerda tienen la misma aceleración: a = Rα.')}
+<div class="box method"><b>Método para poleas</b>${ol(['Un DCL por cuerpo: bloques (fuerzas) y polea (torques).','Bloques: '+m('\\sum F=ma')+'. Polea: '+m('\\sum\\tau=I\\alpha')+'.','Vínculo: '+m('a=R\\alpha')+' si la cuerda no desliza.','Resolvé el sistema.'])}</div>
+${keys([[R`(T_2-T_1)\,R=I\,\alpha`,'Polea con inercia entre dos tensiones'],[R`\tau=R\,T`,'Tensión tangente al borde']])}
+${err('Tensiones iguales',`<p>Si la polea tiene masa, <b>las tensiones a cada lado son distintas</b>: justamente su diferencia es lo que la hace girar. Sólo son iguales si la polea es ideal (sin masa).</p>`)}
+${example('Bloque colgado de una polea con masa',
+  `Una polea-disco de ${m('M=2\\ \\mathrm{kg}')} y ${m('R=0{,}1\\ \\mathrm m')} gira sin rozamiento. De una cuerda enrollada cuelga un bloque de ${m('m=1\\ \\mathrm{kg}')}. Hallá a, T y α (g = 9,8 m/s²).`,
+  step('1 · Ecuaciones',chain([R`m\,g-T=m\,a`,'bloque (positivo hacia abajo)'],[R`T\,R=I\,\alpha=\tfrac12MR^2\,\alpha`,'polea'],[R`a=R\,\alpha`,'la cuerda no desliza']))+
+  step('2 · Combino',chain([R`T=\tfrac12M\,a`,'reemplazo α = a/R en la polea'],[R`m\,g=\left(m+\tfrac12M\right)a`,'sumo con la del bloque'],[R`a=\frac{1\cdot9{,}8}{1+1}=4{,}9\ \mathrm{m/s^2}`]))+
+  step('3 · Resto',chain([R`T=\tfrac12(2)(4{,}9)=4{,}9\ \mathrm N`],[R`\alpha=\frac{a}{R}=49\ \mathrm{rad/s^2}`])),
+  `${m('a=4{,}9\\ \\mathrm{m/s^2}')}, ${m('T=4{,}9\\ \\mathrm N')}, ${m('\\alpha=49\\ \\mathrm{rad/s^2}')}. ${simple('Con polea sin masa daría a = g: cae libre porque nada lo frena')}`)}
+${lab('pulley','Bloque colgando de una polea con masa','Probá agrandar la polea o cambiar su forma: mirá cómo baja la aceleración.',fields(field('m','Bloque m (kg)',1),field('M','Polea M (kg)',2),select('shape','Forma de la polea',[['0.5','Disco macizo (½MR²)'],['1','Aro (MR²)'],['0','Ideal, sin masa']]))+out)}
+`},
+  {id:'repaso',label:'Errores y repaso',html:`
+${err('Mezclar ω y v',`<p>Todos los puntos tienen igual ω, pero ${m('v=r\\omega')} cambia con r.</p>`)}
+${err('Olvidar la energía de rotación',`<p>Si algo gira, su energía cinética incluye ${m('\\tfrac12I\\omega^2')}. Una polea con masa “se queda” con parte de la energía.</p>`)}
+${cards([['Concepto','¿Qué mide el momento de inercia?','La resistencia a cambiar la velocidad angular. Depende de la masa y de qué tan lejos del eje está.'],
+['Fórmula','2.ª ley de Newton para la rotación','Στ = I·α (torques respecto del eje de giro).'],
+['Vínculo','Cuerda que no desliza sobre una polea fija','a = R·α'],
+['Trampa','¿T₁ = T₂ en una polea con masa?','No. (T₂ − T₁)·R = I·α. Sólo son iguales si la polea es ideal.'],
+['Energía','Potencia de un torque','P = τ·ω']])}
+`}]});
+
+  /* ---------------- C3 ---------------- */
+  T.push({id:'C3',group:'rot',title:'Momentos de inercia y Steiner',short:'Tabla de I y cómo trasladarlo a otro eje paralelo.',
+  lead:'Casi nunca vas a integrar en un parcial: vas a usar los momentos de inercia de tabla y, si el eje está corrido, el teorema de Steiner.',
+  sections:[
+  {id:'tabla',label:'Tabla de momentos',html:`
+${table(['Cuerpo','Eje','I'],[
+ ['Partícula','a distancia r',m('mr^2')],
+ ['Aro / cilindro hueco delgado','por su eje',m('MR^2')],
+ ['Disco / cilindro macizo','por su eje',m('\\tfrac12MR^2')],
+ ['Varilla','por el centro, perpendicular',m('\\tfrac1{12}ML^2')],
+ ['Varilla','por un extremo, perpendicular',m('\\tfrac13ML^2')],
+ ['Esfera maciza','por un diámetro',m('\\tfrac25MR^2')],
+ ['Esfera hueca (cáscara)','por un diámetro',m('\\tfrac23MR^2')]])}
+${idea('Cómo recordarlos',`<p>El coeficiente dice qué tan lejos del eje está la masa “en promedio”. El aro tiene toda la masa en el borde → coeficiente 1. El disco tiene masa también cerca del centro → ½. La esfera maciza concentra más masa cerca del eje → ⅖, menos que la hueca (⅔).</p>`)}
+`},
+  {id:'steiner',label:'Teorema de Steiner',html:`
+${fig(F.steiner,'Steiner pasa de un eje por el CM a otro eje paralelo, separado d.')}
+${key(R`I_P=I_{CM}+M\,d^2`,'Ejes paralelos')}
+${sym([[R`I_{CM}`,'momento respecto del eje por el centro de masa','kg·m²'],[R`I_P`,'momento respecto del eje paralelo que pasa por P','kg·m²'],['d','distancia entre los dos ejes','m']])}
+<p>Comprobación con la varilla: pasamos del centro a un extremo, que está a ${m('d=L/2')}.</p>
+${chain([R`I_{ext}=\tfrac1{12}ML^2+M\left(\tfrac L2\right)^2`,'Steiner'],[R`I_{ext}=\tfrac1{12}ML^2+\tfrac{3}{12}ML^2=\tfrac13ML^2`,'coincide con la tabla ✓'])}
+${warn('Condiciones',`<p>1) Los ejes tienen que ser <b>paralelos</b>. 2) Uno de los dos <b>tiene que pasar por el CM</b>. ${simple('Para ir de un eje cualquiera a otro, pasá primero por el CM')}</p>`)}
+${idea('Consecuencia útil',`<p>Como ${m('Md^2\\ge0')}, el eje por el CM es el de <b>menor</b> momento de inercia entre todos los paralelos.</p>`)}
+${example('Varilla con eje corrido',
+  `Una varilla de ${m('M=1{,}2\\ \\mathrm{kg}')} y ${m('L=0{,}9\\ \\mathrm m')} gira por un eje perpendicular ubicado a 15 cm de un extremo. Hallá I.`,
+  chain([R`d=\tfrac L2-0{,}15=0{,}45-0{,}15=0{,}30\ \mathrm m`,'distancia del eje al centro'],[R`I_{CM}=\tfrac1{12}(1{,}2)(0{,}9)^2=0{,}081\ \mathrm{kg\,m^2}`],[R`I_P=0{,}081+1{,}2\,(0{,}30)^2=0{,}189\ \mathrm{kg\,m^2}`,'Steiner']),
+  `${m('I_P=0{,}189\\ \\mathrm{kg\\,m^2}')}`)}
+${example('Disco colgado de un punto del borde',
+  `¿Cuánto vale I para un disco de masa M y radio R que gira por un eje perpendicular que pasa por su borde?`,
+  chain([R`I_P=\tfrac12MR^2+MR^2=\tfrac32MR^2`,'d = R']),`${m('I_P=\\tfrac32MR^2')} ${simple('se usa en el péndulo físico de un disco, tema C8')}`)}
+${lab('steiner','Moveé el eje de una varilla','Arrastrá el control para correr el eje desde el centro hasta el extremo. Mirá cómo crece I con d².',slider('x','Eje a',0,100,1,50)+`<svg class="stage" viewBox="0 0 480 140" data-stage></svg>`+out)}
+`},
+  {id:'parciales',label:'Uso en parciales',html:`
+${ul(['<b>Varilla con bala o bloque pegado:</b> I de la varilla respecto del pivote + '+m('m d^2')+' de lo que se pega.','<b>Péndulo físico:</b> siempre necesitás '+m('I_P')+' respecto del pivote, no '+m('I_{CM}')+'.','<b>Discos, cilindros y poleas:</b> casi siempre '+m('\\tfrac12MR^2')+', salvo que diga hueco o aro.','<b>Cuerpos compuestos:</b> el I total es la suma de los I de cada parte, todos respecto del mismo eje.'])}
+${err('Errores típicos',ul(['Usar '+m('I_{CM}')+' cuando el eje está en un extremo o en un agujero.','Olvidar el '+m('md^2')+' de una masa puntual pegada.','Confundir esfera maciza (⅖) con hueca (⅔).','Aplicar Steiner entre dos ejes que no pasan por el CM.']))}
+${cards([['Fórmula','Teorema de Steiner','I_P = I_CM + M·d², con ejes paralelos y uno por el CM.'],
+['Tabla','Varilla por el centro / por un extremo','1/12·ML²  /  1/3·ML²'],
+['Tabla','Disco macizo y aro','½·MR²  y  MR²'],
+['Tabla','Esfera maciza y hueca','2/5·MR²  y  2/3·MR²'],
+['Concepto','¿Qué eje paralelo da el menor I?','El que pasa por el centro de masa.']])}
+`}]});
+
+  /* ---------------- C4 ---------------- */
+  T.push({id:'C4',group:'rot',title:'Rodadura, poleas y carretes',short:'Rodar sin deslizar: traslación + rotación al mismo tiempo.',
+  lead:'Rodar sin deslizar es trasladarse y girar a la vez, con una condición que los ata: el punto que toca el piso está quieto en ese instante.',
+  sections:[
+  {id:'condicion',label:'La condición de rodadura',html:`
+${fig(F.roll,'Contacto quieto, centro a v, punto de arriba a 2v.')}
+<p>Cada punto de la rueda suma la velocidad del centro (traslación) más ${m('\\omega r')} (rotación). En el punto de contacto esas dos se restan y dan cero; arriba se suman y dan el doble.</p>
+${chain([R`v_{CM}=R\,\omega`,'condición de rodadura'],[R`a_{CM}=R\,\alpha`,'derivando'],[R`v_{arriba}=2\,v_{CM}`,'el punto superior'])}
+${idea('¿Y el rozamiento?',`<p>En rodadura pura el rozamiento es <b>estático</b>: el punto de contacto no resbala. Por eso puede hacer torque pero <b>no disipa energía</b>. ${simple('Se puede usar conservación de la energía aunque haya rozamiento')}</p>`)}
+`},
+  {id:'energia',label:'Energía y aceleración',html:`
+${key(R`E_c=\tfrac12M\,v_{CM}^2+\tfrac12I_{CM}\,\omega^2`,'Traslación + rotación')}
+<p>Otra forma: pensar que, en cada instante, la rueda gira alrededor del punto de contacto A.</p>
+${chain([R`I_A=I_{CM}+MR^2`,'Steiner al punto de contacto'],[R`E_c=\tfrac12\left(I_{CM}+MR^2\right)\omega^2=\tfrac12I_A\,\omega^2`,'da lo mismo'])}
+<h3>Bajando por un plano inclinado</h3>
+${fig(F.incline,'El rozamiento estático apunta hacia arriba del plano y hace girar al cuerpo.')}
+<p>Escribamos ${m('I_{CM}=c\\,MR^2')} (c = ½ disco, 1 aro, ⅖ esfera…). Con Newton + torque + rodadura:</p>
+${chain([R`Mg\sin\theta-f_e=M\,a_{CM}`,'traslación a lo largo del plano'],[R`f_e\,R=I_{CM}\,\alpha=c\,MR^2\,\frac{a_{CM}}{R}`,'rotación respecto del CM'],[R`f_e=c\,M\,a_{CM}`,'simplifico'],[R`a_{CM}=\frac{g\sin\theta}{1+c}`,'reemplazo en la primera'])}
+<p>Por energía, bajando una altura h desde el reposo:</p>
+${chain([R`Mgh=\tfrac12Mv^2+\tfrac12\,cMR^2\left(\tfrac vR\right)^2`],[R`v=\sqrt{\frac{2gh}{1+c}}`,'no depende de M ni de R'])}
+${idea('Conclusión que toman en los parciales',`<p>Gana la carrera el que tiene <b>menor c</b>: esfera maciza (0,4) &gt; disco (0,5) &gt; esfera hueca (0,67) &gt; aro (1). Un bloque sin rozamiento (c = 0) les gana a todos. ${simple('Todo lo que se va en hacer girar no se va en avanzar')}</p>`)}
+${lab('race','Carrera por el plano inclinado','Todos parten juntos desde la misma altura. Cambiá el ángulo y largá.',slider('ang','Ángulo',5,60,1,30)+`<svg class="stage" viewBox="0 0 480 250" data-stage></svg><div class="btnRow"><button type="button" class="btn primary" data-go>▶ Largar</button><button type="button" class="btn" data-reset>Reiniciar</button></div>`+out)}
+${example('Disco que baja rodando',
+  `Un disco de 2 kg baja rodando sin deslizar por un plano de 30°, desde el reposo y una altura de 2 m. Hallá ${m('a_{CM}')}, la rapidez abajo y el rozamiento.`,
+  chain([R`a_{CM}=\frac{9{,}8\cdot\sin30^\circ}{1+\tfrac12}=3{,}27\ \mathrm{m/s^2}`,'c = ½'],[R`v=\sqrt{\frac{2\cdot9{,}8\cdot2}{1{,}5}}=5{,}11\ \mathrm{m/s}`],[R`f_e=\tfrac12\,M\,a_{CM}=\tfrac12\cdot2\cdot3{,}27=3{,}27\ \mathrm N`,'estático, no disipa']),
+  `${m('a\\approx3{,}27\\ \\mathrm{m/s^2}')}, ${m('v\\approx5{,}11\\ \\mathrm{m/s}')}, ${m('f_e\\approx3{,}27\\ \\mathrm N')} (hacia arriba del plano).`)}
+`},
+  {id:'cuerdas',label:'Cuerdas, poleas y carretes',html:`
+<p>La clave es saber <b>qué punto del cuerpo</b> está unido a la cuerda y cuánto se mueve ese punto.</p>
+${table(['Situación','Relación de la cuerda'],[
+ ['Polea o tambor fijo, la cuerda no desliza',m('a=R\\alpha')],
+ ['Cilindro que rueda y la cuerda sale por arriba',m('a_{cuerda}=2R\\alpha')+' (el punto de arriba va al doble)'],
+ ['Carrete: cuerda en el radio chico r',m('a_{cuerda}=\\alpha(R\\pm r)')],
+ ['Polea con masa entre dos tramos',m('(T_2-T_1)R=I\\alpha')]])}
+${fig(F.spool,'Carrete: la cuerda sale del radio chico. Medí todo desde el punto de contacto con el piso.')}
+${idea('Por qué R ± r',`<p>En rodadura todo gira alrededor del punto de contacto. El punto de donde sale la cuerda está a ${m('R+r')} del piso si sale por arriba del eje, o a ${m('R-r')} si sale por abajo. Su aceleración es esa distancia por α.</p>`)}
+<div class="box method"><b>Método para rodadura con cuerdas</b>${ol(['Dibujar fuerzas: peso, normal, tensión y rozamiento.','Plantear '+m('\\sum F=Ma_{CM}')+'.','Plantear '+m('\\sum\\tau_{CM}=I_{CM}\\alpha')+'.','Agregar rodadura: '+m('a_{CM}=R\\alpha')+'.','Agregar la relación correcta de la cuerda.'])}</div>
+`},
+  {id:'repaso',label:'Errores y repaso',html:`
+${err('Usar sólo ½Mv²',`<p>Si rueda, la energía tiene dos términos: traslación y rotación.</p>`)}
+${err('Rozamiento “que frena”',`<p>En rodadura pura el rozamiento es estático y no disipa: no restes energía por él.</p>`)}
+${err('a = Rα para todo',`<p>Si la cuerda sale por arriba de un cilindro que rueda, su punto va al doble: ${m('a=2R\\alpha')}.</p>`)}
+${cards([['Condición','Rodar sin deslizar','v_CM = R·ω y a_CM = R·α; el punto de contacto está instantáneamente quieto.'],
+['Energía','Energía cinética de algo que rueda','½·M·v_CM² + ½·I_CM·ω²'],
+['Resultado','Aceleración al bajar rodando un plano','a = g·sen θ / (1 + c), con I_CM = c·M·R²'],
+['Concepto','¿Quién llega primero: aro o disco?','El disco: tiene menor c (½ < 1).'],
+['Trampa','¿El rozamiento estático disipa energía en rodadura pura?','No: el punto de contacto no resbala.']])}
+`}]});
+
+  /* ---------------- C5 ---------------- */
+  T.push({id:'C5',group:'rot',title:'Equilibrio estático',short:'Vigas, escaleras y barras: ΣF = 0 y Στ = 0.',
+  lead:'Un cuerpo está en equilibrio cuando no acelera ni traslacional ni angularmente. Para un cuerpo extenso no alcanza con que las fuerzas se cancelen: también tienen que cancelarse los torques.',
+  sections:[
+  {id:'condiciones',label:'Las dos condiciones',html:`
+${keys([[R`\sum F_x=0\qquad\sum F_y=0`,'No traslada'],[R`\sum\tau=0`,'No rota (respecto de cualquier punto)']])}
+${sym([[R`\tau=d\,F`,'torque: brazo perpendicular por fuerza','N·m'],[R`f_e\le\mu_eN`,'rozamiento estático: se adapta hasta un máximo','N'],[R`f_e=\mu_eN`,'sólo “a punto de deslizar”','N'],[R`f_d=\mu_dN`,'rozamiento dinámico (si ya desliza)','N']])}
+${idea('El truco más importante',`<p>Si el cuerpo está en equilibrio, ${m('\\sum\\tau=0')} vale <b>respecto de cualquier punto</b>. Elegí el punto por donde pasan más incógnitas: esas fuerzas tienen brazo cero y desaparecen de la ecuación. ${simple('Una ecuación, una incógnita')}</p>`)}
+${idea('El peso va en el centro de masa',`<p>Una viga uniforme se reemplaza por su peso aplicado en el medio.</p>`)}
+`},
+  {id:'viga',label:'Vigas y barras',html:`
+${fig(F.beam,'Viga uniforme sobre dos apoyos, con una carga P.')}
+${example('Viga con una carga',
+  `Una viga uniforme de 4 m pesa 200 N y está apoyada en sus extremos A y B. Se apoya una carga de 600 N a 1 m de A. Hallá las reacciones.`,
+  step('1 · Torques respecto de A (elimina N_A)',chain([R`N_B\cdot4-200\cdot2-600\cdot1=0`,'antihorario +'],[R`N_B=\frac{400+600}{4}=250\ \mathrm N`]))+
+  step('2 · Fuerzas verticales',chain([R`N_A+N_B-200-600=0`],[R`N_A=800-250=550\ \mathrm N`])),
+  `${m('N_A=550\\ \\mathrm N')} y ${m('N_B=250\\ \\mathrm N')}. ${simple('El apoyo más cercano a la carga soporta más')}`)}
+${lab('beam','Viga sobre dos apoyos','Mové la carga y mirá cómo se reparte entre los apoyos.',fields(field('L','Largo L (m)',4),field('W','Peso de la viga W (N)',200),field('P','Carga P (N)',600))+slider('x','Posición de P desde A',0,100,1,25)+`<svg class="stage" viewBox="0 0 480 170" data-stage></svg>`+out)}
+`},
+  {id:'escalera',label:'Escaleras y rozamiento',html:`
+${fig(F.ladder,'Pared lisa (sólo normal) y piso con rozamiento.')}
+<p>El planteo típico: ¿qué rozamiento mínimo hace falta para que no deslice? Se toman momentos respecto del pie de la escalera, porque ahí actúan N y ${m('f_e')}.</p>
+${example('Escalera a punto de deslizar',
+  `Una escalera uniforme de peso W = 200 N forma 60° con el piso y se apoya en una pared lisa. ¿Qué ${m('\\mu_e')} mínimo necesita el piso?`,
+  chain([R`N=W=200\ \mathrm N`,'ΣF_y = 0'],[R`f_e=N_p`,'ΣF_x = 0'],[R`N_p\,L\sin60^\circ=W\,\tfrac L2\cos60^\circ`,'Στ respecto del pie'],[R`N_p=\frac{W}{2\tan60^\circ}=57{,}7\ \mathrm N`],[R`\mu_{e,min}=\frac{f_e}{N}=\frac{57{,}7}{200}\approx0{,}29`,'a punto de deslizar: f_e = μ_e N']),
+  `${m('\\mu_e\\ge0{,}29')}. ${simple('Más inclinada (ángulo chico) → hace falta más rozamiento')}`)}
+${warn('¿Igual o menor?',`<p>Usá ${m('f_e=\\mu_eN')} sólo si dice “a punto de deslizar”, “mínimo”, “máximo” o “justo”. Si no, el rozamiento es una incógnita más con ${m('f_e\\le\\mu_eN')}.</p>`)}
+`},
+  {id:'repaso',label:'Errores y repaso',html:`
+${err('Sólo sumar fuerzas',`<p>Con ${m('\\sum F=0')} solo, una barra todavía puede girar. Siempre agregá ${m('\\sum\\tau=0')}.</p>`)}
+${err('Brazo mal medido',`<p>El brazo es la distancia <b>perpendicular</b> a la recta de acción de la fuerza, no la distancia al punto de aplicación (salvo que sean perpendiculares).</p>`)}
+${cards([['Condiciones','¿Qué pide el equilibrio de un cuerpo extenso?','ΣFx = 0, ΣFy = 0 y Στ = 0.'],
+['Truco','¿Dónde tomar momentos?','En el punto por donde pasan más fuerzas desconocidas (pivote, apoyo, pie de la escalera).'],
+['Rozamiento','¿Cuándo f_e = μ_e·N?','Sólo en el límite: “a punto de deslizar”.'],
+['Concepto','Viga uniforme: ¿dónde va su peso?','En su centro (el centro de masa).']])}
+`}]});
+})();
+</script>
+<script>
+/* ================= 4b) Contenido · Oscilaciones (C6–C8) ================= */
+(function(){
+  'use strict';
+  const K=window.Kit,F=window.FIG,R=String.raw;
+  const {M,m,chain,key,keys,sym,simple,idea,warn,err,ok,two,ul,ol,deep,example,step,table,fig,cards,lab,field,select,fields,slider,out}=K;
+  const T=window.TOPICS;
+
+  /* ---------------- C6 ---------------- */
+  T.push({id:'C6',group:'osc',title:'Oscilaciones y resortes (MAS)',short:'x(t) = A cos(Ωt + φ), período, amplitud y fase.',
+  lead:'Hay movimiento armónico simple (MAS) cuando la fuerza neta empuja siempre hacia el equilibrio y es proporcional a lo que te alejaste. El resultado es una oscilación que se describe con un coseno.',
+  sections:[
+  {id:'idea',label:'¿Cuándo hay MAS?',html:`
+<p>Un resorte ideal tira con ${m('F=-kx')}: cuanto más lo estirás, más fuerte tira, y siempre hacia el equilibrio. ${simple('El signo menos dice “hacia el otro lado”')}</p>
+${chain([R`m\,x''=-k\,x`,'Newton con la fuerza del resorte'],[R`x''+\frac km\,x=0`,'paso todo a un lado'],[R`x''+\Omega^2x=0,\quad \Omega=\sqrt{\tfrac km}`,'ecuación del MAS'])}
+${key(R`a=-\Omega^2\,x`,'Firma del MAS')}
+${idea('Cómo reconocerlo en un ejercicio',`<p>Si después de plantear Newton (o torques) te queda “derivada segunda = − (algo positivo) × la misma variable”, es un MAS y lo que multiplica es ${m('\\Omega^2')}. Este mismo truco sirve para péndulos (C8).</p>`)}
+${lab('spring','Resorte en vivo','Cambiá k, m y la amplitud. Mirá cómo cambia el período y el gráfico x(t).',slider('k','k (N/m)',20,400,10,200)+slider('m','m (kg)',0.1,2,0.1,0.5)+slider('A','A (cm)',1,10,0.5,5)+`<svg class="stage" viewBox="0 0 480 230" data-stage></svg><div class="btnRow"><button type="button" class="btn primary" data-play>⏸ Pausa</button></div>`+out)}
+`},
+  {id:'solucion',label:'La solución x(t)',html:`
+${key(R`x(t)=A\cos(\Omega t+\varphi)`,'Posición')}
+${chain([R`v(t)=-\Omega A\sin(\Omega t+\varphi)`,'derivo una vez'],[R`a(t)=-\Omega^2A\cos(\Omega t+\varphi)=-\Omega^2x`,'derivo otra vez'])}
+${sym([['x','apartamiento desde el equilibrio','m'],['A','amplitud: apartamiento máximo','m'],[R`\Omega`,'frecuencia angular del MAS','rad/s'],[R`\varphi`,'fase inicial','rad'],['T','período: tiempo de una oscilación','s'],['f','frecuencia: oscilaciones por segundo','Hz']])}
+${chain([R`\Omega=\frac{2\pi}{T}=2\pi f`],[R`T=2\pi\sqrt{\frac mk}`,'resorte'],[R`f=\frac1T`])}
+${keys([[R`v_{max}=\Omega A`,'En el equilibrio'],[R`a_{max}=\Omega^2A`,'En los extremos']])}
+${warn('Ω no es ω',`<p>Usamos ${m('\\Omega')} para la frecuencia angular de la oscilación y dejamos ${m('\\omega')} para la velocidad angular de algo que gira. En el péndulo físico aparecen las dos y no son lo mismo.</p>`)}
+${idea('El período no depende de la amplitud',`<p>Un resorte tarda lo mismo en oscilar 1 cm que 10 cm: más lejos, pero con más fuerza y más velocidad.</p>`)}
+`},
+  {id:'iniciales',label:'Amplitud y fase con condiciones iniciales',html:`
+<p>A y φ salen de dónde está y qué velocidad tiene en ${m('t=0')}:</p>
+${chain([R`x_0=A\cos\varphi`,'x(0)'],[R`v_0=-\Omega A\sin\varphi`,'v(0)'],[R`A=\sqrt{x_0^2+\left(\frac{v_0}{\Omega}\right)^2}`,'sumo cuadrados'],[R`\tan\varphi=-\frac{v_0}{\Omega\,x_0}`,'divido (ojo el cuadrante)'])}
+${table(['Cómo arranca','Condiciones','Conviene escribir'],[
+ ['Lo separás y lo soltás',m('x_0=A,\\ v_0=0'),m('x=A\\cos(\\Omega t)')],
+ ['Parte del equilibrio con un golpe',m('x_0=0,\\ v_0'),m('x=\\tfrac{v_0}{\\Omega}\\sin(\\Omega t)')],
+ ['Caso general',m('x_0,\\ v_0'),'las dos ecuaciones de arriba']])}
+${example('Amplitud y fase',
+  `Un bloque de 0,5 kg unido a un resorte de 200 N/m pasa por ${m('x_0=3\\ \\mathrm{cm}')} con ${m('v_0=0{,}8\\ \\mathrm{m/s}')} hacia +x en t = 0. Hallá Ω, T, A y φ.`,
+  chain([R`\Omega=\sqrt{\tfrac{200}{0{,}5}}=20\ \mathrm{rad/s}`],[R`T=\tfrac{2\pi}{20}=0{,}314\ \mathrm s`],[R`A=\sqrt{0{,}03^2+\left(\tfrac{0{,}8}{20}\right)^2}=\sqrt{0{,}0009+0{,}0016}=0{,}05\ \mathrm m`],[R`\cos\varphi=\tfrac{0{,}03}{0{,}05}=0{,}6\qquad \sin\varphi=-\tfrac{0{,}8}{20\cdot0{,}05}=-0{,}8`],[R`\varphi\approx-0{,}927\ \mathrm{rad}\ (-53^\circ)`,'cuarto cuadrante']),
+  `${m('x(t)=0{,}05\\cos(20t-0{,}927)')} en metros. ${simple('φ negativo: “va camino” al máximo')}`)}
+${warn('No confundas amplitud con posición inicial',`<p>Si arranca en el equilibrio con velocidad, ${m('x_0=0')} pero ${m('A\\ne0')}: ${m('A=v_0/\\Omega')}.</p>`)}
+`},
+  {id:'vertical',label:'Resorte vertical y resortes combinados',html:`
+${fig(F.vspring,'Si medís desde el equilibrio, el peso ya está “descontado”.')}
+<p>Colgado, el resorte se estira hasta que la fuerza elástica equilibra al peso. Ese es el nuevo equilibrio:</p>
+${chain([R`k\,(y_e-l_0)=m\,g`,'equilibrio'],[R`y_e=l_0+\frac{mg}{k}`],[R`\delta y=y-y_e\qquad F_y=-k\,\delta y`,'medido desde el equilibrio'])}
+${idea('Lo bueno',`<p>Medido desde ${m('y_e')}, la ecuación queda igual que la horizontal: ${m("\\delta y''+\\tfrac km\\,\\delta y=0")}. El período es el mismo: ${m('2\\pi\\sqrt{m/k}')}. La gravedad sólo corre el centro de la oscilación.</p>`)}
+${err('Sumar mg dos veces',`<p>Si ya tomaste el origen en el equilibrio, no vuelvas a poner el peso en la ecuación.</p>`)}
+<h3>Dos resortes que actúan juntos</h3>
+${key(R`k_{eq}=k_1+k_2`,'Uno de cada lado, o los dos en paralelo')}
+<p>Si un bloque está entre dos resortes (uno a cada lado), al moverlo uno se estira y el otro se comprime: <b>los dos</b> empujan hacia el equilibrio y sus constantes se suman.</p>
+`},
+  {id:'repaso',label:'Errores y repaso',html:`
+${cards([['Firma','¿Qué ecuación indica MAS?','x″ + Ω²·x = 0  (o a = −Ω²·x)'],
+['Fórmula','Período de un resorte','T = 2π·√(m/k)'],
+['Máximos','¿Dónde es máxima la velocidad? ¿Y la aceleración?','v máx = ΩA en el equilibrio; a máx = Ω²A en los extremos.'],
+['Condiciones','Amplitud a partir de x₀ y v₀','A = √(x₀² + (v₀/Ω)²)'],
+['Vertical','¿Cambia el período si cuelga verticalmente?','No. Sólo se corre el equilibrio a yₑ = l₀ + mg/k.'],
+['Trampa','¿T depende de la amplitud?','No, en el MAS ideal.']])}
+`}]});
+
+  /* ---------------- C7 ---------------- */
+  T.push({id:'C7',group:'osc',title:'Energía en el MAS',short:'La energía va y viene entre cinética y potencial.',
+  lead:'Sin rozamiento, la energía mecánica de un oscilador no cambia: sólo se pasa de potencial (en los extremos) a cinética (en el centro) y vuelta.',
+  sections:[
+  {id:'balance',label:'El balance',html:`
+${keys([[R`U=\tfrac12k\,x^2`,'Potencial elástica'],[R`E_c=\tfrac12m\,v^2`,'Cinética'],[R`E_m=\tfrac12k\,A^2`,'Total (constante)']])}
+${chain([R`\tfrac12kA^2=\tfrac12mv^2+\tfrac12kx^2`,'conservación'],[R`E_c(x)=\tfrac12k\left(A^2-x^2\right)`,'cinética en cada posición'],[R`v(x)=\Omega\sqrt{A^2-x^2}`,'velocidad sin usar el tiempo'])}
+${two(idea('En los extremos x = ±A',`<p>${m('v=0')}: toda la energía es potencial.</p>`),idea('En el equilibrio x = 0',`<p>${m('v=v_{max}')}: toda la energía es cinética.</p>`))}
+${lab('energy','Energía que va y viene','Mirá las barras: la suma queda fija.',slider('A','Amplitud (cm)',1,10,0.5,5)+`<svg class="stage" viewBox="0 0 480 120" data-stage></svg><div class="bars"><div class="bar"><span>U</span><div><i data-u style="background:var(--violet)"></i></div><em data-ut></em></div><div class="bar"><span>E_c</span><div><i data-k style="background:var(--accent)"></i></div><em data-kt></em></div><div class="bar"><span>Total</span><div><i data-e style="background:var(--ok)"></i></div><em data-et></em></div></div>`+out)}
+`},
+  {id:'tiempo',label:'Energía en función del tiempo',html:`
+${chain([R`U(t)=\tfrac12kA^2\cos^2(\Omega t+\varphi)`],[R`E_c(t)=\tfrac12kA^2\sin^2(\Omega t+\varphi)`],[R`U+E_c=\tfrac12kA^2\left(\cos^2+\sin^2\right)=\tfrac12kA^2`,'cos² + sen² = 1'])}
+${idea('En los gráficos',`<p>U y E_c oscilan <b>al doble de frecuencia</b> que x (cada oscilación pasa dos veces por cada extremo) y nunca son negativas. Son espejos: cuando una es máxima, la otra es cero.</p>`)}
+${example('Velocidad en una posición',
+  `Mismo oscilador de C6: k = 200 N/m, m = 0,5 kg, A = 5 cm. ¿Cuál es la energía total y qué velocidad tiene en x = 3 cm?`,
+  chain([R`E_m=\tfrac12(200)(0{,}05)^2=0{,}25\ \mathrm J`],[R`E_c=\tfrac12(200)\left(0{,}05^2-0{,}03^2\right)=0{,}16\ \mathrm J`],[R`v=\sqrt{\tfrac{2\cdot0{,}16}{0{,}5}}=0{,}8\ \mathrm{m/s}`,'coincide con v₀ de C6 ✓']),
+  `${m('E_m=0{,}25\\ \\mathrm J')} y ${m('v=0{,}8\\ \\mathrm{m/s}')}.`)}
+${cards([['Fórmula','Energía total de un MAS','E = ½·k·A²'],['Uso','¿Cómo hallar v en una posición x sin el tiempo?','½k(A² − x²) = ½mv² → v = Ω·√(A² − x²)'],['Gráfico','¿Con qué frecuencia oscilan U y E_c?','Al doble que x.'],['Concepto','¿Dónde toda la energía es potencial?','En los extremos, x = ±A.']])}
+`}]});
+
+  /* ---------------- C8 ---------------- */
+  T.push({id:'C8',group:'osc',title:'Péndulos',short:'Simple (masa + hilo) y físico (cuerpo rígido).',
+  lead:'Un péndulo es un MAS “disfrazado”: para ángulos chicos, el torque del peso es proporcional al ángulo y sale la misma ecuación que el resorte.',
+  sections:[
+  {id:'simple',label:'Péndulo simple',html:`
+${fig(F.pendulums,'Simple: toda la masa en un punto. Físico: un cuerpo con tamaño que cuelga de un pivote.')}
+<p>La componente del peso a lo largo de la trayectoria es ${m('-mg\\sin\\theta')}. Para ángulos chicos, ${m('\\sin\\theta\\approx\\theta')} (en radianes):</p>
+${chain([R`m\,L\,\theta''=-m\,g\sin\theta`,'Newton tangencial'],[R`\theta''+\frac gL\,\sin\theta=0`],[R`\theta''+\frac gL\,\theta=0`,'ángulo chico: sen θ ≈ θ'],[R`\Omega=\sqrt{\frac gL}`,'MAS'])}
+${key(R`T=2\pi\sqrt{\frac Lg}`,'Péndulo simple')}
+${idea('No depende de la masa',`<p>Más masa → más peso, pero también más inercia: se compensan. Sólo importan L y g.</p>`)}
+`},
+  {id:'fisico',label:'Péndulo físico',html:`
+<p>Ahora el cuerpo tiene tamaño. El peso actúa en el CM, a distancia d del pivote, y hace torque restaurador:</p>
+${sym([['M','masa total','kg'],['d','distancia del pivote al centro de masa','m'],[R`I_P`,'momento de inercia respecto del pivote','kg·m²'],[R`I_{CM}`,'momento respecto del centro de masa','kg·m²']])}
+${chain([R`\tau=-M\,g\,d\sin\theta`,'torque del peso'],[R`I_P\,\theta''=-M\,g\,d\,\theta`,'Στ = Iα con sen θ ≈ θ'],[R`\Omega=\sqrt{\frac{M\,g\,d}{I_P}}`],[R`I_P=I_{CM}+M\,d^2`,'casi siempre con Steiner'])}
+${key(R`T=2\pi\sqrt{\frac{I_P}{M\,g\,d}}`,'Péndulo físico')}
+${idea('Chequeo',`<p>Si toda la masa está en un punto a distancia L: ${m('I_P=ML^2')}, ${m('d=L')} y queda ${m('2\\pi\\sqrt{L/g}')}. El simple es un caso particular del físico.</p>`)}
+${table(['Cuerpo y pivote','I_P','d','T'],[
+ ['Varilla colgada de un extremo',m('\\tfrac13ML^2'),m('\\tfrac L2'),m('2\\pi\\sqrt{\\tfrac{2L}{3g}}')],
+ ['Disco colgado de un punto del borde',m('\\tfrac32MR^2'),m('R'),m('2\\pi\\sqrt{\\tfrac{3R}{2g}}')],
+ ['Aro colgado de un punto',m('2MR^2'),m('R'),m('2\\pi\\sqrt{\\tfrac{2R}{g}}')]])}
+${example('Varilla de 1 m colgada de un extremo',
+  `Comparala con un péndulo simple de 1 m (g = 9,8 m/s²).`,
+  chain([R`T_{simple}=2\pi\sqrt{\tfrac{1}{9{,}8}}=2{,}01\ \mathrm s`],[R`T_{varilla}=2\pi\sqrt{\frac{\tfrac13ML^2}{Mg\,\tfrac L2}}=2\pi\sqrt{\frac{2L}{3g}}`],[R`T_{varilla}=2\pi\sqrt{\tfrac{2}{29{,}4}}=1{,}64\ \mathrm s`]),
+  `La varilla oscila más rápido (1,64 s contra 2,01 s): su masa está repartida y “en promedio” más cerca del pivote.`)}
+${example('Disco colgado del borde',
+  `Un disco de radio 20 cm cuelga de un clavo que pasa por un punto de su borde. ¿Período de pequeñas oscilaciones?`,
+  chain([R`I_P=\tfrac12MR^2+MR^2=\tfrac32MR^2`,'Steiner, d = R'],[R`T=2\pi\sqrt{\frac{\tfrac32MR^2}{MgR}}=2\pi\sqrt{\frac{3R}{2g}}`],[R`T=2\pi\sqrt{\tfrac{0{,}6}{19{,}6}}\approx1{,}10\ \mathrm s`]),
+  `${m('T\\approx1{,}10\\ \\mathrm s')} (no depende de la masa).`)}
+`},
+  {id:'minimo',label:'Período mínimo y energía',html:`
+<p>Si corrés el pivote a lo largo del cuerpo, el período cambia. Hay una distancia que lo hace mínimo:</p>
+${chain([R`T(d)=2\pi\sqrt{\frac{I_{CM}+Md^2}{M\,g\,d}}`],[R`\frac{dT}{dd}=0\ \Rightarrow\ Md^2=I_{CM}`],[R`d_{min}=\sqrt{\frac{I_{CM}}{M}}`,'“radio de giro”'])}
+${lab('physpend','Período de una varilla según dónde la cuelgues','Varilla de 1 m. Mové el pivote: con d muy chico o muy grande el período crece.',slider('d','d (cm)',3,50,1,29)+`<svg class="stage" viewBox="0 0 480 230" data-stage></svg>`+out)}
+<h3>Con energía</h3>
+${chain([R`\Delta U=M\,g\,d\,(1-\cos\theta)`,'el CM sube'],[R`E_{c,rot}=\tfrac12\,I_P\,\omega_{ang}^2`,'gira alrededor del pivote'],[R`\omega_{ang,max}=\Omega\,\theta_{max}`,'si es MAS'])}
+${warn('Dos “omegas”',`<p>${m('\\Omega')} es cuánto “late” la oscilación (fija). ${m('\\omega_{ang}')} es la velocidad angular del cuerpo en cada instante (vale 0 en los extremos y ${m('\\Omega\\theta_{max}')} abajo).</p>`)}
+${err('Errores típicos',ul(['Usar grados en '+m('\\sin\\theta\\approx\\theta')+': siempre radianes.','Usar el péndulo simple cuando el cuerpo tiene tamaño.','Olvidar Steiner si el pivote no pasa por el CM.','Poner '+m('I_{CM}')+' en la fórmula del período en lugar de '+m('I_P')+'.']))}
+${cards([['Fórmula','Período del péndulo simple','T = 2π·√(L/g)'],['Fórmula','Período del péndulo físico','T = 2π·√(I_P / (M·g·d))'],['Concepto','¿Qué es d en el péndulo físico?','La distancia del pivote al centro de masa.'],['Resultado','¿Dónde colgarlo para que el período sea mínimo?','A d = √(I_CM/M) del centro de masa.'],['Trampa','¿Se puede usar sen θ ≈ θ con θ en grados?','No: sólo en radianes.']])}
+`}]});
+})();
+</script>
+<script>
+/* ================= 4c) Contenido · Fluidos (C9–C13) y cómo elegir (C14) ================= */
+(function(){
+  'use strict';
+  const K=window.Kit,F=window.FIG,R=String.raw;
+  const {M,m,chain,key,keys,sym,simple,idea,warn,err,ok,two,ul,ol,deep,example,step,table,fig,cards,lab,field,select,fields,slider,out}=K;
+  const T=window.TOPICS;
+  const decide=rows=>`<div class="decide">${rows.map(([si,tema,f])=>`<div><small>Si tiene…</small><b>${si}</b><span>→ ${tema}</span><div class="decideF">${f}</div></div>`).join('')}</div>`;
+
+  /* ---------------- C9 ---------------- */
+  T.push({id:'C9',group:'est',title:'Fluidos en reposo: presión',short:'p = p₀ + ρgh, absoluta y manométrica, capas.',
+  lead:'En un fluido quieto la presión crece con la profundidad, porque cada punto soporta el peso de la columna de fluido que tiene encima.',
+  sections:[
+  {id:'presion',label:'¿Qué es la presión?',html:`
+${key(R`p=\frac{F_n}{A}`,'Fuerza normal por unidad de área')}
+${chain([R`F=p\,A`,'fuerza sobre una superficie plana'],[R`1\ \mathrm{Pa}=1\ \mathrm{N/m^2}`],[R`1\ \mathrm{atm}=1{,}013\times10^5\ \mathrm{Pa}=760\ \mathrm{mmHg}`])}
+<p>La presión no tiene dirección: en un punto del fluido empuja igual para todos lados y siempre perpendicular a cualquier pared. ${simple('Por eso el agua empuja las paredes de una pileta hacia afuera y el fondo hacia abajo')}</p>
+`},
+  {id:'profundidad',label:'Presión y profundidad',html:`
+<p>Tomemos una “columna” de fluido de área A y alto h. Para que esté quieta, la fuerza de abajo tiene que sostener la de arriba más su peso:</p>
+${chain([R`p\,A=p_0\,A+\rho\,(A\,h)\,g`,'equilibrio de la columna'],[R`p=p_0+\rho\,g\,h`,'divido por A'])}
+${key(R`p=p_0+\rho\,g\,h`,'Teorema fundamental de la hidrostática')}
+${sym([['p','presión a profundidad h','Pa'],[R`p_0`,'presión en la superficie (p_atm si está abierto)','Pa'],[R`\rho`,'densidad del fluido (no del objeto)','kg/m³'],['h','profundidad, medida hacia abajo','m']])}
+${deep('La forma diferencial',`<p>Si medís la altura y hacia arriba, la presión disminuye al subir:</p>${M(R`\frac{dp}{dy}=-\rho\,g`)}<p>Integrando con ρ constante (líquidos) se vuelve a ${m('p=p_0+\\rho gh')}. En gases ρ cambia con la altura y la cuenta es distinta (por eso la presión atmosférica no baja linealmente).</p>`)}
+${two(idea('Misma altura, misma presión',`<p>En un mismo fluido quieto y conectado, todos los puntos a la misma altura tienen la misma presión. <b>No importa la forma del recipiente</b>.</p>`),
+      idea('Absoluta y manométrica',`${M(R`p_{abs}=p_{atm}+p_{man}`)}<p>La manométrica es “cuánto más que la atmósfera”. En un recipiente abierto: ${m('p_{man}=\\rho g h')}.</p>`))}
+${example('Presión a 10 m de profundidad',
+  `¿Cuál es la presión absoluta y la manométrica a 10 m bajo la superficie del agua? (ρ = 1000 kg/m³, g = 9,8 m/s²)`,
+  chain([R`p_{man}=1000\cdot9{,}8\cdot10=98\,000\ \mathrm{Pa}`],[R`p_{abs}=101\,300+98\,000=199\,300\ \mathrm{Pa}\approx1{,}97\ \mathrm{atm}`]),
+  `Cada 10 m de agua suman casi 1 atm.`)}
+`},
+  {id:'capas',label:'Varios fluidos en capas',html:`
+${fig(F.layers,'Al bajar por cada capa, sumás ρ g h de esa capa.')}
+${key(R`p=p_0+\rho_1g\,h_1+\rho_2g\,h_2+\dots`,'Se suma capa por capa')}
+${example('Aceite sobre agua',
+  `Un recipiente abierto tiene 0,5 m de aceite (ρ = 800 kg/m³) sobre 1 m de agua. ¿Presión manométrica en el fondo?`,
+  chain([R`p_{man}=800\cdot9{,}8\cdot0{,}5+1000\cdot9{,}8\cdot1`],[R`p_{man}=3920+9800=13\,720\ \mathrm{Pa}`]),`${m('p_{man}=13{,}7\\ \\mathrm{kPa}')}`)}
+${lab('depth','Presión en el fondo de dos capas','Cambiá alturas y densidades.',fields(field('r1','ρ capa de arriba (kg/m³)',800),field('h1','h₁ (m)',0.5),field('r2','ρ capa de abajo (kg/m³)',1000),field('h2','h₂ (m)',1),select('p0','Superficie',[['101300','Abierta (p_atm)'],['0','Sólo manométrica']]))+out)}
+${err('Errores típicos',ul(['Confundir presión absoluta y manométrica: fijate qué te piden.','Usar la densidad del objeto en lugar de la del fluido.','Usar una sola ρ cuando hay aceite, agua y mercurio: dividí en tramos.']))}
+${cards([['Fórmula','Presión a profundidad h','p = p₀ + ρ·g·h'],['Concepto','¿Depende de la forma del recipiente?','No, sólo de la profundidad (paradoja hidrostática).'],['Definición','Presión manométrica','p_man = p_abs − p_atm'],['Dato','¿Cuánto suman 10 m de agua?','≈ 98 kPa ≈ 1 atm']])}
+`}]});
+
+  /* ---------------- C10 ---------------- */
+  T.push({id:'C10',group:'est',title:'Pascal, manómetros y barómetro',short:'Prensa hidráulica y cómo “recorrer” un tubo en U.',
+  lead:'Un cambio de presión en un líquido encerrado se transmite entero a todo el líquido. Con eso funcionan la prensa hidráulica y los manómetros.',
+  sections:[
+  {id:'pascal',label:'Principio de Pascal',html:`
+${fig(F.press,'La presión es la misma en los dos pistones (a igual altura).')}
+${chain([R`\frac{F_1}{A_1}=\frac{F_2}{A_2}`,'misma presión'],[R`F_2=\frac{A_2}{A_1}\,F_1`,'multiplicador de fuerza'])}
+${idea('No se gana energía',`<p>El pistón grande se mueve menos: ${m('A_1\\,\\Delta x_1=A_2\\,\\Delta x_2')} (el volumen que entra es el que sale). El trabajo ${m('F\\Delta x')} es el mismo en los dos lados.</p>`)}
+${example('Prensa hidráulica',
+  `Pistón chico de 2 cm de diámetro, grande de 20 cm. Se empuja el chico con 50 N. ¿Qué fuerza hace el grande?`,
+  chain([R`\frac{A_2}{A_1}=\left(\frac{D_2}{D_1}\right)^2=\left(\frac{20}{2}\right)^2=100`,'el área va con D²'],[R`F_2=100\cdot50=5000\ \mathrm N`]),
+  `${m('F_2=5000\\ \\mathrm N')}. ${simple('Diez veces el diámetro es cien veces la fuerza')}`)}
+`},
+  {id:'manometro',label:'Cómo recorrer un manómetro',html:`
+${fig(F.utube,'Los puntos 1 y 2 están a la misma altura en el mismo fluido (mercurio): tienen igual presión.')}
+<div class="box method"><b>Regla para recorrer</b>${ol(['Arrancá en un punto donde conozcas la presión.','<b>Bajás</b> una altura h dentro de un fluido → <b>sumás</b> '+m('\\rho g h')+'.','<b>Subís</b> una altura h → <b>restás</b> '+m('\\rho g h')+'.','Sólo podés igualar presiones a la misma altura <b>dentro del mismo fluido conectado</b>.','Llegá al otro punto y despejá.'])}</div>
+${keys([[R`p=p_{atm}\pm\rho g h`,'Tubo en U abierto'],[R`\Delta p=(\rho_m-\rho_f)\,g\,h`,'Manómetro que mide una cañería con otro fluido']])}
+${deep('¿De dónde sale (ρ_m − ρ_f)?',`<p>Si el manómetro de mercurio (ρ_m) está conectado a una cañería con agua (ρ_f), las dos ramas tienen agua encima del mercurio. Recorriendo desde 1 hasta 2:</p>
+${chain([R`p_1+\rho_f\,g\,(y+h)-\rho_m\,g\,h-\rho_f\,g\,y=p_2`,'bajo por agua, subo h por Hg, subo por agua'],[R`p_1-p_2=(\rho_m-\rho_f)\,g\,h`,'los tramos de agua de igual largo se cancelan'])}
+<p>El agua que “sobra” en una rama compensa parte del mercurio: por eso se resta ${m('\\rho_f')}.</p>`)}
+${example('Gas en un tanque',
+  `Un manómetro de mercurio abierto marca h = 20 cm (rama libre más alta). ¿Presión manométrica del gas? (ρ_Hg = 13 600 kg/m³)`,
+  chain([R`p_{man}=\rho_{Hg}\,g\,h=13\,600\cdot9{,}8\cdot0{,}2`],[R`p_{man}\approx26\,660\ \mathrm{Pa}\approx26{,}7\ \mathrm{kPa}`]),`${m('p_{man}\\approx26{,}7\\ \\mathrm{kPa}')} (≈ 200 mmHg).`)}
+`},
+  {id:'barometro',label:'Barómetro',html:`
+<p>Un tubo lleno de mercurio, dado vuelta sobre una cubeta: arriba queda vacío (p ≈ 0) y la columna que sostiene la atmósfera mide unos 76 cm.</p>
+${chain([R`p_{atm}=\rho_{Hg}\,g\,h`],[R`p_{atm}=13\,600\cdot9{,}8\cdot0{,}76\approx1{,}013\times10^5\ \mathrm{Pa}`],[R`1\ \mathrm{mmHg}\approx133\ \mathrm{Pa}`])}
+${cards([['Ley','Principio de Pascal','La presión aplicada a un fluido encerrado se transmite igual a todos sus puntos.'],['Regla','Recorriendo un manómetro: bajar / subir','Bajar suma ρgh, subir resta ρgh.'],['Fórmula','Manómetro de Hg en una cañería de agua','Δp = (ρ_Hg − ρ_agua)·g·h'],['Dato','Equivalencias de la atmósfera','1 atm = 760 mmHg = 1,013·10⁵ Pa']])}
+`}]});
+
+  /* ---------------- C11 ---------------- */
+  T.push({id:'C11',group:'est',title:'Empuje y flotación',short:'Arquímedes, peso aparente y cuerpos entre dos líquidos.',
+  lead:'Todo cuerpo sumergido recibe un empuje hacia arriba igual al peso del fluido que desaloja. Ese empuje es la diferencia de presión entre su cara de abajo y la de arriba.',
+  sections:[
+  {id:'arquimedes',label:'Principio de Arquímedes',html:`
+${key(R`E=\rho_{fluido}\;g\;V_{sumergido}`,'Empuje')}
+${deep('¿Por qué existe el empuje?',`<p>Un cubo sumergido tiene la cara de abajo más profunda que la de arriba, entonces la presión abajo es mayor. Las fuerzas laterales se cancelan; las verticales no:</p>
+${chain([R`E=(p_{abajo}-p_{arriba})\,A`],[R`E=\rho_f\,g\,(h_2-h_1)\,A=\rho_f\,g\,V`,'h₂ − h₁ es la altura del cubo'])}
+<p>No depende de qué tan hondo esté (en un líquido incompresible), sólo del volumen sumergido.</p>`)}
+${warn('Qué densidad va',`<p>En el empuje va la densidad <b>del fluido</b> y el volumen <b>sumergido</b>. La densidad del objeto sólo aparece en su peso: ${m('P=\\rho_{cuerpo}\\,g\\,V_{total}')}.</p>`)}
+${example('Empuje sobre 2 litros de agua',``,chain([R`E=1000\cdot9{,}8\cdot0{,}002=19{,}6\ \mathrm N`]),`${m('E=19{,}6\\ \\mathrm N')}`)}
+`},
+  {id:'flotar',label:'Flotar o hundirse',html:`
+${fig(F.float,'Flota en equilibrio cuando el empuje de la parte sumergida iguala al peso.')}
+${chain([R`E=P`,'si flota en equilibrio'],[R`\rho_f\,g\,V_{sum}=\rho_c\,g\,V_{total}`],[R`\frac{V_{sum}}{V_{total}}=\frac{\rho_c}{\rho_f}`,'fracción sumergida'])}
+${table(['Si…','Pasa que…'],[[m('\\rho_c<\\rho_f'),'flota con una parte afuera'],[m('\\rho_c=\\rho_f'),'queda “en equilibrio” a cualquier profundidad'],[m('\\rho_c>\\rho_f'),'se hunde (el empuje máximo no alcanza)']])}
+${lab('float','¿Cuánto se hunde?','Elegí la densidad del cuerpo y del líquido.',slider('rc','ρ cuerpo (kg/m³)',100,1500,10,600)+fields(select('rf','Líquido',[['1000','Agua (1000)'],['800','Aceite (800)'],['1030','Agua de mar (1030)'],['13600','Mercurio (13 600)']]))+`<svg class="stage" viewBox="0 0 480 200" data-stage></svg>`+out)}
+<h3>Entre dos líquidos</h3>
+${chain([R`E_{total}=\rho_1\,g\,V_1+\rho_2\,g\,V_2`,'empuje por partes'],[R`\rho_c\,V_{total}=\rho_1V_1+\rho_2V_2`,'si flota'])}
+${example('Bloque entre aceite y agua',
+  `Un bloque de densidad 900 kg/m³ flota en la interfaz aceite (800) – agua (1000), totalmente sumergido. ¿Qué fracción está en el agua?`,
+  chain([R`900=1000\,x+800\,(1-x)`,'x = fracción en agua'],[R`900=800+200\,x\ \Rightarrow\ x=0{,}5`]),`La mitad en agua y la mitad en aceite.`)}
+`},
+  {id:'aparente',label:'Peso aparente y balanzas',html:`
+${chain([R`T=P-E`,'cuerpo colgado de una cuerda y sumergido'],[R`P_{ap}=P-E`,'lo que marca un dinamómetro'])}
+${example('Piedra colgada en agua',
+  `Una piedra de 2 kg y 0,8 L cuelga de un hilo totalmente sumergida en agua. ¿Tensión del hilo?`,
+  chain([R`P=2\cdot9{,}8=19{,}6\ \mathrm N`],[R`E=1000\cdot9{,}8\cdot0{,}0008=7{,}84\ \mathrm N`],[R`T=19{,}6-7{,}84=11{,}76\ \mathrm N`]),`${m('T\\approx11{,}8\\ \\mathrm N')}`)}
+<h3>Las dos balanzas</h3>
+${keys([[R`L=P_{bloque}-E`,'Dinamómetro del que cuelga el bloque'],[R`L=P_{rec}+P_{liq}+E`,'Balanza debajo del recipiente']])}
+${idea('Acción y reacción',`<p>Si el líquido empuja al bloque hacia arriba con E, el bloque empuja al líquido hacia abajo con E. Por eso la balanza de abajo marca <b>E de más</b> (y la de arriba, E de menos).</p>`)}
+${err('Errores típicos',ul(['Usar el volumen total cuando el cuerpo no está entero bajo el líquido.','Olvidar que la balanza del recipiente aumenta en E.','Pensar que a más profundidad hay más empuje (en un líquido no).','Boya + cuerpo pesado: conviene analizar el sistema completo con '+m('E_{total}=P_{total}')+'.']))}
+${cards([['Ley','Principio de Arquímedes','E = ρ_fluido·g·V_sumergido, hacia arriba.'],['Fórmula','Fracción sumergida de un cuerpo que flota','V_sum / V_total = ρ_cuerpo / ρ_fluido'],['Fórmula','Peso aparente','P_ap = P − E'],['Trampa','¿Qué marca la balanza de abajo al sumergir un cuerpo colgado?','Lo de antes + E (reacción del empuje).']])}
+`}]});
+
+  /* ---------------- C12 ---------------- */
+  T.push({id:'C12',group:'din',title:'Fluidos en movimiento',short:'Caudal, continuidad y Bernoulli.',
+  lead:'Para fluidos ideales que circulan alcanzan dos leyes: la masa se conserva (continuidad) y la energía se conserva (Bernoulli).',
+  sections:[
+  {id:'continuidad',label:'Caudal y continuidad',html:`
+${sym([['Q','caudal: volumen por unidad de tiempo','m³/s · L/s'],['A','área de la sección','m²'],['D','diámetro de la sección','m'],['v','velocidad del fluido','m/s']])}
+${chain([R`Q=A\,v`,'caudal'],[R`A=\frac{\pi D^2}{4}`,'sección circular'],[R`v=\frac QA`],[R`1\ \mathrm L=10^{-3}\ \mathrm{m^3}`])}
+${key(R`A_1\,v_1=A_2\,v_2\qquad (Q_1=Q_2)`,'Continuidad (fluido incompresible)')}
+<p>Lo que entra por un lado tiene que salir por el otro. Si el caño se angosta, el fluido acelera. ${simple('Como cuando tapás media manguera con el dedo')}</p>
+${warn('El área va con D²',`<p>Si el diámetro se reduce a la mitad, el área se reduce a la cuarta parte y la velocidad se <b>cuadruplica</b>.</p>`)}
+`},
+  {id:'bernoulli',label:'Bernoulli',html:`
+${key(R`p+\rho\,g\,y+\tfrac12\rho\,v^2=\text{cte.}`,'Ecuación de Bernoulli')}
+${chain([R`p_1+\rho g\,y_1+\tfrac12\rho v_1^2=p_2+\rho g\,y_2+\tfrac12\rho v_2^2`,'entre dos puntos de una línea de corriente'])}
+${table(['Término','Qué representa'],[[m('p'),'energía de presión por unidad de volumen'],[m('\\rho g y'),'energía potencial por unidad de volumen'],[m('\\tfrac12\\rho v^2'),'energía cinética por unidad de volumen']])}
+${ok('Cuándo se puede usar',ul(['Flujo estacionario (no cambia con el tiempo).','Fluido incompresible.','Sin viscosidad, sin pérdidas, sin bombas ni turbinas en el medio.','Sobre una misma línea de corriente.']))}
+<h3>Caño horizontal</h3>
+${fig(F.pipe,'En la parte angosta: más velocidad, menos presión.')}
+${chain([R`p_1+\tfrac12\rho v_1^2=p_2+\tfrac12\rho v_2^2`,'se cancela ρgy'],[R`p_1-p_2=\tfrac12\rho\left(v_2^2-v_1^2\right)`])}
+${idea('Efecto Venturi',`<p>Donde el fluido va más rápido, la presión es menor. No es intuitivo, pero es pura conservación de la energía: si gana cinética, pierde de presión.</p>`)}
+${example('Caño que se angosta',
+  `Por un caño horizontal de 4 cm de diámetro circula agua a 1 m/s. Se angosta a 2 cm. Hallá v₂, el caudal y la diferencia de presión.`,
+  chain([R`v_2=v_1\left(\frac{D_1}{D_2}\right)^2=1\cdot4=4\ \mathrm{m/s}`,'continuidad'],[R`Q=\pi(0{,}02)^2\cdot1\approx1{,}26\times10^{-3}\ \mathrm{m^3/s}`,'≈ 1,26 L/s'],[R`p_1-p_2=\tfrac12\cdot1000\,(16-1)=7500\ \mathrm{Pa}`,'Bernoulli horizontal']),
+  `${m('v_2=4\\ \\mathrm{m/s}')}, ${m('Q\\approx1{,}26\\ \\mathrm{L/s}')}, ${m('p_1-p_2=7{,}5\\ \\mathrm{kPa}')}.`)}
+${lab('bernoulli','Continuidad + Bernoulli','Caño con dos secciones y desnivel opcional (agua).',fields(field('d1','D₁ (cm)',4),field('d2','D₂ (cm)',2),field('v1','v₁ (m/s)',1),field('dy','y₂ − y₁ (m)',0))+out)}
+${err('Errores típicos',ul(['Usar Bernoulli sin continuidad: casi siempre necesitás las dos.','Olvidar '+m('\\rho g y')+' si el caño no es horizontal.','Sumar la presión atmosférica cuando aparece de los dos lados (se cancela).']))}
+${cards([['Ley','Continuidad','A₁·v₁ = A₂·v₂ (se conserva el caudal).'],['Ley','Bernoulli','p + ρgy + ½ρv² = constante sobre una línea de corriente.'],['Concepto','Caño horizontal que se angosta: ¿qué pasa con p?','Baja, porque sube la velocidad.'],['Trampa','D se reduce a la mitad: ¿v?','Se multiplica por 4 (A va con D²).']])}
+`}]});
+
+  /* ---------------- C13 ---------------- */
+  T.push({id:'C13',group:'din',title:'Venturi, Pitot y Torricelli',short:'Medidores de caudal y velocidad de salida de tanques.',
+  lead:'Tres aplicaciones directas de continuidad + Bernoulli que aparecen siempre en los parciales.',
+  sections:[
+  {id:'venturi',label:'Tubo de Venturi',html:`
+${fig(F.venturi,'El manómetro mide la diferencia de presión entre la parte ancha y la garganta.')}
+<div class="box method"><b>Receta</b>${ol(['Continuidad: '+m('A_1v_1=A_2v_2')+'.','Altura del manómetro → '+m('\\Delta p=(\\rho_m-\\rho_f)gh')+'.','Bernoulli horizontal: '+m('p_1-p_2=\\tfrac12\\rho_f(v_2^2-v_1^2)')+'.','Despejá velocidad, caudal, diámetro o altura.'])}</div>
+${chain([R`\Delta p=\tfrac12\rho_f\,v_1^2\left[\left(\frac{A_1}{A_2}\right)^2-1\right]`,'reemplazo v₂ = v₁·A₁/A₂'],[R`v_1=\sqrt{\frac{2\,\Delta p}{\rho_f\left[(A_1/A_2)^2-1\right]}}`])}
+${example('Venturi con mercurio',
+  `Agua circula por un Venturi de 10 cm de diámetro con garganta de 5 cm. El manómetro de mercurio marca h = 5 cm. Hallá v₁ y el caudal.`,
+  chain([R`\Delta p=(13\,600-1000)\cdot9{,}8\cdot0{,}05=6174\ \mathrm{Pa}`],[R`\left(\tfrac{A_1}{A_2}\right)^2=\left(\tfrac{10}{5}\right)^4=16`,'A va con D²'],[R`v_1=\sqrt{\frac{2\cdot6174}{1000\cdot15}}\approx0{,}907\ \mathrm{m/s}`],[R`Q=\pi(0{,}05)^2\cdot0{,}907\approx7{,}13\times10^{-3}\ \mathrm{m^3/s}`]),
+  `${m('v_1\\approx0{,}91\\ \\mathrm{m/s}')} y ${m('Q\\approx7{,}1\\ \\mathrm{L/s}')}.`)}
+${lab('venturi','Calculadora de Venturi','Manómetro diferencial con líquido de densidad ρ_m.',fields(field('d1','D₁ (cm)',10),field('d2','D₂ (cm)',5),field('h','h (cm)',5),field('rm','ρ manómetro (kg/m³)',13600),field('rf','ρ fluido (kg/m³)',1000))+out)}
+`},
+  {id:'pitot',label:'Tubo de Pitot',html:`
+${fig(F.pitot,'En la boca del Pitot el fluido se frena del todo: ahí la presión es máxima.')}
+<p>El Pitot compara la presión estática (la del fluido que pasa) con la de <b>estancamiento</b>, donde el fluido queda quieto. Toda la energía cinética se convirtió en presión:</p>
+${chain([R`p_{est}=p+\tfrac12\rho v^2`,'Bernoulli con v = 0 en la boca'],[R`v=\sqrt{\frac{2\,(p_{est}-p)}{\rho}}`])}
+${keys([[R`v_{Pitot}=\sqrt{2\,g\,h}`,'Leído con columnas del mismo líquido'],[R`v_{Pitot}=\sqrt{\frac{2(\rho_m-\rho_f)\,g\,h}{\rho_f}}`,'Con manómetro diferencial']])}
+${example('Pitot en un canal',`Las columnas de agua de un Pitot difieren en 20 cm. ¿Velocidad del agua?`,chain([R`v=\sqrt{2\cdot9{,}8\cdot0{,}2}\approx1{,}98\ \mathrm{m/s}`]),`${m('v\\approx2\\ \\mathrm{m/s}')}`)}
+`},
+  {id:'torricelli',label:'Torricelli: tanques y chorros',html:`
+${fig(F.tank,'Superficie y orificio a presión atmosférica; el tanque es grande, así que la superficie casi no baja.')}
+${chain([R`p_{atm}+\rho g\,h+0=p_{atm}+0+\tfrac12\rho v^2`,'Bernoulli de 1 a 2'],[R`v=\sqrt{2\,g\,h}`,'igual que una caída libre de altura h'])}
+${key(R`v=\sqrt{2\,g\,h}`,'Teorema de Torricelli')}
+${keys([[R`v=\sqrt{\frac{2\,\Delta p}{\rho}+2\,g\,h}`,'Tanque presurizado (Δp manométrica arriba)'],[R`h_{chorro}=\frac{v^2}{2g}`,'Altura que alcanza un chorro vertical']])}
+${example('Tanque abierto',`El orificio está 1,25 m por debajo de la superficie. ¿Velocidad de salida?`,chain([R`v=\sqrt{2\cdot9{,}8\cdot1{,}25}\approx4{,}95\ \mathrm{m/s}`]),`${m('v\\approx4{,}95\\ \\mathrm{m/s}')}`)}
+${example('Tanque presurizado',`Un tanque cerrado tiene aire a 50 kPa manométricos sobre el agua. El orificio está 2 m bajo la superficie.`,chain([R`v=\sqrt{\frac{2\cdot50\,000}{1000}+2\cdot9{,}8\cdot2}=\sqrt{100+39{,}2}\approx11{,}8\ \mathrm{m/s}`]),`${m('v\\approx11{,}8\\ \\mathrm{m/s}')}. ${simple('La presión extra “empuja” más rápido')}`)}
+${lab('torricelli','Velocidad de salida de un tanque','Agregá presión manométrica si el tanque está cerrado.',fields(field('h','h (m)',1.25),field('dp','Δp sobre el agua (kPa)',0),field('d','Diámetro del orificio (cm)',2),field('rho','ρ (kg/m³)',1000))+out)}
+${err('Errores típicos',ul(['Usar '+m('\\rho_m g h')+' en vez de '+m('(\\rho_m-\\rho_f)gh')+' cuando el manómetro mide una cañería con otro fluido.','Aplicar Torricelli sin verificar que el tanque sea grande ('+m('v_{superficie}\\approx0')+').','Olvidar calcular '+m('Q=Av')+' después de hallar la velocidad.']))}
+${cards([['Ley','Torricelli','v = √(2gh) para tanque grande y abierto.'],['Medidor','¿Qué mide un Pitot?','La diferencia entre presión de estancamiento y estática: Δp = ½ρv².'],['Receta','Venturi en cuatro pasos','Continuidad → Δp del manómetro → Bernoulli horizontal → despejar.'],['Fórmula','Altura de un chorro vertical','h = v² / (2g)']])}
+`}]});
+
+  /* ---------------- C14 ---------------- */
+  T.push({id:'C14',group:'guia',title:'Cómo elegir la fórmula',short:'Mapa de decisión y práctica rápida.',
+  lead:'La mayoría de los errores no salen de hacer mal una cuenta, sino de usar una fórmula correcta en el tipo de ejercicio equivocado. Primero clasificá; después elegí.',
+  sections:[
+  {id:'mapa',label:'Mapa de decisión',html:`
+${decide([
+ ['Choque con pivote, bala que se clava, discos que se acoplan','Conservación de L (C1)',m('L_i=L_f')],
+ ['Cuerpo que gira con eje fijo, polea con masa','Dinámica de rotación (C2)',m('\\sum\\tau=I\\alpha')],
+ ['Eje que no pasa por el centro','Steiner (C3)',m('I_P=I_{CM}+Md^2')],
+ ['Algo que rueda sin deslizar','Rodadura (C4)',m('v_{CM}=R\\omega')+' + energía de traslación y rotación'],
+ ['Nada se mueve (vigas, escaleras)','Equilibrio (C5)',m('\\sum F=0,\\ \\sum\\tau=0')],
+ ['Resorte que oscila','MAS (C6–C7)',m("x''+\\Omega^2x=0")+', '+m('\\Omega=\\sqrt{k/m}')],
+ ['Cuerpo rígido que oscila colgado','Péndulo físico (C8)',m("I_P\\theta''=-Mgd\\,\\theta")],
+ ['Fluido quieto, profundidades, manómetros','Hidrostática (C9–C10)',m('p=p_0+\\rho gh')],
+ ['Algo flota, se hunde o cuelga sumergido','Arquímedes (C11)',m('E=\\rho_fgV_{sum}')],
+ ['Fluido que circula, caños, tanques','Continuidad + Bernoulli (C12–C13)',m('Q=Av')+' y Bernoulli']])}
+${idea('Regla mental',`<p>1) ¿Qué me piden? 2) ¿Hay choque, rotación, equilibrio, oscilación, fluido quieto o fluido en movimiento? 3) ¿Se cumplen las hipótesis (torque externo nulo, rodadura pura, ángulo chico, fluido ideal)? Recién ahí, la fórmula.</p>`)}
+${warn('Problemas de varias etapas',`<p>Muchos parciales encadenan: “bala se clava (L) → la varilla sube (energía)”, o “bloque baja (energía) → choca (L)”. Separá las etapas y usá en cada una la ley que corresponde.</p>`)}
+`},
+  {id:'practica',label:'Práctica: ¿qué uso?',html:`
+<p>Leé la situación y elegí con qué arrancarías. ${simple('No hace falta hacer cuentas')}</p>
+<div class="quiz" data-lab="quiz"></div>
+<p class="score" data-score></p>
+`}]});
+})();
+</script>
+<script>
+/* ================= 5) Navegación, preferencias e interactivos ================= */
+(function(){
+  'use strict';
+  const K=window.Kit,{fmt,esc}=K;
+  const TOPICS=window.TOPICS||[];
+  const GROUPS=[
+    {id:'rot',title:'Rotación y equilibrio',sub:'C1 a C5'},
+    {id:'osc',title:'Oscilaciones',sub:'C6 a C8'},
+    {id:'est',title:'Fluidos en reposo',sub:'C9 a C11'},
+    {id:'din',title:'Fluidos en movimiento',sub:'C12 y C13'},
+    {id:'guia',title:'Para cerrar',sub:'C14'}];
+  const $=s=>document.querySelector(s);
+  const app=$('#app'),chips=$('#chips');
+  const store={get(k,d){try{const v=localStorage.getItem('solved.f1p2.'+k);return v==null?d:v}catch(_){return d}},set(k,v){try{localStorage.setItem('solved.f1p2.'+k,v)}catch(_){}}};
+  let done=new Set(String(store.get('done','')).split(',').filter(Boolean));
+  let current=-1,timers=[];
+
+  /* ---------- Preferencias (tema y tamaño), sincronizables con la página madre ---------- */
+  const setTheme=t=>{document.body.classList.toggle('light',t==='light');store.set('theme',t)};
+  const setScale=s=>{document.documentElement.style.setProperty('--scale',s);store.set('scale',s)};
+  const setAccent=c=>{if(!/^#[0-9a-f]{6}$/i.test(c||''))return;document.documentElement.style.setProperty('--accent',c);document.documentElement.style.setProperty('--accent-light',shade(c));};
+  const shade=hex=>{const n=parseInt(hex.slice(1),16);const f=x=>Math.max(0,Math.round(x*.62));return '#'+[f(n>>16),f((n>>8)&255),f(n&255)].map(x=>x.toString(16).padStart(2,'0')).join('')};
+  setTheme(store.get('theme','dark'));setScale(store.get('scale','1'));
+  const prefs=$('#prefs'),prefsBtn=$('#prefsBtn');
+  prefsBtn.onclick=()=>{const open=prefs.hidden;prefs.hidden=!open;prefsBtn.setAttribute('aria-expanded',String(open))};
+  document.querySelectorAll('#prefs [data-theme]').forEach(b=>b.onclick=()=>setTheme(b.dataset.theme));
+  document.querySelectorAll('#prefs [data-scale]').forEach(b=>b.onclick=()=>setScale(b.dataset.scale));
+  document.addEventListener('click',e=>{if(!prefs.hidden&&!prefs.contains(e.target)&&e.target!==prefsBtn){prefs.hidden=true;prefsBtn.setAttribute('aria-expanded','false')}});
+  // La hoja de fórmulas (summary.html) avisa su tema y color de acento.
+  window.addEventListener('message',e=>{const d=e.data;if(!d||d.type!=='solved-physics-appearance')return;if(d.theme==='light'||d.theme==='dark')setTheme(d.theme);if(d.accent)setAccent(d.accent)});
+
+  /* ---------- MathJax ---------- */
+  const typeset=el=>{const run=()=>{try{window.MathJax.typesetClear&&window.MathJax.typesetClear([el]);return window.MathJax.typesetPromise([el]).catch(()=>{})}catch(_){}};
+    if(window.MathJax&&window.MathJax.typesetPromise)return run();
+    let tries=0;const wait=setInterval(()=>{tries++;if(window.MathJax&&window.MathJax.typesetPromise){clearInterval(wait);window.MathJax.startup&&window.MathJax.startup.promise?window.MathJax.startup.promise.then(run):run()}else if(tries>80)clearInterval(wait)},150)};
+
+  /* ---------- Vistas ---------- */
+  function renderChips(){
+    chips.innerHTML=`<button type="button" class="chip ${current<0?'active':''}" data-go="-1">Mapa</button>`+TOPICS.map((t,i)=>`<button type="button" class="chip ${i===current?'active':''} ${done.has(t.id)?'done':''}" data-go="${i}"><span>${t.id}</span>${esc(t.title)}</button>`).join('');
+    chips.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(Number(b.dataset.go)));
+    const a=chips.querySelector('.active');if(a)a.scrollIntoView({block:'nearest',inline:'center'});
+    $('#progress').style.width=`${Math.round(100*done.size/TOPICS.length)}%`;
+    $('#prevBtn').disabled=current<0;$('#nextBtn').disabled=current>=TOPICS.length-1;
+    $('#topTitle').textContent=current<0?'Teoría explicada':`${TOPICS[current].id} · ${TOPICS[current].title}`;
+  }
+  function home(){
+    app.innerHTML=`<section class="hero"><small>Física I · Segundo parcial</small><h1>Teoría explicada, tema por tema</h1>
+      <p>Todo lo del segundo parcial —rotación, equilibrio, oscilaciones y fluidos— contado con texto corto, dibujos, fórmulas paso a paso, ejemplos resueltos y cosas para probar.</p>
+      <div class="stats"><span>${TOPICS.length} temas</span><span>${TOPICS.reduce((n,t)=>n+t.sections.length,0)} secciones</span><span>${done.size} repasados</span></div></section>
+      <div class="howto"><div><b>Leé en orden</b>Usá ‹ › arriba o los botones del final de cada tema.</div><div><b>Desplegá lo que necesites</b>Los ejemplos y la teoría larga están cerrados para que la lectura sea rápida.</div><div><b>Probá</b>Los bloques “PROBALO” recalculan solos al cambiar los datos.</div><div><b>Repasá</b>Al final de cada tema hay tarjetas: tocalas para ver la respuesta.</div></div>
+      ${GROUPS.map(g=>`<section class="group"><header><h2>${g.title}</h2><span>${g.sub}</span></header><div class="tiles">${TOPICS.map((t,i)=>t.group===g.id?`<button type="button" class="tile ${done.has(t.id)?'done':''}" data-go="${i}"><span class="ic">${done.has(t.id)?'✓':t.id}</span><b>${esc(t.title)}</b><small>${esc(t.short)}</small></button>`:'').join('')}</div></section>`).join('')}`;
+    app.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(Number(b.dataset.go)));
+  }
+  function topic(i){
+    const t=TOPICS[i],prev=TOPICS[i-1],next=TOPICS[i+1];
+    app.innerHTML=`<section class="topicHero"><small>${t.id} · ${GROUPS.find(g=>g.id===t.group).title}</small><h1>${esc(t.title)}</h1><p class="lead">${t.lead}</p>
+      <nav class="inTopic">${t.sections.map((s,k)=>`<a href="#${t.id}-${s.id}" data-sec="${t.id}-${s.id}">${k+1}. ${esc(s.label)}</a>`).join('')}</nav></section>
+      ${t.sections.map((s,k)=>`<section class="sec" id="${t.id}-${s.id}"><h2><span>${String(k+1).padStart(2,'0')}</span>${esc(s.label)}</h2>${s.html}</section>`).join('')}
+      <div class="doneBtn"><button type="button" class="${done.has(t.id)?'is-done':''}" data-done>${done.has(t.id)?'✓ Tema repasado':'Marcar como repasado'}</button></div>
+      <nav class="topicNav"><button type="button" data-go="${i-1}" ${prev?'':'disabled'}><small>← Anterior</small><b>${prev?esc(prev.id+' · '+prev.title):''}</b></button><button type="button" data-go="${next?i+1:-1}"><small>${next?'Siguiente →':'Volver'}</small><b>${next?esc(next.id+' · '+next.title):'Mapa de temas'}</b></button></nav>`;
+    app.querySelectorAll('.topicNav [data-go]').forEach(b=>b.onclick=()=>go(Number(b.dataset.go)));
+    app.querySelectorAll('[data-sec]').forEach(a=>a.onclick=e=>{e.preventDefault();const el=document.getElementById(a.dataset.sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})});
+    app.querySelector('[data-done]').onclick=e=>{const b=e.currentTarget;if(done.has(t.id))done.delete(t.id);else done.add(t.id);store.set('done',[...done].join(','));b.classList.toggle('is-done',done.has(t.id));b.textContent=done.has(t.id)?'✓ Tema repasado':'Marcar como repasado';renderChips()};
+    app.querySelectorAll('.flip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');c.setAttribute('aria-pressed',String(c.classList.contains('on')))});
+    app.querySelectorAll('[data-lab]').forEach(el=>{const f=LABS[el.dataset.lab];if(f)try{f(el)}catch(err){console.error(err)}});
+  }
+  function go(i,opts={}){
+    timers.forEach(fn=>fn());timers=[];
+    current=Math.max(-1,Math.min(TOPICS.length-1,i));
+    if(current<0)home();else topic(current);
+    renderChips();typeset(app);
+    if(!opts.keepScroll)window.scrollTo({top:0});
+    const h=current<0?'':TOPICS[current].id;
+    try{if(location.hash.replace('#','').split('-')[0]!==h)history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}catch(_){}
+    store.set('last',String(current));
+  }
+  $('#homeBtn').onclick=()=>go(-1);
+  $('#prevBtn').onclick=()=>go(current-1);
+  $('#nextBtn').onclick=()=>go(current+1);
+  const toTop=$('#toTop');
+  window.addEventListener('scroll',()=>toTop.classList.toggle('show',scrollY>700),{passive:true});
+  toTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+  /* ---------- Utilidades para interactivos ---------- */
+  const val=(root,n)=>{const el=root.querySelector(`[name="${n}"]`);return el?Number(String(el.value).replace(',','.')):NaN};
+  const bind=(root,fn)=>{const run=()=>{root.querySelectorAll('.slider').forEach(s=>{const i=s.querySelector('input'),o=s.querySelector('output');if(o&&!o.dataset.custom)o.textContent=fmt(Number(i.value),2)});try{fn()}catch(e){console.error(e)}};root.querySelectorAll('input,select').forEach(el=>{el.addEventListener('input',run);el.addEventListener('change',run)});run();return run};
+  const outEl=root=>root.querySelector('.out');
+  const loop=step=>{let id=0,last=performance.now(),alive=true;const f=now=>{if(!alive)return;const dt=Math.min(.05,(now-last)/1000);last=now;step(dt);id=requestAnimationFrame(f)};id=requestAnimationFrame(f);timers.push(()=>{alive=false;cancelAnimationFrame(id)});return()=>{alive=false;cancelAnimationFrame(id)}};
+  const g=9.8,pos=x=>Number.isFinite(x)&&x>0;
+  const bad='<small>Revisá los datos: tienen que ser números positivos.</small>';
+  const arrow=(x1,y1,x2,y2,cls='s-acc',mk='aAcc')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="${cls}" marker-end="url(#${mk})"/>`;
+
+  const LABS={
+    bullet(root){bind(root,()=>{
+      const Mv=val(root,'M'),L=val(root,'L'),mb=val(root,'m')/1000,v=val(root,'v'),d=val(root,'d');
+      if(![Mv,L,mb,v,d].every(pos)){outEl(root).innerHTML=bad;return}
+      const I=Mv*L*L/3+mb*d*d,w=mb*v*d/I,Ki=.5*mb*v*v,Kf=.5*I*w*w;
+      const climb=(Mv*g*L/2+mb*g*d); // energía para subir el CM y la bala por cada unidad de (1 − cos θ)
+      const c=1-Kf/climb;let after;
+      if(c>=-1){const th=Math.acos(Math.max(-1,Math.min(1,c)))*180/Math.PI;after=`Después del choque la varilla sube hasta <b>θ ≈ ${fmt(th,1)}°</b> (energía, otra etapa).`}else after='Después del choque <b>da la vuelta completa</b>.';
+      outEl(root).innerHTML=`I final = ${fmt(I,4)} kg·m² · L = m·v·d = ${fmt(mb*v*d,3)} kg·m²/s<br><b>ω = ${fmt(w,3)} rad/s</b><br>K antes = ${fmt(Ki,2)} J · K después = ${fmt(Kf,2)} J · <b>se pierde ${fmt(100*(1-Kf/Ki),1)} %</b><br><small>${d>L?'Ojo: d no puede ser mayor que el largo de la varilla. ':''}${after}</small>`})},
+
+    pulley(root){bind(root,()=>{
+      const mb=val(root,'m'),Mp=val(root,'M'),c=Number(root.querySelector('[name="shape"]').value);
+      if(!pos(mb)||!(Mp>=0)){outEl(root).innerHTML=bad;return}
+      const a=mb*g/(mb+c*Mp),T=mb*(g-a);
+      outEl(root).innerHTML=`<b>a = ${fmt(a,3)} m/s²</b> · T = ${fmt(T,3)} N<br><small>a = m·g / (m + c·M) con c = ${fmt(c,2)}. ${c===0?'Polea ideal: cae en caída libre porque nada lo frena.':`La polea “se queda” con ${fmt(100*(1-a/g),1)} % de la aceleración de caída libre.`}</small>`})},
+
+    steiner(root){const st=root.querySelector('[data-stage]');bind(root,()=>{
+      const p=val(root,'x')/100,d=.5*p,I=1/12+d*d;root.querySelector('output[data-for="x"]').dataset.custom=1;root.querySelector('output[data-for="x"]').textContent=`d = ${fmt(d,2)} m`;
+      const x0=60,x1=420,cx=(x0+x1)/2,px=cx-p*(x1-x0)/2;
+      st.innerHTML=`<rect x="${x0}" y="58" width="${x1-x0}" height="20" rx="7" class="s-wood"/><line x1="${cx}" y1="30" x2="${cx}" y2="110" class="s-dash"/><text x="${cx+6}" y="26" class="s-ts">CM</text>
+        <line x1="${px}" y1="22" x2="${px}" y2="112" class="s-acc"/><circle cx="${px}" cy="68" r="7" class="s-accf"/>
+        ${p>0.02?`<line x1="${px+3}" y1="122" x2="${cx-3}" y2="122" class="s-ok" marker-start="url(#aOk)" marker-end="url(#aOk)"/><text x="${(px+cx)/2-6}" y="138" class="s-tok">d</text>`:''}`;
+      outEl(root).innerHTML=`Varilla de 1 kg y 1 m: <b>I = 1/12 + d² = ${fmt(I,4)} kg·m²</b><br><small>${fmt(I/(1/12),2)} veces el I por el CM. ${p>=.99?'En el extremo: 1/3 ML² ✓':''}</small>`})},
+
+    race(root){const st=root.querySelector('[data-stage]');
+      const bodies=[['Bloque sin rozamiento',0,'var(--warn)'],['Esfera maciza',.4,'var(--accent)'],['Disco',.5,'var(--ok)'],['Esfera hueca',2/3,'var(--violet)'],['Aro',1,'var(--bad)']];
+      const D=3,x0=150,x1=455,r=11;let t=0,running=false,stop=null;
+      const draw=()=>{const th=val(root,'ang')*Math.PI/180;
+        st.innerHTML=`<text x="10" y="22" class="s-ts">Recorrido de ${D} m a lo largo del plano</text><line x1="${x1}" y1="30" x2="${x1}" y2="240" class="s-dash"/><text x="${x1-36}" y="245" class="s-ts">meta</text>`+bodies.map(([n,c,col],k)=>{const a=g*Math.sin(th)/(1+c),s=Math.min(D,.5*a*t*t),x=x0+(x1-x0-r)*s/D,y=52+k*44,ang=s/0.1;
+          return `<text x="10" y="${y+5}" class="s-t">${n}</text><line x1="${x0}" y1="${y+r+2}" x2="${x1}" y2="${y+r+2}" class="s-thin"/>${c===0?`<rect x="${x-r}" y="${y-r}" width="${2*r}" height="${2*r}" rx="3" style="fill:${col}"/>`:`<circle cx="${x}" cy="${y}" r="${r}" style="fill:${col}"/><line x1="${x}" y1="${y}" x2="${x+r*Math.cos(ang)}" y2="${y+r*Math.sin(ang)}" style="stroke:var(--bg);stroke-width:2.5"/>`}`}).join('');
+        const rows=bodies.map(([n,c])=>{const a=g*Math.sin(th)/(1+c);return `${n}: a = ${fmt(a,2)} m/s² · llega en ${fmt(Math.sqrt(2*D/a),2)} s`});
+        outEl(root).innerHTML=rows.join('<br>')+'<br><small>a = g·sen θ / (1 + c). La masa y el radio no importan.</small>'};
+      root.querySelector('output[data-for="ang"]').dataset.custom=1;
+      const label=()=>root.querySelector('output[data-for="ang"]').textContent=`${val(root,'ang')}°`;
+      bind(root,()=>{label();if(!running){t=0;draw()}});
+      root.querySelector('[data-go]').onclick=()=>{if(stop)stop();t=0;running=true;const th=val(root,'ang')*Math.PI/180,tmax=Math.sqrt(2*D/(g*Math.sin(th)/2))+.3;stop=loop(dt=>{t+=dt;draw();if(t>tmax){running=false;stop()}})};
+      root.querySelector('[data-reset]').onclick=()=>{if(stop)stop();running=false;t=0;draw()}},
+
+    beam(root){const st=root.querySelector('[data-stage]');bind(root,()=>{
+      const L=val(root,'L'),W=val(root,'W'),P=val(root,'P'),x=L*val(root,'x')/100;
+      root.querySelector('output[data-for="x"]').dataset.custom=1;root.querySelector('output[data-for="x"]').textContent=`${fmt(x,2)} m`;
+      if(![L].every(pos)||!(W>=0)||!(P>=0)){outEl(root).innerHTML=bad;return}
+      const NB=(W*L/2+P*x)/L,NA=W+P-NB,sc=90/Math.max(1,NA,NB,P,W),bx0=40,bx1=440,px=bx0+(bx1-bx0)*x/L;
+      st.innerHTML=`<rect x="${bx0}" y="70" width="${bx1-bx0}" height="16" rx="4" class="s-wood"/><path d="M${bx0+8} 86 l-12 22 h24 z" class="s-soft2"/><path d="M${bx1-8} 86 l-12 22 h24 z" class="s-soft2"/>
+        ${arrow(bx0+8,168,bx0+8,168-Math.max(6,NA*sc*.9),'s-ok','aOk')}${arrow(bx1-8,168,bx1-8,168-Math.max(6,NB*sc*.9),'s-ok','aOk')}
+        ${W>0?arrow(240,78,240,78+Math.max(6,W*sc*.8),'s-bad','aBad'):''}${P>0?arrow(px,66-Math.max(6,P*sc*.6),px,66,'s-warn','aWarn'):''}
+        <text x="${bx0+16}" y="160" class="s-tok">N_A</text><text x="${bx1-56}" y="160" class="s-tok">N_B</text>`;
+      outEl(root).innerHTML=`Torques respecto de A: N_B·L = W·L/2 + P·x<br><b>N_A = ${fmt(NA,1)} N</b> · <b>N_B = ${fmt(NB,1)} N</b><br><small>Suma = ${fmt(NA+NB,1)} N = W + P ✓</small>`})},
+
+    spring(root){const st=root.querySelector('[data-stage]');let t=0,playing=true;const trace=[];
+      const label=()=>{root.querySelector('output[data-for="k"]').textContent=`${val(root,'k')} N/m`;root.querySelector('output[data-for="m"]').textContent=`${fmt(val(root,'m'),1)} kg`;root.querySelector('output[data-for="A"]').textContent=`${fmt(val(root,'A'),1)} cm`};
+      root.querySelectorAll('.slider output').forEach(o=>o.dataset.custom=1);
+      const info=()=>{const k=val(root,'k'),mm=val(root,'m'),A=val(root,'A')/100,W=Math.sqrt(k/mm),T=2*Math.PI/W;
+        outEl(root).innerHTML=`<b>Ω = ${fmt(W,2)} rad/s</b> · <b>T = ${fmt(T,3)} s</b> · f = ${fmt(1/T,2)} Hz<br>v máx = ΩA = ${fmt(W*A,3)} m/s · a máx = Ω²A = ${fmt(W*W*A,2)} m/s²<br><small>Animación a velocidad real${T<.25?' (muy rápida: subí m o bajá k para verla mejor)':''}.</small>`};
+      bind(root,()=>{label();info();trace.length=0});
+      const draw=()=>{const k=val(root,'k'),mm=val(root,'m'),A=val(root,'A')/100,W=Math.sqrt(k/mm),x=A*Math.cos(W*t);
+        const eqx=230,scale=1400,bx=eqx+x*scale;trace.push(x);if(trace.length>230)trace.shift();
+        let coil='';const n=12,x0=20,x1=bx-24;for(let i=0;i<=n;i++){const xx=x0+(x1-x0)*i/n,yy=i===0||i===n?60:(i%2?46:74);coil+=(i?' L':'M')+xx.toFixed(1)+' '+yy}
+        const pts=trace.map((v,i)=>`${(470-(trace.length-1-i)*1.9).toFixed(1)},${(165-v*scale*.55).toFixed(1)}`).join(' ');
+        st.innerHTML=`<rect x="8" y="24" width="10" height="72" fill="url(#hatch)"/><line x1="18" y1="24" x2="18" y2="96" class="s-ground"/><path d="${coil}" class="s-line"/>
+          <rect x="${bx-24}" y="38" width="48" height="44" rx="6" class="s-soft2"/><text x="${bx}" y="66" text-anchor="middle" class="s-tb">m</text>
+          <line x1="${eqx}" y1="20" x2="${eqx}" y2="100" class="s-dash"/><text x="${eqx+4}" y="16" class="s-ts">equilibrio</text>
+          <line x1="10" y1="165" x2="472" y2="165" class="s-thin"/><text x="10" y="128" class="s-ts">x(t)</text><polyline points="${pts}" class="s-acc" style="stroke-width:2.5"/>`};
+      draw();
+      loop(dt=>{if(playing){t+=dt;draw()}});
+      root.querySelector('[data-play]').onclick=e=>{playing=!playing;e.currentTarget.textContent=playing?'⏸ Pausa':'▶ Seguir'}},
+
+    energy(root){const st=root.querySelector('[data-stage]'),k=200,mm=.5,W=20;let t=0;
+      root.querySelector('output[data-for="A"]').dataset.custom=1;
+      bind(root,()=>{const A=val(root,'A')/100;root.querySelector('output[data-for="A"]').textContent=`${fmt(A*100,1)} cm`;outEl(root).innerHTML=`k = 200 N/m · m = 0,5 kg → <b>E = ½kA² = ${fmt(.5*k*A*A,4)} J</b> (constante)<br><small>La animación va 5 veces más lenta que la realidad.</small>`});
+      loop(dt=>{t+=dt/5;const A=val(root,'A')/100,x=A*Math.cos(W*t),E=.5*k*A*A,U=.5*k*x*x,Kc=E-U,Emax=.5*k*.1*.1,bx=240+x*1500;
+        st.innerHTML=`<line x1="${240-150}" y1="100" x2="${240+150}" y2="100" class="s-thin"/><line x1="240" y1="20" x2="240" y2="108" class="s-dash"/><text x="246" y="18" class="s-ts">x = 0</text><text x="${240-A*1500-12}" y="18" class="s-ts">−A</text><text x="${240+A*1500-6}" y="18" class="s-ts">+A</text><rect x="${bx-20}" y="58" width="40" height="40" rx="6" class="s-soft2"/>`;
+        root.querySelector('[data-u]').style.width=`${100*U/Emax}%`;root.querySelector('[data-k]').style.width=`${100*Kc/Emax}%`;root.querySelector('[data-e]').style.width=`${100*E/Emax}%`;
+        root.querySelector('[data-ut]').textContent=`${fmt(U,3)} J`;root.querySelector('[data-kt]').textContent=`${fmt(Kc,3)} J`;root.querySelector('[data-et]').textContent=`${fmt(E,3)} J`})},
+
+    physpend(root){const st=root.querySelector('[data-stage]'),L=1,Icm=L*L/12,Tof=d=>2*Math.PI*Math.sqrt((Icm+d*d)/(g*d));
+      root.querySelector('output[data-for="d"]').dataset.custom=1;
+      bind(root,()=>{const d=val(root,'d')/100,T=Tof(d),dmin=Math.sqrt(Icm);root.querySelector('output[data-for="d"]').textContent=`${fmt(d*100,0)} cm`;
+        const X=x=>200+(x-.02)/(.5-.02)*260,Y=y=>200-(y-1.4)/(2.6-1.4)*170;let path='';for(let i=0;i<=96;i++){const dd=.02+(.5-.02)*i/96;path+=(i?' L':'M')+X(dd).toFixed(1)+' '+Y(Math.min(2.6,Tof(dd))).toFixed(1)}
+        const rodTop=40,rodLen=150,pivY=rodTop+(.5-d)*rodLen;
+        st.innerHTML=`<rect x="70" y="${rodTop}" width="20" height="${rodLen}" rx="6" class="s-wood"/><circle cx="80" cy="${rodTop+rodLen/2}" r="4" class="s-dot"/><circle cx="80" cy="${pivY}" r="6" class="s-accf"/><text x="96" y="${pivY+5}" class="s-ta">pivote</text><text x="96" y="${rodTop+rodLen/2+18}" class="s-ts">CM</text>
+          <line x1="200" y1="200" x2="465" y2="200" class="s-thin"/><line x1="200" y1="200" x2="200" y2="25" class="s-thin"/><text x="410" y="222" class="s-ts">d (m)</text><text x="206" y="22" class="s-ts">T (s)</text>
+          <path d="${path}" class="s-acc"/><line x1="${X(dmin)}" y1="200" x2="${X(dmin)}" y2="${Y(Tof(dmin))}" class="s-dash"/><text x="${X(dmin)-30}" y="216" class="s-tok">d_min</text>
+          <circle cx="${X(d)}" cy="${Y(Math.min(2.6,T))}" r="7" class="s-warnf"/>`;
+        outEl(root).innerHTML=`I_P = 1/12·M·L² + M·d² · <b>T = ${fmt(T,3)} s</b><br><small>Mínimo en d = √(I_CM/M) = ${fmt(dmin,3)} m → T_min = ${fmt(Tof(dmin),3)} s. ${Math.abs(d-dmin)<.012?'¡Estás en el mínimo!':''}</small>`})},
+
+    depth(root){bind(root,()=>{const r1=val(root,'r1'),h1=val(root,'h1'),r2=val(root,'r2'),h2=val(root,'h2'),p0=Number(root.querySelector('[name="p0"]').value);
+      if(![r1,r2].every(pos)||!(h1>=0)||!(h2>=0)){outEl(root).innerHTML=bad;return}
+      const a=r1*g*h1,b=r2*g*h2,pm=a+b;
+      outEl(root).innerHTML=`ρ₁gh₁ = ${fmt(a,1)} Pa · ρ₂gh₂ = ${fmt(b,1)} Pa<br><b>p manométrica = ${fmt(pm,1)} Pa</b>${p0?` · <b>p absoluta = ${fmt(p0+pm,0)} Pa ≈ ${fmt((p0+pm)/101300,3)} atm</b>`:''}`})},
+
+    float(root){const st=root.querySelector('[data-stage]');root.querySelector('output[data-for="rc"]').dataset.custom=1;
+      bind(root,()=>{const rc=val(root,'rc'),rf=Number(root.querySelector('[name="rf"]').value),fr=rc/rf,sink=fr>=1;
+        root.querySelector('output[data-for="rc"]').textContent=`${fmt(rc,0)}`;
+        const wl=80,h=70,top=sink?192-h:wl-(1-fr)*h;
+        st.innerHTML=`<path d="M60 20 V194 H420 V20" class="s-line"/><rect x="62" y="${wl}" width="356" height="112" class="${rf===800?'s-oil':rf===13600?'s-hg':'s-water'}"/><line x1="60" y1="${wl}" x2="420" y2="${wl}" class="s-thin"/>
+          <rect x="200" y="${top}" width="80" height="${h}" rx="4" class="s-wood"/>${!sink?`<line x1="290" y1="${wl}" x2="290" y2="${top+h}" class="s-ok" marker-start="url(#aOk)" marker-end="url(#aOk)"/><text x="298" y="${(wl+top+h)/2+5}" class="s-tok">${fmt(fr*100,0)} %</text>`:''}`;
+        outEl(root).innerHTML=sink?`<b>Se hunde</b>: ρ cuerpo ≥ ρ líquido. Aun totalmente sumergido, E &lt; P.<br><small>Para sostenerlo hace falta una fuerza extra (por ejemplo, un hilo con T = P − E).</small>`:`<b>Flota con el ${fmt(fr*100,1)} % sumergido</b> (V_sum/V = ρ_c/ρ_f = ${fmt(rc,0)}/${fmt(rf,0)}).`})},
+
+    bernoulli(root){bind(root,()=>{const d1=val(root,'d1')/100,d2=val(root,'d2')/100,v1=val(root,'v1'),dy=val(root,'dy'),rho=1000;
+      if(![d1,d2,v1].every(pos)||!Number.isFinite(dy)){outEl(root).innerHTML=bad;return}
+      const v2=v1*(d1/d2)**2,Q=Math.PI*d1*d1/4*v1,dp=.5*rho*(v2*v2-v1*v1)+rho*g*dy;
+      outEl(root).innerHTML=`<b>v₂ = ${fmt(v2,3)} m/s</b> · Q = ${fmt(Q*1000,3)} L/s<br><b>p₁ − p₂ = ${fmt(dp,1)} Pa</b><br><small>= ½ρ(v₂² − v₁²) ${dy?'+ ρg(y₂ − y₁) ':''}· ${dp>0?'la presión baja de 1 a 2':dp<0?'la presión sube de 1 a 2':'misma presión'}.</small>`})},
+
+    venturi(root){bind(root,()=>{const d1=val(root,'d1')/100,d2=val(root,'d2')/100,h=val(root,'h')/100,rm=val(root,'rm'),rf=val(root,'rf');
+      if(![d1,d2,h,rm,rf].every(pos)||d2>=d1||rm<=rf){outEl(root).innerHTML='<small>Revisá los datos: D₂ tiene que ser menor que D₁ y ρ del manómetro mayor que la del fluido.</small>';return}
+      const dp=(rm-rf)*g*h,ratio=(d1/d2)**4,v1=Math.sqrt(2*dp/(rf*(ratio-1))),v2=v1*(d1/d2)**2,Q=Math.PI*d1*d1/4*v1;
+      outEl(root).innerHTML=`Δp = (ρ_m − ρ_f)·g·h = <b>${fmt(dp,1)} Pa</b><br><b>v₁ = ${fmt(v1,3)} m/s</b> · v₂ = ${fmt(v2,3)} m/s<br><b>Q = ${fmt(Q*1000,3)} L/s</b>`})},
+
+    torricelli(root){bind(root,()=>{const h=val(root,'h'),dp=val(root,'dp')*1000,d=val(root,'d')/100,rho=val(root,'rho');
+      if(!(h>=0)||!(dp>=0)||![d,rho].every(pos)){outEl(root).innerHTML=bad;return}
+      const v=Math.sqrt(2*dp/rho+2*g*h),Q=Math.PI*d*d/4*v;
+      outEl(root).innerHTML=`<b>v = ${fmt(v,3)} m/s</b> · Q = ${fmt(Q*1000,3)} L/s<br><small>Un chorro vertical con esa velocidad subiría h = v²/2g = ${fmt(v*v/(2*g),2)} m${dp?' (más que el nivel del tanque, por la presión extra)':' (justo hasta el nivel del agua)'}.</small>`})},
+
+    quiz(root){
+      const Q=[
+        ['Una bala se incrusta en una puerta que gira sobre sus bisagras. ¿Velocidad angular justo después?',['L_i = L_f respecto de las bisagras','Conservar la energía cinética','Conservar p lineal'],0,'Choque inelástico con pivote: las bisagras hacen fuerza externa (p no se conserva) y se pierde energía. Se conserva L respecto del eje.'],
+        ['Un cilindro baja rodando sin deslizar por un plano desde una altura h. ¿Rapidez abajo?',['mgh = ½mv²','Energía con traslación + rotación y v = Rω','L_i = L_f'],1,'Rozamiento estático no disipa: mgh = ½Mv² + ½Iω² con v = Rω.'],
+        ['Una viga apoyada en dos caballetes soporta una carga. ¿Reacciones?',['ΣF = 0 y Στ = 0','Στ = Iα','Bernoulli'],0,'Nada se mueve: equilibrio. Tomá momentos en un apoyo para eliminar su reacción.'],
+        ['Un aro cuelga de un clavo y oscila con ángulo chico. ¿Período?',['T = 2π√(L/g)','T = 2π√(I_P/(Mgd)) con Steiner','T = 2π√(m/k)'],1,'Es un péndulo físico: I_P = MR² + MR² = 2MR², d = R.'],
+        ['Un bloque cuelga de un resorte; lo bajás 3 cm y lo soltás. ¿Ecuación de movimiento?',['x = 3 cm·cos(Ωt) con Ω = √(k/m), medido desde el equilibrio','Hay que sumar mg en la ecuación','x = (v₀/Ω)·sen(Ωt)'],0,'Medido desde el equilibrio, el peso ya está incluido. Se suelta desde el extremo: coseno con A = 3 cm.'],
+        ['¿Presión en el fondo de un tanque con nafta sobre agua?',['p = p₀ + ρ_agua·g·h_total','Sumar ρgh de cada capa','Bernoulli'],1,'Fluido quieto en capas: p = p₀ + ρ₁gh₁ + ρ₂gh₂.'],
+        ['Un cubo de madera flota en agua. ¿Qué parte queda sumergida?',['E = P → V_sum/V = ρ_c/ρ_f','T = P − E','Siempre la mitad'],0,'Flota en equilibrio: el empuje de la parte sumergida iguala al peso.'],
+        ['Agua pasa de un caño de 6 cm a uno de 3 cm. ¿Diferencia de presión?',['Sólo continuidad','Continuidad y después Bernoulli','p = p₀ + ρgh'],1,'Continuidad da v₂ = 4v₁; Bernoulli da Δp. Se necesitan las dos.'],
+        ['Un tanque grande y abierto tiene un orificio 2 m bajo la superficie. ¿Velocidad de salida?',['v = √(2gh)','A₁v₁ = A₂v₂ solamente','Pitot'],0,'Torricelli: superficie y orificio a p_atm, v en la superficie ≈ 0.'],
+        ['Dos discos giran sobre el mismo eje y de golpe quedan pegados. ¿ω final?',['I₁ω₁ + I₂ω₂ = (I₁ + I₂)ω','Conservar ½Iω²','Στ = Iα con τ conocido'],0,'Acople: no hay torque externo sobre el eje → se conserva L (la energía no).']];
+      let score=0,answered=0;const sc=root.parentElement.querySelector('[data-score]');
+      root.innerHTML=Q.map(([q,opts],i)=>`<div class="qcard" data-q="${i}"><p>${i+1}. ${q}</p><div class="qopts">${opts.map((o,j)=>`<button type="button" data-o="${j}">${o}</button>`).join('')}</div><div class="qfb"></div></div>`).join('');
+      const upd=()=>sc.textContent=answered?`Llevás ${score} de ${answered} bien${answered===Q.length?(score===Q.length?' · ¡perfecto!':' · repasá los que fallaste'):''}.`:'';
+      root.querySelectorAll('.qcard').forEach(card=>{const i=Number(card.dataset.q),[,,right,fb]=Q[i];
+        card.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{if(card.classList.contains('answered'))return;card.classList.add('answered');answered++;const j=Number(b.dataset.o);
+          if(j===right){score++;b.classList.add('right')}else{b.classList.add('wrong');card.querySelector(`[data-o="${right}"]`).classList.add('right')}
+          card.querySelector('.qfb').innerHTML=(j===right?'✓ ':'✗ ')+fb;upd()})});
+      upd()}
+  };
+
+  /* ---------- Arranque ---------- */
+  const fromHash=()=>{const h=(location.hash||'').replace('#','');if(!h)return null;const [id]=h.split('-');const i=TOPICS.findIndex(t=>t.id===id);return i>=0?{i,sec:h.includes('-')?h:null}:null};
+  const start=fromHash();
+  if(start){go(start.i);if(start.sec)setTimeout(()=>{const el=document.getElementById(start.sec);if(el)el.scrollIntoView({block:'start'})},300)}
+  else go(Number(store.get('last','-1')));
+  window.addEventListener('hashchange',()=>{const s=fromHash();if(s&&s.i!==current)go(s.i)});
+})();
+</script>
+</body>
+</html>

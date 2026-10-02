@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "biblioteca-lbt-";
-const CACHE_VERSION = "biblioteca-lbt-v01136-qbi-glucidos-lipidos-mapa";
+const CACHE_VERSION = "biblioteca-lbt-v01137-fisica-teoria-p2";
 const CORE = [
   "./","./index.html","./bienvenida.html",
   "./styles.css?v=0.11.1","./styles-enhancements.css?v=0.11.18","./styles-personal.css?v=0.10.9",
@@ -10,7 +10,8 @@ const CORE = [
   "./js/estadistica-integral-bridge.js?v=1.4.0","./js/solved-update-status.js?v=1.1.0","./js/boot-update-gate.js?v=1.1.0","./js/study-chrome.js?v=0.11.17","./js/analysis2-integrated.js?v=1.0.0","./js/developer-comments-v101.js?v=1.0.1",
   "./content/catalog.json","./version.json",
   "./content/subjects/analisis1/units/interfaz-base/summary.html?v=1.0.0",
-  "./content/subjects/fisica1/units/resumen-integral/summary.html?v=1.8.0",
+  "./content/subjects/fisica1/units/resumen-integral/summary.html?v=1.9.0",
+  "./content/subjects/fisica1/units/resumen-integral/teoria-segundo-parcial.html?v=1.9.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-integral.html?v=1.5.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-v140-payload-1.txt?v=1.4.0",
   "./content/subjects/estadistica/units/probabilidad-practica-1/estadistica-v140-payload-2.txt?v=1.4.0",
