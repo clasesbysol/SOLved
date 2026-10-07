@@ -391,6 +391,118 @@
       ])
     ]}
   );
+  /* ---------- Ácidos nucleicos (sección 3). Para sumar Ácidos nucleicos II, agregar otro grupo con section:"acidos-nucleicos". ---------- */
+  window.QBI_MIND_MAP_SECTIONS.push({id:"acidos-nucleicos",label:"Ácidos nucleicos",description:"Ácidos nucleicos I: nucleótidos, ADN como material genético, doble hélice, ARN, flujo de la información y metabolismo de nucleótidos."});
+  window.QBI_MIND_MAP_DATA.push(
+    {id:"acidos1",section:"acidos-nucleicos",label:"Ácidos nucleicos I · bases, nucleósidos y nucleótidos",description:"De la pieza (el nucleótido) a la molécula de la herencia, el mensajero y las vías que los fabrican y reciclan.",chapters:[
+      chapter("48. Ácidos nucleicos y funciones de los nucleótidos","cap58","Un ácido nucleico es un polinucleótido; los nucleótidos además están en todo el metabolismo.",[
+        t("Ácido nucleico","Polinucleótido que almacena y transfiere información celular. Dos tipos: ADN (ácido desoxirribonucleico) y ARN (ácido ribonucleico). Esqueleto alternado azúcar-fosfato con una base en cada azúcar; la información está en la secuencia de bases."),
+        t("Partes de un nucleótido","Base nitrogenada (purina o pirimidina) + pentosa (ribosa en ARN, desoxirribosa en ADN) + uno o más fosfatos en el C5′.",["nucleósido = base + pentosa","nucleótido = nucleósido + fosfato(s)"]),
+        t("Cinco funciones","Energía (ATP, GTP; estables con un solo fosfato). Electrones (NADH, NADPH, FADH₂; la clase suma la CoA, que en realidad transfiere acilos). Señalización (AMPc, GMPc; fosforilación). Intermediarios activados (UDP-glucosa, SAM). Información (precursores activados de ADN y ARN).")
+      ]),
+      chapter("49. Bases: purinas y pirimidinas","cap59","Dos familias de bases según tengan uno o dos anillos.",[
+        t("Pioneros","Miescher aisló las «nucleínas» ricas en fosfato. Kossel describió sus componentes (base + azúcar + fosfato) y las bases A, C, G, T, U. Levene nombró al nucleótido y propuso el ADN como tetranucleótido (1910): parecía demasiado simple para llevar información."),
+        t("Purinas y pirimidinas","Purinas: dos anillos (6 + 5 átomos), adenina y guanina; se unen al azúcar por N9. Pirimidinas: un anillo de 6, citosina, timina y uracilo; se unen por N1.",["PURo AGua: purinas = A y G"]),
+        t("Propiedades","Aromáticas e hidrofóbicas (se apilan, quedan adentro de la hélice); poco solubles en agua salvo en medio ácido o básico, donde se cargan; electrones deslocalizados → absorben a ~260 nm."),
+        t("ADN vs ARN","ADN: A, G, C, T. ARN: A, G, C, U. Timina = uracilo con metilo en C5. La desaminación de C da U; la metilación de U da T (relación química).")
+      ]),
+      chapter("50. Ribosa y desoxirribosa","cap60","La pentosa cambia en un solo grupo, y eso decide la estabilidad.",[
+        t("β-D-ribofuranosa","Pentosa en anillo de cinco (furanosa), serie D, base en posición β. Los carbonos del azúcar llevan prima (1′–5′) para distinguirlos de los átomos de la base."),
+        t("La diferencia en C2′","Ribosa (ARN): OH en C2′. Desoxirribosa (ADN): H en C2′. El 2′-OH puede atacar el enlace fosfodiéster vecino: el ARN es químicamente inestable y se hidroliza con más facilidad (sobre todo en medio alcalino); el ADN es más estable.")
+      ]),
+      chapter("51. Nucleósidos, nucleótidos y sus enlaces","cap61","Tres enlaces arman el nucleótido; un cuarto arma la cadena.",[
+        t("N-glicosídico","Une C1′ del azúcar con N9 (purinas) o N1 (pirimidinas). Configuración β: base y C5′ del mismo lado. Nombres: adenosina, guanosina, citidina, uridina, timidina."),
+        t("Fosfoéster y fosfoanhídrido","Fosfoéster: fosfato con el OH del C5′ (adenosina → AMP). Fosfoanhídrido: fosfato con fosfato (AMP → ADP → ATP). El ATP tiene 1 fosfoéster y 2 fosfoanhídrido."),
+        t("Mono, di, trifosfatos","Con 2 o 3 fosfatos son buenos dadores de energía: las cargas negativas se repelen y su hidrólisis libera energía. Los nucleótidos son muy polares y negativos. Fosfatos α, β, γ desde el azúcar."),
+        t("No confundir","Fosfoéster: fosfato–un azúcar. Fosfodiéster: un fosfato entre dos azúcares (C3′–O–P–O–C5′), intracatenario. Fosfoanhídrido: fosfato–fosfato. Puentes de H: entre bases, intercatenarios y no covalentes.")
+      ]),
+      chapter("52. Nomenclatura","cap62","Tres reglas para nombrar cualquier nucleótido.",[
+        t("Reglas","Purinas → -osina; pirimidinas → -idina. Desoxirribosa → prefijo desoxi y d en el símbolo. Fosfatos: MP, DP, TP; el 5′-monofosfato también se llama -ilato (adenilato = AMP).",["dGTP = desoxiguanosín trifosfato"]),
+        t("TMP = dTMP","La tabla 25.1 escribe timidina y timidilato (TMP) sin desoxi; las figuras dicen desoxitimidina y dTMP. Es la misma molécula: como la timina está casi solo en el ADN, se sobreentiende.")
+      ]),
+      chapter("53. El ADN es el material genético","cap63","Tres experimentos: Griffith, Avery y Hershey–Chase.",[
+        t("Griffith (1928)","R (rugosas) no letales; S (lisas) letales y sensibles al calor. R vivas + S muertas por calor matan al ratón y se recuperan S vivas: transformación estable y heredable. Mostró un factor transformante, pero no qué molécula era."),
+        t("Avery, MacLeod y McCarty (1944)","Lisado de S tratado con enzimas: SIII (polisacárido), tripsina/quimiotripsina (proteínas), ARNasa → el ratón sigue muriendo. Solo con ADNasa el ratón vive: FT = ADN. La transformación bacteriana requiere ADN.",[],"",["Si destruís una molécula y la transformación sigue, esa molécula no era el FT.","Si al destruirla la transformación desaparece (ratón vive), era imprescindible.","Solo la ADNasa anula la transformación: el factor transformante es el ADN."]),
+        t("Hershey y Chase (1952)","Fagos marcados con ³²P (ADN) o ³⁵S (proteína): el ADN entra a la bacteria y la proteína queda afuera. El ADN es el material genético de los fagos (la clase lo presenta con un video).")
+      ]),
+      chapter("54. Rayos X, Foto 51 y Chargaff","cap64","Dos tipos de datos revelaron la forma: difracción y composición de bases.",[
+        t("Protagonistas","Pauling propuso una triple hélice. Watson y Crick (Cambridge) y Wilkins (King’s College) recibieron el Nobel en 1962. Franklin, con Gosling, obtuvo la Foto 51; murió en 1958."),
+        t("Difracción y Bragg","Las estructuras repetidas dispersan los rayos X con interferencias. Distancias chicas → ángulos grandes.",["n·λ = 2·d·sen θ"]),
+        t("Lectura de la Foto 51","X → hélice. Una vuelta = 34 Å. Entre nucleótidos 3,4 Å. 10–10,5 nucleótidos por vuelta. Falta la 4.ª línea → doble hélice. Diámetro 20–24 Å."),
+        t("Reglas de Chargaff (1949)","La composición varía entre especies; es igual en todos los tejidos; no cambia con edad, nutrición ni ambiente. [A]=[T] y [G]=[C] → el ADN se mide en pares de bases. Vale para ADN bicatenario.",["[A+G] = [T+C]  ·  purinas = pirimidinas"],"",["Ejemplo: 30 % de A → T = 30 %.","A + T = 60 % → G + C = 40 %.","G = C = 20 %."])
+      ]),
+      chapter("55. El modelo de Watson y Crick","cap65","Cada rasgo de la doble hélice tiene una razón química.",[
+        t("Rasgos del modelo","Doble hélice dextrógira alrededor de un eje; fosfatos afuera (hidrofílicos); bases planas adentro (hidrofóbicas); pares purina–pirimidina complementarios A–T y C–G; cadenas antiparalelas 5′→3′ / 3′→5′."),
+        t("Extremos y fosfodiéster","El enlace fosfodiéster une C3′ de un azúcar con C5′ del siguiente. Extremo 5′: fosfato libre; extremo 3′: OH libre. Las secuencias se escriben 5′→3′."),
+        t("Puentes de H","A–T: 2 puentes; G–C: 3 puentes. Son las uniones intercatenarias. El ADN rico en G+C es más estable (también por mejor apilamiento)."),
+        t("Información","El orden lineal de las bases sobre el esqueleto azúcar-fosfato es el sistema de almacenamiento de información.",["5′-ATGC-3′ → complementaria 5′-GCAT-3′"])
+      ]),
+      chapter("56. Dimensiones y formas A, B, Z","cap66","Los números de la hélice se relacionan con cuentas simples.",[
+        t("Forma B","34 Å por vuelta; ≈ 10 (10,4) pares por vuelta; 3,4 Å entre pares; giro ~36° por base; ancho ≈ 20 Å; surcos mayor y menor.",["h = 34 Å / 10 = 3,4 Å","giro = 360° / 10 = 36°"]),
+        t("2 m de ADN por célula","Célula diploide ≈ 6,4 × 10⁹ pb; L = N × h.",["L = 6,4 × 10⁹ × 3,4 × 10⁻¹⁰ m ≈ 2 m"]),
+        t("A, B y Z","A: dextrógira, 3,2 nm/vuelta, bases inclinadas, 11 por vuelta; con cationes o deshidratación; ARN y ARN-ADN. B: dextrógira, 3,4 nm, perpendiculares, 10; fisiológica. Z: levógira, 4,5 nm, zig-zag, 12; in vitro con repeticiones d(GC) y d(AC).")
+      ]),
+      chapter("57. Historia del modelo (1951–1962)","cap67","El modelo unió difracción, química y construcción de modelos.",[
+        t("Cronología de clase","1951 Franklin en King’s College; Foto 51 (Gosling). 1952 datos helicoidales; Wilkins muestra la foto a Watson. Feb 1953 modelo; Crick en The Eagle: «We have discovered the secret of life!». 25/04/1953: tres artículos en Nature (Watson & Crick; Wilkins et al.; Franklin & Gosling). 1962 Nobel a Watson, Crick y Wilkins."),
+        t("Nature 1953","Watson y Crick reconocen haberse estimulado por los resultados no publicados de Wilkins y Franklin en King’s College. Su artículo: Nature 171:737-738.")
+      ]),
+      chapter("58. Desnaturalización y Tm","cap68","Las cadenas se separan y se vuelven a juntar sin romper enlaces covalentes.",[
+        t("Desnaturalización","Por temperatura o pH extremos se rompen los puentes de H entre bases; los enlaces covalentes quedan intactos. Volviendo a condiciones fisiológicas (condiciones especiales) se renaturaliza."),
+        t("Efecto hipercrómico","Al separarse las cadenas aumenta la absorbancia a 260 nm: las bases apiladas absorben menos que las libres."),
+        t("Tm","Temperatura a la que el 50 % está desapareado. Más G+C → mayor Tm. Se lee en el eje de temperatura, en la mitad de la subida de absorbancia (1,0 → 1,4: mitad 1,2).",["absorbancia a mitad = (1,0 + 1,4)/2 = 1,2 → bajar a T = Tm"])
+      ]),
+      chapter("59. El ARN y por qué usa U","cap69","Azúcar, base y número de cadenas separan ARN de ADN.",[
+        t("Características","Polímero de ribonucleótidos; el ácido nucleico más abundante (4–10 veces más que ADN); 2′-OH libre (inestable); casi siempre monocatenario con apareamientos internos (horquillas); principalmente citoplasmático."),
+        t("ADN vs ARN","Desoxirribosa vs ribosa; T vs U; doble hélice vs cadena lineal; ADN más estable; ADN nuclear vs ARN citoplasmático (en eucariotas)."),
+        t("¿Por qué T en el ADN?","La C se desamina sola a U. Con T como base normal, todo U en el ADN es un error: la uracilo-ADN glicosilasa lo saca y la reparación por escisión de bases repone la C. Sin reparar, G–C pasa a A–T. El ARN dura poco y se copia mucho; usar U es más barato (la T exige timidilato sintasa y folato).",[],"",["G–C → la C se desamina → G–U.","Al replicar, U se aparea con A → U–A.","Siguiente replicación: A–T. Mutación permanente."])
+      ]),
+      chapter("60. Tipos de ARN y dogma central","cap70","Cada ARN tiene su trabajo en el camino de la información.",[
+        t("Cuatro tipos (clase)","ARNm: lleva la información del núcleo al citoplasma. ARNt: lleva aminoácidos al ribosoma. ARNr: ≈ 80 % del ARN; forma ribosomas. ARNnp (snRNA): corte y empalme de intrones. Cada uno codificado por su propio gen."),
+        t("Dogma central","ADN → ADN (replicación), ADN → ARN (transcripción), ARN → proteína (traducción). Frase clave de Crick: una vez que la información de secuencia pasó a la proteína, no puede volver a salir. La retrotranscripción (ARN → ADN) no lo contradice.")
+      ]),
+      chapter("61. Replicación, transcripción, traducción","cap71","Quién participa, dónde y en qué dirección.",[
+        t("Replicación","Núcleo (eucariotas); semiconservativa; polimerasas, ligasas, topoisomerasas, helicasas; síntesis 5′→3′: cadena adelantada continua y retrasada en fragmentos de Okazaki unidos por la ligasa. Da dos ADN idénticos."),
+        t("Transcripción","ARN polimerasa, factores de transcripción y reguladores. Iniciación (promotor), elongación, terminación (terminador). El ARN es igual a la cadena no molde (con U). En eucariotas: precursor de ARNm, splicing constitutivo o alternativo, cap 5′ y cola poli(A)."),
+        t("Traducción","El ribosoma lee codones de 3 bases. Citoplasmática en eucariotas; intervienen ARNm, ARNt y ARNr. Etapas: activación, iniciación, elongación, terminación. AUG = inicio (Met); UAA, UAG, UGA = stop.",["5′-AUG GCU UGG UAA-3′ → Met-Ala-Trp"])
+      ]),
+      chapter("62. Metabolismo: mapa general","cap72","Los nucleótidos se fabrican «de novo» o se reciclan.",[
+        t("Degradación","ADN/ARN → (nucleasas) oligonucleótidos → (fosfodiesterasas) nucleótidos → (nucleotidasas) nucleósidos + Pi → (nucleósido fosforilasa) base + ribosa-1-P. Purinas → ácido úrico; pirimidinas → β-ureidopropionato."),
+        t("De novo y rescate","De novo: desde precursores chicos, conservada y costosa. Rescate: bases ya formadas + PRPP → nucleótido + PPi (más barato). En animales la dieta es la principal fuente de bases y nucleósidos importados."),
+        t("Origen de los átomos","Purina: N1 Asp; C2 y C8 formato (THF); N3 y N9 amida de Gln; C4, C5, N7 Gly; C6 CO₂. Pirimidina: carbamoil fosfato (C2, N3) + aspartato (N1, C4, C5, C6).",["Gly 3 + Gln 2 + formato 2 + Asp 1 + CO₂ 1 = 9"]),
+        t("PRPP","Dador de la ribosa-5-P en todos los nucleótidos. Ribosa-5-P (vía de las pentosas) + ATP → PRPP + AMP (PRPP sintetasa).")
+      ]),
+      chapter("63. Síntesis y regulación de purinas","cap73","El anillo se arma sobre la ribosa; frenos en la entrada y en cada rama.",[
+        t("Estrategia","Purinas: el anillo se ensambla sobre la ribosa-P (10 u 11 reacciones hasta IMP, cuya base es hipoxantina). Pirimidinas: el anillo se arma aparte y luego recibe PRPP."),
+        t("Paso comprometido","PRPP + glutamina → 5-fosforribosil-1-amina (glutamina-PRPP amidotransferasa). Está después del PRPP porque el PRPP también va a histidina, pirimidinas y rescate."),
+        t("Retroinhibición","IMP, AMP y GMP inhiben la amidotransferasa. AMP inhibe su precursor inmediato (adenilosuccinato) y GMP el suyo (XMP)."),
+        t("IMP → AMP y GMP","AMP: + Asp en C6 con GTP; sale fumarato. GMP: oxidación de IMP a XMP (NAD⁺), luego NH₂ en C2 desde Gln con ATP. Cruce de energía: GTP para AMP, ATP para GMP.",[],"",["IMP + Asp + GTP → adenilosuccinato → AMP + fumarato.","IMP + NAD⁺ → XMP; XMP + Gln + ATP → GMP + Glu + AMP + PPi.","Mucho ATP impulsa GMP; mucho GTP impulsa AMP: se equilibran."]),
+        t("Café","Cafeína = 1,3,7-trimetilxantina, un derivado estructural de la purina (no es una ruta humana).")
+      ]),
+      chapter("64. Síntesis de pirimidinas","cap74","Primero el anillo, después la ribosa.",[
+        t("Vía","HCO₃⁻ + Gln + 2 ATP → carbamoil fosfato; + aspartato (ATCasa) → carbamoilaspartato (comprometido) → dihidroorotato → orotato; + PRPP → orotidilato (OMP); − CO₂ → UMP → UDP → UTP; aminación → CTP (CTP sintetasa)."),
+        t("Regulación","El CTP inhibe la ATCasa (retroinhibición); el ATP la activa. Es el ejemplo clásico bacteriano; en mamíferos el control principal está en la síntesis de carbamoil fosfato.")
+      ]),
+      chapter("65. Desoxirribonucleótidos y timidilato","cap75","De ribo a desoxi, nunca al revés; la T pide un paso extra.",[
+        t("Ribonucleótido reductasa","ADP, GDP, CDP, UDP → dADP, dGDP, dCDP, dUDP → dNTP. No hay ribonucleótidos que se formen de desoxirribonucleótidos (mundo de ARN)."),
+        t("dTMP","dUDP → dUTP → (dUTPasa, evita U en el ADN) dUMP → (timidilato sintasa + N⁵,N¹⁰-metilen-THF) dTMP. El folato queda como DHF; la DHFR lo regenera a THF con NADPH; serina → glicina recarga metilen-THF."),
+        t("Fármacos","Fluorouracilo → FdUMP: inhibidor suicida de la timidilato sintasa. Aminopterina y metotrexato: análogos de folato que inhiben la DHFR. Frenan la replicación de células que se dividen rápido (cáncer).")
+      ]),
+      chapter("66. Degradación de purinas y gota","cap76","Los humanos terminamos en urato, poco soluble.",[
+        t("Vía","AMP → adenosina (nucleotidasa) → inosina (adenosina desaminasa, − NH₄⁺) → hipoxantina (nucleósido fosforilasa, + Pi) → xantina → ácido úrico (xantina oxidasa, ambos pasos). La guanina también llega a xantina."),
+        t("Gota","Sin urato oxidasa no formamos alantoína (más soluble): excretamos urato. Si se acumula (sobre todo porque el riñón elimina poco) cristaliza e inflama: gota. Carlos V la tenía (NEJM 2006: cristales de urato en su dedo momificado)."),
+        t("Alopurinol y rescate","Alopurinol: análogo de hipoxantina, inhibidor suicida de la xantina oxidasa. Rescate: hipoxantina o guanina + PRPP → IMP o GMP + PPi (HGPRT); adenina + PRPP → AMP + PPi.")
+      ]),
+      chapter("67. Coenzimas y SAM","cap77","Nucleótidos escondidos en coenzimas.",[
+        t("Coenzimas","FMN = riboflavina (flavina + ribitol) + fosfato; FAD = FMN + AMP. NAD = nucleótido de nicotinamida + nucleótido de adenina; NADP = NAD + fosfato. CoA = β-mercaptoetilamina + ácido pantoténico + ADP con fosfato extra en 3′ (transfiere acilos)."),
+        t("SAM","Metionina + adenosina del ATP → SAM, principal dador de metilos (lípidos de membrana neural, metilación del ADN). Queda homocisteína, que vuelve a metionina con metionina sintasa, vitamina B₁₂ y folato (N⁵-metil-THF).")
+      ]),
+      chapter("68. Preguntas de la clase","cap78","Respuestas marcadas en las diapositivas 61 a 63.",[
+        t("Diagnóstico","ADN de una célula humana estirado ≈ 2 m. En una célula hepática hay más ARN: marcadas 4x y 8x (rango 4–10)."),
+        t("Verdadero o falso","Griffith demostró que el ADN era el principio transformante: F. En el ADN purinas = pirimidinas: V. Los nucleótidos son esenciales en humanos: F. Los ribonucleótidos se obtienen de desoxirribonucleótidos: F."),
+        t("Opción múltiple","Avery y col.: la transformación bacteriana requiere DNA. Forma Z: ocurre in vitro si hay repeticiones de d(GC).")
+      ])
+    ]}
+  );
   const deep={
     "Salting out con sulfato de amonio":["Imaginá que la proteína necesita una capa de agua ordenada alrededor para mantenerse separada de las demás.","Al agregar poca sal puede mejorar la solubilidad porque los iones apantallan cargas superficiales. Esto es salting in y no debe confundirse con el paso siguiente.","Al agregar mucha sal, los iones muy hidratados retienen una gran proporción del agua. La superficie de la proteína queda peor hidratada.","Al disminuir la hidratación se vuelven relativamente más favorables los contactos entre zonas proteicas; las moléculas se agrupan y precipitan.","Cada proteína precipita a un porcentaje de saturación distinto. Se agrega sal por intervalos, se centrifuga y se ensayan sobrenadante y precipitado para saber dónde quedó la actividad."],
     "Precipitación cerca del pI":["Lejos del pI, muchas moléculas tienen el mismo signo y se repelen, como objetos con cargas iguales.","En el pI la suma promedio de cargas se aproxima a cero. Siguen existiendo grupos positivos y negativos, pero la repulsión neta entre moléculas disminuye.","Al faltar esa barrera repulsiva, las proteínas pueden acercarse lo suficiente para que actúen contactos hidrofóbicos y otras atracciones de corto alcance.","Por eso la solubilidad suele ser mínima cerca del pI; no porque la proteína quede químicamente sin cargas, sino porque pierde protección electrostática frente a la agregación."],
