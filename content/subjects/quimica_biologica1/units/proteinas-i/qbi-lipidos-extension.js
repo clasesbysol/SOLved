@@ -1,6 +1,7 @@
 (()=>{
 'use strict';
-const VERSION='1.4.0';
+const VERSION='1.5.0';
+const SELF_SRC=(document.currentScript&&document.currentScript.src)||location.href;
 const FIRST=42;
 const LAST=57;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -242,6 +243,11 @@ function ensure(){
 let tries=0;function boot(){if(ensure())return;if(++tries<200)setTimeout(boot,150)}
 function maintain(){if(!document.getElementById('cap57')||!document.getElementById('tp4')||!nav()?.querySelector('[data-qbi-lip-index]')||!nav()?.querySelector('[data-qbi-index-group-added]'))ensure()}
 const observer=new MutationObserver(()=>{clearTimeout(observer.timer);observer.timer=setTimeout(maintain,100)});
-function start(){observer.observe(document.documentElement,{subtree:true,childList:true});boot();setTimeout(maintain,1000);setInterval(maintain,3000)}
+// Ácidos nucleicos (caps. 58 en adelante) va en su propio archivo y se carga desde acá, después de Lípidos.
+function loadAcidos(){
+ if(window.__qbiAcidos||document.querySelector('script[data-qbi-acidos-loader]'))return;
+ const s=document.createElement('script');s.src=new URL('qbi-acidos-nucleicos-extension.js?v=1.0.0',SELF_SRC).href;s.defer=true;s.dataset.qbiAcidosLoader='1';document.body.append(s);
+}
+function start(){observer.observe(document.documentElement,{subtree:true,childList:true});boot();setTimeout(maintain,1000);setInterval(maintain,3000);loadAcidos()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
