@@ -39,6 +39,7 @@ blocks: [
 ['table', ['Característica', 'Explicación'], [
 ['Es el ácido nucleico más abundante', 'Una célula típica tiene entre <b>4 y 10 veces más ARN que ADN</b>. Cada gen puede copiarse muchas veces en ARN y, además, los ribosomas están hechos en gran parte de ARN.'],
 ['Es químicamente inestable', 'Su ribosa tiene un OH libre en el C2′, que puede atacar y cortar el enlace fosfodiéster vecino (capítulo 60).'],
+['Aparea A con U', 'En el ARN la base que se aparea con la adenina es el <b>uracilo</b> (A–U, con 2 puentes de hidrógeno), a diferencia del ADN, donde la A se aparea con T. G sigue apareándose con C.'],
 ['Casi siempre tiene una sola cadena', 'Es monocatenario, pero esa cadena puede doblarse y aparear algunas de sus propias bases, formando tramos cortos de doble hélice (horquillas, tallos y lazos). También puede aparearse con otra molécula de ARN o de ADN.'],
 ['Está principalmente en el citoplasma', 'En las células eucariotas se fabrica en el núcleo, pero la mayor parte trabaja en el citoplasma, donde están los ribosomas.']
 ]],
@@ -51,7 +52,9 @@ blocks: [
 ['Forma', 'Doble hélice', 'Cadena simple, que puede tener zonas apareadas'],
 ['Estabilidad', 'Mayor', 'Menor'],
 ['Ubicación (eucariotas)', 'Principalmente en el núcleo', 'Principalmente en el citoplasma'],
-['Cantidad', 'Menor', 'Entre 4 y 10 veces más abundante']
+['Cantidad', 'Menor', 'Entre 4 y 10 veces más abundante'],
+['Tamaño (peso molecular)', 'Generalmente mucho mayor: una sola molécula puede tener millones de pares de bases', 'Menor: cada ARN es la copia de un gen o de una parte'],
+['Apareamiento', 'A–T y G–C', 'A–U y G–C']
 ]],
 ['p', 'En las células eucariotas el ADN está sobre todo en el núcleo, aunque mitocondrias y cloroplastos tienen su propio ADN. Las procariotas no tienen núcleo: su ADN está en el citoplasma, en una zona llamada nucleoide.'],
 ['h', '¿Por qué el ADN tiene T y el ARN tiene U?'],
@@ -115,10 +118,12 @@ blocks: [
 ]],
 ['img', 'p045-horquilla', 'Horquilla de replicación: cadenas molde (template strands), ADN polimerasa, ADN ligasa, fragmentos de Okazaki, cadena retrasada (lagging strand) y cadena adelantada (leading strand).', 45],
 ['steps', 'Cómo funciona la horquilla', [
+'La replicación empieza en sitios llamados <b>orígenes de replicación</b>. Desde cada origen se abren dos horquillas que avanzan en sentidos opuestos.',
 'La helicasa separa las dos cadenas del ADN y cada una sirve de <b>molde</b>.',
 'La ADN polimerasa solo puede agregar nucleótidos al extremo 3′: <b>sintetiza en sentido 5′→3′</b> y lee el molde de 3′ a 5′.',
 'En una de las cadenas, ese sentido coincide con el avance de la horquilla: la cadena nueva crece de forma continua. Es la <b>cadena adelantada</b> o conductora.',
-'En la otra, la polimerasa tiene que trabajar «hacia atrás», en tramos cortos llamados <b>fragmentos de Okazaki</b>: es la <b>cadena retrasada</b>. Cada fragmento empieza sobre un pequeño cebador de ARN.',
+'En la otra, la polimerasa tiene que trabajar «hacia atrás», en tramos cortos llamados <b>fragmentos de Okazaki</b>: es la <b>cadena retrasada</b>.',
+'La ADN polimerasa no puede empezar una cadena de cero: solo alarga un extremo 3′ que ya existe. Por eso una enzima llamada <b>primasa</b> fabrica primero un <b>cebador</b> corto de ARN; la polimerasa lo alarga con ADN. La cadena adelantada necesita un solo cebador; la retrasada, uno por cada fragmento de Okazaki. Después los cebadores se reemplazan por ADN.',
 'La <b>ADN ligasa</b> une los fragmentos con enlaces fosfodiéster. Las topoisomerasas evitan que el ADN se retuerza por delante de la horquilla.'
 ]],
 ['img', 'p045-semiconservativa', 'Replicación semiconservativa: la molécula original da dos moléculas hijas en la primera generación y cuatro en la segunda.', 45],
@@ -129,14 +134,15 @@ blocks: [
 ['steps', 'Las tres etapas', [
 '<b>Iniciación:</b> la ARN polimerasa se une al <b>promotor</b>, una secuencia del ADN que marca dónde empezar.',
 '<b>Elongación:</b> la polimerasa abre la doble hélice en una zona pequeña, lee la <b>cadena molde</b> de 3′ a 5′ y arma el ARN de 5′ a 3′ con ribonucleótidos trifosfato (ATP, GTP, CTP, UTP).',
-'<b>Terminación:</b> al reconocer una secuencia <b>terminadora</b>, la polimerasa se suelta y libera el ARN.'
+'<b>Terminación:</b> al llegar a una secuencia <b>terminadora</b> del ADN, la polimerasa se suelta y libera el ARN. En las bacterias hay dos formas: el ARN recién hecho forma una horquilla que desprende a la polimerasa (terminación independiente de Rho), o una proteína llamada <b>Rho</b> la empuja fuera del ADN (terminación dependiente de Rho).'
 ]],
+['trap', 'No confundas la terminación de la <b>transcripción</b> (una secuencia terminadora en el ADN) con la de la <b>traducción</b> (un codón de terminación en el ARNm: UAA, UAG o UGA).'],
 ['fig', F.strands, 'El ARN es complementario a la cadena molde, así que resulta igual a la cadena no molde, con U en lugar de T.'],
 ['p', 'En las células eucariotas primero se fabrica un <b>ARNm precursor</b> que tiene exones (partes que quedan) e intrones (partes que se eliminan). El <b>splicing</b> o corte y empalme saca los intrones y une los exones; lo hacen complejos que contienen ARNnp. Si siempre se unen los mismos exones es <b>constitutivo</b>; si un mismo precursor puede empalmarse de distintas formas para dar distintos ARNm es <b>alternativo</b>.'],
 ['img', 'p046-arnm', 'ARNm eucariota maduro: capuchón metilado en 5′, codón de inicio AUG, secuencia codificante (ya sin intrones), codón de terminación UAG y cola de poli(A) en 3′.', 46],
 ['p', 'El ARNm maduro tiene un <b>capuchón metilado en el extremo 5′</b> y una <b>cola de poli(A) en el 3′</b>, que lo protegen y ayudan a traducirlo. Entre esos extremos y la parte que codifica quedan regiones que no se traducen (5′ y 3′ no traducidas).'],
 ['h', 'Traducción: del ARN a la proteína'],
-['p', 'En la <b>traducción</b>, el ribosoma lee el ARNm de a tres bases. Cada grupo de tres bases es un <b>codón</b>, y el <b>código genético</b> indica qué aminoácido corresponde a cada uno. En las eucariotas ocurre en el citoplasma y participan los tres ARN: ARNm (el mensaje), ARNt (trae los aminoácidos) y ARNr (forma el ribosoma).'],
+['p', 'La <b>traducción</b> decodifica un ARNm maduro para fabricar un polipéptido específico, siguiendo las reglas del código genético. El ribosoma lee el ARNm de a tres bases. Cada grupo de tres bases es un <b>codón</b>, y el <b>código genético</b> indica qué aminoácido corresponde a cada uno. En las eucariotas ocurre en el citoplasma y participan los tres ARN: ARNm (el mensaje), ARNt (trae los aminoácidos) y ARNr (forma el ribosoma).'],
 ['table', ['Aminoácido', 'Tres letras', 'Una letra', 'Codones (ARNm)'], CODE],
 ['p', 'Hay 64 codones: 61 indican aminoácidos y 3 indican el final. Casi todos los aminoácidos tienen más de un codón (el código es <b>degenerado</b>); solo la metionina (AUG) y el triptófano (UGG) tienen uno. AUG también marca el <b>inicio</b>.'],
 ['img', 'p047-codigo', 'El código genético en formato compacto: los codones agrupados sobre cada aminoácido, con su abreviatura de tres letras y de una letra.', 47],
@@ -144,7 +150,7 @@ blocks: [
 ['steps', 'Las cuatro etapas', [
 '<b>Activación:</b> cada aminoácido se une a su ARNt. Lo hacen las aminoacil-ARNt sintetasas, con gasto de ATP.',
 '<b>Iniciación:</b> el ribosoma se arma sobre el ARNm en el codón de inicio AUG, con el ARNt que lleva metionina.',
-'<b>Elongación:</b> el ribosoma avanza de a un codón. Entra el ARNt cuyo anticodón es complementario al codón y se forma el enlace peptídico con la cadena que viene creciendo.',
+'<b>Elongación:</b> el ribosoma tiene tres lugares para ARNt: <b>A</b> (entra el ARNt cargado con el aminoácido nuevo), <b>P</b> (está el ARNt que sostiene la cadena que crece) y <b>E</b> (sale el ARNt ya vacío). En cada ciclo entra al sitio A el ARNt cuyo anticodón es complementario al codón, se forma el enlace peptídico, y el ribosoma avanza un codón.',
 '<b>Terminación:</b> al llegar a UAA, UAG o UGA no entra ningún ARNt y se libera la proteína.'
 ]],
 ['steps', 'Ejercicio integrador: del ADN a la proteína', [

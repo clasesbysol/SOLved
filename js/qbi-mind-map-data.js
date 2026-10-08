@@ -423,7 +423,7 @@
       chapter("53. El ADN es el material genético","cap63","Tres experimentos: Griffith, Avery y Hershey–Chase.",[
         t("Griffith (1928)","R (rugosas) no letales; S (lisas) letales y sensibles al calor. R vivas + S muertas por calor matan al ratón y se recuperan S vivas: transformación estable y heredable. Mostró un factor transformante, pero no qué molécula era."),
         t("Avery, MacLeod y McCarty (1944)","Lisado de S tratado con enzimas: SIII (polisacárido), tripsina/quimiotripsina (proteínas), ARNasa → el ratón sigue muriendo. Solo con ADNasa el ratón vive: FT = ADN. La transformación bacteriana requiere ADN.",[],"",["Si destruís una molécula y la transformación sigue, esa molécula no era el FT.","Si al destruirla la transformación desaparece (ratón vive), era imprescindible.","Solo la ADNasa anula la transformación: el factor transformante es el ADN."]),
-        t("Hershey y Chase (1952)","Fagos marcados con ³²P (ADN) o ³⁵S (proteína): el ADN entra a la bacteria y la proteína queda afuera. El ADN es el material genético de los fagos.")
+        t("Hershey y Chase (1952)","Fago T2 marcado con ³²P (ADN) o ³⁵S (proteína): tras licuar y centrifugar, el ³²P queda en el pellet con las bacterias y el ³⁵S afuera. El ADN es el material genético de los fagos.")
       ]),
       chapter("54. Rayos X, Foto 51 y Chargaff","cap64","Dos tipos de datos revelaron la forma: difracción y composición de bases.",[
         t("Protagonistas","Pauling propuso una triple hélice. Watson y Crick (Cambridge) y Wilkins (King’s College) recibieron el Nobel en 1962. Franklin, con Gosling, obtuvo la Foto 51; murió en 1958."),
@@ -440,7 +440,7 @@
       chapter("56. Dimensiones y formas A, B, Z","cap66","Los números de la hélice se relacionan con cuentas simples.",[
         t("Forma B","34 Å por vuelta; ≈ 10 (10,4) pares por vuelta; 3,4 Å entre pares; giro ~36° por base; ancho ≈ 20 Å; surcos mayor y menor.",["h = 34 Å / 10 = 3,4 Å","giro = 360° / 10 = 36°"]),
         t("2 m de ADN por célula","Célula diploide ≈ 6,4 × 10⁹ pb; L = N × h.",["L = 6,4 × 10⁹ × 3,4 × 10⁻¹⁰ m ≈ 2 m"]),
-        t("A, B y Z","A: dextrógira, 3,2 nm/vuelta, bases inclinadas, 11 por vuelta; con cationes o deshidratación; ARN y ARN-ADN. B: dextrógira, 3,4 nm, perpendiculares, 10; fisiológica. Z: levógira, 4,5 nm, zig-zag, 12; in vitro con repeticiones d(GC) y d(AC).")
+        t("A, B y Z","A: dextrógira, ≈ 2,8 nm/vuelta (algunos materiales: 3,2), bases inclinadas, 11 por vuelta; surco estrecho y profundo y otro ancho y superficial; con cationes o deshidratación; ARN y ARN-ADN. B: dextrógira, 3,4 nm, perpendiculares, 10; fisiológica. Z: levógira, 4,5 nm, zig-zag, 12; in vitro en tramos ricos en G y C (repeticiones d(GC) y d(AC)).")
       ]),
       chapter("57. Historia del modelo (1951–1962)","cap67","El modelo unió difracción, química y construcción de modelos.",[
         t("Cronología","1951 Franklin llega al King’s College. 1952 datos helicoidales y Foto 51 (Gosling). Ene–feb 1953 Wilkins muestra la foto a Watson; modelo de doble hélice; Crick en The Eagle: «We have discovered the secret of life!». 25/04/1953: tres artículos en Nature (Watson & Crick; Wilkins et al.; Franklin & Gosling). 1962 Nobel a Watson, Crick y Wilkins."),
@@ -462,8 +462,8 @@
       ]),
       chapter("61. Replicación, transcripción, traducción","cap71","Quién participa, dónde y en qué dirección.",[
         t("Replicación","Núcleo (eucariotas); semiconservativa; polimerasas, ligasas, topoisomerasas, helicasas; síntesis 5′→3′: cadena adelantada continua y retrasada en fragmentos de Okazaki unidos por la ligasa. Da dos ADN idénticos."),
-        t("Transcripción","ARN polimerasa, factores de transcripción y reguladores. Iniciación (promotor), elongación, terminación (terminador). El ARN es igual a la cadena no molde (con U). En eucariotas: precursor de ARNm, splicing constitutivo o alternativo, cap 5′ y cola poli(A)."),
-        t("Traducción","El ribosoma lee codones de 3 bases. Citoplasmática en eucariotas; intervienen ARNm, ARNt y ARNr. Etapas: activación, iniciación, elongación, terminación. AUG = inicio (Met); UAA, UAG, UGA = stop.",["5′-AUG GCU UGG UAA-3′ → Met-Ala-Trp"])
+        t("Transcripción","ARN polimerasa, factores de transcripción y reguladores. Iniciación (promotor), elongación, terminación (secuencia terminadora; en bacterias, por horquilla del ARN o por la proteína Rho). El ARN es igual a la cadena no molde (con U). En eucariotas: precursor de ARNm, splicing constitutivo o alternativo, cap 5′ y cola poli(A)."),
+        t("Traducción","El ribosoma lee codones de 3 bases. Citoplasmática en eucariotas; intervienen ARNm, ARNt y ARNr. Etapas: activación, iniciación, elongación (sitios A, P y E del ribosoma), terminación. AUG = inicio (Met); UAA, UAG, UGA = stop.",["5′-AUG GCU UGG UAA-3′ → Met-Ala-Trp"])
       ]),
       chapter("62. Metabolismo: mapa general","cap72","Los nucleótidos se fabrican «de novo» o se reciclan.",[
         t("Degradación","ADN/ARN → (nucleasas) oligonucleótidos → (fosfodiesterasas) nucleótidos → (nucleotidasas) nucleósidos + Pi → (nucleósido fosforilasa) base + ribosa-1-P. Purinas → ácido úrico; pirimidinas → β-ureidopropionato."),

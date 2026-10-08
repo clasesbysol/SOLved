@@ -27,10 +27,10 @@ blocks: [
 ]],
 ['h', 'Dos maneras de conseguir nucleótidos'],
 ['cols', [
-['Síntesis «de novo» (desde cero)', 'La mayoría de los organismos fabrica los nucleótidos que necesita a partir de moléculas chicas: aminoácidos, CO₂, derivados del folato y ribosa. Estas vías son largas, gastan mucho ATP y están <b>muy conservadas en la evolución</b>: casi todos los organismos las hacen igual.'],
+['Síntesis «de novo» (desde cero)', 'La mayoría de los organismos fabrica los nucleótidos que necesita a partir de moléculas chicas: aminoácidos, CO₂, derivados del folato y ribosa. Estas vías son largas, gastan mucho ATP y están <b>muy conservadas en la evolución</b>: son prácticamente iguales en todo el mundo biológico.'],
 ['Recuperación o rescate', 'Se reutilizan bases de purinas y pirimidinas que ya están formadas. Es mucho más barato: un solo paso con PRPP.']
 ]],
-['p', 'Las bases que se rescatan vienen de dos fuentes: la <b>degradación de los ácidos nucleicos propios</b>, dentro de la célula, y la <b>dieta</b>. En los animales, la digestión de los ácidos nucleicos de los alimentos en el intestino delgado es la principal vía de entrada de bases y nucleósidos: nucleasas como las endonucleasas los cortan, otras enzimas siguen degradando y se obtienen mononucleótidos, nucleósidos y bases que se absorben.'],
+['p', 'Las bases que se rescatan vienen de dos fuentes: la <b>degradación de los ácidos nucleicos propios</b>, que ocurre dentro de las células (por ejemplo, cuando una célula muere y se desarma, o cuando se recambia el ARN), y la <b>dieta</b>. En los animales, la digestión de los ácidos nucleicos de los alimentos en el intestino delgado es la principal vía de entrada de bases y nucleósidos: nucleasas como las endonucleasas los cortan, otras enzimas siguen degradando y se obtienen mononucleótidos, nucleósidos y bases que se absorben.'],
 ['p', 'Si las bases o nucleósidos no se usan para fabricar ácidos nucleicos por la vía de rescate, se degradan: las <b>purinas a ácido úrico</b> y las <b>pirimidinas a β-ureidopropionato</b>.'],
 ['why', 'Fabricar una purina «de novo» cuesta muchos pasos y varios ATP (capítulo 73). Si la célula ya tiene la base armada, unirla al PRPP en un solo paso es un gran ahorro. Por eso, antes de degradar una base hasta ácido úrico, la célula intenta reciclarla.', 'Por qué existe el rescate'],
 ['h', '¿De dónde salen los átomos de los anillos?'],
@@ -181,6 +181,9 @@ blocks: [
 ['<b>Fluorouracilo</b>', 'Al uracilo', 'La timidilato sintasa. La célula lo convierte en fluorodesoxiuridilato (FdUMP), que se une a la enzima y la inactiva: es un inhibidor suicida', 'No se forma dTMP'],
 ['<b>Aminopterina</b> y <b>metotrexato</b> (ametopterina)', 'Al folato', 'La dihidrofolato reductasa (DHFR)', 'No se regenera THF → no hay metilen-THF → no se forma dTMP']
 ]],
+['h', 'El folato y las sulfonamidas'],
+['p', 'El <b>ácido fólico</b> (vitamina B9) está formado por tres partes: un anillo de <b>pteridina</b>, el <b>ácido para-aminobenzoico (PABA)</b> y uno o varios <b>glutamatos</b> (de 1 a 7). Ya en las células se reduce a tetrahidrofolato (THF), que es la forma que transporta grupos de un carbono: los formilos de la síntesis de purinas (capítulo 73) y el metileno del timidilato.'],
+['p', 'Los humanos obtenemos el folato de la dieta, pero muchas bacterias lo fabrican a partir del PABA. Las <b>sulfonamidas</b> (sulfas) son parecidas al PABA: compiten con él y la bacteria no puede fabricar folato. Sin folato no puede hacer purinas ni timidilato, así que no puede copiar su ADN y muere. A nosotros no nos afecta porque no fabricamos folato: lo comemos.'],
 ['why', 'Una célula que se divide rápido, como una célula tumoral, tiene que copiar todo su ADN y necesita mucho dTTP. Sin timidilato no puede replicar el ADN y deja de dividirse. Las células que no se dividen dependen mucho menos de esta vía.', 'Por qué sirven contra el cáncer'],
 ['p', 'Ahora se entiende por qué fabricar timina es «más caro» que usar uracilo (capítulo 69): requiere la timidilato sintasa y gasta folato.'],
 ['check', [
@@ -249,6 +252,15 @@ blocks: [
 ['NAD (nicotinamida adenín dinucleótido)', 'Nucleótido de nicotinamida + nucleótido de adenina, unidos por sus fosfatos', 'Dos nucleótidos (dinucleótido)', 'Transporta electrones (NADH)'],
 ['NADP', 'NAD + un fosfato extra', 'El fosfato extra va en el C2′ de la ribosa de la adenosina', 'Transporta electrones para biosíntesis (NADPH)'],
 ['Coenzima A (CoA)', 'β-mercaptoetilamina + ácido pantoténico + ADP con un fosfato extra en el 3′', 'ADP (3′-fosfato)', 'Su grupo –SH terminal se une a grupos acilo y los transfiere']
+]],
+['h', 'Las vitaminas que hay detrás'],
+['p', 'Varias de estas coenzimas se fabrican a partir de vitaminas del grupo B: por eso esas vitaminas son imprescindibles en la dieta.'],
+['table', ['Vitamina', 'Coenzima que forma', 'Detalle'], [
+['<b>B2</b> (riboflavina)', 'FMN y FAD', 'Es un anillo de <b>isoaloxazina</b> (una flavina, compuesto nitrogenado) unido a <b>ribitol</b>, un alcohol derivado de la ribosa. La riboflavina es la forma inactiva; fosforilada da FMN, y unida además a un AMP por un pirofosfato da FAD. FMN y FAD son grupos prostéticos de muchas oxidorreductasas, y cada enzima es específica de una de las dos: no son intercambiables.'],
+['<b>B3</b> (niacina o vitamina PP)', 'NAD y NADP', 'Tiene dos formas: niacina (anillo de piridina con un –COOH) y niacinamida (con un –CONH₂). El nitrógeno del anillo de nicotinamida es el que acepta o cede el hidrógeno: NAD⁺ ⇄ NADH. Su falta causa pelagra (de ahí «PP», pelagra preventiva): dermatitis, diarrea, demencia y, sin tratamiento, la muerte.'],
+['<b>B5</b> (ácido pantoténico)', 'Coenzima A', 'Es ácido pantoico unido a β-alanina. En la CoA, de un lado se une al nucleótido de adenina (ADP 3′-fosfato) y del otro a la β-mercaptoetilamina, cuyo –SH es el grupo funcional que activa a los ácidos grasos y otros grupos acilo.'],
+['<b>B9</b> (ácido fólico)', 'THF y sus derivados', 'Transporta grupos de un carbono para fabricar purinas y timidilato (capítulos 73 y 75) y para regenerar la metionina.'],
+['<b>B12</b> (cobalamina)', 'Metil-B₁₂ (y otras formas)', 'Tiene un anillo corrinoide con cobalto y una parte parecida a un nucleótido: la base 5,6-dimetilbencimidazol unida a una ribosa (por un enlace α, poco común) con un fosfato en el 3′. Participa en la regeneración de la metionina.']
 ]],
 ['trap', 'La coenzima A contiene un nucleótido de adenina, igual que NAD y FAD, pero no transporta electrones: con su grupo –SH forma tioésteres con grupos acilo (como el acetilo de la acetil-CoA) y los transfiere.', 'La coenzima A es distinta'],
 ['h', 'Intermediarios activados: la SAM'],
