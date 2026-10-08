@@ -64,9 +64,9 @@ lead: 'Las bases son la parte del nucleótido que lleva la información. Hay cin
 blocks: [
 ['h', 'Cómo se descubrieron'],
 ['table', ['Investigador', 'Qué aportó'], [
-['<b>Johann Friedrich Miescher</b> (1844–1895), biólogo suizo', 'Aisló del núcleo celular unas moléculas ricas en fosfato a las que llamó <b>nucleínas</b>.'],
-['<b>Albrecht Kossel</b> (1853–1927), bioquímico alemán', 'Descubrió los ácidos nucleicos tal como los conocemos: estudió de qué estaban hechas las nucleínas y describió sus componentes (base + azúcar + fosfato). Identificó <b>adenina, citosina, guanina, timina y uracilo</b>.'],
-['<b>Phoebus A. Theodore Levene</b> (1869–1940), bioquímico', 'Llamó <b>nucleótido</b> a la unidad base + azúcar + fosfato y estableció cómo se unen entre sí. En 1910 propuso que el ADN era un <b>tetranucleótido</b>: un bloque de cuatro nucleótidos, uno de cada base, repetido.']
+['<b>Johann Friedrich Miescher</b> (1844–1895), biólogo suizo', 'Trabajó con vendas con pus de un hospital (el pus tiene muchos glóbulos blancos, con núcleos grandes). Las lavó con soluciones salinas y después con una solución levemente alcalina: los núcleos y las células rotas precipitaron. Al analizar ese precipitado aisló moléculas ricas en fosfato a las que llamó <b>nucleínas</b> (hoy, ácidos nucleicos). Lo publicó en 1871.'],
+['<b>Albrecht Kossel</b> (1853–1927), bioquímico alemán', 'Le dio importancia biológica al hallazgo de Miescher: estudió de qué estaban hechas las nucleínas y describió sus componentes (base + azúcar + fosfato). Distinguió las cinco bases: <b>adenina, citosina, guanina, timina y uracilo</b>. Recibió el Premio Nobel de Fisiología o Medicina en 1910 por descifrar la química de los ácidos nucleicos, y sentó las bases para resolver después la estructura del ADN.'],
+['<b>Phoebus A. Theodore Levene</b> (1869–1940), bioquímico', 'Trabajó con Kossel en la identificación de las bases y descubrió los azúcares: la <b>ribosa</b> (1909) y la <b>desoxirribosa</b> (1929). Llamó <b>nucleótido</b> a la unidad base + azúcar + fosfato y estableció cómo se unen entre sí. En 1910 propuso que el ADN era un <b>tetranucleótido</b>: un bloque de cuatro nucleótidos, uno de cada base, repetido.']
 ]],
 ['gallery', [['p006-miescher', 'Miescher'], ['p006-kossel', 'Kossel'], ['p006-levene', 'Levene'], ['p006-tetranucleotido', 'Modelo de tetranucleótido: dGMP, dCMP, dTMP y dAMP unidos por fosfatos']], 6],
 ['why', 'Si el ADN fuera un mismo bloque de cuatro nucleótidos repetido una y otra vez, su secuencia sería monótona y no podría guardar información distinta en cada organismo. Esa idea hizo que durante décadas el ADN pareciera «demasiado simple» para ser el material genético (capítulo 63). Después se vio que la composición de bases cambia de una especie a otra (capítulo 64) y la hipótesis se abandonó.', 'Por qué la idea del tetranucleótido frenó a la ciencia'],
@@ -201,6 +201,7 @@ blocks: [
 '<b>Si el azúcar es desoxirribosa</b>, se antepone «desoxi» (desoxiadenosina) y en el símbolo se agrega una <b>d</b> minúscula (dA, dAMP). Si es ribosa, no se agrega nada (adenosina, AMP).',
 '<b>Nucleósido → nucleótido:</b> se agrega cuántos fosfatos tiene: monofosfato (MP), difosfato (DP), trifosfato (TP). Para el 5′-monofosfato también se usa la terminación <b>-ilato</b>: adenilato = AMP, desoxiadenilato = dAMP.'
 ]],
+['p', 'Las siglas vienen del inglés: AMP es <i>adenosine monophosphate</i>. En castellano sería «AMF» (adenosín monofosfato), pero en todo el mundo se usan las siglas en inglés: MP, DP y TP terminan en P de <i>phosphate</i>.'],
 ['ex', 'dGTP = <b>d</b>esoxi + <b>G</b>uanosina + <b>T</b>ri<b>P</b>hosphate = desoxiguanosín trifosfato: guanina + desoxirribosa + tres fosfatos. Es uno de los cuatro ladrillos que usa la ADN polimerasa.', 'Desarmar un símbolo'],
 ['p', 'Las palabras «nucleósido» y «nucleótido» sirven para las dos formas: hay ribonucleósidos y desoxirribonucleósidos, ribonucleótidos y desoxirribonucleótidos.'],
 ['table', ['Ácido', 'Base', 'Nucleósido', 'Nucleótido (5′-monofosfato)', 'Símbolos'], [

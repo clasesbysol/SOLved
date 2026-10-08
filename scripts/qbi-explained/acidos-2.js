@@ -10,7 +10,7 @@ n: 63, group: G, pages: '17–20', title: 'El ADN como material genético: Griff
 lead: 'Hoy parece obvio que los genes son ADN, pero durante años la candidata favorita fue la proteína. Tres experimentos, uno tras otro, cerraron la discusión.',
 blocks: [
 ['h', 'El punto de partida'],
-['p', 'A comienzos del siglo XX se sabía que las <b>proteínas</b> eran cadenas formadas por <b>20 aminoácidos diferentes</b>, y que los <b>ácidos nucleicos</b> eran polímeros de solo <b>cuatro nucleótidos diferentes</b>: tres comunes al ADN y al ARN (adenina, guanina y citosina) y un cuarto que es timina en el ADN o uracilo en el ARN.'],
+['p', 'Los genetistas ya hablaban de <b>genes</b>, pero como unidades abstractas de herencia: se sabía cómo se transmitían, no de qué estaban hechos. A comienzos del siglo XX se sabía también que las <b>proteínas</b> eran cadenas formadas por <b>20 aminoácidos diferentes</b>, y que los <b>ácidos nucleicos</b> eran polímeros de solo <b>cuatro nucleótidos diferentes</b>: tres comunes al ADN y al ARN (adenina, guanina y citosina) y un cuarto que es timina en el ADN o uracilo en el ARN.'],
 ['why', 'Con 20 «letras» distintas, una proteína puede escribir muchísimas más secuencias que un polímero de solo 4. Además, la idea del tetranucleótido (capítulo 59) sugería que el ADN era una repetición monótona. Las proteínas parecían las candidatas obvias para llevar la información y el ADN parecía demasiado simple. Faltaba entender que, aun con 4 letras, una secuencia muy larga puede guardar una cantidad enorme de información.', 'Por qué todos apostaban por las proteínas'],
 ['h', 'Experimento de Griffith (1928)'],
 ['p', 'Frederick Griffith trabajaba con neumococos, las bacterias que causan neumonía, y tenía dos cepas:'],
@@ -40,12 +40,13 @@ blocks: [
 ['img', 'p019-avery', 'Resultados de cada tratamiento: el ratón muere en todos los casos, salvo cuando se agrega ADNasa.', 19],
 ['why', 'Es un experimento por descarte. Si destruís una molécula y la transformación <b>sigue</b> ocurriendo (el ratón muere), esa molécula no era el FT. Si al destruirla la transformación <b>desaparece</b> (el ratón vive), esa molécula era imprescindible. Solo la ADNasa anula la transformación: <b>la transformación bacteriana requiere ADN</b>.', 'Por qué el ratón que vive es la clave'],
 ['h', 'Experimento de Hershey y Chase (1952)'],
-['p', 'Alfred Hershey y Martha Chase usaron un <b>bacteriófago</b> (fago): un virus que infecta bacterias y que está formado solo por ADN envuelto en una cubierta de proteína. La pregunta era cuál de las dos partes entra a la bacteria y dirige la fabricación de fagos nuevos.'],
+['p', 'Alfred Hershey y Martha Chase usaron el <b>bacteriófago T2</b> (fago): un virus que infecta bacterias y que está formado solo por ADN envuelto en una cubierta de proteína. La pregunta era cuál de las dos partes entra a la bacteria y lleva las instrucciones para fabricar fagos nuevos.'],
+['p', 'Primero probaron lo obvio: separar las proteínas del ADN y poner cada parte con bacterias. No salieron fagos nuevos con ninguna de las dos, porque separadas ya no pueden infectar: el fago necesita su cubierta para inyectar el ADN. Entonces cambiaron de estrategia: dejar el fago entero y <b>marcar</b> cada parte para ver cuál entra.'],
 ['steps', 'Cómo lo resolvieron', [
 'Marcaron una tanda de fagos con fósforo radiactivo (<b>³²P</b>): el fósforo está en el ADN (en los fosfatos) y no en las proteínas.',
 'Marcaron otra tanda con azufre radiactivo (<b>³⁵S</b>): el azufre está en las proteínas (en cisteína y metionina) y no en el ADN.',
 'Dejaron que cada tanda infectara bacterias. Después las agitaron en una licuadora para desprender lo que había quedado afuera y centrifugaron: las bacterias, más pesadas, se van al fondo.',
-'El ³²P (ADN) apareció <b>dentro</b> de las bacterias; el ³⁵S (proteína) quedó <b>afuera</b>. Y de esas bacterias salían fagos nuevos.',
+'El ³²P (ADN) apareció en el <b>pellet</b>, junto con las bacterias: había entrado. El ³⁵S (proteína) quedó en el <b>sobrenadante</b>, afuera. Y de esas bacterias salían fagos nuevos.',
 'Conclusión: lo que entra y lleva las instrucciones es el ADN. <b>El ADN es el material genético de los fagos.</b>'
 ]],
 ['links', [['Video del experimento de Hershey y Chase', 'https://www.youtube.com/watch?v=ZtSfFqqhEIY', 'YouTube']]],
@@ -94,7 +95,7 @@ blocks: [
 ['table', ['Lo que se ve en la foto', 'Lo que significa'], [
 ['Una cruz en forma de X', 'La molécula es una <b>hélice</b>'],
 ['Manchas que se repiten cada 34 Å', 'Cada <b>vuelta</b> de la hélice mide <b>34 Å</b>'],
-['Manchas fuertes arriba y abajo (3,4 Å)', 'Las bases están apiladas cada <b>3,4 Å</b>'],
+['Manchas fuertes arriba y abajo (reflexión meridional de 3,4 Å)', 'Corresponde a los anillos de las bases, apilados cada <b>3,4 Å</b>'],
 ['34 Å ÷ 3,4 Å', 'Hay <b>10 a 10,5 nucleótidos por vuelta</b>'],
 ['Falta la cuarta línea de manchas', 'Hay <b>dos</b> cadenas: es una <b>doble hélice</b>'],
 ['Ancho del patrón', 'El diámetro de la hélice es de unos <b>20–24 Å</b>']
@@ -200,13 +201,13 @@ blocks: [
 ['h', 'Las formas A, B y Z'],
 ['p', 'El ADN no tiene una única forma: según las condiciones del medio puede adoptar distintas conformaciones. Las tres más conocidas son A, B y Z.'],
 ['table', ['Forma', 'Giro', 'Paso (nm por vuelta)', 'Bases respecto del eje', 'Nucleótidos por vuelta', 'Cuándo aparece'], [
-['<b>A</b>', 'Dextrógira', '3,2', 'Inclinadas', '11', 'Con muchos cationes (Mg²⁺, Ca²⁺) o con deshidratación (menos de 65 % de humedad). Es la forma del ARN de doble cadena y de los híbridos ARN-ADN'],
+['<b>A</b>', 'Dextrógira', '≈ 2,8 (en algunos materiales, 3,2)', 'Inclinadas', '11', 'Con muchos cationes (Mg²⁺, Ca²⁺) o con deshidratación (menos de 65 % de humedad). Es la forma del ARN de doble cadena y de los híbridos ARN-ADN. Tiene un surco estrecho y profundo y otro ancho y superficial'],
 ['<b>B</b>', 'Dextrógira', '3,4', 'Perpendiculares', '10', 'La forma normal en condiciones fisiológicas; tiene un surco mayor y uno menor'],
-['<b>Z</b>', '<b>Levógira</b>', '4,5', 'En zig-zag', '12', 'In vitro, en secuencias con repeticiones de d(GC) y d(AC)']
+['<b>Z</b>', '<b>Levógira</b>', '4,5', 'En zig-zag', '12', 'In vitro, en tramos ricos en G y C: secuencias con repeticiones de d(GC) y d(AC)']
 ]],
 ['img', 'p031-abz', 'ADN A, B y Z vistos de costado y desde arriba (dextrógiro, dextrógiro, levógiro). En la forma Z el esqueleto dibuja un zig-zag.', 31],
 ['steps', 'Qué tan estirada es cada forma: avance por nucleótido', [
-'Forma A: ' + M(String.raw`\dfrac{3{,}2\ \text{nm}}{11} \approx 0{,}29\ \text{nm}`, '3,2 nm / 11 ≈ 0,29 nm') + ' por nucleótido: la más corta y ancha.',
+'Forma A: ' + M(String.raw`\dfrac{2{,}8\ \text{nm}}{11} \approx 0{,}25\ \text{nm}`, '2,8 nm / 11 ≈ 0,25 nm') + ' por nucleótido (con 3,2 nm daría ≈ 0,29 nm): la más corta y ancha.',
 'Forma B: ' + M(String.raw`\dfrac{3{,}4\ \text{nm}}{10} = 0{,}34\ \text{nm}`, '3,4 nm / 10 = 0,34 nm') + ' (los 3,4 Å de siempre).',
 'Forma Z: ' + M(String.raw`\dfrac{4{,}5\ \text{nm}}{12} \approx 0{,}375\ \text{nm}`, '4,5 nm / 12 ≈ 0,375 nm') + ': la más alargada y delgada.'
 ]],
