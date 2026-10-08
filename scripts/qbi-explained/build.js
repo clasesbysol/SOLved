@@ -59,7 +59,7 @@ console.log('Lípidos: ' + lipidos.length + ' capítulos escritos en qbi-lipidos
 /* ---------- Ácidos nucleicos I ---------- */
 const kitAn = require('./kit-an');
 const acidos = [1, 2, 3, 4, 5].flatMap(i => require('./acidos-' + i));
-const AN_VERSION = '1.0.0';
+const AN_VERSION = '1.1.0';
 const AN_OUT = path.join(UNIT, 'qbi-acidos-nucleicos-extension.js');
 const anData = acidos.map(ch => ({ n: ch.n, group: ch.group, pages: ch.pages, title: ch.title.replace(/<[^>]+>/g, ''), html: kitAn.chapterHtml(ch) }));
 const UNITS = [{ id: 'acidos-nucleicos-i', label: 'Ácidos nucleicos I · Bases, nucleósidos y nucleótidos', ready: true }];

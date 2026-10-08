@@ -246,7 +246,7 @@ const observer=new MutationObserver(()=>{clearTimeout(observer.timer);observer.t
 // Ácidos nucleicos (caps. 58 en adelante) va en su propio archivo y se carga desde acá, después de Lípidos.
 function loadAcidos(){
  if(window.__qbiAcidos||document.querySelector('script[data-qbi-acidos-loader]'))return;
- const s=document.createElement('script');s.src=new URL('qbi-acidos-nucleicos-extension.js?v=1.0.0',SELF_SRC).href;s.defer=true;s.dataset.qbiAcidosLoader='1';document.body.append(s);
+ const s=document.createElement('script');s.src=new URL('qbi-acidos-nucleicos-extension.js?v=1.1.0',SELF_SRC).href;s.defer=true;s.dataset.qbiAcidosLoader='1';document.body.append(s);
 }
 function start(){observer.observe(document.documentElement,{subtree:true,childList:true});boot();setTimeout(maintain,1000);setInterval(maintain,3000);loadAcidos()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();

@@ -156,7 +156,7 @@ F.helix = svg(760, 400, (() => {
   s += T(tx, 140, '• 34 Å / 10 pares = 3,4 Å por par', 'sm');
   s += T(tx, 167, '• 360° / 10 pares = 36° de giro por par', 'sm');
   s += T(tx, 185, '  (con 10,4 pares: ≈ 34,6°)', 'sm mut');
-  s += T(tx, 212, '• diámetro ≈ 20 Å (la clase: 20–24 Å)', 'sm');
+  s += T(tx, 212, '• diámetro ≈ 20 Å (20–24 Å según el método)', 'sm');
   s += T(tx, 239, '• surco mayor y surco menor', 'sm');
   s += T(tx, 266, '• bases adentro, casi perpendiculares al eje', 'sm');
   s += T(tx, 293, '• azúcar-fosfato afuera, en contacto con el agua', 'sm');
@@ -351,5 +351,39 @@ F.tvsu = svg(760, 250, (() => {
   s += T(380, 220, 'sin reparar: C (aparea con G) pasa a U (aparea con A) → tras replicar, G–C se vuelve A–T', 'mid sm acc b');
   return s;
 })(), 'Por qué el ADN tiene timina');
+
+/* 16 · Ancho constante: purina + pirimidina */
+F.pairWidth = svg(760, 250, (() => {
+  let s = '';
+  const rail = y => L(40, y, 40, y + 50, 'al') + L(300, y, 300, y + 50, 'al');
+  const pur = (x, y, w, cls) => R(x, y, w, 34, cls, 8);
+  // fila 1: purina + pirimidina (justo)
+  s += rail(20) + pur(44, 28, 140, 'fa') + T(114, 50, 'purina (2 anillos)', 'mid sm b') + pur(188, 28, 108, 'fg') + T(242, 50, 'pirimidina', 'mid sm b');
+  s += T(320, 50, '✓ encaja: ≈ 20 Å, siempre igual', 'sm ok b');
+  // fila 2: purina + purina (no entra)
+  s += rail(95) + pur(44, 103, 140, 'fa') + T(114, 125, 'purina', 'mid sm b') + pur(170, 103, 140, 'fa') + T(240, 125, 'purina', 'mid sm b');
+  s += T(320, 125, '✗ demasiado ancho: no entra', 'sm acc b');
+  // fila 3: pirimidina + pirimidina (corto)
+  s += rail(170) + pur(44, 178, 108, 'fg') + T(98, 200, 'pirimidina', 'mid sm b') + pur(160, 178, 108, 'fg') + T(214, 200, 'pirimidina', 'mid sm b');
+  s += T(320, 200, '✗ demasiado angosto: queda un hueco', 'sm acc b');
+  s += T(170, 242, 'las líneas violetas son los dos esqueletos azúcar-fosfato', 'mid sm mut');
+  return s;
+})(), 'Por qué purina con pirimidina');
+
+/* 17 · Cadena molde y cadena no molde en la transcripción */
+F.strands = svg(760, 230, (() => {
+  let s = '';
+  const seq = (x, y, txt, cls) => txt.split('').map((c, i) => T(x + i * 34, y, c, 'mid lg b ' + (cls || ''))).join('');
+  s += T(20, 40, 'ADN no molde', 'sm b') + T(130, 40, "5′", 'sm b') + seq(170, 42, 'ATGGCTTGG') + T(480, 40, "3′", 'sm b');
+  s += T(20, 90, 'ADN molde', 'sm b') + T(130, 90, "3′", 'sm b') + seq(170, 92, 'TACCGAACC', 'alt') + T(480, 90, "5′", 'sm b');
+  s += L(150, 62, 470, 62, 'dsh');
+  s += arrow(180, 106, 180, 144, 'al') + T(200, 130, 'la ARN polimerasa lee el molde de 3′ a 5′', 'sm');
+  s += T(20, 180, 'ARN', 'sm b') + T(130, 180, "5′", 'sm b') + seq(170, 182, 'AUGGCUUGG', 'ok') + T(480, 180, "3′", 'sm b');
+  s += T(510, 52, 'misma secuencia', 'sm ok b') + T(510, 70, 'que el ARN (con T)', 'sm ok b');
+  s += T(510, 182, 'complementario al', 'sm alt b') + T(510, 200, 'molde, con U', 'sm alt b');
+  s += P('M500 60 C 560 100 560 150 500 175', 'ag');
+  s += T(380, 224, 'el ARN se arma de 5′ a 3′, antiparalelo al molde', 'mid sm mut');
+  return s;
+})(), 'Cadena molde y no molde');
 
 module.exports = { F };
