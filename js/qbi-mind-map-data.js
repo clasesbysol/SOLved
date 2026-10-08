@@ -398,7 +398,7 @@
       chapter("48. Ácidos nucleicos y funciones de los nucleótidos","cap58","Un ácido nucleico es un polinucleótido; los nucleótidos además están en todo el metabolismo.",[
         t("Ácido nucleico","Polinucleótido que almacena y transfiere información celular. Dos tipos: ADN (ácido desoxirribonucleico) y ARN (ácido ribonucleico). Esqueleto alternado azúcar-fosfato con una base en cada azúcar; la información está en la secuencia de bases."),
         t("Partes de un nucleótido","Base nitrogenada (purina o pirimidina) + pentosa (ribosa en ARN, desoxirribosa en ADN) + uno o más fosfatos en el C5′.",["nucleósido = base + pentosa","nucleótido = nucleósido + fosfato(s)"]),
-        t("Cinco funciones","Energía (ATP, GTP; estables con un solo fosfato). Electrones (NADH, NADPH, FADH₂; la clase suma la CoA, que en realidad transfiere acilos). Señalización (AMPc, GMPc; fosforilación). Intermediarios activados (UDP-glucosa, SAM). Información (precursores activados de ADN y ARN).")
+        t("Cinco funciones","Energía (ATP, GTP; estables con un solo fosfato). Electrones (NADH, NADPH, FADH₂; la CoA también contiene un nucleótido, pero transfiere acilos). Señalización (AMPc, GMPc; fosforilación). Intermediarios activados (UDP-glucosa, SAM). Información (precursores activados de ADN y ARN).")
       ]),
       chapter("49. Bases: purinas y pirimidinas","cap59","Dos familias de bases según tengan uno o dos anillos.",[
         t("Pioneros","Miescher aisló las «nucleínas» ricas en fosfato. Kossel describió sus componentes (base + azúcar + fosfato) y las bases A, C, G, T, U. Levene nombró al nucleótido y propuso el ADN como tetranucleótido (1910): parecía demasiado simple para llevar información."),
@@ -423,7 +423,7 @@
       chapter("53. El ADN es el material genético","cap63","Tres experimentos: Griffith, Avery y Hershey–Chase.",[
         t("Griffith (1928)","R (rugosas) no letales; S (lisas) letales y sensibles al calor. R vivas + S muertas por calor matan al ratón y se recuperan S vivas: transformación estable y heredable. Mostró un factor transformante, pero no qué molécula era."),
         t("Avery, MacLeod y McCarty (1944)","Lisado de S tratado con enzimas: SIII (polisacárido), tripsina/quimiotripsina (proteínas), ARNasa → el ratón sigue muriendo. Solo con ADNasa el ratón vive: FT = ADN. La transformación bacteriana requiere ADN.",[],"",["Si destruís una molécula y la transformación sigue, esa molécula no era el FT.","Si al destruirla la transformación desaparece (ratón vive), era imprescindible.","Solo la ADNasa anula la transformación: el factor transformante es el ADN."]),
-        t("Hershey y Chase (1952)","Fagos marcados con ³²P (ADN) o ³⁵S (proteína): el ADN entra a la bacteria y la proteína queda afuera. El ADN es el material genético de los fagos (la clase lo presenta con un video).")
+        t("Hershey y Chase (1952)","Fagos marcados con ³²P (ADN) o ³⁵S (proteína): el ADN entra a la bacteria y la proteína queda afuera. El ADN es el material genético de los fagos.")
       ]),
       chapter("54. Rayos X, Foto 51 y Chargaff","cap64","Dos tipos de datos revelaron la forma: difracción y composición de bases.",[
         t("Protagonistas","Pauling propuso una triple hélice. Watson y Crick (Cambridge) y Wilkins (King’s College) recibieron el Nobel en 1962. Franklin, con Gosling, obtuvo la Foto 51; murió en 1958."),
@@ -443,7 +443,7 @@
         t("A, B y Z","A: dextrógira, 3,2 nm/vuelta, bases inclinadas, 11 por vuelta; con cationes o deshidratación; ARN y ARN-ADN. B: dextrógira, 3,4 nm, perpendiculares, 10; fisiológica. Z: levógira, 4,5 nm, zig-zag, 12; in vitro con repeticiones d(GC) y d(AC).")
       ]),
       chapter("57. Historia del modelo (1951–1962)","cap67","El modelo unió difracción, química y construcción de modelos.",[
-        t("Cronología de clase","1951 Franklin en King’s College; Foto 51 (Gosling). 1952 datos helicoidales; Wilkins muestra la foto a Watson. Feb 1953 modelo; Crick en The Eagle: «We have discovered the secret of life!». 25/04/1953: tres artículos en Nature (Watson & Crick; Wilkins et al.; Franklin & Gosling). 1962 Nobel a Watson, Crick y Wilkins."),
+        t("Cronología","1951 Franklin llega al King’s College. 1952 datos helicoidales y Foto 51 (Gosling). Ene–feb 1953 Wilkins muestra la foto a Watson; modelo de doble hélice; Crick en The Eagle: «We have discovered the secret of life!». 25/04/1953: tres artículos en Nature (Watson & Crick; Wilkins et al.; Franklin & Gosling). 1962 Nobel a Watson, Crick y Wilkins."),
         t("Nature 1953","Watson y Crick reconocen haberse estimulado por los resultados no publicados de Wilkins y Franklin en King’s College. Su artículo: Nature 171:737-738.")
       ]),
       chapter("58. Desnaturalización y Tm","cap68","Las cadenas se separan y se vuelven a juntar sin romper enlaces covalentes.",[
@@ -457,7 +457,7 @@
         t("¿Por qué T en el ADN?","La C se desamina sola a U. Con T como base normal, todo U en el ADN es un error: la uracilo-ADN glicosilasa lo saca y la reparación por escisión de bases repone la C. Sin reparar, G–C pasa a A–T. El ARN dura poco y se copia mucho; usar U es más barato (la T exige timidilato sintasa y folato).",[],"",["G–C → la C se desamina → G–U.","Al replicar, U se aparea con A → U–A.","Siguiente replicación: A–T. Mutación permanente."])
       ]),
       chapter("60. Tipos de ARN y dogma central","cap70","Cada ARN tiene su trabajo en el camino de la información.",[
-        t("Cuatro tipos (clase)","ARNm: lleva la información del núcleo al citoplasma. ARNt: lleva aminoácidos al ribosoma. ARNr: ≈ 80 % del ARN; forma ribosomas. ARNnp (snRNA): corte y empalme de intrones. Cada uno codificado por su propio gen."),
+        t("Cuatro tipos principales","ARNm: lleva la información del núcleo al citoplasma. ARNt: lleva aminoácidos al ribosoma. ARNr: ≈ 80 % del ARN; forma ribosomas. ARNnp (snRNA): corte y empalme de intrones. Cada uno codificado por su propio gen."),
         t("Dogma central","ADN → ADN (replicación), ADN → ARN (transcripción), ARN → proteína (traducción). Frase clave de Crick: una vez que la información de secuencia pasó a la proteína, no puede volver a salir. La retrotranscripción (ARN → ADN) no lo contradice.")
       ]),
       chapter("61. Replicación, transcripción, traducción","cap71","Quién participa, dónde y en qué dirección.",[
@@ -496,8 +496,8 @@
         t("Coenzimas","FMN = riboflavina (flavina + ribitol) + fosfato; FAD = FMN + AMP. NAD = nucleótido de nicotinamida + nucleótido de adenina; NADP = NAD + fosfato. CoA = β-mercaptoetilamina + ácido pantoténico + ADP con fosfato extra en 3′ (transfiere acilos)."),
         t("SAM","Metionina + adenosina del ATP → SAM, principal dador de metilos (lípidos de membrana neural, metilación del ADN). Queda homocisteína, que vuelve a metionina con metionina sintasa, vitamina B₁₂ y folato (N⁵-metil-THF).")
       ]),
-      chapter("68. Preguntas de la clase","cap78","Respuestas marcadas en las diapositivas 61 a 63.",[
-        t("Diagnóstico","ADN de una célula humana estirado ≈ 2 m. En una célula hepática hay más ARN: marcadas 4x y 8x (rango 4–10)."),
+      chapter("68. Preguntas de repaso","cap78","Las respuestas clave para repasar.",[
+        t("Diagnóstico","ADN de una célula humana estirado ≈ 2 m. En una célula hepática hay más ARN: entre 4 y 10 veces más (4x y 8x son correctas)."),
         t("Verdadero o falso","Griffith demostró que el ADN era el principio transformante: F. En el ADN purinas = pirimidinas: V. Los nucleótidos son esenciales en humanos: F. Los ribonucleótidos se obtienen de desoxirribonucleótidos: F."),
         t("Opción múltiple","Avery y col.: la transformación bacteriana requiere DNA. Forma Z: ocurre in vitro si hay repeticiones de d(GC).")
       ])

@@ -29,7 +29,7 @@ for (const ref of ["styles.css", "styles-enhancements.css", "manifest.webmanifes
   assert.ok(index.includes(ref), `index.html no referencia ${ref}`);
 }
 const app = await readFile("js/app.js", "utf8");
-for(const ref of ["organic-mind-map.css?v=0.7.5","js/qbi-mind-map-data.js?v=1.6.0","js/organic-mind-map.js?v=0.11.2"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
+for(const ref of ["organic-mind-map.css?v=0.7.5","js/qbi-mind-map-data.js?v=1.7.0","js/organic-mind-map.js?v=0.11.2"])assert.ok(index.includes(ref),`index.html no referencia ${ref}`);
 const syncSource = await readFile("js/sync.js", "utf8");
 assert.ok(syncSource.includes('requestAccessToken({prompt:""})'),"Drive debe reutilizar el consentimiento con prompt vacío");
 assert.ok(!syncSource.includes('prompt:"consent"')&&!syncSource.includes("prompt: \"consent\""),"Drive no debe forzar consentimiento");
@@ -43,7 +43,7 @@ assert.equal(manifest.start_url, "./");
 assert.equal(manifest.scope, "./");
 assert.equal(manifest.display, "standalone");
 const sw = await readFile("sw.js", "utf8");
-for(const ref of ["./organic-mind-map.css?v=0.7.5","./js/qbi-mind-map-data.js?v=1.6.0","./js/organic-mind-map.js?v=0.11.2","./content/subjects/quimica_biologica1/units/proteinas-i/qbi-integrated-subject.js?v=4.5.1","./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json"])assert.ok(sw.includes(ref),`El service worker no precachea ${ref}`);
+for(const ref of ["./organic-mind-map.css?v=0.7.5","./js/qbi-mind-map-data.js?v=1.7.0","./js/organic-mind-map.js?v=0.11.2","./content/subjects/quimica_biologica1/units/proteinas-i/qbi-integrated-subject.js?v=4.5.1","./content/subjects/quimica_organica/units/resumen-integral/organic-mind-map.json"])assert.ok(sw.includes(ref),`El service worker no precachea ${ref}`);
 for (const ref of ["./index.html", "./styles.css", "./styles-enhancements.css", "./js/sync.js", "./js/content.js", "./js/notes.js", "./js/utilities.js", "./js/app.js", "./privacy.html", "./terms.html"]) {
   assert.ok(sw.includes(ref), `El service worker no precachea ${ref}`);
 }
