@@ -1,11 +1,11 @@
 'use strict';
-/* Lípidos I y II · capítulos 42 a 57 del resumen, reescritos para entender el porqué de cada cosa. */
+/* Lípidos I y II · capítulos 54 a 69 del resumen, reescritos para entender el porqué de cada cosa. */
 const { F } = require('./figs-lipidos');
 const L1 = 'Lípidos I', L2 = 'Lípidos II';
 
 module.exports = [
 {
-n: 42, group: L1, title: 'Qué son los lípidos y cómo se clasifican',
+n: 54, group: L1, title: 'Qué son los lípidos y cómo se clasifican',
 lead: 'A diferencia de proteínas o glúcidos, los lípidos no comparten una estructura química común: los agrupamos porque se comportan parecido frente al agua. Entender ese comportamiento es la llave de toda la unidad.',
 blocks: [
 ['h', 'Un grupo definido por cómo se lleva con el agua'],
@@ -33,7 +33,7 @@ blocks: [
 ]
 },
 {
-n: 43, group: L1, title: 'Ácidos grasos: cómo leer su nombre y su fórmula',
+n: 55, group: L1, title: 'Ácidos grasos: cómo leer su nombre y su fórmula',
 lead: 'Casi todos los lípidos llevan ácidos grasos. Saber leer su notación es imprescindible: con dos números ya podés predecir si una grasa es sólida o líquida y a qué familia nutricional pertenece.',
 blocks: [
 ['h', 'Qué es un ácido graso'],
@@ -74,7 +74,7 @@ blocks: [
 ]
 },
 {
-n: 44, group: L1, title: 'De la estructura a las propiedades: por qué unas grasas son sólidas y otras líquidas',
+n: 56, group: L1, title: 'De la estructura a las propiedades: por qué unas grasas son sólidas y otras líquidas',
 lead: 'Con solo dos datos de un ácido graso, el largo y la cantidad de dobles enlaces cis, se puede predecir su punto de fusión. Todo depende de qué tan bien se empaquetan las cadenas.',
 blocks: [
 ['h', 'La idea central: empaquetamiento'],
@@ -108,7 +108,7 @@ blocks: [
 ]
 },
 {
-n: 45, group: L1, title: 'Familias ω-3 y ω-6: por qué son esenciales y qué señales generan',
+n: 57, group: L1, title: 'Familias ω-3 y ω-6: por qué son esenciales y qué señales generan',
 lead: 'Hay dos ácidos grasos que tenemos que comer sí o sí. A partir de ellos el cuerpo arma moléculas largas que se convierten en mensajeros de la inflamación y de su resolución.',
 blocks: [
 ['h', 'Por qué algunos ácidos grasos son esenciales'],
@@ -132,7 +132,7 @@ blocks: [
 ]
 },
 {
-n: 46, group: L1, title: 'Triacilglicéridos, gotas lipídicas, ceras y grasas trans',
+n: 58, group: L1, title: 'Triacilglicéridos, gotas lipídicas, ceras y grasas trans',
 lead: 'La forma en que guardamos energía a largo plazo son los triacilglicéridos. Entender por qué son tan buena reserva también explica por qué no sirven para hacer membranas.',
 blocks: [
 ['h', 'Triacilglicéridos (TAG)'],
@@ -160,7 +160,7 @@ blocks: [
 ]
 },
 {
-n: 47, group: L1, title: 'Síntesis de ácidos grasos: el puente hacia las membranas',
+n: 59, group: L1, title: 'Síntesis de ácidos grasos: el puente hacia las membranas',
 lead: 'Antes de existir una membrana, la célula tiene que fabricar sus piezas. Cómo se sintetizan los ácidos grasos explica por qué casi todos tienen número par de carbonos y qué decide su destino.',
 blocks: [
 ['h', 'Se arman de a dos carbonos'],
@@ -182,7 +182,7 @@ blocks: [
 ]
 },
 {
-n: 48, group: L2, title: 'Por qué las membranas se arman solas',
+n: 60, group: L2, title: 'Por qué las membranas se arman solas',
 lead: 'Nadie «construye» una bicapa pieza por pieza: los lípidos anfipáticos se ordenan solos en el agua. Para entender cómo, hay que entender el efecto hidrofóbico y la forma de cada molécula.',
 blocks: [
 ['h', 'El efecto hidrofóbico'],
@@ -213,7 +213,7 @@ blocks: [
 ]
 },
 {
-n: 49, group: L2, title: 'Glicerofosfolípidos, galactolípidos y éter-lípidos',
+n: 61, group: L2, title: 'Glicerofosfolípidos, galactolípidos y éter-lípidos',
 lead: 'Los glicerofosfolípidos son los ladrillos principales de casi todas las membranas. Una misma «clase» en realidad agrupa muchísimas moléculas distintas, según qué cadenas lleve.',
 blocks: [
 ['h', 'La anatomía'],
@@ -245,7 +245,7 @@ blocks: [
 ]
 },
 {
-n: 50, group: L2, title: 'Esfingolípidos: ceramida, mielina y reconocimiento',
+n: 62, group: L2, title: 'Esfingolípidos: ceramida, mielina y reconocimiento',
 lead: 'Los esfingolípidos se parecen a los fosfolípidos por fuera (una cabeza y dos colas), pero están armados sobre otro esqueleto. Son clave en la mielina, en la superficie celular y como señales.',
 blocks: [
 ['h', 'Cómo se arman'],
@@ -270,7 +270,7 @@ blocks: [
 ]
 },
 {
-n: 51, group: L2, title: 'Colesterol y esteroles: el amortiguador de la membrana',
+n: 63, group: L2, title: 'Colesterol y esteroles: el amortiguador de la membrana',
 lead: 'El colesterol no hace a la membrana simplemente más rígida o más fluida: la estabiliza para que cambie menos con la temperatura. Su forma explica por qué.',
 blocks: [
 ['h', 'Una molécula con forma muy especial'],
@@ -295,7 +295,7 @@ blocks: [
 ]
 },
 {
-n: 52, group: L2, title: 'Mosaico fluido, movimiento y asimetría de la membrana',
+n: 64, group: L2, title: 'Mosaico fluido, movimiento y asimetría de la membrana',
 lead: 'Una membrana no es una lámina quieta y uniforme: sus lípidos y proteínas se mueven todo el tiempo, y las dos caras tienen composiciones distintas a propósito.',
 blocks: [
 ['h', 'El modelo de mosaico fluido'],
@@ -320,7 +320,7 @@ blocks: [
 ]
 },
 {
-n: 53, group: L2, title: 'Cada membrana tiene su composición',
+n: 65, group: L2, title: 'Cada membrana tiene su composición',
 lead: 'No existe una membrana estándar. El retículo, el Golgi, la membrana plasmática, la mitocondria y los cloroplastos tienen composiciones distintas porque cada una hace un trabajo distinto.',
 blocks: [
 ['h', 'Dos tipos de diversidad'],
@@ -345,7 +345,7 @@ blocks: [
 ]
 },
 {
-n: 54, group: L2, title: 'Cómo se fabrican y se retocan los fosfolípidos',
+n: 66, group: L2, title: 'Cómo se fabrican y se retocan los fosfolípidos',
 lead: 'La composición final de una membrana no sale solo de la síntesis: después las cadenas se cambian una y otra vez. Hay una ruta de fabricación y un ciclo de retoque.',
 blocks: [
 ['h', 'Todo empieza en el ácido fosfatídico'],
@@ -375,7 +375,7 @@ blocks: [
 ]
 },
 {
-n: 55, group: L2, title: 'Curvatura, dominios y el papel de los PUFA',
+n: 67, group: L2, title: 'Curvatura, dominios y el papel de los PUFA',
 lead: 'Las membranas se doblan para formar vesículas, se fusionan y se dividen. La forma de cada lípido y lo flexible de sus colas deciden qué tan fácil es hacerlo.',
 blocks: [
 ['h', 'Curvatura según la forma'],
@@ -398,7 +398,7 @@ blocks: [
 ]
 },
 {
-n: 56, group: L2, title: 'Adaptación homeoviscosa: cómo una célula mantiene su membrana en el punto justo',
+n: 68, group: L2, title: 'Adaptación homeoviscosa: cómo una célula mantiene su membrana en el punto justo',
 lead: 'Si baja la temperatura, una membrana se pone más rígida; si sube, más fluida. Muchos organismos detectan ese cambio y modifican su composición para volver al estado adecuado. Es un sistema de control, como un termostato.',
 blocks: [
 ['h', 'La idea'],
@@ -410,7 +410,7 @@ blocks: [
 ['Solventes que fluidifican', 'Desorden repentino', 'Algunas bacterias pasan rápido de cis a trans'],
 ['Alta presión y frío (fondo del mar)', 'La presión ordena y el frío también', 'Algunas bacterias marinas agregan PUFA como EPA y DHA']
 ]],
-['why', 'Porque son justamente las dos variables que controlan el empaquetamiento (capítulo 44). Más dobles enlaces o cadenas más cortas → menos contactos → más fluidez, que compensa el frío. Más saturación o cadenas más largas → más contactos → más orden, que compensa el calor.', 'Por qué se cambia la saturación y el largo'],
+['why', 'Porque son justamente las dos variables que controlan el empaquetamiento (capítulo 56). Más dobles enlaces o cadenas más cortas → menos contactos → más fluidez, que compensa el frío. Más saturación o cadenas más largas → más contactos → más orden, que compensa el calor.', 'Por qué se cambia la saturación y el largo'],
 ['h', 'Un sensor bacteriano: DesK/DesR'],
 ['p', 'En la bacteria <i>Bacillus subtilis</i>, una proteína de membrana llamada <b>DesK</b> funciona como sensor. Cuando la membrana se pone más gruesa y empaquetada por el frío, DesK cambia de forma y pasa de actuar como fosfatasa a actuar como <b>quinasa</b>.'],
 ['fig', F.desk, 'El circuito se apaga solo cuando la membrana vuelve a su estado: es retroalimentación negativa.'],
@@ -431,7 +431,7 @@ blocks: [
 ]
 },
 {
-n: 57, group: L2, title: 'Sensores, fisiología, enfermedad y aplicaciones: el cierre',
+n: 69, group: L2, title: 'Sensores, fisiología, enfermedad y aplicaciones: el cierre',
 lead: 'Al final de la unidad, los lípidos aparecen en cuatro papeles a la vez: material de construcción, señales, reguladores de proteínas y variables que la célula controla. Estos ejemplos lo muestran.',
 blocks: [
 ['h', 'Sensores que vigilan las membranas'],

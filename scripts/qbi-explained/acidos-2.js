@@ -1,17 +1,17 @@
 'use strict';
-/* Ácidos nucleicos I · El ADN como material genético y la doble hélice. Capítulos 63 a 68. */
+/* Ácidos nucleicos I · El ADN como material genético y la doble hélice. Capítulos 75 a 80. */
 const { F } = require('./figs-acidos');
 const { M } = require('./kit-an');
 const G = 'Ácidos nucleicos I';
 
 module.exports = [
 {
-n: 63, group: G, pages: '17–20', title: 'El ADN como material genético: Griffith, Avery y Hershey–Chase',
+n: 75, group: G, pages: '17–20', title: 'El ADN como material genético: Griffith, Avery y Hershey–Chase',
 lead: 'Hoy parece obvio que los genes son ADN, pero durante años la candidata favorita fue la proteína. Tres experimentos, uno tras otro, cerraron la discusión.',
 blocks: [
 ['h', 'El punto de partida'],
 ['p', 'Los genetistas ya hablaban de <b>genes</b>, pero como unidades abstractas de herencia: se sabía cómo se transmitían, no de qué estaban hechos. A comienzos del siglo XX se sabía también que las <b>proteínas</b> eran cadenas formadas por <b>20 aminoácidos diferentes</b>, y que los <b>ácidos nucleicos</b> eran polímeros de solo <b>cuatro nucleótidos diferentes</b>: tres comunes al ADN y al ARN (adenina, guanina y citosina) y un cuarto que es timina en el ADN o uracilo en el ARN.'],
-['why', 'Con 20 «letras» distintas, una proteína puede escribir muchísimas más secuencias que un polímero de solo 4. Además, la idea del tetranucleótido (capítulo 59) sugería que el ADN era una repetición monótona. Las proteínas parecían las candidatas obvias para llevar la información y el ADN parecía demasiado simple. Faltaba entender que, aun con 4 letras, una secuencia muy larga puede guardar una cantidad enorme de información.', 'Por qué todos apostaban por las proteínas'],
+['why', 'Con 20 «letras» distintas, una proteína puede escribir muchísimas más secuencias que un polímero de solo 4. Además, la idea del tetranucleótido (capítulo 71) sugería que el ADN era una repetición monótona. Las proteínas parecían las candidatas obvias para llevar la información y el ADN parecía demasiado simple. Faltaba entender que, aun con 4 letras, una secuencia muy larga puede guardar una cantidad enorme de información.', 'Por qué todos apostaban por las proteínas'],
 ['h', 'Experimento de Griffith (1928)'],
 ['p', 'Frederick Griffith trabajaba con neumococos, las bacterias que causan neumonía, y tenía dos cepas:'],
 ['cols', [
@@ -63,7 +63,7 @@ blocks: [
 ]
 },
 {
-n: 64, group: G, pages: '21–24', title: 'Hacia la estructura: rayos X, Foto 51 y las reglas de Chargaff',
+n: 76, group: G, pages: '21–24', title: 'Hacia la estructura: rayos X, Foto 51 y las reglas de Chargaff',
 lead: 'Una vez que se supo que los genes son ADN, la pregunta fue qué forma tiene. Dos tipos de datos la respondieron: las imágenes de difracción de rayos X y la composición de bases.',
 blocks: [
 ['h', 'Los protagonistas'],
@@ -128,13 +128,13 @@ blocks: [
 ]
 },
 {
-n: 65, group: G, pages: '25–28 y 30', title: 'El modelo de Watson y Crick: cómo está armada la doble hélice',
+n: 77, group: G, pages: '25–28 y 30', title: 'El modelo de Watson y Crick: cómo está armada la doble hélice',
 lead: 'Con los datos de rayos X y las reglas de Chargaff, Watson y Crick propusieron en 1953 la doble hélice. Cada característica del modelo tiene una razón química.',
 blocks: [
 ['img', 'p025-modelo', 'El modelo de Watson y Crick en forma de escalera: la cadena izquierda va de 5′ (arriba) a 3′ y la derecha de 3′ a 5′; los pares T–A, G–C, C–G y A–T forman los peldaños; fosfatos (P) y azúcares quedan afuera.', 25],
 ['table', ['Característica', 'Qué significa', 'Por qué es así'], [
 ['Doble hélice', 'Dos cadenas enrolladas una alrededor de la otra', 'Lo muestran la cruz y la cuarta línea faltante de la Foto 51'],
-['Dextrógira', 'Gira hacia la derecha, como un tornillo común', 'Es la forma estable en condiciones fisiológicas (forma B, capítulo 66)'],
+['Dextrógira', 'Gira hacia la derecha, como un tornillo común', 'Es la forma estable en condiciones fisiológicas (forma B, capítulo 78)'],
 ['Eje de simetría', 'Las dos cadenas giran alrededor de un mismo eje imaginario', 'Las dos cadenas tienen la misma forma'],
 ['Fosfatos afuera', 'El esqueleto azúcar-fosfato forma la parte externa', 'Los fosfatos tienen carga y son hidrofílicos: les conviene estar en contacto con el agua'],
 ['Bases adentro', 'Las bases planas se apilan en el centro', 'Son hidrofóbicas: quedan protegidas del agua y se apilan entre sí'],
@@ -158,7 +158,7 @@ blocks: [
 '<b>G–C:</b> el C=O de la guanina recibe un H del NH₂ de la citosina; el NH del N1 de la guanina dona al N3 de la citosina; el NH₂ del C2 de la guanina dona al C=O de la citosina. Total: <b>3 puentes</b>.',
 'Si intentás aparear A con C o G con T, los dadores y aceptores no coinciden. Por eso las parejas son siempre las mismas.'
 ]],
-['p', 'El ADN rico en pares G–C es <b>más estable</b> y necesita más temperatura para separar sus cadenas (capítulo 68). Además de los puentes de hidrógeno, aporta mucho el <b>apilamiento</b> entre bases vecinas, que también es más fuerte en los pares G–C.'],
+['p', 'El ADN rico en pares G–C es <b>más estable</b> y necesita más temperatura para separar sus cadenas (capítulo 80). Además de los puentes de hidrógeno, aporta mucho el <b>apilamiento</b> entre bases vecinas, que también es más fuerte en los pares G–C.'],
 ['h', 'Cadenas antiparalelas: la información está en el orden de las bases'],
 ['img', 'p030-antiparalelas', 'Izquierda: la hélice con el surco menor (minor groove) y el surco mayor (major groove). Derecha: las dos cadenas en fórmula, una de 5′ a 3′ y la otra de 3′ a 5′, unidas por pares de bases.', 30],
 ['p', 'El esqueleto azúcar-fosfato es igual en toda la molécula. Lo que cambia es el <b>orden lineal de las bases</b>, y ese orden es el <b>sistema de almacenamiento de información</b> de la célula. Como las cadenas son complementarias, cada una contiene la información para reconstruir la otra.'],
@@ -176,7 +176,7 @@ blocks: [
 ]
 },
 {
-n: 66, group: G, pages: '29 y 31', title: 'Medidas de la doble hélice y formas A, B y Z',
+n: 78, group: G, pages: '29 y 31', title: 'Medidas de la doble hélice y formas A, B y Z',
 lead: 'Las medidas de la hélice se relacionan entre sí con cuentas simples. Con ellas se puede calcular, por ejemplo, cuánto mide todo el ADN de una célula humana.',
 blocks: [
 ['img', 'p029-vista-lateral', 'Vista lateral: las dos cadenas antiparalelas; una vuelta cada 34 Å con unas 10,4 bases por vuelta; bases casi perpendiculares al eje y separadas 3,4 Å; azúcares y fosfatos afuera, bases adentro.', 29],
@@ -222,7 +222,7 @@ blocks: [
 ]
 },
 {
-n: 67, group: G, pages: '32–35', title: 'La historia del descubrimiento (1951–1962)',
+n: 79, group: G, pages: '32–35', title: 'La historia del descubrimiento (1951–1962)',
 lead: 'La doble hélice no la resolvió una sola persona: combinó los datos de rayos X de un laboratorio con la construcción de modelos de otro.',
 blocks: [
 ['table', ['Fecha', 'Qué pasó'], [
@@ -254,7 +254,7 @@ blocks: [
 ]
 },
 {
-n: 68, group: G, pages: '36–37', title: 'Desnaturalización, efecto hipercrómico y temperatura de fusión (Tm)',
+n: 80, group: G, pages: '36–37', title: 'Desnaturalización, efecto hipercrómico y temperatura de fusión (Tm)',
 lead: 'Las dos cadenas del ADN se pueden separar y volver a juntar. Seguir ese proceso con luz ultravioleta permite medir qué tan estable es un ADN.',
 blocks: [
 ['img', 'p036-desnaturalizacion', 'Estado nativo (doble hélice) → con calor o con OH⁻ → cadenas simples separadas → renaturalización (necesita condiciones especiales) → doble hélice otra vez.', 36],

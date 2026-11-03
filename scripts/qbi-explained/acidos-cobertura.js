@@ -24,7 +24,7 @@ for (const ch of chapters) {
 }
 const mapa = require('./acidos-5').MAPA;
 let md = '# Ácidos nucleicos I · matriz de cobertura\n\n';
-md += 'Clase de Javier De Gaudenzi (06/10/2026), 64 páginas físicas. Cada página → capítulo del resumen de Química Biológica (sección «Ácidos nucleicos», caps. 58–79, archivo `qbi-acidos-nucleicos-extension.js`) y recursos donde quedó.\n\n';
+md += 'Clase de Javier De Gaudenzi (06/10/2026), 64 páginas físicas. Cada página → capítulo del resumen de Química Biológica (sección «Ácidos nucleicos», caps. 70–91, archivo `qbi-acidos-nucleicos-extension.js`) y recursos donde quedó.\n\n';
 md += 'Generado por `node scripts/qbi-explained/acidos-cobertura.js` a partir de los mismos datos que arman la app.\n\n';
 md += '| Pág. | Contenido | Capítulos | Dónde quedó en la app |\n|---|---|---|---|\n';
 let missing = [];

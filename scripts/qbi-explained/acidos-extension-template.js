@@ -21,7 +21,7 @@ function headHtml(){
  const chips=UNITS.map(u=>u.ready?'<a href="#'+u.id+'">'+u.label+'</a>':'<span>'+u.label+' · próximamente</span>').join('');
  return '<section id="'+GROUP_ID+'" class="anx-group-head"><div class="qbx-kicker">Química Biológica I · nueva sección</div><h2>Ácidos nucleicos</h2><p>De la pieza (el nucleótido) a la molécula de la herencia (ADN), el mensajero (ARN) y el metabolismo que los fabrica y los recicla.</p><div class="anx-units">'+chips+'</div></section>';
 }
-function anchorNode(){return document.getElementById('tp4')||document.getElementById('cap57')||document.getElementById('cap41')}
+function anchorNode(){return document.getElementById('tp4')||document.getElementById('cap69')||document.getElementById('cap41')}
 function build(){
  if(chapters.every(ch=>document.getElementById('cap'+ch.n))&&document.getElementById(GROUP_ID))return true;
  const anchor=anchorNode();if(!anchor?.parentNode)return false;
@@ -38,7 +38,7 @@ function nav(){return document.querySelector('.qb-summary .qb-sidebar #summaryIn
 function addIndex(){
  const index=nav();if(!index)return false;
  index.querySelectorAll('[data-qbi-an-index]').forEach(x=>x.remove());
- const anchor=index.querySelector('a[href="#tp4"]')||index.querySelector('a[href="#cap57"]')||[...index.querySelectorAll('a[href^="#cap"]')].pop();
+ const anchor=index.querySelector('a[href="#tp4"]')||index.querySelector('a[href="#cap69"]')||[...index.querySelectorAll('a[href^="#cap"]')].pop();
  if(!anchor)return false;
  let cursor=anchor;
  const add=(href,text,group)=>{const a=document.createElement('a');a.href=href;a.textContent=text;a.dataset.qbiAnIndex='1';if(group){a.className='qbi-lip-index-group';a.dataset.qbiIndexGroup='1'}cursor.insertAdjacentElement('afterend',a);cursor=a};
@@ -142,7 +142,7 @@ function bindSearch(){
 function ensure(){
  ensureStyle();bindQuiz();bindZoom();bindSearch();
  if(!build())return false;
- addIndex();updateMeta();renderMath();
+ addIndex();window.__qbiReobserveIndex?.();updateMeta();renderMath();
  return true;
 }
 let tries=0;function boot(){if(ensure())return;if(++tries<200)setTimeout(boot,150)}

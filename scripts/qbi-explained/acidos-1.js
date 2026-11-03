@@ -1,22 +1,22 @@
 'use strict';
-/* Ácidos nucleicos I · Bloque 1: las piezas (nucleótidos, bases, azúcares, enlaces y nombres). Capítulos 58 a 62. */
+/* Ácidos nucleicos I · Bloque 1: las piezas (nucleótidos, bases, azúcares, enlaces y nombres). Capítulos 70 a 74. */
 const { F } = require('./figs-acidos');
 const G = 'Ácidos nucleicos I';
 
 module.exports = [
 {
-n: 58, group: G, pages: '1–5', title: 'Qué es un ácido nucleico y por qué los nucleótidos están en todo el metabolismo',
+n: 70, group: G, pages: '1–5', title: 'Qué es un ácido nucleico y por qué los nucleótidos están en todo el metabolismo',
 lead: 'Antes de hablar de ADN y ARN conviene conocer la pieza con la que se arman: el nucleótido. Esa misma pieza aparece en la energía de la célula, en las coenzimas, en las señales y, por supuesto, en la información genética.',
 blocks: [
 ['h', 'El recorrido de la unidad'],
 ['p', 'La unidad avanza de lo chico a lo grande y termina en el metabolismo:'],
 ['table', ['Parte', 'Qué vas a entender', 'Capítulos'], [
-['Las piezas', 'Qué es un nucleótido, qué bases y azúcares tiene, cómo se unen y cómo se nombran', '58 a 62'],
-['El ADN como material genético', 'Cómo se demostró que los genes son ADN y cómo se descubrió su forma', '63 y 64'],
-['La doble hélice', 'Cómo está armado el ADN, sus medidas, sus formas y cómo se separan sus cadenas', '65 a 68'],
-['ARN y flujo de la información', 'En qué se diferencia el ARN, qué tipos hay y cómo se copia y se lee la información', '69 a 71'],
-['Metabolismo de nucleótidos', 'Cómo se fabrican, se reciclan y se degradan los nucleótidos, y qué fármacos actúan ahí', '72 a 77'],
-['Repaso', 'Preguntas resueltas y glosario', '78 y 79']
+['Las piezas', 'Qué es un nucleótido, qué bases y azúcares tiene, cómo se unen y cómo se nombran', '70 a 74'],
+['El ADN como material genético', 'Cómo se demostró que los genes son ADN y cómo se descubrió su forma', '75 y 76'],
+['La doble hélice', 'Cómo está armado el ADN, sus medidas, sus formas y cómo se separan sus cadenas', '77 a 80'],
+['ARN y flujo de la información', 'En qué se diferencia el ARN, qué tipos hay y cómo se copia y se lee la información', '81 a 83'],
+['Metabolismo de nucleótidos', 'Cómo se fabrican, se reciclan y se degradan los nucleótidos, y qué fármacos actúan ahí', '84 a 89'],
+['Repaso', 'Preguntas resueltas y glosario', '90 y 91']
 ]],
 ['h', 'Qué es un ácido nucleico'],
 ['p', 'Un <b>ácido nucleico</b> es un <b>polinucleótido</b>: una molécula muy larga formada por muchos nucleótidos unidos en fila, como los vagones de un tren. Igual que una proteína es un polímero de aminoácidos, un ácido nucleico es un polímero de nucleótidos. Su función es <b>almacenar y transferir la información</b> de la célula.'],
@@ -26,7 +26,7 @@ blocks: [
 'La fila de abajo, <b>azúcar – fosfato – azúcar – fosfato…</b>, es el <b>esqueleto</b> de la cadena. Es igual en toda la molécula: siempre se repite el mismo par.',
 'De cada azúcar sale una <b>base</b> (los rectángulos de colores). Los subíndices i, i+1, i+2 indican bases consecutivas.',
 'Lo único que cambia de un nucleótido a otro es la base. Por eso la información está en la <b>secuencia de bases</b>, como las letras de una palabra, y no en el esqueleto.',
-'Las flechas indican que la cadena tiene <b>dirección</b>: no es lo mismo leerla de un extremo que del otro (capítulo 65).'
+'Las flechas indican que la cadena tiene <b>dirección</b>: no es lo mismo leerla de un extremo que del otro (capítulo 77).'
 ]],
 ['img', 'p002-watson-crick', 'James Watson y Francis Crick junto a su modelo de ADN. El chiste del dibujo («Elemental Watson! es en sentido 5′ – 3′») recuerda que las cadenas tienen dirección y se fabrican en sentido 5′→3′.', 2],
 ['h', 'Las tres partes de un nucleótido'],
@@ -42,12 +42,12 @@ blocks: [
 ['p', 'Los nucleótidos no son solo las letras del ADN: están en todo el metabolismo.'],
 ['table', ['Función', 'Qué hacen', 'Ejemplos'], [
 ['<b>Energía</b>', 'Transfieren energía dentro de la célula. Son estables cuando tienen un solo fosfato; con dos o tres funcionan como «moneda energética».', '<b>ATP</b> (nucleótido de adenina) y <b>GTP</b> (nucleótido de guanina), los más usados.'],
-['<b>Electrones</b>', 'Forman parte de coenzimas que transportan electrones en las reacciones de óxido-reducción.', 'NADH, NADPH, FADH₂. También la coenzima A contiene un nucleótido (capítulo 77).'],
+['<b>Electrones</b>', 'Forman parte de coenzimas que transportan electrones en las reacciones de óxido-reducción.', 'NADH, NADPH, FADH₂. También la coenzima A contiene un nucleótido (capítulo 89).'],
 ['<b>Señalización y regulación</b>', 'Funcionan como segundos mensajeros: llevan una señal desde la membrana hacia el interior de la célula. Además, el ATP aporta el fosfato para fosforilar proteínas y encenderlas o apagarlas.', '<b>AMPc</b> y <b>GMPc</b>; fosforilación.'],
 ['<b>Intermediarios activados</b>', 'Se unen a otra molécula para dejarla «lista» para ser transferida en una biosíntesis.', '<b>UDP-glucosa</b> (precursor del glucógeno) y <b>S-adenosilmetionina</b> (SAM, que transfiere grupos metilo).'],
 ['<b>Información</b>', 'Son los precursores activados del ADN y del ARN.', 'Los nucleótidos trifosfato (ATP, GTP, CTP, UTP y sus formas desoxi) se encadenan para formar los ácidos nucleicos.']
 ]],
-['why', 'Con un solo fosfato (como en el AMP), el fosfato está unido al azúcar por un enlace fosfoéster, que es estable. Con dos o tres fosfatos aparecen enlaces fosfoanhídrido entre fosfatos: ahí se juntan cargas negativas que se repelen, y romper esos enlaces libera mucha energía. Por eso el ATP es un buen dador de energía y el AMP no (capítulo 61).', 'Por qué un solo fosfato es «estable»'],
+['why', 'Con un solo fosfato (como en el AMP), el fosfato está unido al azúcar por un enlace fosfoéster, que es estable. Con dos o tres fosfatos aparecen enlaces fosfoanhídrido entre fosfatos: ahí se juntan cargas negativas que se repelen, y romper esos enlaces libera mucha energía. Por eso el ATP es un buen dador de energía y el AMP no (capítulo 73).', 'Por qué un solo fosfato es «estable»'],
 ['p', 'Cada función aprovecha una parte distinta del nucleótido. Los fosfatos encadenados almacenan energía. La adenina funciona como un «mango» que muchas enzimas reconocen, y por eso aparece en coenzimas como NAD, FAD y CoA. Un azúcar o un metilo unidos a un nucleótido quedan activados para ser transferidos. Y en los polímeros, el orden de las bases es la información.'],
 ['check', [
 ['¿Qué es un ácido nucleico?', 'Un polinucleótido: un polímero de nucleótidos que almacena y transfiere información. Los dos tipos son ADN y ARN.'],
@@ -59,7 +59,7 @@ blocks: [
 ]
 },
 {
-n: 59, group: G, pages: '6–8', title: 'Las bases nitrogenadas: purinas y pirimidinas',
+n: 71, group: G, pages: '6–8', title: 'Las bases nitrogenadas: purinas y pirimidinas',
 lead: 'Las bases son la parte del nucleótido que lleva la información. Hay cinco bases principales, agrupadas en dos familias según tengan uno o dos anillos.',
 blocks: [
 ['h', 'Cómo se descubrieron'],
@@ -69,7 +69,7 @@ blocks: [
 ['<b>Phoebus A. Theodore Levene</b> (1869–1940), bioquímico', 'Trabajó con Kossel en la identificación de las bases y descubrió los azúcares: la <b>ribosa</b> (1909) y la <b>desoxirribosa</b> (1929). Llamó <b>nucleótido</b> a la unidad base + azúcar + fosfato y estableció cómo se unen entre sí. En 1910 propuso que el ADN era un <b>tetranucleótido</b>: un bloque de cuatro nucleótidos, uno de cada base, repetido.']
 ]],
 ['gallery', [['p006-miescher', 'Miescher'], ['p006-kossel', 'Kossel'], ['p006-levene', 'Levene'], ['p006-tetranucleotido', 'Modelo de tetranucleótido: dGMP, dCMP, dTMP y dAMP unidos por fosfatos']], 6],
-['why', 'Si el ADN fuera un mismo bloque de cuatro nucleótidos repetido una y otra vez, su secuencia sería monótona y no podría guardar información distinta en cada organismo. Esa idea hizo que durante décadas el ADN pareciera «demasiado simple» para ser el material genético (capítulo 63). Después se vio que la composición de bases cambia de una especie a otra (capítulo 64) y la hipótesis se abandonó.', 'Por qué la idea del tetranucleótido frenó a la ciencia'],
+['why', 'Si el ADN fuera un mismo bloque de cuatro nucleótidos repetido una y otra vez, su secuencia sería monótona y no podría guardar información distinta en cada organismo. Esa idea hizo que durante décadas el ADN pareciera «demasiado simple» para ser el material genético (capítulo 75). Después se vio que la composición de bases cambia de una especie a otra (capítulo 76) y la hipótesis se abandonó.', 'Por qué la idea del tetranucleótido frenó a la ciencia'],
 ['h', 'Dos familias de bases'],
 ['p', 'Las bases son moléculas en forma de anillo que contienen nitrógeno (por eso «nitrogenadas»). Según su esqueleto se dividen en dos familias:'],
 ['cols', [
@@ -87,13 +87,13 @@ blocks: [
 ]],
 ['h', 'Propiedades que salen de la estructura'],
 ['table', ['Propiedad', 'Por qué ocurre', 'Consecuencia'], [
-['Aromáticas e hidrofóbicas', 'Son anillos planos con dobles enlaces alternados. Sus caras planas no forman puentes de hidrógeno con el agua.', 'Tienden a apilarse unas sobre otras, lejos del agua: en el ADN quedan hacia adentro (capítulo 65).'],
-['Poco solubles en agua (más solubles en medio ácido o básico)', 'A pH neutro casi no tienen carga. En medio ácido sus nitrógenos ganan protones y en medio básico los pierden; con carga interactúan mejor con el agua.', 'El pH extremo cambia sus cargas y puede separar las cadenas del ADN (capítulo 68).'],
-['Absorben luz ultravioleta a ~260 nm', 'Los electrones de los dobles enlaces están deslocalizados en el anillo y absorben esa luz.', 'Se usa para medir ADN y ARN y para seguir su desnaturalización (capítulo 68).']
+['Aromáticas e hidrofóbicas', 'Son anillos planos con dobles enlaces alternados. Sus caras planas no forman puentes de hidrógeno con el agua.', 'Tienden a apilarse unas sobre otras, lejos del agua: en el ADN quedan hacia adentro (capítulo 77).'],
+['Poco solubles en agua (más solubles en medio ácido o básico)', 'A pH neutro casi no tienen carga. En medio ácido sus nitrógenos ganan protones y en medio básico los pierden; con carga interactúan mejor con el agua.', 'El pH extremo cambia sus cargas y puede separar las cadenas del ADN (capítulo 80).'],
+['Absorben luz ultravioleta a ~260 nm', 'Los electrones de los dobles enlaces están deslocalizados en el anillo y absorben esa luz.', 'Se usa para medir ADN y ARN y para seguir su desnaturalización (capítulo 80).']
 ]],
 ['h', 'Tres bases emparentadas: C, U y T'],
-['p', 'Si a la citosina se le quita el grupo amino del C4 (<b>desaminación</b>), queda un carbonilo en su lugar: se obtiene <b>uracilo</b>. Si al uracilo se le agrega un metilo en el C5 (<b>metilación</b>), se obtiene <b>timina</b>. Estas tres bases son químicamente muy parecidas, y ese parecido explica por qué el ADN usa timina y no uracilo (capítulo 69).'],
-['trap', 'Es una relación química entre estructuras. En la célula la timina no se fabrica metilando uracilo suelto: se metila el nucleótido dUMP para dar dTMP (capítulo 75). Y cuando una citosina del ADN se desamina sola, eso es un daño que hay que reparar (capítulo 69).'],
+['p', 'Si a la citosina se le quita el grupo amino del C4 (<b>desaminación</b>), queda un carbonilo en su lugar: se obtiene <b>uracilo</b>. Si al uracilo se le agrega un metilo en el C5 (<b>metilación</b>), se obtiene <b>timina</b>. Estas tres bases son químicamente muy parecidas, y ese parecido explica por qué el ADN usa timina y no uracilo (capítulo 81).'],
+['trap', 'Es una relación química entre estructuras. En la célula la timina no se fabrica metilando uracilo suelto: se metila el nucleótido dUMP para dar dTMP (capítulo 87). Y cuando una citosina del ADN se desamina sola, eso es un daño que hay que reparar (capítulo 81).'],
 ['h', 'Qué bases tiene el ADN y cuáles el ARN'],
 ['p', 'El ADN y el ARN tienen cuatro bases cada uno. Comparten tres (adenina, guanina y citosina) y difieren en una: el ADN tiene <b>timina</b> y el ARN tiene <b>uracilo</b> en su lugar.'],
 ['img', 'p008-bases-adn-arn', 'Bases del ADN (celeste) y del ARN (amarillo). La única diferencia está resaltada: el metilo (H₃C–) de la timina, que falta en el uracilo.', 8],
@@ -111,7 +111,7 @@ blocks: [
 ]
 },
 {
-n: 60, group: G, pages: '9 y 13', title: 'El azúcar: ribosa y desoxirribosa',
+n: 72, group: G, pages: '9 y 13', title: 'El azúcar: ribosa y desoxirribosa',
 lead: 'La pentosa es el conector del nucleótido: a ella se unen la base y el fosfato. Entre ARN y ADN cambia un solo grupo, y ese detalle decide cuál molécula es estable y cuál no.',
 blocks: [
 ['p', 'Los azúcares de los ácidos nucleicos son pentosas: azúcares de cinco carbonos. En el ARN el azúcar es la <b>ribosa</b>; en el ADN es la <b>desoxirribosa</b>, que es una ribosa a la que le falta un oxígeno. De ahí el nombre: «des-oxi» = sin oxígeno.'],
@@ -120,7 +120,7 @@ blocks: [
 ['h', 'Números con prima'],
 ['p', 'La base ya usa los números 1 a 9 para sus átomos. Para no confundir, los carbonos del azúcar se numeran con prima: 1′, 2′, 3′, 4′ y 5′ (se lee «uno prima», «dos prima»…).'],
 ['table', ['Carbono', 'Qué tiene', 'Para qué importa'], [
-['C1′', 'Unión con la base (enlace N-glicosídico)', 'Forma el nucleósido (capítulo 61)'],
+['C1′', 'Unión con la base (enlace N-glicosídico)', 'Forma el nucleósido (capítulo 73)'],
 ['C2′', 'OH en la ribosa · H en la desoxirribosa', 'Es la diferencia entre ARN y ADN, y decide su estabilidad'],
 ['C3′', 'Grupo OH', 'Se une al fosfato del nucleótido siguiente: es el extremo 3′'],
 ['C4′', 'Forma parte del anillo', 'Conecta el anillo con el C5′'],
@@ -140,7 +140,7 @@ blocks: [
 ]
 },
 {
-n: 61, group: G, pages: '10–12', title: 'Nucleósidos y nucleótidos: cada enlace con su nombre',
+n: 73, group: G, pages: '10–12', title: 'Nucleósidos y nucleótidos: cada enlace con su nombre',
 lead: 'La base, el azúcar y los fosfatos se unen con tres tipos de enlaces distintos. Saber cuál es cuál evita la confusión más común de la unidad.',
 blocks: [
 ['h', 'Nucleósido = base + azúcar'],
@@ -180,8 +180,8 @@ blocks: [
 ['<b>N-glicosídico</b>', 'base con azúcar', 'C1′ con N9 (purinas) o N1 (pirimidinas)', 'covalente', 'adenosina'],
 ['<b>Fosfoéster</b>', 'fosfato con azúcar', 'O del C5′ con el fósforo', 'covalente, estable', 'AMP'],
 ['<b>Fosfoanhídrido</b>', 'fosfato con fosfato', 'P–O–P', 'covalente, mucha energía de hidrólisis', 'ADP, ATP'],
-['<b>Fosfodiéster</b>', 'un azúcar con otro, a través de un fosfato', 'C3′–O–P–O–C5′', 'covalente, <b>intracatenario</b>', 'esqueleto de ADN y ARN (capítulo 65)'],
-['<b>Puente de hidrógeno</b>', 'base con base', 'entre las dos cadenas', 'no covalente, <b>intercatenario</b>', 'A=T (2), G≡C (3) (capítulo 65)']
+['<b>Fosfodiéster</b>', 'un azúcar con otro, a través de un fosfato', 'C3′–O–P–O–C5′', 'covalente, <b>intracatenario</b>', 'esqueleto de ADN y ARN (capítulo 77)'],
+['<b>Puente de hidrógeno</b>', 'base con base', 'entre las dos cadenas', 'no covalente, <b>intercatenario</b>', 'A=T (2), G≡C (3) (capítulo 77)']
 ]],
 ['trap', 'Fosfo<b>éster</b> = un fosfato unido a <b>un</b> azúcar (AMP). Fosfo<b>diéster</b> = un fosfato unido a <b>dos</b> azúcares (la cadena). Fosfo<b>anhídrido</b> = un fosfato unido a <b>otro fosfato</b>. «Intracatenario» = dentro de una misma cadena; «intercatenario» = entre dos cadenas.', 'No mezclar los nombres'],
 ['check', [
@@ -193,7 +193,7 @@ blocks: [
 ]
 },
 {
-n: 62, group: G, pages: '13–16', title: 'Cómo se nombran: bases, nucleósidos y nucleótidos',
+n: 74, group: G, pages: '13–16', title: 'Cómo se nombran: bases, nucleósidos y nucleótidos',
 lead: 'Con tres reglas podés nombrar cualquier nucleótido y entender todos los símbolos: A, dA, dAMP, ATP, dTTP…',
 blocks: [
 ['steps', 'Tres reglas para nombrar', [
@@ -228,7 +228,7 @@ blocks: [
 ['¿Cómo se llama el nucleótido que tiene citosina, ribosa y un fosfato?', 'Citidilato o citidina 5′-monofosfato (CMP).'],
 ['¿Qué es el dATP?', 'Desoxiadenosín trifosfato: adenina + desoxirribosa + tres fosfatos.'],
 ['¿Uridina es una base, un nucleósido o un nucleótido?', 'Un nucleósido: uracilo + ribosa, sin fosfato.'],
-['¿Por qué no aparece dUMP entre los nucleótidos del ADN?', 'Porque el ADN usa timina, no uracilo. El dUMP existe como intermediario: es el precursor del dTMP (capítulo 75).']
+['¿Por qué no aparece dUMP entre los nucleótidos del ADN?', 'Porque el ADN usa timina, no uracilo. El dUMP existe como intermediario: es el precursor del dTMP (capítulo 87).']
 ]]
 ]
 }

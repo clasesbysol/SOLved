@@ -180,7 +180,7 @@
   const SEC_PE="proteinas-enzimas",SEC_GL="glucidos-lipidos";
   window.QBI_MIND_MAP_SECTIONS=[
     {id:SEC_PE,label:"Proteínas + Enzimas",description:"Aminoácidos, estructura, purificación, electroforesis, TP1, Enzimas I–III y TP2."},
-    {id:SEC_GL,label:"Glúcidos + Lípidos",description:"Glúcidos I, Lípidos I, Lípidos II y TP4: de la molécula a la membrana y al reconocimiento celular."}
+    {id:SEC_GL,label:"Glúcidos + Lípidos",description:"Glúcidos I y II, Lípidos I, Lípidos II y TP4: de la molécula a su análisis estructural, a la membrana y al reconocimiento celular."}
   ];
   for(const group of window.QBI_MIND_MAP_DATA)group.section=group.section||SEC_PE;
   const t=(label,explanation,equations=[],visual="",deep)=>{const item={label,explanation,equations,visual};if(deep&&deep.length)item.deep=deep;return item};
@@ -269,14 +269,52 @@
         t("Ampliaciones de bibliografía","Dulzor: dos estereoisómeros del aspartamo actúan distinto sobre el receptor del gusto. Glicómica: caracterizar todos los glicanos de una célula o tejido (MS y RMN). Trastornos genéticos de glicosilación alteran plegamiento, destino y reconocimiento de proteínas. Los grupos sanguíneos y la adhesión de patógenos también dependen de glicanos de superficie.")
       ])
     ]},
+    {id:"glucidos2",section:SEC_GL,label:"Glúcidos II · análisis estructural de glicanos",description:"Cómo se averigua qué es un glicano: aislarlo, liberarlo, separarlo y responder qué azúcares tiene, en qué OH se unen, en qué orden y con qué configuración.",chapters:[
+      chapter("31. Qué significa analizar un glicano","cap42","Glicano = oligo- o polisacárido libre o la parte glucídica de un glicoconjugado; aglicona = la parte no glucídica.",[
+        t("Cinco datos definen un glicano","Naturaleza de los residuos, orden, posición de los enlaces, configuración α/β y naturaleza y sitio de unión en la aglicona. Cada técnica responde uno o dos; nunca todos."),
+        t("Ruta del análisis","Material biológico → extracto → aislamiento y purificación → liberación del glicano → limpieza y separación → pureza → composición (HPAEC-PAD), enlaces (PMAA + GC-MS) y secuencia/anomería (exoglicosidasas + SEC).")
+      ]),
+      chapter("32. Obtener y liberar el glicano","cap44","Polisacáridos: desproteinizar (TCA, proteasas), precipitar con EtOH 80 % y dializar. Glicoconjugados: soltar el glicano de su aglicona.",[
+        t("N-glicanos","Unidos al N de la amida de Asn en la secuencia Asn–X–Ser/Thr (X ≠ Pro). Precursor Glc₃Man₉GlcNAc₂ en dolicol-fosfato (RE), transferido en bloque; maduran a oligomanosa, híbridos o complejos. Núcleo común: Manα1-3(Manα1-6)Manβ1-4GlcNAcβ1-4GlcNAcβ1-N-Asn."),
+        t("Enzimas","PNGasa F/A: corta entre GlcNAc y Asn (la Asn pasa a Asp) y libera todos los N-glicanos; limitada en proteínas nativas. Endo H: corta entre las dos GlcNAc; sirve en nativas pero no corta complejos."),
+        t("O-glicanos e hidracinólisis","Unidos al O de Ser/Thr, sin consenso; empiezan con GalNAc en el Golgi (mucinas). Se liberan por hidracinólisis: O-glicanos a 60 °C y N-glicanos a 95 °C; después se reacetila.")
+      ]),
+      chapter("33. Marcar, desalar y separar","cap46","El extremo reductor se marca con un fluoróforo; la muestra se desala y se fracciona por tamaño y por carga.",[
+        t("Marcación","Aminación reductiva del extremo reductor con 2-AA (aporta carga −) o 2-AB (neutra): una etiqueta por molécula."),
+        t("Carbono grafitizado (PGC-SPE)","Adsorbe oligosacáridos. Agua → sales y monosacáridos; 25 % acetonitrilo → neutros; 25 % acetonitrilo + 0,05 % TFA → ácidos."),
+        t("SEC e intercambio aniónico","SEC: los grandes no entran en los poros y salen primero (Biogel P-2: 1–10 GU; P-4: 1–30 GU). Intercambio aniónico: retiene glicanos con siálico, sulfato o fosfato; se eluye con gradiente de sal.")
+      ]),
+      chapter("34. Afinidad con lectinas","cap47","Lectina = proteína que reconoce un motivo de azúcares de forma específica y reversible, sin catalizar. Se eluye con un azúcar competidor.",[
+        t("Qué reconoce cada una","Con A: alta manosa, híbridos y biantenarios (α-metilglucósido 10 mM / α-metilmanósido 100 mM). LCA y PSA: fucosa del núcleo. RCA-I: Gal β1-4 terminal. L₄-PHA: tri- y tetraantenarios. E₄-PHA: GlcNAc bisectriz. SNA: siálico α2-6. MAL: siálico α2-3."),
+        t("Ejercicio XIII","Con A no retenida → LCA no retenida → L₄-PHA retenida → MAL retenida. XIII no es alta manosa, no tiene fucosa en el núcleo, es tri/tetraantenario y tiene siálico.")
+      ]),
+      chapter("35. Pureza: HPSEC, TLC y FACE","cap48","Antes de analizar la estructura hay que saber si el glicano está solo.",[
+        t("HPSEC","Separa por tamaño hidrodinámico y estima masa aparente con patrones.",["log₁₀ MW = a − b · (Vₑ/V₀)"]),
+        t("TLC","Sílica gel; n-butanol:isopropanol:agua (3:12:4); revelador p-anisaldehído. Cuanto más largo el oligosacárido, más OH y menor Rf.",["Rf = distancia de la mancha / distancia del frente"]),
+        t("FACE","Fluoróforo cargado (ANTS) en el extremo reductor + PAGE: en series homólogas los más chicos migran más.")
+      ]),
+      chapter("36. Composición monosacarídica","cap49","Hidrólisis ácida (HCl o TFA) → HPAEC → PAD: qué azúcares hay y en qué proporción, sin enlaces ni orden.",[
+        t("HPAEC","A pH 12–13 los OH (pKa 12–14) se desprotonan en parte y una resina de amonio cuaternario los retiene. Fase móvil NaOH ± acetato de sodio. Sin derivatizar. El OH anomérico es el más ácido; luego 2-OH > 6-OH > 3-OH > 4-OH. Menor pKa → más retención."),
+        t("PAD","Oxidación de –C-OH y –NH₂ en electrodo de oro alcalino, con pulsos para medir, limpiar y reactivar. Picomoles; área = cantidad; cada azúcar necesita su propia calibración.")
+      ]),
+      chapter("37. Posiciones de enlace: PMAA y GC-MS","cap50","Metilar los OH libres → hidrolizar → reducir (NaBH₄/NaBD₄) → acetilar. Las posiciones acetiladas que no son 1 ni 5 eran enlaces.",[
+        t("Leer un PMAA","1,3,5-tri-O-acetil-2,4,6-tri-O-metilgalactitol = galactosa unida en 3. 2,3,4,6-tetra-O-metil = terminal; 2,3,6-tri = unida en 4; 2,3,4-tri = unida en 6; 2,3-di = ramificación 4,6."),
+        t("Por qué reducir","Sin reducir, cada azúcar daría α/β y piranosa/furanosa (hasta cuatro picos). NaBD₄ marca el C1 con deuterio y rompe la simetría del alditol."),
+        t("GC-MS","GC: muestras volátiles y termoestables, columna capilar, He; separa por tiempo de retención. EI-MS: fragmentos por m/z dicen dónde están OMe y OAc. Glc, Gal y Man dan el mismo espectro: se distinguen por el tiempo de retención.")
+      ]),
+      chapter("38. Secuencia y anomería: exoglicosidasas","cap52","Cada exoglicosidasa saca solo un azúcar terminal con un enlace α o β específico; SEC sigue el corrimiento del pico.",[
+        t("Ejemplo de transferrina","14,47 GU → β-galactosidasa 12,25 → β-hexosaminidasa 8,20 → α-manosidasa 6,54 → β-manosidasa 5,50 → α-fucosidasa 4,45 (biantenario con fucosa del núcleo)."),
+        t("Resumen de la clase","Purificación: intercambio aniónico, SEC, lectinas. Composición: hidrólisis + HPAEC-PAD. Enlaces: PMAA + GC-EI-MS. Secuencia y configuración: exoglicosidasas + SEC.")
+      ])
+    ]},
     {id:"lipidos1",section:SEC_GL,label:"Lípidos I · ácidos grasos, reserva y mediadores",description:"Leer un ácido graso, predecir sus propiedades y seguirlo hasta la reserva o la señal.",chapters:[
-      chapter("31. Qué son los lípidos y cómo se clasifican","cap42","No son una familia química única: se agrupan por ser hidrofóbicos o anfipáticos y por lo que hacen.",[
+      chapter("39. Qué son los lípidos y cómo se clasifican","cap54","No son una familia química única: se agrupan por ser hidrofóbicos o anfipáticos y por lo que hacen.",[
         t("Qué define a un lípido","Muy poco solubles en agua y muy solubles en solventes orgánicos, por sus regiones hidrocarbonadas. Algunos son totalmente apolares; otros, anfipáticos. Para estudiarlos: qué esqueleto tienen, qué grupo polar, cuántas colas y qué geometría. Estructura → propiedad física → función."),
         t("Funciones","Reserva de energía y carbono (TAG en gotas lipídicas). Membranas (glicerofosfolípidos, esfingolípidos, esteroles, galactolípidos, éter-lípidos). Señalización (DAG, PA, ceramida, S1P, fosfoinosítidos, derivados de PUFA). Aislamiento e impermeabilización (ceras, acilceramidas). Cofactores y pigmentos (vitamina K, retinoides, carotenoides, dolicol). Anclaje de proteínas (GPI, prenilación, miristoilación, palmitoilación)."),
         t("Familias principales","TAG: glicerol + 3 acilos, sin cabeza polar → reserva. Glicerofosfolípidos: glicerol + 2 acilos + fosfato + cabeza → bicapas. Esfingolípidos: base esfingoide + acilo por amida + cabeza → membrana y reconocimiento. Esteroles: núcleo tetracíclico rígido + OH → modulan la membrana. Galacto/sulfolípidos: DAG + azúcares, sin fosfato → membranas fotosintéticas. Éter-lípidos arqueanos: glicerol-1-P + isoprenoides por éter → membranas muy estables. Ceras: ácido graso largo + alcohol largo → impermeabilización."),
         t("Otras reservas en procariotas","Muchas bacterias acumulan polihidroxialcanoatos (PHA, como el PHB) en gránulos de reserva. Los hopanoides, pentacíclicos, organizan la membrana de forma análoga (no idéntica) a los esteroles.")
       ]),
-      chapter("32. Ácidos grasos: estructura y nomenclatura","cap43","Longitud, número y posición de los dobles enlaces definen casi todo su comportamiento.",[
+      chapter("40. Ácidos grasos: estructura y nomenclatura","cap55","Longitud, número y posición de los dobles enlaces definen casi todo su comportamiento.",[
         t("Qué es un ácido graso","Ácido carboxílico con una cadena hidrocarbonada, en general de número par de carbonos. Puede ser saturado (sin dobles enlaces), monoinsaturado o poliinsaturado (PUFA)."),
         t("Notación C:D y sistema Δ","C:D indica carbonos : dobles enlaces. El sistema Δ cuenta desde el carbono del carboxilo (C1) y da la posición de cada doble enlace.",["C:D → nº de carbonos : nº de dobles enlaces","oleato = 18:1 Δ9","araquidonato = 20:4 Δ5,8,11,14"]),
         t("Sistema ω (n)","Cuenta desde el extremo metilo y marca dónde aparece el primer doble enlace; define la familia (n-3, n-6, n-9).",["ω = nº de carbonos − posición Δ del último doble enlace","ALA 18:3 Δ9,12,15 → 18 − 15 = n-3","linoleato 18:2 Δ9,12 → 18 − 12 = n-6"],"",["Escribí el número total de carbonos (por ejemplo, 18 en el ALA).","Buscá el doble enlace más alejado del carboxilo en la notación Δ (Δ15).","Restá: 18 − 15 = 3. Ese doble enlace está a 3 carbonos del metilo → n-3 (ω-3).","Δ sirve para ubicar todos los dobles enlaces; ω sirve para saber a qué familia pertenece."]),
@@ -284,26 +322,26 @@
         t("Cis y trans","Un doble enlace cis dobla la cadena y dificulta el empaquetamiento compacto. Uno trans deja la cadena casi recta: se comporta parecido a una saturada."),
         t("Variantes bacterianas","Algunas bacterias usan ácidos grasos ramificados (iso/anteiso), ciclopropánicos y otras variantes. Cambiar ramificación, saturación o longitud ajusta la membrana sin cambiar la cabeza polar.")
       ]),
-      chapter("33. De la estructura a las propiedades físicas","cap44","Dos variables explican casi todo: longitud de la cadena y grado de insaturación.",[
+      chapter("41. De la estructura a las propiedades físicas","cap56","Dos variables explican casi todo: longitud de la cadena y grado de insaturación.",[
         t("Longitud de la cadena","Cadena más larga → más contactos de dispersión entre cadenas → mayor punto de fusión (Tm) y menor solubilidad en agua."),
         t("Insaturación cis","Más dobles enlaces cis → peor empaquetamiento → menor Tm y mayor fluidez relativa.",["A igual longitud, Tm: saturado ≳ trans > monoinsaturado cis > poliinsaturado cis"]),
         t("Cómo razonar un ejercicio","No memorices puntos de fusión. Primero compará longitudes; si son parecidas, compará cantidad y geometría de los dobles enlaces. Así se explica por qué el aceite de oliva es líquido y la manteca o el sebo son sólidos a temperatura ambiente."),
         t("Transición de fase en bicapas","Al pasar de gel (ordenado) a líquido-cristalino (desordenado), las cadenas se mueven más, aumenta el área por lípido y la bicapa se adelgaza. La temperatura de transición depende de longitud, saturación, cabeza polar y colesterol.")
       ]),
-      chapter("34. Familias ω-3 y ω-6, esencialidad y mediadores","cap45","ω-3 y ω-6 dicen dónde está el primer doble enlace, no si la molécula es «buena» o «mala».",[
+      chapter("42. Familias ω-3 y ω-6, esencialidad y mediadores","cap57","ω-3 y ω-6 dicen dónde está el primer doble enlace, no si la molécula es «buena» o «mala».",[
         t("Ácidos grasos esenciales","Los mamíferos no pueden introducir dobles enlaces en ciertas posiciones alejadas del carboxilo. Por eso linoleato (n-6) y α-linolenato (n-3) tienen que venir de la dieta."),
         t("Ruta n-6","Linoleato 18:2 → elongación y desaturación → araquidonato 20:4 → prostaglandinas, tromboxanos, leucotrienos y lipoxinas (inflamación, hemostasia, tono vascular y resolución, según el mediador).",["linoleato 18:2 n-6 → araquidonato 20:4 n-6 → eicosanoides"]),
         t("Ruta n-3","ALA 18:3 → elongación y desaturación → EPA 20:5 → DHA 22:6 → resolvinas, protectinas y maresinas, mediadores que ayudan a resolver la inflamación.",["ALA 18:3 n-3 → EPA 20:5 n-3 → DHA 22:6 n-3"]),
         t("Liberación desde la membrana","Los ácidos grasos no solo se oxidan o se almacenan: se incorporan a fosfolípidos, y las fosfolipasas los liberan después para generar mensajeros. La composición acílica de la membrana condiciona qué señales pueden producirse. El efecto final depende de la molécula, el tejido, la enzima y el contexto.")
       ]),
-      chapter("35. Triacilglicéridos, gotas lipídicas, ceras y grasas trans","cap46","Los TAG son reserva neutra; no son piezas de la bicapa.",[
+      chapter("43. Triacilglicéridos, gotas lipídicas, ceras y grasas trans","cap58","Los TAG son reserva neutra; no son piezas de la bicapa.",[
         t("Triacilglicéridos (TAG)","Glicerol esterificado con tres ácidos grasos. Sin cabeza polar: reserva muy reducida y prácticamente sin agua. Simples: tres acilos iguales (tripalmitina, trioleína). Mixtos: acilos distintos en sn-1, sn-2 y sn-3; son los más frecuentes en grasas naturales."),
         t("Gotas lipídicas","Organelas dinámicas: núcleo de TAG y ésteres de colesterol rodeado por una monocapa de fosfolípidos con proteínas. Las lipasas movilizan la reserva cuando la célula necesita combustible o precursores."),
         t("Ceras","Ácido graso de cadena larga esterificado con un alcohol de cadena larga: barreras hidrofóbicas que impermeabilizan y protegen."),
         t("Hidrogenación parcial y grasas trans","Aumenta la saturación y la estabilidad frente a la oxidación, pero puede generar isómeros trans. Como trans empaqueta mejor que cis, la cadena queda más ordenada y con mayor Tm que el isómero cis comparable."),
         t("Transesterificación","Los enlaces éster de los TAG reaccionan con alcoholes y forman ésteres de ácidos grasos: es la base del biodiésel.")
       ]),
-      chapter("36. Síntesis de ácidos grasos y puente hacia membranas","cap47","La diversidad lipídica empieza antes de la bicapa: qué acil-CoA hay disponibles condiciona qué lípidos se construyen.",[
+      chapter("44. Síntesis de ácidos grasos y puente hacia membranas","cap59","La diversidad lipídica empieza antes de la bicapa: qué acil-CoA hay disponibles condiciona qué lípidos se construyen.",[
         t("De acetil-CoA a acil-CoA","Acetil-CoA → malonil-CoA → la sintasa de ácidos grasos (FAS) alarga de a dos carbonos → ácido graso → elongación y desaturación → acil-CoA disponibles. Alargar de a dos explica por qué predominan las cadenas pares.",["acetil-CoA → malonil-CoA + FAS → AG → elongasas / desaturasas → acil-CoA"]),
         t("FAS I y FAS II","Los sistemas de síntesis difieren entre grupos biológicos, pero comparten la misma lógica de elongar de a dos carbonos."),
         t("Destinos de un ácido graso","Energía: oxidación o almacenamiento en TAG. Estructura y señal: incorporación en glicerofosfolípidos y esfingolípidos, desde donde pueden liberarse luego como mensajeros."),
@@ -311,61 +349,61 @@
       ])
     ]},
     {id:"lipidos2",section:SEC_GL,label:"Lípidos II · membranas, composición y homeostasis",description:"Cómo se arma una bicapa, qué la compone en cada lugar y cómo la célula la mantiene en el estado físico correcto.",chapters:[
-      chapter("37. Anfipaticidad y autoensamblaje","cap48","Las membranas se arman solas: las colas se esconden del agua y las cabezas quedan hidratadas.",[
+      chapter("45. Anfipaticidad y autoensamblaje","cap60","Las membranas se arman solas: las colas se esconden del agua y las cabezas quedan hidratadas.",[
         t("Efecto hidrofóbico","El agua alrededor de una superficie apolar queda ordenada. Al juntarse las colas, parte de esa agua se libera y aumenta la entropía del sistema. No es una «atracción entre colas»: es el balance termodinámico del conjunto."),
         t("Geometría → tipo de agregado","Cono invertido (cabeza grande, una cola): micelas y curvatura positiva; ácidos grasos libres, lisofosfolípidos, detergentes. Cilindro: bicapa plana; PC, PS. Cono (cabeza chica): curvatura negativa y fases no lamelares; PE, PA, DAG, cardiolipina.",[],"lipid-shapes"),
         t("Vesículas y liposomas","Una bicapa abierta deja bordes hidrofóbicos expuestos; se cierra sola y forma una vesícula. Liposomas y nanopartículas lipídicas (LNP) aprovechan esto para transportar moléculas; la composición controla estabilidad, curvatura, fusión y liberación.")
       ]),
-      chapter("38. Glicerofosfolípidos, galactolípidos y éter-lípidos","cap49","Una misma clase de fosfolípido reúne muchas especies moleculares según qué cadenas lleve.",[
+      chapter("46. Glicerofosfolípidos, galactolípidos y éter-lípidos","cap61","Una misma clase de fosfolípido reúne muchas especies moleculares según qué cadenas lleve.",[
         t("Glicerofosfolípido","Glicerol-3-fosfato con dos cadenas en sn-1 y sn-2, un fosfato y una cabeza polar unida a él. La cabeza define la clase; las cadenas definen la especie."),
         t("Cabezas, cargas y roles","PA: precursor y señal; favorece curvatura. PE: cara citosólica y bacterias; forma cónica. PC: muy abundante en eucariotas. PS: cara citosólica; se expone afuera en la apoptosis. PG: bacterias, tilacoides, surfactante. PI: precursor de fosfoinosítidos. Cardiolipina: membrana mitocondrial interna y bacterias.",["Carga a pH fisiológico: PA −, PE 0, PC 0, PS −, PG −, PI −, cardiolipina muy −"]),
         t("Posición sn","En muchos fosfolípidos animales, sn-1 lleva una cadena más saturada y sn-2 una más insaturada, con excepciones. Cambiar solo las cadenas convierte una «misma clase» en especies con propiedades distintas."),
         t("Galactolípidos y sulfolípidos","MGDG, DGDG y SQDG: DAG con azúcares y sin fosfato. Abundan en los tilacoides y permiten construir membranas con poco fosfato (las plantas igual tienen fosfolípidos)."),
         t("Éter-lípidos y Archaea","Plasmalógenos: enlace vinil-éter en sn-1. En Archaea: glicerol-1-fosfato (estereoquímica opuesta), cadenas isoprenoides ramificadas unidas por éter y, a veces, tetraéteres que atraviesan toda la membrana: membranas muy estables.")
       ]),
-      chapter("39. Esfingolípidos","cap50","No usan glicerol: parten de una base esfingoide y de la ceramida.",[
+      chapter("47. Esfingolípidos","cap62","No usan glicerol: parten de una base esfingoide y de la ceramida.",[
         t("Ceramida","Esfingosina (base esfingoide) + ácido graso unido por enlace amida. Agregándole una cabeza polar se obtienen los demás esfingolípidos.",["esfingosina + AG (amida) → ceramida + cabeza → esfingomielina o glicoesfingolípido"]),
         t("Subclases","Esfingomielina: cabeza de fosfocolina; membrana plasmática animal y mielina. Cerebrósido: un monosacárido. Globósido: oligosacárido neutro. Gangliósido: oligosacárido con ácido siálico."),
         t("Reconocimiento celular","Los azúcares de los glicoesfingolípidos miran hacia afuera: identidad, adhesión y reconocimiento. GM1 es el receptor de la toxina colérica; los determinantes ABO pueden estar en glicolípidos y glicoproteínas."),
         t("Señalización y enfermedad","Ceramida y esfingosina-1-fosfato (S1P) son moléculas señal. Fallas en la síntesis o degradación de esfingolípidos causan enfermedades; los autoanticuerpos antigangliósido aparecen en ciertas neuropatías.")
       ]),
-      chapter("40. Esteroles y colesterol","cap51","El colesterol no «sube» ni «baja» la fluidez: amortigua sus cambios.",[
+      chapter("48. Esteroles y colesterol","cap63","El colesterol no «sube» ni «baja» la fluidez: amortigua sus cambios.",[
         t("Estructura del colesterol","Un OH pequeño y polar, un núcleo esteroide rígido de cuatro anillos y una cola hidrofóbica: se intercala entre los fosfolípidos con el OH hacia las cabezas."),
         t("Esteroles por organismo","Animales: colesterol. Hongos: ergosterol. Plantas: fitosteroles como el estigmasterol. La mayoría de las bacterias no tiene esteroles (algunas usan hopanoides)."),
         t("Buffer de fluidez","A temperatura alta, el núcleo rígido limita el movimiento de las cadenas y aumenta el orden. A temperatura baja, impide que las cadenas se empaqueten como un cristal. Resultado: la membrana cambia menos con la temperatura."),
         t("Derivados","Ácidos y sales biliares, hormonas esteroideas, vitamina D y ésteres de colesterol (forma de almacenamiento). Los glucocorticoides como la prednisona actúan sobre todo regulando genes, no solo inhibiendo la PLA₂.")
       ]),
-      chapter("41. Mosaico fluido, movilidad y asimetría","cap52","La membrana es una bicapa dinámica y asimétrica, no una lámina homogénea.",[
+      chapter("49. Mosaico fluido, movilidad y asimetría","cap64","La membrana es una bicapa dinámica y asimétrica, no una lámina homogénea.",[
         t("Propiedades básicas","El núcleo hidrofóbico frena iones y moléculas polares grandes. Lípidos y muchas proteínas difunden lateralmente. Los bordes expuestos son desfavorables, por eso la membrana se autosella."),
         t("Asimetría entre monocapas","Cara externa: PC, esfingomielina y glicoesfingolípidos. Cara citosólica: PE, PS, PI y fosfoinosítidos.",["Externa: PC, SM, glicoesfingolípidos","Citosólica: PE, PS, PI, fosfoinosítidos"]),
         t("Flipasas, flopasas y scramblasas","Flipasas llevan lípidos hacia la cara citosólica y flopasas hacia la externa: generan y mantienen la asimetría. Las scramblasas la deshacen mezclando ambas caras. La PS expuesta afuera funciona como señal, por ejemplo en la apoptosis."),
         t("Perfil de presión lateral","A lo largo del espesor de la bicapa cambian las fuerzas que empujan y atraen; ese perfil puede modificar la conformación de proteínas transmembrana, canales y sensores.")
       ]),
-      chapter("42. La composición cambia según el lugar","cap53","No existe una membrana universal: cada organela ajusta grosor, orden, curvatura, carga y señalización.",[
+      chapter("50. La composición cambia según el lugar","cap65","No existe una membrana universal: cada organela ajusta grosor, orden, curvatura, carga y señalización.",[
         t("RE frente a membrana plasmática","Retículo endoplasmático: pocos esteroles y esfingolípidos, más defectos de empaquetamiento, membrana fina. Golgi tardío y membrana plasmática: más colesterol, esfingolípidos y cadenas saturadas → más orden y espesor. Ese gradiente se arma a lo largo de la vía secretora."),
         t("Mitocondria y tilacoides","La membrana mitocondrial interna es rica en cardiolipina, adaptada a los complejos respiratorios. Los tilacoides tienen gran proporción de galactolípidos y sulfolípidos."),
         t("Dos diversidades","Diversidad química: qué tipos de esqueletos, cabezas, enlaces y cadenas existen. Diversidad composicional: cuánto hay de cada especie en una célula, organela, monocapa o nanodominio. Ambas determinan la función.")
       ]),
-      chapter("43. Biosíntesis y remodelado de fosfolípidos","cap54","La composición final surge de la síntesis de novo, de qué sustratos hay, de la preferencia de las enzimas y del remodelado continuo.",[
+      chapter("51. Biosíntesis y remodelado de fosfolípidos","cap66","La composición final surge de la síntesis de novo, de qué sustratos hay, de la preferencia de las enzimas y del remodelado continuo.",[
         t("Hasta el ácido fosfatídico","Glicerol-3-P → (GPAT) ácido lisofosfatídico (LPA) → (LPAAT) ácido fosfatídico (PA). El PA es el punto de partida común.",["glicerol-3-P → LPA → PA"]),
         t("Vía de Kennedy","El PA se desfosforila a DAG. Con CDP-colina o CDP-etanolamina se forman PC y PE.",["PA → DAG + CDP-colina / CDP-etanolamina → PC / PE"]),
         t("Rama del CDP-DAG","El PA se activa como CDP-DAG, que da PI, PG y cardiolipina.",["PA → CDP-DAG → PI, PG, cardiolipina"]),
         t("Ciclo de Lands","Remodelado después de la síntesis: una fosfolipasa A₂ saca la cadena de sn-2 y deja un lisofosfolípido; una aciltransferasa (LPCAT, LPIAT…) pone otra cadena. Así una clase se enriquece en especies concretas.",["fosfolípido → (PLA₂) lisofosfolípido → (aciltransferasa) fosfolípido remodelado"],"",["La síntesis de novo deja un fosfolípido con ciertas cadenas.","La PLA₂ corta la cadena de la posición sn-2: queda un lisofosfolípido.","Una aciltransferasa específica agrega otra cadena, por ejemplo un PUFA.","Repitiendo el ciclo, la célula ajusta las cadenas sin rehacer toda la molécula."]),
         t("Sesgo metabólico","Las enzimas no solo leen la cabeza polar: también eligen cadenas. Por eso el PI se enriquece en 18:0/20:4 y ciertas rutas de PC seleccionan especies con DHA.")
       ]),
-      chapter("44. Curvatura, nanodominios y PUFA","cap55","La forma de cada lípido y sus insaturaciones deciden cómo se dobla y se organiza la membrana.",[
+      chapter("52. Curvatura, nanodominios y PUFA","cap67","La forma de cada lípido y sus insaturaciones deciden cómo se dobla y se organiza la membrana.",[
         t("Curvatura según la forma","Cilíndricos (PC, PS): bicapa plana. Cónicos (PE, PA, DAG, cardiolipina): curvatura negativa. Cono invertido (lisofosfolípidos): curvatura positiva."),
         t("Orden lateral y nanodominios","Colesterol y cadenas saturadas favorecen el estado líquido-ordenado; las cadenas insaturadas, el líquido-desordenado. Esfingolípidos, colesterol y fosfolípidos forman dominios dinámicos, no «islas» rígidas permanentes."),
         t("PUFA","Araquidonato y DHA son muy flexibles: bajan la rigidez de flexión y facilitan curvatura, fusión, fisión y endocitosis."),
         t("Acoplamiento entre monocapas","Las cadenas largas pueden interdigitarse y transmitir orden de una cara a la otra: lo que pasa en una monocapa influye en la opuesta.")
       ]),
-      chapter("45. Adaptación homeoviscosa","cap56","Ante frío, calor, presión o solventes, la célula cambia su composición para mantener las propiedades físicas que necesita.",[
+      chapter("53. Adaptación homeoviscosa","cap68","Ante frío, calor, presión o solventes, la célula cambia su composición para mantener las propiedades físicas que necesita.",[
         t("Qué se mantiene","No solo la «fluidez»: también viscosidad, orden, espesor, permeabilidad, presión lateral y rigidez de flexión."),
         t("Respuestas típicas","Frío: más insaturación, cadenas más cortas o más ramificadas (anteiso). Calor: más saturación y/o cadenas más largas. Solventes que fluidifican: algunas bacterias pasan rápido de cis a trans. Alta presión con frío: algunas bacterias marinas suman PUFA como EPA y DHA."),
         t("Sensor DesK/DesR","En Bacillus subtilis, DesK sensa el espesor y el empaquetamiento de la membrana. Con frío actúa como quinasa, activa a DesR y se expresa una desaturasa: aumenta la insaturación hasta restaurar el estado físico.",[],"",["El frío ordena y engrosa la membrana.","DesK detecta ese cambio y pasa de fosfatasa a quinasa.","DesK fosforila a DesR, que activa la expresión de una desaturasa.","Aumentan las insaturaciones, la membrana vuelve a su estado y DesK se apaga: retroalimentación negativa."]),
         t("Sensor Mga2","En levadura, la hélice transmembrana de Mga2 detecta el empaquetamiento y la saturación del RE. Su procesamiento regula OLE1, una desaturasa Δ9: la membrana controla la maquinaria que cambia su propia composición.")
       ]),
-      chapter("46. Sensores, fisiología, patología y aplicaciones","cap57","Los lípidos son a la vez material estructural, señales, reguladores de proteínas y variables homeostáticas.",[
+      chapter("54. Sensores, fisiología, patología y aplicaciones","cap69","Los lípidos son a la vez material estructural, señales, reguladores de proteínas y variables homeostáticas.",[
         t("Sensores de membrana","Motivos ALPS: detectan defectos de empaquetamiento. Opi1/PA: conectan estado metabólico, pH y síntesis de fosfolípidos. TORC2–Orm: homeostasis de esfingolípidos. SREBP/Scap: responden a poco colesterol en el RE."),
         t("Funciones especializadas","DHA en retina, cerebro y espermatogénesis. Eicosanoides y mediadores pro-resolutivos en inflamación. Fosfoinosítidos y DAG/PA en señalización. Cardiolipina en la mitocondria."),
         t("Patología y aplicaciones","Síndrome de Barth: remodelado defectuoso de cardiolipina (tafazina). Ferroptosis: peroxidación de PUFA en fosfolípidos, modulada por ACSL4/LPCAT3. Barrera de la piel: acilceramidas. Nanomedicina: liposomas y LNP. Bioplásticos: PHA/PHB bacterianos."),
@@ -373,18 +411,18 @@
       ])
     ]},
     {id:"tp4",section:SEC_GL,label:"TP4 · Extracción y TLC de lípidos",description:"Primero se extraen los lípidos con solventes orgánicos; después se separan entre sí por cromatografía en capa delgada.",chapters:[
-      chapter("47A. Fundamento y métodos de extracción","tp4","Extraer y separar son etapas distintas: los solventes sacan los lípidos de la muestra; la TLC los separa entre sí.",[
+      chapter("55A. Fundamento y métodos de extracción","tp4","Extraer y separar son etapas distintas: los solventes sacan los lípidos de la muestra; la TLC los separa entre sí.",[
         t("Idea central","Por su baja solubilidad en agua y alta solubilidad en solventes orgánicos, los lípidos se extraen con mezclas orgánicas. Luego se lavan (partición de fases) y se concentran. Por último se separan por TLC.",["extraer → lavar → concentrar → separar (TLC) → revelar"]),
         t("Clasificación usada en la guía","Simples: ácidos grasos + alcoholes (mono-, di- y triglicéridos, ceras, ésteres de esteroides). Complejos: además dan otros componentes al hidrolizarse (glicerofosfolípidos, gliceroglicolípidos, esfingolípidos). Derivados: ácidos grasos, alcoholes grasos, vitaminas liposolubles, esteroides e hidrocarburos. Grasas y aceites aportan ≈ 9 kcal/g, frente a ≈ 4 kcal/g de proteínas y glúcidos."),
         t("Folch y Bligh-Dyer adaptado","Los dos son métodos de extracción (no lavados ni cromatografía). Folch: cloroformo:metanol 2:1, para mejillón y avena. Bligh-Dyer adaptado: cloroformo:metanol 1:1, para hojas.",["Folch C:M 2:1 → mejillón 0,5 g (7 mL) · avena 0,5 g (5 mL)","Bligh-Dyer adaptado C:M 1:1 → hojas 1,0 g (5 mL)"])
       ]),
-      chapter("47B. Extracción, lavados y concentración","tp4","Cada paso tiene un objetivo: solubilizar, separar fases, sacar contaminantes polares y concentrar.",[
+      chapter("55B. Extracción, lavados y concentración","tp4","Cada paso tiene un objetivo: solubilizar, separar fases, sacar contaminantes polares y concentrar.",[
         t("Extracción","Morterear la muestra, agregar la mezcla del método, vórtex 3 min y centrifugar 5 min a 5000 rpm: el sólido forma un pellet y el extracto queda arriba. Si no separa bien, agregar metanol y recentrifugar (y luego cloroformo para recuperar la proporción). Pasar el extracto a un Falcon limpio con pipeta Pasteur."),
         t("Lavados con KCl y FST","Dos lavados con 0,2 volúmenes de KCl 0,88 % y dos con 0,2 volúmenes de FST (cloroformo:metanol:KCl 0,88 % = 3:48:47). En cada uno se centrifuga, se descarta la fase acuosa superior y se conserva la orgánica inferior: los lípidos quedan en el cloroformo y los contaminantes polares se van con el agua.",["2× KCl 0,88 % + 2× FST (3:48:47) · 0,2 volúmenes cada vez"]),
         t("¿Fase superior o inferior?","En la primera centrifugación el extracto está «arriba» porque se compara con el pellet sólido. En los lavados hay dos fases líquidas: el cloroformo, más denso, queda abajo (se conserva) y la fase acuosa arriba (se descarta)."),
         t("Concentrar y resuspender","Evaporar bajo corriente de N₂ a 40 °C hasta un residuo oleoso: el N₂ arrastra el solvente y evita el oxígeno, y 40 °C acelera sin calentar de más. Resuspender en 50 µL de cloroformo:metanol 2:1 para sembrar.")
       ]),
-      chapter("47C. Separación por TLC","tp4","La TLC compite entre retención en la sílica polar y arrastre por la fase móvil.",[
+      chapter("55C. Separación por TLC","tp4","La TLC compite entre retención en la sílica polar y arrastre por la fase móvil.",[
         t("Fases","Fase estacionaria: sílica gel 60, polar; retiene más a lo que interactúa más con ella. Fase móvil: hexano:éter etílico:ácido acético 60:40:2,5; sube por capilaridad y arrastra más lejos a lo que se disuelve bien en ella.",["Fase móvil: hexano : éter etílico : ácido acético = 60 : 40 : 2,5"]),
         t("Procedimiento","Poner ≈ 1 cm de fase móvil y saturar la cuba tapada. Sembrar 20 µL de cada muestra (y el estándar de glicéridos) sobre la línea de origen; dejar secar. Desarrollar, retirar antes del borde y marcar el frente enseguida. Secar bajo campana y revelar con luz UV."),
         t("Interpretar y Rf","Más afinidad por la sílica → avanza menos y queda cerca del origen. Más afinidad por la fase móvil → avanza más hacia el frente. El Rf compara migraciones en las mismas condiciones y nunca supera 1.",["Rf = distancia recorrida por la mancha / distancia recorrida por el frente","0 ≤ Rf ≤ 1"],"tlc")
@@ -395,108 +433,108 @@
   window.QBI_MIND_MAP_SECTIONS.push({id:"acidos-nucleicos",label:"Ácidos nucleicos",description:"Ácidos nucleicos I: nucleótidos, ADN como material genético, doble hélice, ARN, flujo de la información y metabolismo de nucleótidos."});
   window.QBI_MIND_MAP_DATA.push(
     {id:"acidos1",section:"acidos-nucleicos",label:"Ácidos nucleicos I · bases, nucleósidos y nucleótidos",description:"De la pieza (el nucleótido) a la molécula de la herencia, el mensajero y las vías que los fabrican y reciclan.",chapters:[
-      chapter("48. Ácidos nucleicos y funciones de los nucleótidos","cap58","Un ácido nucleico es un polinucleótido; los nucleótidos además están en todo el metabolismo.",[
+      chapter("56. Ácidos nucleicos y funciones de los nucleótidos","cap70","Un ácido nucleico es un polinucleótido; los nucleótidos además están en todo el metabolismo.",[
         t("Ácido nucleico","Polinucleótido que almacena y transfiere información celular. Dos tipos: ADN (ácido desoxirribonucleico) y ARN (ácido ribonucleico). Esqueleto alternado azúcar-fosfato con una base en cada azúcar; la información está en la secuencia de bases."),
         t("Partes de un nucleótido","Base nitrogenada (purina o pirimidina) + pentosa (ribosa en ARN, desoxirribosa en ADN) + uno o más fosfatos en el C5′.",["nucleósido = base + pentosa","nucleótido = nucleósido + fosfato(s)"]),
         t("Cinco funciones","Energía (ATP, GTP; estables con un solo fosfato). Electrones (NADH, NADPH, FADH₂; la CoA también contiene un nucleótido, pero transfiere acilos). Señalización (AMPc, GMPc; fosforilación). Intermediarios activados (UDP-glucosa, SAM). Información (precursores activados de ADN y ARN).")
       ]),
-      chapter("49. Bases: purinas y pirimidinas","cap59","Dos familias de bases según tengan uno o dos anillos.",[
+      chapter("57. Bases: purinas y pirimidinas","cap71","Dos familias de bases según tengan uno o dos anillos.",[
         t("Pioneros","Miescher aisló las «nucleínas» ricas en fosfato. Kossel describió sus componentes (base + azúcar + fosfato) y las bases A, C, G, T, U. Levene nombró al nucleótido y propuso el ADN como tetranucleótido (1910): parecía demasiado simple para llevar información."),
         t("Purinas y pirimidinas","Purinas: dos anillos (6 + 5 átomos), adenina y guanina; se unen al azúcar por N9. Pirimidinas: un anillo de 6, citosina, timina y uracilo; se unen por N1.",["PURo AGua: purinas = A y G"]),
         t("Propiedades","Aromáticas e hidrofóbicas (se apilan, quedan adentro de la hélice); poco solubles en agua salvo en medio ácido o básico, donde se cargan; electrones deslocalizados → absorben a ~260 nm."),
         t("ADN vs ARN","ADN: A, G, C, T. ARN: A, G, C, U. Timina = uracilo con metilo en C5. La desaminación de C da U; la metilación de U da T (relación química).")
       ]),
-      chapter("50. Ribosa y desoxirribosa","cap60","La pentosa cambia en un solo grupo, y eso decide la estabilidad.",[
+      chapter("58. Ribosa y desoxirribosa","cap72","La pentosa cambia en un solo grupo, y eso decide la estabilidad.",[
         t("β-D-ribofuranosa","Pentosa en anillo de cinco (furanosa), serie D, base en posición β. Los carbonos del azúcar llevan prima (1′–5′) para distinguirlos de los átomos de la base."),
         t("La diferencia en C2′","Ribosa (ARN): OH en C2′. Desoxirribosa (ADN): H en C2′. El 2′-OH puede atacar el enlace fosfodiéster vecino: el ARN es químicamente inestable y se hidroliza con más facilidad (sobre todo en medio alcalino); el ADN es más estable.")
       ]),
-      chapter("51. Nucleósidos, nucleótidos y sus enlaces","cap61","Tres enlaces arman el nucleótido; un cuarto arma la cadena.",[
+      chapter("59. Nucleósidos, nucleótidos y sus enlaces","cap73","Tres enlaces arman el nucleótido; un cuarto arma la cadena.",[
         t("N-glicosídico","Une C1′ del azúcar con N9 (purinas) o N1 (pirimidinas). Configuración β: base y C5′ del mismo lado. Nombres: adenosina, guanosina, citidina, uridina, timidina."),
         t("Fosfoéster y fosfoanhídrido","Fosfoéster: fosfato con el OH del C5′ (adenosina → AMP). Fosfoanhídrido: fosfato con fosfato (AMP → ADP → ATP). El ATP tiene 1 fosfoéster y 2 fosfoanhídrido."),
         t("Mono, di, trifosfatos","Con 2 o 3 fosfatos son buenos dadores de energía: las cargas negativas se repelen y su hidrólisis libera energía. Los nucleótidos son muy polares y negativos. Fosfatos α, β, γ desde el azúcar."),
         t("No confundir","Fosfoéster: fosfato–un azúcar. Fosfodiéster: un fosfato entre dos azúcares (C3′–O–P–O–C5′), intracatenario. Fosfoanhídrido: fosfato–fosfato. Puentes de H: entre bases, intercatenarios y no covalentes.")
       ]),
-      chapter("52. Nomenclatura","cap62","Tres reglas para nombrar cualquier nucleótido.",[
+      chapter("60. Nomenclatura","cap74","Tres reglas para nombrar cualquier nucleótido.",[
         t("Reglas","Purinas → -osina; pirimidinas → -idina. Desoxirribosa → prefijo desoxi y d en el símbolo. Fosfatos: MP, DP, TP; el 5′-monofosfato también se llama -ilato (adenilato = AMP).",["dGTP = desoxiguanosín trifosfato"]),
         t("TMP = dTMP","La tabla 25.1 escribe timidina y timidilato (TMP) sin desoxi; las figuras dicen desoxitimidina y dTMP. Es la misma molécula: como la timina está casi solo en el ADN, se sobreentiende.")
       ]),
-      chapter("53. El ADN es el material genético","cap63","Tres experimentos: Griffith, Avery y Hershey–Chase.",[
+      chapter("61. El ADN es el material genético","cap75","Tres experimentos: Griffith, Avery y Hershey–Chase.",[
         t("Griffith (1928)","R (rugosas) no letales; S (lisas) letales y sensibles al calor. R vivas + S muertas por calor matan al ratón y se recuperan S vivas: transformación estable y heredable. Mostró un factor transformante, pero no qué molécula era."),
         t("Avery, MacLeod y McCarty (1944)","Lisado de S tratado con enzimas: SIII (polisacárido), tripsina/quimiotripsina (proteínas), ARNasa → el ratón sigue muriendo. Solo con ADNasa el ratón vive: FT = ADN. La transformación bacteriana requiere ADN.",[],"",["Si destruís una molécula y la transformación sigue, esa molécula no era el FT.","Si al destruirla la transformación desaparece (ratón vive), era imprescindible.","Solo la ADNasa anula la transformación: el factor transformante es el ADN."]),
         t("Hershey y Chase (1952)","Fago T2 marcado con ³²P (ADN) o ³⁵S (proteína): tras licuar y centrifugar, el ³²P queda en el pellet con las bacterias y el ³⁵S afuera. El ADN es el material genético de los fagos.")
       ]),
-      chapter("54. Rayos X, Foto 51 y Chargaff","cap64","Dos tipos de datos revelaron la forma: difracción y composición de bases.",[
+      chapter("62. Rayos X, Foto 51 y Chargaff","cap76","Dos tipos de datos revelaron la forma: difracción y composición de bases.",[
         t("Protagonistas","Pauling propuso una triple hélice. Watson y Crick (Cambridge) y Wilkins (King’s College) recibieron el Nobel en 1962. Franklin, con Gosling, obtuvo la Foto 51; murió en 1958."),
         t("Difracción y Bragg","Las estructuras repetidas dispersan los rayos X con interferencias. Distancias chicas → ángulos grandes.",["n·λ = 2·d·sen θ"]),
         t("Lectura de la Foto 51","X → hélice. Una vuelta = 34 Å. Entre nucleótidos 3,4 Å. 10–10,5 nucleótidos por vuelta. Falta la 4.ª línea → doble hélice. Diámetro 20–24 Å."),
         t("Reglas de Chargaff (1949)","La composición varía entre especies; es igual en todos los tejidos; no cambia con edad, nutrición ni ambiente. [A]=[T] y [G]=[C] → el ADN se mide en pares de bases. Vale para ADN bicatenario.",["[A+G] = [T+C]  ·  purinas = pirimidinas"],"",["Ejemplo: 30 % de A → T = 30 %.","A + T = 60 % → G + C = 40 %.","G = C = 20 %."])
       ]),
-      chapter("55. El modelo de Watson y Crick","cap65","Cada rasgo de la doble hélice tiene una razón química.",[
+      chapter("63. El modelo de Watson y Crick","cap77","Cada rasgo de la doble hélice tiene una razón química.",[
         t("Rasgos del modelo","Doble hélice dextrógira alrededor de un eje; fosfatos afuera (hidrofílicos); bases planas adentro (hidrofóbicas); pares purina–pirimidina complementarios A–T y C–G; cadenas antiparalelas 5′→3′ / 3′→5′."),
         t("Extremos y fosfodiéster","El enlace fosfodiéster une C3′ de un azúcar con C5′ del siguiente. Extremo 5′: fosfato libre; extremo 3′: OH libre. Las secuencias se escriben 5′→3′."),
         t("Puentes de H","A–T: 2 puentes; G–C: 3 puentes. Son las uniones intercatenarias. El ADN rico en G+C es más estable (también por mejor apilamiento)."),
         t("Información","El orden lineal de las bases sobre el esqueleto azúcar-fosfato es el sistema de almacenamiento de información.",["5′-ATGC-3′ → complementaria 5′-GCAT-3′"])
       ]),
-      chapter("56. Dimensiones y formas A, B, Z","cap66","Los números de la hélice se relacionan con cuentas simples.",[
+      chapter("64. Dimensiones y formas A, B, Z","cap78","Los números de la hélice se relacionan con cuentas simples.",[
         t("Forma B","34 Å por vuelta; ≈ 10 (10,4) pares por vuelta; 3,4 Å entre pares; giro ~36° por base; ancho ≈ 20 Å; surcos mayor y menor.",["h = 34 Å / 10 = 3,4 Å","giro = 360° / 10 = 36°"]),
         t("2 m de ADN por célula","Célula diploide ≈ 6,4 × 10⁹ pb; L = N × h.",["L = 6,4 × 10⁹ × 3,4 × 10⁻¹⁰ m ≈ 2 m"]),
         t("A, B y Z","A: dextrógira, ≈ 2,8 nm/vuelta (algunos materiales: 3,2), bases inclinadas, 11 por vuelta; surco estrecho y profundo y otro ancho y superficial; con cationes o deshidratación; ARN y ARN-ADN. B: dextrógira, 3,4 nm, perpendiculares, 10; fisiológica. Z: levógira, 4,5 nm, zig-zag, 12; in vitro en tramos ricos en G y C (repeticiones d(GC) y d(AC)).")
       ]),
-      chapter("57. Historia del modelo (1951–1962)","cap67","El modelo unió difracción, química y construcción de modelos.",[
+      chapter("65. Historia del modelo (1951–1962)","cap79","El modelo unió difracción, química y construcción de modelos.",[
         t("Cronología","1951 Franklin llega al King’s College. 1952 datos helicoidales y Foto 51 (Gosling). Ene–feb 1953 Wilkins muestra la foto a Watson; modelo de doble hélice; Crick en The Eagle: «We have discovered the secret of life!». 25/04/1953: tres artículos en Nature (Watson & Crick; Wilkins et al.; Franklin & Gosling). 1962 Nobel a Watson, Crick y Wilkins."),
         t("Nature 1953","Watson y Crick reconocen haberse estimulado por los resultados no publicados de Wilkins y Franklin en King’s College. Su artículo: Nature 171:737-738.")
       ]),
-      chapter("58. Desnaturalización y Tm","cap68","Las cadenas se separan y se vuelven a juntar sin romper enlaces covalentes.",[
+      chapter("66. Desnaturalización y Tm","cap80","Las cadenas se separan y se vuelven a juntar sin romper enlaces covalentes.",[
         t("Desnaturalización","Por temperatura o pH extremos se rompen los puentes de H entre bases; los enlaces covalentes quedan intactos. Volviendo a condiciones fisiológicas (condiciones especiales) se renaturaliza."),
         t("Efecto hipercrómico","Al separarse las cadenas aumenta la absorbancia a 260 nm: las bases apiladas absorben menos que las libres."),
         t("Tm","Temperatura a la que el 50 % está desapareado. Más G+C → mayor Tm. Se lee en el eje de temperatura, en la mitad de la subida de absorbancia (1,0 → 1,4: mitad 1,2).",["absorbancia a mitad = (1,0 + 1,4)/2 = 1,2 → bajar a T = Tm"])
       ]),
-      chapter("59. El ARN y por qué usa U","cap69","Azúcar, base y número de cadenas separan ARN de ADN.",[
+      chapter("67. El ARN y por qué usa U","cap81","Azúcar, base y número de cadenas separan ARN de ADN.",[
         t("Características","Polímero de ribonucleótidos; el ácido nucleico más abundante (4–10 veces más que ADN); 2′-OH libre (inestable); casi siempre monocatenario con apareamientos internos (horquillas); principalmente citoplasmático."),
         t("ADN vs ARN","Desoxirribosa vs ribosa; T vs U; doble hélice vs cadena lineal; ADN más estable; ADN nuclear vs ARN citoplasmático (en eucariotas)."),
         t("¿Por qué T en el ADN?","La C se desamina sola a U. Con T como base normal, todo U en el ADN es un error: la uracilo-ADN glicosilasa lo saca y la reparación por escisión de bases repone la C. Sin reparar, G–C pasa a A–T. El ARN dura poco y se copia mucho; usar U es más barato (la T exige timidilato sintasa y folato).",[],"",["G–C → la C se desamina → G–U.","Al replicar, U se aparea con A → U–A.","Siguiente replicación: A–T. Mutación permanente."])
       ]),
-      chapter("60. Tipos de ARN y dogma central","cap70","Cada ARN tiene su trabajo en el camino de la información.",[
+      chapter("68. Tipos de ARN y dogma central","cap82","Cada ARN tiene su trabajo en el camino de la información.",[
         t("Cuatro tipos principales","ARNm: lleva la información del núcleo al citoplasma. ARNt: lleva aminoácidos al ribosoma. ARNr: ≈ 80 % del ARN; forma ribosomas. ARNnp (snRNA): corte y empalme de intrones. Cada uno codificado por su propio gen."),
         t("Dogma central","ADN → ADN (replicación), ADN → ARN (transcripción), ARN → proteína (traducción). Frase clave de Crick: una vez que la información de secuencia pasó a la proteína, no puede volver a salir. La retrotranscripción (ARN → ADN) no lo contradice.")
       ]),
-      chapter("61. Replicación, transcripción, traducción","cap71","Quién participa, dónde y en qué dirección.",[
+      chapter("69. Replicación, transcripción, traducción","cap83","Quién participa, dónde y en qué dirección.",[
         t("Replicación","Núcleo (eucariotas); semiconservativa; polimerasas, ligasas, topoisomerasas, helicasas; síntesis 5′→3′: cadena adelantada continua y retrasada en fragmentos de Okazaki unidos por la ligasa. Da dos ADN idénticos."),
         t("Transcripción","ARN polimerasa, factores de transcripción y reguladores. Iniciación (promotor), elongación, terminación (secuencia terminadora; en bacterias, por horquilla del ARN o por la proteína Rho). El ARN es igual a la cadena no molde (con U). En eucariotas: precursor de ARNm, splicing constitutivo o alternativo, cap 5′ y cola poli(A)."),
         t("Traducción","El ribosoma lee codones de 3 bases. Citoplasmática en eucariotas; intervienen ARNm, ARNt y ARNr. Etapas: activación, iniciación, elongación (sitios A, P y E del ribosoma), terminación. AUG = inicio (Met); UAA, UAG, UGA = stop.",["5′-AUG GCU UGG UAA-3′ → Met-Ala-Trp"])
       ]),
-      chapter("62. Metabolismo: mapa general","cap72","Los nucleótidos se fabrican «de novo» o se reciclan.",[
+      chapter("70. Metabolismo: mapa general","cap84","Los nucleótidos se fabrican «de novo» o se reciclan.",[
         t("Degradación","ADN/ARN → (nucleasas) oligonucleótidos → (fosfodiesterasas) nucleótidos → (nucleotidasas) nucleósidos + Pi → (nucleósido fosforilasa) base + ribosa-1-P. Purinas → ácido úrico; pirimidinas → β-ureidopropionato."),
         t("De novo y rescate","De novo: desde precursores chicos, conservada y costosa. Rescate: bases ya formadas + PRPP → nucleótido + PPi (más barato). En animales la dieta es la principal fuente de bases y nucleósidos importados."),
         t("Origen de los átomos","Purina: N1 Asp; C2 y C8 formato (THF); N3 y N9 amida de Gln; C4, C5, N7 Gly; C6 CO₂. Pirimidina: carbamoil fosfato (C2, N3) + aspartato (N1, C4, C5, C6).",["Gly 3 + Gln 2 + formato 2 + Asp 1 + CO₂ 1 = 9"]),
         t("PRPP","Dador de la ribosa-5-P en todos los nucleótidos. Ribosa-5-P (vía de las pentosas) + ATP → PRPP + AMP (PRPP sintetasa).")
       ]),
-      chapter("63. Síntesis y regulación de purinas","cap73","El anillo se arma sobre la ribosa; frenos en la entrada y en cada rama.",[
+      chapter("71. Síntesis y regulación de purinas","cap85","El anillo se arma sobre la ribosa; frenos en la entrada y en cada rama.",[
         t("Estrategia","Purinas: el anillo se ensambla sobre la ribosa-P (10 u 11 reacciones hasta IMP, cuya base es hipoxantina). Pirimidinas: el anillo se arma aparte y luego recibe PRPP."),
         t("Paso comprometido","PRPP + glutamina → 5-fosforribosil-1-amina (glutamina-PRPP amidotransferasa). Está después del PRPP porque el PRPP también va a histidina, pirimidinas y rescate."),
         t("Retroinhibición","IMP, AMP y GMP inhiben la amidotransferasa. AMP inhibe su precursor inmediato (adenilosuccinato) y GMP el suyo (XMP)."),
         t("IMP → AMP y GMP","AMP: + Asp en C6 con GTP; sale fumarato. GMP: oxidación de IMP a XMP (NAD⁺), luego NH₂ en C2 desde Gln con ATP. Cruce de energía: GTP para AMP, ATP para GMP.",[],"",["IMP + Asp + GTP → adenilosuccinato → AMP + fumarato.","IMP + NAD⁺ → XMP; XMP + Gln + ATP → GMP + Glu + AMP + PPi.","Mucho ATP impulsa GMP; mucho GTP impulsa AMP: se equilibran."]),
         t("Café","Cafeína = 1,3,7-trimetilxantina, un derivado estructural de la purina (no es una ruta humana).")
       ]),
-      chapter("64. Síntesis de pirimidinas","cap74","Primero el anillo, después la ribosa.",[
+      chapter("72. Síntesis de pirimidinas","cap86","Primero el anillo, después la ribosa.",[
         t("Vía","HCO₃⁻ + Gln + 2 ATP → carbamoil fosfato; + aspartato (ATCasa) → carbamoilaspartato (comprometido) → dihidroorotato → orotato; + PRPP → orotidilato (OMP); − CO₂ → UMP → UDP → UTP; aminación → CTP (CTP sintetasa)."),
         t("Regulación","El CTP inhibe la ATCasa (retroinhibición); el ATP la activa. Es el ejemplo clásico bacteriano; en mamíferos el control principal está en la síntesis de carbamoil fosfato.")
       ]),
-      chapter("65. Desoxirribonucleótidos y timidilato","cap75","De ribo a desoxi, nunca al revés; la T pide un paso extra.",[
+      chapter("73. Desoxirribonucleótidos y timidilato","cap87","De ribo a desoxi, nunca al revés; la T pide un paso extra.",[
         t("Ribonucleótido reductasa","ADP, GDP, CDP, UDP → dADP, dGDP, dCDP, dUDP → dNTP. No hay ribonucleótidos que se formen de desoxirribonucleótidos (mundo de ARN)."),
         t("dTMP","dUDP → dUTP → (dUTPasa, evita U en el ADN) dUMP → (timidilato sintasa + N⁵,N¹⁰-metilen-THF) dTMP. El folato queda como DHF; la DHFR lo regenera a THF con NADPH; serina → glicina recarga metilen-THF."),
         t("Fármacos","Fluorouracilo → FdUMP: inhibidor suicida de la timidilato sintasa. Aminopterina y metotrexato: análogos de folato que inhiben la DHFR. Frenan la replicación de células que se dividen rápido (cáncer).")
       ]),
-      chapter("66. Degradación de purinas y gota","cap76","Los humanos terminamos en urato, poco soluble.",[
+      chapter("74. Degradación de purinas y gota","cap88","Los humanos terminamos en urato, poco soluble.",[
         t("Vía","AMP → adenosina (nucleotidasa) → inosina (adenosina desaminasa, − NH₄⁺) → hipoxantina (nucleósido fosforilasa, + Pi) → xantina → ácido úrico (xantina oxidasa, ambos pasos). La guanina también llega a xantina."),
         t("Gota","Sin urato oxidasa no formamos alantoína (más soluble): excretamos urato. Si se acumula (sobre todo porque el riñón elimina poco) cristaliza e inflama: gota. Carlos V la tenía (NEJM 2006: cristales de urato en su dedo momificado)."),
         t("Alopurinol y rescate","Alopurinol: análogo de hipoxantina, inhibidor suicida de la xantina oxidasa. Rescate: hipoxantina o guanina + PRPP → IMP o GMP + PPi (HGPRT); adenina + PRPP → AMP + PPi.")
       ]),
-      chapter("67. Coenzimas y SAM","cap77","Nucleótidos escondidos en coenzimas.",[
+      chapter("75. Coenzimas y SAM","cap89","Nucleótidos escondidos en coenzimas.",[
         t("Coenzimas","FMN = riboflavina (flavina + ribitol) + fosfato; FAD = FMN + AMP. NAD = nucleótido de nicotinamida + nucleótido de adenina; NADP = NAD + fosfato. CoA = β-mercaptoetilamina + ácido pantoténico + ADP con fosfato extra en 3′ (transfiere acilos)."),
         t("SAM","Metionina + adenosina del ATP → SAM, principal dador de metilos (lípidos de membrana neural, metilación del ADN). Queda homocisteína, que vuelve a metionina con metionina sintasa, vitamina B₁₂ y folato (N⁵-metil-THF).")
       ]),
-      chapter("68. Preguntas de repaso","cap78","Las respuestas clave para repasar.",[
+      chapter("76. Preguntas de repaso","cap90","Las respuestas clave para repasar.",[
         t("Diagnóstico","ADN de una célula humana estirado ≈ 2 m. En una célula hepática hay más ARN: entre 4 y 10 veces más (4x y 8x son correctas)."),
         t("Verdadero o falso","Griffith demostró que el ADN era el principio transformante: F. En el ADN purinas = pirimidinas: V. Los nucleótidos son esenciales en humanos: F. Los ribonucleótidos se obtienen de desoxirribonucleótidos: F."),
         t("Opción múltiple","Avery y col.: la transformación bacteriana requiere DNA. Forma Z: ocurre in vitro si hay repeticiones de d(GC).")

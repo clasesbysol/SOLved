@@ -336,6 +336,7 @@ blocks: [
 ]],
 ['ex', 'Si una exoglicosidasa que solo corta β-galactosa terminal libera galactosa, ya sabés dos cosas: la última unidad era galactosa y estaba unida en β. Si después otra que corta α-ácido siálico no libera nada, sabés que no había siálico en esa punta.'],
 ['p', 'También se sintetizan químicamente oligosacáridos definidos, incluso sobre soportes sólidos, para estudiar con precisión cómo se unen a lectinas o anticuerpos.'],
+['trap', 'Este capítulo es el panorama. Cada técnica se desarrolla en detalle en <b>Glúcidos II · Análisis estructural de glicanos</b> (capítulos 42 a 53): liberación (44), lectinas (47), pureza (48), composición por HPAEC-PAD (49), metilación y PMAA (50), GC-MS (51) y exoglicosidasas (52).', 'Para seguir'],
 ['check', [
 ['¿Qué información da la metilación exhaustiva?', 'Qué grupos OH participaban en enlaces glucosídicos.'],
 ['¿Desde qué extremo actúan las exoglicosidasas?', 'Desde el extremo no reductor, de a un azúcar por vez.'],

@@ -1,12 +1,12 @@
 'use strict';
-/* Ácidos nucleicos I · Metabolismo de nucleótidos. Capítulos 72 a 77. */
+/* Ácidos nucleicos I · Metabolismo de nucleótidos. Capítulos 84 a 89. */
 const { F } = require('./figs-acidos');
 const { M } = require('./kit-an');
 const G = 'Ácidos nucleicos I';
 
 module.exports = [
 {
-n: 72, group: G, pages: '48–50', title: 'Metabolismo de nucleótidos: degradación, síntesis «de novo» y rescate',
+n: 84, group: G, pages: '48–50', title: 'Metabolismo de nucleótidos: degradación, síntesis «de novo» y rescate',
 lead: 'Los nucleótidos se fabrican desde cero o se reciclan a partir de bases ya hechas. Antes de entrar en cada vía conviene ver el mapa completo y saber de dónde sale cada átomo.',
 blocks: [
 ['h', 'El mapa general'],
@@ -17,7 +17,7 @@ blocks: [
 '<b>Fosfodiesterasas:</b> siguen cortando enlaces fosfodiéster hasta liberar <b>nucleótidos</b> sueltos.',
 '<b>Nucleotidasas:</b> sacan el fosfato del nucleótido (cortan el enlace fosfoéster): queda un <b>nucleósido + Pi</b>.',
 '<b>Nucleósido fosforilasa:</b> rompe el enlace N-glicosídico usando un fosfato (no agua): queda la <b>base libre + ribosa-1-fosfato</b>.',
-'La base puede ir a <b>degradación</b> (las purinas terminan en ácido úrico, capítulo 76) o a las <b>vías de recuperación</b>, donde se une a PRPP y vuelve a ser nucleótido.',
+'La base puede ir a <b>degradación</b> (las purinas terminan en ácido úrico, capítulo 88) o a las <b>vías de recuperación</b>, donde se une a PRPP y vuelve a ser nucleótido.',
 'Los nucleótidos, rescatados o fabricados «de novo», se encadenan para formar ADN y ARN nuevos.'
 ]],
 ['table', ['Base', '+ PRPP →', 'Nucleótido que se recupera'], [
@@ -32,7 +32,7 @@ blocks: [
 ]],
 ['p', 'Las bases que se rescatan vienen de dos fuentes: la <b>degradación de los ácidos nucleicos propios</b>, que ocurre dentro de las células (por ejemplo, cuando una célula muere y se desarma, o cuando se recambia el ARN), y la <b>dieta</b>. En los animales, la digestión de los ácidos nucleicos de los alimentos en el intestino delgado es la principal vía de entrada de bases y nucleósidos: nucleasas como las endonucleasas los cortan, otras enzimas siguen degradando y se obtienen mononucleótidos, nucleósidos y bases que se absorben.'],
 ['p', 'Si las bases o nucleósidos no se usan para fabricar ácidos nucleicos por la vía de rescate, se degradan: las <b>purinas a ácido úrico</b> y las <b>pirimidinas a β-ureidopropionato</b>.'],
-['why', 'Fabricar una purina «de novo» cuesta muchos pasos y varios ATP (capítulo 73). Si la célula ya tiene la base armada, unirla al PRPP en un solo paso es un gran ahorro. Por eso, antes de degradar una base hasta ácido úrico, la célula intenta reciclarla.', 'Por qué existe el rescate'],
+['why', 'Fabricar una purina «de novo» cuesta muchos pasos y varios ATP (capítulo 85). Si la célula ya tiene la base armada, unirla al PRPP en un solo paso es un gran ahorro. Por eso, antes de degradar una base hasta ácido úrico, la célula intenta reciclarla.', 'Por qué existe el rescate'],
 ['h', '¿De dónde salen los átomos de los anillos?'],
 ['p', 'El anillo de <b>purina</b> se arma con átomos de aminoácidos, de derivados del tetrahidrofolato (THF) y del CO₂. El anillo de <b>pirimidina</b> es más simple: se arma con carbamoil fosfato y aspartato.'],
 ['gallery', [['p050-atomos-purina', 'Purina: aspartato, CO₂, glicina, formato (×2) y amida de la glutamina (×2)'], ['p050-atomos-pirimidina', 'Pirimidina: carbamoil fosfato (amida de la glutamina y HCO₃⁻) y aspartato']], 50],
@@ -61,7 +61,7 @@ blocks: [
 ]
 },
 {
-n: 73, group: G, pages: '51–53', title: 'Síntesis de purinas: de PRPP a IMP, AMP y GMP, y su regulación',
+n: 85, group: G, pages: '51–53', title: 'Síntesis de purinas: de PRPP a IMP, AMP y GMP, y su regulación',
 lead: 'Las purinas se construyen átomo por átomo directamente sobre la ribosa. Es una vía larga y cara, así que la célula la controla con frenos en la entrada y en cada rama.',
 blocks: [
 ['h', 'Dos estrategias distintas'],
@@ -124,7 +124,7 @@ blocks: [
 ]
 },
 {
-n: 74, group: G, pages: '51 y 54', title: 'Síntesis de pirimidinas y su regulación',
+n: 86, group: G, pages: '51 y 54', title: 'Síntesis de pirimidinas y su regulación',
 lead: 'La vía de las pirimidinas es más corta: primero se arma el anillo con carbamoil fosfato y aspartato, y recién al final se le une la ribosa.',
 blocks: [
 ['fig', F.pyrimidines, 'La vía de las pirimidinas y su regulación.'],
@@ -151,7 +151,7 @@ blocks: [
 ]
 },
 {
-n: 75, group: G, pages: '55–56', title: 'Desoxirribonucleótidos, timidilato y fármacos que bloquean su síntesis',
+n: 87, group: G, pages: '55–56', title: 'Desoxirribonucleótidos, timidilato y fármacos que bloquean su síntesis',
 lead: 'Para hacer ADN hacen falta desoxirribonucleótidos, y la timina necesita un paso extra. Justamente ese paso es el blanco de varios fármacos contra el cáncer.',
 blocks: [
 ['h', 'De ribo a desoxi'],
@@ -176,16 +176,16 @@ blocks: [
 'Sin DHFR, todo el folato queda atrapado como DHF y la TS se queda sin dador de metilo.'
 ]],
 ['h', 'Fármacos que bloquean la síntesis de timidilato'],
-['p', 'Varios fármacos contra el cáncer bloquean la síntesis de dTMP. En general, los <b>análogos de nucleótidos</b> (moléculas parecidas a los nucleótidos o a sus precursores) se usan para tratar cáncer, infecciones virales, enfermedades autoinmunes y trastornos como la gota (capítulo 76).'],
+['p', 'Varios fármacos contra el cáncer bloquean la síntesis de dTMP. En general, los <b>análogos de nucleótidos</b> (moléculas parecidas a los nucleótidos o a sus precursores) se usan para tratar cáncer, infecciones virales, enfermedades autoinmunes y trastornos como la gota (capítulo 88).'],
 ['table', ['Fármaco', 'A qué se parece', 'Qué bloquea', 'Consecuencia'], [
 ['<b>Fluorouracilo</b>', 'Al uracilo', 'La timidilato sintasa. La célula lo convierte en fluorodesoxiuridilato (FdUMP), que se une a la enzima y la inactiva: es un inhibidor suicida', 'No se forma dTMP'],
 ['<b>Aminopterina</b> y <b>metotrexato</b> (ametopterina)', 'Al folato', 'La dihidrofolato reductasa (DHFR)', 'No se regenera THF → no hay metilen-THF → no se forma dTMP']
 ]],
 ['h', 'El folato y las sulfonamidas'],
-['p', 'El <b>ácido fólico</b> (vitamina B9) está formado por tres partes: un anillo de <b>pteridina</b>, el <b>ácido para-aminobenzoico (PABA)</b> y uno o varios <b>glutamatos</b> (de 1 a 7). Ya en las células se reduce a tetrahidrofolato (THF), que es la forma que transporta grupos de un carbono: los formilos de la síntesis de purinas (capítulo 73) y el metileno del timidilato.'],
+['p', 'El <b>ácido fólico</b> (vitamina B9) está formado por tres partes: un anillo de <b>pteridina</b>, el <b>ácido para-aminobenzoico (PABA)</b> y uno o varios <b>glutamatos</b> (de 1 a 7). Ya en las células se reduce a tetrahidrofolato (THF), que es la forma que transporta grupos de un carbono: los formilos de la síntesis de purinas (capítulo 85) y el metileno del timidilato.'],
 ['p', 'Los humanos obtenemos el folato de la dieta, pero muchas bacterias lo fabrican a partir del PABA. Las <b>sulfonamidas</b> (sulfas) son parecidas al PABA: compiten con él y la bacteria no puede fabricar folato. Sin folato no puede hacer purinas ni timidilato, así que no puede copiar su ADN y muere. A nosotros no nos afecta porque no fabricamos folato: lo comemos.'],
 ['why', 'Una célula que se divide rápido, como una célula tumoral, tiene que copiar todo su ADN y necesita mucho dTTP. Sin timidilato no puede replicar el ADN y deja de dividirse. Las células que no se dividen dependen mucho menos de esta vía.', 'Por qué sirven contra el cáncer'],
-['p', 'Ahora se entiende por qué fabricar timina es «más caro» que usar uracilo (capítulo 69): requiere la timidilato sintasa y gasta folato.'],
+['p', 'Ahora se entiende por qué fabricar timina es «más caro» que usar uracilo (capítulo 81): requiere la timidilato sintasa y gasta folato.'],
 ['check', [
 ['¿Sobre qué nucleótidos actúa la ribonucleótido reductasa?', 'Sobre los ribonucleótidos difosfato (ADP, GDP, CDP, UDP).'],
 ['¿De qué molécula se obtiene el dTMP y qué enzima la metila?', 'Del dUMP; lo metila la timidilato sintasa con metilen-THF.'],
@@ -195,7 +195,7 @@ blocks: [
 ]
 },
 {
-n: 76, group: G, pages: '57–58', title: 'Degradación de purinas a urato, gota y vías de rescate',
+n: 88, group: G, pages: '57–58', title: 'Degradación de purinas a urato, gota y vías de rescate',
 lead: 'Los humanos degradamos las purinas hasta ácido úrico, que es poco soluble. Si se acumula, cristaliza: eso es la gota, la enfermedad que tenía el emperador Carlos V.',
 blocks: [
 ['h', 'La vía de degradación'],
@@ -240,7 +240,7 @@ blocks: [
 ]
 },
 {
-n: 77, group: G, pages: '5 y 59', title: 'Nucleótidos dentro de coenzimas y la SAM',
+n: 89, group: G, pages: '5 y 59', title: 'Nucleótidos dentro de coenzimas y la SAM',
 lead: 'Muchas coenzimas llevan un nucleótido «escondido» en su estructura. Con lo que ya sabés podés reconocerlo en cada una.',
 blocks: [
 ['h', 'Coenzimas que transportan electrones'],
@@ -259,7 +259,7 @@ blocks: [
 ['<b>B2</b> (riboflavina)', 'FMN y FAD', 'Es un anillo de <b>isoaloxazina</b> (una flavina, compuesto nitrogenado) unido a <b>ribitol</b>, un alcohol derivado de la ribosa. La riboflavina es la forma inactiva; fosforilada da FMN, y unida además a un AMP por un pirofosfato da FAD. FMN y FAD son grupos prostéticos de muchas oxidorreductasas, y cada enzima es específica de una de las dos: no son intercambiables.'],
 ['<b>B3</b> (niacina o vitamina PP)', 'NAD y NADP', 'Tiene dos formas: niacina (anillo de piridina con un –COOH) y niacinamida (con un –CONH₂). El nitrógeno del anillo de nicotinamida es el que acepta o cede el hidrógeno: NAD⁺ ⇄ NADH. Su falta causa pelagra (de ahí «PP», pelagra preventiva): dermatitis, diarrea, demencia y, sin tratamiento, la muerte.'],
 ['<b>B5</b> (ácido pantoténico)', 'Coenzima A', 'Es ácido pantoico unido a β-alanina. En la CoA, de un lado se une al nucleótido de adenina (ADP 3′-fosfato) y del otro a la β-mercaptoetilamina, cuyo –SH es el grupo funcional que activa a los ácidos grasos y otros grupos acilo.'],
-['<b>B9</b> (ácido fólico)', 'THF y sus derivados', 'Transporta grupos de un carbono para fabricar purinas y timidilato (capítulos 73 y 75) y para regenerar la metionina.'],
+['<b>B9</b> (ácido fólico)', 'THF y sus derivados', 'Transporta grupos de un carbono para fabricar purinas y timidilato (capítulos 85 y 87) y para regenerar la metionina.'],
 ['<b>B12</b> (cobalamina)', 'Metil-B₁₂ (y otras formas)', 'Tiene un anillo corrinoide con cobalto y una parte parecida a un nucleótido: la base 5,6-dimetilbencimidazol unida a una ribosa (por un enlace α, poco común) con un fosfato en el 3′. Participa en la regeneración de la metionina.']
 ]],
 ['trap', 'La coenzima A contiene un nucleótido de adenina, igual que NAD y FAD, pero no transporta electrones: con su grupo –SH forma tioésteres con grupos acilo (como el acetilo de la acetil-CoA) y los transfiere.', 'La coenzima A es distinta'],
