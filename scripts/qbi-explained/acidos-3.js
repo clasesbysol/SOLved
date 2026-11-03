@@ -1,5 +1,5 @@
 'use strict';
-/* Ácidos nucleicos I · ARN y flujo de la información. Capítulos 69 a 71. */
+/* Ácidos nucleicos I · ARN y flujo de la información. Capítulos 81 a 83. */
 const { F } = require('./figs-acidos');
 const { M } = require('./kit-an');
 const G = 'Ácidos nucleicos I';
@@ -30,7 +30,7 @@ const CODE = [
 
 module.exports = [
 {
-n: 69, group: G, pages: '38–41 y 43', title: 'El ARN: cómo es y por qué usa uracilo en lugar de timina',
+n: 81, group: G, pages: '38–41 y 43', title: 'El ARN: cómo es y por qué usa uracilo en lugar de timina',
 lead: 'El ARN se parece mucho al ADN, pero tres diferencias químicas cambian todo: el azúcar, una base y la cantidad de cadenas.',
 blocks: [
 ['h', 'Cómo es el ARN'],
@@ -38,7 +38,7 @@ blocks: [
 ['gallery', [['p038-cadena-arn', 'Cadena de ARN del extremo 5′ al 3′: fosfatos (P), ribosas (R) y bases U, G, C, A'], ['p038-horquilla', 'Una cadena de ARN que se pliega sobre sí misma y aparea algunas de sus bases (horquilla)']], 38],
 ['table', ['Característica', 'Explicación'], [
 ['Es el ácido nucleico más abundante', 'Una célula típica tiene entre <b>4 y 10 veces más ARN que ADN</b>. Cada gen puede copiarse muchas veces en ARN y, además, los ribosomas están hechos en gran parte de ARN.'],
-['Es químicamente inestable', 'Su ribosa tiene un OH libre en el C2′, que puede atacar y cortar el enlace fosfodiéster vecino (capítulo 60).'],
+['Es químicamente inestable', 'Su ribosa tiene un OH libre en el C2′, que puede atacar y cortar el enlace fosfodiéster vecino (capítulo 72).'],
 ['Aparea A con U', 'En el ARN la base que se aparea con la adenina es el <b>uracilo</b> (A–U, con 2 puentes de hidrógeno), a diferencia del ADN, donde la A se aparea con T. G sigue apareándose con C.'],
 ['Casi siempre tiene una sola cadena', 'Es monocatenario, pero esa cadena puede doblarse y aparear algunas de sus propias bases, formando tramos cortos de doble hélice (horquillas, tallos y lazos). También puede aparearse con otra molécula de ARN o de ADN.'],
 ['Está principalmente en el citoplasma', 'En las células eucariotas se fabrica en el núcleo, pero la mayor parte trabaja en el citoplasma, donde están los ribosomas.']
@@ -67,7 +67,7 @@ blocks: [
 ]],
 ['p', '<b>La solución.</b> El ADN usa timina, que es un uracilo con un metilo en el C5. Ese metilo funciona como una <b>etiqueta de «base original»</b>. Así, cualquier U que aparezca en el ADN es necesariamente un error: la enzima <b>uracilo-ADN glicosilasa</b> lo detecta y lo saca, y después la <b>reparación por escisión de bases</b> vuelve a colocar la C.'],
 ['fig', F.tvsu, 'Con la timina como etiqueta, todo U en el ADN se reconoce como daño y se repara.'],
-['p', '<b>¿Por qué el ARN no lo necesita?</b> Porque dura poco y se fabrican muchas copias: un error en una molécula de ARN no pasa a las células hijas ni suele ser grave. Además, usar U es <b>más barato</b>: fabricar T requiere un paso extra, el de la timidilato sintasa, que gasta folato (capítulo 75). En el ADN, que guarda la información a largo plazo, vale la pena pagar ese costo.'],
+['p', '<b>¿Por qué el ARN no lo necesita?</b> Porque dura poco y se fabrican muchas copias: un error en una molécula de ARN no pasa a las células hijas ni suele ser grave. Además, usar U es <b>más barato</b>: fabricar T requiere un paso extra, el de la timidilato sintasa, que gasta folato (capítulo 87). En el ADN, que guarda la información a largo plazo, vale la pena pagar ese costo.'],
 ['trap', 'Esto vale para los ARN de la célula, que se copian del ADN. En los virus cuyo genoma es de ARN, los errores sí pasan a la descendencia.'],
 ['check', [
 ['¿Cuántas veces más ARN que ADN tiene una célula típica?', 'Entre 4 y 10 veces más.'],
@@ -78,7 +78,7 @@ blocks: [
 ]
 },
 {
-n: 70, group: G, pages: '42 y 44', title: 'Tipos de ARN y dogma central de la biología molecular',
+n: 82, group: G, pages: '42 y 44', title: 'Tipos de ARN y dogma central de la biología molecular',
 lead: 'Distintos ARN cumplen distintos trabajos en el camino de la información, desde el ADN hasta la proteína. Crick resumió ese camino en el «dogma central».',
 blocks: [
 ['h', 'Los principales tipos de ARN'],
@@ -88,7 +88,7 @@ blocks: [
 ['<b>ARNm</b> · ARN mensajero', 'Lleva la información para fabricar proteínas desde el núcleo hasta el citoplasma.', 'Es la «copia de trabajo» de un gen; sus codones se leen en el ribosoma.'],
 ['<b>ARNt</b> · ARN de transferencia', 'Lleva los aminoácidos a los ribosomas durante la traducción.', 'Es el adaptador: con su anticodón reconoce un codón y en su otra punta lleva el aminoácido que le corresponde.'],
 ['<b>ARNr</b> · ARN ribosomal', 'Es aproximadamente el <b>80 % del ARN total</b>. Junto con proteínas forma los ribosomas, la maquinaria que fabrica proteínas.', 'Los ribosomas pueden estar libres en el citoplasma o unidos al retículo endoplasmático.'],
-['<b>ARNnp</b> · ARN nuclear pequeño (snRNA)', 'Participa en el procesamiento del ARNm: el corte y empalme que elimina los intrones del ARNm precursor.', 'Forma parte de la maquinaria del <i>splicing</i> (capítulo 71).']
+['<b>ARNnp</b> · ARN nuclear pequeño (snRNA)', 'Participa en el procesamiento del ARNm: el corte y empalme que elimina los intrones del ARNm precursor.', 'Forma parte de la maquinaria del <i>splicing</i> (capítulo 83).']
 ]],
 ['h', 'El dogma central'],
 ['p', 'Francis Crick resumió cómo fluye la información biológica en el «dogma central de la biología molecular» (Nature, 1970):'],
@@ -105,7 +105,7 @@ blocks: [
 ]
 },
 {
-n: 71, group: G, pages: '45–47', title: 'Replicación, transcripción y traducción',
+n: 83, group: G, pages: '45–47', title: 'Replicación, transcripción y traducción',
 lead: 'Las tres flechas del dogma central, una por una: quién participa, dónde ocurre y en qué dirección se lee y se escribe cada cadena.',
 blocks: [
 ['h', 'Replicación: copiar el ADN'],

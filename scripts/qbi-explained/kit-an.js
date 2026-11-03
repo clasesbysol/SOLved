@@ -21,11 +21,16 @@ const strip = h => String(h).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
 const M = (tex, fb) => `<span class="anx-m" data-tex="${esc(tex)}">${fb}</span>`;
 const pg = p => p ? `<span class="anx-pg">${/[–,y]/.test(String(p)) ? 'Diaps.' : 'Diap.'} ${p}</span>` : '';
 
-function img(key, cap, page, cls = '') {
-  if (!SIZES[key]) throw new Error('Falta la imagen ' + key);
-  const [w, h] = SIZES[key];
-  return `<figure class="anx-fig${cls}" data-page="${esc(page)}"><button class="anx-zoom" type="button" aria-label="Ampliar imagen"><img src="${ASSET}${key}.webp" width="${w}" height="${h}" style="width:${w}px" loading="lazy" decoding="async" alt="${esc(strip(cap))}"></button><figcaption>${cap}</figcaption></figure>`;
+/* Las figuras salen de un mapa de tamaños y una carpeta (marcador que la extensión reemplaza por la URL real).
+   Ácidos nucleicos usa acidos-img-sizes.json + {{AN_ASSETS}}; otras unidades crean su propio kit con makeKit(). */
+function makeImg(sizes, asset) {
+  return function img(key, cap, page, cls = '') {
+    if (!sizes[key]) throw new Error('Falta la imagen ' + key);
+    const [w, h] = sizes[key];
+    return `<figure class="anx-fig${cls}" data-page="${esc(page)}"><button class="anx-zoom" type="button" aria-label="Ampliar imagen"><img src="${asset}${key}.webp" width="${w}" height="${h}" style="width:${w}px" loading="lazy" decoding="async" alt="${esc(strip(cap))}"></button><figcaption>${cap}</figcaption></figure>`;
+  };
 }
+const img = makeImg(SIZES, ASSET);
 
 function quiz(q) {
   const letters = 'abcdefgh';
@@ -33,7 +38,8 @@ function quiz(q) {
   return `<div class="anx-quiz" data-kind="${q.kind}"><div class="anx-quiz-head"><b class="qbx-tag">${q.tag || 'Pregunta de repaso'}</b></div><p class="anx-q">${q.q}</p>${q.sub ? `<p class="anx-sub">${q.sub}</p>` : ''}<ol class="anx-opts${q.kind === 'vf' ? ' anx-vf' : ''}">${opts}</ol><details class="anx-sol"><summary>Ver respuesta y explicación</summary><div><p class="anx-ans"><b>Respuesta:</b> ${q.answer}</p>${q.steps ? `<ol>${q.steps.map(x => `<li>${x}</li>`).join('')}</ol>` : ''}${q.after || ''}</div></details></div>`;
 }
 
-function block(b) {
+function makeBlock(img) {
+ return function block(b) {
   const [kind, a, c, d] = b;
   switch (kind) {
     case 'img': return img(a, c, d);
@@ -47,7 +53,9 @@ function block(b) {
     case 'links': return `<ul class="anx-links">${a.map(([t, u, x]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${t}</a>${x ? ` <span>${x}</span>` : ''}</li>`).join('')}</ul>`;
     default: return baseBlock(b);
   }
+ };
 }
+const block = makeBlock(img);
 
 function chapterHtml(ch) {
   return `<section id="cap${ch.n}" class="qb-chapter qbx-chapter anx-chapter" data-qbi-acidos="${esc(ch.group)}" data-pages="${esc(ch.pages)}"><div class="qb-chapter-number">${ch.n}</div><div class="qbx-kicker">${esc(ch.group)}</div><h2>${ch.title}</h2><p class="qbx-lead">${ch.lead}</p>${ch.blocks.map(block).join('')}</section>`;
@@ -96,4 +104,11 @@ const CSS = `
 @media(max-width:640px){.anx-fig{padding:6px}.anx-zoom{padding:4px}.anx-quiz{padding:12px}.anx-opts.anx-vf{grid-template-columns:1fr 1fr}.anx-group-head{padding:16px 14px}}
 `;
 
-module.exports = { block, chapterHtml, M, img, CSS, ASSET };
+/* Kit para otra unidad con sus propias figuras. attr = atributo data- que marca sus capítulos. */
+function makeKit({ sizes, asset, attr }) {
+  const kImg = makeImg(sizes, asset), kBlock = makeBlock(kImg);
+  const kChapter = ch => `<section id="cap${ch.n}" class="qb-chapter qbx-chapter anx-chapter" ${attr}="${esc(ch.group)}" data-pages="${esc(ch.pages)}"><div class="qb-chapter-number">${ch.n}</div><div class="qbx-kicker">${esc(ch.group)}</div><h2>${ch.title}</h2><p class="qbx-lead">${ch.lead}</p>${ch.blocks.map(kBlock).join('')}</section>`;
+  return { block: kBlock, img: kImg, chapterHtml: kChapter };
+}
+
+module.exports = { block, chapterHtml, M, img, CSS, ASSET, makeKit };

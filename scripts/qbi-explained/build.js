@@ -2,8 +2,9 @@
 /*
  * Arma los capítulos explicados de Química Biológica:
  *   - Glúcidos I (caps. 29–41) → se escriben dentro de qbi-static.html
- *   - Lípidos I y II (caps. 42–57) → se escriben dentro de qbi-lipidos-extension.js
- *   - Ácidos nucleicos I (caps. 58–79) → genera qbi-acidos-nucleicos-extension.js (la carga qbi-lipidos-extension.js)
+ *   - Glúcidos II (caps. 42–53) → genera qbi-glucidos-ii-extension.js (la carga qbi-lipidos-extension.js)
+ *   - Lípidos I y II (caps. 54–69) → se escriben dentro de qbi-lipidos-extension.js
+ *   - Ácidos nucleicos I (caps. 70–91) → genera qbi-acidos-nucleicos-extension.js (la carga qbi-lipidos-extension.js)
  * Uso: node scripts/qbi-explained/build.js
  */
 const fs = require('fs');
@@ -59,7 +60,7 @@ console.log('Lípidos: ' + lipidos.length + ' capítulos escritos en qbi-lipidos
 /* ---------- Ácidos nucleicos I ---------- */
 const kitAn = require('./kit-an');
 const acidos = [1, 2, 3, 4, 5].flatMap(i => require('./acidos-' + i));
-const AN_VERSION = '1.2.0';
+const AN_VERSION = '1.3.0';
 const AN_OUT = path.join(UNIT, 'qbi-acidos-nucleicos-extension.js');
 const anData = acidos.map(ch => ({ n: ch.n, group: ch.group, pages: ch.pages, title: ch.title.replace(/<[^>]+>/g, ''), html: kitAn.chapterHtml(ch) }));
 const UNITS = [{ id: 'acidos-nucleicos-i', label: 'Ácidos nucleicos I · Bases, nucleósidos y nucleótidos', ready: true }];
@@ -73,3 +74,22 @@ const anJs = tpl
 if (/\/\*AN:/.test(anJs)) throw new Error('Quedó un marcador sin reemplazar en la plantilla de Ácidos nucleicos');
 fs.writeFileSync(AN_OUT, anJs);
 console.log('Ácidos nucleicos I: ' + acidos.length + ' capítulos escritos en qbi-acidos-nucleicos-extension.js');
+
+/* ---------- Glúcidos II ---------- */
+const glu2 = require('./glucidos-ii');
+const kitG2 = kitAn.makeKit({ sizes: require('./glucidos-ii-img-sizes.json'), asset: '{{G2_ASSETS}}', attr: 'data-qbi-glu2' });
+const G2_VERSION = '1.0.0';
+const G2_OUT = path.join(UNIT, 'qbi-glucidos-ii-extension.js');
+const g2Data = glu2.map(ch => ({ n: ch.n, group: ch.group, pages: ch.pages, title: ch.title.replace(/<[^>]+>/g, ''), html: kitG2.chapterHtml(ch) }));
+const g2Tpl = fs.readFileSync(path.join(__dirname, 'glucidos-ii-extension-template.js'), 'utf8');
+const g2Js = g2Tpl
+  .replace("'/*G2:VERSION*/'", JSON.stringify(G2_VERSION))
+  .replace("''/*G2:QBXCSS*/", () => JSON.stringify(cssMin))
+  .replace("''/*G2:CSS*/", () => JSON.stringify(kitAn.CSS.replace(/\n/g, '')))
+  .replace('/*G2:GROUP*/{}', () => JSON.stringify({ id: 'glucidos-ii', label: 'Glúcidos II · Análisis estructural de glicanos' }))
+  .replace('[]/*G2:DATA*/', () => JSON.stringify(g2Data));
+if (/\/\*G2:/.test(g2Js)) throw new Error('Quedó un marcador sin reemplazar en la plantilla de Glúcidos II');
+const nums = [...glucidos, ...glu2, ...lipidos, ...acidos].map(ch => ch.n);
+nums.forEach((n, i) => { if (n !== 29 + i) throw new Error('La numeración de capítulos no es correlativa en ' + n); });
+fs.writeFileSync(G2_OUT, g2Js);
+console.log('Glúcidos II: ' + glu2.length + ' capítulos escritos en qbi-glucidos-ii-extension.js');

@@ -1,42 +1,42 @@
 'use strict';
-/* Ácidos nucleicos I · Repaso: preguntas resueltas y glosario. Capítulos 78 y 79. */
+/* Ácidos nucleicos I · Repaso: preguntas resueltas y glosario. Capítulos 90 y 91. */
 const { M } = require('./kit-an');
 const G = 'Ácidos nucleicos I';
 const PRACT = 'Práctica';
 
 /* Contenido de cada página del material de origen (solo para docs/acidos-nucleicos-i-cobertura.md; no se muestra en la app). */
 const MAPA = [
-[1, 'Portada: título, docente, mail y fecha', '58 y 79'], [2, 'Hoja de ruta, bibliografía y meme de Watson y Crick', '58 y 79'], [3, 'Preguntas para responder antes de la clase y actividad en grupo', '58 y 78'],
-[4, 'Definición de ácido nucleico; esquema de polinucleótido', '58'], [5, 'Partes y funciones de los nucleótidos', '58 y 77'], [6, 'Miescher, Kossel y Levene; tetranucleótido', '59'],
-[7, 'Purinas y pirimidinas: estructuras, numeración y propiedades', '59'], [8, 'Bases del ADN y del ARN', '59'], [9, 'Ribosa y desoxirribosa; números con prima', '60'],
-[10, 'Nucleósidos; enlace N-glicosídico; β', '61'], [11, 'El grupo fosfato; fosfoéster y fosfoanhídrido', '61'], [12, 'Mono, di y trifosfatos; ATP y dAMP', '61'],
-[13, 'Nombres con «desoxi»; nucleótido de ADN vs. ARN; inestabilidad del ARN', '60 y 62'], [14, 'Tabla 25.1 de nomenclatura', '62'], [15, 'Desoxirribonucleótidos', '62'],
-[16, 'Ribonucleótidos', '62'], [17, 'Lo que se sabía: proteínas vs. ácidos nucleicos', '63'], [18, 'Experimento de Griffith', '63'],
-[19, 'Experimento de Avery, MacLeod y McCarty', '63'], [20, 'Experimento de Hershey y Chase (video)', '63 y 79'], [21, 'Pauling, Watson, Crick, Wilkins, Franklin; línea de tiempo', '64'],
-[22, 'Foto 51', '64'], [23, 'Difracción de rayos X, ley de Bragg y lectura de la Foto 51', '64'], [24, 'Chargaff', '64'],
-[25, 'Modelo de Watson y Crick', '65'], [26, 'Extremos 5′ y 3′; unión fosfodiéster', '65'], [27, 'El enlace fosfodiéster en la cadena', '65'],
-[28, 'Puentes de hidrógeno A–T y G–C', '65'], [29, 'Dimensiones de la doble hélice', '66'], [30, 'Cadenas antiparalelas; información en el orden de bases', '65'],
-[31, 'Formas A, B y Z', '66'], [32, 'Cronología 1951–1962 y documentales', '67 y 79'], [33, 'Nature, 25 de abril de 1953', '67'],
-[34, 'The paper mountain', '67'], [35, 'The Eagle y el modelo original', '67'], [36, 'Desnaturalización y renaturalización', '68'],
-[37, 'Efecto hipercrómico y Tm', '68'], [38, 'Características del ARN', '69'], [39, 'La molécula de ARN; pregunta T/U', '69'],
-[40, '«Escucho respuestas!» (pausa)', '69 y 79'], [41, 'Respuesta: por qué el ADN tiene T y el ARN U', '69'], [42, 'Principales tipos de ARN', '70'],
-[43, 'Diferencias entre ADN y ARN', '69'], [44, 'Dogma central', '70'], [45, 'Replicación', '71'],
-[46, 'Transcripción y ARNm', '71'], [47, 'Traducción y código genético', '71'], [48, 'Mapa del metabolismo de nucleótidos', '72'],
-[49, 'Vías de novo y de recuperación', '72'], [50, 'Origen de los átomos; PRPP', '72'], [51, 'Estrategias para purinas y pirimidinas; cafeína', '73 y 74'],
-[52, 'Regulación de la síntesis de purinas; AMP y GMP', '73'], [53, 'Los nueve pasos hasta IMP', '73'], [54, 'Regulación de la síntesis de pirimidinas', '74'],
-[55, 'Síntesis de desoxirribonucleótidos', '75'], [56, 'Timidilato y drogas', '75'], [57, 'Carlos V', '76'],
-[58, 'Degradación de purinas a urato, gota, alopurinol y rescate', '76'], [59, 'Coenzimas y SAM', '77'], [60, '«Respondemos las preguntas de nuevo…»', '78'],
-[61, 'Preguntas de diagnóstico resueltas', '78'], [62, 'Verdadero o falso', '78'], [63, 'Opción múltiple', '78'], [64, 'Memes de cierre', '79']
+[1, 'Portada: título, docente, mail y fecha', '70 y 91'], [2, 'Hoja de ruta, bibliografía y meme de Watson y Crick', '70 y 91'], [3, 'Preguntas para responder antes de la clase y actividad en grupo', '70 y 90'],
+[4, 'Definición de ácido nucleico; esquema de polinucleótido', '70'], [5, 'Partes y funciones de los nucleótidos', '70 y 89'], [6, 'Miescher, Kossel y Levene; tetranucleótido', '71'],
+[7, 'Purinas y pirimidinas: estructuras, numeración y propiedades', '71'], [8, 'Bases del ADN y del ARN', '71'], [9, 'Ribosa y desoxirribosa; números con prima', '72'],
+[10, 'Nucleósidos; enlace N-glicosídico; β', '73'], [11, 'El grupo fosfato; fosfoéster y fosfoanhídrido', '73'], [12, 'Mono, di y trifosfatos; ATP y dAMP', '73'],
+[13, 'Nombres con «desoxi»; nucleótido de ADN vs. ARN; inestabilidad del ARN', '72 y 74'], [14, 'Tabla 25.1 de nomenclatura', '74'], [15, 'Desoxirribonucleótidos', '74'],
+[16, 'Ribonucleótidos', '74'], [17, 'Lo que se sabía: proteínas vs. ácidos nucleicos', '75'], [18, 'Experimento de Griffith', '75'],
+[19, 'Experimento de Avery, MacLeod y McCarty', '75'], [20, 'Experimento de Hershey y Chase (video)', '75 y 91'], [21, 'Pauling, Watson, Crick, Wilkins, Franklin; línea de tiempo', '76'],
+[22, 'Foto 51', '76'], [23, 'Difracción de rayos X, ley de Bragg y lectura de la Foto 51', '76'], [24, 'Chargaff', '76'],
+[25, 'Modelo de Watson y Crick', '77'], [26, 'Extremos 5′ y 3′; unión fosfodiéster', '77'], [27, 'El enlace fosfodiéster en la cadena', '77'],
+[28, 'Puentes de hidrógeno A–T y G–C', '77'], [29, 'Dimensiones de la doble hélice', '78'], [30, 'Cadenas antiparalelas; información en el orden de bases', '77'],
+[31, 'Formas A, B y Z', '78'], [32, 'Cronología 1951–1962 y documentales', '79 y 91'], [33, 'Nature, 25 de abril de 1953', '79'],
+[34, 'The paper mountain', '79'], [35, 'The Eagle y el modelo original', '79'], [36, 'Desnaturalización y renaturalización', '80'],
+[37, 'Efecto hipercrómico y Tm', '80'], [38, 'Características del ARN', '81'], [39, 'La molécula de ARN; pregunta T/U', '81'],
+[40, '«Escucho respuestas!» (pausa)', '81 y 91'], [41, 'Respuesta: por qué el ADN tiene T y el ARN U', '81'], [42, 'Principales tipos de ARN', '82'],
+[43, 'Diferencias entre ADN y ARN', '81'], [44, 'Dogma central', '82'], [45, 'Replicación', '83'],
+[46, 'Transcripción y ARNm', '83'], [47, 'Traducción y código genético', '83'], [48, 'Mapa del metabolismo de nucleótidos', '84'],
+[49, 'Vías de novo y de recuperación', '84'], [50, 'Origen de los átomos; PRPP', '84'], [51, 'Estrategias para purinas y pirimidinas; cafeína', '85 y 86'],
+[52, 'Regulación de la síntesis de purinas; AMP y GMP', '85'], [53, 'Los nueve pasos hasta IMP', '85'], [54, 'Regulación de la síntesis de pirimidinas', '86'],
+[55, 'Síntesis de desoxirribonucleótidos', '87'], [56, 'Timidilato y drogas', '87'], [57, 'Carlos V', '88'],
+[58, 'Degradación de purinas a urato, gota, alopurinol y rescate', '88'], [59, 'Coenzimas y SAM', '89'], [60, '«Respondemos las preguntas de nuevo…»', '90'],
+[61, 'Preguntas de diagnóstico resueltas', '90'], [62, 'Verdadero o falso', '90'], [63, 'Opción múltiple', '90'], [64, 'Memes de cierre', '91']
 ];
 
 module.exports = [
 {
-n: 78, group: G, pages: '3 y 60–63', title: 'Preguntas de repaso resueltas',
+n: 90, group: G, pages: '3 y 60–63', title: 'Preguntas de repaso resueltas',
 lead: 'Preguntas para comprobar que entendiste la unidad. Tocá una opción para ver si es correcta y abrí la explicación paso a paso.',
 blocks: [
 ['h', 'Para pensar'],
 ['quiz', { kind: 'mc', q: '1 · ¿Cuánto mide el ADN de una sola célula humana si lo estiramos?', opts: ['34 Å', '10.4 nm', '2 μm', '1 cm', '2 m', '10 km'], correct: [4], answer: '<b>2 m</b>.', steps: [
-'Datos: cada par de bases ocupa ' + M(String.raw`h = 3{,}4\ \text{Å} = 3{,}4 \times 10^{-10}\ \text{m}`, 'h = 3,4 Å = 3,4 × 10⁻¹⁰ m') + ' (capítulo 66). Una célula humana diploide tiene ≈ ' + M(String.raw`N = 6{,}4 \times 10^{9}`, 'N = 6,4 × 10⁹') + ' pares de bases (dos juegos de ≈ 3,2 × 10⁹).',
+'Datos: cada par de bases ocupa ' + M(String.raw`h = 3{,}4\ \text{Å} = 3{,}4 \times 10^{-10}\ \text{m}`, 'h = 3,4 Å = 3,4 × 10⁻¹⁰ m') + ' (capítulo 78). Una célula humana diploide tiene ≈ ' + M(String.raw`N = 6{,}4 \times 10^{9}`, 'N = 6,4 × 10⁹') + ' pares de bases (dos juegos de ≈ 3,2 × 10⁹).',
 'Fórmula: ' + M(String.raw`L = N \times h`, 'L = N × h') + '.',
 'Cuenta: ' + M(String.raw`L = 6{,}4 \times 10^{9} \times 3{,}4 \times 10^{-10}\ \text{m} \approx 2{,}2\ \text{m}`, 'L = 6,4 × 10⁹ × 3,4 × 10⁻¹⁰ m ≈ 2,2 m') + ' → unos 2 m.',
 'Las otras opciones: 34 Å es lo que mide <b>una vuelta</b> de la hélice; 10.4 nm son apenas unas tres vueltas (el «10,4» recuerda a los pares por vuelta, no a una longitud); 2 μm y 1 cm se quedan muy cortos; 10 km es demasiado.'
@@ -46,28 +46,28 @@ blocks: [
 'Cada gen puede transcribirse muchas veces, y los ribosomas tienen mucho ARNr (≈ 80 % del ARN total). En una célula hepática, muy activa en síntesis de proteínas, eso se nota todavía más.'
 ] }],
 ['quiz', { kind: 'mc', q: '2b · ¿Cuántas veces más?', opts: ['2x', '4x', '8x', '100x', '>100x'], correct: [1, 2], answer: '<b>4x y 8x</b>, las dos.', steps: [
-'Una célula típica contiene entre 4 y 10 veces más ARN que ADN (capítulo 69).',
+'Una célula típica contiene entre 4 y 10 veces más ARN que ADN (capítulo 81).',
 'Las dos opciones que caen dentro de ese rango son 4x y 8x: las dos son correctas.',
 '2x se queda corto; 100x y >100x se pasan del rango.'
 ] }],
 ['h', 'Verdadero o falso'],
 ['quiz', { kind: 'vf', q: '1) Los experimentos de Griffith en 1928 demostraron que el ADN era el principio transformante.', opts: ['V', 'F'], correct: [1], answer: '<b>Falso</b>.', steps: [
 'Griffith demostró que existe un factor transformante en las bacterias S muertas por calor, capaz de transformar a las R de forma estable y heredable.',
-'No identificó qué molécula era. Eso lo hicieron Avery, MacLeod y McCarty en 1944, destruyendo cada candidato con enzimas (capítulo 63).'
+'No identificó qué molécula era. Eso lo hicieron Avery, MacLeod y McCarty en 1944, destruyendo cada candidato con enzimas (capítulo 75).'
 ] }],
 ['quiz', { kind: 'vf', q: '2) En una molécula de ADN, la cantidad de purinas es igual a la de pirimidinas.', opts: ['V', 'F'], correct: [0], answer: '<b>Verdadero</b> (para el ADN de doble cadena).', steps: [
 'En la doble hélice cada purina se aparea con una pirimidina: A con T y G con C.',
-'Entonces [A] = [T] y [G] = [C], y sumando: [A + G] = [T + C], es decir [purinas] = [pirimidinas] (regla de Chargaff, capítulo 64).',
+'Entonces [A] = [T] y [G] = [C], y sumando: [A + G] = [T + C], es decir [purinas] = [pirimidinas] (regla de Chargaff, capítulo 76).',
 'Ojo: vale para el ADN bicatenario con apareamiento normal; en una cadena sola no tiene por qué cumplirse.'
 ] }],
 ['quiz', { kind: 'vf', q: '3) En humanos, los nucleótidos son compuestos esenciales (se obtienen de la dieta).', opts: ['V', 'F'], correct: [1], answer: '<b>Falso</b>.', steps: [
 '«Esencial» significa que el organismo no lo puede fabricar y tiene que obtenerlo de la dieta.',
-'Los humanos sintetizamos nucleótidos «de novo» a partir de precursores chicos (aminoácidos, CO₂, folato, PRPP), y además los reciclamos por rescate (capítulos 72 a 74).',
+'Los humanos sintetizamos nucleótidos «de novo» a partir de precursores chicos (aminoácidos, CO₂, folato, PRPP), y además los reciclamos por rescate (capítulos 84 a 86).',
 'Los ácidos nucleicos de la dieta se aprovechan, pero no son imprescindibles.'
 ] }],
 ['quiz', { kind: 'vf', q: '4) Los ribonucleótidos se obtienen a partir de los desoxirribonucleótidos.', opts: ['V', 'F'], correct: [1], answer: '<b>Falso</b>.', steps: [
 'Es al revés: los desoxirribonucleótidos se obtienen por <b>reducción de ribonucleótidos</b> (ribonucleótido reductasa, sobre los difosfatos).',
-'No hay ribonucleótidos que se formen a partir de desoxirribonucleótidos (capítulo 75).'
+'No hay ribonucleótidos que se formen a partir de desoxirribonucleótidos (capítulo 87).'
 ] }],
 ['h', 'Opción múltiple'],
 ['quiz', { kind: 'mc', q: 'Los experimentos de Avery, MacLeod y McCarty demostraron que:', opts: ['las células S inactivadas igual producen neumonía', 'el DNA era el material genético de los fagos', 'la transformación bacteriana requiere DNA', 'existía un "principio transformante"'], correct: [2], answer: '<b>c) la transformación bacteriana requiere DNA</b>.', steps: [
@@ -80,7 +80,7 @@ blocks: [
 'a) Falso: la forma Z es <b>levógira</b> (gira a la izquierda). A y B son dextrógiras.',
 'b) Falso: la más común, en condiciones fisiológicas, es la forma <b>B</b>.',
 'c) Falso: es una <b>doble</b> hélice, como A y B.',
-'d) Correcta: «Z (zig-zag) ocurre in vitro ante ciertas secuencias con repeticiones de d(GC) y d(AC)» (capítulo 66).'
+'d) Correcta: «Z (zig-zag) ocurre in vitro ante ciertas secuencias con repeticiones de d(GC) y d(AC)» (capítulo 78).'
 ] }],
 ['h', 'Práctica adicional'],
 ['p', 'Más ejercicios para repasar toda la unidad.'],
@@ -97,7 +97,7 @@ blocks: [
 ]
 },
 {
-n: 79, group: G, pages: '1, 2, 20 y 32', title: 'Glosario y para seguir leyendo',
+n: 91, group: G, pages: '1, 2, 20 y 32', title: 'Glosario y para seguir leyendo',
 lead: 'Los conceptos clave de la unidad en una línea cada uno, y dónde profundizar.',
 blocks: [
 ['h', 'Glosario'],
